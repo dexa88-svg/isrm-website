@@ -16,6 +16,9 @@ jobs:
       - name: Generate stats
         run: node scripts/generate-stats.js
 
+      - name: Verify stats file
+        run: ls -la public/data/stats.json
+
       - name: Deploy via SFTP
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
