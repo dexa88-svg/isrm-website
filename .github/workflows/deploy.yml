@@ -13,6 +13,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Generate stats
+        run: node scripts/generate-stats.js
+
       - name: Deploy via SFTP
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
