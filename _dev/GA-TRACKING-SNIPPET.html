@@ -1,0 +1,70 @@
+<!--
+  ISRM Google Analytics Tracking Snippet
+
+  Instructions:
+  1. Replace G-XXXXXXXXXX with your actual Measurement ID
+  2. Copy this entire script block
+  3. Paste it in the <head> section of EVERY HTML page (after <title>, before </head>)
+  4. Do NOT remove or modify the script
+
+  Implementation checklist:
+  ☐ public/index.html
+  ☐ public/repair-guides/index.html
+  ☐ public/repair-guides/gy6-*.html (all guides)
+  ☐ public/diagnostics/index.html
+  ☐ public/diagnostics/gy6-*.html (all diagnostics)
+  ☐ public/models/index.html
+  ☐ public/models/*.html (all models)
+  ☐ public/videos/index.html
+  ☐ public/parts/index.html
+  ☐ public/community/index.html
+  ☐ public/news/index.html
+
+  Verification:
+  1. Visit any page on ismr.online
+  2. Open DevTools (F12) → Console
+  3. Type: window.dataLayer
+  4. If you see an array, GA is working!
+-->
+
+<!-- Google Analytics 4 Tracking -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', {
+    'page_title': document.title,
+    'page_path': window.location.pathname,
+    'send_page_view': true
+  });
+</script>
+
+<!--
+  OPTIONAL: Track guide interactions
+  Uncomment to enable tracking of specific user actions
+-->
+
+<!--
+<script>
+  // Track when a guide is viewed
+  function trackEvent(eventName, eventData) {
+    gtag('event', eventName, eventData);
+  }
+
+  // Example: Track video plays
+  document.addEventListener('DOMContentLoaded', function() {
+    const iframes = document.querySelectorAll('iframe');
+    iframes.forEach(iframe => {
+      if (iframe.src.includes('youtube')) {
+        iframe.addEventListener('play', function() {
+          trackEvent('guide_video_played', {
+            'video_title': iframe.title,
+            'page': document.title
+          });
+        });
+      }
+    });
+  });
+</script>
+-->

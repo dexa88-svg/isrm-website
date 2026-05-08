@@ -2,8 +2,8 @@
 ## Claude Code Context File
 
 **Project owner:** Den (Dzianis) — dexa88@gmail.com  
-**Last updated:** 2026-05-08  
-**Current phase:** Phase 1 in progress (Astro site scaffolded, content live on Hetzner)
+**Last updated:** 2026-05-08 (reindexed)  
+**Current phase:** Phase 1 in progress (GitHub → Hetzner auto-deploy active, Astro project removed from workspace)
 
 ---
 
@@ -26,13 +26,16 @@ The project is split into two clear areas: **`public/`** holds live publishable 
 ```
 interactive scooter repair manuals - ISRM/
 ├── CLAUDE.md                        ← this file
+├── .github/
+│   └── workflows/
+│       └── deploy.yml               ← GitHub Actions: auto-deploy to Hetzner via FTP
 │
 ├── public/                          ← PUBLISHABLE CONTENT (served to users)
 │   ├── index.html                   ← homepage
 │   ├── styles.css
 │   ├── script.js
 │   ├── sources-registry.json        ← 68 known content sources
-│   ├── sync-manifest.json           ← generated pages with metadata
+│   ├── sync-manifest.json           ← 17 generated pages with metadata
 │   ├── repair-guides/               ← 12 HTML guides (GY6-focused) + index
 │   ├── parts/                       ← parts index
 │   ├── diagnostics/                 ← 2 troubleshooting guides + index
@@ -55,22 +58,18 @@ interactive scooter repair manuals - ISRM/
     ├── PHASE0-GUIDANCE.md           ← phase 0 worksheet & persona guidance
     ├── INTEGRATION-EXAMPLES.md
     ├── resources-gy6-master-list.md
-    ├── rollerdoc-site/              ← ASTRO PROJECT (ISRM future site — Phase 1, folder name is legacy)
-    │   ├── src/
-    │   │   ├── pages/               ← .astro page files (maintenance guides built)
-    │   │   ├── layouts/             ← Layout.astro (shared shell)
-    │   │   ├── styles/              ← global.css, guide-shared.css
-    │   │   └── content/             ← Markdown/MDX collections (Phase 2)
-    │   ├── dist/                    ← built output (run `npm run build`)
-    │   ├── astro.config.mjs         ← site: rollerdoc.com
-    │   ├── package.json
-    │   └── SETUP.md                 ← GitHub + deploy instructions for Den
+    ├── scheduled-tasks-updated/     ← updated skill prompts for scheduled tasks
+    │   ├── isrm-content-sync-SKILL.md
+    │   ├── isrm-design-compliance-check-SKILL.md
+    │   └── isrm-consistency-check-SKILL.md
     ├── documentation/               ← LIVING PROJECT DOCS
     │   ├── README.md                ← documentation hub index
     │   ├── SCHEDULED_TASKS.md       ← all 3 scheduled tasks documented
+    │   ├── FTP-AUTO-DEPLOY-PROCESS.md ← GitHub → Hetzner FTP pipeline docs
     │   └── design-system/           ← design tokens & style guide
     │       ├── README.md
     │       ├── ISRM_StyleGuide.docx ← comprehensive style guide
+    │       ├── ISRM_StyleGuide_Compliance_Audit.txt ← compliance audit results
     │       ├── styles-reference.css ← all CSS variables
     │       ├── INDEX.md
     │       ├── QUICKSTART.md
@@ -97,16 +96,25 @@ interactive scooter repair manuals - ISRM/
 **WordPress temp URL:** `azkh.your-vhost.de` (pending DNS to ismr.online)  
 **Hetzner server:** www703.your-server.de (IP: 157.90.184.167)
 
-### Future (in development — `_dev/rollerdoc-site/`)
+### Deploy Pipeline (active)
+| Step | Tool | Notes |
+|------|------|-------|
+| **Source control** | GitHub (`dexa88-svg/isrm-website`) | `main` branch triggers deploy |
+| **CI/CD** | GitHub Actions (`deploy.yml`) | Runs on every push to `main` |
+| **Deploy target** | Hetzner via FTP | Live within ~30s of push |
+
+Full pipeline documented in `_dev/documentation/FTP-AUTO-DEPLOY-PROCESS.md`.
+
+### Future Stack (Phase 2+)
 | Layer | Decision | Notes |
 |-------|----------|-------|
-| **Framework** | **Astro** | ✅ Chosen & scaffolded — `_dev/rollerdoc-site/` |
-| **Hosting** | Cloudflare Pages | Free, fast — next step per SETUP.md |
-| **Domain** | ismr.online | Same domain, moving from Hetzner to Cloudflare Pages |
-| **Content** | Astro Content Collections | Phase 2 — Markdown/MDX in `src/content/` |
+| **Framework** | **Astro** | Chosen for Phase 2 — not currently in workspace |
+| **Hosting** | Cloudflare Pages | TBD — may replace Hetzner |
+| **Domain** | ismr.online | Same domain |
+| **Content** | Astro Content Collections | Phase 2 — Markdown/MDX |
 | **CMS** | Sanity or Contentlayer | TBD in Phase 2 |
 
-**Astro site status:** Scaffolded with maintenance guide pages, initial git commit done. Awaiting GitHub push + Cloudflare Pages deploy (see `_dev/rollerdoc-site/SETUP.md`).
+**Note:** The Astro scaffold (`rollerdoc-site/`) previously existed in `_dev/` but has been removed from the local workspace. It may exist in the GitHub repo.
 
 ---
 
@@ -229,7 +237,8 @@ Prohibited on this hosting: adult content, hate speech, gambling, IP violations,
 
 **Resolved:**
 - ✅ Brand name: **ISRM** (Interactive Scooter Manuals for Repair), domain ismr.online
-- ✅ Framework: **Astro** — scaffolded in `_dev/rollerdoc-site/`
+- ✅ Framework: **Astro** — chosen for Phase 2 (scaffold removed from local workspace)
+- ✅ Deploy pipeline: GitHub Actions → Hetzner FTP (active)
 
 ---
 
@@ -239,8 +248,9 @@ Prohibited on this hosting: adult content, hate speech, gambling, IP violations,
 - `_dev/ROADMAP.md` — full 13-phase build plan with constraints
 - `_dev/SETUP_SUMMARY.md` — hosting credentials and decisions
 - `_dev/GUIDE-STRUCTURE.md` — template when creating any new guide
-- `_dev/rollerdoc-site/SETUP.md` — GitHub + Cloudflare Pages deploy steps for Den
+- `_dev/documentation/FTP-AUTO-DEPLOY-PROCESS.md` — GitHub Actions → Hetzner deploy pipeline
 - `_dev/documentation/SCHEDULED_TASKS.md` — all 3 scheduled tasks in detail
+- `_dev/scheduled-tasks-updated/` — latest skill prompts for all 3 scheduled tasks
 - `_dev/documentation/design-system/README.md` — design system quick reference
-- `public/sync-manifest.json` — list of all generated pages
+- `public/sync-manifest.json` — list of all 17 generated pages
 - `public/sources-registry.json` — all 68 content sources

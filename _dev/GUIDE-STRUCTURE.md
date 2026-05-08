@@ -430,13 +430,23 @@ Every guide must include:
 |---------|--------|---------|
 | **Title** | [Model] [Component] Guide | GY6 Carburetor Adjustment Guide |
 | **Added Date** | YYYY-MM-DD | 2026-05-07 |
-| **Updated Date** | YYYY-MM-DD | 2026-05-07 |
+| **Last Updated Date** | YYYY-MM-DD | **2026-05-08** ⚠️ *MUST update every edit* |
 | **Applies To** | Model/Engine Code | GY6 50cc (139QMB), BTC Riva, La Souris |
 | **Difficulty** | Beginner/Intermediate/Advanced | Intermediate |
 | **Time** | Duration estimate | 1–1.5 hours |
 | **Tags** | Comma-separated categories | repair, GY6, carburetor |
 | **Sources** | Links to references | [URL], [URL] |
 | **Video** | YouTube embed (minimum 1) | iframe embed |
+
+### ⚠️ CRITICAL: Last Updated Date
+
+**Every time you edit a guide, update the "Last Updated" date to today.** This includes:
+- Fixing typos or grammar
+- Revising instructions
+- Updating links or videos
+- Verifying accuracy
+
+**See:** `PAGE-UPDATE-TRACKING.md` for complete update tracking requirements and procedures.
 
 ---
 
