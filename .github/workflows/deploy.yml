@@ -27,6 +27,6 @@ jobs:
           done
           cd /tmp/upload
           find . -type f | while read file; do
-            curl -k --ftp-ssl -u "$FTP_USERNAME:$FTP_PASSWORD" \
-              -T "$file" "ftps://$FTP_SERVER/public_html/$file"
+            curl -k --ftp-ssl-reqd -u "$FTP_USERNAME:$FTP_PASSWORD" \
+              -T "$file" "ftp://$FTP_SERVER:21/public_html/$file"
           done
