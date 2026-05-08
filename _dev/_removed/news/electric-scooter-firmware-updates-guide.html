@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- REMOVED: out-of-scope electric scooter content 2026-05-07 -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electric Scooter Firmware Updates Guide — ISRM</title>
+  <style>
+    body { font-family: Georgia, serif; background: #0f0f0f; color: #e8e8e8; max-width: 820px; margin: 2rem auto; padding: 1rem 2rem; line-height: 1.7; }
+    h1 { color: #f5a623; border-bottom: 2px solid #f5a623; padding-bottom: 0.4rem; }
+    h2 { color: #f5a623; margin-top: 2rem; }
+    a { color: #7ec8e3; }
+    .meta { color: #888; font-size: 0.85rem; margin-bottom: 1.5rem; }
+    .source-box { background: #1a1a1a; border-left: 4px solid #f5a623; padding: 0.8rem 1.2rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; }
+    .tag { display: inline-block; background: #222; color: #f5a623; border: 1px solid #f5a623; border-radius: 12px; padding: 2px 10px; font-size: 0.78rem; margin-right: 6px; }
+    nav { margin-bottom: 2rem; font-size: 0.9rem; } nav a { margin-right: 1rem; }
+    footer { margin-top: 3rem; border-top: 1px solid #333; padding-top: 1rem; color: #555; font-size: 0.8rem; }
+    .warning { background: #3d2c1f; border-left: 4px solid #ff6b35; padding: 0.8rem; margin: 1rem 0; border-radius: 3px; }
+    code { background: #1a1a1a; color: #7ec8e3; padding: 2px 6px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav><a href="../../index.html">🔧 ISRM Home</a> › <a href="../index.html">News & Updates</a></nav>
+  <h1>Complete Guide to Electric Scooter Firmware Updates</h1>
+  <div class="meta">
+    Added: 2026-05-06 &nbsp;|&nbsp; Sources: Levy Electric, Segway, ScooterHacking &nbsp;|&nbsp; <span class="tag">firmware</span> <span class="tag">updates</span>
+  </div>
+  <div class="source-box">
+    📌 <strong>Primary sources:</strong> <a href="https://www.levyelectric.com/" target="_blank" rel="noopener">Levy Electric</a>, <a href="https://open.segwaydiscovery.com/" target="_blank" rel="noopener">Segway Discovery</a>, <a href="https://wiki.scooterhacking.org/" target="_blank" rel="noopener">ScooterHacking Wiki</a>
+  </div>
+
+  <h2>Why Firmware Updates Matter</h2>
+  <p>Firmware is the low-level software that runs on your scooter's controller and battery management system (BMS). Manufacturers release firmware updates to fix bugs, improve performance, address safety issues, enhance battery longevity, and add new features. Keeping your scooter's firmware current ensures optimal operation and warranty compliance.</p>
+
+  <h2>What's In a Typical Firmware Update?</h2>
+  <ul>
+    <li><strong>Performance optimizations:</strong> Smoother acceleration, improved braking response</li>
+    <li><strong>Compatibility improvements:</strong> Better app connectivity, sensor calibration updates</li>
+    <li><strong>Bug fixes:</strong> Resolving error codes, fixing display glitches</li>
+    <li><strong>Battery management enhancements:</strong> Better charging algorithms, improved cell balancing</li>
+    <li><strong>Safety patches:</strong> Addressing known vulnerabilities or hazardous conditions</li>
+  </ul>
+
+  <h2>How to Update Your Scooter Firmware</h2>
+
+  <h3>Official App Updates (Recommended for Most Users)</h3>
+  <p>Most modern scooters (Ninebot, Xiaomi, Segway, Apollo, etc.) support over-the-air (OTA) updates via the manufacturer's mobile app.</p>
+
+  <h4>Step-by-step:</h4>
+  <ol>
+    <li>Download the official app for your scooter brand (Ninebot app, Xiaomi Home, Segway app, etc.).</li>
+    <li>Pair your scooter via Bluetooth if not already done.</li>
+    <li>Navigate to the <strong>Device Settings</strong> or <strong>Firmware</strong> menu in the app.</li>
+    <li>Tap <strong>Check for Updates</strong> or <strong>Firmware Update</strong>.</li>
+    <li>If an update is available, the app will show the version number and release notes. Tap <strong>Install</strong> or <strong>Download &amp; Install</strong>.</li>
+    <li><strong>Keep the scooter powered on</strong> and Bluetooth connected during the entire process (usually 5–15 minutes).</li>
+    <li>Once complete, the app will confirm success. Power off and back on the scooter to activate the new firmware.</li>
+  </ol>
+
+  <div class="warning">
+    ⚠️ <strong>Critical:</strong> Do not disconnect Bluetooth, turn off the scooter, or lose battery power during a firmware update. Interruption can corrupt the firmware and render the scooter inoperable.
+  </div>
+
+  <h3>Updating Xiaomi Electric Scooters</h3>
+  <p>Xiaomi scooters (M365, M365 Pro, 3, 4, etc.) update through the <strong>Xiaomi Home</strong> or <strong>Mi Home</strong> app (depending on region and app version).</p>
+  <ol>
+    <li>Open the Xiaomi Home app and tap your scooter's tile.</li>
+    <li>Tap the three-dot menu (⋮) in the top-right corner.</li>
+    <li>Select <strong>Firmware update</strong> or <strong>Check for firmware</strong>.</li>
+    <li>Follow the on-screen prompts. The update typically takes 10–20 minutes and requires the scooter to be connected via Bluetooth.</li>
+  </ol>
+
+  <h3>Updating Ninebot Scooters</h3>
+  <p>Ninebot scooters (ES, E-series, Max, Air, T15, etc.) update via the <strong>Ninebot App</strong>.</p>
+  <ol>
+    <li>Open the Ninebot app and ensure your scooter is paired.</li>
+    <li>Navigate to the scooter's profile page.</li>
+    <li>Scroll down to <strong>Firmware Update</strong> or <strong>Device Firmware</strong>.</li>
+    <li>Tap <strong>Check Update</strong>. If available, the app shows the new version and improvements.</li>
+    <li>Tap <strong>Update Now</strong>. Keep the scooter powered on and close to your phone during the process.</li>
+  </ol>
+
+  <h3>Manual Firmware Flashing (Advanced Users)</h3>
+  <p>Some enthusiasts and experienced users manually flash custom or stock firmware onto their scooters using utilities like the <strong>ScooterHacking Utility</strong> or manufacturer-provided tools. This requires technical knowledge and voids most warranties.</p>
+
+  <p><strong>Why manual flashing?</strong></p>
+  <ul>
+    <li>Accessing firmware for older or discontinued models</li>
+    <li>Installing custom firmware with unlocked features (e.g., CFW for Xiaomi scooters)</li>
+    <li>Recovering a scooter with corrupted firmware</li>
+    <li>Downgrading to a stable version if a new release has bugs</li>
+  </ul>
+
+  <p><strong>General process (varies by scooter):</strong></p>
+  <ol>
+    <li>Download the firmware file from <a href="https://github.com/scooterhacking" target="_blank" rel="noopener">ScooterHacking GitHub</a> or the manufacturer's support page.</li>
+    <li>Connect the scooter to your computer via USB or BLE adapter.</li>
+    <li>Use the flashing utility (ST-Link Utility, ScooterHacking Utility, or similar) to load the firmware.</li>
+    <li>Follow the tool's prompts carefully. Interruption or wrong firmware can brick the scooter.</li>
+    <li>After flashing, disconnect and reboot the scooter.</li>
+  </ol>
+
+  <div class="warning">
+    ⚠️ <strong>Warning:</strong> Manual firmware flashing is risky. Only attempt this if you're comfortable with technical tools and accept the risk of making the scooter inoperable. Back up your original firmware file before flashing anything.
+  </div>
+
+  <h2>Firmware Update Best Practices</h2>
+  <ul>
+    <li><strong>Charge fully before updating:</strong> Ensure the battery is at 80–100% to avoid power loss during the process.</li>
+    <li><strong>Use a stable Bluetooth connection:</strong> Update in a location with strong phone signal and minimal interference.</li>
+    <li><strong>Read release notes:</strong> Check what the update addresses. If it fixes a bug you've experienced, prioritize the update.</li>
+    <li><strong>Update regularly:</strong> Check for updates quarterly or after major incidents (e.g., firmware corruption reports in forums).</li>
+    <li><strong>Avoid updating during bad weather:</strong> Wait for dry conditions to prevent interference with Bluetooth connectivity.</li>
+  </ul>
+
+  <h2>Troubleshooting Firmware Updates</h2>
+
+  <h3>Update Stuck or Failed</h3>
+  <ul>
+    <li>Power off the scooter and disconnect Bluetooth.</li>
+    <li>Wait 2 minutes, then power on and reconnect to the app.</li>
+    <li>Try the update again. If it fails repeatedly, check for app updates or try from a different phone/device.</li>
+  </ul>
+
+  <h3>Scooter Won't Start After Update</h3>
+  <ul>
+    <li>Leave the scooter powered off for 1–2 minutes, then press the power button again.</li>
+    <li>The BMS may be recalibrating after the update. Wait up to 5 minutes before concluding there's a problem.</li>
+    <li>If it remains unresponsive, contact the manufacturer's support team with the firmware version you attempted to install.</li>
+  </ul>
+
+  <h3>Performance Issues After Update</h3>
+  <ul>
+    <li>Power cycle the scooter and reconnect to the app.</li>
+    <li>If the issue persists, check community forums (Reddit, ScooterHacking) to see if others report the same problem.</li>
+    <li>Some updates require you to re-calibrate throttle or brakes in the app settings. Consult your manual.</li>
+  </ul>
+
+  <h2>Finding Firmware Release Notes</h2>
+  <ul>
+    <li><strong>Segway Discovery:</strong> <a href="https://open.segwaydiscovery.com/documents/ReleaseNote/" target="_blank" rel="noopener">Release notes for Segway-Ninebot products</a></li>
+    <li><strong>Xiaomi Support:</strong> Updates listed in the Mi Home app; detailed notes on mi.com/global/support</li>
+    <li><strong>Apollo Scooters:</strong> Release notes in support portal at support.apolloscooters.co</li>
+    <li><strong>ScooterHacking Wiki:</strong> <a href="https://wiki.scooterhacking.org/" target="_blank" rel="noopener">Community-maintained firmware database</a> for Ninebot and Xiaomi models</li>
+  </ul>
+
+  <footer>
+    Page auto-generated by ISRM Content Sync on 2026-05-06. Content summarised from official manufacturer resources and community sources. Always refer to your scooter's official manual and support website for model-specific firmware instructions.
+  </footer>
+</body>
+</html>

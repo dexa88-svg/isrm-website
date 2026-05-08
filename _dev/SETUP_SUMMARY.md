@@ -1,0 +1,243 @@
+# ISRM Project Setup Summary
+
+## Project Overview
+**Interactive Scooter Repair Manuals (ISRM)** - Building an interactive website with comprehensive guides (videos, pictures, text, 3D models) helping users choose parts and perform repair procedures.
+
+**MVP Scope:**
+- GY6-based scooters (BTC Riva, La Souris Sourini/City, Santini Capri, etc.)
+- Piaggio brand (Vespa, Primavera, Zip)
+- Both carburetor and fuel injection models
+
+---
+
+## Domain & Hosting Setup
+
+### Domain Registration
+- **Domain:** ismr.online
+- **Registrar:** Namecheap
+- **Status:** ✅ Purchased and active
+
+### Hosting Provider Selection
+**Final Choice: Hetzner Webhosting S**
+
+**Decision Rationale:**
+- Best balance of ease, reliability, and flexibility
+- EU-based (faster for European users)
+- Cost-effective (€3-5/month)
+- Suitable for WordPress MVP
+- Can handle auto-updates and user contributions
+- Supports migration to advanced stack later
+
+**Alternative Considered:**
+- DigitalOcean VPS - more technical, requires coding knowledge
+- WordPress.com - too limited for custom features
+- Vercel/Netlify - wrong use case (cloud-based, not self-hosted)
+
+### Why WordPress Over Custom Stack
+**User Profile:** Non-technical, fast timeline (1-2 months), self-maintains
+
+**WordPress Advantages:**
+- Visual interface, no coding required
+- 1-2 month MVP timeline realistic
+- User-friendly maintenance
+- Strong plugin ecosystem
+- Easy to learn
+
+**Acknowledged Limitations:**
+- Limited 3D model support (workaround via plugins)
+- Auto-updates from external sources need plugins/custom work
+- Not ideal for eventual mobile app
+- May need rebuild to advanced stack (Node.js/Python) in 6-12 months
+
+**Migration Plan:**
+- Start WordPress MVP to validate concept
+- Plan full rebuild to custom stack in 3-6 months
+- Migration effort: ~1-2 months with developer (~€3-5K)
+- Content transfers easily; features need rebuilding
+
+---
+
+## Hetzner Setup Progress
+
+### Completed ✅
+1. Created Hetzner account
+2. Purchased Webhosting S package
+3. Connected ismr.online domain to hosting (shown as "Ready")
+4. Installed WordPress successfully
+5. Configured WordPress with:
+   - Site title: Interactive Scooter Repair Manuals
+   - Email: dexa88@gmail.com
+   - Admin credentials: (user-defined, securely stored)
+
+### Current Status
+- **WordPress Installation:** Complete
+- **Database:** wp_azkh2_db0 (created)
+- **Temporary Domain:** azkh.your-vhost.de (accessible for testing)
+- **Primary Domain:** ismr.online (waiting for nameserver update)
+
+### Pending ⏳
+1. Update nameservers in Namecheap to Hetzner's
+2. Wait 24-48 hours for DNS propagation
+3. Access WordPress admin via ismr.online (currently blocked by basic auth)
+4. Install essential plugins
+5. Set up site content structure
+
+---
+
+## Hetzner T&C Content Restrictions
+
+**Prohibited Content:**
+- Pornographic/obscene material
+- Extremist content
+- Gambling content
+- Content endangering children
+- IP rights violations (copyright, trademark)
+- Defamatory/insulting/disparaging content
+- Spam and unsolicited bulk email
+- False sender information
+
+**Prohibited Activities:**
+- Cryptocurrency mining (mining, farming, plotting)
+- DDoS attacks
+- Open mail relays
+- Illegal activities
+
+**Your Obligations:**
+- GDPR compliance
+- Regular data backups (user responsibility)
+- Content security (user responsibility)
+- Indemnify Hetzner against third-party claims
+
+**Key SLA:**
+- 99.9% uptime guarantee
+- Max liability = 100% of monthly fees
+- Hetzner can terminate without notice for violations
+
+---
+
+## Next Steps (Immediate)
+
+1. **Access WordPress Admin:**
+   - Get basic auth credentials from Hetzner konsoleH
+   - Access: azkh.your-vhost.de/wp-admin
+   - Login with configured credentials
+
+2. **Update Namecheap Nameservers:**
+   - Go to Namecheap → ismr.online domain settings
+   - Change nameservers to Hetzner's:
+     - ns1.hetzner.com
+     - ns2.hetzner.com
+     - ns3.hetzner.com
+   - Wait 24-48 hours for propagation
+
+3. **Install Essential Plugins:**
+   - SEO plugins (Yoast SEO)
+   - Media management (better handling of videos, galleries)
+   - User contribution plugins (for wiki-style submissions)
+   - Security plugins (WP-Security)
+   - Backup plugins (UpdraftPlus)
+   - 3D model support (ThreeJS or similar)
+
+4. **Plan Content Structure:**
+   - GY6 scooter section
+   - Piaggio scooter section
+   - Common repair guides
+   - Parts database
+   - User contribution guidelines
+
+5. **Begin Content Development:**
+   - Create initial GY6 content
+   - Set up media gallery structure
+   - Establish content moderation workflow
+
+---
+
+## Technical Credentials & Access
+
+**Hetzner Account:**
+- Host: www703.your-server.de
+- IP: 157.90.184.167
+- Disk Space: 10GB
+
+**WordPress Temporary Domain:**
+- URL: azkh.your-vhost.de
+- Admin path: /wp-admin
+- Database: wp_azkh2_db0
+
+**Primary Domain:**
+- ismr.online (waiting for DNS update)
+
+---
+
+## Project Guidelines (From PROJECT_INSTRUCTIONS.md)
+
+### Content Standards
+- Professional, formal language only
+- Technical accuracy required
+- No informal slang or colloquialisms
+- Clear, unambiguous instructions
+- Safe repair procedures prioritized
+
+### Prohibited Content
+- Sexually explicit material
+- Hate speech or discriminatory content
+- Dangerous or illegal content
+- Misinformation or pseudoscience
+- Conspiracy theories
+
+### Source Requirements
+- Manufacturer websites and documentation
+- Established technical forums with moderation
+- Professional repair guides
+- Peer-reviewed content
+- Avoid unknown/unverified sources
+
+### Community Contributions (Wiki-style)
+- Review all submissions before publishing
+- Require sources for technical claims
+- Prompt removal of violating content
+- Active moderation required
+
+---
+
+## Timeline Expectations
+
+**MVP Development:** 1-2 months
+- Week 1-2: WordPress setup & plugins (CURRENT PHASE)
+- Week 3-4: Content structure & initial GY6 guides
+- Week 5-8: Content development & testing
+- Week 8-12: Launch & refinement
+
+**Long-term (6-12 months):**
+- Plan advanced stack migration
+- Evaluate custom development needs
+- Consider mobile app development
+- Scale content library
+
+---
+
+## Key Decisions Made
+
+1. ✅ **Domain:** ismr.online on Namecheap
+2. ✅ **Hosting:** Hetzner Webhosting S (€3-5/month)
+3. ✅ **CMS:** WordPress (visual interface for non-technical user)
+4. ✅ **MVP Scope:** GY6 + Piaggio scooters only
+5. ✅ **Migration Strategy:** Start WordPress, plan rebuild in 6-12 months
+6. ✅ **Tech Stack:** WordPress now → Node.js/Custom later
+
+---
+
+## Risks & Mitigation
+
+| Risk | Mitigation |
+|------|-----------|
+| WordPress limitations for 3D models | Use plugins now, rebuild in future |
+| DNS propagation delays | Use temporary domain for testing |
+| Scaling beyond WordPress | Plan migration with budget |
+| Content moderation overhead | Establish clear guidelines early |
+| Basic auth blocking access | Use basic auth credentials from Hetzner |
+
+---
+
+**Last Updated:** May 7, 2026
+**Status:** WordPress installed, awaiting domain configuration & plugin setup

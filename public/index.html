@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISRM - Interactive Scooter Repair Manuals</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <span class="brand-icon">⚙️</span>
+        <span class="brand-text">ISRM</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#guides" class="nav-link">Guides</a></li>
+        <li><a href="#resources" class="nav-link">Resources</a></li>
+        <li><a href="#community" class="nav-link">Community</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <!-- Construction Disclaimer -->
+  <div class="construction-banner">
+    <div class="construction-content">
+      <span class="construction-icon">🚧</span>
+      <div class="construction-text">
+        <strong>Website Under Construction</strong>
+        <p>ISRM is actively being developed. Content, features, and pages are being added daily. Some sections may be incomplete or subject to change. Thank you for your patience!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Master Your Scooter Repair</h1>
+      <p class="hero-subtitle">Interactive guides, diagnostics, and community knowledge for GY6 and Piaggio scooters</p>
+      <div class="hero-search">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search guides, parts, diagnostics..." />
+        <button class="search-btn">🔍</button>
+      </div>
+      <div class="hero-features">
+        <span class="feature-badge">500+ Guides</span>
+        <span class="feature-badge">Active Community</span>
+        <span class="feature-badge">Updated Daily</span>
+      </div>
+    </div>
+    <div class="hero-bg"></div>
+  </section>
+
+  <!-- Quick Access Cards -->
+  <section class="quick-access">
+    <div class="container">
+      <h2 class="section-title">Quick Start</h2>
+      <div class="cards-grid">
+        <a href="repair-guides/index.html" class="card card-primary">
+          <div class="card-icon">🔨</div>
+          <h3>Repair Guides</h3>
+          <p>Step-by-step tutorials for common repairs</p>
+          <span class="card-arrow">→</span>
+        </a>
+        <a href="diagnostics/index.html" class="card card-secondary">
+          <div class="card-icon">🔍</div>
+          <h3>Diagnostics</h3>
+          <p>Troubleshoot errors and find solutions</p>
+          <span class="card-arrow">→</span>
+        </a>
+        <a href="models/index.html" class="card card-accent">
+          <div class="card-icon">📱</div>
+          <h3>Model Guides</h3>
+          <p>GY6, Vespa, Primavera, ZIP specs</p>
+          <span class="card-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Guides -->
+  <section class="featured" id="guides">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Featured Guides</h2>
+        <a href="repair-guides/index.html" class="view-all">View All →</a>
+      </div>
+      <div class="guides-grid">
+        <article class="guide-card">
+          <div class="card-tag">GY6</div>
+          <h3>Oil Change Guide</h3>
+          <p>Complete procedure for GY6 engine oil replacement with recommended fluids and intervals</p>
+          <div class="card-meta">
+            <span class="tag">Maintenance</span>
+            <span class="time">15 min read</span>
+          </div>
+          <a href="repair-guides/gy6-oil-change-guide.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card">
+          <div class="card-tag">GY6</div>
+          <h3>Spark Plug Replacement</h3>
+          <p>Read your old plug like a pro, set the correct gap, and fit the right NGK for your engine</p>
+          <div class="card-meta">
+            <span class="tag">Maintenance</span>
+            <span class="time">10 min read</span>
+          </div>
+          <a href="repair-guides/gy6-spark-plug-guide.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card">
+          <div class="card-tag">GY6 · Vespa</div>
+          <h3>Brake Pads &amp; Drum Shoes</h3>
+          <p>Front disc pad and rear drum shoe replacement — caliper piston retraction, spring reinstall, and bed-in</p>
+          <div class="card-meta">
+            <span class="tag">Safety</span>
+            <span class="time">30 min read</span>
+          </div>
+          <a href="repair-guides/gy6-brake-pads-guide.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card">
+          <div class="card-tag">GY6 · Vespa</div>
+          <h3>Brake Fluid &amp; Bleed</h3>
+          <p>Why DOT 4 degrades over time and how to flush and bleed hydraulic brake circuits safely</p>
+          <div class="card-meta">
+            <span class="tag">Safety</span>
+            <span class="time">25 min read</span>
+          </div>
+          <a href="repair-guides/gy6-brake-fluid-guide.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card">
+          <div class="card-tag">GY6</div>
+          <h3>Air Filter — Clean or Replace</h3>
+          <p>Foam filter wash and re-oiling for GY6 clones; paper element replacement for Vespa models</p>
+          <div class="card-meta">
+            <span class="tag">Maintenance</span>
+            <span class="time">15 min read</span>
+          </div>
+          <a href="repair-guides/gy6-air-filter-guide.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card">
+          <div class="card-tag">GY6</div>
+          <h3>Ignition Coil (Bobine)</h3>
+          <p>No-spark diagnosis checklist — isolate CDI vs coil vs stator, then replace the coil step by step</p>
+          <div class="card-meta">
+            <span class="tag">Electrical</span>
+            <span class="time">25 min read</span>
+          </div>
+          <a href="repair-guides/gy6-ignition-coil-guide.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card">
+          <div class="card-tag">GY6</div>
+          <h3>CVT Belt Replacement</h3>
+          <p>Complete guide to replacing variator, belt, and rollers in GY6 transmission system</p>
+          <div class="card-meta">
+            <span class="tag">Transmission</span>
+            <span class="time">25 min read</span>
+          </div>
+          <a href="repair-guides/gy6-cvt-variator-belt-replacement.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card">
+          <div class="card-tag">GY6</div>
+          <h3>Valve Clearance Adjustment</h3>
+          <p>Step-by-step valve adjustment for 139QMB and 157QMJ engines with measurements</p>
+          <div class="card-meta">
+            <span class="tag">Advanced</span>
+            <span class="time">20 min read</span>
+          </div>
+          <a href="repair-guides/gy6-valve-adjustment-guide.html" class="read-more">Read Guide</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recently Added Section -->
+  <section class="featured" id="recent" style="background: #111;">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Recently Added — 2026-05-08</h2>
+        <a href="repair-guides/index.html" class="view-all">All Guides →</a>
+      </div>
+      <div class="guides-grid">
+        <article class="guide-card">
+          <div class="card-tag">GY6 · Engine</div>
+          <h3>Spark Plug — Check &amp; Replace</h3>
+          <p>Gap setting, torque specs, and replacement procedure for GY6 139QMB / 152QMI / 157QMJ engines</p>
+          <div class="card-meta"><span class="tag">Maintenance</span><span class="time">Repair Guide</span></div>
+          <a href="repair-guides/gy6-spark-plug-guide.html" class="read-more">Read Guide</a>
+        </article>
+        <article class="guide-card">
+          <div class="card-tag">GY6 · Engine</div>
+          <h3>Air Filter — Clean or Replace</h3>
+          <p>How to inspect, clean, and replace the GY6 foam or paper air filter element for optimal performance</p>
+          <div class="card-meta"><span class="tag">Maintenance</span><span class="time">Repair Guide</span></div>
+          <a href="repair-guides/gy6-air-filter-guide.html" class="read-more">Read Guide</a>
+        </article>
+        <article class="guide-card">
+          <div class="card-tag">GY6 · Brakes</div>
+          <h3>Brake Fluid Change &amp; Bleed</h3>
+          <p>Step-by-step brake fluid change and hydraulic bleed procedure for disc-brake equipped scooters</p>
+          <div class="card-meta"><span class="tag">Maintenance</span><span class="time">Repair Guide</span></div>
+          <a href="repair-guides/gy6-brake-fluid-guide.html" class="read-more">Read Guide</a>
+        </article>
+        <article class="guide-card">
+          <div class="card-tag">GY6 · Brakes</div>
+          <h3>Brake Pads &amp; Drum Shoes</h3>
+          <p>Measuring wear, sourcing replacements, and fitting new brake pads or rear drum shoes on GY6 scooters</p>
+          <div class="card-meta"><span class="tag">Maintenance</span><span class="time">Repair Guide</span></div>
+          <a href="repair-guides/gy6-brake-pads-guide.html" class="read-more">Read Guide</a>
+        </article>
+        <article class="guide-card">
+          <div class="card-tag">GY6 · Ignition</div>
+          <h3>Ignition Coil Diagnosis &amp; Replace</h3>
+          <p>Test procedures and replacement guide for the GY6 ignition coil (bobine) — no spark troubleshooting</p>
+          <div class="card-meta"><span class="tag">Diagnostics</span><span class="time">Repair Guide</span></div>
+          <a href="repair-guides/gy6-ignition-coil-guide.html" class="read-more">Read Guide</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources Section -->
+  <section class="resources" id="resources">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">All Resources</h2>
+      </div>
+      <div class="resource-tabs">
+        <button class="tab-btn active" data-filter="all">All</button>
+        <button class="tab-btn" data-filter="parts">Parts</button>
+        <button class="tab-btn" data-filter="news">News</button>
+        <button class="tab-btn" data-filter="video">Videos</button>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-item" data-category="parts">
+          <a href="parts/index.html" class="resource-link">
+            <div class="resource-icon">⚙️</div>
+            <h4>Parts & Compatibility</h4>
+            <p>Find compatible parts and understand interchangeability</p>
+          </a>
+        </div>
+        <div class="resource-item" data-category="news">
+          <a href="news/index.html" class="resource-link">
+            <div class="resource-icon">📰</div>
+            <h4>News & Updates</h4>
+            <p>Firmware releases and manufacturer announcements</p>
+          </a>
+        </div>
+        <div class="resource-item" data-category="video">
+          <a href="videos/index.html" class="resource-link">
+            <div class="resource-icon">🎬</div>
+            <h4>Video Tutorials</h4>
+            <p>Curated videos with timestamped summaries</p>
+          </a>
+        </div>
+        <div class="resource-item" data-category="all">
+          <a href="community/index.html" class="resource-link">
+            <div class="resource-icon">💬</div>
+            <h4>Community Resources</h4>
+            <p>Forums and crowdsourced repair tips</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scooter Models -->
+  <section class="models-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Supported Models</h2>
+      </div>
+      <div class="models-showcase">
+        <div class="model-group">
+          <h3 class="model-category">GY6 Engine Scooters</h3>
+          <div class="model-list">
+            <span class="model-item" style="opacity:0.5;" title="Coming soon">BTC Riva</span>
+            <a href="models/la-souris-sourini-city-overview.html" class="model-item">La Souris Sourini / City</a>
+            <a href="models/index.html" class="model-item">Santini Capri</a>
+            <a href="models/index.html" class="model-item">+ More Models</a>
+          </div>
+        </div>
+        <div class="model-group">
+          <h3 class="model-category">Piaggio Models</h3>
+          <div class="model-list">
+            <a href="models/index.html" class="model-item">Vespa Primavera</a>
+            <a href="models/index.html" class="model-item">Vespa ZIP</a>
+            <a href="models/index.html" class="model-item">Vespa Sprint</a>
+            <a href="models/index.html" class="model-item">+ More Models</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Repair Guides</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">1000+</div>
+          <div class="stat-label">Community Members</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Scooter Models</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">Daily</div>
+          <div class="stat-label">Content Updates</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Section -->
+  <section class="community" id="community">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Join the Community</h2>
+      </div>
+      <div class="community-content">
+        <div class="community-text">
+          <h3>Learn, Share, and Contribute</h3>
+          <p>ISRM is a collaborative platform where scooter enthusiasts share knowledge, troubleshoot problems, and contribute verified repair procedures. Connect with experienced technicians, ask questions, and help others.</p>
+          <div class="community-features">
+            <div class="feature">
+              <span class="feature-icon">✓</span>
+              <span>Active forums and discussions</span>
+            </div>
+            <div class="feature">
+              <span class="feature-icon">✓</span>
+              <span>Submit your own guides and tips</span>
+            </div>
+            <div class="feature">
+              <span class="feature-icon">✓</span>
+              <span>Expert moderation and verification</span>
+            </div>
+            <div class="feature">
+              <span class="feature-icon">✓</span>
+              <span>Real-time technical support</span>
+            </div>
+          </div>
+          <a href="community/index.html" class="btn btn-primary">Explore Community</a>
+        </div>
+        <div class="community-image">
+          <div class="image-placeholder">👥</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">About ISRM</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Our Mission</h3>
+          <p>Build an interactive, wiki-like resource for petrol scooter repair and maintenance—similar to ETKA for Volkswagen but with 3D models, videos, and dynamic content.</p>
+        </div>
+        <div class="about-card">
+          <h3>Content Updates</h3>
+          <p>ISRM automatically syncs daily with trusted sources: professional repair sites, manufacturer resources, YouTube tutorials, and verified community forums.</p>
+        </div>
+        <div class="about-card">
+          <h3>Our Focus</h3>
+          <p>MVP coverage includes GY6-engined scooters and Piaggio models. We prioritize accuracy, verification, and community contributions.</p>
+        </div>
+        <div class="about-card">
+          <h3>Always Verify</h3>
+          <p>All procedures should be verified with your scooter's official manual. ISRM provides guidance but users are responsible for safe execution.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Repair Your Scooter?</h2>
+      <p>Start with our diagnostic tool or browse guides by model</p>
+      <div class="cta-buttons">
+        <a href="diagnostics/index.html" class="btn btn-primary">Start Diagnosis</a>
+        <a href="models/index.html" class="btn btn-secondary">Browse Models</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>ISRM</h4>
+          <p>Interactive Scooter Repair Manuals — Built for the community, by the community.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="repair-guides/index.html">Repair Guides</a></li>
+            <li><a href="diagnostics/index.html">Diagnostics</a></li>
+            <li><a href="models/index.html">Models</a></li>
+            <li><a href="community/index.html">Community</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="parts/index.html">Parts Database</a></li>
+            <li><a href="news/index.html">News & Updates</a></li>
+            <li><a href="videos/index.html">Video Tutorials</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="community/index.html">Forums</a></li>
+            <li><a href="community/index.html">Contribute</a></li>
+            <li><a href="#about">About Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Last sync: 2026-05-08 | 6 new pages added today | Content sourced from professional repair sites, manufacturers, and verified communities.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">Always verify procedures with your scooter's official manual before attempting repairs.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

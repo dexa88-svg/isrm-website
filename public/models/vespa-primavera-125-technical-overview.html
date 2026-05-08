@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vespa Primavera 125 — Technical Overview — ISRM</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .meta { color: #888; font-size: 0.85rem; margin-bottom: 1.5rem; }
+    .source-box { background: #1a1a1a; border-left: 4px solid #f5a623; padding: 0.8rem 1.2rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; }
+    .tag { display: inline-block; background: #222; color: #f5a623; border: 1px solid #f5a623; border-radius: 12px; padding: 2px 10px; font-size: 0.78rem; margin-right: 6px; }
+    ol li, ul li { margin-bottom: 0.5rem; }
+    .warn { background: #2a1a00; border-left: 4px solid #f5a623; padding: 0.7rem 1.2rem; margin: 1rem 0; border-radius: 0 4px 4px 0; }
+    .tip { background: #0a1f0a; border-left: 4px solid #4caf50; padding: 0.7rem 1.2rem; margin: 1rem 0; border-radius: 0 4px 4px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th { background: #1a1a1a; color: #f5a623; padding: 0.5rem 0.8rem; text-align: left; border: 1px solid #333; }
+    td { padding: 0.5rem 0.8rem; border: 1px solid #333; }
+    tr:nth-child(even) { background: #141414; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand"><span class="brand-icon">⚙️</span><span class="brand-text">ISRM</span></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../community/index.html" class="nav-link">Community</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
+        <a href="../index.html">ISRM Home</a><span>›</span><a href="index.html">Models</a><span>›</span>Vespa Primavera 125 — Technical Overview
+      </div>
+      <h1>Vespa Primavera 125 — Technical Overview</h1>
+    </div>
+  </section>
+
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 3rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "🛵";
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem;
+      opacity: 0.07;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0 0 1rem;
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+  </style>
+
+
+  <div class="breadcrumb">
+    <a href="../index.html">ISRM Home</a><span>›</span>
+    <a href="index.html">Models</a><span>›</span>
+    Vespa Primavera 125 Technical Overview
+  </div>
+
+  <main class="guide-content">
+  <h1>Vespa Primavera 125 — Technical Overview &amp; Maintenance Reference</h1>
+  <div class="meta">
+    Added: 2026-05-08 &nbsp;|&nbsp; Sources: <a href="https://www.manualslib.com/manual/1279452/Vespa-Primavera-125.html" target="_blank" rel="noopener">manualslib.com</a>, <a href="https://www.carlsalter.com/piaggio-vespa-service-manuals.asp" target="_blank" rel="noopener">carlsalter.com</a>, <a href="https://www.motorcyclemanuals.info/motocycles-atvs/vespa/" target="_blank" rel="noopener">motorcyclemanuals.info</a>
+    &nbsp;|&nbsp; <span class="tag">Piaggio</span> <span class="tag">Vespa</span> <span class="tag">Fuel Injection</span> <span class="tag">iGet</span>
+  </div>
+
+  <div class="source-box">
+    📌 <strong>Based on:</strong> Piaggio official service station manual for the Vespa Primavera 125 (available via <a href="https://www.carlsalter.com/piaggio-vespa-service-manuals.asp" target="_blank" rel="noopener">carlsalter.com</a>), official owner's manuals at <a href="https://manuals.vespa.com/" target="_blank" rel="noopener">manuals.vespa.com</a>, and community resources at <a href="https://www.modernvespa.com/" target="_blank" rel="noopener">Modern Vespa</a>.
+  </div>
+
+  <p>The Vespa Primavera 125 is Piaggio's modern entry-level Vespa, introduced in 2014 as a spiritual successor to the classic Primavera of the 1960s. It uses Piaggio's own <strong>iGet 125 engine</strong> (a 125cc single-cylinder 3-valve 4-stroke unit with electronic fuel injection and a catalytic converter) housed in a traditional monocoque steel body. Unlike GY6-platform Chinese scooters, the Primavera uses Piaggio's proprietary drivetrain and parts — not a shared-platform engine.</p>
+
+  <h2>Key Specifications (2014–Present)</h2>
+  <table>
+    <tr><th>Specification</th><th>Value</th></tr>
+    <tr><td>Engine</td><td>Piaggio iGet 125, single-cylinder, 4-stroke, 3-valve (2 intake, 1 exhaust)</td></tr>
+    <tr><td>Displacement</td><td>124.5 cc</td></tr>
+    <tr><td>Bore × Stroke</td><td>58.0 mm × 47.1 mm</td></tr>
+    <tr><td>Compression ratio</td><td>11.4:1</td></tr>
+    <tr><td>Max. power</td><td>~7.1 kW (9.7 hp) at 7,750 rpm (varies by market / emission spec)</td></tr>
+    <tr><td>Max. torque</td><td>~10.3 Nm at 6,500 rpm</td></tr>
+    <tr><td>Fuel system</td><td>Electronic fuel injection (EFI) with single injector; fuel pump in tank</td></tr>
+    <tr><td>Ignition</td><td>Electronic CDI / ECU-controlled</td></tr>
+    <tr><td>Lubrication</td><td>Wet sump; oil capacity approx. 1.0 L (without filter change)</td></tr>
+    <tr><td>Cooling</td><td>Forced air (fan-cooled)</td></tr>
+    <tr><td>Transmission</td><td>CVT (automatic), Piaggio variator with torque server</td></tr>
+    <tr><td>Frame</td><td>Steel monocoque (unit body — body panels are structural)</td></tr>
+    <tr><td>Front suspension</td><td>Single-arm trailing link with coil spring and hydraulic damper</td></tr>
+    <tr><td>Rear suspension</td><td>Single hydraulic shock absorber (coaxial with engine)</td></tr>
+    <tr><td>Front brake</td><td>200 mm disc, single-piston caliper (ABS optional / standard on later models)</td></tr>
+    <tr><td>Rear brake</td><td>140 mm drum (earlier) or 200 mm disc (S variant and later models)</td></tr>
+    <tr><td>Tyre sizes</td><td>Front 110/70-12 / Rear 120/70-12 (tubeless)</td></tr>
+    <tr><td>Fuel tank capacity</td><td>7.0 L (usable)</td></tr>
+    <tr><td>Kerb weight</td><td>~115 kg (Primavera 125 base)</td></tr>
+  </table>
+
+  <h2>Engine Variants by Year</h2>
+  <table>
+    <tr><th>Year Range</th><th>Emission Standard</th><th>Engine Code</th><th>Notable Changes</th></tr>
+    <tr><td>2014–2017</td><td>Euro 3</td><td>iGet 125 (E3)</td><td>Original launch; 3-valve iGet introduced</td></tr>
+    <tr><td>2017–2020</td><td>Euro 4</td><td>iGet 125 (E4)</td><td>Updated ECU, revised fuel map, ABS introduced as option</td></tr>
+    <tr><td>2021–present</td><td>Euro 5</td><td>iGet 125 (E5)</td><td>Particulate filter, updated catalytic converter, revised variator</td></tr>
+  </table>
+
+  <div class="warn">
+    ⚠️ <strong>Euro 5 variants:</strong> The Euro 5 Primavera 125 has revised ECU settings and updated exhaust aftertreatment. Fitting non-approved aftermarket exhausts will likely trigger fault codes and may cause MOT / roadworthiness test failure.
+  </div>
+
+  <h2>Regular Maintenance Schedule</h2>
+  <table>
+    <tr><th>Interval</th><th>Task</th></tr>
+    <tr><td>Every 1,000 km / 12 months</td><td>Engine oil change (use 5W-40 or 10W-40 fully synthetic API SN or JASO MA-2)</td></tr>
+    <tr><td>Every 3,000 km</td><td>Air filter inspection; clean or replace if dirty</td></tr>
+    <tr><td>Every 4,000 km</td><td>Spark plug inspection; replace if electrode gap exceeds 0.6–0.7 mm (NGK CR7HIX or equivalent)</td></tr>
+    <tr><td>Every 6,000 km</td><td>Drive belt inspection; replace if cracked or width below wear limit (~17.0 mm on standard Piaggio belt)</td></tr>
+    <tr><td>Every 6,000 km</td><td>Brake fluid replacement (DOT 4)</td></tr>
+    <tr><td>Every 12,000 km</td><td>Valve clearance check — intake 0.10 mm, exhaust 0.15 mm (cold)</td></tr>
+    <tr><td>Every 12,000 km</td><td>Variator rollers inspection; replace if flat spots or worn below spec</td></tr>
+    <tr><td>Every 12,000 km</td><td>Coolant check (on liquid-cooled variants, not applicable to air-cooled iGet)</td></tr>
+    <tr><td>Every 24,000 km</td><td>Throttle body cleaning; injector inspection</td></tr>
+  </table>
+
+  <h2>Oil Specification</h2>
+  <p>Piaggio recommends <strong>SAE 5W-40 fully synthetic</strong> engine oil meeting API SN / JASO MA-2 for the iGet 125. Capacity is approximately <strong>1.0 litre</strong> for a drain-and-refill without filter removal. If the oil filter is also changed, capacity rises to approximately <strong>1.1 litre</strong>. Always fill to the upper mark on the dipstick, not the lower — overfilling causes foaming and seal damage.</p>
+
+  <h2>Common Issues &amp; Known Faults</h2>
+  <ul>
+    <li><strong>Variator roller wear:</strong> The iGet 125 variator rollers (typically 15 g) wear flat over time, causing a top-speed reduction and sluggish low-speed acceleration. Inspect at every service; replace as a set.</li>
+    <li><strong>Drive belt glazing:</strong> On models used mainly in urban stop-start conditions, the drive belt can glaze and slip before reaching its wear-limit width. If acceleration feels weak but the engine revs freely, inspect the belt surface for glazing and the clutch shoes for deposits.</li>
+    <li><strong>Throttle body carbon build-up (Euro 4/5):</strong> Long service intervals on EFI models can cause carbon deposits on the throttle plate, causing rough idle and poor low-speed response. Clean every 24,000 km using a dedicated throttle body cleaner spray (do not use carburettor cleaner on plastic throttle bodies).</li>
+    <li><strong>Front suspension creaking:</strong> The single-arm front suspension link pivot can develop a creak if the grease nipple is not regularly lubricated. Grease annually.</li>
+    <li><strong>ABS warning light (Euro 4/5):</strong> Triggered most commonly by a dirty or damaged front wheel speed sensor. Clean the sensor and ring, check wiring connector.</li>
+  </ul>
+
+  <h2>Service Manual &amp; Documentation Resources</h2>
+  <ul>
+    <li><a href="https://manuals.vespa.com/" target="_blank" rel="noopener">Official Piaggio Manuals Portal</a> — owner's manuals and some service documentation</li>
+    <li><a href="https://www.carlsalter.com/piaggio-vespa-service-manuals.asp" target="_blank" rel="noopener">Carl Salter — Free Vespa Workshop Manuals</a> — community-shared service PDFs</li>
+    <li><a href="https://www.motorcyclemanuals.info/motocycles-atvs/vespa/" target="_blank" rel="noopener">MotorcycleManuals.info — Vespa PDFs</a> — wiring diagrams and service manuals</li>
+    <li><a href="https://www.manualslib.com/brand/vespa/primavera-125/" target="_blank" rel="noopener">ManualsLib — Vespa Primavera 125 Service Station Manual</a></li>
+    <li><a href="https://www.modernvespa.com/forum/wiki-workshop-manuals" target="_blank" rel="noopener">Modern Vespa Forum — Workshop Manuals Wiki</a></li>
+  </ul>
+
+  <div class="tip">
+    💡 <strong>Note on 150cc variant:</strong> The Vespa Primavera 150 (sold mainly outside Europe, e.g., USA, Asia) uses a larger 155cc iGet engine with similar architecture. Most service procedures and specifications are directly comparable, but jet/injector calibration, valve timing, and oil capacity may differ slightly. Always check the specific service manual for your engine code.
+  </div>
+  </main>
+
+
+  <footer class="guide-footer">
+    <p>Page auto-generated by ISRM Content Sync on 2026-05-08. Content summarised from multiple technical sources for educational purposes.</p>
+    <p style="margin-top: 0.5rem;">Always verify with the original source and your scooter's workshop manual before performing repairs.</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISRM Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Models</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GY6 Spark Plug Replacement Guide — ISRM</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .guide-header {
+      background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem 2rem;
+    }
+    .guide-header-inner { max-width: 900px; margin: 0 auto; }
+    .guide-header h1 {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0.9rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+    .guide-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+      margin-bottom: 1rem;
+    }
+    .guide-meta a { color: var(--accent); }
+    .guide-meta a:hover { color: var(--primary); }
+    .guide-meta-sep { opacity: 0.4; }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+    .guide-tag {
+      background: rgba(0, 168, 204, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(0, 168, 204, 0.3);
+      padding: 0.25rem 0.7rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+    .applies-to {
+      background: rgba(255, 107, 53, 0.07);
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem;
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .applies-to strong { color: var(--text-primary); }
+    .guide-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 4rem;
+    }
+    .guide-content h2 {
+      font-size: 1.55rem;
+      color: var(--text-primary);
+      margin-top: 2.5rem;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.6rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content code {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--accent-light);
+      padding: 0.15rem 0.45rem;
+      border-radius: var(--radius-sm);
+      font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+      font-size: 0.87em;
+    }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th {
+      background: var(--surface-2);
+      color: var(--text-primary);
+      font-weight: 600;
+      padding: 0.7rem 1rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26, 35, 50, 0.6); }
+    .callout {
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .callout strong { color: var(--text-primary); }
+    .callout-warn {
+      background: rgba(245, 166, 35, 0.08);
+      border: 1px solid rgba(245, 166, 35, 0.25);
+      border-left: 4px solid var(--warning);
+    }
+    .callout-danger {
+      background: rgba(214, 48, 49, 0.08);
+      border: 1px solid rgba(214, 48, 49, 0.25);
+      border-left: 4px solid var(--danger);
+    }
+    .callout-tip {
+      background: rgba(6, 167, 125, 0.08);
+      border: 1px solid rgba(6, 167, 125, 0.25);
+      border-left: 4px solid var(--success);
+    }
+    .guide-footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.825rem;
+      color: var(--text-tertiary);
+    }
+    .video-embed { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin: 1.5rem 0; }
+    .video-embed-title { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; }
+    .video-thumb-link { display: block; text-decoration: none; }
+    .video-thumb-wrap { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 0.75rem; }
+    .video-thumb-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.2s; }
+    .video-thumb-link:hover .video-thumb-img { opacity: 0.75; }
+    .video-play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .video-play-icon { width: 68px; height: 48px; background: rgba(200,0,0,0.9); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.4rem; transition: background 0.2s, transform 0.15s; }
+    .video-thumb-link:hover .video-play-icon { background: #f00; transform: scale(1.06); }
+    .video-source { font-size: 0.85rem; color: var(--text-tertiary); }
+    .video-source a { color: var(--accent); }
+    .related-videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 1rem; }
+    .video-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; transition: var(--transition); }
+    .video-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow); }
+    .video-card h4 { color: var(--text-primary); margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600; }
+    .video-card p { font-size: 0.875rem; margin-bottom: 0.75rem; color: var(--text-secondary); }
+    .video-card a { color: var(--primary); font-weight: 600; font-size: 0.9rem; }
+    @media (max-width: 768px) {
+      .guide-header h1 { font-size: 1.7rem; }
+      .guide-content { padding: 1.5rem 1rem 3rem; }
+      .breadcrumb { padding: 0.9rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-icon">⚙️</span>
+        <span class="brand-text">ISRM</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../community/index.html" class="nav-link">Community</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="../index.html">ISRM Home</a>
+    <span>›</span>
+    <a href="index.html">Repair Guides</a>
+    <span>›</span>
+    Spark Plug Replacement
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
+        <a href="../index.html">ISRM Home</a><span>›</span><a href="index.html">Repair Guides</a><span>›</span>GY6 Spark Plug Replacement Guide
+      </div>
+      <h1>GY6 Spark Plug Replacement Guide</h1>
+    </div>
+  </section>
+
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 3rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "🔧";
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem;
+      opacity: 0.07;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0 0 1rem;
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+  </style>
+
+
+  <!-- Guide Content -->
+  <main class="guide-content">
+
+    <p>The spark plug is one of the cheapest and most impactful maintenance items on any petrol scooter. A worn or incorrectly gapped plug causes hard starting, rough idle, misfires, and increased fuel consumption. Replacing it takes 10–15 minutes and costs less than €5 for a standard NGK.</p>
+
+    <h2>Spark Plug Specifications</h2>
+    <table>
+      <tr><th>Engine</th><th>Standard Plug</th><th>Upgrade (Iridium)</th><th>Gap</th></tr>
+      <tr><td>GY6 50cc (139QMB)</td><td>NGK C7HSA</td><td>NGK CR7HIX</td><td>0.6–0.7 mm</td></tr>
+      <tr><td>GY6 125/150cc (157QMJ)</td><td>NGK CR7HSA</td><td>NGK CR7HIX</td><td>0.6–0.7 mm</td></tr>
+      <tr><td>Vespa Primavera 125 iGet</td><td>NGK ILZKBR7B8DG (OEM)</td><td>—</td><td>0.7–0.8 mm</td></tr>
+    </table>
+
+    <div class="callout callout-tip">
+      💡 <strong>Tip:</strong> Keep a spare NGK CR7HSA under your seat. It weighs nothing, costs under €4, and can save a long walk home if the plug fails on the road.
+    </div>
+
+    <h2>Tools &amp; Materials Required</h2>
+    <ul>
+      <li>Spark plug socket — <strong>16 mm</strong> for most GY6 engines (check your cap diameter first)</li>
+      <li>Socket wrench extension (the plug is often deep in the head)</li>
+      <li>Feeler gauge (to verify the gap on the new plug)</li>
+      <li>Torque wrench (optional but recommended — 10–14 Nm)</li>
+      <li>Compressed air or a rag to clean the plug recess</li>
+      <li>New spark plug (see specifications above)</li>
+    </ul>
+
+    <h2>Reading the Old Plug — What It Tells You</h2>
+    <p>Before discarding the old plug, inspect the electrode. The colour and condition reveal a lot about engine health:</p>
+    <table>
+      <tr><th>Electrode appearance</th><th>Diagnosis</th><th>Action</th></tr>
+      <tr><td>Light tan/grey, slight electrode wear</td><td>✅ Normal — engine running correctly</td><td>Replace at service interval</td></tr>
+      <tr><td>Dry black, sooty carbon deposits</td><td>Rich mixture or clogged air filter</td><td>Check/clean air filter; check carb jetting</td></tr>
+      <tr><td>Wet/oily, black</td><td>Oil in combustion — worn piston rings or valve seals</td><td>Engine inspection needed</td></tr>
+      <tr><td>White or pale grey, blistered</td><td>Lean mixture or overheating</td><td>Check fuel delivery, coolant/air flow</td></tr>
+      <tr><td>Rounded/eroded electrode</td><td>Normal wear — replace now</td><td>Standard replacement</td></tr>
+    </table>
+
+    <div class="video-embed">
+      <div class="video-embed-title">🎬 Video Guide — Replacing the Spark Plug on a Chinese Scooter (GY6)</div>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/oHWW1GAanqo"
+          title="Replacing Spark Plug on Chinese Scooter GY6"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <p class="video-source"><strong>Video:</strong> "Replacing Spark Plug on Chinese Scooter GY6" | YouTube &nbsp;
+        <a href="https://www.youtube.com/watch?v=oHWW1GAanqo" target="_blank" rel="noopener">↗ Watch on YouTube</a>
+      </p>
+    </div>
+
+    <h2>Step-by-Step Replacement Procedure</h2>
+    <ol>
+      <li><strong>Let the engine cool for at least 10 minutes.</strong> Working on a hot engine risks burns and can cause the plug to seize in the aluminium head if torqued incorrectly when hot.</li>
+      <li><strong>Remove the spark plug cap</strong> by pulling it straight off the plug. Pull the cap, not the wire — pulling the wire can damage the HT lead connection inside the cap.</li>
+      <li><strong>Clean around the plug recess</strong> with compressed air or a dry rag. Any debris that falls into the cylinder when the plug is removed can score the bore.</li>
+      <li><strong>Unscrew the old plug</strong> counter-clockwise using the spark plug socket. If it is tight, apply penetrating oil (WD-40 or equivalent) around the base and wait 5 minutes before trying again. Do not force it.</li>
+      <li><strong>Inspect and note the condition</strong> of the old plug electrode as described in the reading guide above.</li>
+      <li><strong>Check the gap on the new plug</strong> with a feeler gauge. For GY6 engines, the gap should be <strong>0.6–0.7 mm</strong>. Most NGK plugs are pre-gapped but verify. To adjust, carefully bend only the side (ground) electrode — never the centre electrode.</li>
+      <li><strong>Thread the new plug in by hand</strong> for the first 3–4 turns. Cross-threading an aluminium cylinder head is an expensive mistake. If it does not thread smoothly by hand, stop and recheck alignment.</li>
+      <li><strong>Tighten with the socket.</strong> With a new plug and a copper washer seat: hand-tight + <strong>¼ turn</strong>. With a torque wrench: <strong>10–14 Nm</strong>. Do not overtighten — aluminium threads strip easily.</li>
+      <li><strong>Reconnect the spark plug cap</strong> firmly until it seats fully. A loose cap is a common cause of intermittent misfires.</li>
+      <li><strong>Start the engine</strong> and confirm it runs cleanly at idle and through the rev range.</li>
+    </ol>
+
+    <div class="callout callout-warn">
+      ⚠️ <strong>Note on anti-seize compound:</strong> Do not apply anti-seize paste to spark plug threads in aluminium heads. The torque specification is designed for bare threads. Anti-seize changes the effective clamping force and can cause under- or over-tightening.
+    </div>
+
+    <h2>Spark Plug Service Intervals</h2>
+    <table>
+      <tr><th>Plug type</th><th>Inspection</th><th>Replacement</th></tr>
+      <tr><td>Standard copper (NGK C7HSA / CR7HSA)</td><td>Every 3,000 km</td><td>Every 3,000–5,000 km</td></tr>
+      <tr><td>Iridium (NGK CR7HIX)</td><td>Every 5,000 km</td><td>Every 10,000–15,000 km</td></tr>
+      <tr><td>Vespa OEM iridium</td><td>Per Piaggio service schedule</td><td>Every 8,000–10,000 km</td></tr>
+    </table>
+
+    <div class="callout callout-tip">
+      💡 <strong>Upgrade tip:</strong> The NGK CR7HIX iridium plug is a genuine upgrade for GY6 engines. It produces a stronger, more consistent spark which improves cold starting and smooth idle. At roughly €8–12 it costs more than the standard plug but lasts 3× longer.
+    </div>
+
+    <h2>Applicable Models</h2>
+    <p>This procedure applies to all GY6-engined scooters including the <strong>BTC Riva</strong>, <strong>La Souris Sourini / City</strong>, <strong>Santini Capri</strong>, and all other <code>139QMB</code> / <code>157QMJ</code> engine family scooters. For Vespa Primavera and Sprint models, the plug location and cap type differ but the procedure is identical — consult your model's service manual for the exact plug recess location.</p>
+
+    <h2>Related Videos</h2>
+    <div class="related-videos">
+      <div class="video-card">
+        <h4>Spark Plug Gap Setting &amp; Installation — GY6</h4>
+        <p>Demonstrates how to check and correctly set the plug gap using a feeler gauge on NGK plugs for GY6 scooters before installation.</p>
+        <a href="https://www.youtube.com/watch?v=Zf5eEE0yivA" target="_blank" rel="noopener">Watch on YouTube →</a>
+      </div>
+      <div class="video-card">
+        <h4>Changing Spark Plug on a 150cc GY6 Scooter</h4>
+        <p>Full plug removal, inspection, gap check and installation on a 150cc GY6 scooter — includes plug socket choice and torque guidance.</p>
+        <a href="https://www.youtube.com/watch?v=DG10KTYJYEk" target="_blank" rel="noopener">Watch on YouTube →</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="guide-footer">
+    <p>Page generated by ISRM Content Sync on 2026-05-07. Content summarised from external technical sources for educational purposes.</p>
+    <p style="margin-top: 0.5rem;">Always verify spark plug type and torque specification against your scooter's specific workshop manual.</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISRM Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Repair Guides</a></p>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+      });
+    }
+  </script>
+</body>
+</html>

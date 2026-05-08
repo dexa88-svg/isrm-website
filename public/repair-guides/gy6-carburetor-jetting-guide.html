@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GY6 Carburetor Jetting & Rejetting Guide — ISRM</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .meta { color: #888; font-size: 0.85rem; margin-bottom: 1.5rem; }
+    .source-box { background: #1a1a1a; border-left: 4px solid #f5a623; padding: 0.8rem 1.2rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; }
+    .tag { display: inline-block; background: #222; color: #f5a623; border: 1px solid #f5a623; border-radius: 12px; padding: 2px 10px; font-size: 0.78rem; margin-right: 6px; }
+    ol li, ul li { margin-bottom: 0.5rem; }
+    .warn { background: #2a1a00; border-left: 4px solid #f5a623; padding: 0.7rem 1.2rem; margin: 1rem 0; border-radius: 0 4px 4px 0; }
+    .tip { background: #0a1f0a; border-left: 4px solid #4caf50; padding: 0.7rem 1.2rem; margin: 1rem 0; border-radius: 0 4px 4px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th { background: #1a1a1a; color: #f5a623; padding: 0.5rem 0.8rem; text-align: left; border: 1px solid #333; }
+    td { padding: 0.5rem 0.8rem; border: 1px solid #333; }
+    tr:nth-child(even) { background: #141414; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand"><span class="brand-icon">⚙️</span><span class="brand-text">ISRM</span></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../community/index.html" class="nav-link">Community</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
+        <a href="../index.html">ISRM Home</a><span>›</span><a href="index.html">Repair Guides</a><span>›</span>GY6 Carburetor Jetting & Rejetting Guide
+      </div>
+      <h1>GY6 Carburetor Jetting & Rejetting Guide</h1>
+    </div>
+  </section>
+
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 3rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "🔧";
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem;
+      opacity: 0.07;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0 0 1rem;
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+  </style>
+
+
+  <div class="breadcrumb">
+    <a href="../index.html">ISRM Home</a><span>›</span>
+    <a href="index.html">Repair Guides</a><span>›</span>
+    GY6 Carburettor Jetting &amp; Rejetting Guide
+  </div>
+
+  <main class="guide-content">
+  <h1>GY6 Carburettor Jetting &amp; Rejetting Guide</h1>
+  <div class="meta">
+    Added: 2026-05-08 &nbsp;|&nbsp; Sources: <a href="https://www.scooterworks.com/blogs/news/carburetor-jetting-101" target="_blank" rel="noopener">scooterworks.com</a>, <a href="https://www.rollingwrenchdenver.com/blogs/news/carburetor-help-jetting-and-tuning-help" target="_blank" rel="noopener">rollingwrenchdenver.com</a>, <a href="https://www.jetsrus.com/FAQs/FAQ_rejetting_101_how_to_rejet.htm" target="_blank" rel="noopener">jetsrus.com</a>
+    &nbsp;|&nbsp; <span class="tag">GY6</span> <span class="tag">Carburettor</span> <span class="tag">139QMB</span> <span class="tag">157QMJ</span>
+  </div>
+
+  <div class="source-box">
+    📌 <strong>Based on:</strong>
+    <a href="https://www.scooterworks.com/blogs/news/carburetor-jetting-101" target="_blank" rel="noopener">Carburetor Jetting 101 — Scooterworks USA</a> and
+    <a href="https://www.rollingwrenchdenver.com/blogs/news/carburetor-help-jetting-and-tuning-help" target="_blank" rel="noopener">Carburetor Jetting Help — Rolling Wrench Denver</a>.
+    Technical jetting tables are original ISRM content based on widely published community data. Always verify with your specific engine's service manual.
+  </div>
+
+  <p>Jetting refers to selecting the correct size of the brass main jet and pilot jet inside the carburettor to achieve the right air-to-fuel ratio for your engine's conditions. A stock GY6 scooter is jetted conservatively from the factory — usually slightly lean — which can cause hesitation, flat spots, or overheating. If you have added an aftermarket exhaust, performance air filter, or high-compression piston, rejetting is essential.</p>
+
+  <h2>Understanding the Throttle Zones</h2>
+  <p>The GY6 slide-type carburettor (PD-series or CVK) controls the mixture across the throttle range via different circuits. Knowing which circuit governs each zone tells you which component to adjust:</p>
+  <ul>
+    <li><strong>0–¼ throttle (idle and off-idle):</strong> Governed by the pilot jet and the air/fuel mixture screw. Symptoms of a lean pilot: stumbling, stalling at idle, engine hunts.</li>
+    <li><strong>¼–¾ throttle (mid-range):</strong> Governed by the needle position and its clip groove. A needle that is too lean causes hesitation when rolling on from partial throttle.</li>
+    <li><strong>¾–full throttle (wide-open):</strong> Governed by the main jet size. A lean main jet causes flat top-end power and possible overheating at sustained full throttle.</li>
+  </ul>
+
+  <h2>Diagnosing Rich vs Lean</h2>
+  <table>
+    <tr><th>Symptom</th><th>Likely Cause</th><th>Correction</th></tr>
+    <tr><td>Black sooty spark plug, dark smoke</td><td>Rich mixture (too large a jet)</td><td>Go down 2–5 jet sizes</td></tr>
+    <tr><td>White/grey spark plug, overheating</td><td>Lean mixture (too small a jet)</td><td>Go up 2–5 jet sizes</td></tr>
+    <tr><td>Stumbling at idle, stalls when warm</td><td>Lean pilot circuit</td><td>Richen mixture screw or upsize pilot jet</td></tr>
+    <tr><td>Hesitation at ¼–½ throttle roll-on</td><td>Lean needle position</td><td>Raise needle clip (lower the clip groove number)</td></tr>
+    <tr><td>Bog at full throttle</td><td>Lean main jet or clogged main jet</td><td>Upsize main jet by 3–5 sizes; clean jet first</td></tr>
+    <tr><td>Rich surge, black plug at full throttle</td><td>Rich main jet</td><td>Downsize main jet by 3–5 sizes</td></tr>
+  </table>
+
+  <h2>Stock Jetting Reference (Sea Level, Standard Air Filter)</h2>
+  <table>
+    <tr><th>Engine Code</th><th>Displacement</th><th>Carb</th><th>Main Jet</th><th>Pilot Jet</th><th>Needle Clip</th></tr>
+    <tr><td>139QMB</td><td>50cc (49cc)</td><td>PD18J</td><td>#75</td><td>#35</td><td>3rd groove (middle)</td></tr>
+    <tr><td>152QMI</td><td>125cc</td><td>PD22J</td><td>#95</td><td>#38</td><td>3rd groove</td></tr>
+    <tr><td>157QMJ</td><td>150cc</td><td>PD24J / CVK24</td><td>#98–#102</td><td>#40</td><td>3rd groove</td></tr>
+  </table>
+
+  <h2>Jetting for Modifications</h2>
+
+  <h2>Performance Air Filter</h2>
+  <p>A high-flow air filter (K&amp;N style pod filter or similar) allows more air through the carburettor. This leans the mixture and requires a main jet increase. A typical starting point is to increase the main jet by <strong>5–8 sizes</strong> (e.g., from #98 to #105 on a 150cc engine) and adjust from there using the spark plug colour method.</p>
+
+  <h2>Performance Exhaust</h2>
+  <p>An aftermarket exhaust that reduces back-pressure also leans the mixture, especially in the mid-to-high throttle range. Increase the main jet by <strong>3–5 sizes</strong> as a starting point, and raise the needle one clip position (move the clip from the 3rd to the 2nd groove from the top).</p>
+
+  <h2>Altitude Correction</h2>
+  <p>At higher altitudes, air is thinner, so the stock jetting becomes progressively richer as altitude increases. A rough rule of thumb is to decrease the main jet by <strong>3 sizes per 1,000 m</strong> of altitude above sea level.</p>
+  <table>
+    <tr><th>Altitude</th><th>Approx. Main Jet Correction (GY6 150cc baseline #98)</th></tr>
+    <tr><td>0–500 m</td><td>Stock (#98–#102)</td></tr>
+    <tr><td>500–1,000 m</td><td>#95–#98</td></tr>
+    <tr><td>1,000–1,500 m</td><td>#92–#95</td></tr>
+    <tr><td>1,500–2,000 m</td><td>#88–#92</td></tr>
+  </table>
+
+  <h2>How to Change a Main Jet</h2>
+  <ol>
+    <li>Ensure the engine is cold. Turn the fuel tap off.</li>
+    <li>Remove the float bowl (see the <a href="gy6-carburetor-cleaning-guide.html">Deep-Cleaning Guide</a> for step-by-step bowl removal).</li>
+    <li>Unscrew the main jet with a flat-blade screwdriver. Note the existing size stamped on the jet body.</li>
+    <li>Thread in the new jet finger-tight, then snug with the screwdriver. Do not overtighten.</li>
+    <li>Refit the float bowl, turn the fuel on, and start the engine.</li>
+    <li>After a warm-up run, remove the spark plug and read its colour. A correct mixture gives a tan to light brown plug tip. Black = too rich; white/grey = too lean.</li>
+    <li>Adjust one jet size at a time until the plug colour is correct.</li>
+  </ol>
+
+  <div class="warn">
+    ⚠️ Always clean the carburettor thoroughly before rejetting. A partially blocked jet will give false lean symptoms regardless of jet size. See the <a href="gy6-carburetor-cleaning-guide.html">Deep-Cleaning Guide</a> first.
+  </div>
+
+  <div class="tip">
+    💡 <strong>Tip:</strong> Jets are typically sized in increments of 2–3 (e.g., #95, #98, #100, #102, #105). Buy a jet kit covering a range of ±15 from your stock size so you can tune without repeated ordering.
+  </div>
+
+  <h2>Where to Buy GY6 Jets</h2>
+  <p>Replacement GY6 jets (both main and pilot) are widely available from vendors including <a href="https://www.vmcchineseparts.com/" target="_blank" rel="noopener">VMC Chinese Parts</a>, <a href="https://www.rollingwrenchdenver.com/" target="_blank" rel="noopener">Rolling Wrench Denver</a>, and <a href="https://www.scooterworks.com/collections/gy6" target="_blank" rel="noopener">Scooterworks USA</a>. When ordering, confirm the carburettor model (PD18J, PD22J, PD24J, or CVK) to ensure thread pitch compatibility.</p>
+  </main>
+
+
+  <footer class="guide-footer">
+    <p>Page auto-generated by ISRM Content Sync on 2026-05-08. Content summarised from multiple technical sources for educational purposes.</p>
+    <p style="margin-top: 0.5rem;">Always verify with the original source and your scooter's workshop manual before performing repairs.</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISRM Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Repair Guides</a></p>
+  </footer>
+</body>
+</html>

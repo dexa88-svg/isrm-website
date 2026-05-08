@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GY6 Ignition Coil (Bobine) Diagnosis & Replacement — ISRM</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .guide-header { background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%); border-bottom: 1px solid var(--border); padding: 3rem 2rem 2rem; }
+    .guide-header-inner { max-width: 900px; margin: 0 auto; }
+    .guide-header h1 { font-size: 2.4rem; line-height: 1.2; background: linear-gradient(135deg, var(--accent), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1.2rem; }
+    .breadcrumb { padding: 0.9rem 2rem; max-width: 900px; margin: 0 auto; font-size: 0.85rem; color: var(--text-tertiary); }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+    .guide-meta { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; font-size: 0.875rem; color: var(--text-tertiary); margin-bottom: 1rem; }
+    .guide-meta a { color: var(--accent); }
+    .guide-meta-sep { opacity: 0.4; }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+    .guide-tag { background: rgba(0, 168, 204, 0.1); color: var(--accent); border: 1px solid rgba(0, 168, 204, 0.3); padding: 0.25rem 0.7rem; border-radius: 20px; font-size: 0.78rem; font-weight: 500; }
+    .applies-to { background: rgba(255, 107, 53, 0.07); border: 1px solid rgba(255, 107, 53, 0.2); border-left: 4px solid var(--primary); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 1rem 1.25rem; margin-top: 1.5rem; font-size: 0.95rem; color: var(--text-secondary); }
+    .applies-to strong { color: var(--text-primary); }
+    .guide-content { max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .guide-content h2 { font-size: 1.55rem; color: var(--text-primary); margin-top: 2.5rem; margin-bottom: 0.9rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.6rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; }
+    .guide-content a { color: var(--accent); }
+    .guide-content ul, .guide-content ol { padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary); }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content code { background: var(--surface-2); border: 1px solid var(--border); color: var(--accent-light); padding: 0.15rem 0.45rem; border-radius: var(--radius-sm); font-family: monospace; font-size: 0.87em; }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th { background: var(--surface-2); color: var(--text-primary); font-weight: 600; padding: 0.7rem 1rem; text-align: left; border: 1px solid var(--border); }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26, 35, 50, 0.6); }
+    .callout { padding: 1rem 1.25rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 1.5rem 0; font-size: 0.95rem; color: var(--text-secondary); }
+    .callout strong { color: var(--text-primary); }
+    .callout-warn { background: rgba(245, 166, 35, 0.08); border: 1px solid rgba(245, 166, 35, 0.25); border-left: 4px solid var(--warning); }
+    .callout-danger { background: rgba(214, 48, 49, 0.08); border: 1px solid rgba(214, 48, 49, 0.25); border-left: 4px solid var(--danger); }
+    .callout-tip { background: rgba(6, 167, 125, 0.08); border: 1px solid rgba(6, 167, 125, 0.25); border-left: 4px solid var(--success); }
+    .guide-footer { background: var(--surface); border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.825rem; color: var(--text-tertiary); }
+    .video-embed { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin: 1.5rem 0; }
+    .video-embed-title { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; }
+    .video-thumb-link { display: block; text-decoration: none; }
+    .video-thumb-wrap { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 0.75rem; }
+    .video-thumb-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.2s; }
+    .video-thumb-link:hover .video-thumb-img { opacity: 0.75; }
+    .video-play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .video-play-icon { width: 68px; height: 48px; background: rgba(200,0,0,0.9); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.4rem; transition: background 0.2s, transform 0.15s; }
+    .video-thumb-link:hover .video-play-icon { background: #f00; transform: scale(1.06); }
+    .video-source { font-size: 0.85rem; color: var(--text-tertiary); }
+    .video-source a { color: var(--accent); }
+    .related-videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 1rem; }
+    .video-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; transition: var(--transition); }
+    .video-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow); }
+    .video-card h4 { color: var(--text-primary); margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600; }
+    .video-card p { font-size: 0.875rem; margin-bottom: 0.75rem; color: var(--text-secondary); }
+    .video-card a { color: var(--primary); font-weight: 600; font-size: 0.9rem; }
+    @media (max-width: 768px) { .guide-header h1 { font-size: 1.7rem; } .guide-content { padding: 1.5rem 1rem 3rem; } .breadcrumb { padding: 0.9rem 1rem; } }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand"><span class="brand-icon">⚙️</span><span class="brand-text">ISRM</span></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../community/index.html" class="nav-link">Community</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
+        <a href="../index.html">ISRM Home</a><span>›</span><a href="index.html">Repair Guides</a><span>›</span>GY6 Ignition Coil (Bobine) Diagnosis & Replacement
+      </div>
+      <h1>GY6 Ignition Coil (Bobine) Diagnosis & Replacement</h1>
+    </div>
+  </section>
+
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 3rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "🔧";
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem;
+      opacity: 0.07;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0 0 1rem;
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+  </style>
+
+
+  <div class="breadcrumb">
+    <a href="../index.html">ISRM Home</a><span>›</span>
+    <a href="index.html">Repair Guides</a><span>›</span>
+    Ignition Coil (Bobine)
+  </div>
+
+  <header class="guide-header">
+    <div class="guide-header-inner">
+      <h1>Ignition Coil (Bobine) — Diagnosis &amp; Replacement</h1>
+      <div class="guide-meta">
+        <span>Added: 2026-05-07</span>
+        <span class="guide-meta-sep">|</span>
+        <span>Sources:
+          <a href="https://www.buggydepot.com/tech-center/gy6-150cc-ignition-troubleshooting-guide-no-spark/" target="_blank" rel="noopener">Buggy Depot Tech</a>,
+          <a href="https://www.youtube.com/watch?v=kZY1XVcIzhA" target="_blank" rel="noopener">YouTube — GY6 No Spark Diagnosis</a>
+        </span>
+      </div>
+      <div class="guide-tags">
+        <span class="guide-tag">repair-guides</span>
+        <span class="guide-tag">GY6</span>
+        <span class="guide-tag">electrical</span>
+        <span class="guide-tag">ignition</span>
+        <span class="guide-tag">no-spark</span>
+      </div>
+      <div class="applies-to">
+        📌 <strong>Applies to:</strong> GY6 50cc <code>139QMB</code>, GY6 125/150cc <code>157QMJ</code>.
+        Use this guide when the engine cranks but does not start, or cuts out intermittently — especially when warm.
+      </div>
+    </div>
+  </header>
+
+  <main class="guide-content">
+
+    <p>The ignition coil (French: <em>bobine d'allumage</em>) transforms the low-voltage pulse from the CDI unit into the 15,000–20,000 V needed to fire the spark plug. A failed coil results in no spark and a no-start condition. However, the coil is only one of four components that must all work together — always diagnose systematically before replacing parts.</p>
+
+    <h2>How the GY6 Ignition System Works</h2>
+    <p>The GY6 uses a <strong>CDI (Capacitor Discharge Ignition)</strong> system with four main components in the spark circuit:</p>
+    <table>
+      <tr><th>Component</th><th>Function</th><th>Failure symptom</th></tr>
+      <tr><td>Stator / Pickup coil</td><td>Generates trigger signal as flywheel rotates</td><td>No spark, weak spark</td></tr>
+      <tr><td>CDI unit</td><td>Stores charge, fires on trigger signal</td><td>No spark — most common failure</td></tr>
+      <tr><td>Ignition coil (bobine)</td><td>Steps CDI pulse up to ~20,000 V</td><td>No spark, cuts out when hot</td></tr>
+      <tr><td>Spark plug + cap</td><td>Produces arc in combustion chamber</td><td>No spark, misfires</td></tr>
+    </table>
+
+    <div class="callout callout-tip">
+      💡 <strong>On GY6 clones, the CDI unit fails far more often than the ignition coil.</strong> Always swap or test the CDI before buying a new coil. A replacement CDI costs €5–15; a coil costs €8–20.
+    </div>
+
+    <h2>Symptoms of a Faulty Ignition Coil</h2>
+    <ul>
+      <li><strong>Engine cranks but will not start</strong> — no spark at the plug</li>
+      <li><strong>Starts cold, cuts out when warm</strong> — classic thermal failure (coil breaks down under heat)</li>
+      <li><strong>Intermittent misfires</strong> or sudden stalling while riding</li>
+      <li><strong>Visible physical damage</strong> — cracked coil body, scorched or melted insulation, corroded HT lead connector</li>
+      <li><strong>Weak orange spark</strong> instead of a sharp blue-white arc</li>
+    </ul>
+
+    <div class="video-embed">
+      <div class="video-embed-title">🎬 Video Guide — GY6 No Spark Diagnosis (CDI, Coil &amp; Stator)</div>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/kZY1XVcIzhA"
+          title="GY6 No Spark Diagnosis — CDI, Ignition Coil and Stator"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <p class="video-source"><strong>Video:</strong> "GY6 No Spark Diagnosis — CDI, Ignition Coil and Stator" | YouTube &nbsp;
+        <a href="https://www.youtube.com/watch?v=kZY1XVcIzhA" target="_blank" rel="noopener">↗ Watch on YouTube</a>
+      </p>
+    </div>
+
+    <h2>Diagnostic Procedure — Step by Step</h2>
+
+    <div class="callout callout-warn">
+      ⚠️ High-voltage ignition circuits can deliver a painful shock. Do not hold bare HT wires while cranking. Keep fingers away from the spark plug cap end of the HT lead during testing.
+    </div>
+
+    <h3>Step 1 — Confirm No Spark</h3>
+    <ol>
+      <li>Remove the spark plug from the engine.</li>
+      <li>Reconnect the plug to the HT cap (spark plug cap).</li>
+      <li>Lay the threaded body of the plug against bare engine metal (earth/ground).</li>
+      <li>Crank the engine with the kickstart or electric start.</li>
+      <li>Observe: <strong>bright blue arc = healthy spark</strong>. Weak orange glow or nothing = ignition fault.</li>
+    </ol>
+
+    <h3>Step 2 — Eliminate the Spark Plug</h3>
+    <p>Substitute a known-good spark plug and repeat the spark test. A fouled or dead plug can mimic a coil failure.</p>
+
+    <h3>Step 3 — Check the Kill Switch</h3>
+    <ol>
+      <li>Locate the black wire running from the kill switch to the CDI/coil.</li>
+      <li>Disconnect this wire completely.</li>
+      <li>Try to start. If spark is now present, the kill switch is faulty — it is permanently earthing the circuit.</li>
+    </ol>
+
+    <h3>Step 4 — Check Earth Connections</h3>
+    <p>A loose or corroded earth (ground) connection is an extremely common cause of no-spark on GY6 clones. Check:</p>
+    <ul>
+      <li>Ignition coil mounting bolts — they must contact bare metal, not paint.</li>
+      <li>Battery negative terminal and its connection to the frame.</li>
+      <li>Engine earth strap from engine to frame.</li>
+    </ul>
+
+    <h3>Step 5 — Test the Coil with a Multimeter</h3>
+    <p>Set your multimeter to resistance (Ω) mode:</p>
+    <table>
+      <tr><th>Test point</th><th>Healthy reading</th><th>Failed coil</th></tr>
+      <tr><td>Primary winding (between the two low-voltage terminals)</td><td>0.3 – 0.5 Ω</td><td>Open (∞) or short (0 Ω)</td></tr>
+      <tr><td>Secondary winding (HT lead to earth terminal)</td><td>3,000 – 7,000 Ω</td><td>Open (∞) or far outside range</td></tr>
+    </table>
+    <p>If either reading is outside the normal range, the coil is defective and should be replaced.</p>
+
+    <h3>Step 6 — Swap the CDI</h3>
+    <p>If the coil tests OK, the CDI is the next most likely culprit. Swap it with a known-good unit (or a new €10 replacement). If spark is restored, the CDI was faulty.</p>
+
+    <h2>Ignition Coil Replacement Procedure</h2>
+    <ol>
+      <li><strong>Disconnect the battery</strong> — negative terminal first.</li>
+      <li><strong>Locate the ignition coil.</strong> On GY6 engines it is mounted on the frame or engine bracket near the cylinder head — typically a black rectangular block with one HT lead going to the spark plug and two small wires (or a 2-pin connector) going to the CDI and kill switch.</li>
+      <li><strong>Remove the HT lead</strong> from the spark plug cap — unscrew counter-clockwise if threaded, or pull straight off if clip-type.</li>
+      <li><strong>Disconnect the low-voltage wiring connector.</strong></li>
+      <li><strong>Unbolt the coil</strong> (2 × M6 bolts) from its mounting bracket and remove it.</li>
+      <li><strong>Fit the new coil</strong> — ensure the mounting bolts make clean metal-to-metal contact with the frame/engine for proper earthing. Tighten bolts firmly.</li>
+      <li><strong>Reconnect all wiring</strong> and the HT lead to the plug cap.</li>
+      <li><strong>Reconnect the battery</strong> (positive first, negative last).</li>
+      <li><strong>Test for spark</strong> as described in Step 1 above before reassembling any bodywork.</li>
+    </ol>
+
+    <div class="callout callout-tip">
+      💡 <strong>Pro tip:</strong> Buy a spare CDI and ignition coil together (under €30 total for GY6 parts). Carry them when touring. Intermittent ignition failures that only appear when hot are impossible to diagnose by the roadside without a spare to swap in.
+    </div>
+
+    <h2>Applicable Models</h2>
+    <p>This guide applies to all GY6 CDI ignition systems — <code>139QMB</code>, <code>152QMI</code>, <code>157QMJ</code> engines used in <strong>BTC Riva</strong>, <strong>La Souris Sourini / City</strong>, <strong>Santini Capri</strong>, and all Chinese 50–150cc clones. Vespa Primavera and Sprint with electronic injection use a different ignition architecture (integrated ECU) — coil testing values and replacement procedures differ; consult the Piaggio workshop manual.</p>
+
+    <h2>Related Videos</h2>
+    <div class="related-videos">
+      <div class="video-card">
+        <h4>How to Replace a Scooter Ignition Coil</h4>
+        <p>Physical coil removal and installation on a GY6 scooter — shows connector locations, HT lead removal, mounting bolt access and post-install spark test.</p>
+        <a href="https://www.youtube.com/watch?v=9y4IwMVjwJM" target="_blank" rel="noopener">Watch on YouTube →</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="guide-footer">
+    <p>Page generated by ISRM Content Sync on 2026-05-07. Content summarised from external technical sources for educational purposes.</p>
+    <p style="margin-top: 0.5rem;">Always verify ignition coil specifications and wiring diagrams against your specific engine's workshop manual.</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISRM Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Repair Guides</a></p>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (navToggle) { navToggle.addEventListener('click', () => { navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex'; }); }
+  </script>
+</body>
+</html>

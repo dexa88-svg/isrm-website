@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISRM Roadmap Planner v2</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #3b82f6;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --bg: #f9fafb;
+            --border: #e5e7eb;
+            --text: #1f2937;
+            --text-light: #6b7280;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .vision {
+            font-size: 14px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+
+        .header-controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg);
+        }
+
+        .btn-small {
+            padding: 4px 12px;
+            font-size: 12px;
+            background: #f3f4f6;
+            color: var(--text);
+            border: 1px solid var(--border);
+            cursor: pointer;
+        }
+
+        .btn-small:hover {
+            background: var(--bg);
+        }
+
+        .btn-small.add {
+            color: var(--success);
+            border-color: var(--success);
+        }
+
+        .progress-bar {
+            margin: 20px 0 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .progress-info h3 {
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .progress-count {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .progress-fill {
+            width: 100%;
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill-inner {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--success));
+            transition: width 0.3s ease;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .section-title h2 {
+            font-size: 18px;
+            color: var(--primary);
+            flex: 1;
+        }
+
+        .section-count {
+            font-size: 12px;
+            background: var(--primary);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .checklist {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.15s;
+            cursor: pointer;
+            flex-wrap: wrap;
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-item:hover {
+            background: #f3f4f6;
+        }
+
+        .checklist-item.completed {
+            background: #ecfdf5;
+        }
+
+        .checklist-item.completed .checklist-label {
+            color: var(--success);
+            text-decoration: line-through;
+        }
+
+        .item-header {
+            display: flex;
+            align-items: flex-start;
+            width: 100%;
+            gap: 12px;
+        }
+
+        .checkbox {
+            min-width: 20px;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .checklist-item.completed .checkbox {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        .checkbox::after {
+            content: '✓';
+            opacity: 0;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .checklist-item.completed .checkbox::after {
+            opacity: 1;
+        }
+
+        .checklist-content {
+            flex: 1;
+            width: 100%;
+        }
+
+        .checklist-label {
+            color: var(--text);
+            font-size: 14px;
+            transition: all 0.2s;
+            word-break: break-word;
+            margin-bottom: 8px;
+        }
+
+        .item-actions {
+            display: flex;
+            gap: 8px;
+            font-size: 12px;
+        }
+
+        .expand-btn {
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+            padding: 0;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .expand-btn:hover {
+            color: var(--primary-light);
+        }
+
+        .item-details {
+            display: none;
+            width: 100%;
+            padding: 12px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 12px;
+            background: #f9fafb;
+            border-radius: 4px;
+            padding: 12px;
+            margin-left: 32px;
+        }
+
+        .checklist-item.expanded .item-details {
+            display: block;
+        }
+
+        .details-section {
+            margin-bottom: 15px;
+        }
+
+        .details-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .details-title {
+            font-weight: 600;
+            font-size: 12px;
+            color: var(--text);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--primary);
+        }
+
+        .links-list {
+            list-style: none;
+            margin-bottom: 8px;
+        }
+
+        .links-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+            font-size: 13px;
+            padding: 6px 8px;
+            background: white;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+        }
+
+        .links-list a {
+            color: var(--primary);
+            text-decoration: none;
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .links-list a:hover {
+            text-decoration: underline;
+        }
+
+        .remove-link {
+            background: none;
+            border: none;
+            color: #ef4444;
+            cursor: pointer;
+            font-size: 14px;
+            padding: 0;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .add-link-form {
+            display: flex;
+            gap: 6px;
+            font-size: 12px;
+        }
+
+        .add-link-form input {
+            flex: 1;
+            padding: 6px 8px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .add-link-form input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .add-link-form button {
+            padding: 6px 12px;
+        }
+
+        .comments-box {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 8px;
+            font-size: 12px;
+            resize: vertical;
+            min-height: 60px;
+            font-family: inherit;
+        }
+
+        .comments-box:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: #f0f9ff;
+        }
+
+        .subtasks-list {
+            list-style: none;
+        }
+
+        .subtask-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            padding: 6px 8px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .subtask-item input[type="checkbox"] {
+            cursor: pointer;
+        }
+
+        .subtask-item label {
+            flex: 1;
+            cursor: pointer;
+        }
+
+        .subtask-item.completed label {
+            text-decoration: line-through;
+            color: var(--text-light);
+        }
+
+        .remove-subtask {
+            background: none;
+            border: none;
+            color: #ef4444;
+            cursor: pointer;
+            font-size: 12px;
+            padding: 0;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .add-subtask-form {
+            display: flex;
+            gap: 6px;
+            margin-top: 8px;
+            font-size: 12px;
+        }
+
+        .add-subtask-form input {
+            flex: 1;
+            padding: 6px 8px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .add-subtask-form button {
+            padding: 6px 12px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-light);
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            .header-controls {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .item-details {
+                margin-left: 0;
+            }
+
+            .add-link-form, .add-subtask-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛴 ISRM Roadmap Planner v2</h1>
+            <p class="vision">Now with artifacts, links, comments, and sub-tasks per step</p>
+            <div class="header-controls">
+                <button class="btn-primary" onclick="markAllComplete()">✓ Mark All Done</button>
+                <button class="btn-secondary" onclick="resetAll()">↻ Reset All</button>
+                <button class="btn-secondary" onclick="exportProgress()">⬇ Export Progress</button>
+            </div>
+        </header>
+
+        <div class="progress-bar">
+            <div class="progress-info">
+                <h3>Overall Progress</h3>
+                <span class="progress-count"><span id="completed-count">0</span>/<span id="total-count">0</span></span>
+            </div>
+            <div class="progress-fill">
+                <div class="progress-fill-inner" id="progress-inner" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div id="roadmap-container"></div>
+
+        <div class="footer">
+            <p>✨ Click items to mark complete. Click "Details" to add links, notes, and sub-tasks. Your progress is saved automatically.</p>
+            <p style="margin-top: 10px; font-size: 12px;">Last updated: <span id="last-updated"></span></p>
+        </div>
+    </div>
+
+    <script>
+        const roadmapData = {
+            phases: [
+                {
+                    id: 'phase0',
+                    title: 'Phase 0 — Lock vision, scope & naming',
+                    outcome: 'A one-page brief and a registered domain.',
+                    items: [
+                        'Pin the one-liner, target user (DIY owner, not pro mechanic), and three "jobs to be done"',
+                        'Decide the brand name. Working name: **ISRM** — fine for now, but pick something owners will type. Candidates: ScootWiki, FixMyScoot, ScooterDoc, RideManual, OpenMoto.',
+                        'Buy a domain. Free options: a `.pages.dev` (Cloudflare) or `.vercel.app` subdomain to start; spend ~$10/yr later on a real `.com`. Free TLDs (`.tk`, `.ml`) are unreliable — skip.',
+                        'Define MVP boundary (what\'s in v0.1 vs later): **in** = browse, search, structured procedures, embed videos, manual seed content; **out** = auth, AI chat, 3D, ingestion (those come in later phases).'
+                    ]
+                },
+                {
+                    id: 'phase1',
+                    title: 'Phase 1 — Pick free stack & set up infra',
+                    outcome: 'A deployed "hello world" at your domain, repo on GitHub, automatic deploys.',
+                    items: [
+                        'Choose framework: Astro (recommended) or Next.js',
+                        'Deploy to Cloudflare Pages or Vercel free tier',
+                        'Set up Supabase or Neon for DB (when needed)',
+                        'Configure image hosting: Cloudflare R2 or Cloudinary',
+                        'Integrate Pagefind for search',
+                        'Add Cloudflare Web Analytics',
+                        'Set up GitHub Actions for CI/CD',
+                        'Add Sentry for error tracking'
+                    ]
+                },
+                {
+                    id: 'phase2',
+                    title: 'Phase 2 — Design vehicle-agnostic data model',
+                    outcome: 'A schema doc + 3 seed entries committed.',
+                    items: [
+                        'Design entities: Vehicle, Subsystem, Part, Procedure, Symptom→DiagnosticPath, Source, Edit',
+                        'Decide storage: Markdown files in Git (recommended) or Database',
+                        'Create repo structure with frontmatter templates',
+                        'Seed 3 scooter models with basic data'
+                    ]
+                },
+                {
+                    id: 'phase3',
+                    title: 'Phase 3 — Build MVP browse + search',
+                    outcome: '5–10 hand-seeded scooter models live; searchable and mobile-ready.',
+                    items: [
+                        'Build vehicle index page with filters (type, make, electric/ICE)',
+                        'Create vehicle detail pages with specs and subsystem list',
+                        'Design and build procedure pages with steps, images, videos, safety callouts',
+                        'Integrate Pagefind full-text search',
+                        'Add sitemap, robots.txt, Open Graph tags',
+                        'Implement JSON-LD HowTo schema for SEO',
+                        'Ensure mobile-first responsive design',
+                        'Test on phone at full Lighthouse 90+'
+                    ]
+                }
+            ]
+        };
+
+        // Initialize planner
+        function init() {
+            loadProgress();
+            renderRoadmap();
+            updateStats();
+            updateLastUpdated();
+        }
+
+        function renderRoadmap() {
+            const container = document.getElementById('roadmap-container');
+            container.innerHTML = '';
+
+            roadmapData.phases.forEach(phase => {
+                const section = document.createElement('div');
+                section.className = 'section';
+
+                const titleDiv = document.createElement('div');
+                titleDiv.className = 'section-title';
+                titleDiv.innerHTML = `
+                    <h2>${phase.title}</h2>
+                    <span class="section-count">${getPhaseProgress(phase.id).completed}/${phase.items.length}</span>
+                `;
+
+                const outcomeDiv = document.createElement('div');
+                outcomeDiv.style.marginBottom = '12px';
+                outcomeDiv.style.padding = '10px 12px';
+                outcomeDiv.style.background = '#f0f9ff';
+                outcomeDiv.style.borderLeft = '3px solid var(--primary)';
+                outcomeDiv.style.fontSize = '13px';
+                outcomeDiv.style.color = 'var(--text-light)';
+                outcomeDiv.textContent = `📌 Outcome: ${phase.outcome}`;
+
+                const checklist = document.createElement('div');
+                checklist.className = 'checklist';
+
+                phase.items.forEach((item, idx) => {
+                    const itemEl = document.createElement('div');
+                    const key = `${phase.id}-${idx}`;
+                    const data = getItemData(key);
+                    const isCompleted = data.completed;
+
+                    itemEl.className = `checklist-item ${isCompleted ? 'completed' : ''}`;
+
+                    itemEl.innerHTML = `
+                        <div class="item-header">
+                            <div class="checkbox"></div>
+                            <div class="checklist-content">
+                                <div class="checklist-label">${item}</div>
+                                <div class="item-actions">
+                                    <button class="expand-btn" onclick="toggleDetails(event, '${key}')">📎 Details</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-details" id="details-${key}">
+                            <div class="details-section">
+                                <div class="details-title">🔗 External Links</div>
+                                <ul class="links-list" id="links-${key}"></ul>
+                                <div class="add-link-form">
+                                    <input type="text" id="linkInput-${key}" placeholder="https://..." />
+                                    <button class="btn-small add" onclick="addLink('${key}')">+ Add</button>
+                                </div>
+                            </div>
+
+                            <div class="details-section">
+                                <div class="details-title">📁 Internal Files</div>
+                                <ul class="links-list" id="files-${key}"></ul>
+                                <div class="add-link-form">
+                                    <input type="text" id="fileInput-${key}" placeholder="/path/to/file.md" />
+                                    <button class="btn-small add" onclick="addFile('${key}')">+ Add</button>
+                                </div>
+                            </div>
+
+                            <div class="details-section">
+                                <div class="details-title">📝 Notes & Comments</div>
+                                <textarea class="comments-box" id="comments-${key}" placeholder="Add context, decisions, blockers, next actions..."></textarea>
+                            </div>
+
+                            <div class="details-section">
+                                <div class="details-title">✓ Sub-tasks</div>
+                                <ul class="subtasks-list" id="subtasks-${key}"></ul>
+                                <div class="add-subtask-form">
+                                    <input type="text" id="subtaskInput-${key}" placeholder="Add a sub-task..." />
+                                    <button class="btn-small add" onclick="addSubtask('${key}')">+ Add</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    const checkbox = itemEl.querySelector('.checkbox');
+                    checkbox.addEventListener('click', () => toggleItem(key, itemEl));
+
+                    checklist.appendChild(itemEl);
+                });
+
+                section.appendChild(titleDiv);
+                section.appendChild(outcomeDiv);
+                section.appendChild(checklist);
+                container.appendChild(section);
+            });
+
+            // Load all details
+            loadAllDetails();
+        }
+
+        function toggleItem(key, element) {
+            const data = getItemData(key);
+            data.completed = !data.completed;
+            saveItemData(key, data);
+
+            if (data.completed) {
+                element.classList.add('completed');
+            } else {
+                element.classList.remove('completed');
+            }
+
+            updateStats();
+        }
+
+        function toggleDetails(e, key) {
+            e.stopPropagation();
+            const item = e.closest('.checklist-item');
+            item.classList.toggle('expanded');
+        }
+
+        function getItemData(key) {
+            const stored = localStorage.getItem(`isrm-item-${key}`);
+            if (stored) return JSON.parse(stored);
+            return {
+                completed: false,
+                links: [],
+                files: [],
+                comments: '',
+                subtasks: []
+            };
+        }
+
+        function saveItemData(key, data) {
+            localStorage.setItem(`isrm-item-${key}`, JSON.stringify(data));
+        }
+
+        function addLink(key) {
+            const input = document.getElementById(`linkInput-${key}`);
+            const url = input.value.trim();
+            if (!url) return;
+
+            const data = getItemData(key);
+            data.links.push({ url, label: new URL(url).hostname });
+            saveItemData(key, data);
+            input.value = '';
+            renderLinks(key);
+        }
+
+        function addFile(key) {
+            const input = document.getElementById(`fileInput-${key}`);
+            const path = input.value.trim();
+            if (!path) return;
+
+            const data = getItemData(key);
+            data.files.push({ path, label: path.split('/').pop() });
+            saveItemData(key, data);
+            input.value = '';
+            renderFiles(key);
+        }
+
+        function addSubtask(key) {
+            const input = document.getElementById(`subtaskInput-${key}`);
+            const text = input.value.trim();
+            if (!text) return;
+
+            const data = getItemData(key);
+            data.subtasks.push({ text, completed: false });
+            saveItemData(key, data);
+            input.value = '';
+            renderSubtasks(key);
+        }
+
+        function removeLink(key, idx) {
+            const data = getItemData(key);
+            data.links.splice(idx, 1);
+            saveItemData(key, data);
+            renderLinks(key);
+        }
+
+        function removeFile(key, idx) {
+            const data = getItemData(key);
+            data.files.splice(idx, 1);
+            saveItemData(key, data);
+            renderFiles(key);
+        }
+
+        function removeSubtask(key, idx) {
+            const data = getItemData(key);
+            data.subtasks.splice(idx, 1);
+            saveItemData(key, data);
+            renderSubtasks(key);
+        }
+
+        function toggleSubtask(key, idx) {
+            const data = getItemData(key);
+            data.subtasks[idx].completed = !data.subtasks[idx].completed;
+            saveItemData(key, data);
+            renderSubtasks(key);
+        }
+
+        function renderLinks(key) {
+            const data = getItemData(key);
+            const list = document.getElementById(`links-${key}`);
+            list.innerHTML = data.links.map((link, idx) => `
+                <li>
+                    <a href="${link.url}" target="_blank">🔗 ${link.label}</a>
+                    <button class="remove-link" onclick="removeLink('${key}', ${idx})">×</button>
+                </li>
+            `).join('');
+        }
+
+        function renderFiles(key) {
+            const data = getItemData(key);
+            const list = document.getElementById(`files-${key}`);
+            list.innerHTML = data.files.map((file, idx) => `
+                <li>
+                    <span title="${file.path}">📄 ${file.label}</span>
+                    <button class="remove-link" onclick="removeFile('${key}', ${idx})">×</button>
+                </li>
+            `).join('');
+        }
+
+        function renderSubtasks(key) {
+            const data = getItemData(key);
+            const list = document.getElementById(`subtasks-${key}`);
+            list.innerHTML = data.subtasks.map((subtask, idx) => `
+                <li class="subtask-item ${subtask.completed ? 'completed' : ''}">
+                    <input type="checkbox" ${subtask.completed ? 'checked' : ''} onchange="toggleSubtask('${key}', ${idx})" />
+                    <label>${subtask.text}</label>
+                    <button class="remove-subtask" onclick="removeSubtask('${key}', ${idx})">×</button>
+                </li>
+            `).join('');
+        }
+
+        function loadAllDetails() {
+            roadmapData.phases.forEach(phase => {
+                phase.items.forEach((_, idx) => {
+                    const key = `${phase.id}-${idx}`;
+                    const textarea = document.getElementById(`comments-${key}`);
+                    if (textarea) {
+                        const data = getItemData(key);
+                        textarea.value = data.comments;
+                        textarea.addEventListener('change', () => {
+                            data.comments = textarea.value;
+                            saveItemData(key, data);
+                        });
+                    }
+                    renderLinks(key);
+                    renderFiles(key);
+                    renderSubtasks(key);
+                });
+            });
+        }
+
+        function getPhaseProgress(phaseId) {
+            const phase = roadmapData.phases.find(p => p.id === phaseId);
+            if (!phase) return { completed: 0, total: 0 };
+
+            let completed = 0;
+            phase.items.forEach((_, idx) => {
+                const key = `${phaseId}-${idx}`;
+                if (getItemData(key).completed) completed++;
+            });
+
+            return { completed, total: phase.items.length };
+        }
+
+        function updateStats() {
+            let totalCompleted = 0;
+            let totalItems = 0;
+
+            roadmapData.phases.forEach(phase => {
+                const phaseProgress = getPhaseProgress(phase.id);
+                totalCompleted += phaseProgress.completed;
+                totalItems += phaseProgress.total;
+            });
+
+            document.getElementById('completed-count').textContent = totalCompleted;
+            document.getElementById('total-count').textContent = totalItems;
+
+            const percentage = totalItems > 0 ? (totalCompleted / totalItems) * 100 : 0;
+            document.getElementById('progress-inner').style.width = percentage + '%';
+        }
+
+        function markAllComplete() {
+            roadmapData.phases.forEach(phase => {
+                phase.items.forEach((_, idx) => {
+                    const key = `${phase.id}-${idx}`;
+                    const data = getItemData(key);
+                    data.completed = true;
+                    saveItemData(key, data);
+                });
+            });
+            renderRoadmap();
+            updateStats();
+        }
+
+        function resetAll() {
+            if (confirm('Reset all progress? This cannot be undone.')) {
+                roadmapData.phases.forEach(phase => {
+                    phase.items.forEach((_, idx) => {
+                        localStorage.removeItem(`isrm-item-${phase.id}-${idx}`);
+                    });
+                });
+                renderRoadmap();
+                updateStats();
+            }
+        }
+
+        function exportProgress() {
+            let text = 'ISRM Roadmap Progress\n';
+            text += '='.repeat(70) + '\n\n';
+
+            roadmapData.phases.forEach(phase => {
+                const { completed, total } = getPhaseProgress(phase.id);
+                text += `${phase.title}\n`;
+                text += `Progress: ${completed}/${total}\n`;
+                text += '-'.repeat(70) + '\n';
+
+                phase.items.forEach((item, idx) => {
+                    const key = `${phase.id}-${idx}`;
+                    const data = getItemData(key);
+                    text += `${data.completed ? '✓' : '○'} ${item}\n`;
+
+                    if (data.links.length > 0) {
+                        text += `    Links: ${data.links.map(l => l.url).join(', ')}\n`;
+                    }
+                    if (data.files.length > 0) {
+                        text += `    Files: ${data.files.map(f => f.path).join(', ')}\n`;
+                    }
+                    if (data.comments) {
+                        text += `    Notes: ${data.comments.substring(0, 50)}...\n`;
+                    }
+                    if (data.subtasks.length > 0) {
+                        const subtaskSummary = data.subtasks.filter(s => s.completed).length + '/' + data.subtasks.length;
+                        text += `    Sub-tasks: ${subtaskSummary}\n`;
+                    }
+                });
+                text += '\n';
+            });
+
+            const blob = new Blob([text], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `ISRM-Progress-${new Date().toISOString().split('T')[0]}.txt`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function updateLastUpdated() {
+            const now = new Date();
+            document.getElementById('last-updated').textContent = now.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+
+        // Initialize on load
+        init();
+    </script>
+</body>
+</html>

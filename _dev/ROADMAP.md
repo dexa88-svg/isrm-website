@@ -1,0 +1,153 @@
+# ISRM — Interactive Scooter Repair Manuals
+## End-to-End Build Roadmap (solo, near-zero budget, ASAP MVP, scalable)
+
+**One-line vision:** A free, wiki-driven, 3D-interactive repair guide for scooters (motor + electric, scalable to other vehicles) that pulls trusted info from forums, manufacturers, and YouTube — and uses AI to help owners diagnose and fix their ride.
+
+**Constraints we are designing around**
+- One builder (you)
+- Hosting/services must be free or trivially cheap
+- Time-to-MVP: as fast as possible
+- Architecture must scale to motorcycles, e-bikes, mopeds, mobility scooters later
+- The system should grow itself (auto-ingestion + community + programmatic SEO)
+
+---
+
+## The 13-step checklist (matches your task list)
+
+### Phase 0 — Lock vision, scope & naming
+**Outcome:** A one-page brief and a registered domain.
+
+- Pin the one-liner, target user (DIY owner, not pro mechanic), and three "jobs to be done" (find right part, find right procedure, diagnose a symptom).
+- Decide the brand name. Working name: **ISRM** — fine for now, but pick something owners will type. Candidates: ScootWiki, FixMyScoot, ScooterDoc, RideManual, OpenMoto.
+- Buy a domain. Free options: a `.pages.dev` (Cloudflare) or `.vercel.app` subdomain to start; spend ~$10/yr later on a real `.com`. Free TLDs (`.tk`, `.ml`) are unreliable — skip.
+- Define MVP boundary (what's in v0.1 vs later): **in** = browse, search, structured procedures, embed videos, manual seed content; **out** = auth, AI chat, 3D, ingestion (those come in later phases).
+
+### Phase 1 — Pick free stack & set up infra
+**Outcome:** A deployed "hello world" at your domain, repo on GitHub, automatic deploys.
+
+Recommended free stack (chosen for $0 cost + speed + SEO):
+- **Framework:** Astro (content-heavy sites, ships pure HTML, perfect for SEO and procedures) — or Next.js if you want easier dynamic features later.
+- **Hosting:** Cloudflare Pages (unlimited bandwidth, free) or Vercel free tier.
+- **Database (when needed):** Supabase free tier (Postgres + auth + storage) or Neon free tier. For v0.1, we may not need a DB at all — store content as Markdown in the Git repo (Phase 2 decision).
+- **Image hosting:** Cloudflare R2 (10 GB free) or Cloudinary free tier; YouTube embeds are free.
+- **Search:** start with client-side Pagefind (zero infra, runs at build) → graduate to Meilisearch/Typesense Cloud free tier later.
+- **Analytics:** Cloudflare Web Analytics (free, privacy-friendly) or Plausible self-host.
+- **CI/CD:** GitHub Actions (free for public repos).
+- **Error tracking:** Sentry free tier.
+
+### Phase 2 — Design vehicle-agnostic data model
+**Outcome:** A schema doc + 3 seed entries committed.
+
+Core entities (vehicle-agnostic on purpose):
+- `Vehicle` (id, type=`scooter|moped|motorcycle|...`, make, model, year_range, variant, drivetrain=`ICE|electric`, hero_image, 3d_model_ref)
+- `Subsystem` (e.g. brakes, motor/engine, battery/fuel, electronics, suspension, wheels)
+- `Part` (oem_number, aftermarket_equivalents, name, subsystem, fits_vehicles[], affiliate_links[])
+- `Procedure` (title, vehicle_refs[], subsystem, difficulty, time_estimate, tools[], parts_needed[], steps[], media[], safety_warnings[])
+- `Symptom` → `DiagnosticPath` (links symptoms to procedures; powers the AI assistant later)
+- `Source` (url, type=`youtube|forum|manufacturer|user|wiki`, license, fetched_at) — every claim cites at least one source
+- `Edit` (page_ref, author, diff, status=`pending|approved|rejected`, reviewer, reviewed_at)
+
+**Storage decision:** Start with **Markdown files in the Git repo** (one folder per vehicle, frontmatter for structured fields, MDX for embedded components). Why: free, version-controlled out of the box, GitHub-PR-as-CMS gives you wiki edits for free, easy AI ingestion (Claude can read/write MDX). Migrate to DB only when query needs justify it (likely Phase 5).
+
+### Phase 3 — Build MVP browse + search
+**Outcome:** 5–10 hand-seeded scooter models live; anyone can search and read procedures on mobile.
+
+- Vehicle index page (filter by type, make, electric/ICE).
+- Vehicle detail page: photo, specs, exploded subsystem list, top procedures.
+- Procedure page: tools, parts list with placeholder affiliate links, numbered steps with images and embedded YouTube, safety callouts, "report issue" button.
+- Pagefind integration for full-text search.
+- Sitemap, robots.txt, Open Graph tags, JSON-LD `HowTo` schema (massive SEO win — Google renders these as rich results for repair queries).
+- Mobile-first CSS (your users will be in a garage with greasy hands on a phone).
+
+Seed targets (pick whatever you know best): Xiaomi M365, Ninebot Max G30, Dualtron Thunder, Vespa Primavera 150, Honda PCX 150, Yamaha Aerox 155.
+
+### Phase 4 — Wiki-style contributions
+**Outcome:** Anyone with a GitHub account can propose edits; you approve via a dashboard or directly in PRs.
+
+Two paths, pick one:
+1. **GitHub-PR-as-CMS** (recommended for solo): use Decap CMS or Sveltia CMS — they give a wiki-style editor UI on your site, and edits become GitHub PRs you merge. Zero infra, free, full versioning, abuse-resistant (GitHub handles auth + spam).
+2. **Custom DB-backed edits**: more flexibility, but you build moderation, versioning, abuse defense yourself. Defer.
+
+Add: contributor profile pages, edit history per article, a "stub" tag for incomplete pages, a rewards-light system (badge for first 5 edits).
+
+### Phase 5 — Automated content ingestion
+**Outcome:** A scheduled pipeline that produces draft pages weekly, queued for your review.
+
+Pipeline (all on free tiers):
+- **Scheduler:** GitHub Actions cron (free) or Cloudflare Workers cron.
+- **Sources, in priority order:**
+  1. YouTube Data API — search "[model] repair / teardown / fix", capture title/description/transcript.
+  2. Manufacturer service manuals (PDFs) — parse with `pdfplumber` or Claude vision.
+  3. Reddit (r/ElectricScooters, r/scooters, model-specific subs) via official API + RSS.
+  4. Forums (ES Forum, ModernVespa, etc.) — *audit ToS first*, prefer RSS/sitemaps over scraping; add `User-Agent` and rate limits.
+  5. Manufacturer parts catalogs (OEM numbers + diagrams).
+- **Normalizer:** an LLM pass (Claude API, prompt-cached) that maps raw content → your MDX schema, attaches sources, flags low-confidence outputs.
+- **Human gate:** drafts open as PRs labeled `bot-draft`. Nothing publishes without your (or a trusted contributor's) review.
+- Track per-source success rate so you can prune sources that produce junk.
+
+### Phase 6 — Interactive 3D / exploded views
+**Outcome:** At least one hero scooter has a clickable 3D model that links each part to the corresponding wiki page.
+
+- Tech: Google's `<model-viewer>` web component (cheapest), or Three.js if you need custom interactions.
+- Asset sources (cheap → free): GrabCAD (free CAD with attribution), Sketchfab CC-licensed models, Blender community models, AI-generated (Tripo, Meshy, Spline AI free tiers — quality is improving fast), or community uploads.
+- Hotspots = JSON file mapping a 3D coord to a part_id; clicking opens the part page.
+- Start with one model, productize the workflow, then template the next 5.
+
+### Phase 7 — AI repair assistant (chat)
+**Outcome:** A "Got a problem?" chat on every vehicle page that asks symptoms and walks the user to a procedure with citations.
+
+- Architecture: small RAG over your MDX corpus + ingested-but-unpublished sources. Embed at build time (free, local), run inference on Claude API (cheap for small chats; cap monthly spend with budget alerts).
+- Always show the source links so users can verify (and so you legally cite contributors).
+- Track unanswered/low-confidence questions — those become your content backlog (huge growth signal).
+
+### Phase 8 — Mobile (PWA → native)
+**Outcome:** Installable from a phone, works offline for saved procedures.
+
+- PWA first: service worker caches procedures the user opens, "Save for offline" button, camera intent to photograph VIN/serial → search.
+- Defer React Native / Expo until you have measurable demand for native-only features (push notifications, deeper camera access, AR overlay).
+
+### Cross-cutting — Legal & content compliance
+- Terms of service, privacy policy, cookie banner if you ship to EU.
+- DMCA takedown process and a public contact email.
+- Contributor license: **CC-BY-SA 4.0** (Wikipedia model) — protects the wiki against being closed-sourced and forces attribution.
+- Manufacturer trademarks: you can name "Vespa", "Xiaomi" etc. *nominatively* (to identify the product); never imply endorsement, never use logos as your branding.
+- Scraping: per-source ToS check, robots.txt respect, conservative rate limits, prefer official APIs/RSS.
+- Repair-procedure disclaimer ("at your own risk, consult a professional…") on every procedure page.
+
+### Cross-cutting — Self-growing flywheel
+- **Programmatic SEO:** auto-generate one page per (model × common-repair) combo from templates (e.g. "Replace front brake pads on Vespa Primavera 150"). Even sparse pages with a "stub" tag rank.
+- **Edit CTAs everywhere:** "Saw something wrong? Edit this page" pre-fills the edit form.
+- **Symptom→content loop:** every unanswered AI chat becomes a `wanted-page` issue.
+- **Contributor recognition:** leaderboards, badges, public profiles.
+- **Embeddable widgets:** "embed this exploded diagram on your forum post" → backlinks for free.
+- **Newsletter:** weekly "new procedures added" — drives return visits with zero infra (Buttondown free tier).
+
+### Cross-cutting — Monetization (later)
+- Inline affiliate links on parts: Amazon Associates, eBay Partner Network, AliExpress. Disclose clearly.
+- Donation page (GitHub Sponsors, Buy Me a Coffee).
+- Sponsored shop listings only after meaningful traffic; never paywall procedures (kills the flywheel).
+
+### Verification — Walk MVP as a real user
+Before declaring any phase done: open the site on your phone, pretend something on your scooter just broke, and complete the repair using only the site. Time it. Fix friction. Lighthouse 90+. Mobile-first.
+
+---
+
+## Suggested 90-day cut (the ASAP MVP)
+- **Week 1:** Phase 0 brief + Phase 1 stack live at a free subdomain.
+- **Weeks 2–3:** Phase 2 schema + 3 seed scooters in MDX.
+- **Weeks 4–6:** Phase 3 browse/search/procedure pages, mobile-polished.
+- **Weeks 7–8:** Phase 4 Decap CMS wiki edits + 5 more seed scooters.
+- **Weeks 9–10:** Phase 5 v0 — one ingestion source (YouTube) producing draft PRs.
+- **Weeks 11–12:** Phase 0 legal pages + launch on Reddit/forums.
+
+3D, AI chat, full ingestion, PWA — phases 6–8 — come *after* you see real users return. Don't build them blind.
+
+---
+
+## Open decisions (we'll resolve as we go)
+1. Brand name & domain
+2. Astro vs Next.js
+3. Markdown-in-Git vs DB for content
+4. GitHub-PR-as-CMS vs custom edits
+5. License (CC-BY-SA confirmed?)
+6. First seed model (the one we'll fully build out as the template)

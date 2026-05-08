@@ -1,0 +1,163 @@
+# ISRM Project Scope & Mandated Resources
+
+**Project Name:** Interactive Scooter Repair Manuals (ISRM)
+
+**Last Updated:** May 7, 2026
+
+---
+
+## Project Vision
+
+Build an interactive website with comprehensive guides (video, pictures, text, etc.) that helps people:
+- Choose the right parts for their scooters
+- Perform repair procedures correctly
+- Access community knowledge and professional expertise
+
+The platform aims to be similar to ETKA for VAG but more interactive, with 3D models and community contribution capabilities (Wiki-style).
+
+**Current Phase:** MVP (Benzine scooters only)
+
+**Long-term Vision:** Website → Chat-based interactive platform → Mobile application
+
+---
+
+## MVP Scope
+
+### Supported Scooter Models
+
+**GY6 Engine Scooters** (Chinese/Taiwanese 50cc–150cc):
+- BTC Riva
+- La Souris Sourini / City
+- Santini Capri
+- Similar GY6-platform models
+
+**Piaggio Scooters**:
+- Vespa (all modern generations)
+- Primavera
+- Zip
+
+### Fuel System Variants
+- Carburetor models
+- Fuel-injected (EFI) models
+
+---
+
+## Content Categories
+
+1. **Repair Guides** — Step-by-step repair tutorials (engine, carburetor, brakes, electrics, etc.)
+2. **Parts** — Parts identification, compatibility, sourcing (GY6, Piaggio OEM & aftermarket)
+3. **Diagnostics** — Fault codes, error symptoms, troubleshooting trees (carb and EFI)
+4. **Models** — Model-specific pages (Vespa Primavera 125, BTC Riva 50, etc.)
+5. **Videos** — Curated video embeds with summaries
+6. **News** — Manufacturer announcements, recalls, technical service bulletins
+7. **Community** — Notable forum threads, crowd-sourced tips
+
+---
+
+## Mandated Content Sources
+
+### Content Sync Task (Daily — 8:01 AM)
+
+The automated ISRM content sync task (`isrm-content-sync`) runs daily and checks the following sources:
+
+#### **Forums & Communities** (Mandatory)
+- https://www.scootdawg.com/ — major English-language GY6 & Chinese scooter forum
+- https://www.modernvespa.com/ — Vespa community, repair threads, model guides
+- https://www.reddit.com/r/scooters/new/ — general scooter community (petrol-relevant threads)
+- https://www.reddit.com/r/Piaggio/new/ — Piaggio/Vespa-specific community
+- https://www.vespaclub.us/ — US Vespa owners & repair discussions
+
+#### **Parts & Technical Reference** (Mandatory)
+- https://www.treatland.tv/blogs/news — GY6 parts, tuning, and repair articles
+- https://www.scooterworks.com/articles/ — Vespa & Piaggio parts and guides
+- https://www.scooterswap.com/ — GY6 compatibility and upgrade info
+
+#### **Manufacturer & Official Support** (Mandatory)
+- https://www.vespa.com/en_EN/news.html — Vespa news and announcements
+- https://www.piaggio.com/en_EN/news/ — Piaggio news and technical bulletins
+- https://www.btcbikes.com/ — BTC scooter brand (Riva and others)
+
+#### **YouTube Channels** (Mandated as of May 7, 2026)
+- **Zandri** (https://www.youtube.com/@zandri) — scooter repair and maintenance tutorials ⭐ NEWLY MANDATED
+- **It's That Easy** (https://www.youtube.com/@its-that-easy) — scooter repair and DIY guides ⭐ NEWLY MANDATED
+- Other high-quality scooter repair channels discovered via ongoing search
+
+#### **Dynamic Discovery** (Continuous)
+The sync task runs 10 WebSearch queries daily to discover new qualifying sources:
+1. `GY6 scooter repair guide carburetor 2025 2026`
+2. `Piaggio Vespa repair manual DIY forum`
+3. `GY6 50cc 125cc 150cc engine repair tutorial`
+4. `scooter carburetor tuning jetting repair site`
+5. `Vespa Primavera Zip repair guide blog`
+6. `GY6 scooter parts compatibility database`
+7. `scooter CDI variator clutch repair tutorial`
+8. `petrol scooter fault diagnosis troubleshooting`
+9. `GY6 fuel injection EFI scooter repair`
+10. `best petrol scooter repair resources 2026`
+
+---
+
+## Content Quality Standards
+
+**Sources must meet these criteria:**
+- Primarily focused on petrol/benzine scooters — GY6-platform or Piaggio/Vespa
+- Contains repair tutorials, parts info, fault codes, carburetor/injector guides, or DIY procedures
+- In English (or auto-translatable)
+- Substantive technical content (minimum ~150 words)
+- Not paywalled or spam
+
+**Sources to exclude:**
+- Generic product review aggregators
+- Paywalled sites with no free technical content
+- Electric scooter (e-scooter) only sites
+
+---
+
+## Automation & Workflow
+
+### Daily Content Sync (8:01 AM)
+- **Task:** `isrm-content-sync`
+- **Frequency:** Daily
+- **Process:**
+  1. Phase 1 — Discover new qualifying sources and update `sources-registry.json`
+  2. Phase 2 — Scan all baseline and active sources for new content (last 48 hours)
+  3. Generate/update HTML pages in appropriate categories
+  4. Update `sync-manifest.json` and category indices
+
+### Daily Consistency Check (10:01 AM)
+- **Task:** `isrm-consistency-check`
+- **Frequency:** Daily
+- **Process:**
+  - Audit website structure, content scope, navigation
+  - Fix broken links and update indices
+  - Ensure navigation consistency across all categories
+
+---
+
+## Project Files & Locations
+
+**Workspace:**
+`/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISRM/`
+
+**Key Files:**
+- `sources-registry.json` — All known and active content sources
+- `sync-manifest.json` — All generated pages and their metadata
+- `index.html` — Root homepage with recent content
+- Category folders: `repair-guides/`, `parts/`, `diagnostics/`, `models/`, `videos/`, `news/`, `community/`
+
+---
+
+## Contributing to ISRM
+
+(Future Wiki/Contribution Guidelines — To be defined)
+
+---
+
+## Change Log
+
+| Date | Change | Owner |
+|------|--------|-------|
+| 2026-05-07 | Added "It's That Easy" YouTube channel as mandated source | Den |
+| 2026-05-07 | Added Zandri YouTube channel as mandated source; updated daily sync task with new source categories | Den |
+| 2026-05-07 | Clarified content discovery process and dynamic source registry | Den |
+

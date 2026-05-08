@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GY6 Carburetor Adjustment & Tuning Guide — ISRM</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .guide-header {
+      background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem 2rem;
+    }
+    .guide-header-inner { max-width: 900px; margin: 0 auto; }
+    .guide-header h1 {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0.9rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+    .guide-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+      margin-bottom: 1rem;
+    }
+    .guide-meta a { color: var(--accent); }
+    .guide-meta a:hover { color: var(--primary); }
+    .guide-meta-sep { opacity: 0.4; }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+    .guide-tag {
+      background: rgba(0, 168, 204, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(0, 168, 204, 0.3);
+      padding: 0.25rem 0.7rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+    .applies-to {
+      background: rgba(255, 107, 53, 0.07);
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem;
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .applies-to strong { color: var(--text-primary); }
+    .guide-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 4rem;
+    }
+    .guide-content h2 {
+      font-size: 1.55rem;
+      color: var(--text-primary);
+      margin-top: 2.5rem;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.6rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content code {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--accent-light);
+      padding: 0.15rem 0.45rem;
+      border-radius: var(--radius-sm);
+      font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+      font-size: 0.87em;
+    }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th {
+      background: var(--surface-2);
+      color: var(--text-primary);
+      font-weight: 600;
+      padding: 0.7rem 1rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26, 35, 50, 0.6); }
+
+    /* Callouts */
+    .callout {
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .callout strong { color: var(--text-primary); }
+    .callout-warn {
+      background: rgba(245, 166, 35, 0.08);
+      border: 1px solid rgba(245, 166, 35, 0.25);
+      border-left: 4px solid var(--warning);
+    }
+    .callout-tip {
+      background: rgba(6, 167, 125, 0.08);
+      border: 1px solid rgba(6, 167, 125, 0.25);
+      border-left: 4px solid var(--success);
+    }
+
+    /* Step numbering */
+    .step-heading {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .step-number {
+      background: var(--primary);
+      color: white;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Video embed */
+    .video-embed {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .video-embed-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+    .video-thumb-link { display: block; text-decoration: none; }
+    .video-thumb-wrap { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 0.75rem; }
+    .video-thumb-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.2s; }
+    .video-thumb-link:hover .video-thumb-img { opacity: 0.75; }
+    .video-play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .video-play-icon { width: 68px; height: 48px; background: rgba(200,0,0,0.9); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.4rem; transition: background 0.2s, transform 0.15s; }
+    .video-thumb-link:hover .video-play-icon { background: #f00; transform: scale(1.06); }
+    .video-source { font-size: 0.85rem; color: var(--text-tertiary); }
+    .video-source a { color: var(--accent); }
+
+    /* Related videos */
+    .related-videos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+    .video-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      transition: var(--transition);
+    }
+    .video-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+    .video-card h4 { color: var(--text-primary); margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600; }
+    .video-card p { font-size: 0.875rem; margin-bottom: 0.75rem; color: var(--text-secondary); }
+    .video-card a { color: var(--primary); font-weight: 600; font-size: 0.9rem; }
+    .video-card a:hover { color: var(--primary-light); }
+
+    /* Footer */
+    .guide-footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.825rem;
+      color: var(--text-tertiary);
+    }
+
+    @media (max-width: 768px) {
+      .guide-header h1 { font-size: 1.7rem; }
+      .guide-content { padding: 1.5rem 1rem 3rem; }
+      .breadcrumb { padding: 0.9rem 1rem; }
+      .nav-menu { display: none; }
+      .nav-toggle { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-icon">⚙️</span>
+        <span class="brand-text">ISRM</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../community/index.html" class="nav-link">Community</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="../index.html">ISRM Home</a>
+    <span>›</span>
+    <a href="index.html">Repair Guides</a>
+    <span>›</span>
+    GY6 Carburetor Adjustment &amp; Tuning
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
+        <a href="../index.html">ISRM Home</a><span>›</span><a href="index.html">Repair Guides</a><span>›</span>GY6 Carburetor Adjustment & Tuning Guide
+      </div>
+      <h1>GY6 Carburetor Adjustment & Tuning Guide</h1>
+    </div>
+  </section>
+
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 3rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "🔧";
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem;
+      opacity: 0.07;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0 0 1rem;
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+  </style>
+
+
+  <!-- Guide Content -->
+  <main class="guide-content">
+
+    <p>The GY6 carburetor is a simple slide-type or CV (constant velocity) carburettor — most 50cc models use a <strong>Keihin PD18J</strong>-type clone, while 150cc models typically use a <strong>PZ30</strong> or similar. Proper adjustment is critical: a mis-tuned carburettor causes hard starting, poor idle, bogging at mid-throttle, and poor fuel economy.</p>
+
+    <div class="callout callout-warn">
+      ⚠️ <strong>Before adjusting:</strong> Always warm the engine for at least 10 minutes first. The auto-choke (thermostatic enricher) must be fully open before making any idle or mixture adjustments. A cold engine gives misleading readings.
+    </div>
+
+    <!-- Video walkthrough -->
+    <div class="video-embed">
+      <div class="video-embed-title">🎬 Video Guide — Full Walkthrough</div>
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/D9UnD1ibIIw"
+          title="GY6 Carburetor Inspection, Problems, Removal, & Adjustment"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="video-source">
+        <strong>Video:</strong> "GY6 Carburetor Inspection, Problems, Removal, &amp; Adjustment" | YouTube &nbsp;
+        <a href="https://www.youtube.com/watch?v=D9UnD1ibIIw" target="_blank" rel="noopener">↗ Watch on YouTube</a>
+      </p>
+    </div>
+
+    <h2>Tools Required</h2>
+    <ul>
+      <li>Flat-head screwdriver (small)</li>
+      <li>Phillips screwdriver</li>
+      <li>Tachometer (even a cheap clip-on type works)</li>
+      <li>Clean carburettor spray cleaner</li>
+      <li>Compressed air or a bulb blower</li>
+    </ul>
+
+    <h2>Understanding the Adjusters</h2>
+    <p>Two screws control most of the tune:</p>
+    <ul>
+      <li><strong>Idle speed screw (throttle stop screw):</strong> Controls minimum throttle position — turning it clockwise raises idle RPM, counter-clockwise lowers it.</li>
+      <li><strong>Air/fuel mixture screw (pilot screw):</strong> Controls the fuel richness at idle and low throttle. Located under a small brass plug on the carburettor body (sometimes covered by an anti-tamper cap). Turning counter-clockwise (out) richens the mixture; clockwise (in) leans it out.</li>
+    </ul>
+
+    <h2>Step-by-Step Procedure</h2>
+
+    <div>
+      <div class="step-heading">
+        <div class="step-number">1</div>
+        Initial Mixture Screw Setting
+      </div>
+      <ol>
+        <li>Gently turn the mixture screw clockwise until it seats lightly. <strong>Do not force it</strong> — the needle tip is fragile.</li>
+        <li>Back it out the following number of turns as a starting baseline:
+          <table style="margin-top: 0.75rem;">
+            <tr><th>Engine</th><th>Starting Position</th></tr>
+            <tr><td>GY6 50cc (139QMB)</td><td>1.5–2.0 turns out</td></tr>
+            <tr><td>GY6 125cc (152QMI)</td><td>2.0–2.5 turns out</td></tr>
+            <tr><td>GY6 150cc (157QMJ)</td><td>2.5–2.75 turns out</td></tr>
+          </table>
+        </li>
+      </ol>
+    </div>
+
+    <div>
+      <div class="step-heading">
+        <div class="step-number">2</div>
+        Set Idle Speed
+      </div>
+      <ol>
+        <li>Start the engine and allow it to reach full operating temperature (10 minutes minimum).</li>
+        <li>Using the idle speed screw, adjust RPM to the target:
+          <table style="margin-top: 0.75rem;">
+            <tr><th>Engine</th><th>Target Idle RPM</th></tr>
+            <tr><td>GY6 50cc</td><td>1,600–1,800 RPM</td></tr>
+            <tr><td>GY6 150cc</td><td>1,200–1,500 RPM</td></tr>
+          </table>
+        </li>
+        <li>If you do not have a tachometer, set idle to the lowest stable speed at which the engine will not stall.</li>
+      </ol>
+    </div>
+
+    <div>
+      <div class="step-heading">
+        <div class="step-number">3</div>
+        Fine-Tune the Air/Fuel Mixture
+      </div>
+      <ol>
+        <li>With the engine at full operating temperature and idle set, slowly turn the mixture screw counter-clockwise (richer) in ¼-turn increments. Pause 10–15 seconds after each adjustment.</li>
+        <li>Listen: RPM should rise as you approach the ideal mixture. Note the position where RPM peaks.</li>
+        <li>From the peak-RPM position, turn the screw clockwise (leaner) by ¼ turn. This is your optimal idle mixture setting.</li>
+        <li>Re-adjust the idle speed screw to bring the RPM back to the target range.</li>
+        <li>Snap the throttle open quickly and release — the engine should rev cleanly without hesitation or stumble. If it stumbles, richen the mixture slightly (counter-clockwise ¼ turn).</li>
+      </ol>
+    </div>
+
+    <div>
+      <div class="step-heading">
+        <div class="step-number">4</div>
+        Float Level Adjustment
+      </div>
+      <p style="color: var(--text-secondary); margin-bottom: 0.75rem;">An incorrectly set float is one of the most common causes of GY6 carburettor problems: too high causes rich running, fuel overflow, and stalling at idle; too low causes lean surge and bog.</p>
+
+      <div class="video-embed">
+        <div class="video-embed-title">🎬 Float Adjustment Technique</div>
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/wsXblMyMpD0"
+            title="How to Adjust a Float on a Carburetor - Simple Trick"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="video-source">
+          <strong>Video:</strong> "How to Adjust a Float on a Carburetor | Simple Trick!" — Demonstrates the proper technique for bending the float tab without damaging it.
+        </p>
+      </div>
+
+      <ol>
+        <li>Remove the float bowl (bottom of carburettor, held by one screw). Drain any fuel into a rag.</li>
+        <li>Hold the carburettor body with the float upright (as if gravity were pulling it closed).</li>
+        <li>The bottom of the float should be parallel to the carburettor body gasket surface. Typical specification: <strong>14–16 mm</strong> from the gasket surface to the bottom of the float.</li>
+        <li>To adjust, gently bend the small metal tab that contacts the needle valve until the float sits at the correct height.</li>
+        <li>Reinstall float bowl with a new gasket if available. Tighten the bowl screw snugly — do not overtighten (it is often plastic-threaded).</li>
+      </ol>
+    </div>
+
+    <div class="callout callout-tip">
+      💡 <strong>Tip:</strong> If the float bowl gasket leaks, a thin smear of petrol-resistant RTV sealant works as a temporary fix, but a proper replacement O-ring or gasket is always better.
+    </div>
+
+    <div>
+      <div class="step-heading">
+        <div class="step-number">5</div>
+        Pilot Jet &amp; Main Jet (Cleaning)
+      </div>
+      <p style="color: var(--text-secondary); margin-bottom: 0.75rem;">Before adjusting, confirm the jets are clean. A partially blocked pilot jet causes lean stumble at idle; a blocked main jet causes flat top-speed.</p>
+      <ol>
+        <li>Remove the pilot jet (small brass jet, usually marked <code>35</code>–<code>42</code> on GY6 50cc) and main jet (<code>95</code>–<code>115</code> on GY6 150cc).</li>
+        <li>Spray carburettor cleaner through the jet holes and blow clear with compressed air. <strong>Never use wire</strong> — it enlarges the orifice.</li>
+        <li>Hold the jet up to light — you should see a clean round hole straight through.</li>
+        <li>Reinstall jets snug but do not overtighten (they strip easily).</li>
+      </ol>
+    </div>
+
+    <h2>Symptom Diagnosis Quick Reference</h2>
+    <table>
+      <tr><th>Symptom</th><th>Likely Cause</th><th>Action</th></tr>
+      <tr><td>Black smoke, sooty plug, fuel overflow</td><td>Running too rich</td><td>Turn mixture screw IN (clockwise), lower float level</td></tr>
+      <tr><td>White/grey plug, lean surge, overheating</td><td>Running too lean</td><td>Turn mixture screw OUT (counter-clockwise), raise float level</td></tr>
+      <tr><td>Stumble/bog off idle</td><td>Blocked pilot jet or lean mixture</td><td>Clean pilot jet, richen mixture screw ¼ turn</td></tr>
+      <tr><td>Poor top-end performance</td><td>Blocked main jet or small main jet size</td><td>Clean or upsize main jet by 2–5 sizes</td></tr>
+      <tr><td>Fuel dripping from overflow tube</td><td>Float level too high or needle valve stuck</td><td>Lower float, clean/replace needle valve</td></tr>
+      <tr><td>Hard start when cold</td><td>Auto-choke not functioning</td><td>Test auto-choke thermostatic element (see choke guide)</td></tr>
+    </table>
+
+    <h2>Applicable Models</h2>
+    <p>This guide applies directly to GY6-engined scooters commonly sold in the Benelux market and Europe, including: <strong>BTC Riva</strong> (50cc, Euro 2/4), <strong>La Souris Sourini</strong> and <strong>La Souris City S</strong> (50cc, carburetted variants), <strong>Santini Capri</strong> (50cc GY6), and any other scooter using the <code>139QMB</code>, <code>152QMI</code>, or <code>157QMJ</code> engine codes.</p>
+
+    <h2>Related Videos</h2>
+    <div class="related-videos">
+      <div class="video-card">
+        <h4>GY6 Carburetor Inspection, Problems, Removal &amp; Adjustment</h4>
+        <p>Complete step-by-step guide to inspecting GY6 carburetors for problems, removing them, and making comprehensive adjustments for optimal performance.</p>
+        <a href="https://www.youtube.com/watch?v=D9UnD1ibIIw" target="_blank" rel="noopener">Watch on YouTube →</a>
+      </div>
+      <div class="video-card">
+        <h4>How to Tune GY6 Carburetor Idle &amp; Mixture Screw</h4>
+        <p>Focuses specifically on setting and adjusting idle speed and the idle mixture screw for optimal engine response.</p>
+        <a href="https://www.youtube.com/watch?v=7THapydj8s8" target="_blank" rel="noopener">Watch on YouTube →</a>
+      </div>
+      <div class="video-card">
+        <h4>How to Adjust Carburetor Float Height</h4>
+        <p>General carburetor float height adjustment technique that applies to most small engines including scooters and mopeds.</p>
+        <a href="https://www.youtube.com/watch?v=Qk5_wTJbTHQ" target="_blank" rel="noopener">Watch on YouTube →</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="guide-footer">
+    <p>Page auto-generated by ISRM Content Sync on 2026-05-07. Content summarised from multiple technical sources for educational purposes.</p>
+    <p style="margin-top: 0.5rem;">Always verify with the original source and your scooter's workshop manual before performing repairs.</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISRM Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Repair Guides</a></p>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+      });
+    }
+  </script>
+</body>
+</html>

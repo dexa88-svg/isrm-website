@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GY6 Air Filter — Clean or Replace Guide — ISRM</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .guide-header { background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%); border-bottom: 1px solid var(--border); padding: 3rem 2rem 2rem; }
+    .guide-header-inner { max-width: 900px; margin: 0 auto; }
+    .guide-header h1 { font-size: 2.4rem; line-height: 1.2; background: linear-gradient(135deg, var(--accent), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1.2rem; }
+    .breadcrumb { padding: 0.9rem 2rem; max-width: 900px; margin: 0 auto; font-size: 0.85rem; color: var(--text-tertiary); }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+    .guide-meta { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; font-size: 0.875rem; color: var(--text-tertiary); margin-bottom: 1rem; }
+    .guide-meta a { color: var(--accent); }
+    .guide-meta-sep { opacity: 0.4; }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+    .guide-tag { background: rgba(0, 168, 204, 0.1); color: var(--accent); border: 1px solid rgba(0, 168, 204, 0.3); padding: 0.25rem 0.7rem; border-radius: 20px; font-size: 0.78rem; font-weight: 500; }
+    .applies-to { background: rgba(255, 107, 53, 0.07); border: 1px solid rgba(255, 107, 53, 0.2); border-left: 4px solid var(--primary); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 1rem 1.25rem; margin-top: 1.5rem; font-size: 0.95rem; color: var(--text-secondary); }
+    .applies-to strong { color: var(--text-primary); }
+    .guide-content { max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .guide-content h2 { font-size: 1.55rem; color: var(--text-primary); margin-top: 2.5rem; margin-bottom: 0.9rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.6rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; }
+    .guide-content a { color: var(--accent); }
+    .guide-content ul, .guide-content ol { padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary); }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content code { background: var(--surface-2); border: 1px solid var(--border); color: var(--accent-light); padding: 0.15rem 0.45rem; border-radius: var(--radius-sm); font-family: monospace; font-size: 0.87em; }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th { background: var(--surface-2); color: var(--text-primary); font-weight: 600; padding: 0.7rem 1rem; text-align: left; border: 1px solid var(--border); }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26, 35, 50, 0.6); }
+    .callout { padding: 1rem 1.25rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 1.5rem 0; font-size: 0.95rem; color: var(--text-secondary); }
+    .callout strong { color: var(--text-primary); }
+    .callout-warn { background: rgba(245, 166, 35, 0.08); border: 1px solid rgba(245, 166, 35, 0.25); border-left: 4px solid var(--warning); }
+    .callout-danger { background: rgba(214, 48, 49, 0.08); border: 1px solid rgba(214, 48, 49, 0.25); border-left: 4px solid var(--danger); }
+    .callout-tip { background: rgba(6, 167, 125, 0.08); border: 1px solid rgba(6, 167, 125, 0.25); border-left: 4px solid var(--success); }
+    .guide-footer { background: var(--surface); border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.825rem; color: var(--text-tertiary); }
+    .video-embed { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin: 1.5rem 0; }
+    .video-embed-title { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; }
+    .video-thumb-link { display: block; text-decoration: none; }
+    .video-thumb-wrap { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 0.75rem; }
+    .video-thumb-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.2s; }
+    .video-thumb-link:hover .video-thumb-img { opacity: 0.75; }
+    .video-play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .video-play-icon { width: 68px; height: 48px; background: rgba(200,0,0,0.9); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.4rem; transition: background 0.2s, transform 0.15s; }
+    .video-thumb-link:hover .video-play-icon { background: #f00; transform: scale(1.06); }
+    .video-source { font-size: 0.85rem; color: var(--text-tertiary); }
+    .video-source a { color: var(--accent); }
+    .related-videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 1rem; }
+    .video-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; transition: var(--transition); }
+    .video-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow); }
+    .video-card h4 { color: var(--text-primary); margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600; }
+    .video-card p { font-size: 0.875rem; margin-bottom: 0.75rem; color: var(--text-secondary); }
+    .video-card a { color: var(--primary); font-weight: 600; font-size: 0.9rem; }
+    @media (max-width: 768px) { .guide-header h1 { font-size: 1.7rem; } .guide-content { padding: 1.5rem 1rem 3rem; } .breadcrumb { padding: 0.9rem 1rem; } }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand"><span class="brand-icon">⚙️</span><span class="brand-text">ISRM</span></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../community/index.html" class="nav-link">Community</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
+        <a href="../index.html">ISRM Home</a><span>›</span><a href="index.html">Repair Guides</a><span>›</span>GY6 Air Filter — Clean or Replace Guide
+      </div>
+      <h1>GY6 Air Filter — Clean or Replace Guide</h1>
+    </div>
+  </section>
+
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 3rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "🔧";
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem;
+      opacity: 0.07;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0 0 1rem;
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+  </style>
+
+
+  <div class="breadcrumb">
+    <a href="../index.html">ISRM Home</a><span>›</span>
+    <a href="index.html">Repair Guides</a><span>›</span>
+    Air Filter — Clean or Replace
+  </div>
+
+  <header class="guide-header">
+    <div class="guide-header-inner">
+      <h1>Air Filter — Clean or Replace</h1>
+      <div class="guide-meta">
+        <span>Added: 2026-05-07</span>
+        <span class="guide-meta-sep">|</span>
+        <span>Sources:
+          <a href="https://www.taotaopartsdirect.com/blogs/news/maintenance-schedule-chinese" target="_blank" rel="noopener">TaoTao Parts Direct</a>,
+          <a href="https://lookover.app/the-complete-scooter-maintenance-guide" target="_blank" rel="noopener">LookOver Maintenance Guide</a>
+        </span>
+      </div>
+      <div class="guide-tags">
+        <span class="guide-tag">repair-guides</span>
+        <span class="guide-tag">GY6</span>
+        <span class="guide-tag">Vespa</span>
+        <span class="guide-tag">maintenance</span>
+        <span class="guide-tag">fuel-system</span>
+      </div>
+      <div class="applies-to">
+        📌 <strong>Applies to:</strong> GY6 50/125/150cc (foam element airbox), Vespa Primavera / Sprint / ZIP (paper element).
+        Clean every <strong>3,000 km</strong> or every 6 months. Replace the element every <strong>8,000–12,000 km</strong> or when damaged.
+      </div>
+    </div>
+  </header>
+
+  <main class="guide-content">
+
+    <p>The air filter is one of the most overlooked maintenance items on small scooters, yet a clogged filter is one of the most common causes of poor performance, high fuel consumption, and a black sooty spark plug. The filter prevents dust, grit, and insects from entering the engine — a single unfiltered ride on a dusty road can cause more cylinder bore wear than 10,000 km of normal use.</p>
+
+    <h2>Air Filter Types by Model</h2>
+    <table>
+      <tr><th>Filter type</th><th>Found on</th><th>Cleaning method</th><th>Replace when</th></tr>
+      <tr><td>Oiled foam element</td><td>Most GY6 clones (BTC Riva, Sourini, Santini)</td><td>Wash with soap and water, re-oil when dry</td><td>Torn, disintegrating, or heavily oil-soaked</td></tr>
+      <tr><td>Dry paper element</td><td>Higher-spec GY6, Vespa Primavera / Sprint</td><td>Tap gently — do not wash</td><td>Dark/clogged, cannot see light through it</td></tr>
+      <tr><td>Dual-layer (foam + paper)</td><td>Some 125cc GY6 variants</td><td>Replace paper inner; wash foam outer</td><td>Paper inner: every 8,000 km</td></tr>
+    </table>
+
+    <div class="callout callout-danger">
+      🔴 <strong>Never run a GY6 scooter without an air filter fitted</strong>, even briefly for testing. Without filtration, abrasive particles enter the cylinder and cause rapid bore wear within minutes of running. If the filter is being washed and is still drying, wait — do not start the engine.
+    </div>
+
+    <h2>Symptoms of a Clogged Air Filter</h2>
+    <ul>
+      <li><strong>Loss of power and acceleration</strong> — engine is starved of air, mixture is too rich</li>
+      <li><strong>Increased fuel consumption</strong> — rich mixture burns more fuel for the same output</li>
+      <li><strong>Black, sooty spark plug</strong> — carbon deposits from incomplete combustion</li>
+      <li><strong>Difficulty starting</strong>, especially when warm</li>
+      <li><strong>Black smoke from the exhaust</strong></li>
+      <li><strong>Rough idle</strong> that cannot be cured by carburettor adjustment alone</li>
+    </ul>
+
+    <h2>Tools &amp; Materials Required</h2>
+    <ul>
+      <li>Phillips screwdriver or 8 mm socket (airbox cover screws)</li>
+      <li>Mild dish soap and warm water (foam filters)</li>
+      <li>Clean dry cloth or paper towels</li>
+      <li>Foam filter oil (available at motorcycle shops — do not substitute with engine oil)</li>
+      <li>Replacement filter element (foam or paper, model-specific)</li>
+    </ul>
+
+    <div class="video-embed">
+      <div class="video-embed-title">🎬 Video Guide — GY6 Air Filter Maintenance: Clean or Replace</div>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/dklHU1KW2bQ"
+          title="GY6 Air Filter Maintenance — Clean or Replace"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <p class="video-source"><strong>Video:</strong> "GY6 Air Filter Maintenance — Clean or Replace" | YouTube &nbsp;
+        <a href="https://www.youtube.com/watch?v=dklHU1KW2bQ" target="_blank" rel="noopener">↗ Watch on YouTube</a>
+      </p>
+    </div>
+
+    <h2>Procedure — GY6 Foam Filter (Most Common)</h2>
+    <ol>
+      <li><strong>Locate the airbox.</strong> On GY6 scooters it is on the right side of the scooter under a body panel, connected to the carburettor inlet via a rubber intake boot. On most models two screws or a single wing nut secure the airbox cover.</li>
+      <li><strong>Remove the airbox cover</strong> and lift out the foam element. Note the orientation — some elements are directional.</li>
+      <li><strong>Inspect the element.</strong> If it is torn, deformed, or the foam has begun to crumble, replace it — cleaning a damaged filter is pointless. Also inspect the inside of the airbox housing for water, dirt, or insects and wipe it clean.</li>
+      <li><strong>Wash the foam element</strong> in a basin of warm water with a few drops of dish soap. Squeeze gently (do not wring or twist) and work the soap through the foam until the rinse water runs completely clear.</li>
+      <li><strong>Rinse thoroughly</strong> with clean water until all soap is gone. Soap residue left in the filter reduces airflow.</li>
+      <li><strong>Dry completely.</strong> Squeeze out excess water gently. Pat dry with a clean cloth and leave to air-dry for at least 30–60 minutes. <em>The filter must be fully dry before re-oiling or reinstalling.</em></li>
+      <li><strong>Apply foam filter oil.</strong> Drizzle a small amount of filter oil onto the foam and work it in evenly with your fingers. The element should be lightly, evenly coated — not dripping wet. Excess oil gets drawn into the engine and fouls the spark plug.</li>
+      <li><strong>Reinstall the element</strong> in the correct orientation. Refit the airbox cover and tighten the screws or wing nut firmly — air leaks around the filter housing bypass the filter entirely.</li>
+      <li><strong>Check the intake boot</strong> (the rubber tube connecting the airbox to the carburettor) for cracks or loose clamps. A cracked boot allows unfiltered air to bypass the filter.</li>
+    </ol>
+
+    <div class="callout callout-tip">
+      💡 <strong>No filter oil?</strong> In an emergency, a very thin smear of clean engine oil can be used on the foam, but proper foam filter oil has a tackier consistency that traps fine dust particles more effectively. Buy dedicated filter oil for the next service.
+    </div>
+
+    <h2>Procedure — Vespa / Paper Filter</h2>
+    <ol>
+      <li><strong>Access the airbox</strong> — on Vespa Primavera and Sprint models the airbox is under the left body panel. Remove the 2–3 screws securing the panel, then open the airbox cover.</li>
+      <li><strong>Remove the paper element</strong> and hold it up to a light source. If you cannot see light clearly through the filter paper, it must be replaced — paper filters cannot be washed back to full effectiveness.</li>
+      <li><strong>Tap the element gently</strong> against your palm to dislodge loose dust, if the element is only lightly soiled. Do not use compressed air — high pressure damages the paper fibres.</li>
+      <li><strong>Wipe out the airbox housing</strong> with a dry cloth.</li>
+      <li><strong>Fit the new or cleaned element</strong> and reclose the airbox. Ensure the cover seal is seated correctly — even a small gap allows unfiltered air in.</li>
+    </ol>
+
+    <h2>Service Intervals</h2>
+    <table>
+      <tr><th>Condition</th><th>Action</th><th>Interval</th></tr>
+      <tr><td>Normal use, paved roads</td><td>Clean foam element</td><td>Every 3,000 km / 6 months</td></tr>
+      <tr><td>Dusty roads, gravel, construction areas</td><td>Clean foam element</td><td>Every 1,500 km / 3 months</td></tr>
+      <tr><td>Any filter — replace</td><td>New element</td><td>Every 8,000–12,000 km or when damaged</td></tr>
+      <tr><td>Paper filter — replace</td><td>New element (do not wash)</td><td>Every 6,000–8,000 km</td></tr>
+    </table>
+
+    <div class="callout callout-warn">
+      ⚠️ <strong>Aftermarket pod filters:</strong> Removing the stock airbox and fitting a cone/pod filter on a carburetted GY6 scooter requires carburettor re-jetting. The stock main jet is calibrated for the stock airbox restriction. A free-flowing pod filter leans the mixture and can cause overheating and piston damage if the carb is not rejetted to compensate.
+    </div>
+
+    <h2>Applicable Models</h2>
+    <p>Foam filter procedure applies to all GY6-engined scooters: <strong>BTC Riva 50/125</strong>, <strong>La Souris Sourini / City</strong>, <strong>Santini Capri</strong>, and all Chinese <code>139QMB</code> / <code>157QMJ</code> clones. Paper filter procedure applies to <strong>Vespa Primavera 125/150</strong>, <strong>Vespa Sprint</strong>, and <strong>Vespa ZIP</strong> — consult your model year's service manual for the correct replacement part number.</p>
+
+    <h2>Related Videos</h2>
+    <div class="related-videos">
+      <div class="video-card">
+        <h4>How to Check and Clean a Scooter Air Filter</h4>
+        <p>Visual walkthrough of foam filter removal, soap-wash method, drying and re-oiling — includes inspection of the airbox and intake boot for cracks.</p>
+        <a href="https://www.youtube.com/watch?v=lYihHE7Gklc" target="_blank" rel="noopener">Watch on YouTube →</a>
+      </div>
+      <div class="video-card">
+        <h4>Basic Scooter Maintenance — Air Filter DIY</h4>
+        <p>Beginner-friendly air filter service covering foam element cleaning and paper element replacement on a typical Chinese scooter.</p>
+        <a href="https://www.youtube.com/watch?v=vbdSLxI9G0c" target="_blank" rel="noopener">Watch on YouTube →</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="guide-footer">
+    <p>Page generated by ISRM Content Sync on 2026-05-07. Content summarised from external technical sources for educational purposes.</p>
+    <p style="margin-top: 0.5rem;">Always verify filter part numbers and service intervals against your scooter's official workshop manual.</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISRM Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Repair Guides</a></p>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (navToggle) { navToggle.addEventListener('click', () => { navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex'; }); }
+  </script>
+</body>
+</html>

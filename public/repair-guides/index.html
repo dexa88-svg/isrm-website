@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repair Guides — ISRM</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* Page hero */
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 4rem 2rem 3rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "🔧";
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem;
+      opacity: 0.07;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .page-hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .page-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.75rem;
+    }
+    .page-hero p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      max-width: 620px;
+      margin-bottom: 1.5rem;
+    }
+    .page-hero-stats {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .hero-stat-number {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Category filters */
+    .filters-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      position: sticky;
+      top: 64px;
+      z-index: 90;
+    }
+    .filters-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0.25rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: 0.75rem 0;
+    }
+    .filters-inner::-webkit-scrollbar { display: none; }
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .filter-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .filter-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    /* Guide count label */
+    .guides-section {
+      padding: 3rem 2rem 5rem;
+    }
+    .guides-section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .guides-count {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+    .guides-count strong {
+      color: var(--text-primary);
+    }
+
+    /* Hidden card for filter */
+    .guide-card.hidden {
+      display: none;
+    }
+
+    /* Difficulty dots */
+    .difficulty {
+      display: flex;
+      gap: 3px;
+      align-items: center;
+    }
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--border);
+    }
+    .dot.filled { background: var(--primary); }
+
+    /* No results state */
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--text-muted);
+      display: none;
+    }
+    .no-results.visible { display: block; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand"><span class="brand-icon">⚙️</span><span class="brand-text">ISRM</span></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link active">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../community/index.html" class="nav-link">Community</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
+        <a href="../index.html">ISRM Home</a><span>›</span>Repair Guides
+      </div>
+      <h1>Repair Guides</h1>
+      <p>Step-by-step maintenance and repair procedures for GY6-platform and Piaggio/Vespa petrol scooters. Every guide is sourced, verified, and written for DIY owners.</p>
+      <div class="page-hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-number">12</span>
+          <span class="hero-stat-label">Guides</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number">GY6</span>
+          <span class="hero-stat-label">Engine family</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number">5</span>
+          <span class="hero-stat-label">Categories</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number">Free</span>
+          <span class="hero-stat-label">Always</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Filter Bar -->
+  <div class="filters-bar">
+    <div class="filters-inner">
+      <button class="filter-btn active" data-filter="all">All guides</button>
+      <button class="filter-btn" data-filter="maintenance">🔩 Maintenance</button>
+      <button class="filter-btn" data-filter="safety">🛑 Safety</button>
+      <button class="filter-btn" data-filter="electrical">⚡ Electrical</button>
+      <button class="filter-btn" data-filter="transmission">⚙️ Transmission</button>
+      <button class="filter-btn" data-filter="advanced">🔬 Advanced</button>
+    </div>
+  </div>
+
+  <!-- Guides Grid -->
+  <section class="guides-section">
+    <div class="guides-section-inner">
+      <p class="guides-count"><strong id="visibleCount">12</strong> guides</p>
+
+      <div class="guides-grid" id="guidesGrid">
+
+        <article class="guide-card" data-category="maintenance">
+          <div class="card-tag">GY6</div>
+          <h3>Engine Oil Change</h3>
+          <p>Oil drain, correct specification, capacity, and refill procedure for GY6 139QMB and 157QMJ engines.</p>
+          <div class="card-meta">
+            <span class="tag">Maintenance</span>
+            <span class="time">15 min</span>
+          </div>
+          <a href="gy6-oil-change-guide.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card" data-category="maintenance">
+          <div class="card-tag">GY6</div>
+          <h3>Spark Plug Inspection &amp; Replacement</h3>
+          <p>Reading plug condition, correct gap setting, and replacement intervals for GY6 50cc–150cc engines.</p>
+          <div class="card-meta">
+            <span class="tag">Maintenance</span>
+            <span class="time">10 min</span>
+          </div>
+          <a href="gy6-spark-plug-guide.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card" data-category="maintenance">
+          <div class="card-tag">GY6</div>
+          <h3>Air Filter Cleaning &amp; Replacement</h3>
+          <p>Foam filter wash and re-oiling for GY6 clones; paper element replacement for Vespa-type models.</p>
+          <div class="card-meta">
+            <span class="tag">Maintenance</span>
+            <span class="time">15 min</span>
+          </div>
+          <a href="gy6-air-filter-guide.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card" data-category="maintenance">
+          <div class="card-tag">GY6</div>
+          <h3>Carburettor Adjustment &amp; Tuning</h3>
+          <p>Idle speed, mixture screw, and needle position adjustment for smooth running on GY6 carburetted scooters.</p>
+          <div class="card-meta">
+            <span class="tag">Carburettor</span>
+            <span class="time">15 min</span>
+          </div>
+          <a href="gy6-carburetor-adjustment-guide.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card" data-category="maintenance">
+          <div class="card-tag">GY6</div>
+          <h3>Carburettor Deep-Cleaning</h3>
+          <p>Full disassembly and deep-cleaning of GY6 PD18J/PD24J/CVK carburettors: float, jets, needle, mixture screw, and reassembly.</p>
+          <div class="card-meta">
+            <span class="tag">Carburettor</span>
+            <span class="time">30 min</span>
+          </div>
+          <a href="gy6-carburetor-cleaning-guide.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card" data-category="safety">
+          <div class="card-tag">GY6 · Vespa</div>
+          <h3>Brake Pads Replacement</h3>
+          <p>Step-by-step front and rear brake pad replacement — caliper piston retraction, spring reinstall, and bed-in procedure.</p>
+          <div class="card-meta">
+            <span class="tag">Safety</span>
+            <span class="time">30 min</span>
+          </div>
+          <a href="gy6-brake-pads-guide.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card" data-category="safety">
+          <div class="card-tag">GY6 · Vespa</div>
+          <h3>Brake Fluid Change &amp; Bleed</h3>
+          <p>Why DOT 4 degrades over time — and how to flush and bleed hydraulic brake circuits safely.</p>
+          <div class="card-meta">
+            <span class="tag">Safety</span>
+            <span class="time">25 min</span>
+          </div>
+          <a href="gy6-brake-fluid-guide.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card" data-category="electrical">
+          <div class="card-tag">GY6</div>
+          <h3>Ignition Coil Testing &amp; Replacement</h3>
+          <p>No-spark diagnosis checklist — isolate CDI vs coil vs stator, then replace the coil step by step with a multimeter.</p>
+          <div class="card-meta">
+            <span class="tag">Electrical</span>
+            <span class="time">25 min</span>
+          </div>
+          <a href="gy6-ignition-coil-guide.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card" data-category="transmission">
+          <div class="card-tag">GY6</div>
+          <h3>CVT Variator &amp; Drive Belt Replacement</h3>
+          <p>Complete variator disassembly, drive belt inspection, and belt replacement procedure for GY6 scooters.</p>
+          <div class="card-meta">
+            <span class="tag">Transmission</span>
+            <span class="time">25 min</span>
+          </div>
+          <a href="gy6-cvt-variator-belt-replacement.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card" data-category="transmission">
+          <div class="card-tag">GY6 · Vespa · Piaggio</div>
+          <h3>CVT Clutch &amp; Variator Rollers</h3>
+          <p>How the CVT works, wear symptoms, roller weight specs for GY6 and Piaggio, and step-by-step roller replacement.</p>
+          <div class="card-meta">
+            <span class="tag">Transmission</span>
+            <span class="time">35 min</span>
+          </div>
+          <a href="scooter-cvt-clutch-variator-guide.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card" data-category="advanced">
+          <div class="card-tag">GY6</div>
+          <h3>Carburettor Jetting &amp; Rejetting</h3>
+          <p>Selecting and changing main jet and pilot jet sizes; jetting tables for altitude corrections and aftermarket modifications.</p>
+          <div class="card-meta">
+            <span class="tag">Advanced</span>
+            <span class="time">20 min</span>
+          </div>
+          <a href="gy6-carburetor-jetting-guide.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card" data-category="advanced">
+          <div class="card-tag">GY6</div>
+          <h3>Valve Clearance Adjustment</h3>
+          <p>How to check and set valve clearances on 139QMB and 157QMJ engines — tools needed, TDC location, and feeler gauge procedure.</p>
+          <div class="card-meta">
+            <span class="tag">Engine</span>
+            <span class="time">20 min</span>
+          </div>
+          <a href="gy6-valve-adjustment-guide.html" class="read-more">Read Guide</a>
+        </article>
+
+        <div class="no-results" id="noResults">No guides in this category yet.</div>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="../script.js"></script>
+  <script>
+    // Category filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.guide-card');
+    const countEl = document.getElementById('visibleCount');
+    const noResults = document.getElementById('noResults');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        let visible = 0;
+
+        cards.forEach(card => {
+          const match = filter === 'all' || card.dataset.category === filter;
+          card.classList.toggle('hidden', !match);
+          if (match) visible++;
+        });
+
+        countEl.textContent = visible;
+        noResults.classList.toggle('visible', visible === 0);
+      });
+    });
+  </script>
+
+
+  <footer class="guide-footer">
+    <p>ISRM — Interactive Scooter Repair Manuals. Content for educational purposes. CC BY-SA 4.0.</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISRM Home</a></p>
+  </footer>
+</body>
+</html>

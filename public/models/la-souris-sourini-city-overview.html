@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Souris Sourini / City S — Model Overview & Technical Guide — ISRM</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .meta { color: #888; font-size: 0.85rem; margin-bottom: 1.5rem; }
+    .source-box { background: #1a1a1a; border-left: 4px solid #f5a623; padding: 0.8rem 1.2rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; }
+    .tag { display: inline-block; background: #222; color: #f5a623; border: 1px solid #f5a623; border-radius: 12px; padding: 2px 10px; font-size: 0.78rem; margin-right: 6px; }
+    .warn { background: #2a1a00; border-left: 4px solid #f5a623; padding: 0.8rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+    .tip { background: #0a2a1a; border-left: 4px solid #4caf50; padding: 0.8rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th { background: #1a1a1a; color: #f5a623; text-align: left; padding: 0.5rem 0.8rem; border: 1px solid #333; }
+    td { padding: 0.5rem 0.8rem; border: 1px solid #333; }
+    tr:nth-child(even) td { background: #151515; }
+    ol li, ul li { margin-bottom: 0.5rem; }
+    code { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-family: monospace; color: #7ec8e3; }
+    .related-links a { display: block; margin: 0.3rem 0; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand"><span class="brand-icon">⚙️</span><span class="brand-text">ISRM</span></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../community/index.html" class="nav-link">Community</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
+        <a href="../index.html">ISRM Home</a><span>›</span><a href="index.html">Models</a><span>›</span>La Souris Sourini / City S — Model Overview & Technical Guide
+      </div>
+      <h1>La Souris Sourini / City S — Model Overview & Technical Guide</h1>
+    </div>
+  </section>
+
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 3rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "🛵";
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem;
+      opacity: 0.07;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0 0 1rem;
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+  </style>
+
+
+  <div class="breadcrumb">
+    <a href="../index.html">ISRM Home</a><span>›</span>
+    <a href="index.html">Models</a><span>›</span>
+    La Souris Sourini / City Overview
+  </div>
+
+  <main class="guide-content">
+  <h1>La Souris Sourini / City S — Model Overview</h1>
+  <div class="meta">
+    Added: 2026-05-07 &nbsp;|&nbsp; Sources: <a href="https://scooterforum.net/tags/la-souris/" target="_blank" rel="noopener">ScooterForum.net</a>, <a href="https://www.retroscooteronderdelen.nl/en/tags/la-souris/" target="_blank" rel="noopener">Retroscooteronderdelen.nl</a>, <a href="https://scooterforum.net/threads/logboek-van-een-la-souris-euro-5-snorscooter.218946/" target="_blank" rel="noopener">La Souris Euro 5 owner log</a>
+    &nbsp;|&nbsp; <span class="tag">models</span> <span class="tag">La Souris</span> <span class="tag">GY6</span> <span class="tag">50cc</span>
+  </div>
+
+  <div class="source-box">
+    📌 <strong>About La Souris:</strong> La Souris ("The Mouse" in French) is a Dutch-market scooter brand. The <strong>Sourini</strong> and <strong>City S</strong> are retro-styled 50cc snorscooters sold primarily in the Netherlands and Belgium. They use a GY6-based 50cc engine platform and share many components with other Chinese-made scooters including the BTC Riva, AGM VX50, and Senzo Rivalux.
+  </div>
+
+  <h2>Model Variants</h2>
+  <table>
+    <tr><th>Model Name</th><th>Emission Standard</th><th>Engine Type</th><th>Years Sold</th></tr>
+    <tr><td>La Souris Sourini</td><td>Euro 2 / Euro 3</td><td>GY6 50cc, carburetted (<code>139QMB</code>)</td><td>~2015–2020</td></tr>
+    <tr><td>La Souris City S</td><td>Euro 4</td><td>GY6 50cc, carburetted or EFI (<code>139QMB</code> variant)</td><td>2018–2021</td></tr>
+    <tr><td>La Souris (Euro 5)</td><td>Euro 5</td><td>GY6 50cc EFI (fuel injection, no carb)</td><td>2021–present</td></tr>
+  </table>
+
+  <div class="warn">
+    ⚠️ <strong>Important:</strong> Euro 5 models (from 2021 onwards) use electronic fuel injection (EFI) and do NOT have a carburettor. Carburetor adjustment guides do not apply to these models. Fuel injection faults typically require a diagnostic tool (OBD reader) to read ECU fault codes.
+  </div>
+
+  <h2>Technical Specifications (GY6 Carburetted Variants)</h2>
+  <table>
+    <tr><th>Specification</th><th>Value</th></tr>
+    <tr><td>Engine type</td><td>4-stroke, single cylinder, air-cooled, OHC</td></tr>
+    <tr><td>Engine code</td><td><code>139QMB</code> (50cc) or variant</td></tr>
+    <tr><td>Displacement</td><td>49.9 cc</td></tr>
+    <tr><td>Bore × Stroke</td><td>39 mm × 41.4 mm (typical)</td></tr>
+    <tr><td>Compression ratio</td><td>~10:1</td></tr>
+    <tr><td>Max power</td><td>~3.0 kW at 7,500 RPM (derestricted)</td></tr>
+    <tr><td>Speed restriction (NL snorfiets)</td><td>25 km/h (snorfiets class — limited to 1.8 kW output)</td></tr>
+    <tr><td>Transmission</td><td>Automatic CVT</td></tr>
+    <tr><td>Drive belt size</td><td>669 × 18 × 30</td></tr>
+    <tr><td>Spark plug</td><td><code>A7TC</code> or <code>NGK CR7E</code></td></tr>
+    <tr><td>Fuel type</td><td>Unleaded petrol, minimum 95 RON</td></tr>
+    <tr><td>Fuel tank capacity</td><td>~5.5 litres</td></tr>
+    <tr><td>Engine oil</td><td>10W-40 JASO MA2 — capacity 0.7–0.8 litres</td></tr>
+    <tr><td>Front brake</td><td>Disc, 190 mm, single piston caliper (DOT4 fluid)</td></tr>
+    <tr><td>Rear brake</td><td>Drum</td></tr>
+    <tr><td>Tyre — front</td><td>90/90-10 or 100/90-10</td></tr>
+    <tr><td>Tyre — rear</td><td>90/90-10 or 100/90-10</td></tr>
+    <tr><td>Kerb weight</td><td>~95 kg</td></tr>
+    <tr><td>Security</td><td>Immobiliser with remote (models from 2020+)</td></tr>
+  </table>
+
+  <h2>Known Issues & Common Repairs</h2>
+
+  <h2>Cold-Start Problems</h2>
+  <p>The most frequently reported issue on Dutch scooter forums is difficulty starting in cold or damp weather. The root causes are typically the <strong>auto-choke thermostatic element</strong> becoming sluggish in temperatures below 5°C, a partially blocked pilot jet, or a slightly low float level. See the <a href="../repair-guides/gy6-carburetor-adjustment-guide.html">GY6 Carburetor Adjustment Guide</a> and <a href="gy6-no-start-troubleshooting.html">GY6 No-Start Troubleshooting</a> for systematic diagnosis.</p>
+
+  <h2>Carburettor Type</h2>
+  <p>La Souris Sourini and City S carburetted models typically use a <strong>Rongmao</strong> or <strong>Keihin PD18J clone</strong> carburettor. Pilot jet size is typically <code>35</code>–<code>38</code> and main jet is typically <code>72</code>–<code>78</code> for the restricted 25 km/h snorfiets version.</p>
+
+  <h2>Lighting</h2>
+  <p>All La Souris City models have conventional halogen bulbs accessible through an access flap behind the headlamp — no special tools required for bulb replacement. City S models from 2019 onwards may have LED daytime running lights combined with halogen low beam.</p>
+
+  <h2>Parts Interchangeability</h2>
+  <p>The La Souris Sourini and City S share the GY6 platform with several other European-market Chinese scooters. The following models are mechanically similar and share most engine and drivetrain parts:</p>
+  <ul>
+    <li><strong>BTC Riva</strong> (same engine, same CVT belt, same GY6 carburettor)</li>
+    <li><strong>AGM VX50</strong></li>
+    <li><strong>Senzo Rivalux</strong></li>
+    <li><strong>GTS Toscana</strong></li>
+    <li>Generic Chinese 50cc scooters marketed under many brand names</li>
+  </ul>
+  <p>Body panels, headlamp units, mirrors, and instruments are <strong>not</strong> interchangeable between these brands — each has its own styling. Engine internals (pistons, camshafts, valves, bearings, seals), CVT components (rollers, belt, variator), and electrical components (CDI, rectifier, ignition coil) are largely interchangeable as they all derive from the same GY6 platform.</p>
+
+  <div class="tip">
+    💡 <strong>Parts sourcing tip:</strong> In the Netherlands and Belgium, <a href="https://en.chinascooteronderdelen.nl/product-category/scooter-parts/parts-btc-agm-iva-senzo-la-souris/" target="_blank" rel="noopener">chinascooteronderdelen.nl</a> specifically stocks parts for La Souris, BTC Riva, AGM, and Senzo models. For generic GY6 engine parts, any supplier stocking <code>139QMB</code> parts will work.
+  </div>
+
+  <h2>Maintenance Schedule Summary</h2>
+  <table>
+    <tr><th>Service Item</th><th>Interval</th></tr>
+    <tr><td>Engine oil change</td><td>Every 1,000–1,500 km</td></tr>
+    <tr><td>Air filter cleaning/replacement</td><td>Every 3,000 km or annually</td></tr>
+    <tr><td>Spark plug inspection</td><td>Every 3,000 km</td></tr>
+    <tr><td>Valve clearance check</td><td>Every 3,000 km</td></tr>
+    <tr><td>CVT drive belt inspection</td><td>Every 5,000 km</td></tr>
+    <tr><td>Front brake fluid (DOT4)</td><td>Every 2 years or when level drops</td></tr>
+    <tr><td>Rear brake shoe inspection</td><td>Every 8,000 km or when rear brake feels spongy</td></tr>
+    <tr><td>Tyre pressure check</td><td>Monthly — front 1.75 bar, rear 2.00–2.25 bar</td></tr>
+  </table>
+
+  <h2>Related Guides on ISRM</h2>
+  <div class="related-links">
+    <a href="../repair-guides/gy6-carburetor-adjustment-guide.html">🔧 GY6 Carburetor Adjustment & Tuning Guide</a>
+    <a href="../repair-guides/gy6-valve-adjustment-guide.html">🔧 GY6 Valve Clearance Adjustment Guide</a>
+    <a href="../repair-guides/gy6-oil-change-guide.html">🔧 GY6 Engine Oil Change Guide</a>
+    <a href="../repair-guides/gy6-cvt-variator-belt-replacement.html">🔧 GY6 CVT Variator & Drive Belt Replacement</a>
+    <a href="../diagnostics/gy6-no-start-troubleshooting.html">🔍 GY6 No-Start Troubleshooting Checklist</a>
+  </div>
+  </main>
+
+
+  <footer class="guide-footer">
+    <p>Page auto-generated by ISRM Content Sync on 2026-05-08. Content summarised from multiple technical sources for educational purposes.</p>
+    <p style="margin-top: 0.5rem;">Always verify with the original source and your scooter's workshop manual before performing repairs.</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISRM Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Models</a></p>
+  </footer>
+</body>
+</html>

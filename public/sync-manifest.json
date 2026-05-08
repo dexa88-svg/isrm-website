@@ -1,0 +1,189 @@
+[
+  {
+    "url": "internal:gy6-carburetor-adjustment-guide",
+    "title": "GY6 Carburetor Adjustment & Tuning Guide",
+    "category": "repair-guides",
+    "file": "repair-guides/gy6-carburetor-adjustment-guide.html",
+    "sources": [
+      "buggydepot.com/tech-center/gy6-carburetor-float-level-adjustment-guide",
+      "smallfastthings.com",
+      "49ccscoot.proboards.com"
+    ],
+    "addedAt": "2026-05-07T12:00:00Z",
+    "lastChecked": "2026-05-07T12:00:00Z"
+  },
+  {
+    "url": "internal:gy6-cvt-variator-belt-replacement",
+    "title": "GY6 CVT Variator & Drive Belt Replacement Guide",
+    "category": "repair-guides",
+    "file": "repair-guides/gy6-cvt-variator-belt-replacement.html",
+    "sources": [
+      "youtube.com - drive belt variator replacement 150cc GY6",
+      "rollingwrenchdenver.com",
+      "vmcchineseparts.com"
+    ],
+    "addedAt": "2026-05-07T12:05:00Z",
+    "lastChecked": "2026-05-07T12:05:00Z"
+  },
+  {
+    "url": "internal:gy6-valve-adjustment-guide",
+    "title": "GY6 Valve Clearance Adjustment Guide (139QMB / 157QMJ)",
+    "category": "repair-guides",
+    "file": "repair-guides/gy6-valve-adjustment-guide.html",
+    "sources": [
+      "buggydepot.com/tech-center/adjusting-gy6-valves",
+      "scooterfocus.com/scooter_valve_clearance.html",
+      "49ccscoot.proboards.com"
+    ],
+    "addedAt": "2026-05-07T12:10:00Z",
+    "lastChecked": "2026-05-07T12:10:00Z"
+  },
+  {
+    "url": "internal:gy6-oil-change-guide",
+    "title": "GY6 Engine Oil Change Guide",
+    "category": "repair-guides",
+    "file": "repair-guides/gy6-oil-change-guide.html",
+    "sources": [
+      "engineoiil-capacity.com/gy6-150cc-oil-type",
+      "engineoiljournal.com/gy6-engine-oil-capacity",
+      "49ccscoot.proboards.com"
+    ],
+    "addedAt": "2026-05-07T12:15:00Z",
+    "lastChecked": "2026-05-07T12:15:00Z"
+  },
+  {
+    "url": "internal:gy6-no-start-troubleshooting",
+    "title": "GY6 Scooter Won't Start \u2014 Troubleshooting Checklist",
+    "category": "diagnostics",
+    "file": "diagnostics/gy6-no-start-troubleshooting.html",
+    "sources": [
+      "buggydepot.com/tech-center/gy6-150cc-ignition-troubleshooting-guide-no-spark",
+      "theseasonedwrench.com",
+      "scooterdoc.proboards.com"
+    ],
+    "addedAt": "2026-05-07T12:20:00Z",
+    "lastChecked": "2026-05-07T12:20:00Z"
+  },
+  {
+    "url": "internal:la-souris-sourini-city-overview",
+    "title": "La Souris Sourini / City S \u2014 Model Overview & Technical Guide",
+    "category": "models",
+    "file": "models/la-souris-sourini-city-overview.html",
+    "sources": [
+      "scooterforum.net/tags/la-souris",
+      "retroscooteronderdelen.nl/en/tags/la-souris",
+      "en.chinascooteronderdelen.nl"
+    ],
+    "addedAt": "2026-05-07T12:25:00Z",
+    "lastChecked": "2026-05-07T12:25:00Z"
+  },
+  {
+    "url": "https://q9powersportsusa.com/blogs/technical-support-q9-powersports-usa/properly-clean-service-gy6-scooter",
+    "title": "GY6 Carburetor Deep-Cleaning Guide",
+    "category": "repair-guides",
+    "file": "repair-guides/gy6-carburetor-cleaning-guide.html",
+    "summary": "Step-by-step disassembly and deep-cleaning of GY6 PD18J/PD24J/CVK carburettors, including float, jets, needle, and mixture screw.",
+    "addedAt": "2026-05-08T00:00:00Z",
+    "lastChecked": "2026-05-08T00:00:00Z"
+  },
+  {
+    "url": "https://www.scooterworks.com/blogs/news/carburetor-jetting-101",
+    "title": "GY6 Carburetor Jetting & Rejetting Guide",
+    "category": "repair-guides",
+    "file": "repair-guides/gy6-carburetor-jetting-guide.html",
+    "summary": "How to select and change main jet and pilot jet sizes for GY6 engines; jetting tables for altitude and modifications.",
+    "addedAt": "2026-05-08T00:05:00Z",
+    "lastChecked": "2026-05-08T00:05:00Z"
+  },
+  {
+    "url": "https://www.rollingwrenchdenver.com/blogs/news/i-am-having-trouble-with-my-gy6-efi-system",
+    "title": "GY6 EFI Fuel Injection Troubleshooting Guide",
+    "category": "diagnostics",
+    "file": "diagnostics/gy6-efi-fuel-injection-troubleshooting.html",
+    "summary": "Systematic fault diagnosis for GY6 EFI systems: fuel pump, injector, sensors, ECU fault codes, and ground wiring issues.",
+    "addedAt": "2026-05-08T00:10:00Z",
+    "lastChecked": "2026-05-08T00:10:00Z"
+  },
+  {
+    "url": "https://www.manualslib.com/manual/1279452/Vespa-Primavera-125.html",
+    "title": "Vespa Primavera 125 \u2014 Technical Overview & Maintenance Reference",
+    "category": "models",
+    "file": "models/vespa-primavera-125-technical-overview.html",
+    "summary": "Full specs, maintenance schedule, common faults, and service manual resources for the Piaggio Vespa Primavera 125 iGet.",
+    "addedAt": "2026-05-08T00:15:00Z",
+    "lastChecked": "2026-05-08T00:15:00Z"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=TNdw8z0B-K0",
+    "title": "Video: GY6 Carburetor & Intake Change Tutorial (150cc Full)",
+    "category": "videos",
+    "file": "videos/gy6-carburetor-intake-change-tutorial.html",
+    "summary": "YouTube tutorial covering complete carburettor and intake manifold replacement on a GY6 157QMJ 150cc scooter.",
+    "addedAt": "2026-05-08T00:20:00Z",
+    "lastChecked": "2026-05-08T00:20:00Z"
+  },
+  {
+    "url": "https://www.wemoto.com/info/guide-to-scooter-clutches-variators-and-rollers",
+    "title": "Scooter CVT Clutch & Variator Rollers \u2014 Inspection & Replacement",
+    "category": "repair-guides",
+    "file": "repair-guides/scooter-cvt-clutch-variator-guide.html",
+    "summary": "How the CVT works, symptoms of wear, roller weight specs for GY6 and Piaggio, and step-by-step roller replacement procedure.",
+    "addedAt": "2026-05-08T00:25:00Z",
+    "lastChecked": "2026-05-08T00:25:00Z"
+  },
+  {
+    "url": "internal:gy6-spark-plug-guide",
+    "title": "GY6 Spark Plug Replacement Guide",
+    "category": "repair-guides",
+    "file": "repair-guides/gy6-spark-plug-guide.html",
+    "sources": [
+      "internal"
+    ],
+    "addedAt": "2026-05-08T10:33:19Z",
+    "lastChecked": "2026-05-08T10:33:19Z"
+  },
+  {
+    "url": "internal:gy6-air-filter-guide",
+    "title": "GY6 Air Filter \u2014 Clean or Replace Guide",
+    "category": "repair-guides",
+    "file": "repair-guides/gy6-air-filter-guide.html",
+    "sources": [
+      "internal"
+    ],
+    "addedAt": "2026-05-08T10:33:19Z",
+    "lastChecked": "2026-05-08T10:33:19Z"
+  },
+  {
+    "url": "internal:gy6-brake-fluid-guide",
+    "title": "Scooter Brake Fluid Change & Bleed Guide",
+    "category": "repair-guides",
+    "file": "repair-guides/gy6-brake-fluid-guide.html",
+    "sources": [
+      "internal"
+    ],
+    "addedAt": "2026-05-08T10:33:19Z",
+    "lastChecked": "2026-05-08T10:33:19Z"
+  },
+  {
+    "url": "internal:gy6-brake-pads-guide",
+    "title": "GY6 Brake Pads & Drum Shoes Replacement Guide",
+    "category": "repair-guides",
+    "file": "repair-guides/gy6-brake-pads-guide.html",
+    "sources": [
+      "internal"
+    ],
+    "addedAt": "2026-05-08T10:33:19Z",
+    "lastChecked": "2026-05-08T10:33:19Z"
+  },
+  {
+    "url": "internal:gy6-ignition-coil-guide",
+    "title": "GY6 Ignition Coil (Bobine) Diagnosis & Replacement",
+    "category": "repair-guides",
+    "file": "repair-guides/gy6-ignition-coil-guide.html",
+    "sources": [
+      "internal"
+    ],
+    "addedAt": "2026-05-08T10:33:19Z",
+    "lastChecked": "2026-05-08T10:33:19Z"
+  }
+]

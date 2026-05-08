@@ -1,0 +1,207 @@
+# GY6 Chinese Scooter — Master Resource Directory
+
+A sourcing map for the ISRM content pipeline. Organized so each category can become an automated ingestion source (scraper, RSS, YouTube API, forum crawler, etc.) feeding the interactive manual.
+
+Last compiled: May 2026.
+
+---
+
+## 1. Foundational reference: what GY6 actually is
+
+GY6 is a family of 4-stroke single-cylinder air- or liquid-cooled engines originally derived from Honda's Vespa-style design, mass-produced in China since the early 1990s. Common displacements and engine codes you'll be cataloging:
+
+- 49–50 cc → **139QMA / 139QMB** (1P39QMB)
+- 80 cc → **139QMA bored** / **147QMD**
+- 125 cc → **152QMI** (1P52QMI)
+- 150 cc → **157QMJ** (1P57QMJ)
+- 170–232 cc → big-bore variants (157QMJ stroked/bored, 161QML)
+- Liquid-cooled variants: **152QMI-LC**, **161QMK**
+
+Brands using GY6: TaoTao, Znen, Jonway, Roketa, Baotian (BTM), Sunl, Vento, Lance, Lifan, Loncin, BMS, Kazuma, Peace Sports, Kymco (legacy GY6-derived), SYM (some GY6-derived). Useful when building the brand → engine cross-reference table.
+
+---
+
+## 2. Official / authorized manuals & technical data
+
+These are the closest thing to "ETKA-grade" structured technical data for the GY6 ecosystem.
+
+- **Cyclepedia** — [cyclepedia.com](https://www.cyclepedia.com/) — Authorized Kymco publisher; full step-by-step repair manuals with photos, torque specs, wiring diagrams, labor times. Best paid source for *clean* structured data; subscription API/embed possible.
+- **Haynes** — *Chinese, Taiwanese & Korean Scooters 50–200cc Twist and Go* (Manual 4768) — [Amazon listing](https://www.amazon.com/Chinese-Taiwanese-Korean-Scooters-Revised/dp/0857336460) / [VMC mirror](https://www.vmcchineseparts.com/products/haynes-scooter-manual-4768-chinese-taiwanese-korean-50cc-200cc) — The single most cited print reference for GY6 engines.
+- **ManualsLib** — [manualslib.com/brand/kymco](https://www.manualslib.com/brand/kymco/scooter.html) — 160+ Kymco scooter PDFs and many other brands; OCR-searchable, scrapeable.
+- **Manua.ls** — [manua.ls/kymco](https://www.manua.ls/kymco) — Multi-brand repository, well-structured.
+- **MotoManuals.net** — [motomanuals.net/kymco](https://www.motomanuals.net/kymco/) — Wiring diagrams + service PDFs.
+- **TMB Bookshop** — [tmbbooks.com — Kymco repair](https://www.tmbbooks.com/en/scootm_Kymcorep.html) — Curated manual catalog, useful for brand → manual mapping.
+
+Brand official sites worth scraping for owner's manuals, parts diagrams, recalls:
+
+- Kymco (US): [kymcousa.com](https://www.kymcousa.com/)
+- SYM: [sym-global.com](https://www.sym-global.com/)
+- PGO: [pgo.com.tw](https://www.pgo.com.tw/)
+- TaoTao USA: [taotaousa.com](https://www.taotaousa.com/)
+- Znen: [znen.com](http://www.znen.com/)
+- Jonway: [jonway.com](http://www.jonway.com/)
+- Lifan: [lifan.com](http://www.lifan.com/)
+- Loncin: [loncin.com](http://www.loncin.com/)
+- Baotian (BTM): [btm-china.com](http://www.btm-china.com/)
+
+---
+
+## 3. Free community manual archives (highest-value scrapes)
+
+These are gold for free, redistributable PDFs. Most are mirrors of the same handful of original Chinese factory manuals, but cross-referencing them is how you build a clean canonical version.
+
+- **49ccscoot.com** — [49ccscoot.com/manuals](https://www.49ccscoot.com/manuals/manuals.html) — The canonical free mirror. Includes:
+  - [139QMB engine manual PDF](https://www.49ccscoot.com/manuals/139QMB_Engine_Manual.pdf)
+  - [139QMA/QMB maintenance manual](https://www.49ccscoot.com/manuals/139QM_Engine_Manual.pdf)
+  - [Tank GY6 50–150 service manual](https://www.49ccscoot.com/manuals/Tank_GY650-150_Service_Manual.pdf)
+  - Carburetor, ignition conversion, drive-belt PDFs
+- **JustGiveMeTheDamnManual** — [justgivemethedamnmanual.com — Chinese motorcycle manuals](https://justgivemethedamnmanual.com/service-repair-manuals/Motorcycles/Chinese) — Multi-displacement GY6 archive.
+- **Brad's Scooters** — [150cc GY6 QMJ157 service manual PDF](http://bradsscooters.com/wp-content/uploads/2019/10/150cc-Gy6-QMJ157-Scooter-Repair-and-Service-Manual.pdf) — Best-formatted free 150 cc PDF in circulation.
+- **Yumpu mirror** — [50cc–170cc GY6 QMB139 repair manual](https://www.yumpu.com/en/document/view/45190927/50cc-170cc-gy6-qmb139-scooter-repair-and-service-manualpdf)
+- **Scribd** — [GY6 service manual](https://www.scribd.com/doc/44879437/GY6-Service-Manual) and [157QMJ service manual](https://www.scribd.com/doc/89521381/Service-Manual-157QMJ)
+- **Honda Spree forum manual thread** — [hondaspree.net — GY6 service manuals](https://hondaspree.net/phpBB3/viewtopic.php?t=17225) — Thread that aggregates dozens of brand-specific PDFs (Arrow, General, Roketa, etc.)
+- **GokartsUSA MRP manuals** — [gokartsusa.com — scooter manuals](https://gokartsusa.com/mrp-manuals-for-Scooters.aspx)
+- **eManualOnline** (paid) — [emanualonline.com — GY6](https://www.emanualonline.com/motorbikes/chinese/gy6/)
+- **eManuals.com** (paid) — [emanuals.com — GY6 150cc](https://www.emanuals.com/chinese-scooter-150cc-gy6-service-manual.html) and [139QMB/157QMJ](https://www.emanuals.com/gy6-scooter-139qmb-157qmj-engine-service-repair-manual.html)
+- **RepairLoader** (paid) — [repairloader.com — scooter](https://www.repairloader.com/c.php/scooter)
+
+---
+
+## 4. Wiring diagrams & electrical schematics
+
+- **T-Motorsports** — [t-motorsports.com — GY6 engine wiring](http://www.t-motorsports.com/gy6-engine-wiring-diagram/)
+- **PCC Motor** — [pccmotor.com — 50/150 GY6 wiring](http://www.pccmotor.com/5015mogy6wid.html)
+- **Axiom Northwest** — [axiom-northwest.com — GY6 150cc wiring](https://axiom-northwest.com/doc/wiring-diagram-gy6-150cc/)
+- **ElectraSchematics** — [electraschematics.com — GY6 150cc wiring](https://electraschematics.com/gy6-150cc-scooter-wiring-diagram.html)
+- **TechDiagrammer** — [techdiagrammer.com — GY6 wiring](https://techdiagrammer.com/gy6-scooter-wiring-diagram)
+- **Ruckus Nation** — [modified GY6 harness thread](https://ruckusnation.boards.net/thread/39/modified-gy6-harness-design) — Hand-drawn simplified harnesses, critical for swap projects.
+- **ScootDawg wiring diagram thread** — [scootdawg.proboards.com — wiring](https://scootdawg.proboards.com/thread/23668/wiring-diagram)
+
+---
+
+## 5. Forums (single most important content well for ISRM)
+
+These are where real-world failure modes, fixes, and tribal knowledge live. They are also the highest-leverage scrape: a structured Q&A extraction from these would beat any single PDF manual.
+
+- **ChinaRiders Forums** — [chinariders.net](https://www.chinariders.net/) — The flagship dedicated Chinese-bike-and-scooter community. [GY6 manual archive thread](https://www.chinariders.net/archive/index.php/t-7309.html).
+- **49ccScoot Forums** — [49ccscoot.proboards.com](https://49ccscoot.proboards.com/) — Tightly focused on 49–150 cc GY6.
+- **ScootDawg's Scooter Forum** — [scootdawg.proboards.com](https://scootdawg.proboards.com/) — Long-running, deep archive; has pinned [150cc motor repair manual](https://scootdawg.proboards.com/thread/30778/150cc-motor-repair-manual-download).
+- **MyChinaMoto** — [mychinamoto.com](https://mychinamoto.com/forums/) — Includes a [well-photographed GY6 rebuild guide](https://mychinamoto.com/forums/showthread.php?1565-Nice-GY6-Scooter-Engine-Rebuild-Guide=).
+- **Honda Spree & Elite 50 Forums** — [hondaspree.net](https://hondaspree.net/) — GY6 swaps, manual archive.
+- **ScooterDoc Forum** — [scooterdoc.proboards.com](https://scooterdoc.proboards.com/)
+- **ScooterForum.net** — [scooterforum.net](https://scooterforum.net/) — Strong [GY6 performance thread](https://scooterforum.net/threads/gy6-performance-and-how-to-make-them-run-good.167249/).
+- **PlanetMinis — GY6 section** — [planetminis.com — gy6-scooter](https://www.planetminis.com/forums/gy6-scooter.75/) — Pit-bike crowd doing GY6 swaps.
+- **Motovlog forums** — [motovlog.com — gy6-scooter-problems](https://motovlog.com/threads/gy6-scooter-problems.21067/)
+- **Bay Area Riders Forum** — [bayarearidersforum.com](https://www.bayarearidersforum.com/) — Broader, but useful for parts-vendor reputation threads.
+- **Reddit communities** — r/scooters, r/MotorScooters, r/Mopeds, r/49cc, r/scootering. No GY6-only sub yet (opportunity).
+- **Facebook groups** — [GY6-SCOOTERS group](https://www.facebook.com/groups/485144555950256/), ScootMasters, "Chinese Scooter Owners," "150cc GY6 Scooter Tuning Group," "Roketa / TaoTao / Znen Owners."
+- **Discord / Telegram** — Search "GY6," "Honda Ruckus GY6 swap," "Chinese scooter repair." Worth crawling for real-time troubleshooting threads.
+
+---
+
+## 6. Specialist repair / how-to sites (richer than forums, narrower than manuals)
+
+- **Fix My Chinese Scooter** — [fixmychinesescooter.com](http://www.fixmychinesescooter.com/) — Plainspoken maintenance walkthroughs aimed at first-time owners.
+- **Rolling Wrench Denver** — [rollingwrenchdenver.com — blog](https://www.rollingwrenchdenver.com/blogs/news/comprehensive-guide-to-gy6-engine-performance-upgrades) — Best applied tuning content; strong YouTube tie-in.
+- **Motor Scooter Muse** — [motorscootermuse.com — Chinese scooters](http://motorscootermuse.com/chinese_scooters.php) — Long-form essays on common failures.
+- **PopScoot — GY6 engine guide** — [popscoot.com/gy6-motor](https://popscoot.com/gy6-motor/)
+- **NCY Store blog** — [ncystore.com — locate engine code](https://ncystore.com/blog/gy6-engine-code) — Authoritative on engine ID location.
+- **2StrokeBuzz — Scooter VINs reference** — [2strokebuzz.com/scooter-vins](https://2strokebuzz.com/scooter-vins)
+
+---
+
+## 7. Parts catalogs / exploded diagrams (the closest thing to ETKA today)
+
+These are the most ETKA-like sources — searchable parts diagrams cross-referenced to part numbers.
+
+- **Scooterworks USA** — [scooterworks.com — GY6 collection](https://www.scooterworks.com/collections/gy6) — Best US catalog with diagrams.
+- **NCY Store** — [ncystore.com](https://ncystore.com/) — Premier aftermarket performance parts; well-structured product pages.
+- **GY6 Racing** — [gy6racing.com — parts](https://gy6racing.com/scooter-parts/) — Organized by engine code and brand.
+- **Zoom Zoom Parts** — [zoomzoomparts.com — GY6 parts](https://zoomzoomparts.com/collections/gy6-chinese-scooter-moped-go-kart-parts)
+- **VMC Chinese Parts** — [vmcchineseparts.com](https://www.vmcchineseparts.com/) — Brand cross-reference tables.
+- **BuggyDepot** — [buggydepot.com](https://www.buggydepot.com/) — Strong on brand-specific parts trees (Roketa, Sunl, etc.).
+- **GoKartsUSA** — [gokartsusa.com](https://gokartsusa.com/) — Strong Chinese-specific catalog.
+- **Unique Scooter** — [scooterc.com — GY6 parts](https://www.scooterc.com/gy6-scooter-parts.html)
+- **Hammerhead Performance** — [hammerheadperformance.com](https://hammerheadperformance.com/)
+- **BDX Performance** — [bdxperformance.com](https://bdxperformance.com/)
+- **Rovira Motorcycle** — [roviramotorcycle.com](https://www.roviramotorcycle.com/)
+- **EZSCOOT (Amazon storefront)** — multi-brand parts coverage.
+- **Partzilla** — [partzilla.com](https://www.partzilla.com/) — OEM Japanese parts but useful for GY6 cross-reference where applicable.
+- **AliExpress / Alibaba / 1688** — Raw OEM source; useful for resolving part-number aliases when a US vendor renames a part.
+
+---
+
+## 8. VIN / engine ID lookup
+
+- **FaxVIN — scooter/moped** — [faxvin.com — scooter-moped](https://www.faxvin.com/vin-decoder/scooter-moped)
+- **Cyclepedia VIN decoder** — [cyclepedia.com/motorcycle-vin-decoder](https://www.cyclepedia.com/motorcycle-vin-decoder/)
+- **GoKartsUSA Chinese VIN lookup** — [gokartsusa.com/vin-decoder.aspx](https://gokartsusa.com/vin-decoder.aspx)
+- **NHTSA vPIC** — [vpic.nhtsa.dot.gov](https://vpic.nhtsa.dot.gov/) — Free API, indispensable for any automated decoder.
+- **ClearVin Qingqi** — [clearvin.com — china-qingqi](https://www.clearvin.com/en/vin-explorer/china-qingqi/)
+
+---
+
+## 9. Video platforms
+
+YouTube is the largest single source of GY6 repair content. Worth running a channel-by-channel ingestion.
+
+- **GY6-SCOOTERS** — [youtube.com/@GY6-SCOOTERS](https://www.youtube.com/@GY6-SCOOTERS)
+- **Chinese Scooter Complete Repair Guide playlist** — [YouTube playlist](https://www.youtube.com/playlist?list=PL_UohRPM11yFEO-CwStUVaMUOv0LgCpiw)
+- **Rolling Wrench** — repair + tuning videos paired with their store pages.
+- **ScooterSwapShop** — Honda/Yamaha-focused but excellent GY6 swap content.
+- **The Scooter Workshop**
+- **Pacific Crest Scooters**
+- **Scooter Doctor / 49ccscoot**
+- **DDub's Garage**
+- **Buddy from BuddysGarage**
+- **Vlad's Garage** (Russian-language but huge GY6 archive)
+- **BikeBandit YouTube** — [youtube.com/c/bikebandit](https://www.youtube.com/c/bikebandit)
+- **Partzilla YouTube** — service/diagnostic videos.
+- Search-tags worth crawling: `GY6 rebuild`, `139QMB`, `152QMI`, `157QMJ`, `Honda Ruckus GY6 swap`, `TaoTao no spark`, `scooter CDI test`, `variator roller weights`.
+- Also worth indexing: **Bilibili** and **Youku** (Chinese-language) — large factory-floor and dealer-mechanic content not duplicated on YouTube.
+
+---
+
+## 10. Performance, tuning & aftermarket reference
+
+- **Rolling Wrench performance guide** — [comprehensive guide to GY6 upgrades](https://www.rollingwrenchdenver.com/blogs/news/comprehensive-guide-to-gy6-engine-performance-upgrades)
+- **NCY tuning content** — variator/clutch reference data.
+- **Dr. Pulley** — slider/roller manufacturer with engineering whitepapers worth indexing.
+- **Polini, Malossi, Naraku, Stage6, Taida** — European/aftermarket performance brands; their tech docs add real engineering depth (cam timing, port maps).
+
+---
+
+## 11. Adjacent / inspirational platforms (for the ISRM product itself)
+
+ETKA-style structured data + interactivity reference points:
+
+- **ETKA** (VAG) — gold standard for OEM-level parts trees.
+- **Microcat** (multiple OEMs) — interactive parts catalog UX.
+- **Cyclepedia** — closest to ETKA in spirit for powersports.
+- **iFixit** — best community-edited interactive repair-guide UX in the world; their schema (device → guide → step → tool → part) is the right mental model for ISRM.
+- **AllData / Mitchell1** — automotive service-data UX.
+- **Haynes Online / HaynesPro** — interactive technical data.
+
+---
+
+## 12. Suggested ingestion priorities for ISRM
+
+If you're building a phased pipeline, this is the leverage order:
+
+1. **Canonical PDFs** — 49ccscoot.com, Brad's Scooters, Honda Spree thread mirrors. Parse once, use as seed corpus for the structured manual schema.
+2. **Forum scraping** — ChinaRiders, ScootDawg, 49ccScoot, MyChinaMoto. Q&A extraction and failure-mode taxonomy.
+3. **YouTube transcript pull** — top 20 channels above; align video segments to manual sections.
+4. **Parts catalogs** — Scooterworks, NCY, GY6Racing, BuggyDepot, VMC. Build the brand → engine → part-number cross-reference (the "ETKA core").
+5. **Wiring diagram corpus** — T-Motorsports, PCC, Axiom NW, plus PDFs.
+6. **Wiki / contribution layer** — model after iFixit; seed with the above before opening to user contributions.
+
+---
+
+## 13. Gaps worth noting
+
+- No single source publishes a clean cross-reference of brand → engine code → frame VIN format. This is a real differentiator if ISRM builds it.
+- 3D models of GY6 components are scarce. GrabCAD has some user-uploaded GY6 parts ([grabcad.com](https://grabcad.com/)) but coverage is thin — original CAD work or photogrammetry is the path.
+- Liquid-cooled GY6 variants (152QMI-LC, 161QMK) are massively underdocumented in English. Translation of Chinese-language sources is high-leverage.
+- Reddit lacks a GY6-specific sub — community-building opportunity.
+
+Sources: see inline links throughout. Primary research drawn from Cyclepedia, Haynes, ManualsLib, 49ccscoot, ChinaRiders, ScootDawg, MyChinaMoto, Honda Spree forums, Scooterworks, NCY, Rolling Wrench, and the YouTube creators listed.
