@@ -22,10 +22,4 @@ jobs:
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          lftp -e "
-          set ftp:ssl-allow yes
-          set ftp:use-feat no
-          open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER
-          mirror -eR ./public/ /public_html/
-          quit
-          " 2>&1
+          lftp -u "$FTP_USERNAME,$FTP_PASSWORD" -e "set ftp:ssl-allow yes; set ftp:use-feat no; mirror -eR ./public/ /public_html/; quit" "ftp://$FTP_SERVER" 2>&1
