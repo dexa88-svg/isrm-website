@@ -13,11 +13,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Deploy via NCFTP
+      - name: Deploy via FTPS with curl
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          sudo apt-get update && sudo apt-get install -y ncftp
-          ncftpput -R -v -u "$FTP_USERNAME" -p "$FTP_PASSWORD" "$FTP_SERVER" /public_html/ ./public/
+          cd ./public
+          find . -type f | while read file; do
+            dir=$(dirname "$file")
+            mkdir -p "/tmp/upload/$dir"
+            cp "$file" "/tmp/upload/$file"
+          done
+          cd /tmp/upload
+          find . -type f | while read file; do
+            curl -k --ftp-ssl -u "$FTP_USERNAME:$FTP_PASSWORD" \
+              -T "$file" "ftps://$FTP_SERVER/public_html/$file"
+          done
