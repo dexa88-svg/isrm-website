@@ -13,7 +13,7 @@
       "Vespa Sprint"
     ],
     "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
     "active": true
   },
   {
@@ -25,7 +25,7 @@
       "Vespa"
     ],
     "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
     "active": true
   },
   {
@@ -37,7 +37,7 @@
       "Vespa"
     ],
     "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
     "active": true
   },
   {
@@ -49,7 +49,7 @@
       "general"
     ],
     "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
     "active": true
   },
   {
@@ -63,7 +63,7 @@
       "snorfiets"
     ],
     "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
     "active": true
   },
   {
@@ -78,7 +78,7 @@
       "Piaggio"
     ],
     "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
     "active": true
   },
   {
@@ -94,7 +94,7 @@
       "Honda"
     ],
     "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
     "active": true
   },
   {
@@ -109,7 +109,7 @@
       "Piaggio Beverly"
     ],
     "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
     "active": true
   },
   {
@@ -123,7 +123,7 @@
       "Aprilia Sportcity"
     ],
     "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
     "active": true
   },
   {
@@ -138,562 +138,7 @@
       "Kymco Super 8"
     ],
     "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.scooter-center.com/en/magazine/",
-    "name": "Scooter Center Magazine",
-    "type": "blog",
-    "category": "repair-guides",
-    "models": [
-      "Vespa",
-      "Piaggio",
-      "Aprilia",
-      "Gilera",
-      "Derbi"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "note": "=== REPAIR GUIDES & TECHNICAL SITES ===",
-    "url": "https://www.gy6central.com/",
-    "name": "GY6 Central — Engine Repair Hub",
-    "type": "blog",
-    "category": "repair-guides",
-    "models": [
-      "GY6 50cc",
-      "GY6 150cc",
-      "GY6 125cc"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.49ccscoot.com/manuals/manuals.html",
-    "name": "49ccScoot — Service Manuals",
-    "type": "wiki",
-    "category": "repair-guides",
-    "models": [
-      "GY6 50cc",
-      "Chinese scooters",
-      "bromfiets"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.scootertuning.eu/",
-    "name": "ScooterTuning.eu — Guides & Upgrades",
-    "type": "blog",
-    "category": "repair-guides",
-    "models": [
-      "Piaggio Zip",
-      "Vespa ET",
-      "Aprilia SR50",
-      "Derbi",
-      "Gilera Runner"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.haynes.com/en-gb/categories/scooters/",
-    "name": "Haynes Scooter Manuals",
-    "type": "wiki",
-    "category": "repair-guides",
-    "models": [
-      "Vespa",
-      "Piaggio",
-      "Honda",
-      "Yamaha",
-      "Suzuki",
-      "Kymco"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.ifixit.com/Device/Scooter",
-    "name": "iFixit — Scooter Repair",
-    "type": "wiki",
-    "category": "repair-guides",
-    "models": [
-      "general",
-      "Vespa",
-      "GY6"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.motorscooterguide.net/",
-    "name": "Motor Scooter Guide",
-    "type": "blog",
-    "category": "repair-guides",
-    "models": [
-      "general",
-      "Honda",
-      "Yamaha",
-      "Kymco",
-      "Vespa"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.goscooter.org/",
-    "name": "GoScooter — Repair & Maintenance",
-    "type": "blog",
-    "category": "repair-guides",
-    "models": [
-      "GY6",
-      "Chinese scooters",
-      "Taiwanese scooters"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "note": "=== PARTS & COMPATIBILITY ===",
-    "url": "https://www.sip-scootershop.com/en/blog/",
-    "name": "SIP Scootershop Blog",
-    "type": "blog",
-    "category": "parts",
-    "models": [
-      "Vespa PX",
-      "Vespa LX",
-      "Vespa GTS",
-      "Vespa Sprint",
-      "Lambretta"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.sip-scootershop.com/en/catalog/",
-    "name": "SIP Scootershop — Parts Catalog",
-    "type": "other",
-    "category": "parts",
-    "models": [
-      "Vespa",
-      "Lambretta"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.scooter-center.com/en/",
-    "name": "Scooter Center — Parts & Accessories",
-    "type": "other",
-    "category": "parts",
-    "models": [
-      "Vespa",
-      "Piaggio",
-      "Aprilia",
-      "Gilera",
-      "Derbi",
-      "Peugeot"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.cmsnl.com/",
-    "name": "CMS — OEM Parts Finder (NL/EU)",
-    "type": "other",
-    "category": "parts",
-    "models": [
-      "Honda",
-      "Yamaha",
-      "Suzuki",
-      "Kymco",
-      "Piaggio",
-      "Vespa"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.gy6parts.com/",
-    "name": "GY6Parts — Chinese Engine Parts",
-    "type": "other",
-    "category": "parts",
-    "models": [
-      "GY6 50cc",
-      "GY6 125cc",
-      "GY6 150cc"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.treatland.tv/",
-    "name": "Treatland — Moped & Scooter Parts",
-    "type": "other",
-    "category": "parts",
-    "models": [
-      "Vespa",
-      "Piaggio",
-      "Minarelli",
-      "Tomos",
-      "Puch"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.partsfish.com/",
-    "name": "PartsFish — OEM Parts Diagrams",
-    "type": "other",
-    "category": "parts",
-    "models": [
-      "Honda",
-      "Yamaha",
-      "Suzuki",
-      "Kawasaki"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "note": "=== DIAGNOSTICS & FAULT CODES ===",
-    "url": "https://www.scooterwest.com/service-tips/",
-    "name": "Scooter West Service Tips",
-    "type": "blog",
-    "category": "diagnostics",
-    "models": [
-      "Vespa",
-      "Piaggio",
-      "Aprilia"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.motorscooterguide.net/troubleshooting/",
-    "name": "Motor Scooter Guide Troubleshooting",
-    "type": "blog",
-    "category": "diagnostics",
-    "models": [
-      "general",
-      "GY6",
-      "4-stroke",
-      "2-stroke"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.scooterdepot.us/troubleshooting-guide/",
-    "name": "Scooter Depot Troubleshooting Guide",
-    "type": "blog",
-    "category": "diagnostics",
-    "models": [
-      "GY6 50cc",
-      "GY6 150cc",
-      "Chinese scooters"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "note": "=== MANUFACTURER OFFICIAL SOURCES ===",
-    "url": "https://www.vespa.com/en_EN/news-and-events/",
-    "name": "Vespa Official News",
-    "type": "manufacturer",
-    "category": "news",
-    "models": [
-      "Vespa"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.piaggio.com/en_EN/news/",
-    "name": "Piaggio Official News",
-    "type": "manufacturer",
-    "category": "news",
-    "models": [
-      "Piaggio Zip",
-      "Piaggio Liberty",
-      "Piaggio Medley",
-      "Piaggio Beverly"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.honda.com/scooters",
-    "name": "Honda Scooters — Official",
-    "type": "manufacturer",
-    "category": "models",
-    "models": [
-      "Honda PCX",
-      "Honda SH",
-      "Honda Vision",
-      "Honda Forza",
-      "Honda Zoomer"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.yamaha-motor.eu/en/products/scooters/",
-    "name": "Yamaha Scooters — European Site",
-    "type": "manufacturer",
-    "category": "models",
-    "models": [
-      "Yamaha Aerox",
-      "Yamaha NMAX",
-      "Yamaha XMAX",
-      "Yamaha Zuma"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.kymco.com/",
-    "name": "Kymco Official",
-    "type": "manufacturer",
-    "category": "models",
-    "models": [
-      "Kymco Agility",
-      "Kymco Like",
-      "Kymco People S",
-      "Kymco Super 8"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.sym-euro.com/",
-    "name": "SYM Europe — Official",
-    "type": "manufacturer",
-    "category": "models",
-    "models": [
-      "SYM Orbit",
-      "SYM Fiddle",
-      "SYM Jet",
-      "SYM Symphony"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.peugeot-motocycles.com/en/",
-    "name": "Peugeot Motocycles — Official",
-    "type": "manufacturer",
-    "category": "models",
-    "models": [
-      "Peugeot Speedfight",
-      "Peugeot Kisbee",
-      "Peugeot Ludix"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "note": "=== YOUTUBE CHANNELS ===",
-    "url": "https://www.youtube.com/@FarmerBrownsGarage",
-    "name": "Farmer Brown's Garage — GY6 & Scooter Repairs",
-    "type": "youtube-channel",
-    "category": "videos",
-    "models": [
-      "GY6 50cc",
-      "GY6 150cc",
-      "Chinese scooters"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.youtube.com/@ScooterDynasty",
-    "name": "Scooter Dynasty — Repair & Restoration",
-    "type": "youtube-channel",
-    "category": "videos",
-    "models": [
-      "GY6",
-      "Vespa",
-      "Piaggio"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.youtube.com/@vespaNation",
-    "name": "Vespa Nation — Vespa Repairs & Restoration",
-    "type": "youtube-channel",
-    "category": "videos",
-    "models": [
-      "Vespa PX",
-      "Vespa ET",
-      "Vespa LX",
-      "Vespa GTS"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.youtube.com/@MrScooterRepair",
-    "name": "Mr Scooter Repair",
-    "type": "youtube-channel",
-    "category": "videos",
-    "models": [
-      "general",
-      "GY6",
-      "Honda",
-      "Yamaha"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "note": "=== DUTCH / BELGIAN SOURCES (bromfiets / snorfiets) ===",
-    "url": "https://www.brommerforum.nl/",
-    "name": "BrommerForum.nl",
-    "type": "forum",
-    "category": "community",
-    "models": [
-      "bromfiets",
-      "snorfiets",
-      "Piaggio Zip",
-      "Yamaha Aerox",
-      "Honda Vision"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.scooter-forum.nl/",
-    "name": "ScooterForum.nl",
-    "type": "forum",
-    "category": "community",
-    "models": [
-      "bromfiets",
-      "snorfiets",
-      "general NL"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.scooterom.nl/",
-    "name": "ScooterOM.nl — Parts & Info",
-    "type": "other",
-    "category": "parts",
-    "models": [
-      "bromfiets",
-      "snorfiets",
-      "Piaggio",
-      "Vespa",
-      "Aprilia"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.scooterswap.nl/",
-    "name": "ScooterSwap.nl — Parts & Discussion",
-    "type": "other",
-    "category": "parts",
-    "models": [
-      "bromfiets",
-      "snorfiets"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.scootersite.nl/",
-    "name": "ScooterSite.nl — NL Scooter Community",
-    "type": "forum",
-    "category": "community",
-    "models": [
-      "bromfiets",
-      "snorfiets",
-      "Yamaha Aerox",
-      "Piaggio Zip",
-      "Honda SFX"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.tweedehands.be/scooters",
-    "name": "2dehands.be — Belgian Scooter Community",
-    "type": "other",
-    "category": "community",
-    "models": [
-      "bromfiets",
-      "snorfiets"
-    ],
-    "addedAt": "2026-05-07T00:00:00Z",
-    "lastChecked": "2026-05-07T00:00:00Z",
-    "active": true
-  },
-  {
-    "note": "=== NEW SOURCES DISCOVERED 2026-05-07 ===",
-    "url": "https://fixgy6.com/",
-    "name": "FixGY6 — GY6 Scooter Repair Help & Mods",
-    "type": "blog",
-    "category": "repair-guides",
-    "models": [
-      "GY6 50cc",
-      "GY6 125cc",
-      "GY6 150cc"
-    ],
-    "addedAt": "2026-05-07T12:00:00Z",
-    "lastChecked": "2026-05-07T12:00:00Z",
-    "active": true
-  },
-  {
-    "url": "http://www.fixmychinesescooter.com/",
-    "name": "Fix My Chinese Scooter — GY6 Maintenance Guides",
-    "type": "blog",
-    "category": "repair-guides",
-    "models": [
-      "GY6 50cc",
-      "GY6 150cc",
-      "Chinese scooters"
-    ],
-    "addedAt": "2026-05-07T12:00:00Z",
-    "lastChecked": "2026-05-07T12:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
     "active": true
   },
   {
@@ -707,7 +152,7 @@
       "Chinese scooters"
     ],
     "addedAt": "2026-05-07T12:00:00Z",
-    "lastChecked": "2026-05-07T12:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
     "active": true
   },
   {
@@ -721,7 +166,7 @@
       "Chinese scooters"
     ],
     "addedAt": "2026-05-07T12:00:00Z",
-    "lastChecked": "2026-05-07T12:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
     "active": true
   },
   {
@@ -736,37 +181,7 @@
       "Honda Elite"
     ],
     "addedAt": "2026-05-07T12:00:00Z",
-    "lastChecked": "2026-05-07T12:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.motorroller.de/en/fehlercodes-blinkcodes-4t50e4/",
-    "name": "Motorroller.de — Euro 4 Scooter Error & Blink Codes",
-    "type": "wiki",
-    "category": "diagnostics",
-    "models": [
-      "Euro 4 50cc",
-      "GY6 Euro 4",
-      "Piaggio",
-      "Vespa"
-    ],
-    "addedAt": "2026-05-07T12:00:00Z",
-    "lastChecked": "2026-05-07T12:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.youtube.com/@GY6-SCOOTERS",
-    "name": "GY6-Scooters — YouTube Vlog & Maintenance Channel",
-    "type": "youtube-channel",
-    "category": "videos",
-    "models": [
-      "GY6 50cc",
-      "GY6 150cc",
-      "Chinese scooters",
-      "Taiwanese scooters"
-    ],
-    "addedAt": "2026-05-07T12:00:00Z",
-    "lastChecked": "2026-05-07T12:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
     "active": true
   },
   {
@@ -783,7 +198,560 @@
       "snorfiets"
     ],
     "addedAt": "2026-05-07T12:00:00Z",
-    "lastChecked": "2026-05-07T12:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.brommerforum.nl/",
+    "name": "BrommerForum.nl",
+    "type": "forum",
+    "category": "community",
+    "models": [
+      "bromfiets",
+      "snorfiets",
+      "Piaggio Zip",
+      "Yamaha Aerox",
+      "Honda Vision"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.scooter-forum.nl/",
+    "name": "ScooterForum.nl",
+    "type": "forum",
+    "category": "community",
+    "models": [
+      "bromfiets",
+      "snorfiets",
+      "general NL"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.scootersite.nl/",
+    "name": "ScooterSite.nl — NL Scooter Community",
+    "type": "forum",
+    "category": "community",
+    "models": [
+      "bromfiets",
+      "snorfiets",
+      "Yamaha Aerox",
+      "Piaggio Zip",
+      "Honda SFX"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "note": "=== REPAIR GUIDES & TECHNICAL SITES ===",
+    "url": "https://www.gy6central.com/",
+    "name": "GY6 Central — Engine Repair Hub",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "GY6 50cc",
+      "GY6 150cc",
+      "GY6 125cc"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.49ccscoot.com/manuals/manuals.html",
+    "name": "49ccScoot — Service Manuals",
+    "type": "wiki",
+    "category": "repair-guides",
+    "models": [
+      "GY6 50cc",
+      "Chinese scooters",
+      "bromfiets"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.scootertuning.eu/",
+    "name": "ScooterTuning.eu — Guides & Upgrades",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "Piaggio Zip",
+      "Vespa ET",
+      "Aprilia SR50",
+      "Derbi",
+      "Gilera Runner"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.haynes.com/en-gb/categories/scooters/",
+    "name": "Haynes Scooter Manuals",
+    "type": "wiki",
+    "category": "repair-guides",
+    "models": [
+      "Vespa",
+      "Piaggio",
+      "Honda",
+      "Yamaha",
+      "Suzuki",
+      "Kymco"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.ifixit.com/Device/Scooter",
+    "name": "iFixit — Scooter Repair",
+    "type": "wiki",
+    "category": "repair-guides",
+    "models": [
+      "general",
+      "Vespa",
+      "GY6"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.motorscooterguide.net/",
+    "name": "Motor Scooter Guide",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "general",
+      "Honda",
+      "Yamaha",
+      "Kymco",
+      "Vespa"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.goscooter.org/",
+    "name": "GoScooter — Repair & Maintenance",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "GY6",
+      "Chinese scooters",
+      "Taiwanese scooters"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://fixgy6.com/",
+    "name": "FixGY6 — GY6 Scooter Repair Help & Mods",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "GY6 50cc",
+      "GY6 125cc",
+      "GY6 150cc"
+    ],
+    "addedAt": "2026-05-07T12:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "http://www.fixmychinesescooter.com/",
+    "name": "Fix My Chinese Scooter — GY6 Maintenance Guides",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "GY6 50cc",
+      "GY6 150cc",
+      "Chinese scooters"
+    ],
+    "addedAt": "2026-05-07T12:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.buggydepot.com/tech-center/",
+    "name": "Buggy Depot Technical Center — GY6 Detailed Guides",
+    "type": "wiki",
+    "category": "repair-guides",
+    "models": [
+      "GY6 50cc",
+      "GY6 150cc",
+      "GY6 250cc",
+      "Chinese go-karts"
+    ],
+    "addedAt": "2026-05-07T12:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://popscoot.com/gy6-motor/",
+    "name": "PopScoot — GY6 Motor Comprehensive Guide",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "GY6 50cc",
+      "GY6 125cc",
+      "GY6 150cc"
+    ],
+    "addedAt": "2026-05-07T12:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.rollingwrenchdenver.com/blogs/news",
+    "name": "Rolling Wrench Denver Blog — GY6 Carburetor, EFI & Tuning",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "GY6 50cc",
+      "GY6 150cc",
+      "Chinese scooters"
+    ],
+    "addedAt": "2026-05-08T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://q9powersportsusa.com/blogs/technical-support-q9-powersports-usa/",
+    "name": "Q9 PowerSports Technical Support Blog — GY6 Maintenance Guides",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "GY6 50cc",
+      "GY6 125cc",
+      "GY6 150cc"
+    ],
+    "addedAt": "2026-05-08T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.kemsoracing.com/blogs/news",
+    "name": "Kemso Racing Blog — GY6 Fuel Pump & EFI Guides",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "GY6 50cc",
+      "GY6 150cc",
+      "GY6 EFI"
+    ],
+    "addedAt": "2026-05-08T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.wemoto.com/info/",
+    "name": "Wemoto Info — Scooter CVT, Clutch & Variator Guides",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "general",
+      "GY6",
+      "Piaggio",
+      "Vespa"
+    ],
+    "addedAt": "2026-05-08T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://scooter.fandom.com/wiki/",
+    "name": "Scooter Wiki (Fandom) — Carburetor Tuning & Technical Reference",
+    "type": "wiki",
+    "category": "repair-guides",
+    "models": [
+      "general",
+      "GY6",
+      "Piaggio",
+      "Vespa"
+    ],
+    "addedAt": "2026-05-08T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.carlsalter.com/piaggio-vespa-service-manuals.asp",
+    "name": "Carl Salter — Free Piaggio & Vespa Workshop Manuals",
+    "type": "wiki",
+    "category": "repair-guides",
+    "models": [
+      "Vespa",
+      "Piaggio Zip",
+      "Piaggio Liberty",
+      "Piaggio Beverly"
+    ],
+    "addedAt": "2026-05-08T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.motorcyclemanuals.info/motocycles-atvs/vespa/",
+    "name": "MotorcycleManuals.info — Vespa Service & Wiring Diagram PDFs",
+    "type": "wiki",
+    "category": "repair-guides",
+    "models": [
+      "Vespa ET",
+      "Vespa LX",
+      "Vespa GTS",
+      "Vespa Primavera",
+      "Vespa Sprint"
+    ],
+    "addedAt": "2026-05-08T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.louis-moto.com/en-ww/magazin/",
+    "name": "Louis Moto Magazine — Variator, Clutch & Scooter Maintenance",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "general",
+      "GY6",
+      "Piaggio",
+      "Vespa",
+      "Aprilia"
+    ],
+    "addedAt": "2026-05-08T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "http://www.chuckuslife.com/",
+    "name": "ChuckusLife — DIY Scooter Repair & Tuning Guides",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "GY6",
+      "Chinese scooters",
+      "general"
+    ],
+    "addedAt": "2026-05-09T10:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.jetsrus.com/",
+    "name": "Jets R Us — Carburetor Jetting Expertise",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "general",
+      "GY6",
+      "motorcycles",
+      "scooters"
+    ],
+    "addedAt": "2026-05-09T10:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.scootertherapy.com/",
+    "name": "Scooter Therapy — Carburetor & Engine Repair",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "general",
+      "GY6",
+      "2-stroke",
+      "4-stroke"
+    ],
+    "addedAt": "2026-05-09T10:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "http://www.jacksscootershop.com/",
+    "name": "Jack's Scooter Shop — CVT, Clutch & Transmission Tutorials",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "general",
+      "GY6",
+      "scooters"
+    ],
+    "addedAt": "2026-05-09T10:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://ecotrons.com/",
+    "name": "Ecotrons — EFI Conversion Kits & Installation Documentation",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "GY6 50cc",
+      "GY6 150cc",
+      "small engines"
+    ],
+    "addedAt": "2026-05-09T10:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://scootersinsight.com/",
+    "name": "Scooters Insight — Engine Troubleshooting & Maintenance",
+    "type": "blog",
+    "category": "diagnostics",
+    "models": [
+      "general",
+      "GY6",
+      "scooters"
+    ],
+    "addedAt": "2026-05-09T10:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "note": "=== PARTS & COMPATIBILITY ===",
+    "url": "https://www.sip-scootershop.com/en/blog/",
+    "name": "SIP Scootershop Blog",
+    "type": "blog",
+    "category": "parts",
+    "models": [
+      "Vespa PX",
+      "Vespa LX",
+      "Vespa GTS",
+      "Vespa Sprint",
+      "Lambretta"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.sip-scootershop.com/en/catalog/",
+    "name": "SIP Scootershop — Parts Catalog",
+    "type": "other",
+    "category": "parts",
+    "models": [
+      "Vespa",
+      "Lambretta"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.scooter-center.com/en/",
+    "name": "Scooter Center — Parts & Accessories",
+    "type": "other",
+    "category": "parts",
+    "models": [
+      "Vespa",
+      "Piaggio",
+      "Aprilia",
+      "Gilera",
+      "Derbi",
+      "Peugeot"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.scooter-center.com/en/magazine/",
+    "name": "Scooter Center Magazine",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "Vespa",
+      "Piaggio",
+      "Aprilia",
+      "Gilera",
+      "Derbi"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.cmsnl.com/",
+    "name": "CMS — OEM Parts Finder (NL/EU)",
+    "type": "other",
+    "category": "parts",
+    "models": [
+      "Honda",
+      "Yamaha",
+      "Suzuki",
+      "Kymco",
+      "Piaggio",
+      "Vespa"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.gy6parts.com/",
+    "name": "GY6Parts — Chinese Engine Parts",
+    "type": "other",
+    "category": "parts",
+    "models": [
+      "GY6 50cc",
+      "GY6 125cc",
+      "GY6 150cc"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.treatland.tv/",
+    "name": "Treatland — Moped & Scooter Parts",
+    "type": "other",
+    "category": "parts",
+    "models": [
+      "Vespa",
+      "Piaggio",
+      "Minarelli",
+      "Tomos",
+      "Puch"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.partsfish.com/",
+    "name": "PartsFish — OEM Parts Diagrams",
+    "type": "other",
+    "category": "parts",
+    "models": [
+      "Honda",
+      "Yamaha",
+      "Suzuki",
+      "Kawasaki"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.vmcchineseparts.com/",
+    "name": "VMC Chinese Parts — GY6 Variator, Clutch & Engine Parts",
+    "type": "other",
+    "category": "parts",
+    "models": [
+      "GY6 50cc",
+      "GY6 150cc",
+      "Chinese scooters"
+    ],
+    "addedAt": "2026-05-07T12:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
     "active": true
   },
   {
@@ -800,50 +768,7 @@
       "GY6"
     ],
     "addedAt": "2026-05-07T12:00:00Z",
-    "lastChecked": "2026-05-07T12:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.buggydepot.com/tech-center/",
-    "name": "Buggy Depot Technical Center — GY6 Detailed Guides",
-    "type": "wiki",
-    "category": "repair-guides",
-    "models": [
-      "GY6 50cc",
-      "GY6 150cc",
-      "GY6 250cc",
-      "Chinese go-karts"
-    ],
-    "addedAt": "2026-05-07T12:00:00Z",
-    "lastChecked": "2026-05-07T12:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://popscoot.com/gy6-motor/",
-    "name": "PopScoot — GY6 Motor Comprehensive Guide",
-    "type": "blog",
-    "category": "repair-guides",
-    "models": [
-      "GY6 50cc",
-      "GY6 125cc",
-      "GY6 150cc"
-    ],
-    "addedAt": "2026-05-07T12:00:00Z",
-    "lastChecked": "2026-05-07T12:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.vmcchineseparts.com/",
-    "name": "VMC Chinese Parts — GY6 Variator, Clutch & Engine Parts",
-    "type": "other",
-    "category": "parts",
-    "models": [
-      "GY6 50cc",
-      "GY6 150cc",
-      "Chinese scooters"
-    ],
-    "addedAt": "2026-05-07T12:00:00Z",
-    "lastChecked": "2026-05-07T12:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
     "active": true
   },
   {
@@ -858,94 +783,36 @@
       "GY6"
     ],
     "addedAt": "2026-05-07T12:00:00Z",
-    "lastChecked": "2026-05-07T12:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
     "active": true
   },
   {
-    "url": "https://www.rollingwrenchdenver.com/blogs/news",
-    "name": "Rolling Wrench Denver Blog — GY6 Carburetor, EFI & Tuning",
-    "type": "blog",
-    "category": "repair-guides",
+    "url": "https://www.scooterom.nl/",
+    "name": "ScooterOM.nl — Parts & Info",
+    "type": "other",
+    "category": "parts",
     "models": [
-      "GY6 50cc",
-      "GY6 150cc",
-      "Chinese scooters"
-    ],
-    "addedAt": "2026-05-08T00:00:00Z",
-    "lastChecked": "2026-05-08T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://q9powersportsusa.com/blogs/technical-support-q9-powersports-usa/",
-    "name": "Q9 PowerSports Technical Support Blog — GY6 Maintenance Guides",
-    "type": "blog",
-    "category": "repair-guides",
-    "models": [
-      "GY6 50cc",
-      "GY6 125cc",
-      "GY6 150cc"
-    ],
-    "addedAt": "2026-05-08T00:00:00Z",
-    "lastChecked": "2026-05-08T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.kemsoracing.com/blogs/news",
-    "name": "Kemso Racing Blog — GY6 Fuel Pump & EFI Guides",
-    "type": "blog",
-    "category": "repair-guides",
-    "models": [
-      "GY6 50cc",
-      "GY6 150cc",
-      "GY6 EFI"
-    ],
-    "addedAt": "2026-05-08T00:00:00Z",
-    "lastChecked": "2026-05-08T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.wemoto.com/info/",
-    "name": "Wemoto Info — Scooter CVT, Clutch & Variator Guides",
-    "type": "blog",
-    "category": "repair-guides",
-    "models": [
-      "general",
-      "GY6",
+      "bromfiets",
+      "snorfiets",
       "Piaggio",
-      "Vespa"
+      "Vespa",
+      "Aprilia"
     ],
-    "addedAt": "2026-05-08T00:00:00Z",
-    "lastChecked": "2026-05-08T00:00:00Z",
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
     "active": true
   },
   {
-    "url": "https://scooter.fandom.com/wiki/",
-    "name": "Scooter Wiki (Fandom) — Carburetor Tuning & Technical Reference",
-    "type": "wiki",
-    "category": "repair-guides",
+    "url": "https://www.scooterswap.nl/",
+    "name": "ScooterSwap.nl — Parts & Discussion",
+    "type": "other",
+    "category": "parts",
     "models": [
-      "general",
-      "GY6",
-      "Piaggio",
-      "Vespa"
+      "bromfiets",
+      "snorfiets"
     ],
-    "addedAt": "2026-05-08T00:00:00Z",
-    "lastChecked": "2026-05-08T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.scooterfocus.com/",
-    "name": "ScooterFocus — Petrol Scooter Troubleshooting & Guides",
-    "type": "blog",
-    "category": "diagnostics",
-    "models": [
-      "general",
-      "GY6",
-      "Piaggio",
-      "Vespa"
-    ],
-    "addedAt": "2026-05-08T00:00:00Z",
-    "lastChecked": "2026-05-08T00:00:00Z",
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
     "active": true
   },
   {
@@ -960,54 +827,326 @@
       "GY6 232cc"
     ],
     "addedAt": "2026-05-08T00:00:00Z",
-    "lastChecked": "2026-05-08T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
     "active": true
   },
   {
-    "url": "https://www.carlsalter.com/piaggio-vespa-service-manuals.asp",
-    "name": "Carl Salter — Free Piaggio & Vespa Workshop Manuals",
-    "type": "wiki",
-    "category": "repair-guides",
+    "url": "https://ncystore.com/blog/",
+    "name": "NCY Store Blog — GY6 Parts & Engine Diagrams",
+    "type": "blog",
+    "category": "parts",
+    "models": [
+      "GY6 50cc",
+      "GY6 150cc",
+      "Chinese scooters"
+    ],
+    "addedAt": "2026-05-09T10:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "note": "=== DIAGNOSTICS & FAULT CODES ===",
+    "url": "https://www.scooterwest.com/service-tips/",
+    "name": "Scooter West Service Tips",
+    "type": "blog",
+    "category": "diagnostics",
     "models": [
       "Vespa",
-      "Piaggio Zip",
-      "Piaggio Liberty",
-      "Piaggio Beverly"
+      "Piaggio",
+      "Aprilia"
     ],
-    "addedAt": "2026-05-08T00:00:00Z",
-    "lastChecked": "2026-05-08T00:00:00Z",
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
     "active": true
   },
   {
-    "url": "https://www.motorcyclemanuals.info/motocycles-atvs/vespa/",
-    "name": "MotorcycleManuals.info — Vespa Service & Wiring Diagram PDFs",
-    "type": "wiki",
-    "category": "repair-guides",
-    "models": [
-      "Vespa ET",
-      "Vespa LX",
-      "Vespa GTS",
-      "Vespa Primavera",
-      "Vespa Sprint"
-    ],
-    "addedAt": "2026-05-08T00:00:00Z",
-    "lastChecked": "2026-05-08T00:00:00Z",
-    "active": true
-  },
-  {
-    "url": "https://www.louis-moto.com/en-ww/magazin/",
-    "name": "Louis Moto Magazine — Variator, Clutch & Scooter Maintenance",
+    "url": "https://www.motorscooterguide.net/troubleshooting/",
+    "name": "Motor Scooter Guide Troubleshooting",
     "type": "blog",
-    "category": "repair-guides",
+    "category": "diagnostics",
+    "models": [
+      "general",
+      "GY6",
+      "4-stroke",
+      "2-stroke"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.scooterdepot.us/troubleshooting-guide/",
+    "name": "Scooter Depot Troubleshooting Guide",
+    "type": "blog",
+    "category": "diagnostics",
+    "models": [
+      "GY6 50cc",
+      "GY6 150cc",
+      "Chinese scooters"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.scooterfocus.com/",
+    "name": "ScooterFocus — Petrol Scooter Troubleshooting & Guides",
+    "type": "blog",
+    "category": "diagnostics",
     "models": [
       "general",
       "GY6",
       "Piaggio",
-      "Vespa",
-      "Aprilia"
+      "Vespa"
     ],
     "addedAt": "2026-05-08T00:00:00Z",
-    "lastChecked": "2026-05-08T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.motorroller.de/en/fehlercodes-blinkcodes-4t50e4/",
+    "name": "Motorroller.de — Euro 4 Scooter Error & Blink Codes",
+    "type": "wiki",
+    "category": "diagnostics",
+    "models": [
+      "Euro 4 50cc",
+      "GY6 Euro 4",
+      "Piaggio",
+      "Vespa"
+    ],
+    "addedAt": "2026-05-07T12:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "note": "=== MANUFACTURER OFFICIAL SOURCES ===",
+    "url": "https://www.vespa.com/en_EN/news-and-events/",
+    "name": "Vespa Official News",
+    "type": "manufacturer",
+    "category": "news",
+    "models": [
+      "Vespa"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.piaggio.com/en_EN/news/",
+    "name": "Piaggio Official News",
+    "type": "manufacturer",
+    "category": "news",
+    "models": [
+      "Piaggio Zip",
+      "Piaggio Liberty",
+      "Piaggio Medley",
+      "Piaggio Beverly"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://manuals.vespa.com/",
+    "name": "Vespa Official Manuals Portal",
+    "type": "manufacturer",
+    "category": "repair-guides",
+    "models": [
+      "Vespa"
+    ],
+    "addedAt": "2026-05-09T10:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.honda.com/scooters",
+    "name": "Honda Scooters — Official",
+    "type": "manufacturer",
+    "category": "models",
+    "models": [
+      "Honda PCX",
+      "Honda SH",
+      "Honda Vision",
+      "Honda Forza",
+      "Honda Zoomer"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.yamaha-motor.eu/en/products/scooters/",
+    "name": "Yamaha Scooters — European Site",
+    "type": "manufacturer",
+    "category": "models",
+    "models": [
+      "Yamaha Aerox",
+      "Yamaha NMAX",
+      "Yamaha XMAX",
+      "Yamaha Zuma"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.kymco.com/",
+    "name": "Kymco Official",
+    "type": "manufacturer",
+    "category": "models",
+    "models": [
+      "Kymco Agility",
+      "Kymco Like",
+      "Kymco People S",
+      "Kymco Super 8"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.sym-euro.com/",
+    "name": "SYM Europe — Official",
+    "type": "manufacturer",
+    "category": "models",
+    "models": [
+      "SYM Orbit",
+      "SYM Fiddle",
+      "SYM Jet",
+      "SYM Symphony"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.peugeot-motocycles.com/en/",
+    "name": "Peugeot Motocycles — Official",
+    "type": "manufacturer",
+    "category": "models",
+    "models": [
+      "Peugeot Speedfight",
+      "Peugeot Kisbee",
+      "Peugeot Ludix"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "note": "=== YOUTUBE CHANNELS ===",
+    "url": "https://www.youtube.com/@zandri",
+    "name": "Zandri — Scooter Repair & Maintenance Tutorials",
+    "type": "youtube-channel",
+    "category": "videos",
+    "models": [
+      "GY6",
+      "Chinese scooters",
+      "general"
+    ],
+    "addedAt": "2026-05-09T10:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.youtube.com/@its-that-easy",
+    "name": "It's That Easy — Scooter Repair & DIY Guides",
+    "type": "youtube-channel",
+    "category": "videos",
+    "models": [
+      "GY6",
+      "scooters",
+      "general"
+    ],
+    "addedAt": "2026-05-09T10:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.youtube.com/@FarmerBrownsGarage",
+    "name": "Farmer Brown's Garage — GY6 & Scooter Repairs",
+    "type": "youtube-channel",
+    "category": "videos",
+    "models": [
+      "GY6 50cc",
+      "GY6 150cc",
+      "Chinese scooters"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.youtube.com/@ScooterDynasty",
+    "name": "Scooter Dynasty — Repair & Restoration",
+    "type": "youtube-channel",
+    "category": "videos",
+    "models": [
+      "GY6",
+      "Vespa",
+      "Piaggio"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.youtube.com/@vespaNation",
+    "name": "Vespa Nation — Vespa Repairs & Restoration",
+    "type": "youtube-channel",
+    "category": "videos",
+    "models": [
+      "Vespa PX",
+      "Vespa ET",
+      "Vespa LX",
+      "Vespa GTS"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.youtube.com/@MrScooterRepair",
+    "name": "Mr Scooter Repair",
+    "type": "youtube-channel",
+    "category": "videos",
+    "models": [
+      "general",
+      "GY6",
+      "Honda",
+      "Yamaha"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.youtube.com/@GY6-SCOOTERS",
+    "name": "GY6-Scooters — YouTube Vlog & Maintenance Channel",
+    "type": "youtube-channel",
+    "category": "videos",
+    "models": [
+      "GY6 50cc",
+      "GY6 150cc",
+      "Chinese scooters",
+      "Taiwanese scooters"
+    ],
+    "addedAt": "2026-05-07T12:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
+    "active": true
+  },
+  {
+    "note": "=== DUTCH / BELGIAN SOURCES (bromfiets / snorfiets) ===",
+    "url": "https://www.tweedehands.be/scooters",
+    "name": "2dehands.be — Belgian Scooter Community",
+    "type": "other",
+    "category": "community",
+    "models": [
+      "bromfiets",
+      "snorfiets"
+    ],
+    "addedAt": "2026-05-07T00:00:00Z",
+    "lastChecked": "2026-05-09T10:00:00Z",
     "active": true
   }
 ]

@@ -185,5 +185,16 @@
     ],
     "addedAt": "2026-05-08T10:33:19Z",
     "lastChecked": "2026-05-08T10:33:19Z"
+  },
+  {
+    "url": "internal:carburetor-adjustment-tuning-guide",
+    "title": "Carburetor Adjustment & Tuning Guide",
+    "category": "repair-guides",
+    "file": "repair-guides/carburetor-adjustment-tuning-guide.html",
+    "sources": [
+      "internal"
+    ],
+    "addedAt": "2026-05-08T14:14:23Z",
+    "lastChecked": "2026-05-09T10:01:00Z"
   }
 ]
