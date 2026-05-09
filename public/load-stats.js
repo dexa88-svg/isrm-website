@@ -22,3 +22,9 @@ async function loadStats() {
 
 // Load stats when page loads
 document.addEventListener('DOMContentLoaded', loadStats);
+
+// Export for testing (Node.js / Jest)
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { loadStats };
+}
+
