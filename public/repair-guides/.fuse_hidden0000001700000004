@@ -253,10 +253,10 @@
 
         <article class="guide-card" data-category="maintenance">
           <div class="card-tag">GY6</div>
-          <h3>Carburetor Adjustment &amp; Tuning</h3>
-          <p>Idle speed, mixture screw, and needle position adjustment for smooth running on GY6 carbureted scooters.</p>
+          <h3>Carburettor Adjustment &amp; Tuning</h3>
+          <p>Idle speed, mixture screw, and needle position adjustment for smooth running on GY6 carburetted scooters.</p>
           <div class="card-meta">
-            <span class="tag">Carburetor</span>
+            <span class="tag">Carburettor</span>
             <span class="time">15 min</span>
           </div>
           <a href="gy6-carburetor-adjustment-guide.html" class="read-more">Read Guide</a>
@@ -267,7 +267,7 @@
           <h3>Carburetor Adjustment &amp; Tuning Fundamentals</h3>
           <p>Comprehensive tuning guide covering idle speed adjustment, mixture screw settings, and optimization techniques for GY6 engines.</p>
           <div class="card-meta">
-            <span class="tag">Carburetor</span>
+            <span class="tag">Carburettor</span>
             <span class="time">20 min</span>
           </div>
           <a href="carburetor-adjustment-tuning-guide.html" class="read-more">Read Guide</a>
@@ -275,10 +275,10 @@
 
         <article class="guide-card" data-category="maintenance">
           <div class="card-tag">GY6</div>
-          <h3>Carburetor Deep-Cleaning</h3>
-          <p>Full disassembly and deep-cleaning of GY6 PD18J/PD24J/CVK carburetors: float, jets, needle, mixture screw, and reassembly.</p>
+          <h3>Carburettor Deep-Cleaning</h3>
+          <p>Full disassembly and deep-cleaning of GY6 PD18J/PD24J/CVK carburettors: float, jets, needle, mixture screw, and reassembly.</p>
           <div class="card-meta">
-            <span class="tag">Carburetor</span>
+            <span class="tag">Carburettor</span>
             <span class="time">30 min</span>
           </div>
           <a href="gy6-carburetor-cleaning-guide.html" class="read-more">Read Guide</a>
@@ -341,7 +341,7 @@
 
         <article class="guide-card" data-category="advanced">
           <div class="card-tag">GY6</div>
-          <h3>Carburetor Jetting &amp; Rejetting</h3>
+          <h3>Carburettor Jetting &amp; Rejetting</h3>
           <p>Selecting and changing main jet and pilot jet sizes; jetting tables for altitude corrections and aftermarket modifications.</p>
           <div class="card-meta">
             <span class="tag">Advanced</span>

@@ -87,14 +87,14 @@
   <div class="breadcrumb">
     <a href="../index.html">ISRM Home</a><span>›</span>
     <a href="index.html">Repair Guides</a><span>›</span>
-    GY6 carburetor Jetting &amp; Rejetting Guide
+    GY6 Carburettor Jetting &amp; Rejetting Guide
   </div>
 
   <main class="guide-content">
-  <h1>GY6 carburetor Jetting &amp; Rejetting Guide</h1>
+  <h1>GY6 Carburettor Jetting &amp; Rejetting Guide</h1>
   <div class="meta">
     Added: 2026-05-08 &nbsp;|&nbsp; Sources: <a href="https://www.scooterworks.com/blogs/news/carburetor-jetting-101" target="_blank" rel="noopener">scooterworks.com</a>, <a href="https://www.rollingwrenchdenver.com/blogs/news/carburetor-help-jetting-and-tuning-help" target="_blank" rel="noopener">rollingwrenchdenver.com</a>, <a href="https://www.jetsrus.com/FAQs/FAQ_rejetting_101_how_to_rejet.htm" target="_blank" rel="noopener">jetsrus.com</a>
-    &nbsp;|&nbsp; <span class="tag">GY6</span> <span class="tag">Carburetor</span> <span class="tag">139QMB</span> <span class="tag">157QMJ</span>
+    &nbsp;|&nbsp; <span class="tag">GY6</span> <span class="tag">Carburettor</span> <span class="tag">139QMB</span> <span class="tag">157QMJ</span>
   </div>
 
   <div class="source-box">
@@ -104,10 +104,10 @@
     Technical jetting tables are original ISRM content based on widely published community data. Always verify with your specific engine's service manual.
   </div>
 
-  <p>Jetting refers to selecting the correct size of the brass main jet and pilot jet inside the carburetor to achieve the right air-to-fuel ratio for your engine's conditions. A stock GY6 scooter is jetted conservatively from the factory — usually slightly lean — which can cause hesitation, flat spots, or overheating. If you have added an aftermarket exhaust, performance air filter, or high-compression piston, rejetting is essential.</p>
+  <p>Jetting refers to selecting the correct size of the brass main jet and pilot jet inside the carburettor to achieve the right air-to-fuel ratio for your engine's conditions. A stock GY6 scooter is jetted conservatively from the factory — usually slightly lean — which can cause hesitation, flat spots, or overheating. If you have added an aftermarket exhaust, performance air filter, or high-compression piston, rejetting is essential.</p>
 
   <h2>Understanding the Throttle Zones</h2>
-  <p>The GY6 slide-type carburetor (PD-series or CVK) controls the mixture across the throttle range via different circuits. Knowing which circuit governs each zone tells you which component to adjust:</p>
+  <p>The GY6 slide-type carburettor (PD-series or CVK) controls the mixture across the throttle range via different circuits. Knowing which circuit governs each zone tells you which component to adjust:</p>
   <ul>
     <li><strong>0–¼ throttle (idle and off-idle):</strong> Governed by the pilot jet and the air/fuel mixture screw. Symptoms of a lean pilot: stumbling, stalling at idle, engine hunts.</li>
     <li><strong>¼–¾ throttle (mid-range):</strong> Governed by the needle position and its clip groove. A needle that is too lean causes hesitation when rolling on from partial throttle.</li>
@@ -136,7 +136,7 @@
   <h2>Jetting for Modifications</h2>
 
   <h2>Performance Air Filter</h2>
-  <p>A high-flow air filter (K&amp;N style pod filter or similar) allows more air through the carburetor. This leans the mixture and requires a main jet increase. A typical starting point is to increase the main jet by <strong>5–8 sizes</strong> (e.g., from #98 to #105 on a 150cc engine) and adjust from there using the spark plug color method.</p>
+  <p>A high-flow air filter (K&amp;N style pod filter or similar) allows more air through the carburettor. This leans the mixture and requires a main jet increase. A typical starting point is to increase the main jet by <strong>5–8 sizes</strong> (e.g., from #98 to #105 on a 150cc engine) and adjust from there using the spark plug colour method.</p>
 
   <h2>Performance Exhaust</h2>
   <p>An aftermarket exhaust that reduces back-pressure also leans the mixture, especially in the mid-to-high throttle range. Increase the main jet by <strong>3–5 sizes</strong> as a starting point, and raise the needle one clip position (move the clip from the 3rd to the 2nd groove from the top).</p>
@@ -158,12 +158,12 @@
     <li>Unscrew the main jet with a flat-blade screwdriver. Note the existing size stamped on the jet body.</li>
     <li>Thread in the new jet finger-tight, then snug with the screwdriver. Do not overtighten.</li>
     <li>Refit the float bowl, turn the fuel on, and start the engine.</li>
-    <li>After a warm-up run, remove the spark plug and read its color. A correct mixture gives a tan to light brown plug tip. Black = too rich; white/grey = too lean.</li>
-    <li>Adjust one jet size at a time until the plug color is correct.</li>
+    <li>After a warm-up run, remove the spark plug and read its colour. A correct mixture gives a tan to light brown plug tip. Black = too rich; white/grey = too lean.</li>
+    <li>Adjust one jet size at a time until the plug colour is correct.</li>
   </ol>
 
   <div class="warn">
-    ⚠️ Always clean the carburetor thoroughly before rejetting. A partially blocked jet will give false lean symptoms regardless of jet size. See the <a href="gy6-carburetor-cleaning-guide.html">Deep-Cleaning Guide</a> first.
+    ⚠️ Always clean the carburettor thoroughly before rejetting. A partially blocked jet will give false lean symptoms regardless of jet size. See the <a href="gy6-carburetor-cleaning-guide.html">Deep-Cleaning Guide</a> first.
   </div>
 
   <div class="tip">
@@ -171,7 +171,7 @@
   </div>
 
   <h2>Where to Buy GY6 Jets</h2>
-  <p>Replacement GY6 jets (both main and pilot) are widely available from vendors including <a href="https://www.vmcchineseparts.com/" target="_blank" rel="noopener">VMC Chinese Parts</a>, <a href="https://www.rollingwrenchdenver.com/" target="_blank" rel="noopener">Rolling Wrench Denver</a>, and <a href="https://www.scooterworks.com/collections/gy6" target="_blank" rel="noopener">Scooterworks USA</a>. When ordering, confirm the carburetor model (PD18J, PD22J, PD24J, or CVK) to ensure thread pitch compatibility.</p>
+  <p>Replacement GY6 jets (both main and pilot) are widely available from vendors including <a href="https://www.vmcchineseparts.com/" target="_blank" rel="noopener">VMC Chinese Parts</a>, <a href="https://www.rollingwrenchdenver.com/" target="_blank" rel="noopener">Rolling Wrench Denver</a>, and <a href="https://www.scooterworks.com/collections/gy6" target="_blank" rel="noopener">Scooterworks USA</a>. When ordering, confirm the carburettor model (PD18J, PD22J, PD24J, or CVK) to ensure thread pitch compatibility.</p>
   </main>
 
 

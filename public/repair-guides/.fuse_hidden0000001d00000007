@@ -94,24 +94,24 @@
   <h1>GY6 Carburetor Deep-Cleaning Guide</h1>
   <div class="meta">
     Added: 2026-05-08 &nbsp;|&nbsp; Sources: <a href="https://q9powersportsusa.com/blogs/technical-support-q9-powersports-usa/properly-clean-service-gy6-scooter" target="_blank" rel="noopener">q9powersportsusa.com</a>, <a href="https://www.scooterworks.com/blogs/news/carburetor-jetting-101" target="_blank" rel="noopener">scooterworks.com</a>, <a href="https://scooter.fandom.com/wiki/Tuning_a_carburetor" target="_blank" rel="noopener">scooter.fandom.com</a>
-    &nbsp;|&nbsp; <span class="tag">GY6</span> <span class="tag">Carburetor</span> <span class="tag">139QMB</span> <span class="tag">157QMJ</span>
+    &nbsp;|&nbsp; <span class="tag">GY6</span> <span class="tag">Carburettor</span> <span class="tag">139QMB</span> <span class="tag">157QMJ</span>
   </div>
 
   <div class="source-box">
     📌 <strong>Based on:</strong> Community guides and technical documentation from
     <a href="https://q9powersportsusa.com/blogs/technical-support-q9-powersports-usa/properly-clean-service-gy6-scooter" target="_blank" rel="noopener">Q9 PowerSports USA Technical Blog (2026)</a>,
-    <a href="https://www.scooterworks.com/blogs/news/carburetor-jetting-101" target="_blank" rel="noopener">Scooterworks USA carburetor Guide</a>,
+    <a href="https://www.scooterworks.com/blogs/news/carburetor-jetting-101" target="_blank" rel="noopener">Scooterworks USA Carburettor Guide</a>,
     and the <a href="https://scooter.fandom.com/wiki/Tuning_a_carburetor" target="_blank" rel="noopener">Scooter Wiki Tuning Reference</a>.
     Always verify procedures with your model's service manual before beginning.
   </div>
 
-  <p>A dirty or partially blocked carburetor is the most common cause of poor GY6 engine performance: rough idle, hard starting, hesitation on throttle, and stalling. This guide covers a thorough disassembly-and-clean — going further than a quick spray of carb cleaner — for the standard slide-type carburetors (PD18J / PD22J / PD24J / CVK) fitted to GY6 139QMB (50cc) and 157QMJ (125cc / 150cc) engines.</p>
+  <p>A dirty or partially blocked carburettor is the most common cause of poor GY6 engine performance: rough idle, hard starting, hesitation on throttle, and stalling. This guide covers a thorough disassembly-and-clean — going further than a quick spray of carb cleaner — for the standard slide-type carburettors (PD18J / PD22J / PD24J / CVK) fitted to GY6 139QMB (50cc) and 157QMJ (125cc / 150cc) engines.</p>
 
   <h2>Tools &amp; Materials</h2>
   <ul>
     <li>JIS cross-head screwdrivers (sizes #1 and #2) — not standard Phillips</li>
     <li>Flat-blade screwdriver, 3 mm and 5 mm</li>
-    <li>Aerosol carburetor cleaner (non-residue formula)</li>
+    <li>Aerosol carburettor cleaner (non-residue formula)</li>
     <li>Compressed air with fine nozzle</li>
     <li>Small wire brush (soft brass bristles)</li>
     <li>Clean rag or lint-free cloth</li>
@@ -121,27 +121,27 @@
   </ul>
 
   <div class="warn">
-    ⚠️ <strong>Fire hazard:</strong> Work in a well-ventilated area away from ignition sources. Petrol and carburetor cleaner are highly flammable. Disconnect the fuel tap (petcock) before removing the float bowl.
+    ⚠️ <strong>Fire hazard:</strong> Work in a well-ventilated area away from ignition sources. Petrol and carburettor cleaner are highly flammable. Disconnect the fuel tap (petcock) before removing the float bowl.
   </div>
 
   <h2>Step-by-Step Procedure</h2>
 
   <h2>1 — Preparation</h2>
   <ol>
-    <li>Allow the engine to cool completely. A warm carburetor is easier to smell fumes from, but a hot engine is a burn hazard.</li>
-    <li>Turn the fuel tap to the <strong>OFF</strong> or <strong>PRI</strong> (prime) position so no fuel flows to the carburetor.</li>
-    <li>Remove the side panel or access cover on your scooter to expose the carburetor body.</li>
+    <li>Allow the engine to cool completely. A warm carburettor is easier to smell fumes from, but a hot engine is a burn hazard.</li>
+    <li>Turn the fuel tap to the <strong>OFF</strong> or <strong>PRI</strong> (prime) position so no fuel flows to the carburettor.</li>
+    <li>Remove the side panel or access cover on your scooter to expose the carburettor body.</li>
     <li>Place a rag or drain pan under the float bowl to catch residual fuel.</li>
   </ol>
 
-  <h2>2 — Remove the Carburetor</h2>
+  <h2>2 — Remove the Carburettor</h2>
   <ol>
-    <li>Loosen the intake manifold clamp screw (the band clamp connecting carburetor to engine inlet). Do not remove — just loosen until the carburetor can twist free.</li>
+    <li>Loosen the intake manifold clamp screw (the band clamp connecting carburettor to engine inlet). Do not remove — just loosen until the carburettor can twist free.</li>
     <li>Loosen the air-box clamp in the same way on the air-filter side.</li>
     <li>Disconnect the throttle cable: compress the cable end and unhook it from the slide. Note the cable routing.</li>
-    <li>Detach the fuel line from the carburetor inlet nipple. Plug or clamp the line to prevent dripping.</li>
+    <li>Detach the fuel line from the carburettor inlet nipple. Plug or clamp the line to prevent dripping.</li>
     <li>Disconnect the choke cable (or automatic choke wiring connector if fitted).</li>
-    <li>Twist and pull the carburetor free from both clamps. Set it on your work surface.</li>
+    <li>Twist and pull the carburettor free from both clamps. Set it on your work surface.</li>
   </ol>
 
   <h2>3 — Disassemble the Float Bowl</h2>
@@ -155,7 +155,7 @@
   </ol>
 
   <table>
-    <tr><th>Engine</th><th>Typical Main Jet</th><th>Pilot Jet</th><th>Carburetor</th></tr>
+    <tr><th>Engine</th><th>Typical Main Jet</th><th>Pilot Jet</th><th>Carburettor</th></tr>
     <tr><td>GY6 50cc (139QMB)</td><td>#75–#78</td><td>#35–#38</td><td>PD18J</td></tr>
     <tr><td>GY6 125cc (152QMI)</td><td>#95–#98</td><td>#38–#42</td><td>PD22J / CVK22</td></tr>
     <tr><td>GY6 150cc (157QMJ)</td><td>#98–#105</td><td>#38–#42</td><td>PD24J / CVK24</td></tr>
@@ -163,16 +163,16 @@
 
   <h2>4 — Clean All Components</h2>
   <ol>
-    <li><strong>Float bowl:</strong> Spray interior with carburetor cleaner, scrub with a soft brush, rinse, dry with compressed air.</li>
+    <li><strong>Float bowl:</strong> Spray interior with carburettor cleaner, scrub with a soft brush, rinse, dry with compressed air.</li>
     <li><strong>Main jet:</strong> Hold up to light and check that the hole is clear and round. Spray cleaner through it. If blocked, use a bristle from the wire brush — never a drill bit or wire, which will enlarge the calibrated orifice.</li>
     <li><strong>Pilot jet:</strong> Same process. The pilot jet feeds fuel at idle and low throttle; a partially blocked pilot jet causes rough idle and stumbling below ¼ throttle.</li>
-    <li><strong>Carburetor body passages:</strong> Spray cleaner into every port and passage you can see, including the emulsion tube holes (the small holes in the main bore). Follow with compressed air from the opposite side to clear debris outward.</li>
-    <li><strong>Needle and slide:</strong> Remove the top cap of the carburetor to extract the slide. Inspect the needle for wear (grooves, bends). Clean the slide bore with a cloth dampened in cleaner.</li>
+    <li><strong>Carburettor body passages:</strong> Spray cleaner into every port and passage you can see, including the emulsion tube holes (the small holes in the main bore). Follow with compressed air from the opposite side to clear debris outward.</li>
+    <li><strong>Needle and slide:</strong> Remove the top cap of the carburettor to extract the slide. Inspect the needle for wear (grooves, bends). Clean the slide bore with a cloth dampened in cleaner.</li>
     <li><strong>Air/fuel mixture screw:</strong> Count and record how many turns out it is currently set before removing. Remove it carefully (it may have a small O-ring, washer, and spring). Clean the passage with cleaner and air. Reinstall to the recorded position.</li>
   </ol>
 
   <div class="tip">
-    💡 <strong>Tip:</strong> If the carburetor body shows brown or black varnish inside the float bowl or emulsion passages, soak it for 30 minutes in a commercial carburetor dip (or a solution of acetone and water). This dissolves hardened gum deposits that aerosol cleaner cannot shift.
+    💡 <strong>Tip:</strong> If the carburettor body shows brown or black varnish inside the float bowl or emulsion passages, soak it for 30 minutes in a commercial carburettor dip (or a solution of acetone and water). This dissolves hardened gum deposits that aerosol cleaner cannot shift.
   </div>
 
   <h2>5 — Inspect the Float &amp; Needle Valve</h2>
@@ -189,7 +189,7 @@
     <li>Install a new float-bowl O-ring or gasket if the old one is compressed or cracked.</li>
     <li>Refit the float bowl and tighten evenly.</li>
     <li>Reinstall the slide and needle (ensure the needle clip is seated in the correct groove — middle groove for standard tune).</li>
-    <li>Refit the carburetor to the scooter, reversing the removal steps. Ensure both clamps are properly tightened to prevent air leaks.</li>
+    <li>Refit the carburettor to the scooter, reversing the removal steps. Ensure both clamps are properly tightened to prevent air leaks.</li>
     <li>Reconnect fuel line, throttle cable, and choke cable.</li>
     <li>Turn the fuel tap on and check for leaks before starting.</li>
   </ol>
@@ -204,8 +204,8 @@
 
   <div class="tip">
     💡 <strong>Related guides:</strong>
-    <a href="gy6-carburetor-adjustment-guide.html">GY6 carburetor Adjustment & Tuning</a> |
-    <a href="gy6-carburetor-jetting-guide.html">GY6 carburetor Jetting Guide</a> |
+    <a href="gy6-carburetor-adjustment-guide.html">GY6 Carburettor Adjustment & Tuning</a> |
+    <a href="gy6-carburetor-jetting-guide.html">GY6 Carburettor Jetting Guide</a> |
     <a href="../diagnostics/gy6-no-start-troubleshooting.html">GY6 Won't Start — Troubleshooting</a>
   </div>
   </main>

@@ -105,7 +105,7 @@
     GY6 EFI conversion and factory EFI units vary by manufacturer; always refer to your specific ECU/EFI documentation.
   </div>
 
-  <p>While the majority of GY6-engined scooters sold in Europe and the UK use a carburetor, a growing number of models — and all Euro 5-compliant variants — use electronic fuel injection (EFI). Some owners also retrofit aftermarket EFI systems (such as the Ecotrons or Rolling Wrench ProBld kit) to carbureted GY6 engines. This guide covers the most common EFI fault symptoms and how to diagnose them systematically.</p>
+  <p>While the majority of GY6-engined scooters sold in Europe and the UK use a carburettor, a growing number of models — and all Euro 5-compliant variants — use electronic fuel injection (EFI). Some owners also retrofit aftermarket EFI systems (such as the Ecotrons or Rolling Wrench ProBld kit) to carburetted GY6 engines. This guide covers the most common EFI fault symptoms and how to diagnose them systematically.</p>
 
   <h2>GY6 EFI System Overview</h2>
   <p>A typical GY6 EFI system consists of the following components working together:</p>
@@ -128,7 +128,7 @@
   </ol>
 
   <div class="warn">
-    ⚠️ <strong>EFI vs carburetor:</strong> Do not apply aerosol starting fluid (ether) to a fuel-injected GY6 engine — it can damage the injector seal and the catalytic converter if fitted. Use the correct cold-start procedure instead.
+    ⚠️ <strong>EFI vs Carburettor:</strong> Do not apply aerosol starting fluid (ether) to a fuel-injected GY6 engine — it can damage the injector seal and the catalytic converter if fitted. Use the correct cold-start procedure instead.
   </div>
 
   <h2>Symptom-Based Diagnostic Table</h2>
@@ -183,7 +183,7 @@
   <div class="tip">
     💡 <strong>Related guides:</strong>
     <a href="gy6-no-start-troubleshooting.html">GY6 Won't Start — Troubleshooting Checklist</a> |
-    <a href="../repair-guides/gy6-carburetor-cleaning-guide.html">GY6 carburetor Deep-Cleaning Guide</a>
+    <a href="../repair-guides/gy6-carburetor-cleaning-guide.html">GY6 Carburettor Deep-Cleaning Guide</a>
   </div>
   </main>
 

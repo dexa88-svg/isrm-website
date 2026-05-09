@@ -6,6 +6,7 @@
   <title>Parts & Compatibility — ISRM</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
+    /* ── Hero ─────────────────────────────────────── */
     .page-hero {
       background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
       padding: 4rem 2rem 3rem;
@@ -15,38 +16,104 @@
     }
     .page-hero::before {
       content: "🔩";
-      position: absolute;
-      right: 6%;
-      top: 50%;
+      position: absolute; right: 6%; top: 50%;
       transform: translateY(-50%);
-      font-size: 9rem;
-      opacity: 0.07;
-      pointer-events: none;
-      line-height: 1;
+      font-size: 9rem; opacity: 0.07; pointer-events: none;
     }
     .page-hero-inner { max-width: 1100px; margin: 0 auto; }
     .page-hero h1 {
       font-size: clamp(2rem, 5vw, 3.2rem);
       background: linear-gradient(135deg, var(--text-primary), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
       margin-bottom: 0.75rem;
     }
-    .page-hero p { color: var(--text-secondary); font-size: 1.05rem; max-width: 620px; margin-bottom: 1.5rem; }
+    .page-hero p { color: var(--text-secondary); font-size: 1.05rem; max-width: 640px; margin-bottom: 1.5rem; }
     .page-hero-stats { display: flex; gap: 2rem; flex-wrap: wrap; }
     .hero-stat { display: flex; flex-direction: column; gap: 0.15rem; }
     .hero-stat-number { font-size: 1.6rem; font-weight: 700; color: var(--primary); line-height: 1; }
-    .hero-stat-label { font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
-    .parts-controls {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
+    .hero-stat-label { font-size: 0.78rem; color: var(--text-muted, var(--text-secondary)); text-transform: uppercase; letter-spacing: 0.05em; }
 
-    .parts-controls input,
-    .parts-controls select {
+    /* ── Part Finder ──────────────────────────────── */
+    .part-finder {
+      background: linear-gradient(135deg, rgba(255,107,53,0.08), rgba(0,168,204,0.08));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 2rem 2rem 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .part-finder h2 {
+      font-size: 1.4rem; color: var(--text-primary);
+      margin-bottom: 0.3rem; display: flex; align-items: center; gap: 0.5rem;
+    }
+    .part-finder > p { font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .finder-controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .finder-controls select, .finder-controls input {
+      padding: 0.85rem 1.1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      width: 100%;
+    }
+    .finder-controls select:focus, .finder-controls input:focus {
+      outline: none; border-color: var(--primary);
+    }
+    .finder-btn {
+      padding: 0.85rem 2rem;
+      background: var(--primary);
+      border: none; border-radius: var(--radius-md);
+      color: #fff; font-size: 0.95rem; font-weight: 600;
+      cursor: pointer; transition: var(--transition);
+    }
+    .finder-btn:hover { background: var(--primary-dark); }
+    .finder-results {
+      display: none;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+    .finder-results.active { display: block; }
+    .finder-result-header {
+      padding: 0.9rem 1.5rem;
+      background: linear-gradient(135deg, rgba(255,107,53,0.12), rgba(0,168,204,0.12));
+      border-bottom: 1px solid var(--border);
+      font-weight: 600; font-size: 0.9rem; color: var(--accent);
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .finder-result-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: start;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .finder-result-item:last-child { border-bottom: none; }
+    .finder-result-item:hover { background: var(--surface-2); }
+    .result-part-name { font-weight: 600; color: var(--text-primary); margin-bottom: 0.2rem; }
+    .result-part-number { font-family: monospace; font-size: 0.85rem; color: var(--accent); }
+    .result-part-spec { font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.2rem; }
+    .result-compat-badge {
+      padding: 0.3rem 0.7rem; border-radius: var(--radius-sm);
+      font-size: 0.78rem; font-weight: 600; text-transform: uppercase; white-space: nowrap;
+    }
+    .result-compat-ok  { background: rgba(6,167,125,0.2); color: var(--success); }
+    .result-compat-warn{ background: rgba(245,166,35,0.2); color: var(--warning); }
+    .result-no-match   { padding: 1.5rem; text-align: center; color: var(--text-secondary); }
+
+    /* ── Search / Filter bar ──────────────────────── */
+    .parts-controls {
+      display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;
+    }
+    .parts-controls input, .parts-controls select {
       padding: 0.8rem 1.2rem;
       background: var(--surface);
       border: 1px solid var(--border);
@@ -54,136 +121,130 @@
       color: var(--text-primary);
       font-size: 0.95rem;
     }
+    .parts-controls input:focus, .parts-controls select:focus {
+      outline: none; border-color: var(--primary);
+    }
 
+    /* ── Section heading ──────────────────────────── */
+    .section-heading {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin: 3.5rem 0 1.25rem;
+    }
+    .section-heading h2 {
+      font-size: 1.5rem; color: var(--text-primary); margin: 0;
+    }
+    .section-heading-icon {
+      width: 2.2rem; height: 2.2rem;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+
+    /* ── Parts table ──────────────────────────────── */
     .parts-table {
-      width: 100%;
-      border-collapse: collapse;
+      width: 100%; border-collapse: collapse;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       overflow: hidden;
-      margin-bottom: 2rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.92rem;
     }
-
     .parts-table thead {
-      background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(0, 164, 204, 0.1));
+      background: linear-gradient(135deg, rgba(255,107,53,0.1), rgba(0,164,204,0.1));
       border-bottom: 2px solid var(--border);
     }
-
     .parts-table th {
-      padding: 1rem 1.5rem;
-      text-align: left;
-      font-weight: 600;
-      color: var(--accent);
-      text-transform: uppercase;
-      font-size: 0.85rem;
-      letter-spacing: 0.5px;
+      padding: 0.9rem 1.1rem;
+      text-align: left; font-weight: 600;
+      color: var(--accent); text-transform: uppercase;
+      font-size: 0.78rem; letter-spacing: 0.5px;
+      white-space: nowrap;
     }
-
     .parts-table td {
-      padding: 1rem 1.5rem;
+      padding: 0.85rem 1.1rem;
       border-bottom: 1px solid var(--border);
       color: var(--text-secondary);
+      vertical-align: top;
     }
+    .parts-table tr:hover { background: var(--surface-2); }
+    .parts-table tr:last-child td { border-bottom: none; }
+    .parts-table tr.hidden-row { display: none; }
 
-    .parts-table tr:hover {
-      background: var(--surface-2);
-    }
+    .part-name { font-weight: 600; color: var(--text-primary); }
+    .part-num  { font-family: monospace; font-size: 0.82rem; color: var(--accent); display: block; margin-top: 0.15rem; }
+    .part-note { font-size: 0.8rem; color: var(--text-secondary); }
 
-    .parts-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .part-name {
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    .compatibility-badge {
+    .cb {
       display: inline-block;
-      padding: 0.4rem 0.8rem;
+      padding: 0.32rem 0.7rem;
       border-radius: var(--radius-sm);
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
+      font-size: 0.75rem; font-weight: 600;
+      text-transform: uppercase; white-space: nowrap;
+    }
+    .cb-yes  { background: rgba(6,167,125,0.18); color: var(--success); }
+    .cb-part { background: rgba(245,166,35,0.18); color: var(--warning); }
+    .cb-no   { background: rgba(214,48,49,0.18); color: var(--danger); }
+    .cb-pn   { background: rgba(0,168,204,0.13); color: var(--accent); font-family: monospace; font-size: 0.78rem; }
+
+    /* part-number badge in table cells */
+    .pn {
+      display: block; margin-top: 0.25rem;
+      font-family: monospace; font-size: 0.78rem;
+      color: var(--accent); opacity: 0.85;
     }
 
-    .compat-yes {
-      background: rgba(6, 167, 125, 0.2);
-      color: var(--success);
-    }
-
-    .compat-partial {
-      background: rgba(245, 166, 35, 0.2);
-      color: var(--warning);
-    }
-
-    .compat-no {
-      background: rgba(214, 48, 49, 0.2);
-      color: var(--danger);
-    }
-
-    .part-categories {
+    /* ── Category cards ───────────────────────────── */
+    .cat-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem; margin-top: 3rem;
     }
-
-    .part-category {
+    .cat-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 2rem;
-      text-align: center;
-      transition: var(--transition);
+      padding: 1.5rem; text-align: center;
+      transition: var(--transition); cursor: pointer;
     }
+    .cat-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+    .cat-card-icon { font-size: 2.2rem; margin-bottom: 0.75rem; }
+    .cat-card h3 { font-size: 1rem; color: var(--text-primary); margin: 0 0 0.3rem; }
+    .cat-card p  { font-size: 0.8rem; color: var(--text-secondary); margin: 0; }
 
-    .part-category:hover {
-      border-color: var(--primary);
-      transform: translateY(-4px);
-    }
-
-    .part-category-icon {
-      font-size: 3rem;
+    /* ── Tip callout ──────────────────────────────── */
+    .tip {
+      background: rgba(245,166,35,0.08);
+      border-left: 3px solid var(--warning);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 0.85rem 1.2rem;
+      font-size: 0.88rem; color: var(--text-secondary);
       margin-bottom: 1rem;
     }
+    .tip strong { color: var(--warning); }
 
-    .part-category h3 {
-      margin-top: 0;
-      color: var(--text-primary);
+    /* ── Responsive ───────────────────────────────── */
+    @media (max-width: 900px) {
+      .parts-table { font-size: 0.83rem; }
+      .parts-table th, .parts-table td { padding: 0.65rem 0.6rem; }
     }
-
-    @media (max-width: 768px) {
-      .parts-table {
-        font-size: 0.9rem;
-      }
-
-      .parts-table th,
-      .parts-table td {
-        padding: 0.8rem;
-      }
-
-      .parts-controls {
-        flex-direction: column;
-      }
-
-      .parts-controls input,
-      .parts-controls select {
-        width: 100%;
-      }
+    @media (max-width: 600px) {
+      .parts-controls { flex-direction: column; }
+      .parts-controls input, .parts-controls select { width: 100%; }
+      .finder-controls { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
+
+  <!-- ═══ NAV ═══════════════════════════════════════════ -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      
-        <a href="../index.html" class="nav-brand">
-          <span class="brand-icon">⚙️</span>
-          <span class="brand-text">ISRM</span>
-        </a>
-
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-icon">⚙️</span>
+        <span class="brand-text">ISRM</span>
+      </a>
       <ul class="nav-menu" id="navMenu">
         <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
         <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
@@ -195,25 +256,26 @@
     </div>
   </nav>
 
+  <!-- ═══ HERO ══════════════════════════════════════════ -->
   <section class="page-hero">
     <div class="page-hero-inner">
-      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
+      <div class="breadcrumb" style="padding:0 0 1rem;margin:0;">
         <a href="../index.html">ISRM Home</a><span>›</span>Parts &amp; Compatibility
       </div>
       <h1>Parts &amp; Compatibility</h1>
-      <p>Find and verify compatible parts for GY6-platform and Vespa/Piaggio scooters. Compatibility tables sourced from official specifications.</p>
+      <p>Exact part numbers, specifications, and cross-compatibility data for GY6, Piaggio Vespa, Primavera, and Zip scooters — carburetor and injection variants.</p>
       <div class="page-hero-stats">
         <div class="hero-stat">
-          <span class="hero-stat-number">GY6</span>
-          <span class="hero-stat-label">Platform</span>
-        </div>
-        <div class="hero-stat">
-          <span class="hero-stat-number">Vespa</span>
-          <span class="hero-stat-label">Piaggio</span>
-        </div>
-        <div class="hero-stat">
           <span class="hero-stat-number">4</span>
+          <span class="hero-stat-label">Platforms</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number">7</span>
           <span class="hero-stat-label">Categories</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number">80+</span>
+          <span class="hero-stat-label">Parts Listed</span>
         </div>
         <div class="hero-stat">
           <span class="hero-stat-number">Free</span>
@@ -223,120 +285,621 @@
     </div>
   </section>
 
-  <main class="container" style="padding-top: 2rem; padding-bottom: 4rem;">
+  <!-- ═══ MAIN ══════════════════════════════════════════ -->
+  <main class="container" style="padding-top:2.5rem;padding-bottom:5rem;">
+
+    <!-- ── Part Finder ──────────────────────────────── -->
+    <div class="part-finder" id="partFinder">
+      <h2>🔍 Part Finder</h2>
+      <p>Select your scooter and the part you need — we'll show you the exact specification and part number.</p>
+      <div class="finder-controls">
+        <select id="fVehicle">
+          <option value="">① Select vehicle</option>
+          <optgroup label="GY6 Platform">
+            <option value="gy6-50">GY6 50cc (139QMB) — BTC Riva, Sourini City…</option>
+            <option value="gy6-125">GY6 125cc (152QMI) — Santini Capri, generic</option>
+            <option value="gy6-150">GY6 150cc (157QMJ) — generic 150</option>
+          </optgroup>
+          <optgroup label="Piaggio / Vespa">
+            <option value="vespa">Piaggio Vespa (GTS, LX, S — all 125/150)</option>
+            <option value="primavera">Piaggio Primavera 125 (i.e. 3V)</option>
+            <option value="zip50">Piaggio Zip 50 (2-stroke)</option>
+            <option value="zip125">Piaggio Zip 125 (4-stroke)</option>
+          </optgroup>
+        </select>
+        <select id="fCategory">
+          <option value="">② Select category</option>
+          <option value="engine">Engine</option>
+          <option value="transmission">Transmission / CVT</option>
+          <option value="brakes">Brakes</option>
+          <option value="tyres">Tyres &amp; Wheels</option>
+          <option value="electrical">Electrical</option>
+          <option value="fluids">Fluids &amp; Filters</option>
+          <option value="chassis">Chassis &amp; Suspension</option>
+        </select>
+        <input type="text" id="fSearch" placeholder="③ Or type a part name…" />
+        <button class="finder-btn" onclick="runFinder()">Find Part</button>
+      </div>
+
+      <div class="finder-results" id="finderResults">
+        <div class="finder-result-header" id="finderHeader">Results</div>
+        <div id="finderBody"></div>
+      </div>
+    </div>
+
+    <!-- ── Global search/filter ─────────────────────── -->
     <div class="parts-controls">
-      <input type="text" placeholder="Search parts..." id="partSearch" style="flex: 1;" />
-      <select id="modelFilter" style="min-width: 200px;">
-        <option value="">All Models</option>
-        <option value="gy6">GY6 Scooters</option>
-        <option value="vespa">Vespa Models</option>
+      <input type="text" placeholder="Filter all tables below…" id="globalSearch" style="flex:1;" oninput="filterTables(this.value)" />
+      <select id="vehicleHighlight" onchange="highlightVehicle(this.value)" style="min-width:200px;">
+        <option value="">Highlight vehicle…</option>
+        <option value="0">GY6 50cc</option>
+        <option value="1">GY6 125/150cc</option>
+        <option value="2">Piaggio Vespa</option>
+        <option value="3">Piaggio Primavera</option>
+        <option value="4">Piaggio Zip</option>
       </select>
     </div>
 
-    <h2 style="color: var(--text-primary);">Engine Parts</h2>
-    <table class="parts-table">
+    <!-- ════════════════════════════════════════════════
+         1. ENGINE PARTS
+    ═══════════════════════════════════════════════════ -->
+    <div class="section-heading" id="sec-engine">
+      <div class="section-heading-icon">🔧</div>
+      <h2>Engine Parts</h2>
+    </div>
+
+    <div class="tip"><strong>Column guide:</strong> Part numbers shown are OEM or widely-accepted aftermarket references. Always verify against your engine code stamped on the case.</div>
+
+    <table class="parts-table" data-section="engine">
       <thead>
         <tr>
-          <th>Part Name</th>
-          <th>GY6 (139QMB)</th>
-          <th>Vespa Primavera</th>
-          <th>Vespa ZIP</th>
+          <th>Part</th>
+          <th>GY6 50cc<br><small>139QMB</small></th>
+          <th>GY6 125/150cc<br><small>152QMI / 157QMJ</small></th>
+          <th>Piaggio Vespa<br><small>125/150 4T</small></th>
+          <th>Piaggio Primavera<br><small>125 i.e. 3V</small></th>
+          <th>Piaggio Zip<br><small>50 2T / 125 4T</small></th>
           <th>Notes</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="part-name">Spark Plug</td>
-          <td><span class="compatibility-badge compat-yes">Compatible</span></td>
-          <td><span class="compatibility-badge compat-partial">NGK CR8E</span></td>
-          <td><span class="compatibility-badge compat-yes">Compatible</span></td>
-          <td>Check gap before installation</td>
+          <td><span class="part-name">Spark Plug</span></td>
+          <td><span class="cb cb-yes">✓ Compatible</span><span class="pn">NGK CR7HSA</span><span class="pn">Gap: 0.6–0.7 mm</span></td>
+          <td><span class="cb cb-yes">✓ Compatible</span><span class="pn">NGK CR8E / DR8EA</span><span class="pn">Gap: 0.6–0.7 mm</span></td>
+          <td><span class="cb cb-part">Model-specific</span><span class="pn">NGK CR8EIX (GTS)</span><span class="pn">Gap: 0.8–0.9 mm</span></td>
+          <td><span class="cb cb-part">Model-specific</span><span class="pn">NGK CR8EIX</span><span class="pn">Gap: 0.6 mm</span></td>
+          <td><span class="cb cb-part">2T: NGK BR8ES</span><span class="pn">4T: NGK C7HSA</span><span class="pn">Gap: 0.5–0.6 mm</span></td>
+          <td class="part-note">Re-gap every plug before fitting. Replace every 6,000 km or annually.</td>
         </tr>
         <tr>
-          <td class="part-name">Air Filter</td>
-          <td><span class="compatibility-badge compat-yes">Compatible</span></td>
-          <td><span class="compatibility-badge compat-no">Different</span></td>
-          <td><span class="compatibility-badge compat-no">Different</span></td>
-          <td>Model-specific cartridge required</td>
+          <td><span class="part-name">Air Filter</span></td>
+          <td><span class="cb cb-yes">✓ Universal</span><span class="pn">38 mm pod filter</span><span class="pn">or OEM foam element</span></td>
+          <td><span class="cb cb-yes">✓ Universal</span><span class="pn">42/45 mm pod or</span><span class="pn">OEM foam element</span></td>
+          <td><span class="cb cb-no">✗ Model-specific</span><span class="pn">Piaggio 1A008171</span></td>
+          <td><span class="cb cb-no">✗ Model-specific</span><span class="pn">Piaggio 1A008171</span></td>
+          <td><span class="cb cb-no">✗ Different</span><span class="pn">Zip 50: Malossi 1411303</span><span class="pn">Zip 125: Piaggio OEM</span></td>
+          <td class="part-note">GY6: inspect every 3,000 km; replace foam element if torn. Piaggio: sealed cartridge, replace every 12,000 km.</td>
         </tr>
         <tr>
-          <td class="part-name">Oil Filter</td>
-          <td><span class="compatibility-badge compat-yes">Compatible</span></td>
-          <td><span class="compatibility-badge compat-no">Different</span></td>
-          <td><span class="compatibility-badge compat-no">Different</span></td>
-          <td>HF556 standard for GY6</td>
+          <td><span class="part-name">Oil Filter</span></td>
+          <td><span class="cb cb-yes">✓ Compatible</span><span class="pn">Hiflofiltro HF556</span><span class="pn">or equivalent 35×1.0</span></td>
+          <td><span class="cb cb-yes">✓ Compatible</span><span class="pn">Hiflofiltro HF556</span><span class="pn">or Mann MO 65</span></td>
+          <td><span class="cb cb-part">Check variant</span><span class="pn">GTS 125: no spin-off</span><span class="pn">(centrifugal filter)</span></td>
+          <td><span class="cb cb-no">✗ Centrifugal</span><span class="pn">No replaceable filter</span><span class="pn">Clean sump every 12k km</span></td>
+          <td><span class="cb cb-no">✗ 2T: no filter</span><span class="pn">4T: Hiflofiltro HF919</span></td>
+          <td class="part-note">GY6: change at every oil service (2,000–3,000 km). Piaggio i.e. engines use centrifugal oil cleaning — no replaceable element.</td>
         </tr>
         <tr>
-          <td class="part-name">Piston Kit</td>
-          <td><span class="compatibility-badge compat-yes">Compatible</span></td>
-          <td><span class="compatibility-badge compat-no">Different</span></td>
-          <td><span class="compatibility-badge compat-partial">Check Size</span></td>
-          <td>Size varies by engine code</td>
+          <td><span class="part-name">Engine Oil</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">10W-40 semi-synth 4T</span><span class="pn">Capacity: 0.8 L</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">10W-40 semi-synth 4T</span><span class="pn">Capacity: 1.1 L</span></td>
+          <td><span class="cb cb-part">Brand-specific</span><span class="pn">5W-40 full-synth 4T</span><span class="pn">Capacity: 1.0 L</span></td>
+          <td><span class="cb cb-part">Brand-specific</span><span class="pn">5W-40 full-synth 4T</span><span class="pn">Capacity: 1.0 L</span></td>
+          <td><span class="cb cb-no">✗ 2T: Premix 2T oil</span><span class="pn">4T: 5W-40 synth, 0.8 L</span></td>
+          <td class="part-note">GY6: change every 2,000 km or annually. Piaggio i.e.: 3,000 km or annually. Zip 2T: mix at 2% (50:1) with quality 2-stroke oil.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Piston Kit</span></td>
+          <td><span class="cb cb-yes">✓ Standard bore</span><span class="pn">Ø 39 mm (50cc)</span><span class="pn">Oversize: +0.25/+0.50</span></td>
+          <td><span class="cb cb-yes">✓ Standard bore</span><span class="pn">Ø 52.4 mm (125cc)</span><span class="pn">Ø 57.4 mm (150cc)</span></td>
+          <td><span class="cb cb-no">✗ Proprietary</span><span class="pn">Piaggio OEM only</span><span class="pn">Ø 57.8 mm (GTS 150)</span></td>
+          <td><span class="cb cb-no">✗ Proprietary</span><span class="pn">Piaggio OEM only</span></td>
+          <td><span class="cb cb-no">✗ Proprietary</span><span class="pn">Polini/Malossi available</span><span class="pn">for Zip 50 2T</span></td>
+          <td class="part-note">Measure cylinder bore before ordering oversize. GY6 pistons are generic across most Chinese brands at same bore.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Gasket Set (full)</span></td>
+          <td><span class="cb cb-yes">✓ Generic GY6</span><span class="pn">Taida / YX GY6-50</span><span class="pn">~€8–15</span></td>
+          <td><span class="cb cb-yes">✓ Generic GY6</span><span class="pn">Taida / YX GY6-125/150</span><span class="pn">~€10–18</span></td>
+          <td><span class="cb cb-no">✗ Piaggio OEM</span><span class="pn">Piaggio 1R000523</span></td>
+          <td><span class="cb cb-no">✗ Piaggio OEM</span><span class="pn">Piaggio 1R000523</span></td>
+          <td><span class="cb cb-no">✗ Piaggio OEM</span><span class="pn">Zip 50 2T: Polini kit</span></td>
+          <td class="part-note">Always replace head gasket when rebuilding. GY6 aftermarket sets are widely available; Piaggio gaskets are OEM-only for best sealing.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Valve Shims (intake/exhaust)</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">Ø 20 mm shim set</span><span class="pn">Range: 1.20–1.80 mm</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">Ø 20 mm shim set</span><span class="pn">Range: 1.20–1.80 mm</span></td>
+          <td><span class="cb cb-no">✗ Proprietary</span><span class="pn">Piaggio shim kit</span></td>
+          <td><span class="cb cb-no">✗ Proprietary</span><span class="pn">Piaggio shim kit</span></td>
+          <td><span class="cb cb-no">N/A for 2T</span><span class="pn">4T: Piaggio shims</span></td>
+          <td class="part-note">GY6 valve clearance: intake 0.10–0.15 mm, exhaust 0.15–0.20 mm cold. Adjust every 6,000 km.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Carburetor (carb models)</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">PZ19 (50cc stock)</span><span class="pn">or Keihin clone</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">PZ22 / PZ24 (125cc)</span><span class="pn">PZ24 (150cc)</span></td>
+          <td><span class="cb cb-no">N/A — EFI</span></td>
+          <td><span class="cb cb-no">N/A — EFI</span></td>
+          <td><span class="cb cb-yes">Zip 50 2T: SHA 14</span><span class="pn">Dellorto SHA 14.12</span><span class="pn">4T: PZ18</span></td>
+          <td class="part-note">Main jet size varies by altitude — stock is marked on jet body. Use genuine Keihin or Dellorto for best reliability.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Fuel Injector (EFI models)</span></td>
+          <td><span class="cb cb-no">N/A — carb</span></td>
+          <td><span class="cb cb-no">N/A — carb</span></td>
+          <td><span class="cb cb-part">Piaggio OEM</span><span class="pn">Check injector flow cc/min</span></td>
+          <td><span class="cb cb-part">Piaggio OEM</span><span class="pn">Piaggio 1A0065560</span></td>
+          <td><span class="cb cb-no">✗ N/A 2T</span><span class="pn">Zip 125 EFI: Piaggio OEM</span></td>
+          <td class="part-note">EFI injectors should be ultrasonically cleaned before replacement. Use only Piaggio-specified injectors to preserve ECU mapping.</td>
         </tr>
       </tbody>
     </table>
 
-    <h2 style="color: var(--text-primary); margin-top: 3rem;">Transmission Parts</h2>
-    <table class="parts-table">
+    <!-- ════════════════════════════════════════════════
+         2. TRANSMISSION
+    ═══════════════════════════════════════════════════ -->
+    <div class="section-heading" id="sec-transmission">
+      <div class="section-heading-icon">⚙️</div>
+      <h2>Transmission &amp; CVT</h2>
+    </div>
+
+    <table class="parts-table" data-section="transmission">
       <thead>
         <tr>
-          <th>Part Name</th>
-          <th>GY6 (139QMB)</th>
-          <th>Vespa Primavera</th>
-          <th>Vespa ZIP</th>
+          <th>Part</th>
+          <th>GY6 50cc<br><small>139QMB</small></th>
+          <th>GY6 125/150cc<br><small>152QMI / 157QMJ</small></th>
+          <th>Piaggio Vespa<br><small>125/150 4T</small></th>
+          <th>Piaggio Primavera<br><small>125 i.e. 3V</small></th>
+          <th>Piaggio Zip<br><small>50 2T / 125 4T</small></th>
           <th>Notes</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="part-name">CVT Belt</td>
-          <td><span class="compatibility-badge compat-yes">Compatible</span></td>
-          <td><span class="compatibility-badge compat-no">Different</span></td>
-          <td><span class="compatibility-badge compat-no">Different</span></td>
-          <td>750x16 standard width</td>
+          <td><span class="part-name">CVT Drive Belt</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">669 × 18 × 30</span><span class="pn">Gates 6736 MC / equiv.</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">743 × 20 × 30 (125cc)</span><span class="pn">788 × 20 × 30 (150cc)</span></td>
+          <td><span class="cb cb-no">✗ Proprietary</span><span class="pn">Piaggio 82700R</span><span class="pn">Gates scooter belt</span></td>
+          <td><span class="cb cb-no">✗ Proprietary</span><span class="pn">Piaggio 82700R</span></td>
+          <td><span class="cb cb-no">✗ Different</span><span class="pn">Zip 50: Piaggio 433352</span><span class="pn">Zip 125: Piaggio 82700R</span></td>
+          <td class="part-note">GY6: belt dimensions L×W×Angle. Replace at first sign of cracking or every 15,000 km. Piaggio: torque properly — over-tight kills belts.</td>
         </tr>
         <tr>
-          <td class="part-name">Variator Rollers</td>
-          <td><span class="compatibility-badge compat-yes">Compatible</span></td>
-          <td><span class="compatibility-badge compat-no">Different</span></td>
-          <td><span class="compatibility-badge compat-no">Different</span></td>
-          <td>Weight depends on performance goal</td>
+          <td><span class="part-name">Variator Rollers</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">Ø 15 × 12 mm — 5–6 g stock</span><span class="pn">Malossi / Dr Pulley</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">Ø 16 × 13 mm — 8–10 g stock</span><span class="pn">Dr Pulley SR 16×13</span></td>
+          <td><span class="cb cb-no">✗ Piaggio specific</span><span class="pn">Ø 23 × 18 mm — 15 g</span><span class="pn">Malossi 6618170</span></td>
+          <td><span class="cb cb-no">✗ Piaggio specific</span><span class="pn">Ø 23 × 18 mm</span><span class="pn">Malossi 6618170</span></td>
+          <td><span class="cb cb-no">✗ Different</span><span class="pn">Zip 50: Ø 15 × 12 mm</span><span class="pn">Zip 125: Piaggio OEM</span></td>
+          <td class="part-note">Heavier rollers = higher top speed; lighter = faster acceleration. Replace if flat spots or worn grooves appear.</td>
         </tr>
         <tr>
-          <td class="part-name">Clutch Belt</td>
-          <td><span class="compatibility-badge compat-partial">Drive Belt</span></td>
-          <td><span class="compatibility-badge compat-yes">Compatible</span></td>
-          <td><span class="compatibility-badge compat-yes">Compatible</span></td>
-          <td>Primary drive system</td>
+          <td><span class="part-name">Torque Spring (clutch)</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">Yellow/blue spring</span><span class="pn">~600–800 g/mm</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">800–1000 g/mm</span></td>
+          <td><span class="cb cb-no">✗ Proprietary</span><span class="pn">Piaggio OEM</span></td>
+          <td><span class="cb cb-no">✗ Proprietary</span><span class="pn">Piaggio / Malossi 298843</span></td>
+          <td><span class="cb cb-part">Zip 50: Piaggio OEM</span><span class="pn">Zip 125: Piaggio OEM</span></td>
+          <td class="part-note">A stiffer contra-spring raises engagement RPM. Match to roller weight for balanced tuning.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Clutch Shoes / Bell</span></td>
+          <td><span class="cb cb-yes">✓ Generic</span><span class="pn">3-shoe clutch kit</span><span class="pn">107 mm bell (GY6 50)</span></td>
+          <td><span class="cb cb-yes">✓ Generic</span><span class="pn">3-shoe clutch kit</span><span class="pn">125 mm bell (125/150)</span></td>
+          <td><span class="cb cb-no">✗ Proprietary</span><span class="pn">Piaggio / Polini kit</span></td>
+          <td><span class="cb cb-no">✗ Proprietary</span><span class="pn">Polini 241.004</span></td>
+          <td><span class="cb cb-no">✗ Proprietary</span><span class="pn">Polini / Malossi kits</span></td>
+          <td class="part-note">Measure shoe thickness; replace at ≤2 mm. Clean bell interior with brake cleaner — no grease.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Gear / Transmission Oil</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">80W-90 gear oil</span><span class="pn">Capacity: ~80–100 ml</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">80W-90 gear oil</span><span class="pn">Capacity: ~100–120 ml</span></td>
+          <td><span class="cb cb-no">N/A — sealed unit</span></td>
+          <td><span class="cb cb-no">N/A — sealed unit</span></td>
+          <td><span class="cb cb-no">N/A — no gearbox oil</span></td>
+          <td class="part-note">GY6 final gearbox (rear of engine): drain bolt at bottom, fill to overflow hole on side. Change every 10,000 km.</td>
         </tr>
       </tbody>
     </table>
 
-    <h2 style="color: var(--text-primary); margin-top: 3rem;">Browse by Category</h2>
-    <div class="part-categories">
-      <div class="part-category">
-        <div class="part-category-icon">🔧</div>
+    <!-- ════════════════════════════════════════════════
+         3. BRAKES
+    ═══════════════════════════════════════════════════ -->
+    <div class="section-heading" id="sec-brakes">
+      <div class="section-heading-icon">🛑</div>
+      <h2>Brakes</h2>
+    </div>
+
+    <table class="parts-table" data-section="brakes">
+      <thead>
+        <tr>
+          <th>Part</th>
+          <th>GY6 50cc<br><small>139QMB</small></th>
+          <th>GY6 125/150cc<br><small>152QMI / 157QMJ</small></th>
+          <th>Piaggio Vespa<br><small>125/150 4T</small></th>
+          <th>Piaggio Primavera<br><small>125 i.e. 3V</small></th>
+          <th>Piaggio Zip<br><small>50 2T / 125 4T</small></th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="part-name">Front Brake Pads (disc)</span></td>
+          <td><span class="cb cb-part">Varies</span><span class="pn">Some models: drum</span><span class="pn">Disc: Goldfren S33</span></td>
+          <td><span class="cb cb-yes">✓ Standard disc</span><span class="pn">EBC FA354 or Goldfren</span><span class="pn">Rotor: 220 mm typical</span></td>
+          <td><span class="cb cb-yes">✓ Disc</span><span class="pn">EBC FA174 / Ferodo FDB</span><span class="pn">Rotor: 200–220 mm</span></td>
+          <td><span class="cb cb-yes">✓ Disc</span><span class="pn">EBC FA174 / Brembo OEM</span><span class="pn">Rotor: 200 mm</span></td>
+          <td><span class="cb cb-part">50: drum front</span><span class="pn">125: disc — EBC FA174</span></td>
+          <td class="part-note">Replace pads when friction material reaches 1.5 mm. Never mix organic and sintered pads on same axle.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Rear Brake Pads / Shoes</span></td>
+          <td><span class="cb cb-yes">✓ Drum shoes</span><span class="pn">90 mm drum pair</span><span class="pn">Generic GY6 rear</span></td>
+          <td><span class="cb cb-yes">✓ Drum or disc</span><span class="pn">Drum: 110 mm pair</span><span class="pn">Disc: Goldfren S33</span></td>
+          <td><span class="cb cb-part">Drum rear</span><span class="pn">SBS 524HF drum shoes</span></td>
+          <td><span class="cb cb-part">Drum rear</span><span class="pn">SBS 524HF drum shoes</span></td>
+          <td><span class="cb cb-yes">Drum front &amp; rear</span><span class="pn">SBS / Galfer shoes</span></td>
+          <td class="part-note">Drum brakes: minimum lining thickness 1 mm. Adjust cable/rod after replacement.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Brake Disc / Rotor</span></td>
+          <td><span class="cb cb-part">If disc: 190 mm</span><span class="pn">Generic GY6 disc</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">220 mm front disc</span><span class="pn">Min thickness: 3.5 mm</span></td>
+          <td><span class="cb cb-yes">✓ Piaggio OEM</span><span class="pn">200 mm or 220 mm</span><span class="pn">Min thickness: 3.5 mm</span></td>
+          <td><span class="cb cb-yes">✓ Piaggio OEM</span><span class="pn">200 mm Brembo rotor</span><span class="pn">Piaggio CM0745025</span></td>
+          <td><span class="cb cb-no">N/A — drum only</span><span class="pn">Zip 125: OEM disc</span></td>
+          <td class="part-note">Replace rotor if warped (runout &gt;0.1 mm) or worn below minimum thickness.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Brake Fluid</span></td>
+          <td><span class="cb cb-part">Disc only</span><span class="pn">DOT 4 — 50 ml min</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">DOT 4 hydraulic</span><span class="pn">Motul DOT 4 / ATE</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">DOT 4 hydraulic</span><span class="pn">Piaggio recommends DOT 4</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">DOT 4 hydraulic</span></td>
+          <td><span class="cb cb-part">125 disc only</span><span class="pn">DOT 4</span></td>
+          <td class="part-note">Change brake fluid every 2 years — it absorbs moisture and lowers boiling point. Never mix DOT 3 and DOT 5.1.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Brake Cables (drum)</span></td>
+          <td><span class="cb cb-yes">✓ Universal</span><span class="pn">Generic GY6 brake cable</span><span class="pn">Front: ~1,000 mm</span></td>
+          <td><span class="cb cb-yes">✓ Standard GY6</span><span class="pn">Measure before ordering</span></td>
+          <td><span class="cb cb-part">Rear cable only</span><span class="pn">Piaggio / Venhill custom</span></td>
+          <td><span class="cb cb-part">Rear cable only</span><span class="pn">Venhill or Piaggio OEM</span></td>
+          <td><span class="cb cb-yes">Front &amp; rear cables</span><span class="pn">Piaggio OEM or Venhill</span></td>
+          <td class="part-note">Lube cables with dry PTFE spray annually. Replace at first sign of fraying — never bodge with tape.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ════════════════════════════════════════════════
+         4. TYRES & WHEELS
+    ═══════════════════════════════════════════════════ -->
+    <div class="section-heading" id="sec-tyres">
+      <div class="section-heading-icon">🛞</div>
+      <h2>Tyres &amp; Wheels</h2>
+    </div>
+
+    <div class="tip"><strong>Reading tyre sizes:</strong> A tyre marked <strong>110/70-11</strong> means 110 mm wide, 70% aspect ratio, 11-inch rim. A tyre marked <strong>3.00-10</strong> is an older diagonal-ply format (≈80 mm width, 10-inch rim).</div>
+
+    <table class="parts-table" data-section="tyres">
+      <thead>
+        <tr>
+          <th>Part</th>
+          <th>GY6 50cc<br><small>139QMB</small></th>
+          <th>GY6 125/150cc<br><small>152QMI / 157QMJ</small></th>
+          <th>Piaggio Vespa<br><small>125/150 4T</small></th>
+          <th>Piaggio Primavera<br><small>125 i.e. 3V</small></th>
+          <th>Piaggio Zip<br><small>50 2T / 125 4T</small></th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="part-name">Front Tyre</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">3.00-10 or 3.50-10</span><span class="pn">Kenda / Duro / Heidenau</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">3.50-10 or 90/90-10</span><span class="pn">Kenda K413</span></td>
+          <td><span class="cb cb-part">Model-specific</span><span class="pn">LX/GTS 125: 110/70-11</span><span class="pn">Piaggio Pirelli Diablo</span></td>
+          <td><span class="cb cb-no">✗ Specific</span><span class="pn">110/70-11 (front)</span><span class="pn">Michelin City Grip 2</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">3.00-10 or 80/80-10</span><span class="pn">Kenda / Sava</span></td>
+          <td class="part-note">Always replace both tyres at same time if possible. Minimum tread depth: 1.6 mm (legal), 2 mm recommended.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Rear Tyre</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">3.00-10 or 3.50-10</span><span class="pn">Heidenau K58 recommended</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">3.50-10 or 90/90-10</span><span class="pn">Heidenau K58</span></td>
+          <td><span class="cb cb-part">Model-specific</span><span class="pn">LX/GTS 125: 120/70-10</span><span class="pn">or 130/70-10 (GTS 300)</span></td>
+          <td><span class="cb cb-no">✗ Specific</span><span class="pn">120/70-11 (rear)</span><span class="pn">Michelin City Grip 2</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">3.00-10 or 80/80-10</span></td>
+          <td class="part-note">Rear tyres wear faster than fronts. Check pressure cold weekly: GY6 typically 28–30 psi rear, 26 psi front.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Inner Tube</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">TR87 valve — 3.00/3.50-10</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">TR87 valve — 3.50/90-10</span></td>
+          <td><span class="cb cb-no">N/A — tubeless rims</span></td>
+          <td><span class="cb cb-no">N/A — tubeless rims</span></td>
+          <td><span class="cb cb-yes">Standard tube</span><span class="pn">TR87 valve — 3.00-10</span></td>
+          <td class="part-note">GY6 and Zip use tubed tyres — always fit a new tube when fitting a new tyre. Piaggio Vespa/Primavera use tubeless cast wheels.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Wheel Bearings (front)</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">6300-2RS (17×35×11 mm)</span><span class="pn">or 6301-2RS — check rim</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">6301-2RS (12×37×12 mm)</span></td>
+          <td><span class="cb cb-part">Check variant</span><span class="pn">SKF 6002-2RS or equiv.</span></td>
+          <td><span class="cb cb-part">Check variant</span><span class="pn">SKF 6002-2RS</span></td>
+          <td><span class="cb cb-yes">Standard</span><span class="pn">6300-2RS or 6301-2RS</span></td>
+          <td class="part-note">Replace bearings if any roughness or play is felt. Use sealed (2RS) bearings — not open. Press-fit with correct driver only.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Wheel Bearings (rear)</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">6203-2RS (17×40×12 mm)</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">6204-2RS (20×47×14 mm)</span></td>
+          <td><span class="cb cb-part">Check variant</span><span class="pn">SKF 6204-2RS</span></td>
+          <td><span class="cb cb-part">Check variant</span><span class="pn">SKF 6204-2RS</span></td>
+          <td><span class="cb cb-yes">Standard</span><span class="pn">6203-2RS</span></td>
+          <td class="part-note">Rear bearing absorbs more load. Replace at any sign of grinding under load. Pack new bearings with bearing grease before fitting.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ════════════════════════════════════════════════
+         5. CHASSIS & SUSPENSION
+    ═══════════════════════════════════════════════════ -->
+    <div class="section-heading" id="sec-chassis">
+      <div class="section-heading-icon">🏗️</div>
+      <h2>Chassis &amp; Suspension</h2>
+    </div>
+
+    <table class="parts-table" data-section="chassis">
+      <thead>
+        <tr>
+          <th>Part</th>
+          <th>GY6 50cc<br><small>139QMB</small></th>
+          <th>GY6 125/150cc<br><small>152QMI / 157QMJ</small></th>
+          <th>Piaggio Vespa<br><small>125/150 4T</small></th>
+          <th>Piaggio Primavera<br><small>125 i.e. 3V</small></th>
+          <th>Piaggio Zip<br><small>50 2T / 125 4T</small></th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="part-name">Front Fork Springs</span></td>
+          <td><span class="cb cb-yes">✓ Generic</span><span class="pn">Progressive spring kits</span><span class="pn">~Ø 31–33 mm leg</span></td>
+          <td><span class="cb cb-yes">✓ Generic</span><span class="pn">Progressive spring kits</span><span class="pn">~Ø 33–35 mm leg</span></td>
+          <td><span class="cb cb-no">✗ Piaggio specific</span><span class="pn">Piaggio OEM spring</span><span class="pn">or Malossi upgrade</span></td>
+          <td><span class="cb cb-no">✗ Piaggio specific</span><span class="pn">Piaggio OEM spring</span></td>
+          <td><span class="cb cb-no">✗ Piaggio specific</span><span class="pn">Piaggio / Bitubo kit</span></td>
+          <td class="part-note">Replace fork oil at the same time (GY6: 5W fork oil, ~100 ml per leg). Piaggio Vespa-platform forks are single-sided — specialist work.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Rear Shock Absorber</span></td>
+          <td><span class="cb cb-yes">✓ Universal</span><span class="pn">330–360 mm eye-to-eye</span><span class="pn">YSS / Bitubo / Nitron</span></td>
+          <td><span class="cb cb-yes">✓ Universal</span><span class="pn">330–360 mm eye-to-eye</span><span class="pn">YSS G-series</span></td>
+          <td><span class="cb cb-part">Single shock rear</span><span class="pn">Piaggio CM0171135</span><span class="pn">Bitubo WMB00 series</span></td>
+          <td><span class="cb cb-part">Single shock rear</span><span class="pn">Bitubo WMB00 series</span></td>
+          <td><span class="cb cb-part">2 shocks rear</span><span class="pn">Piaggio OEM / Bitubo</span></td>
+          <td class="part-note">Replace both rear shocks at same time. Check for leaking damper oil (wet stain on shock body). Most Piaggio platform scooters take a single shock.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Steering Head Bearings</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">1-1/8" tapered roller set</span><span class="pn">or ball-race pair</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">1-1/8" tapered roller</span></td>
+          <td><span class="cb cb-part">Check variant</span><span class="pn">Piaggio OEM taper set</span><span class="pn">or SKF 30203</span></td>
+          <td><span class="cb cb-part">Check variant</span><span class="pn">SKF 30203 taper roller</span></td>
+          <td><span class="cb cb-yes">Standard</span><span class="pn">1" or 1-1/8" tapered set</span></td>
+          <td class="part-note">Worn headstock bearings cause weave at speed. Adjust preload after fitting — slight drag before tightening crown nut.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Handlebar Grips</span></td>
+          <td><span class="cb cb-yes">✓ Universal</span><span class="pn">Ø 22 mm (7/8") bar</span><span class="pn">Oxford / ProGrip 714</span></td>
+          <td><span class="cb cb-yes">✓ Universal</span><span class="pn">Ø 22 mm bar</span></td>
+          <td><span class="cb cb-yes">✓ Universal</span><span class="pn">Ø 22 mm bar</span></td>
+          <td><span class="cb cb-yes">✓ Universal</span><span class="pn">Ø 22 mm bar</span></td>
+          <td><span class="cb cb-yes">✓ Universal</span><span class="pn">Ø 22 mm bar</span></td>
+          <td class="part-note">All listed scooters use 22 mm diameter handlebars. Throttle-side grip must slide freely; safety-wire or glue the fixed side.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ════════════════════════════════════════════════
+         6. ELECTRICAL
+    ═══════════════════════════════════════════════════ -->
+    <div class="section-heading" id="sec-electrical">
+      <div class="section-heading-icon">⚡</div>
+      <h2>Electrical</h2>
+    </div>
+
+    <table class="parts-table" data-section="electrical">
+      <thead>
+        <tr>
+          <th>Part</th>
+          <th>GY6 50cc<br><small>139QMB</small></th>
+          <th>GY6 125/150cc<br><small>152QMI / 157QMJ</small></th>
+          <th>Piaggio Vespa<br><small>125/150 4T</small></th>
+          <th>Piaggio Primavera<br><small>125 i.e. 3V</small></th>
+          <th>Piaggio Zip<br><small>50 2T / 125 4T</small></th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="part-name">Battery</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">YTX5L-BS (12V 4Ah)</span><span class="pn">Yuasa / Motobatt</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">YTX7L-BS (12V 6Ah)</span><span class="pn">Yuasa / Motobatt</span></td>
+          <td><span class="cb cb-part">Check variant</span><span class="pn">YTX7A-BS or YTX9-BS</span><span class="pn">Yuasa or Piaggio OEM</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">YTX7A-BS (12V 6Ah)</span><span class="pn">Yuasa YTX7A-BS</span></td>
+          <td><span class="cb cb-yes">✓ Standard</span><span class="pn">50: YTX5L-BS</span><span class="pn">125: YTX7L-BS</span></td>
+          <td class="part-note">Always use an AGM or gel battery — never conventional acid in a scooter. Check terminal polarity before connecting.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Ignition Coil</span></td>
+          <td><span class="cb cb-yes">✓ Generic</span><span class="pn">GY6 CDI coil 6-pin</span><span class="pn">Primary: 0.3–0.6 Ω</span><span class="pn">Secondary: 3–5 kΩ</span></td>
+          <td><span class="cb cb-yes">✓ Generic</span><span class="pn">GY6 CDI coil 6-pin</span></td>
+          <td><span class="cb cb-no">✗ Model-specific</span><span class="pn">Piaggio OEM coil</span><span class="pn">or BERU / Bremi equiv.</span></td>
+          <td><span class="cb cb-no">✗ Model-specific</span><span class="pn">Piaggio OEM / NGK</span></td>
+          <td><span class="cb cb-no">✗ Piaggio OEM</span><span class="pn">Zip 50: magneto-based</span></td>
+          <td class="part-note">Test secondary resistance with multimeter before replacing. Weak spark often points to CDI, not coil.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">CDI Unit</span></td>
+          <td><span class="cb cb-yes">✓ Generic</span><span class="pn">6-pin AC CDI (50cc)</span><span class="pn">Kokusan-compatible</span></td>
+          <td><span class="cb cb-yes">✓ Generic</span><span class="pn">6-pin AC CDI (125/150)</span><span class="pn">Kokusan-compatible</span></td>
+          <td><span class="cb cb-no">N/A — ECU</span><span class="pn">Electronic fuel injection</span></td>
+          <td><span class="cb cb-no">N/A — ECU</span><span class="pn">Piaggio EFI ECU</span></td>
+          <td><span class="cb cb-part">Zip 50: AC CDI</span><span class="pn">Zip 125: ECU</span></td>
+          <td class="part-note">GY6 CDIs are not interchangeable between 50cc (restricted) and 125/150cc variants. Unrestricted CDI will rev-limit at ~10,000 RPM instead of ~7,500.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Voltage Regulator / Rectifier</span></td>
+          <td><span class="cb cb-yes">✓ Generic</span><span class="pn">4-pin GY6 regulator</span><span class="pn">12V DC output</span></td>
+          <td><span class="cb cb-yes">✓ Generic</span><span class="pn">4-pin GY6 regulator</span></td>
+          <td><span class="cb cb-no">✗ Model-specific</span><span class="pn">Piaggio OEM or Rick's</span></td>
+          <td><span class="cb cb-no">✗ Model-specific</span><span class="pn">Piaggio OEM</span></td>
+          <td><span class="cb cb-part">Zip 50: GY6 style</span><span class="pn">Zip 125: Piaggio OEM</span></td>
+          <td class="part-note">A failing regulator will overcharge and cook the battery. Check charging voltage: 13.8–14.5V at 3,000 RPM.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Starter Motor</span></td>
+          <td><span class="cb cb-yes">✓ Generic</span><span class="pn">GY6 50 starter motor</span><span class="pn">~Ø 54 mm housing</span></td>
+          <td><span class="cb cb-yes">✓ Generic</span><span class="pn">GY6 125/150 starter</span><span class="pn">Same pinion, longer motor</span></td>
+          <td><span class="cb cb-no">✗ Model-specific</span><span class="pn">Piaggio OEM</span></td>
+          <td><span class="cb cb-no">✗ Model-specific</span><span class="pn">Piaggio OEM</span></td>
+          <td><span class="cb cb-no">✗ Model-specific</span><span class="pn">Piaggio OEM</span></td>
+          <td class="part-note">Before replacing starter, check the starter relay and battery voltage under load. A slow crank is often a weak battery, not a bad starter.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ════════════════════════════════════════════════
+         7. FLUIDS & CONSUMABLES
+    ═══════════════════════════════════════════════════ -->
+    <div class="section-heading" id="sec-fluids">
+      <div class="section-heading-icon">🛢️</div>
+      <h2>Fluids &amp; Consumables</h2>
+    </div>
+
+    <table class="parts-table" data-section="fluids">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>GY6 50cc</th>
+          <th>GY6 125/150cc</th>
+          <th>Piaggio Vespa</th>
+          <th>Piaggio Primavera</th>
+          <th>Piaggio Zip</th>
+          <th>Interval / Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="part-name">Engine Oil</span></td>
+          <td><span class="pn">10W-40 4T — 0.8 L</span></td>
+          <td><span class="pn">10W-40 4T — 1.1 L</span></td>
+          <td><span class="pn">5W-40 full synth — 1.0 L</span></td>
+          <td><span class="pn">5W-40 full synth — 1.0 L</span></td>
+          <td><span class="pn">2T: 2% premix / 4T: 5W-40 0.8 L</span></td>
+          <td class="part-note">GY6: every 2,000 km. Piaggio i.e.: every 3,000 km or 1 year.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Gear Oil</span></td>
+          <td><span class="pn">80W-90 — 80 ml</span></td>
+          <td><span class="pn">80W-90 — 120 ml</span></td>
+          <td><span class="pn">N/A</span></td>
+          <td><span class="pn">N/A</span></td>
+          <td><span class="pn">N/A</span></td>
+          <td class="part-note">GY6 final gearbox. Every 10,000 km. Use a syringe to fill.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Brake Fluid</span></td>
+          <td><span class="pn">DOT 4 (disc only)</span></td>
+          <td><span class="pn">DOT 4</span></td>
+          <td><span class="pn">DOT 4</span></td>
+          <td><span class="pn">DOT 4</span></td>
+          <td><span class="pn">DOT 4 (disc variant only)</span></td>
+          <td class="part-note">Every 2 years regardless of mileage. Hygroscopic — absorbs moisture over time.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Coolant</span></td>
+          <td><span class="pn">Air-cooled — N/A</span></td>
+          <td><span class="pn">Air-cooled — N/A</span></td>
+          <td><span class="pn">Air-cooled — N/A</span></td>
+          <td><span class="pn">Air-cooled — N/A</span></td>
+          <td><span class="pn">Air-cooled — N/A</span></td>
+          <td class="part-note">All listed models are air-cooled. No coolant required.</td>
+        </tr>
+        <tr>
+          <td><span class="part-name">Chain Lube / Cable Lube</span></td>
+          <td><span class="pn">PTFE dry spray — cables</span></td>
+          <td><span class="pn">PTFE dry spray — cables</span></td>
+          <td><span class="pn">PTFE dry spray — cables</span></td>
+          <td><span class="pn">PTFE dry spray — cables</span></td>
+          <td><span class="pn">PTFE dry spray — cables</span></td>
+          <td class="part-note">No chain — shaft or belt drive. Lubricate brake and throttle cables annually. Never use WD-40 as a lubricant.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ── Category cards ─────────────────────────── -->
+    <div class="section-heading" style="margin-top:4rem;">
+      <div class="section-heading-icon">📂</div>
+      <h2>Browse by Category</h2>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card" onclick="document.getElementById('sec-engine').scrollIntoView({behavior:'smooth'})">
+        <div class="cat-card-icon">🔧</div>
         <h3>Engine Parts</h3>
-        <p>Pistons, rings, gaskets, seals</p>
+        <p>Spark plugs, pistons, gaskets, carburetors, oil</p>
       </div>
-      <div class="part-category">
-        <div class="part-category-icon">⚙️</div>
-        <h3>Transmission</h3>
-        <p>Belt, rollers, variator</p>
+      <div class="cat-card" onclick="document.getElementById('sec-transmission').scrollIntoView({behavior:'smooth'})">
+        <div class="cat-card-icon">⚙️</div>
+        <h3>Transmission &amp; CVT</h3>
+        <p>Belt, rollers, clutch, gear oil</p>
       </div>
-      <div class="part-category">
-        <div class="part-category-icon">🔩</div>
-        <h3>Fasteners</h3>
-        <p>Bolts, nuts, washers</p>
+      <div class="cat-card" onclick="document.getElementById('sec-brakes').scrollIntoView({behavior:'smooth'})">
+        <div class="cat-card-icon">🛑</div>
+        <h3>Brakes</h3>
+        <p>Pads, shoes, rotors, fluid, cables</p>
       </div>
-      <div class="part-category">
-        <div class="part-category-icon">🛢️</div>
-        <h3>Fluids</h3>
-        <p>Oil, coolant, brake fluid</p>
+      <div class="cat-card" onclick="document.getElementById('sec-tyres').scrollIntoView({behavior:'smooth'})">
+        <div class="cat-card-icon">🛞</div>
+        <h3>Tyres &amp; Wheels</h3>
+        <p>Sizes, tubes, wheel bearings</p>
+      </div>
+      <div class="cat-card" onclick="document.getElementById('sec-chassis').scrollIntoView({behavior:'smooth'})">
+        <div class="cat-card-icon">🏗️</div>
+        <h3>Chassis &amp; Suspension</h3>
+        <p>Forks, shocks, steering bearings</p>
+      </div>
+      <div class="cat-card" onclick="document.getElementById('sec-electrical').scrollIntoView({behavior:'smooth'})">
+        <div class="cat-card-icon">⚡</div>
+        <h3>Electrical</h3>
+        <p>Battery, CDI, coil, rectifier, starter</p>
+      </div>
+      <div class="cat-card" onclick="document.getElementById('sec-fluids').scrollIntoView({behavior:'smooth'})">
+        <div class="cat-card-icon">🛢️</div>
+        <h3>Fluids &amp; Consumables</h3>
+        <p>Oils, brake fluid, lubricants</p>
       </div>
     </div>
+
   </main>
 
+  <!-- ═══ FOOTER ════════════════════════════════════════ -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
@@ -352,13 +915,378 @@
             <li><a href="../models/index.html">Models</a></li>
           </ul>
         </div>
+        <div class="footer-section">
+          <h4>Parts</h4>
+          <ul>
+            <li><a href="#sec-engine">Engine</a></li>
+            <li><a href="#sec-brakes">Brakes</a></li>
+            <li><a href="#sec-tyres">Tyres</a></li>
+            <li><a href="#sec-electrical">Electrical</a></li>
+          </ul>
+        </div>
       </div>
       <div class="footer-bottom">
-        <p>Last sync: 2026-05-07</p>
+        <p>Content licensed CC BY-SA 4.0 — Last updated: 2026-05-09</p>
       </div>
     </div>
   </footer>
 
   <script src="../script.js"></script>
+  <script>
+  /* ─── Part database ──────────────────────────────────────────────────── */
+  const PARTS_DB = {
+    "gy6-50": {
+      engine: [
+        { name: "Spark Plug", pn: "NGK CR7HSA", spec: "Gap 0.6–0.7 mm", compat: "ok" },
+        { name: "Air Filter", pn: "38 mm pod filter or OEM foam", spec: "Inspect every 3,000 km", compat: "ok" },
+        { name: "Oil Filter", pn: "Hiflofiltro HF556", spec: "Thread M20×1.0 or equivalent", compat: "ok" },
+        { name: "Engine Oil", pn: "10W-40 semi-synthetic 4T", spec: "Capacity: 0.8 L", compat: "ok" },
+        { name: "Carburetor", pn: "PZ19 (Keihin clone)", spec: "Main jet ~75–80 (stock)", compat: "ok" },
+        { name: "Piston Kit", pn: "Ø 39 mm standard bore", spec: "Oversize: +0.25 / +0.50 mm", compat: "ok" },
+      ],
+      transmission: [
+        { name: "CVT Drive Belt", pn: "669 × 18 × 30", spec: "Gates 6736 MC or equivalent", compat: "ok" },
+        { name: "Variator Rollers", pn: "Ø 15 × 12 mm — 5–6 g", spec: "Dr Pulley or Malossi", compat: "ok" },
+        { name: "Clutch Shoes", pn: "3-shoe kit, 107 mm bell", spec: "Replace at ≤2 mm lining", compat: "ok" },
+        { name: "Gear Oil", pn: "80W-90 gear oil", spec: "Capacity: ~80–100 ml", compat: "ok" },
+      ],
+      brakes: [
+        { name: "Front Brake", pn: "Drum (most) / Goldfren S33 (disc)", spec: "Drum shoe min 1 mm", compat: "warn" },
+        { name: "Rear Brake Shoe", pn: "90 mm drum pair", spec: "Generic GY6 rear drum", compat: "ok" },
+        { name: "Brake Fluid", pn: "DOT 4 (disc models only)", spec: "Change every 2 years", compat: "warn" },
+      ],
+      tyres: [
+        { name: "Front Tyre", pn: "3.00-10 or 3.50-10", spec: "Kenda / Heidenau K58", compat: "ok" },
+        { name: "Rear Tyre", pn: "3.00-10 or 3.50-10", spec: "Heidenau K58 recommended", compat: "ok" },
+        { name: "Inner Tube", pn: "TR87 valve — 3.00/3.50-10", spec: "Replace with every tyre", compat: "ok" },
+        { name: "Wheel Bearing (front)", pn: "6300-2RS (17×35×11 mm)", spec: "Sealed — press-fit", compat: "ok" },
+        { name: "Wheel Bearing (rear)", pn: "6203-2RS (17×40×12 mm)", spec: "Sealed — press-fit", compat: "ok" },
+      ],
+      electrical: [
+        { name: "Battery", pn: "YTX5L-BS (12V 4Ah)", spec: "Yuasa / Motobatt", compat: "ok" },
+        { name: "CDI Unit", pn: "6-pin AC CDI (50cc)", spec: "Kokusan-compatible", compat: "ok" },
+        { name: "Ignition Coil", pn: "GY6 CDI coil 6-pin", spec: "Secondary resistance 3–5 kΩ", compat: "ok" },
+        { name: "Voltage Regulator", pn: "4-pin GY6 regulator", spec: "Check: 13.8–14.5V @ 3,000 RPM", compat: "ok" },
+      ],
+      fluids: [
+        { name: "Engine Oil", pn: "10W-40 semi-synthetic 4T", spec: "0.8 L — change every 2,000 km", compat: "ok" },
+        { name: "Gear Oil", pn: "80W-90", spec: "~80 ml — change every 10,000 km", compat: "ok" },
+      ],
+      chassis: [
+        { name: "Front Fork Springs", pn: "Progressive spring kit Ø31–33 mm", spec: "5W fork oil, ~100 ml/leg", compat: "ok" },
+        { name: "Rear Shock Absorber", pn: "330–360 mm eye-to-eye", spec: "YSS / Bitubo", compat: "ok" },
+        { name: "Steering Head Bearings", pn: '1-1/8" tapered roller set', spec: "Or ball-race pair", compat: "ok" },
+        { name: "Handlebar Grips", pn: "Ø 22 mm (7/8\") universal", spec: "Oxford / ProGrip 714", compat: "ok" },
+      ]
+    },
+    "gy6-125": {
+      engine: [
+        { name: "Spark Plug", pn: "NGK CR8E / DR8EA", spec: "Gap 0.6–0.7 mm", compat: "ok" },
+        { name: "Air Filter", pn: "42/45 mm pod filter or OEM foam", spec: "Inspect every 3,000 km", compat: "ok" },
+        { name: "Oil Filter", pn: "Hiflofiltro HF556 or Mann MO 65", spec: "M20×1.0 thread", compat: "ok" },
+        { name: "Engine Oil", pn: "10W-40 semi-synthetic 4T", spec: "Capacity: 1.1 L", compat: "ok" },
+        { name: "Carburetor", pn: "PZ22 or PZ24 (125cc)", spec: "Main jet ~98–102 (stock)", compat: "ok" },
+        { name: "Piston Kit", pn: "Ø 52.4 mm (125cc)", spec: "Oversize: +0.25 / +0.50 mm", compat: "ok" },
+      ],
+      transmission: [
+        { name: "CVT Drive Belt", pn: "743 × 20 × 30 (125cc)", spec: "Gates or equivalent", compat: "ok" },
+        { name: "Variator Rollers", pn: "Ø 16 × 13 mm — 8–10 g", spec: "Dr Pulley SR 16×13", compat: "ok" },
+        { name: "Gear Oil", pn: "80W-90", spec: "~100–120 ml", compat: "ok" },
+      ],
+      brakes: [
+        { name: "Front Brake Pads", pn: "EBC FA354 or Goldfren", spec: "Rotor 220 mm typical", compat: "ok" },
+        { name: "Rear Brake", pn: "110 mm drum shoes or disc pads", spec: "Min lining 1 mm", compat: "ok" },
+        { name: "Brake Fluid", pn: "DOT 4", spec: "Change every 2 years", compat: "ok" },
+      ],
+      tyres: [
+        { name: "Front Tyre", pn: "3.50-10 or 90/90-10", spec: "Kenda K413", compat: "ok" },
+        { name: "Rear Tyre", pn: "3.50-10 or 90/90-10", spec: "Heidenau K58", compat: "ok" },
+        { name: "Inner Tube", pn: "TR87 — 3.50/90-10", spec: "Replace with every tyre", compat: "ok" },
+      ],
+      electrical: [
+        { name: "Battery", pn: "YTX7L-BS (12V 6Ah)", spec: "Yuasa / Motobatt", compat: "ok" },
+        { name: "CDI Unit", pn: "6-pin AC CDI (125/150cc)", spec: "Unrestricted — ~10,000 RPM limit", compat: "ok" },
+      ],
+      fluids: [
+        { name: "Engine Oil", pn: "10W-40 semi-synthetic 4T", spec: "1.1 L — change every 2,000 km", compat: "ok" },
+        { name: "Gear Oil", pn: "80W-90", spec: "120 ml — change every 10,000 km", compat: "ok" },
+      ],
+      chassis: [
+        { name: "Front Fork Springs", pn: "Progressive spring kit Ø33–35 mm", spec: "5W fork oil, ~100 ml/leg", compat: "ok" },
+        { name: "Rear Shock", pn: "330–360 mm eye-to-eye", spec: "YSS G-series", compat: "ok" },
+      ]
+    },
+    "gy6-150": {
+      engine: [
+        { name: "Spark Plug", pn: "NGK CR8E", spec: "Gap 0.6–0.7 mm", compat: "ok" },
+        { name: "Engine Oil", pn: "10W-40 semi-synthetic 4T", spec: "Capacity: 1.1 L", compat: "ok" },
+        { name: "Piston Kit", pn: "Ø 57.4 mm (150cc)", spec: "Oversize: +0.25 / +0.50 mm", compat: "ok" },
+        { name: "Carburetor", pn: "PZ24 (150cc)", spec: "Main jet ~102–108 (stock)", compat: "ok" },
+      ],
+      transmission: [
+        { name: "CVT Drive Belt", pn: "788 × 20 × 30 (150cc)", spec: "Replace every 15,000 km", compat: "ok" },
+        { name: "Variator Rollers", pn: "Ø 16 × 13 mm — 10–12 g", spec: "Dr Pulley SR 16×13", compat: "ok" },
+      ],
+      brakes: [
+        { name: "Front Brake Pads", pn: "EBC FA354 or Goldfren", spec: "220 mm rotor", compat: "ok" },
+        { name: "Brake Fluid", pn: "DOT 4", spec: "Change every 2 years", compat: "ok" },
+      ],
+      tyres: [
+        { name: "Front Tyre", pn: "3.50-10 or 90/90-10", spec: "Kenda / Heidenau", compat: "ok" },
+        { name: "Rear Tyre", pn: "3.50-10 or 90/90-10", spec: "Heidenau K58", compat: "ok" },
+      ],
+      electrical: [
+        { name: "Battery", pn: "YTX7L-BS (12V 6Ah)", spec: "Yuasa", compat: "ok" },
+      ],
+      fluids: [
+        { name: "Engine Oil", pn: "10W-40 semi-synthetic 4T", spec: "1.1 L — every 2,000 km", compat: "ok" },
+      ],
+      chassis: [
+        { name: "Rear Shock", pn: "330–360 mm eye-to-eye", spec: "YSS G-series", compat: "ok" },
+      ]
+    },
+    "vespa": {
+      engine: [
+        { name: "Spark Plug", pn: "NGK CR8EIX (GTS)", spec: "Gap 0.8–0.9 mm", compat: "warn" },
+        { name: "Air Filter", pn: "Piaggio 1A008171 (check variant)", spec: "Replace every 12,000 km", compat: "warn" },
+        { name: "Engine Oil", pn: "5W-40 full-synthetic 4T", spec: "1.0 L — change every 3,000 km", compat: "warn" },
+        { name: "Fuel Injector", pn: "Piaggio OEM — check injector cc/min", spec: "Clean before replacing", compat: "warn" },
+      ],
+      transmission: [
+        { name: "CVT Drive Belt", pn: "Piaggio 82700R / Gates scooter", spec: "Replace every 15,000 km", compat: "warn" },
+        { name: "Variator Rollers", pn: "Ø 23 × 18 mm — 15 g", spec: "Malossi 6618170", compat: "warn" },
+      ],
+      brakes: [
+        { name: "Front Brake Pads", pn: "EBC FA174 / Ferodo FDB", spec: "200–220 mm rotor", compat: "ok" },
+        { name: "Rear Brake Shoes", pn: "SBS 524HF drum shoes", spec: "Min lining 1 mm", compat: "ok" },
+        { name: "Brake Fluid", pn: "DOT 4", spec: "Piaggio recommends DOT 4", compat: "ok" },
+      ],
+      tyres: [
+        { name: "Front Tyre", pn: "110/70-11 (LX/GTS 125)", spec: "Piaggio Pirelli Diablo", compat: "ok" },
+        { name: "Rear Tyre", pn: "120/70-10 or 130/70-10", spec: "Check your specific GTS/LX model", compat: "warn" },
+      ],
+      electrical: [
+        { name: "Battery", pn: "YTX7A-BS or YTX9-BS", spec: "Check your specific model year", compat: "warn" },
+        { name: "Ignition Coil", pn: "Piaggio OEM or BERU/Bremi equivalent", spec: "EFI coil-on-plug", compat: "warn" },
+      ],
+      fluids: [
+        { name: "Engine Oil", pn: "5W-40 full-synthetic 4T", spec: "1.0 L — every 3,000 km", compat: "ok" },
+        { name: "Brake Fluid", pn: "DOT 4", spec: "Change every 2 years", compat: "ok" },
+      ],
+      chassis: [
+        { name: "Rear Shock Absorber", pn: "Piaggio CM0171135 or Bitubo WMB00", spec: "Single shock rear", compat: "ok" },
+        { name: "Steering Bearings", pn: "Piaggio OEM taper set or SKF 30203", spec: "Check variant", compat: "warn" },
+      ]
+    },
+    "primavera": {
+      engine: [
+        { name: "Spark Plug", pn: "NGK CR8EIX", spec: "Gap 0.6 mm", compat: "ok" },
+        { name: "Air Filter", pn: "Piaggio 1A008171", spec: "Replace every 12,000 km", compat: "ok" },
+        { name: "Engine Oil", pn: "5W-40 full-synthetic 4T", spec: "1.0 L — every 3,000 km or 1 year", compat: "ok" },
+        { name: "Fuel Injector", pn: "Piaggio 1A0065560", spec: "Ultrasonically clean before replacing", compat: "ok" },
+        { name: "Gasket Set", pn: "Piaggio 1R000523", spec: "OEM only for best sealing", compat: "ok" },
+      ],
+      transmission: [
+        { name: "CVT Drive Belt", pn: "Piaggio 82700R", spec: "Replace every 15,000 km", compat: "ok" },
+        { name: "Variator Rollers", pn: "Ø 23 × 18 mm — Malossi 6618170", spec: "15 g stock weight", compat: "ok" },
+        { name: "Clutch", pn: "Polini 241.004", spec: "Measure shoe min 2 mm", compat: "ok" },
+        { name: "Contra Spring", pn: "Piaggio / Malossi 298843", spec: "Match to roller weight", compat: "ok" },
+      ],
+      brakes: [
+        { name: "Front Brake Pads", pn: "EBC FA174 / Brembo OEM", spec: "200 mm Brembo rotor", compat: "ok" },
+        { name: "Front Brake Disc", pn: "Piaggio CM0745025 — 200 mm", spec: "Min thickness 3.5 mm", compat: "ok" },
+        { name: "Rear Brake Shoes", pn: "SBS 524HF drum shoes", spec: "Drum rear — min 1 mm", compat: "ok" },
+        { name: "Brake Fluid", pn: "DOT 4", spec: "Change every 2 years", compat: "ok" },
+      ],
+      tyres: [
+        { name: "Front Tyre", pn: "110/70-11", spec: "Michelin City Grip 2 recommended", compat: "ok" },
+        { name: "Rear Tyre", pn: "120/70-11", spec: "Michelin City Grip 2 recommended", compat: "ok" },
+      ],
+      electrical: [
+        { name: "Battery", pn: "YTX7A-BS (12V 6Ah)", spec: "Yuasa YTX7A-BS", compat: "ok" },
+        { name: "Ignition Coil", pn: "Piaggio OEM / NGK", spec: "EFI coil-on-plug", compat: "ok" },
+        { name: "Voltage Regulator", pn: "Piaggio OEM", spec: "Check: 13.8–14.5V @ 3,000 RPM", compat: "ok" },
+      ],
+      fluids: [
+        { name: "Engine Oil", pn: "5W-40 full-synthetic 4T", spec: "1.0 L — every 3,000 km", compat: "ok" },
+        { name: "Brake Fluid", pn: "DOT 4", spec: "Change every 2 years", compat: "ok" },
+      ],
+      chassis: [
+        { name: "Rear Shock Absorber", pn: "Bitubo WMB00 series", spec: "Single shock rear", compat: "ok" },
+        { name: "Steering Bearings", pn: "SKF 30203 taper roller", spec: "Adjust preload after fitting", compat: "ok" },
+      ]
+    },
+    "zip50": {
+      engine: [
+        { name: "Spark Plug", pn: "NGK BR8ES (2-stroke)", spec: "Gap 0.5–0.6 mm", compat: "ok" },
+        { name: "Carburetor", pn: "Dellorto SHA 14.12", spec: "Main jet 54–58 (stock)", compat: "ok" },
+        { name: "2-Stroke Oil", pn: "Piaggio Genuine 2T or equivalent", spec: "2% premix (50:1)", compat: "ok" },
+      ],
+      transmission: [
+        { name: "CVT Drive Belt", pn: "Piaggio 433352", spec: "Replace at first cracking", compat: "ok" },
+        { name: "Variator Rollers", pn: "Ø 15 × 12 mm — check weight", spec: "Piaggio OEM or Malossi", compat: "ok" },
+      ],
+      brakes: [
+        { name: "Front Drum Shoes", pn: "SBS / Galfer shoes", spec: "Drum front and rear", compat: "ok" },
+        { name: "Rear Drum Shoes", pn: "SBS / Galfer shoes", spec: "Min lining 1 mm", compat: "ok" },
+        { name: "Brake Cables", pn: "Piaggio OEM or Venhill custom", spec: "Lube annually with PTFE", compat: "ok" },
+      ],
+      tyres: [
+        { name: "Front Tyre", pn: "3.00-10 or 80/80-10", spec: "Kenda / Sava", compat: "ok" },
+        { name: "Rear Tyre", pn: "3.00-10 or 80/80-10", spec: "Kenda / Sava", compat: "ok" },
+        { name: "Inner Tube", pn: "TR87 — 3.00-10", spec: "Replace with every tyre", compat: "ok" },
+      ],
+      electrical: [
+        { name: "Battery", pn: "YTX5L-BS (12V 4Ah)", spec: "Yuasa / Motobatt", compat: "ok" },
+        { name: "CDI Unit", pn: "Zip 50 AC CDI", spec: "Magneto-based ignition", compat: "ok" },
+      ],
+      fluids: [
+        { name: "2-Stroke Premix Oil", pn: "Piaggio Genuine 2T", spec: "2% in fuel — every fill", compat: "ok" },
+      ],
+      chassis: [
+        { name: "Rear Shocks (pair)", pn: "Piaggio OEM or Bitubo pair", spec: "2 shocks rear", compat: "ok" },
+        { name: "Handlebar Grips", pn: "Ø 22 mm universal", spec: "ProGrip 714", compat: "ok" },
+      ]
+    },
+    "zip125": {
+      engine: [
+        { name: "Spark Plug", pn: "NGK C7HSA or equivalent", spec: "Gap 0.5–0.6 mm", compat: "ok" },
+        { name: "Oil Filter", pn: "Hiflofiltro HF919", spec: "4-stroke Zip 125", compat: "ok" },
+        { name: "Engine Oil", pn: "5W-40 synthetic 4T", spec: "0.8 L — every 3,000 km", compat: "ok" },
+      ],
+      transmission: [
+        { name: "CVT Drive Belt", pn: "Piaggio 82700R", spec: "Replace every 15,000 km", compat: "ok" },
+        { name: "Variator Rollers", pn: "Piaggio OEM or Malossi", spec: "Check size on your model year", compat: "warn" },
+      ],
+      brakes: [
+        { name: "Front Brake Pads (disc)", pn: "EBC FA174", spec: "Disc front on Zip 125", compat: "ok" },
+        { name: "Rear Drum Shoes", pn: "SBS / Galfer", spec: "Drum rear — min 1 mm", compat: "ok" },
+        { name: "Brake Fluid", pn: "DOT 4", spec: "Change every 2 years", compat: "ok" },
+      ],
+      tyres: [
+        { name: "Front Tyre", pn: "3.00-10 or 80/80-10", spec: "Sava / Kenda", compat: "ok" },
+        { name: "Rear Tyre", pn: "3.00-10 or 80/80-10", spec: "Sava / Kenda", compat: "ok" },
+      ],
+      electrical: [
+        { name: "Battery", pn: "YTX7L-BS (12V 6Ah)", spec: "Yuasa", compat: "ok" },
+      ],
+      fluids: [
+        { name: "Engine Oil", pn: "5W-40 synthetic 4T", spec: "0.8 L — every 3,000 km", compat: "ok" },
+        { name: "Brake Fluid", pn: "DOT 4", spec: "Change every 2 years", compat: "ok" },
+      ],
+      chassis: [
+        { name: "Rear Shocks (pair)", pn: "Piaggio OEM or Bitubo", spec: "2 shocks rear", compat: "ok" },
+      ]
+    }
+  };
+
+  /* ─── Part Finder ───────────────────────────────────────────────────── */
+  function runFinder() {
+    const vehicle  = document.getElementById('fVehicle').value;
+    const category = document.getElementById('fCategory').value;
+    const query    = document.getElementById('fSearch').value.trim().toLowerCase();
+    const resultsEl = document.getElementById('finderResults');
+    const headerEl  = document.getElementById('finderHeader');
+    const bodyEl    = document.getElementById('finderBody');
+
+    bodyEl.innerHTML = '';
+
+    if (!vehicle && !query) {
+      bodyEl.innerHTML = '<div class="result-no-match">Please select a vehicle or type a part name to search.</div>';
+      resultsEl.classList.add('active');
+      return;
+    }
+
+    let results = [];
+
+    if (vehicle && PARTS_DB[vehicle]) {
+      const vehicleData = PARTS_DB[vehicle];
+      if (category && vehicleData[category]) {
+        results = vehicleData[category];
+      } else {
+        // all categories
+        Object.values(vehicleData).forEach(arr => results.push(...arr));
+      }
+    } else if (!vehicle) {
+      // search across all vehicles
+      Object.values(PARTS_DB).forEach(vd => {
+        Object.values(vd).forEach(arr => results.push(...arr));
+      });
+    }
+
+    if (query) {
+      results = results.filter(p =>
+        p.name.toLowerCase().includes(query) ||
+        (p.pn && p.pn.toLowerCase().includes(query))
+      );
+    }
+
+    // de-duplicate by name+pn
+    const seen = new Set();
+    results = results.filter(p => {
+      const key = p.name + p.pn;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+
+    const vehicleLabel = document.getElementById('fVehicle').selectedOptions[0]?.text || 'All vehicles';
+    const catLabel     = category ? document.getElementById('fCategory').selectedOptions[0]?.text : 'All categories';
+    headerEl.textContent = `Results for: ${vehicleLabel} — ${catLabel}${query ? ' · "' + query + '"' : ''} (${results.length} parts)`;
+
+    if (results.length === 0) {
+      bodyEl.innerHTML = '<div class="result-no-match">No parts found. Try a different vehicle, category, or search term.</div>';
+    } else {
+      results.forEach(p => {
+        const badgeClass = p.compat === 'ok' ? 'result-compat-ok' : 'result-compat-warn';
+        const badgeText  = p.compat === 'ok' ? '✓ Compatible' : '⚠ Verify';
+        bodyEl.innerHTML += `
+          <div class="finder-result-item">
+            <div>
+              <div class="result-part-name">${p.name}</div>
+              <div class="result-part-number">${p.pn}</div>
+              <div class="result-part-spec">${p.spec}</div>
+            </div>
+            <span class="result-compat-badge ${badgeClass}">${badgeText}</span>
+          </div>`;
+      });
+    }
+
+    resultsEl.classList.add('active');
+    resultsEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // Allow pressing Enter in the search box
+  document.getElementById('fSearch').addEventListener('keydown', e => {
+    if (e.key === 'Enter') runFinder();
+  });
+
+  /* ─── Global table filter ───────────────────────────────────────────── */
+  function filterTables(query) {
+    query = query.toLowerCase();
+    document.querySelectorAll('.parts-table tbody tr').forEach(row => {
+      row.classList.toggle('hidden-row', query !== '' && !row.textContent.toLowerCase().includes(query));
+    });
+  }
+
+  /* ─── Vehicle highlight ─────────────────────────────────────────────── */
+  function highlightVehicle(colIndex) {
+    document.querySelectorAll('.parts-table').forEach(tbl => {
+      const ths = tbl.querySelectorAll('thead th');
+      const tds = tbl.querySelectorAll('tbody tr');
+      ths.forEach((th, i) => th.style.background = '');
+      tds.forEach(row => {
+        row.querySelectorAll('td').forEach(td => td.style.background = '');
+      });
+      if (colIndex === '') return;
+      const col = parseInt(colIndex) + 1; // +1 for part-name col
+      if (ths[col]) ths[col].style.background = 'rgba(255,107,53,0.18)';
+      tds.forEach(row => {
+        const td = row.querySelectorAll('td')[col];
+        if (td) td.style.background = 'rgba(255,107,53,0.09)';
+      });
+    });
+  }
+  </script>
 </body>
 </html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Side Stand Kill Switch — Scooter Won't Start Diagnosis — ISRM</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .guide-content { max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .guide-content h2 { font-size: 1.55rem; color: var(--text-primary); margin-top: 2.5rem; margin-bottom: 0.9rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 0; margin-bottom: 0.75rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol { padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary); }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th { background: var(--surface-2); color: var(--text-primary); font-weight: 600; padding: 0.7rem 1rem; text-align: left; border: 1px solid var(--border); }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26, 35, 50, 0.6); }
+    .callout { padding: 1rem 1.25rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 1.5rem 0; font-size: 0.95rem; color: var(--text-secondary); }
+    .callout strong { color: var(--text-primary); }
+    .callout-tip { background: rgba(6, 167, 125, 0.08); border: 1px solid rgba(6, 167, 125, 0.25); border-left: 4px solid var(--success); }
+    .callout-warn { background: rgba(245, 166, 35, 0.08); border: 1px solid rgba(245, 166, 35, 0.3); border-left: 4px solid var(--warning); }
+    .callout-danger { background: rgba(214, 48, 49, 0.08); border: 1px solid rgba(214, 48, 49, 0.3); border-left: 4px solid var(--danger); }
+    .check-section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+    .check-section:hover { border-color: rgba(0, 168, 204, 0.4); }
+    .pass { color: var(--success); font-weight: 700; }
+    .fail { color: var(--danger); font-weight: 700; }
+    .page-hero { background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%); padding: 3rem 2rem 2rem; position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
+    .page-hero::before { content: "⚡"; position: absolute; right: 6%; top: 50%; transform: translateY(-50%); font-size: 9rem; opacity: 0.07; pointer-events: none; line-height: 1; }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 { font-size: 2rem; line-height: 1.2; background: linear-gradient(135deg, var(--text-primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1.2rem; }
+    .breadcrumb { padding: 0.9rem 2rem; max-width: 900px; margin: 0 auto; font-size: 0.85rem; color: var(--text-tertiary); }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+    .guide-meta { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; font-size: 0.875rem; color: var(--text-tertiary); margin-bottom: 1rem; }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+    .guide-tag { background: rgba(0, 168, 204, 0.1); color: var(--accent); border: 1px solid rgba(0, 168, 204, 0.3); padding: 0.25rem 0.7rem; border-radius: 20px; font-size: 0.78rem; font-weight: 500; }
+    .applies-to { background: rgba(255, 107, 53, 0.07); border: 1px solid rgba(255, 107, 53, 0.2); border-left: 4px solid var(--primary); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 1rem 1.25rem; margin-top: 1.5rem; font-size: 0.95rem; color: var(--text-secondary); }
+    .applies-to strong { color: var(--text-primary); }
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-lg); margin: 1.5rem 0; border: 1px solid var(--border); }
+    .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .video-caption { font-size: 0.85rem; color: var(--text-tertiary); margin-top: -0.75rem; margin-bottom: 1.5rem; text-align: center; }
+    .guide-footer { background: var(--surface); border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.825rem; color: var(--text-tertiary); }
+    @media (max-width: 768px) {
+      .guide-content { padding: 1.5rem 1rem 3rem; }
+      .breadcrumb { padding: 0.9rem 1rem; }
+      .nav-menu { display: none; }
+      .nav-toggle { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand"><span class="brand-icon">⚙️</span><span class="brand-text">ISRM</span></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link active">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../community/index.html" class="nav-link">Community</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="../index.html">ISRM Home</a>
+    <span>›</span>
+    <a href="index.html">Diagnostics</a>
+    <span>›</span>
+    Side Stand Kill Switch
+  </div>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <h1>Side Stand Kill Switch — Scooter Won't Start Diagnosis</h1>
+      <div class="guide-meta">
+        <span>Electrical / Safety Systems</span>
+        <span>·</span>
+        <span>~15 min</span>
+        <span>·</span>
+        <span>Multimeter recommended</span>
+      </div>
+      <div class="guide-tags">
+        <span class="guide-tag">GY6</span>
+        <span class="guide-tag">Piaggio</span>
+        <span class="guide-tag">Won't Start</span>
+        <span class="guide-tag">Kill Switch</span>
+        <span class="guide-tag">Electrical</span>
+      </div>
+      <div class="applies-to">
+        <strong>Applies to:</strong> All GY6 and Piaggio/Vespa scooters fitted with a side stand kill switch (also called a side stand inhibitor switch or kickstand switch). Most scooters manufactured after 2005 are fitted with this switch as a safety feature. Scooters without a side stand do not have this switch.
+      </div>
+    </div>
+  </section>
+
+  <main class="guide-content">
+
+    <h2>What Is the Side Stand Kill Switch?</h2>
+    <p>The <strong>side stand kill switch</strong> (also called a side stand inhibitor or kickstand switch) is a safety device that prevents the engine from running while the side stand is deployed. The switch is mounted at the base of the side stand pivot. When the stand is down, the switch opens the ignition circuit, cutting power to the CDI unit or ECU and stopping the engine (or preventing it from starting).</p>
+    <p>This is an important safety feature — but the switch is exposed to road dirt, water, and corrosion, and it is one of the <strong>most common electrical causes of a no-start condition</strong> on older scooters. The switch can fail in the open position, which makes the ECU or CDI think the side stand is always down, even when it is fully retracted.</p>
+
+    <h2>How to Quickly Check (First Test)</h2>
+    <div class="check-section">
+      <h3>The Stand-Up Test</h3>
+      <ol>
+        <li>Ensure the side stand is <strong>fully retracted (up)</strong> and you are sitting on the scooter.</li>
+        <li>Attempt to start the engine normally.</li>
+        <li>If it does not start, try <strong>pushing the side stand down and back up again</strong> several times. Sometimes the switch contact is dirty and this mechanical cycling cleans the contact momentarily.</li>
+        <li>Now try starting again with the stand fully up.</li>
+        <li><span class="pass">Starts:</span> The switch contact was dirty or sticking. Clean or replace the switch.</li>
+        <li><span class="fail">Still won't start:</span> Proceed to the multimeter test below.</li>
+      </ol>
+    </div>
+
+    <h2>Reference Video</h2>
+    <div class="video-embed">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/-xoh8QE5l10"
+        title="Side Stand Kill Switch Diagnosis — Scooter Won't Start"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <p class="video-caption">Complete walkthrough of diagnosing and testing the side stand kill switch on a GY6 scooter.</p>
+
+    <h2>Locating the Side Stand Switch</h2>
+    <p>The switch is a small black plastic or metal unit mounted on the frame near the base of the side stand pivot. It has either two or three wires connected to it. Trace the wires from the side stand hinge point upward — they typically route along the frame and connect to a 2-pin or 3-pin inline connector under the bodywork or under the seat.</p>
+
+    <h2>Full Diagnostic Procedure</h2>
+
+    <div class="check-section">
+      <h3>Step 1 — Visual Inspection</h3>
+      <ol>
+        <li>Locate the side stand switch and its wiring connector.</li>
+        <li>Check the connector for <strong>corrosion, green/white oxidation, or moisture</strong> inside the connector housing.</li>
+        <li>Check the wires close to the switch for chafing against the frame, cracked insulation, or bare wire touching metal.</li>
+        <li>Check the switch body itself — the plunger or lever that the stand actuates should move freely when you operate the stand by hand.</li>
+      </ol>
+    </div>
+
+    <div class="check-section">
+      <h3>Step 2 — Bypass Test (Temporary)</h3>
+      <p>This test confirms whether the side stand switch circuit is the cause of the no-start, without needing a multimeter.</p>
+      <div class="callout callout-danger">
+        <strong>⚠ Safety:</strong> Bypassing the side stand switch removes the safety interlock. Only do this as a temporary diagnostic test with the scooter on its centre stand. Do not ride the scooter with the switch bypassed permanently.
+      </div>
+      <ol>
+        <li>Locate the <strong>2-pin or 3-pin connector</strong> in the side stand switch wiring loom (typically under the bodywork near the left footboard area).</li>
+        <li>Disconnect the connector.</li>
+        <li>Using a short length of wire or a paperclip, <strong>bridge the two terminals</strong> on the loom side of the connector (the side that goes into the harness, not the side that goes to the switch).</li>
+        <li>Attempt to start the engine.</li>
+        <li><span class="pass">Engine starts:</span> The side stand switch is confirmed faulty. The switch needs to be cleaned or replaced.</li>
+        <li><span class="fail">Engine still won't start:</span> The side stand switch is not the cause. Remove your bridge wire, reconnect the connector, and continue to the full no-start troubleshooting guide.</li>
+      </ol>
+      <div class="callout callout-warn">
+        <strong>Note on 3-wire switches:</strong> Some scooters use a 3-wire inhibitor switch that interacts with the gear/neutral switch. If the bypass test does not work, try bridging a different pair of terminals. Consult your model's wiring diagram.
+      </div>
+    </div>
+
+    <div class="check-section">
+      <h3>Step 3 — Multimeter Test</h3>
+      <p>This confirms the switch is operating correctly (or not) before you purchase a replacement.</p>
+      <ol>
+        <li>Disconnect the switch connector.</li>
+        <li>Set your multimeter to <strong>continuity / resistance (Ω)</strong> mode.</li>
+        <li>Probe the two terminals on the <strong>switch side</strong> of the connector.</li>
+        <li>With the side stand <strong>up (retracted)</strong>: the circuit should be <strong>closed (continuity / near 0 Ω)</strong>.</li>
+        <li>With the side stand <strong>down (deployed)</strong>: the circuit should be <strong>open (no continuity / infinite Ω)</strong>.</li>
+        <li><span class="pass">PASS:</span> Switch behaves as described — switch is working correctly. Look for a wiring fault between switch and CDI/ECU.</li>
+        <li><span class="fail">FAIL:</span> Switch shows open circuit with stand up, or closed circuit with stand down — switch has failed. Replace it.</li>
+      </ol>
+    </div>
+
+    <h2>Cleaning a Dirty Switch</h2>
+    <div class="check-section">
+      <ol>
+        <li>Disconnect the switch connector.</li>
+        <li>Spray a small amount of <strong>electrical contact cleaner</strong> into the switch body through any available opening.</li>
+        <li>Operate the side stand up and down 10–15 times to work the cleaner through the contact mechanism.</li>
+        <li>Allow to dry for 5 minutes.</li>
+        <li>Reconnect the switch and retest.</li>
+        <li>Also clean the connector terminals: use contact cleaner on a small brush, or use a connector cleaning tool. Apply dielectric grease to the connector pins before reassembly to prevent future corrosion.</li>
+      </ol>
+    </div>
+
+    <h2>Replacing the Side Stand Switch</h2>
+    <table>
+      <tr><th>Step</th><th>Detail</th></tr>
+      <tr><td>1. Source replacement switch</td><td>GY6 side stand switches are largely standardised. Search for "GY6 side stand switch" or "kickstand inhibitor switch 2-pin." Piaggio/Vespa units are manufacturer-specific — use OEM part number.</td></tr>
+      <tr><td>2. Remove old switch</td><td>Typically one or two M6 bolts. Disconnect wiring connector.</td></tr>
+      <tr><td>3. Install new switch</td><td>Position switch so the actuator lever contacts the side stand arm correctly when the stand is deployed. Test stand movement before fully tightening.</td></tr>
+      <tr><td>4. Route wiring</td><td>Ensure wires are routed away from moving parts (stand pivot, exhaust). Secure with a cable tie if needed.</td></tr>
+      <tr><td>5. Test</td><td>Confirm engine starts with stand up and cuts out (or does not start) with stand down.</td></tr>
+    </table>
+
+    <div class="callout callout-tip">
+      <strong>Permanent bypass (not recommended, but documented):</strong> Some riders permanently bridge the side stand switch to eliminate the circuit entirely. This means the engine will run with the stand down — a genuine safety hazard on a scooter, as the stand can dig into the road surface when cornering. Replace the switch instead of bypassing it permanently.
+    </div>
+
+    <h2>Related Guides</h2>
+    <ul>
+      <li><a href="gy6-no-start-troubleshooting.html">GY6 Scooter Won't Start — Full Troubleshooting Checklist</a></li>
+      <li><a href="gy6-dirty-buttons-no-start.html">Dirty Handlebar Buttons Causing No-Start</a></li>
+    </ul>
+
+    <p style="margin-top:2rem; font-size:0.82rem; color:var(--text-tertiary);">
+      Sources: GY6 and Piaggio wiring diagrams; community diagnostic data from scootdawg.com; video reference: YouTube. Licensed CC BY-SA 4.0.
+    </p>
+
+  </main>
+
+  <script src="../script.js"></script>
+
+  <footer class="guide-footer">
+    <p>ISRM — Interactive Scooter Repair Manuals. Content for educational purposes. CC BY-SA 4.0.</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISRM Home</a> · <a href="index.html" style="color: var(--accent);">← All Diagnostics</a></p>
+  </footer>
+
+</body>
+</html>

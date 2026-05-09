@@ -640,7 +640,7 @@
         <tr><td>Primavera 150cc (Carb)</td><td>Dellorto PHBG 20</td><td>60–75</td><td>130–150</td><td>F / G</td><td>1,000–1,200 RPM</td></tr>
       </table>
 
-      <h3>Understanding Primavera Carburetors</h3>
+      <h3>Understanding Primavera carburetors</h3>
       <ul>
         <li><strong>Needle position:</strong> Primavera uses <strong>C-clip needle selection</strong> (different from GY6). The clip position affects middle-range response significantly.</li>
         <li><strong>Jetting:</strong> Factory conservative. Many owners upsize main jet by 10–15 numbers for better mid-range and top-end.</li>
@@ -731,7 +731,7 @@
 
       <h2>Vespa Carburetor Adjustment</h2>
 
-      <p>Vespa scooters use a range of carburetors depending on model year and displacement. Classic Vespas (PX, PK) typically use <strong>Dellorto SHA</strong>, while modern Vespa Primavera and Sprint (2013+) use fuel injection. This section covers <strong>Carbureted Vespas</strong>.</p>
+      <p>Vespa scooters use a range of carburetors depending on model year and displacement. Classic Vespas (PX, PK) typically use <strong>Dellorto SHA</strong>, while modern Vespa Primavera and Sprint (2013+) use fuel injection. This section covers <strong>carbureted Vespas</strong>.</p>
 
       <h3>Vespa Specifications</h3>
       <table style="margin: 1.5rem 0;">
@@ -745,16 +745,16 @@
         💡 <strong>Classic Vespa Tip:</strong> Vespa carburetors from the 1970s–1990s are extremely durable. If your Vespa idles rough, fuel leaks, or surges, the issue is almost always <strong>jet blockage</strong>, not adjustment. Always clean the jets before attempting to tune.
       </div>
 
-      <h3>Tools for Vespa Carburetor Work</h3>
+      <h3>Tools for Vespa carburetor Work</h3>
       <ul>
         <li>Small flat-head screwdriver (mixture screw)</li>
         <li>Tachometer (strongly recommended for Vespa — factory specs are tight)</li>
-        <li>Carburetor cleaner spray</li>
+        <li>carburetor cleaner spray</li>
         <li>Compressed air (for jets)</li>
         <li>Allen keys (some float bowl screws are socket-head)</li>
       </ul>
 
-      <h3>Vespa Carburetor Layout</h3>
+      <h3>Vespa carburetor Layout</h3>
       <p><strong>Key differences from Piaggio:</strong></p>
       <ul>
         <li>Mixture screw is typically on the <strong>left side</strong> of the carburetor, below the float bowl.</li>

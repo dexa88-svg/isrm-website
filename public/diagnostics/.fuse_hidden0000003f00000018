@@ -300,17 +300,17 @@
       <ol>
         <li>Ensure there is fuel in the tank (check visually — fuel gauges on Chinese scooters are notoriously inaccurate).</li>
         <li>Locate the fuel petcock (tap) on the underside of the tank. Ensure it is in the <strong>ON</strong> or <strong>RES</strong> position.</li>
-        <li>Disconnect the fuel line from the carburetor inlet. Place a container below and briefly open the petcock — fuel should flow freely. If it trickles or doesn't flow, the petcock filter is blocked. Remove and clean the petcock screen.</li>
+        <li>Disconnect the fuel line from the carburettor inlet. Place a container below and briefly open the petcock — fuel should flow freely. If it trickles or doesn't flow, the petcock filter is blocked. Remove and clean the petcock screen.</li>
       </ol>
     </div>
 
     <div class="check-section">
-      <h3>2B — Carburetor Check</h3>
+      <h3>2B — Carburettor Check</h3>
       <ol>
-        <li>Remove the float bowl (one screw at the bottom of the carburetor). Check for fuel presence — if empty, fuel is not reaching the carb (check petcock and fuel line). If full, fuel delivery is OK.</li>
-        <li>Inspect the main jet and pilot jet for blockage. Even a partially blocked pilot jet causes lean stumble and no-start when cold. Clean with carburetor cleaner and compressed air — never use wire through the jet orifice.</li>
+        <li>Remove the float bowl (one screw at the bottom of the carburettor). Check for fuel presence — if empty, fuel is not reaching the carb (check petcock and fuel line). If full, fuel delivery is OK.</li>
+        <li>Inspect the main jet and pilot jet for blockage. Even a partially blocked pilot jet causes lean stumble and no-start when cold. Clean with carburettor cleaner and compressed air — never use wire through the jet orifice.</li>
         <li>Check the float needle valve: a stuck or worn needle valve floods the engine. If the plug was found wet, this is likely the cause.</li>
-        <li>Check the emulsion tube passages are clear (the brass tube with holes inside the carburetor body).</li>
+        <li>Check the emulsion tube passages are clear (the brass tube with holes inside the carburettor body).</li>
       </ol>
     </div>
 
@@ -318,8 +318,8 @@
       <h3>2C — Auto-Choke (Thermostatic Enricher) Check</h3>
       <p>Most GY6 50cc scooters use an automatic choke (enricher valve) instead of a manual choke lever. It is a wax-element or bimetal device that opens when cold (rich mixture) and closes when warm.</p>
       <ol>
-        <li>Locate the auto-choke on the side of the carburetor — a small cylindrical device with a wire or hose attached.</li>
-        <li><strong>Cold test:</strong> Disconnect the choke from the carburetor. When cold, the choke plunger should be extended (pushed out). If it is retracted when cold, the choke is stuck open — the engine will run lean and refuse to start cold.</li>
+        <li>Locate the auto-choke on the side of the carburettor — a small cylindrical device with a wire or hose attached.</li>
+        <li><strong>Cold test:</strong> Disconnect the choke from the carburettor. When cold, the choke plunger should be extended (pushed out). If it is retracted when cold, the choke is stuck open — the engine will run lean and refuse to start cold.</li>
         <li><strong>Warm test:</strong> After warming the choke with a heat gun or hot water for 1 minute, the plunger should retract. If it stays extended, it is stuck — the engine will run rich when warm and flood after warm-up.</li>
         <li>If the auto-choke is malfunctioning, replace it (inexpensive and widely available for GY6) or temporarily disconnect and use a manually operated enrichment procedure (crack throttle open slightly when starting cold).</li>
       </ol>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GY6 Spark Plug Replacement Guide — ISRM</title>
+  <title>GY6 Engine Oil Change Guide — ISRM</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
     .guide-header {
@@ -161,6 +161,8 @@
       .guide-header h1 { font-size: 1.7rem; }
       .guide-content { padding: 1.5rem 1rem 3rem; }
       .breadcrumb { padding: 0.9rem 1rem; }
+      .nav-menu { display: none; }
+      .nav-toggle { display: block; }
     }
   </style>
 </head>
@@ -190,16 +192,16 @@
     <span>›</span>
     <a href="index.html">Repair Guides</a>
     <span>›</span>
-    Spark Plug Replacement
+    GY6 Engine Oil Change
   </div>
 
   <!-- Page Hero -->
   <section class="page-hero">
     <div class="page-hero-inner">
       <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
-        <a href="../index.html">ISRM Home</a><span>›</span><a href="index.html">Repair Guides</a><span>›</span>GY6 Spark Plug Replacement Guide
+        <a href="../index.html">ISRM Home</a><span>›</span><a href="index.html">Repair Guides</a><span>›</span>GY6 Engine Oil Change Guide
       </div>
-      <h1>GY6 Spark Plug Replacement Guide</h1>
+      <h1>GY6 Engine Oil Change Guide</h1>
     </div>
   </section>
 
@@ -247,98 +249,87 @@
   <!-- Guide Content -->
   <main class="guide-content">
 
-    <p>The spark plug is one of the cheapest and most impactful maintenance items on any petrol scooter. A worn or incorrectly gapped plug causes hard starting, rough idle, misfires, and increased fuel consumption. Replacing it takes 10–15 minutes and costs less than €5 for a standard NGK.</p>
-
-    <h2>Spark Plug Specifications</h2>
-    <table>
-      <tr><th>Engine</th><th>Standard Plug</th><th>Upgrade (Iridium)</th><th>Gap</th></tr>
-      <tr><td>GY6 50cc (139QMB)</td><td>NGK C7HSA</td><td>NGK CR7HIX</td><td>0.6–0.7 mm</td></tr>
-      <tr><td>GY6 125/150cc (157QMJ)</td><td>NGK CR7HSA</td><td>NGK CR7HIX</td><td>0.6–0.7 mm</td></tr>
-      <tr><td>Vespa Primavera 125 iGet</td><td>NGK ILZKBR7B8DG (OEM)</td><td>—</td><td>0.7–0.8 mm</td></tr>
-    </table>
-
-    <div class="callout callout-tip">
-      💡 <strong>Tip:</strong> Keep a spare NGK CR7HSA under your seat. It weighs nothing, costs under €4, and can save a long walk home if the plug fails on the road.
-    </div>
-
-    <h2>Tools &amp; Materials Required</h2>
-    <ul>
-      <li>Spark plug socket — <strong>16 mm</strong> for most GY6 engines (check your cap diameter first)</li>
-      <li>Socket wrench extension (the plug is often deep in the head)</li>
-      <li>Feeler gauge (to verify the gap on the new plug)</li>
-      <li>Torque wrench (optional but recommended — 10–14 Nm)</li>
-      <li>Compressed air or a rag to clean the plug recess</li>
-      <li>New spark plug (see specifications above)</li>
-    </ul>
-
-    <h2>Reading the Old Plug — What It Tells You</h2>
-    <p>Before discarding the old plug, inspect the electrode. The color and condition reveal a lot about engine health:</p>
-    <table>
-      <tr><th>Electrode appearance</th><th>Diagnosis</th><th>Action</th></tr>
-      <tr><td>Light tan/grey, slight electrode wear</td><td>✅ Normal — engine running correctly</td><td>Replace at service interval</td></tr>
-      <tr><td>Dry black, sooty carbon deposits</td><td>Rich mixture or clogged air filter</td><td>Check/clean air filter; check carb jetting</td></tr>
-      <tr><td>Wet/oily, black</td><td>Oil in combustion — worn piston rings or valve seals</td><td>Engine inspection needed</td></tr>
-      <tr><td>White or pale grey, blistered</td><td>Lean mixture or overheating</td><td>Check fuel delivery, coolant/air flow</td></tr>
-      <tr><td>Rounded/eroded electrode</td><td>Normal wear — replace now</td><td>Standard replacement</td></tr>
-    </table>
+    <p>The GY6 is a high-revving, air-cooled single-cylinder engine. Because it has no separate gearbox oil (the clutch and transmission share the engine oil), using the correct oil type and changing it regularly is critical. Neglected oil turns black and acidic within 2,000–3,000 km, causing accelerated clutch wear and premature piston and camshaft wear.</p>
 
     <div class="video-embed">
-      <div class="video-embed-title">🎬 Video Guide — Replacing the Spark Plug on a Chinese Scooter (GY6)</div>
+      <div class="video-embed-title">🎬 Video Guide — GY6 Engine Oil Change Walkthrough</div>
       <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/oHWW1GAanqo"
-          title="Replacing Spark Plug on Chinese Scooter GY6"
+        <iframe src="https://www.youtube.com/embed/lf1vQvWx63U"
+          title="GY6 Engine Oil Change Tutorial"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
       </div>
-      <p class="video-source"><strong>Video:</strong> "Replacing Spark Plug on Chinese Scooter GY6" | YouTube &nbsp;
-        <a href="https://www.youtube.com/watch?v=oHWW1GAanqo" target="_blank" rel="noopener">↗ Watch on YouTube</a>
+      <p class="video-source"><strong>Video:</strong> "GY6 Engine Oil Change Tutorial" | YouTube &nbsp;
+        <a href="https://www.youtube.com/watch?v=lf1vQvWx63U" target="_blank" rel="noopener">↗ Watch on YouTube</a>
       </p>
     </div>
 
-    <h2>Step-by-Step Replacement Procedure</h2>
-    <ol>
-      <li><strong>Let the engine cool for at least 10 minutes.</strong> Working on a hot engine risks burns and can cause the plug to seize in the aluminium head if torqued incorrectly when hot.</li>
-      <li><strong>Remove the spark plug cap</strong> by pulling it straight off the plug. Pull the cap, not the wire — pulling the wire can damage the HT lead connection inside the cap.</li>
-      <li><strong>Clean around the plug recess</strong> with compressed air or a dry rag. Any debris that falls into the cylinder when the plug is removed can score the bore.</li>
-      <li><strong>Unscrew the old plug</strong> counter-clockwise using the spark plug socket. If it is tight, apply penetrating oil (WD-40 or equivalent) around the base and wait 5 minutes before trying again. Do not force it.</li>
-      <li><strong>Inspect and note the condition</strong> of the old plug electrode as described in the reading guide above.</li>
-      <li><strong>Check the gap on the new plug</strong> with a feeler gauge. For GY6 engines, the gap should be <strong>0.6–0.7 mm</strong>. Most NGK plugs are pre-gapped but verify. To adjust, carefully bend only the side (ground) electrode — never the centre electrode.</li>
-      <li><strong>Thread the new plug in by hand</strong> for the first 3–4 turns. Cross-threading an aluminium cylinder head is an expensive mistake. If it does not thread smoothly by hand, stop and recheck alignment.</li>
-      <li><strong>Tighten with the socket.</strong> With a new plug and a copper washer seat: hand-tight + <strong>¼ turn</strong>. With a torque wrench: <strong>10–14 Nm</strong>. Do not overtighten — aluminium threads strip easily.</li>
-      <li><strong>Reconnect the spark plug cap</strong> firmly until it seats fully. A loose cap is a common cause of intermittent misfires.</li>
-      <li><strong>Start the engine</strong> and confirm it runs cleanly at idle and through the rev range.</li>
-    </ol>
-
-    <div class="callout callout-warn">
-      ⚠️ <strong>Note on anti-seize compound:</strong> Do not apply anti-seize paste to spark plug threads in aluminium heads. The torque specification is designed for bare threads. Anti-seize changes the effective clamping force and can cause under- or over-tightening.
-    </div>
-
-    <h2>Spark Plug Service Intervals</h2>
+    <h2>Oil Specification</h2>
     <table>
-      <tr><th>Plug type</th><th>Inspection</th><th>Replacement</th></tr>
-      <tr><td>Standard copper (NGK C7HSA / CR7HSA)</td><td>Every 3,000 km</td><td>Every 3,000–5,000 km</td></tr>
-      <tr><td>Iridium (NGK CR7HIX)</td><td>Every 5,000 km</td><td>Every 10,000–15,000 km</td></tr>
-      <tr><td>Vespa OEM iridium</td><td>Per Piaggio service schedule</td><td>Every 8,000–10,000 km</td></tr>
+      <tr><th>Engine</th><th>Recommended Oil</th><th>Standard</th><th>Capacity</th></tr>
+      <tr><td>GY6 50cc (139QMB)</td><td>10W-40 or 15W-40</td><td>JASO MA or MA2</td><td>0.7–0.8 litres</td></tr>
+      <tr><td>GY6 125/150cc (157QMJ)</td><td>10W-40 or 15W-40</td><td>JASO MA or MA2</td><td>0.9–1.0 litres</td></tr>
     </table>
 
-    <div class="callout callout-tip">
-      💡 <strong>Upgrade tip:</strong> The NGK CR7HIX iridium plug is a genuine upgrade for GY6 engines. It produces a stronger, more consistent spark which improves cold starting and smooth idle. At roughly €8–12 it costs more than the standard plug but lasts 3× longer.
+    <div class="callout callout-danger">
+      ⚠️ <strong>Do NOT use car engine oil (API SN/SM) or oil with friction modifiers</strong> on GY6 engines. Car oils are formulated to reduce clutch friction — on a wet-clutch GY6, this causes clutch slip. Always use motorcycle-spec oil rated JASO MA or JASO MA2.
     </div>
 
+    <p>For European riding conditions (Belgium, Netherlands, UK): <strong>10W-40 JASO MA2</strong> is the best all-round choice for year-round use. Switch to <strong>15W-40</strong> in summer above 30°C if you notice increased oil consumption.</p>
+
+    <h2>Tools &amp; Materials Required</h2>
+    <ul>
+      <li>17 mm socket or spanner (drain bolt, on most GY6 engines)</li>
+      <li>Drain tray or container (at least 1 litre capacity)</li>
+      <li>New oil (see specification above)</li>
+      <li>Clean rag</li>
+      <li>Replacement drain bolt washer (copper or aluminium crush washer, 12 mm) — recommended each change</li>
+      <li>Dipstick or level markings (built into the oil filler cap on most GY6 engines)</li>
+    </ul>
+
+    <h2>Step-by-Step Oil Change Procedure</h2>
+    <ol>
+      <li><strong>Warm the engine for 3–5 minutes.</strong> Warm oil flows more freely and carries more suspended contaminants with it when drained. Do not run to full temperature — the oil will be dangerously hot.</li>
+      <li><strong>Place the scooter on its centre stand</strong> on a level surface. Tilt the scooter slightly to the right to help all the oil drain toward the drain plug.</li>
+      <li><strong>Position the drain tray</strong> beneath the engine oil drain bolt. The drain bolt is located at the lowest point of the engine crankcase — usually a 17 mm bolt on the underside.</li>
+      <li><strong>Remove the oil filler cap</strong> (the dipstick/cap on top of the engine) first. This allows air to enter and improves drainage.</li>
+      <li><strong>Remove the drain bolt</strong> counter-clockwise. Hold the drain tray underneath — oil will flow immediately. Allow 3–5 minutes for full drainage.</li>
+      <li><strong>Inspect the drain bolt:</strong> Check for metal particles (silvery flakes = normal fine wear; large particles or chunks = investigate further). Clean the bolt threads with a rag.</li>
+      <li><strong>Replace the drain bolt crush washer</strong> if reusing; always use a new washer if available. Reinstall the drain bolt and tighten to <strong>18–20 Nm</strong>. Do not overtighten — the aluminium crankcase threads strip at moderate torque.</li>
+      <li><strong>Refill with new oil</strong> through the filler cap opening. Add oil slowly — GY6 engines have a small capacity. Use a small funnel to avoid spills.</li>
+      <li><strong>Check the oil level</strong> using the dipstick or the marks on the filler cap. Insert the dipstick without threading it in (rest it on the threads), and read the level. Fill to the upper mark but not above it.</li>
+      <li><strong>Reinstall the filler cap</strong> and tighten firmly by hand.</li>
+      <li><strong>Start the engine and run for 2 minutes.</strong> Shut off and wait 2 minutes for oil to settle. Recheck the level and top up if needed.</li>
+      <li><strong>Check for leaks</strong> around the drain bolt and filler cap. Tighten if necessary.</li>
+    </ol>
+
+    <div class="callout callout-tip">
+      💡 <strong>Tip:</strong> The GY6 dipstick is notorious for giving misleading readings on a slanted surface. Always check oil level with the scooter perfectly vertical and on the centre stand.
+    </div>
+
+    <h2>Oil Filter Screen (Clean Every 3,000 km)</h2>
+    <p>Most GY6 engines do not have a replaceable spin-on oil filter. Instead, they have a <strong>strainer screen</strong> inside the crankcase near the drain bolt. Every third or fourth oil change, remove the screen and clean it with fresh oil or carburettor cleaner. A clogged strainer restricts oil flow and causes oil starvation in the engine top end.</p>
+    <p>On many GY6 50cc engines, the strainer screen is accessed by removing a small secondary plug beside the main drain bolt. Consult your engine's service manual for the exact location.</p>
+
+    <h2>Oil Change Intervals — Summary</h2>
+    <table>
+      <tr><th>Situation</th><th>Interval</th></tr>
+      <tr><td>New / freshly rebuilt engine (break-in)</td><td>First change at 300–500 km</td></tr>
+      <tr><td>Normal use, temperate climate</td><td>Every 1,000–1,500 km</td></tr>
+      <tr><td>Hot summer use, urban stop-start</td><td>Every 800–1,000 km</td></tr>
+      <tr><td>Annual minimum (if low km ridden)</td><td>Once per year regardless of km</td></tr>
+      <tr><td>Oil strainer screen cleaning</td><td>Every 3,000 km or 3 oil changes</td></tr>
+    </table>
+
     <h2>Applicable Models</h2>
-    <p>This procedure applies to all GY6-engined scooters including the <strong>BTC Riva</strong>, <strong>La Souris Sourini / City</strong>, <strong>Santini Capri</strong>, and all other <code>139QMB</code> / <code>157QMJ</code> engine family scooters. For Vespa Primavera and Sprint models, the plug location and cap type differ but the procedure is identical — consult your model's service manual for the exact plug recess location.</p>
+    <p>This procedure applies to all GY6-engined scooters including the <strong>BTC Riva</strong> (50cc Euro 2 and Euro 4), <strong>La Souris Sourini</strong> and <strong>La Souris City S</strong> (carburetted 50cc variants), <strong>Santini Capri</strong> (50cc), <strong>AGM VX50</strong>, <strong>Senzo Rivalux</strong>, <strong>GTS Toscana</strong>, and all other Chinese/Taiwanese scooters using the <code>139QMB</code> or <code>157QMJ</code> engine family.</p>
 
     <h2>Related Videos</h2>
     <div class="related-videos">
       <div class="video-card">
-        <h4>Spark Plug Gap Setting &amp; Installation — GY6</h4>
-        <p>Demonstrates how to check and correctly set the plug gap using a feeler gauge on NGK plugs for GY6 scooters before installation.</p>
-        <a href="https://www.youtube.com/watch?v=Zf5eEE0yivA" target="_blank" rel="noopener">Watch on YouTube →</a>
-      </div>
-      <div class="video-card">
-        <h4>Changing Spark Plug on a 150cc GY6 Scooter</h4>
-        <p>Full plug removal, inspection, gap check and installation on a 150cc GY6 scooter — includes plug socket choice and torque guidance.</p>
-        <a href="https://www.youtube.com/watch?v=DG10KTYJYEk" target="_blank" rel="noopener">Watch on YouTube →</a>
+        <h4>How to Change Oil on a 150cc GY6 Scooter</h4>
+        <p>Step-by-step oil drain, capacity and refill on a generic 150cc GY6 Chinese scooter — includes drain plug location and dipstick check.</p>
+        <a href="https://www.youtube.com/watch?v=8fpkz9ERKpk" target="_blank" rel="noopener">Watch on YouTube →</a>
       </div>
     </div>
 
@@ -346,8 +337,8 @@
 
   <!-- Footer -->
   <footer class="guide-footer">
-    <p>Page generated by ISRM Content Sync on 2026-05-07. Content summarised from external technical sources for educational purposes.</p>
-    <p style="margin-top: 0.5rem;">Always verify spark plug type and torque specification against your scooter's specific workshop manual.</p>
+    <p>Page auto-generated by ISRM Content Sync on 2026-05-07. Content summarised from external technical sources for educational purposes.</p>
+    <p style="margin-top: 0.5rem;">Always verify oil capacity and torque specifications against your scooter's specific workshop manual.</p>
     <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISRM Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Repair Guides</a></p>
   </footer>
 

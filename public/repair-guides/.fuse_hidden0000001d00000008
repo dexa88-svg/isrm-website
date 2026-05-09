@@ -94,7 +94,7 @@
   <h1>GY6 Carburetor Deep-Cleaning Guide</h1>
   <div class="meta">
     Added: 2026-05-08 &nbsp;|&nbsp; Sources: <a href="https://q9powersportsusa.com/blogs/technical-support-q9-powersports-usa/properly-clean-service-gy6-scooter" target="_blank" rel="noopener">q9powersportsusa.com</a>, <a href="https://www.scooterworks.com/blogs/news/carburetor-jetting-101" target="_blank" rel="noopener">scooterworks.com</a>, <a href="https://scooter.fandom.com/wiki/Tuning_a_carburetor" target="_blank" rel="noopener">scooter.fandom.com</a>
-    &nbsp;|&nbsp; <span class="tag">GY6</span> <span class="tag">Carburetor</span> <span class="tag">139QMB</span> <span class="tag">157QMJ</span>
+    &nbsp;|&nbsp; <span class="tag">GY6</span> <span class="tag">carburetor</span> <span class="tag">139QMB</span> <span class="tag">157QMJ</span>
   </div>
 
   <div class="source-box">
@@ -134,7 +134,7 @@
     <li>Place a rag or drain pan under the float bowl to catch residual fuel.</li>
   </ol>
 
-  <h2>2 — Remove the Carburetor</h2>
+  <h2>2 — Remove the carburetor</h2>
   <ol>
     <li>Loosen the intake manifold clamp screw (the band clamp connecting carburetor to engine inlet). Do not remove — just loosen until the carburetor can twist free.</li>
     <li>Loosen the air-box clamp in the same way on the air-filter side.</li>
@@ -155,7 +155,7 @@
   </ol>
 
   <table>
-    <tr><th>Engine</th><th>Typical Main Jet</th><th>Pilot Jet</th><th>Carburetor</th></tr>
+    <tr><th>Engine</th><th>Typical Main Jet</th><th>Pilot Jet</th><th>carburetor</th></tr>
     <tr><td>GY6 50cc (139QMB)</td><td>#75–#78</td><td>#35–#38</td><td>PD18J</td></tr>
     <tr><td>GY6 125cc (152QMI)</td><td>#95–#98</td><td>#38–#42</td><td>PD22J / CVK22</td></tr>
     <tr><td>GY6 150cc (157QMJ)</td><td>#98–#105</td><td>#38–#42</td><td>PD24J / CVK24</td></tr>
@@ -166,7 +166,7 @@
     <li><strong>Float bowl:</strong> Spray interior with carburetor cleaner, scrub with a soft brush, rinse, dry with compressed air.</li>
     <li><strong>Main jet:</strong> Hold up to light and check that the hole is clear and round. Spray cleaner through it. If blocked, use a bristle from the wire brush — never a drill bit or wire, which will enlarge the calibrated orifice.</li>
     <li><strong>Pilot jet:</strong> Same process. The pilot jet feeds fuel at idle and low throttle; a partially blocked pilot jet causes rough idle and stumbling below ¼ throttle.</li>
-    <li><strong>Carburetor body passages:</strong> Spray cleaner into every port and passage you can see, including the emulsion tube holes (the small holes in the main bore). Follow with compressed air from the opposite side to clear debris outward.</li>
+    <li><strong>carburetor body passages:</strong> Spray cleaner into every port and passage you can see, including the emulsion tube holes (the small holes in the main bore). Follow with compressed air from the opposite side to clear debris outward.</li>
     <li><strong>Needle and slide:</strong> Remove the top cap of the carburetor to extract the slide. Inspect the needle for wear (grooves, bends). Clean the slide bore with a cloth dampened in cleaner.</li>
     <li><strong>Air/fuel mixture screw:</strong> Count and record how many turns out it is currently set before removing. Remove it carefully (it may have a small O-ring, washer, and spring). Clean the passage with cleaner and air. Reinstall to the recorded position.</li>
   </ol>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News & Updates — ISRM</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 4rem 2rem 3rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "📰";
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem;
+      opacity: 0.07;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .page-hero-inner { max-width: 1100px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.75rem;
+    }
+    .page-hero p { color: var(--text-secondary); font-size: 1.05rem; max-width: 620px; margin-bottom: 1.5rem; }
+    .page-hero-stats { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .hero-stat { display: flex; flex-direction: column; gap: 0.15rem; }
+    .hero-stat-number { font-size: 1.6rem; font-weight: 700; color: var(--primary); line-height: 1; }
+    .hero-stat-label { font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .news-filters {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .news-filter {
+      padding: 0.6rem 1.2rem;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .news-filter.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+
+    .news-feed {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .news-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .news-item:hover {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-4px);
+    }
+
+    .news-header {
+      background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(0, 164, 204, 0.1));
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .news-title {
+      margin: 0;
+      color: var(--text-primary);
+      font-size: 1.3rem;
+    }
+
+    .news-badge {
+      background: var(--primary);
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .news-date {
+      color: var(--text-tertiary);
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .news-content {
+      padding: 2rem;
+    }
+
+    .news-excerpt {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .news-meta {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .meta-tag {
+      background: rgba(0, 164, 204, 0.1);
+      color: var(--accent);
+      padding: 0.4rem 0.8rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .news-header {
+        flex-direction: column;
+      }
+
+      .news-badge {
+        align-self: flex-start;
+      }
+
+      .news-filters {
+        flex-direction: column;
+      }
+
+      .news-filter {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      
+        <a href="../index.html" class="nav-brand">
+          <span class="brand-icon">⚙️</span>
+          <span class="brand-text">ISRM</span>
+        </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../community/index.html" class="nav-link">Community</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
+        <a href="../index.html">ISRM Home</a><span>›</span>News &amp; Updates
+      </div>
+      <h1>News &amp; Updates</h1>
+      <p>Latest repair guide additions, firmware releases, safety recalls, and community announcements for GY6 and Vespa/Piaggio scooter owners.</p>
+      <div class="page-hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-number">6</span>
+          <span class="hero-stat-label">Updates</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number">5</span>
+          <span class="hero-stat-label">Categories</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number">2026</span>
+          <span class="hero-stat-label">Season</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container" style="padding-top: 2rem; padding-bottom: 4rem;">
+    <div class="news-filters">
+      <button class="news-filter active" data-type="all">All Updates</button>
+      <button class="news-filter" data-type="firmware">Firmware</button>
+      <button class="news-filter" data-type="recall">Recalls</button>
+      <button class="news-filter" data-type="guide">New Guides</button>
+      <button class="news-filter" data-type="community">Community</button>
+    </div>
+
+    <div class="news-feed" id="newsFeed">
+      <article class="news-item" data-type="firmware">
+        <div class="news-header">
+          <div>
+            <div class="news-date">May 7, 2026</div>
+            <h3 class="news-title">Piaggio ECU Update v3.2.1 Released</h3>
+          </div>
+          <span class="news-badge">Firmware</span>
+        </div>
+        <div class="news-content">
+          <p class="news-excerpt">New firmware update available for Vespa Primavera and ZIP models. Includes fuel injection improvements and cold-start fixes.</p>
+          <div class="news-meta">
+            <span class="meta-tag">Vespa</span>
+            <span class="meta-tag">Injector</span>
+            <span class="meta-tag">ECU</span>
+          </div>
+          <a href="#" class="read-more">Download Update →</a>
+        </div>
+      </article>
+
+      <article class="news-item" data-type="guide">
+        <div class="news-header">
+          <div>
+            <div class="news-date">May 5, 2026</div>
+            <h3 class="news-title">New GY6 Spring Maintenance Guide Published</h3>
+          </div>
+          <span class="news-badge">New Guide</span>
+        </div>
+        <div class="news-content">
+          <p class="news-excerpt">Comprehensive spring maintenance checklist for GY6 scooters. Learn what to inspect and service before the riding season begins.</p>
+          <div class="news-meta">
+            <span class="meta-tag">GY6</span>
+            <span class="meta-tag">Maintenance</span>
+            <span class="meta-tag">Seasonal</span>
+          </div>
+          <a href="../repair-guides/index.html" class="read-more">Read Guide →</a>
+        </div>
+      </article>
+
+      <article class="news-item" data-type="recall">
+        <div class="news-header">
+          <div>
+            <div class="news-date">May 1, 2026</div>
+            <h3 class="news-title">BTC Riva Fuel Line Recall Notice</h3>
+          </div>
+          <span class="news-badge">Recall</span>
+        </div>
+        <div class="news-content">
+          <p class="news-excerpt">Important safety notice: BTC Riva models 2024-2025 may have defective fuel lines. Check your vehicle serial number and contact dealer for free replacement.</p>
+          <div class="news-meta">
+            <span class="meta-tag">BTC</span>
+            <span class="meta-tag">Safety</span>
+            <span class="meta-tag">Riva</span>
+          </div>
+          <a href="#" class="read-more">Check Serial Number →</a>
+        </div>
+      </article>
+
+      <article class="news-item" data-type="community">
+        <div class="news-header">
+          <div>
+            <div class="news-date">April 28, 2026</div>
+            <h3 class="news-title">Community Vote: Most-Wanted Repair Guide</h3>
+          </div>
+          <span class="news-badge">Community</span>
+        </div>
+        <div class="news-content">
+          <p class="news-excerpt">Help us decide what repair guide to create next! Vote for your most-wanted topic among transmission overhaul, carb tuning, and electrical diagnostics.</p>
+          <div class="news-meta">
+            <span class="meta-tag">Community</span>
+            <span class="meta-tag">Vote</span>
+          </div>
+          <a href="../community/index.html" class="read-more">Vote Now →</a>
+        </div>
+      </article>
+
+      <article class="news-item" data-type="guide">
+        <div class="news-header">
+          <div>
+            <div class="news-date">April 25, 2026</div>
+            <h3 class="news-title">Advanced Carburetor Jetting Guide Updated</h3>
+          </div>
+          <span class="news-badge">Updated</span>
+        </div>
+        <div class="news-content">
+          <p class="news-excerpt">Major update to our carburetor jetting guide with new diagrams, tools recommendations, and altitude adjustment tables for different regions.</p>
+          <div class="news-meta">
+            <span class="meta-tag">GY6</span>
+            <span class="meta-tag">Carburetor</span>
+            <span class="meta-tag">Advanced</span>
+          </div>
+          <a href="../repair-guides/index.html" class="read-more">Read Updated Guide →</a>
+        </div>
+      </article>
+
+      <article class="news-item" data-type="firmware">
+        <div class="news-header">
+          <div>
+            <div class="news-date">April 20, 2026</div>
+            <h3 class="news-title">Diagnostic Tool for Vespa Emission Systems</h3>
+          </div>
+          <span class="news-badge">New Tool</span>
+        </div>
+        <div class="news-content">
+          <p class="news-excerpt">New interactive diagnostic tool helps troubleshoot catalytic converter, EGR, and oxygen sensor issues on Vespa Primavera and ZIP models.</p>
+          <div class="news-meta">
+            <span class="meta-tag">Vespa</span>
+            <span class="meta-tag">Diagnostics</span>
+            <span class="meta-tag">Emissions</span>
+          </div>
+          <a href="../diagnostics/index.html" class="read-more">Use Diagnostic Tool →</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>ISRM</h4>
+          <p>Interactive Scooter Repair Manuals</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../repair-guides/index.html">Guides</a></li>
+            <li><a href="../models/index.html">Models</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Last sync: 2026-05-07</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    const newsFilters = document.querySelectorAll('.news-filter');
+    const newsItems = document.querySelectorAll('.news-item');
+
+    newsFilters.forEach(filter => {
+      filter.addEventListener('click', () => {
+        const type = filter.getAttribute('data-type');
+        newsFilters.forEach(f => f.classList.remove('active'));
+        filter.classList.add('active');
+
+        newsItems.forEach(item => {
+          const itemType = item.getAttribute('data-type');
+          if (type === 'all' || itemType === type) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

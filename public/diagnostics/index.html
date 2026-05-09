@@ -19,6 +19,17 @@
     .guides-section-inner { max-width: 1100px; margin: 0 auto; }
     .guides-count { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem; }
     .guides-count strong { color: var(--text-primary); }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-tertiary);
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-label:first-child { margin-top: 0; }
   </style>
 </head>
 <body>
@@ -43,9 +54,9 @@
         <a href="../index.html">ISRM Home</a><span>›</span>Diagnostics
       </div>
       <h1>Diagnostics</h1>
-      <p>Fault codes, error symptoms, and troubleshooting trees for carburetted and EFI petrol scooters. Start with a symptom, end with a fix.</p>
+      <p>Fault codes, error symptoms, and troubleshooting trees for carbureted and EFI petrol scooters. Start with a symptom, end with a fix.</p>
       <div class="page-hero-stats">
-        <div class="hero-stat"><span class="hero-stat-number">2</span><span class="hero-stat-label">Guides</span></div>
+        <div class="hero-stat"><span class="hero-stat-number">8</span><span class="hero-stat-label">Guides</span></div>
         <div class="hero-stat"><span class="hero-stat-number">Carb + EFI</span><span class="hero-stat-label">Coverage</span></div>
         <div class="hero-stat"><span class="hero-stat-number">Free</span><span class="hero-stat-label">Always</span></div>
       </div>
@@ -54,7 +65,10 @@
 
   <section class="guides-section">
     <div class="guides-section-inner">
-      <p class="guides-count"><strong>2</strong> diagnostic guides</p>
+      <p class="guides-count"><strong>8</strong> diagnostic guides</p>
+
+      <!-- NO-START DIAGNOSIS -->
+      <div class="section-label">Won't Start</div>
       <div class="guides-grid">
 
         <article class="guide-card">
@@ -62,12 +76,42 @@
           <h3>Scooter Won't Start — Troubleshooting Checklist</h3>
           <p>Systematic checklist for diagnosing a GY6 scooter that cranks but won't fire: spark, fuel, compression, and electrics.</p>
           <div class="card-meta">
-            <span class="tag">Carburettor</span>
+            <span class="tag">Carburetor</span>
             <span class="tag">Ignition</span>
             <span class="time">20 min</span>
           </div>
           <a href="gy6-no-start-troubleshooting.html" class="read-more">Read Guide</a>
         </article>
+
+        <article class="guide-card">
+          <div class="card-tag">GY6</div>
+          <h3>Side Stand Kill Switch — No-Start Diagnosis</h3>
+          <p>How to test and diagnose a faulty side stand inhibitor switch that prevents the engine from starting, including bypass test and replacement.</p>
+          <div class="card-meta">
+            <span class="tag">Electrical</span>
+            <span class="tag">Kill Switch</span>
+            <span class="time">15 min</span>
+          </div>
+          <a href="gy6-side-stand-kill-switch.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card">
+          <div class="card-tag">GY6 · Piaggio</div>
+          <h3>Dirty Handlebar Buttons — No-Start Diagnosis &amp; Fix</h3>
+          <p>Kill switch and starter button corrosion are a frequent cause of electrical no-start on older scooters. How to test, clean, and replace.</p>
+          <div class="card-meta">
+            <span class="tag">Electrical</span>
+            <span class="tag">Buttons</span>
+            <span class="time">20 min</span>
+          </div>
+          <a href="gy6-dirty-buttons-no-start.html" class="read-more">Read Guide</a>
+        </article>
+
+      </div>
+
+      <!-- FUEL AND IDLE -->
+      <div class="section-label">Fuel System &amp; Idle</div>
+      <div class="guides-grid">
 
         <article class="guide-card">
           <div class="card-tag">GY6 · EFI</div>
@@ -81,7 +125,66 @@
           <a href="gy6-efi-fuel-injection-troubleshooting.html" class="read-more">Read Guide</a>
         </article>
 
+        <article class="guide-card">
+          <div class="card-tag">GY6 · EFI</div>
+          <h3>EFI CEL Flash Codes — Manual Diagnostic Mode</h3>
+          <p>How to enter manual diagnostic mode on GY6 EFI scooters and read flash code sequences. Full code reference table with causes and severity.</p>
+          <div class="card-meta">
+            <span class="tag">EFI</span>
+            <span class="tag">Fault Codes</span>
+            <span class="tag">CEL</span>
+            <span class="time">15 min</span>
+          </div>
+          <a href="gy6-efi-cel-flash-codes.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card">
+          <div class="card-tag">GY6</div>
+          <h3>Carburetor Pilot &amp; Idle Jet — Diagnosis &amp; Cleaning</h3>
+          <p>The blocked pilot jet is the number one cause of idle failure on carbureted GY6 scooters. How to identify, remove, clean, and adjust the pilot circuit.</p>
+          <div class="card-meta">
+            <span class="tag">Carburetor</span>
+            <span class="tag">Idle</span>
+            <span class="tag">Pilot Jet</span>
+            <span class="time">45 min</span>
+          </div>
+          <a href="gy6-carburetor-pilot-idle-jet.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card">
+          <div class="card-tag">GY6 · Piaggio</div>
+          <h3>Air Leak &amp; Vacuum Sucking — Diagnosis</h3>
+          <p>Unmetered air entering the intake causes erratic idle, lean running, and hard starts. How to locate and fix air leaks using the carb cleaner spray test.</p>
+          <div class="card-meta">
+            <span class="tag">Carburetor</span>
+            <span class="tag">EFI</span>
+            <span class="tag">Air Leak</span>
+            <span class="time">20 min</span>
+          </div>
+          <a href="gy6-air-leak-diagnosis.html" class="read-more">Read Guide</a>
+        </article>
+
       </div>
+
+      <!-- TRANSMISSION AND NOISE -->
+      <div class="section-label">Transmission &amp; Noise</div>
+      <div class="guides-grid">
+
+        <article class="guide-card">
+          <div class="card-tag">GY6 · Piaggio</div>
+          <h3>Metallic Noise from Engine — CVT Roller Diagnosis</h3>
+          <p>Metallic rattling from the CVT cover at low to mid throttle is the classic sign of worn variator rollers. How to confirm, inspect, and replace them.</p>
+          <div class="card-meta">
+            <span class="tag">CVT</span>
+            <span class="tag">Variator</span>
+            <span class="tag">Noise</span>
+            <span class="time">25 min</span>
+          </div>
+          <a href="gy6-cvt-roller-noise-diagnosis.html" class="read-more">Read Guide</a>
+        </article>
+
+      </div>
+
     </div>
   </section>
 

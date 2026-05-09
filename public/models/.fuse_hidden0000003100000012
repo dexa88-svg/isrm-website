@@ -115,7 +115,7 @@
     ⚠️ <strong>Important:</strong> Euro 5 models (from 2021 onwards) use electronic fuel injection (EFI) and do NOT have a carburetor. Carburetor adjustment guides do not apply to these models. Fuel injection faults typically require a diagnostic tool (OBD reader) to read ECU fault codes.
   </div>
 
-  <h2>Technical Specifications (GY6 Carbureted Variants)</h2>
+  <h2>Technical Specifications (GY6 carbureted Variants)</h2>
   <table>
     <tr><th>Specification</th><th>Value</th></tr>
     <tr><td>Engine type</td><td>4-stroke, single cylinder, air-cooled, OHC</td></tr>
@@ -144,7 +144,7 @@
   <h2>Cold-Start Problems</h2>
   <p>The most frequently reported issue on Dutch scooter forums is difficulty starting in cold or damp weather. The root causes are typically the <strong>auto-choke thermostatic element</strong> becoming sluggish in temperatures below 5°C, a partially blocked pilot jet, or a slightly low float level. See the <a href="../repair-guides/gy6-carburetor-adjustment-guide.html">GY6 Carburetor Adjustment Guide</a> and <a href="gy6-no-start-troubleshooting.html">GY6 No-Start Troubleshooting</a> for systematic diagnosis.</p>
 
-  <h2>Carburetor Type</h2>
+  <h2>carburetor Type</h2>
   <p>La Souris Sourini and City S carbureted models typically use a <strong>Rongmao</strong> or <strong>Keihin PD18J clone</strong> carburetor. Pilot jet size is typically <code>35</code>–<code>38</code> and main jet is typically <code>72</code>–<code>78</code> for the restricted 25 km/h snorfiets version.</p>
 
   <h2>Lighting</h2>

@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GY6 EFI CEL Flash Codes — Manual Diagnostic Mode — ISRM</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .guide-header {
+      background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem 2rem;
+    }
+    .guide-header-inner { max-width: 900px; margin: 0 auto; }
+    .guide-header h1 {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0.9rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+    .guide-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+      margin-bottom: 1rem;
+    }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+    .guide-tag {
+      background: rgba(0, 168, 204, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(0, 168, 204, 0.3);
+      padding: 0.25rem 0.7rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+    .applies-to {
+      background: rgba(255, 107, 53, 0.07);
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem;
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .applies-to strong { color: var(--text-primary); }
+    .guide-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 4rem;
+    }
+    .guide-content h2 {
+      font-size: 1.55rem;
+      color: var(--text-primary);
+      margin-top: 2.5rem;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 0; margin-bottom: 0.75rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th {
+      background: var(--surface-2);
+      color: var(--text-primary);
+      font-weight: 600;
+      padding: 0.7rem 1rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26, 35, 50, 0.6); }
+
+    .callout {
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .callout strong { color: var(--text-primary); }
+    .callout-tip {
+      background: rgba(6, 167, 125, 0.08);
+      border: 1px solid rgba(6, 167, 125, 0.25);
+      border-left: 4px solid var(--success);
+    }
+    .callout-warn {
+      background: rgba(245, 166, 35, 0.08);
+      border: 1px solid rgba(245, 166, 35, 0.3);
+      border-left: 4px solid var(--warning);
+    }
+    .callout-danger {
+      background: rgba(214, 48, 49, 0.08);
+      border: 1px solid rgba(214, 48, 49, 0.3);
+      border-left: 4px solid var(--danger);
+    }
+
+    .check-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+    .check-section:hover { border-color: rgba(0, 168, 204, 0.4); }
+
+    /* Flash code visualizer */
+    .flash-demo {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin: 0.75rem 0 0.5rem;
+      flex-wrap: wrap;
+    }
+    .flash-long {
+      display: inline-block;
+      width: 28px;
+      height: 14px;
+      background: var(--warning);
+      border-radius: 3px;
+      opacity: 0.9;
+    }
+    .flash-short {
+      display: inline-block;
+      width: 10px;
+      height: 14px;
+      background: var(--accent);
+      border-radius: 3px;
+      opacity: 0.9;
+    }
+    .flash-gap {
+      display: inline-block;
+      width: 16px;
+      height: 14px;
+    }
+    .flash-label {
+      font-size: 0.8rem;
+      color: var(--text-tertiary);
+      margin-left: 0.5rem;
+    }
+    .code-table td:first-child {
+      font-weight: 700;
+      color: var(--warning);
+      white-space: nowrap;
+    }
+    .code-table td:nth-child(2) { color: var(--text-primary); }
+    .severity-high { color: var(--danger); font-weight: 600; }
+    .severity-med  { color: var(--warning); font-weight: 600; }
+    .severity-low  { color: var(--success); font-weight: 600; }
+
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 3rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "💡";
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem;
+      opacity: 0.07;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+
+    .guide-footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.825rem;
+      color: var(--text-tertiary);
+    }
+
+    @media (max-width: 768px) {
+      .guide-header h1 { font-size: 1.7rem; }
+      .guide-content { padding: 1.5rem 1rem 3rem; }
+      .breadcrumb { padding: 0.9rem 1rem; }
+      .nav-menu { display: none; }
+      .nav-toggle { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-icon">⚙️</span>
+        <span class="brand-text">ISRM</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link active">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../community/index.html" class="nav-link">Community</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="../index.html">ISRM Home</a>
+    <span>›</span>
+    <a href="index.html">Diagnostics</a>
+    <span>›</span>
+    GY6 EFI CEL Flash Codes
+  </div>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <h1>GY6 EFI — CEL Flash Codes &amp; Manual Diagnostic Mode</h1>
+      <div class="guide-meta">
+        <span>EFI / Fuel Injection</span>
+        <span class="guide-meta-sep">·</span>
+        <span>~15 min to read</span>
+        <span class="guide-meta-sep">·</span>
+        <span>No tools required</span>
+      </div>
+      <div class="guide-tags">
+        <span class="guide-tag">GY6 EFI</span>
+        <span class="guide-tag">Fault Codes</span>
+        <span class="guide-tag">CEL / MIL</span>
+        <span class="guide-tag">Diagnostics</span>
+        <span class="guide-tag">Piaggio</span>
+      </div>
+      <div class="applies-to">
+        <strong>Applies to:</strong> GY6 EFI-equipped scooters (125cc, 150cc) with KEIHIN, DELPHI, Synerject, or clone ECUs; Piaggio/Vespa Primavera 125, Sprint 125, Vespa Zip 4T, and most Chinese EFI 4-stroke scooters from 2010 onwards. <em>Carbureted engines do not have a CEL — see the <a href="gy6-no-start-troubleshooting.html">no-start carb guide</a> instead.</em>
+      </div>
+    </div>
+  </section>
+
+  <main class="guide-content">
+
+    <h2>What Is the CEL / MIL?</h2>
+    <p>The <strong>Check Engine Light (CEL)</strong>, also called the <strong>Malfunction Indicator Lamp (MIL)</strong>, is the dashboard warning light — typically an engine outline icon or the words "CHECK" or "INJECTION." When the ECU detects a sensor reading outside its acceptable range, it stores a fault code and illuminates this light.</p>
+    <p>Most GY6 EFI ECUs support a built-in <strong>manual diagnostic mode</strong> that flashes stored fault codes as a sequence of light pulses — no OBD scanner required. This guide explains how to enter that mode and how to read the resulting flash patterns.</p>
+
+    <div class="callout callout-warn">
+      <strong>⚠ Note on ECU variants:</strong> Chinese GY6 EFI scooters may use any of several ECU types (KEIHIN PGM-FI clones, Delphi MT05 variants, proprietary clones). Flash code sequences and activation procedures are largely standardised across these, but minor differences exist. If in doubt, cross-reference your scooter's service manual.
+    </div>
+
+    <h2>How to Enter Manual Diagnostic Mode</h2>
+
+    <div class="check-section">
+      <h3>Standard Activation Procedure (most GY6 EFI and Chinese EFI scooters)</h3>
+      <ol>
+        <li>Park the scooter on its centre stand on level ground. Engine must be <strong>off</strong>.</li>
+        <li>Turn the ignition key to <strong>ON</strong> — do not start the engine.</li>
+        <li>Watch the CEL: it will illuminate for ~2 seconds (self-check), then go out. This is normal.</li>
+        <li>If no fault is stored, the CEL stays off and you are done — no codes present.</li>
+        <li>If one or more fault codes are stored, the CEL will begin <strong>flashing sequences automatically</strong> after the self-check (no further input needed on most units).</li>
+      </ol>
+      <p style="margin-top:0.75rem; color: var(--text-secondary);">On some ECUs (particularly older Piaggio D-Tronik / Wave ECU), the manual mode requires a specific sequence — see below.</p>
+    </div>
+
+    <div class="check-section">
+      <h3>Piaggio / Vespa Activation Procedure (D-Tronik ECU, pre-2015)</h3>
+      <ol>
+        <li>Turn ignition key to <strong>OFF</strong>.</li>
+        <li>Turn ignition key to <strong>ON</strong> (do not start).</li>
+        <li>Immediately turn back to <strong>OFF</strong>.</li>
+        <li>Turn to <strong>ON</strong> again within 5 seconds.</li>
+        <li>The CEL will flash stored codes. If the CEL flashes once then holds steady for 3 seconds, no codes are stored.</li>
+      </ol>
+    </div>
+
+    <div class="check-section">
+      <h3>Activation with Diagnostic Toggle Wire (some Chinese ECUs)</h3>
+      <p>Some Chinese EFI scooters have a <strong>diagnostic wire</strong> — a short pigtail under the seat or near the ECU, usually <strong>white or green</strong>, with a connector plug or bare terminal. To enter diagnostic mode:</p>
+      <ol>
+        <li>Turn ignition to <strong>OFF</strong>.</li>
+        <li>Connect the diagnostic wire to <strong>ground</strong> (any clean chassis bolt).</li>
+        <li>Turn ignition to <strong>ON</strong>.</li>
+        <li>The CEL will flash the stored codes.</li>
+        <li>Disconnect the wire from ground when done.</li>
+      </ol>
+    </div>
+
+    <h2>How to Read the Flash Codes</h2>
+    <p>Flash codes are expressed as two groups of pulses separated by a short pause. The <strong>first group</strong> (longer flashes) indicates the <strong>tens digit</strong>; the <strong>second group</strong> (shorter flashes) indicates the <strong>units digit</strong>. A longer pause separates one code from the next. If multiple codes are stored, the ECU cycles through all of them repeatedly.</p>
+
+    <div class="callout callout-tip">
+      <strong>Reading tip:</strong> Count the number of long flashes first, then count the short flashes after the brief pause. Write each pair down — for example, 1 long + 2 short = Code <strong>12</strong>.
+    </div>
+
+    <h3>Flash Pattern Examples</h3>
+    <table>
+      <tr>
+        <th>What you see (CEL)</th>
+        <th>How to read it</th>
+        <th>Code</th>
+      </tr>
+      <tr>
+        <td>
+          <div class="flash-demo">
+            <span class="flash-long"></span>
+            <span class="flash-gap"></span>
+            <span class="flash-short"></span><span class="flash-short"></span>
+          </div>
+        </td>
+        <td>1 long flash, pause, 2 short flashes</td>
+        <td><strong>12</strong></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="flash-demo">
+            <span class="flash-long"></span><span class="flash-long"></span>
+            <span class="flash-gap"></span>
+            <span class="flash-short"></span>
+          </div>
+        </td>
+        <td>2 long flashes, pause, 1 short flash</td>
+        <td><strong>21</strong></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="flash-demo">
+            <span class="flash-long"></span><span class="flash-long"></span><span class="flash-long"></span>
+            <span class="flash-gap"></span>
+            <span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span>
+          </div>
+        </td>
+        <td>3 long flashes, pause, 3 short flashes</td>
+        <td><strong>33</strong></td>
+      </tr>
+    </table>
+
+    <h2>GY6 EFI Flash Code Reference Table</h2>
+    <p>The following codes are used by GY6-compatible EFI ECUs (KEIHIN PGM-FI clones, MT05-type, and Piaggio D-Tronik variants). Severity indicates how urgently the fault should be addressed.</p>
+
+    <table class="code-table">
+      <tr>
+        <th>Code</th>
+        <th>Fault Description</th>
+        <th>Affected Component</th>
+        <th>Severity</th>
+        <th>Typical Cause</th>
+      </tr>
+      <tr>
+        <td>01</td>
+        <td>No fault stored / System OK</td>
+        <td>—</td>
+        <td><span class="severity-low">None</span></td>
+        <td>Normal operation. CEL may have been triggered by a transient event.</td>
+      </tr>
+      <tr>
+        <td>07</td>
+        <td>Throttle Position Sensor (TPS) — signal out of range</td>
+        <td>TPS</td>
+        <td><span class="severity-high">High</span></td>
+        <td>Faulty TPS, wiring break, or loose connector. Engine may run rich/lean or surge.</td>
+      </tr>
+      <tr>
+        <td>08</td>
+        <td>Throttle Position Sensor (TPS) — low voltage</td>
+        <td>TPS</td>
+        <td><span class="severity-high">High</span></td>
+        <td>Short circuit in TPS signal wire or failed TPS. Check 5 V reference at ECU pin.</td>
+      </tr>
+      <tr>
+        <td>09</td>
+        <td>Throttle Position Sensor (TPS) — high voltage</td>
+        <td>TPS</td>
+        <td><span class="severity-high">High</span></td>
+        <td>Open circuit in TPS or wiring. Replace TPS if voltage &gt; 4.8 V at idle.</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Coolant Temperature Sensor (CTS / ECT) — short to ground</td>
+        <td>CTS</td>
+        <td><span class="severity-med">Medium</span></td>
+        <td>Sensor or wiring shorted to ground. Cold start enrichment may be incorrect.</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>Coolant Temperature Sensor (CTS / ECT) — open circuit</td>
+        <td>CTS</td>
+        <td><span class="severity-med">Medium</span></td>
+        <td>Sensor unplugged or open circuit. ECU defaults to a fixed temperature; cold starts may be rough.</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>Inlet Air Temperature Sensor (IAT) — short to ground</td>
+        <td>IAT</td>
+        <td><span class="severity-low">Low</span></td>
+        <td>IAT sensor or wiring short. Engine runs but fuel mapping is degraded.</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>Inlet Air Temperature Sensor (IAT) — open circuit</td>
+        <td>IAT</td>
+        <td><span class="severity-low">Low</span></td>
+        <td>Sensor unplugged. Often found combined with MAP sensor in a single unit (T-MAP).</td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>MAP / IAP Sensor — voltage out of range</td>
+        <td>MAP / IAP</td>
+        <td><span class="severity-high">High</span></td>
+        <td>Failed MAP sensor, split vacuum hose to sensor, or clogged intake. Engine may stall or idle roughly.</td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td>MAP / IAP Sensor — low voltage</td>
+        <td>MAP / IAP</td>
+        <td><span class="severity-high">High</span></td>
+        <td>Wiring short or failed sensor. Check vacuum hose integrity and sensor 5 V supply.</td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td>MAP / IAP Sensor — high voltage</td>
+        <td>MAP / IAP</td>
+        <td><span class="severity-high">High</span></td>
+        <td>Open circuit to MAP sensor. Replace sensor if supply voltage is correct but signal is high.</td>
+      </tr>
+      <tr>
+        <td>21</td>
+        <td>O₂ Sensor — lean mixture detected</td>
+        <td>Lambda / O₂ sensor</td>
+        <td><span class="severity-med">Medium</span></td>
+        <td>Air leak (vacuum leak), weak fuel pump, blocked injector, or failed O₂ sensor. See <a href="gy6-air-leak-diagnosis.html">air leak guide</a>.</td>
+      </tr>
+      <tr>
+        <td>22</td>
+        <td>O₂ Sensor — rich mixture detected</td>
+        <td>Lambda / O₂ sensor</td>
+        <td><span class="severity-med">Medium</span></td>
+        <td>Leaking injector (dripping at rest), failed O₂ sensor, or high fuel pressure.</td>
+      </tr>
+      <tr>
+        <td>23</td>
+        <td>O₂ Sensor — no response / heater fault</td>
+        <td>Lambda / O₂ sensor</td>
+        <td><span class="severity-med">Medium</span></td>
+        <td>Sensor heater failed or open circuit. Closed-loop fuelling disabled; fuel economy affected.</td>
+      </tr>
+      <tr>
+        <td>29</td>
+        <td>Idle Speed Control (ISC) valve — fault</td>
+        <td>ISC / IAC valve</td>
+        <td><span class="severity-med">Medium</span></td>
+        <td>ISC valve stuck, blocked, or wiring fault. Idle may be too high, too low, or unstable.</td>
+      </tr>
+      <tr>
+        <td>33</td>
+        <td>Crankshaft Position Sensor (CKP) — signal absent</td>
+        <td>CKP sensor</td>
+        <td><span class="severity-high">High</span></td>
+        <td>Broken or disconnected CKP sensor. Engine may not start at all. Check reluctor wheel gap (0.5–1.5 mm).</td>
+      </tr>
+      <tr>
+        <td>34</td>
+        <td>Crankshaft Position Sensor (CKP) — intermittent signal</td>
+        <td>CKP sensor</td>
+        <td><span class="severity-high">High</span></td>
+        <td>Damaged reluctor ring teeth, wiring intermittent, or air gap too large. Can cause stalling under load.</td>
+      </tr>
+      <tr>
+        <td>36</td>
+        <td>Camshaft Position Sensor (CMP) — no signal</td>
+        <td>CMP sensor</td>
+        <td><span class="severity-high">High</span></td>
+        <td>Failed cam sensor or wiring break. Engine may still run using CKP only (degraded mode).</td>
+      </tr>
+      <tr>
+        <td>41</td>
+        <td>Fuel injector — circuit fault</td>
+        <td>Injector</td>
+        <td><span class="severity-high">High</span></td>
+        <td>Open or short circuit in injector wiring, or failed injector solenoid. Engine will not start correctly.</td>
+      </tr>
+      <tr>
+        <td>46</td>
+        <td>Ignition coil — primary circuit fault</td>
+        <td>Ignition coil</td>
+        <td><span class="severity-high">High</span></td>
+        <td>Open or short in coil primary winding or wiring. No spark. See <a href="../repair-guides/gy6-ignition-coil-guide.html">ignition coil guide</a>.</td>
+      </tr>
+      <tr>
+        <td>54</td>
+        <td>Fuel pump relay — no response</td>
+        <td>Fuel pump / relay</td>
+        <td><span class="severity-high">High</span></td>
+        <td>Failed fuel pump relay, blown fuse, or open circuit. Fuel pump does not prime on key-on. Engine will not start.</td>
+      </tr>
+      <tr>
+        <td>56</td>
+        <td>Battery / system voltage — low</td>
+        <td>Battery / charging</td>
+        <td><span class="severity-med">Medium</span></td>
+        <td>Voltage below ~10.5 V. Charge or replace battery. Check rectifier/regulator output (should be 13.5–14.5 V at idle).</td>
+      </tr>
+      <tr>
+        <td>57</td>
+        <td>Battery / system voltage — high</td>
+        <td>Rectifier / regulator</td>
+        <td><span class="severity-high">High</span></td>
+        <td>Voltage above ~15 V. Failed rectifier/regulator — replace immediately to prevent ECU and battery damage.</td>
+      </tr>
+      <tr>
+        <td>63</td>
+        <td>ECU internal fault — RAM or ROM error</td>
+        <td>ECU</td>
+        <td><span class="severity-high">High</span></td>
+        <td>ECU self-test failed. Try disconnecting battery for 10 minutes to reset. If persistent, ECU replacement likely required.</td>
+      </tr>
+    </table>
+
+    <h2>Clearing Stored Fault Codes</h2>
+    <div class="check-section">
+      <h3>Method 1 — Battery Disconnect (Universal)</h3>
+      <ol>
+        <li>Ensure the ignition is <strong>OFF</strong>.</li>
+        <li>Disconnect the <strong>negative (–) terminal</strong> from the battery.</li>
+        <li>Wait at least <strong>10 minutes</strong> for ECU capacitors to discharge fully.</li>
+        <li>Reconnect the battery. Start the engine and confirm the CEL is extinguished.</li>
+      </ol>
+      <div class="callout callout-warn" style="margin-top:0.75rem;">
+        <strong>Important:</strong> Clearing codes does not fix the underlying fault. If the root cause is not repaired, the code will return within a few minutes of running.
+      </div>
+    </div>
+    <div class="check-section">
+      <h3>Method 2 — Ignition Cycle Reset (some ECUs)</h3>
+      <p>Perform five full ignition ON → OFF cycles in quick succession. On some ECU types this triggers an adaptive memory reset. Codes may persist on other types — use Method 1 if codes return immediately.</p>
+    </div>
+
+    <h2>Sensor Location Reference</h2>
+    <table>
+      <tr><th>Sensor</th><th>Typical Location (GY6 125/150)</th><th>Connector Colour</th></tr>
+      <tr><td>MAP / IAP sensor</td><td>Intake manifold or air box, short vacuum hose</td><td>Black 3-pin</td></tr>
+      <tr><td>IAT sensor</td><td>Air filter box, or combined with MAP in T-MAP unit</td><td>Black 2-pin or 3-pin (T-MAP)</td></tr>
+      <tr><td>CTS sensor</td><td>Cylinder head coolant passage (liquid-cooled) or head fin (air-cooled simulacrum)</td><td>Black 2-pin</td></tr>
+      <tr><td>TPS</td><td>Side of throttle body, on throttle shaft</td><td>Black 3-pin</td></tr>
+      <tr><td>O₂ / Lambda</td><td>Exhaust header, 15–25 cm from cylinder head</td><td>Black 4-pin (heated)</td></tr>
+      <tr><td>CKP sensor</td><td>Left-side engine case, near flywheel/magneto</td><td>Black 3-pin</td></tr>
+      <tr><td>CMP sensor</td><td>Cylinder head cam cover, rear or side</td><td>Black 3-pin</td></tr>
+      <tr><td>ISC / IAC valve</td><td>Throttle body bypass circuit</td><td>Black 4-pin</td></tr>
+    </table>
+
+    <h2>Diagnostic Flow — CEL Is On</h2>
+    <div class="check-section">
+      <ol>
+        <li><strong>Enter manual diagnostic mode</strong> using the procedure above for your ECU type.</li>
+        <li><strong>Record all flash codes</strong> — multiple codes may be stored. Write every code down before starting repairs.</li>
+        <li><strong>Cross-reference the code table</strong> above to identify the affected component.</li>
+        <li><strong>Inspect wiring and connectors first</strong> — the majority of faults on Chinese EFI scooters are due to corroded connectors or chafed wiring, not failed sensors.</li>
+        <li><strong>Test the sensor</strong> with a multimeter (resistance, voltage, or signal as appropriate for the sensor type).</li>
+        <li><strong>Repair or replace</strong> as required.</li>
+        <li><strong>Clear the code</strong> (battery disconnect method) and retest.</li>
+        <li>If the same code returns immediately, recheck your repair. If a different code appears, continue through the code table.</li>
+      </ol>
+    </div>
+
+    <div class="callout callout-tip">
+      <strong>Pro tip:</strong> Always repair the highest-severity code first. A battery voltage fault (Code 56/57) can cause multiple secondary sensor codes to appear because sensor supply voltages are affected. Fixing the root voltage issue may clear several codes at once.
+    </div>
+
+    <h2>Related Guides</h2>
+    <ul>
+      <li><a href="gy6-efi-fuel-injection-troubleshooting.html">GY6 EFI Fuel Injection Full Troubleshooting Guide</a></li>
+      <li><a href="gy6-no-start-troubleshooting.html">GY6 Scooter Won't Start — Troubleshooting Checklist</a></li>
+      <li><a href="gy6-air-leak-diagnosis.html">Diagnosing Air Leaks and Vacuum Sucking</a></li>
+      <li><a href="../repair-guides/gy6-ignition-coil-guide.html">Ignition Coil Replacement Guide</a></li>
+    </ul>
+
+    <p style="margin-top:2rem; font-size:0.82rem; color:var(--text-tertiary);">
+      Sources: GY6 EFI service manuals (KEIHIN PGM-FI, Delphi MT05); Piaggio D-Tronik ECU documentation; community-verified flash code data from scootdawg.com and modernvespa.com forums. Licensed CC BY-SA 4.0.
+    </p>
+
+  </main>
+
+  <script src="../script.js"></script>
+
+  <footer class="guide-footer">
+    <p>ISRM — Interactive Scooter Repair Manuals. Content for educational purposes. CC BY-SA 4.0.</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISRM Home</a> · <a href="index.html" style="color: var(--accent);">← All Diagnostics</a></p>
+  </footer>
+
+</body>
+</html>

@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Videos — ISRM</title>
+  <title>Models — ISRM</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
     .page-hero { background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%); padding: 4rem 2rem 3rem; position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
-    .page-hero::before { content: "📹"; position: absolute; right: 6%; top: 50%; transform: translateY(-50%); font-size: 9rem; opacity: 0.07; pointer-events: none; line-height: 1; }
+    .page-hero::before { content: "🛵"; position: absolute; right: 6%; top: 50%; transform: translateY(-50%); font-size: 9rem; opacity: 0.07; pointer-events: none; line-height: 1; }
     .page-hero-inner { max-width: 1100px; margin: 0 auto; }
     .page-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); background: linear-gradient(135deg, var(--text-primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.75rem; }
     .page-hero p { color: var(--text-secondary); font-size: 1.05rem; max-width: 620px; margin-bottom: 1.5rem; }
@@ -19,46 +19,6 @@
     .guides-section-inner { max-width: 1100px; margin: 0 auto; }
     .guides-count { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem; }
     .guides-count strong { color: var(--text-primary); }
-
-    /* Video card preview thumbnail placeholder */
-    .video-thumb {
-      background: linear-gradient(135deg, #1a1a2e, #16213e);
-      border-radius: var(--radius-md);
-      height: 130px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.25rem;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
-    .video-thumb::after {
-      content: "▶";
-      font-size: 2rem;
-      color: rgba(255,255,255,0.6);
-      background: rgba(0,0,0,0.5);
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-left: 4px;
-    }
-    .video-thumb-label {
-      position: absolute;
-      bottom: 0.5rem;
-      left: 0.75rem;
-      background: var(--primary);
-      color: #fff;
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      text-transform: uppercase;
-    }
-    .guide-card:hover .video-thumb { border-color: var(--primary); }
   </style>
 </head>
 <body>
@@ -70,7 +30,7 @@
         <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
         <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
         <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
-        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../models/index.html" class="nav-link active">Models</a></li>
         <li><a href="../community/index.html" class="nav-link">Community</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle">☰</button>
@@ -80,13 +40,13 @@
   <section class="page-hero">
     <div class="page-hero-inner">
       <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
-        <a href="../index.html">ISRM Home</a><span>›</span>Videos
+        <a href="../index.html">ISRM Home</a><span>›</span>Models
       </div>
-      <h1>Video Tutorials</h1>
-      <p>Curated YouTube repair tutorials with structured summaries for GY6 and Piaggio/Vespa scooters. Each video is verified and summarised for quick reference.</p>
+      <h1>Scooter Models</h1>
+      <p>Model-specific technical overviews, maintenance schedules, common faults, and specs for GY6-platform and Piaggio/Vespa petrol scooters.</p>
       <div class="page-hero-stats">
-        <div class="hero-stat"><span class="hero-stat-number">1</span><span class="hero-stat-label">Tutorials</span></div>
-        <div class="hero-stat"><span class="hero-stat-number">YouTube</span><span class="hero-stat-label">Source</span></div>
+        <div class="hero-stat"><span class="hero-stat-number">2</span><span class="hero-stat-label">Models</span></div>
+        <div class="hero-stat"><span class="hero-stat-number">GY6 + Vespa</span><span class="hero-stat-label">Platforms</span></div>
         <div class="hero-stat"><span class="hero-stat-number">Free</span><span class="hero-stat-label">Always</span></div>
       </div>
     </div>
@@ -94,22 +54,31 @@
 
   <section class="guides-section">
     <div class="guides-section-inner">
-      <p class="guides-count"><strong>1</strong> video tutorial</p>
+      <p class="guides-count"><strong>2</strong> model overviews</p>
       <div class="guides-grid">
 
         <article class="guide-card">
-          <div class="video-thumb">
-            <span class="video-thumb-label">YouTube</span>
-          </div>
-          <div class="card-tag">GY6 · 150cc</div>
-          <h3>Carburetor &amp; Intake Change Tutorial</h3>
-          <p>Complete carburetor and intake manifold replacement on a GY6 157QMJ 150cc scooter — applicable to BTC Riva, Santini Capri, La Souris, and similar models.</p>
+          <div class="card-tag">Vespa · Piaggio</div>
+          <h3>Vespa Primavera 125 — Technical Overview</h3>
+          <p>Full specs, maintenance schedule, common faults, Euro 3/4/5 variants, and service manual resources for the Vespa Primavera 125 iGet engine.</p>
           <div class="card-meta">
-            <span class="tag">157QMJ</span>
-            <span class="tag">Carburetor</span>
-            <span class="time">Full tutorial</span>
+            <span class="tag">iGet</span>
+            <span class="tag">Fuel Injection</span>
+            <span class="time">Reference</span>
           </div>
-          <a href="gy6-carburetor-intake-change-tutorial.html" class="read-more">Watch &amp; Read</a>
+          <a href="vespa-primavera-125-technical-overview.html" class="read-more">View Model</a>
+        </article>
+
+        <article class="guide-card">
+          <div class="card-tag">GY6</div>
+          <h3>La Souris Sourini / City S — Model Overview</h3>
+          <p>Technical overview, specifications, and common repair information for the La Souris Sourini and City S GY6-platform scooters.</p>
+          <div class="card-meta">
+            <span class="tag">carburetor</span>
+            <span class="tag">139QMB</span>
+            <span class="time">Reference</span>
+          </div>
+          <a href="la-souris-sourini-city-overview.html" class="read-more">View Model</a>
         </article>
 
       </div>

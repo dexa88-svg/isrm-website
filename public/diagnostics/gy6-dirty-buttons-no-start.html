@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dirty Handlebar Buttons Causing No-Start — GY6 Scooter — ISRM</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .guide-content { max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .guide-content h2 { font-size: 1.55rem; color: var(--text-primary); margin-top: 2.5rem; margin-bottom: 0.9rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 0; margin-bottom: 0.75rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol { padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary); }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th { background: var(--surface-2); color: var(--text-primary); font-weight: 600; padding: 0.7rem 1rem; text-align: left; border: 1px solid var(--border); }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26, 35, 50, 0.6); }
+    .callout { padding: 1rem 1.25rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 1.5rem 0; font-size: 0.95rem; color: var(--text-secondary); }
+    .callout strong { color: var(--text-primary); }
+    .callout-tip { background: rgba(6, 167, 125, 0.08); border: 1px solid rgba(6, 167, 125, 0.25); border-left: 4px solid var(--success); }
+    .callout-warn { background: rgba(245, 166, 35, 0.08); border: 1px solid rgba(245, 166, 35, 0.3); border-left: 4px solid var(--warning); }
+    .check-section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+    .check-section:hover { border-color: rgba(0, 168, 204, 0.4); }
+    .pass { color: var(--success); font-weight: 700; }
+    .fail { color: var(--danger); font-weight: 700; }
+    .page-hero { background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%); padding: 3rem 2rem 2rem; position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
+    .page-hero::before { content: "🔘"; position: absolute; right: 6%; top: 50%; transform: translateY(-50%); font-size: 9rem; opacity: 0.07; pointer-events: none; line-height: 1; }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 { font-size: 2rem; line-height: 1.2; background: linear-gradient(135deg, var(--text-primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1.2rem; }
+    .breadcrumb { padding: 0.9rem 2rem; max-width: 900px; margin: 0 auto; font-size: 0.85rem; color: var(--text-tertiary); }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+    .guide-meta { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; font-size: 0.875rem; color: var(--text-tertiary); margin-bottom: 1rem; }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+    .guide-tag { background: rgba(0, 168, 204, 0.1); color: var(--accent); border: 1px solid rgba(0, 168, 204, 0.3); padding: 0.25rem 0.7rem; border-radius: 20px; font-size: 0.78rem; font-weight: 500; }
+    .applies-to { background: rgba(255, 107, 53, 0.07); border: 1px solid rgba(255, 107, 53, 0.2); border-left: 4px solid var(--primary); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 1rem 1.25rem; margin-top: 1.5rem; font-size: 0.95rem; color: var(--text-secondary); }
+    .applies-to strong { color: var(--text-primary); }
+    .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.5rem 0; }
+    .video-wrap { }
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-lg); border: 1px solid var(--border); }
+    .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .video-caption { font-size: 0.82rem; color: var(--text-tertiary); margin-top: 0.4rem; text-align: center; }
+    .guide-footer { background: var(--surface); border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.825rem; color: var(--text-tertiary); }
+    @media (max-width: 600px) {
+      .video-grid { grid-template-columns: 1fr; }
+      .guide-content { padding: 1.5rem 1rem 3rem; }
+      .breadcrumb { padding: 0.9rem 1rem; }
+      .nav-menu { display: none; }
+      .nav-toggle { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand"><span class="brand-icon">⚙️</span><span class="brand-text">ISRM</span></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link active">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../community/index.html" class="nav-link">Community</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="../index.html">ISRM Home</a>
+    <span>›</span>
+    <a href="index.html">Diagnostics</a>
+    <span>›</span>
+    Dirty Buttons — No-Start
+  </div>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <h1>Dirty Handlebar Buttons Causing No-Start — Diagnosis &amp; Fix</h1>
+      <div class="guide-meta">
+        <span>Electrical / Controls</span>
+        <span>·</span>
+        <span>~20 min</span>
+        <span>·</span>
+        <span>Contact cleaner, screwdrivers</span>
+      </div>
+      <div class="guide-tags">
+        <span class="guide-tag">GY6</span>
+        <span class="guide-tag">Piaggio</span>
+        <span class="guide-tag">Won't Start</span>
+        <span class="guide-tag">Kill Switch</span>
+        <span class="guide-tag">Buttons</span>
+        <span class="guide-tag">Electrical</span>
+      </div>
+      <div class="applies-to">
+        <strong>Applies to:</strong> All GY6 and Piaggio/Vespa scooters. Handlebar switch clusters (kill switch, starter button, horn, lights) are common failure points on scooters over 3–5 years old, or on any scooter exposed to rain, washing, or dusty conditions without adequate sealing.
+      </div>
+    </div>
+  </section>
+
+  <main class="guide-content">
+
+    <h2>How Handlebar Buttons Can Prevent Starting</h2>
+    <p>The handlebar switch cluster on the right side contains the <strong>kill switch</strong> (engine stop switch) and the <strong>electric starter button</strong>. The kill switch is normally closed — meaning it completes the ignition circuit when in the "RUN" position. When it fails due to corrosion or debris, it can open the circuit even in the RUN position, cutting ignition exactly as if you had pressed "STOP."</p>
+    <p>The starter button on the left cluster (or right, depending on model) can also develop resistance buildup on its contacts that prevents it from passing enough current to energise the starter relay. The engine appears to do nothing when you press the starter — no click, no crank.</p>
+
+    <h2>Symptoms of Dirty or Faulty Handlebar Buttons</h2>
+    <table>
+      <tr><th>Symptom</th><th>Most Likely Button Fault</th></tr>
+      <tr><td>Engine cranks but will not fire (no spark)</td><td>Kill switch in open/fault state — engine thinks it is switched off</td></tr>
+      <tr><td>Starter button does nothing — no click, no crank</td><td>Starter button contacts dirty/oxidised or circuit open</td></tr>
+      <tr><td>Starter engages intermittently — sometimes works, sometimes does not</td><td>Dirty or worn starter button contacts</td></tr>
+      <tr><td>Engine runs fine once started but stalls randomly</td><td>Kill switch momentarily opening due to vibration or dirt</td></tr>
+      <tr><td>Engine will start by bridging the starter relay directly but not from the button</td><td>Starter button or its circuit confirmed faulty</td></tr>
+    </table>
+
+    <h2>Reference Videos</h2>
+    <div class="video-grid">
+      <div class="video-wrap">
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/WU1_3XsuaxE"
+            title="Dirty Scooter Buttons No-Start Diagnosis — Part 1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="video-caption">Part 1 — Identifying dirty buttons as the cause of a no-start condition.</p>
+      </div>
+      <div class="video-wrap">
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/7KFMSiX_OdY"
+            title="Dirty Scooter Buttons No-Start — Cleaning and Fix"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="video-caption">Part 2 — Opening the switch cluster and cleaning the contacts.</p>
+      </div>
+    </div>
+
+    <h2>Quick Test — Kill Switch</h2>
+    <div class="check-section">
+      <ol>
+        <li>Set the kill switch to <strong>RUN</strong>.</li>
+        <li>Attempt to start the engine — no spark or no start.</li>
+        <li>Wiggle the kill switch rapidly between RUN and STOP positions 10–15 times. This can temporarily clean the contact through mechanical action.</li>
+        <li>Return to RUN and try starting again.</li>
+        <li><span class="pass">Starts:</span> Kill switch contact is dirty. Clean or replace the switch cluster.</li>
+        <li><span class="fail">Still no start:</span> Check for spark directly — if spark is present at the plug with the kill switch bypassed (Step 2 below), the kill switch is confirmed faulty.</li>
+      </ol>
+    </div>
+
+    <div class="check-section">
+      <h3>Bypass Test — Kill Switch</h3>
+      <p>This test definitively confirms whether the kill switch circuit is preventing ignition.</p>
+      <ol>
+        <li>Locate the wiring connector for the right-hand switch cluster. On GY6 scooters this is typically a multi-pin connector near the headstock, or individual bullet connectors under the fairings.</li>
+        <li>Find the two wires for the kill switch (usually <strong>black/white and black</strong>, or just two black wires). On a working kill switch these two wires are connected together in RUN and disconnected in STOP.</li>
+        <li>Disconnect the kill switch connector from the main harness.</li>
+        <li>Attempt to start the engine (on many GY6 scooters the engine will run without the kill switch connected — the circuit defaults to "run" when open).</li>
+        <li><span class="pass">Starts:</span> Kill switch is confirmed faulty. Clean or replace.</li>
+        <li><span class="fail">Still no start:</span> Kill switch is not the cause. Reconnect and investigate other no-start causes.</li>
+      </ol>
+      <div class="callout callout-warn">
+        <strong>Note:</strong> On some wiring configurations the kill switch grounds the CDI — in that case the engine will not start with the circuit open. Consult your wiring diagram to confirm which configuration your scooter uses before concluding from this test.
+      </div>
+    </div>
+
+    <h2>Opening and Cleaning the Switch Cluster</h2>
+
+    <div class="check-section">
+      <h3>Right-Hand Cluster (Kill Switch + Starter Button)</h3>
+      <ol>
+        <li>Turn the ignition <strong>off</strong>.</li>
+        <li>Remove the two small screws (typically Phillips #1 or #2) from the back of the right-hand switch cluster housing. The housing is in two halves clamped around the handlebar.</li>
+        <li>Carefully separate the two halves. Do not pull on the wires.</li>
+        <li>Inside you will find:
+          <ul>
+            <li>The kill switch rocker or slider mechanism with two copper contacts.</li>
+            <li>The starter button with a spring-loaded plunger and two copper contacts.</li>
+          </ul>
+        </li>
+        <li>Inspect the contacts under good lighting:
+          <ul>
+            <li><strong>Black oxidation</strong> on copper contacts — clean with contact cleaner and a cotton swab.</li>
+            <li><strong>Green verdigris</strong> — heavy oxidation, clean with contact cleaner and a fine abrasive (500-grit wet/dry sandpaper folded in half, use very gentle strokes).</li>
+            <li><strong>Melted or pitted contacts</strong> — replace the switch cluster.</li>
+          </ul>
+        </li>
+        <li>Spray a small burst of <strong>electrical contact cleaner</strong> into the switch mechanism. Operate each button or switch 20–30 times to work the cleaner through.</li>
+        <li>Allow to dry fully (5–10 minutes).</li>
+        <li>Apply a tiny amount of <strong>dielectric grease</strong> or conductive electrical grease to the contacts before reassembly to resist future corrosion.</li>
+        <li>Reassemble the housing halves and tighten the screws. Do not overtighten — the housing is thin plastic.</li>
+      </ol>
+    </div>
+
+    <div class="check-section">
+      <h3>Left-Hand Cluster (Horn + Light Switches)</h3>
+      <p>The same process applies. If the horn button is not working or the headlight switch is intermittent, the entire left cluster can be cleaned using the same method. While it is open, check all the wire connections for corrosion at the crimp terminals inside the housing.</p>
+    </div>
+
+    <h2>Replacing the Switch Cluster</h2>
+    <p>If cleaning does not restore reliable operation, replacement clusters are widely available and inexpensive for GY6 scooters. When ordering:</p>
+    <ul>
+      <li>Specify left or right cluster (they are different).</li>
+      <li>Check the number of wires — some clusters include a choke switch or hazard function that yours may not have.</li>
+      <li>GY6 replacement clusters use the same colour-coded bullet connectors — match colour to colour when reconnecting to the main harness.</li>
+      <li>Piaggio/Vespa switch clusters are model-specific — use OEM part numbers.</li>
+    </ul>
+
+    <div class="callout callout-tip">
+      <strong>Prevention:</strong> When washing the scooter, avoid directing pressurised water into the handlebar switch clusters. After washing, spray the button slots with a water-displacing lubricant (WD-40 or equivalent). Apply a thin film of dielectric grease inside the cluster housings annually on scooters used in wet climates.
+    </div>
+
+    <h2>Related Guides</h2>
+    <ul>
+      <li><a href="gy6-no-start-troubleshooting.html">GY6 Scooter Won't Start — Full Troubleshooting Checklist</a></li>
+      <li><a href="gy6-side-stand-kill-switch.html">Side Stand Kill Switch Diagnosis</a></li>
+    </ul>
+
+    <p style="margin-top:2rem; font-size:0.82rem; color:var(--text-tertiary);">
+      Sources: GY6 wiring documentation; community repair threads from scootdawg.com; video references: YouTube Shorts. Licensed CC BY-SA 4.0.
+    </p>
+
+  </main>
+
+  <script src="../script.js"></script>
+
+  <footer class="guide-footer">
+    <p>ISRM — Interactive Scooter Repair Manuals. Content for educational purposes. CC BY-SA 4.0.</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISRM Home</a> · <a href="index.html" style="color: var(--accent);">← All Diagnostics</a></p>
+  </footer>
+
+</body>
+</html>

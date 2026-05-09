@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GY6 Valve Clearance Adjustment Guide — ISRM</title>
+  <title>GY6 CVT Variator & Drive Belt Replacement Guide — ISRM</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
+    /* ── Guide page layout ─────────────────────────── */
     .guide-header {
       background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
       border-bottom: 1px solid var(--border);
@@ -64,6 +65,8 @@
       color: var(--text-secondary);
     }
     .applies-to strong { color: var(--text-primary); }
+
+    /* ── Content ────────────────────────────────────── */
     .guide-content {
       max-width: 900px;
       margin: 0 auto;
@@ -78,7 +81,12 @@
       border-bottom: 1px solid var(--border);
     }
     .guide-content h2:first-child { margin-top: 0; }
-    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.6rem; }
+    .guide-content h3 {
+      font-size: 1.1rem;
+      color: var(--accent);
+      margin-top: 1.5rem;
+      margin-bottom: 0.6rem;
+    }
     .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; }
     .guide-content a { color: var(--accent); }
     .guide-content a:hover { color: var(--primary); }
@@ -98,7 +106,14 @@
       font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
       font-size: 0.87em;
     }
-    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+
+    /* Tables */
+    .guide-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.25rem 0;
+      font-size: 0.9rem;
+    }
     .guide-content th {
       background: var(--surface-2);
       color: var(--text-primary);
@@ -107,8 +122,14 @@
       text-align: left;
       border: 1px solid var(--border);
     }
-    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content td {
+      padding: 0.65rem 1rem;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
     .guide-content tr:nth-child(even) td { background: rgba(26, 35, 50, 0.6); }
+
+    /* Callout boxes */
     .callout {
       padding: 1rem 1.25rem;
       border-radius: 0 var(--radius-md) var(--radius-md) 0;
@@ -127,17 +148,19 @@
       border: 1px solid rgba(6, 167, 125, 0.25);
       border-left: 4px solid var(--success);
     }
-    .step-heading {
+
+    /* Phase steps */
+    .phase-block { margin-top: 2rem; }
+    .phase-heading {
       display: flex;
       align-items: center;
       gap: 0.75rem;
       font-size: 1.15rem;
       font-weight: 700;
       color: var(--text-primary);
-      margin-top: 2rem;
       margin-bottom: 0.75rem;
     }
-    .step-number {
+    .phase-number {
       background: var(--primary);
       color: white;
       width: 2rem;
@@ -150,6 +173,8 @@
       font-weight: 700;
       flex-shrink: 0;
     }
+
+    /* Footer */
     .guide-footer {
       background: var(--surface);
       border-top: 1px solid var(--border);
@@ -158,6 +183,7 @@
       font-size: 0.825rem;
       color: var(--text-tertiary);
     }
+
     .video-embed { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin: 1.5rem 0; }
     .video-embed-title { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; }
     .video-thumb-link { display: block; text-decoration: none; }
@@ -210,16 +236,16 @@
     <span>›</span>
     <a href="index.html">Repair Guides</a>
     <span>›</span>
-    GY6 Valve Clearance Adjustment
+    GY6 CVT Variator &amp; Drive Belt Replacement
   </div>
 
   <!-- Page Hero -->
   <section class="page-hero">
     <div class="page-hero-inner">
       <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
-        <a href="../index.html">ISRM Home</a><span>›</span><a href="index.html">Repair Guides</a><span>›</span>GY6 Valve Clearance Adjustment Guide
+        <a href="../index.html">ISRM Home</a><span>›</span><a href="index.html">Repair Guides</a><span>›</span>GY6 CVT Variator & Drive Belt Replacement Guide
       </div>
-      <h1>GY6 Valve Clearance Adjustment Guide</h1>
+      <h1>GY6 CVT Variator & Drive Belt Replacement Guide</h1>
     </div>
   </section>
 
@@ -267,147 +293,137 @@
   <!-- Guide Content -->
   <main class="guide-content">
 
-    <p>Valve clearance (also called valve lash) is the small gap between the rocker arm and the top of the valve stem. Too little clearance causes valves to stay slightly open — leading to burnt valves, overheating, and compression loss. Too much clearance produces a characteristic ticking noise and reduced power. On GY6 engines, the valves are the single most commonly neglected maintenance item.</p>
+    <h2>How the GY6 CVT Works</h2>
+    <p>The Continuously Variable Transmission (CVT) on GY6 scooters consists of three main assemblies: the <strong>variator</strong> (primary pulley on the crankshaft), the <strong>rear clutch bell/secondary pulley</strong> (on the transmission input shaft), and the <strong>drive belt</strong> that runs between them. As engine RPM rises, centrifugal rollers inside the variator push the pulley faces together, forcing the belt to ride higher — effectively changing the gear ratio automatically without any driver input.</p>
 
-    <h2>Valve Clearance Specifications</h2>
+    <h2>When to Replace</h2>
     <table>
-      <tr><th>Engine</th><th>Intake Valve</th><th>Exhaust Valve</th><th>Condition</th></tr>
-      <tr><td>GY6 50cc (139QMB)</td><td>0.10 mm (0.004 in)</td><td>0.10 mm (0.004 in)</td><td>Cold engine</td></tr>
-      <tr><td>GY6 150cc (157QMJ)</td><td>0.10–0.12 mm</td><td>0.10–0.12 mm</td><td>Cold engine</td></tr>
+      <tr><th>Component</th><th>Replacement Interval</th><th>Symptoms of Wear</th></tr>
+      <tr><td>Drive belt</td><td>Every 8,000–12,000 km (or sooner if cracked)</td><td>Slipping, loss of acceleration, jerky takeoff, visible cracks on belt edges</td></tr>
+      <tr><td>Variator rollers</td><td>Every 10,000–15,000 km</td><td>Hesitation at mid-throttle, flat acceleration curve, rattling from CVT cover</td></tr>
+      <tr><td>Clutch springs</td><td>Every 15,000–20,000 km</td><td>Clutch engaging too early (creep at idle), poor low-speed drivability</td></tr>
+      <tr><td>CVT cover gasket</td><td>Whenever cover is removed</td><td>Oil/grease seeping from CVT cover seam</td></tr>
     </table>
-    <p>Always measure and adjust valve clearance on a <strong>cold engine</strong> (not run for at least 2 hours). Hot metal expands — measuring hot gives an incorrect reading.</p>
+
+    <div class="callout callout-warn">
+      ⚠️ <strong>Safety first:</strong> Work on a cold engine only. The variator and clutch bell reach high temperatures during operation. Ensure the scooter is on its centre stand on a flat, stable surface.
+    </div>
 
     <h2>Tools Required</h2>
     <ul>
-      <li>Feeler gauge set (metric) — must include 0.10 mm and 0.12 mm blades</li>
-      <li>10 mm spanner or socket (for valve cover bolts)</li>
-      <li>8 mm spanner (for rocker arm lock nuts, on some variants)</li>
-      <li>Flat-head screwdriver</li>
-      <li>17 mm socket (for crankshaft rotation via CVT or flywheel bolt)</li>
-      <li>Timing mark inspection torch</li>
+      <li>Socket set (metric): 8 mm, 10 mm, 17 mm, 22 mm (or as required for your specific nuts)</li>
+      <li><strong>Variator holding tool</strong> (universal GY6 type) — essential; do not attempt to use a screwdriver to jam the variator</li>
+      <li>Impact wrench or breaker bar (the variator nut is torqued very tight)</li>
+      <li>Torque wrench</li>
+      <li>Soft mallet or rubber hammer</li>
+      <li>Cleaning rags</li>
+      <li>Replacement belt (confirm dimensions — see Specifications below)</li>
+      <li>Replacement rollers if required</li>
     </ul>
 
-    <div class="callout callout-warn">
-      ⚠️ <strong>Do not attempt valve adjustment on a warm engine.</strong> Thermal expansion will cause you to set the clearance incorrectly, which can lead to immediate valve damage when the engine reaches operating temperature.
-    </div>
+    <h2>Belt Specification Reference</h2>
+    <table>
+      <tr><th>Engine</th><th>Typical Belt Size</th><th>Notes</th></tr>
+      <tr><td>GY6 50cc (139QMB)</td><td>669 × 18 × 30</td><td>Most common on BTC Riva, La Souris, Santini 50cc</td></tr>
+      <tr><td>GY6 150cc (157QMJ)</td><td>835 × 20 × 30 or 842 × 20 × 30</td><td>Verify against your specific model</td></tr>
+    </table>
+    <p>The three numbers represent: overall length × top width × angle. Always confirm the correct size with your parts supplier before ordering — some Chinese scooter variants deviate from standard sizes.</p>
 
     <div class="video-embed">
-      <div class="video-embed-title">🎬 Video Guide — Highly Detailed GY6 Valve Adjustment Step By Step</div>
+      <div class="video-embed-title">🎬 Video Guide — Simplest Way to Replace a GY6 CV Belt</div>
       <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/5vl1mrTVCQ0"
-          title="Highly Detailed GY6 Valve Adjustment Step By Step"
+        <iframe src="https://www.youtube.com/embed/XakWj8YM_P4"
+          title="Simplest Way to Replace GY6 CV Belt"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
       </div>
-      <p class="video-source"><strong>Video:</strong> "Highly Detailed GY6 Valve Adjustment Step By Step" | YouTube &nbsp;
-        <a href="https://www.youtube.com/watch?v=5vl1mrTVCQ0" target="_blank" rel="noopener">↗ Watch on YouTube</a>
+      <p class="video-source"><strong>Video:</strong> "Simplest Way to Replace GY6 CV Belt" | YouTube &nbsp;
+        <a href="https://www.youtube.com/watch?v=XakWj8YM_P4" target="_blank" rel="noopener">↗ Watch on YouTube</a>
       </p>
     </div>
 
     <h2>Step-by-Step Procedure</h2>
 
-    <div>
-      <div class="step-heading">
-        <div class="step-number">1</div>
-        Access the Valve Cover
+    <div class="phase-block">
+      <div class="phase-heading">
+        <div class="phase-number">1</div>
+        Remove the CVT Cover
       </div>
       <ol>
-        <li>Remove the seat and any panels necessary to access the top of the engine cylinder head. On most GY6 scooters the head is under the floor panel or accessible from under the seat.</li>
-        <li>Disconnect the breather hose from the valve cover (small rubber hose, usually routing to the air box).</li>
-        <li>Remove the valve cover bolts — typically two bolts, 10 mm. Remove the cover and set the gasket aside carefully (reuse it if it is not torn or compressed flat).</li>
-        <li>You will see two rocker arms — the <strong>intake rocker</strong> (connected to the intake valve, facing toward the carburetor side) and the <strong>exhaust rocker</strong> (facing toward the exhaust pipe).</li>
+        <li>Place the scooter on its centre stand on level ground.</li>
+        <li>Locate the CVT cover on the left side of the engine (the large plastic or alloy cover with ventilation slots).</li>
+        <li>Remove all cover bolts — typically 6–8 bolts of 8 mm or 10 mm. Keep them together; they are often different lengths.</li>
+        <li>Gently tap the cover with a soft mallet to break the gasket seal if it is stuck. Do not pry against the casting — it cracks easily.</li>
+        <li>Remove the cover. Inspect the inside for belt dust, cracked rubber fragments, or oil contamination (indicates a crankshaft seal leak).</li>
       </ol>
     </div>
 
-    <div>
-      <div class="step-heading">
-        <div class="step-number">2</div>
-        Find Top Dead Centre (TDC)
+    <div class="phase-block">
+      <div class="phase-heading">
+        <div class="phase-number">2</div>
+        Remove the Drive Belt
       </div>
-      <p style="color: var(--text-secondary); margin-bottom: 0.75rem;">Valve clearance must be measured when the piston is at Top Dead Centre (TDC) on the compression stroke — the moment when both valves are closed and the cam lobe is pointing away from both rocker arms.</p>
       <ol>
-        <li>Locate the inspection window on the left side of the engine casing (round rubber or metal plug). Remove it to see the flywheel timing marks.</li>
-        <li>Also remove the small plug on the top of the cylinder head — this is the manual decompressor or TDC inspection port on some models.</li>
-        <li>Rotate the engine slowly by hand using the rear wheel (in gear) or by turning the flywheel bolt clockwise (when viewed from the flywheel side). Do not use the electric starter for this.</li>
-        <li>Watch the timing mark through the inspection window. When the line marked <strong>"T"</strong> (or "上" on some Chinese engines) aligns with the pointer, the piston is at TDC.</li>
-        <li>Confirm you are on the <strong>compression stroke</strong> (not the exhaust stroke, which also puts the piston at TDC): at compression TDC, both rocker arms should be loose — you should be able to wiggle them slightly by hand. If one rocker is pressing down on a valve, rotate the engine one full turn and realign the T mark.</li>
+        <li>With the cover off, you will see the drive belt running between the two pulleys.</li>
+        <li>Compress (push together) the faces of the rear clutch pulley by hand while simultaneously lifting the belt off the front variator pulley. This creates slack in the belt loop.</li>
+        <li>Slide the belt off the rear clutch, then off the front variator. If the belt is stiff or cracked, it may snap during removal — wear eye protection.</li>
+        <li>Inspect the belt: cracks along the edge, fraying, glazing, or visible rubber chunks missing all indicate the belt needs replacement.</li>
       </ol>
     </div>
 
-    <div>
-      <div class="step-heading">
-        <div class="step-number">3</div>
-        Measure Valve Clearance
+    <div class="phase-block">
+      <div class="phase-heading">
+        <div class="phase-number">3</div>
+        Remove the Variator (for roller replacement)
       </div>
       <ol>
-        <li>Slide the 0.10 mm feeler gauge blade between the rocker arm and the top of the valve stem (or the cam follower surface, depending on configuration).</li>
-        <li>The gauge should slide through with light, uniform drag — not tight, not loose. If it slides freely with no resistance, the clearance is too large. If it does not fit at all, the clearance is too small.</li>
-        <li>Repeat for both intake and exhaust rockers.</li>
-        <li>Record the current clearance: too tight (gauge does not fit), correct (slight drag), or too loose (gauge falls through).</li>
+        <li>Use the variator holding tool to lock the front pulley against rotation.</li>
+        <li>With an impact wrench or breaker bar, remove the variator nut (right-hand thread — turn counter-clockwise to loosen). This nut is typically torqued to <strong>49 Nm (36 ft-lb)</strong>.</li>
+        <li>Slide off the outer face of the variator. Note the orientation — there is often an arrow or chamfer indicating the correct fitting direction.</li>
+        <li>Remove the rollers. There are typically 6 rollers inside a guide cage. Inspect each one: flat spots, grooves worn into the roller surface, or irregular wear all indicate replacement is needed.</li>
+        <li>Standard roller weight for GY6 50cc is <strong>5–6 g</strong>; for GY6 150cc it is typically <strong>8–12 g</strong>. Heavier rollers delay engagement (better top speed); lighter rollers engage earlier (better acceleration). Do not deviate more than 2 g from stock unless tuning for a specific purpose.</li>
+        <li>Clean the variator ramp surfaces and roller guides with a rag. <strong>Do not use grease on the rollers</strong> — they must run dry. Grease attracts belt dust and causes premature wear.</li>
+        <li>Install new rollers in the guide cage, reinstall the outer variator face, and torque the nut to <strong>49 Nm</strong>.</li>
       </ol>
     </div>
 
-    <div>
-      <div class="step-heading">
-        <div class="step-number">4</div>
-        Adjust if Required
+    <div class="phase-block">
+      <div class="phase-heading">
+        <div class="phase-number">4</div>
+        Install the New Belt &amp; Reassemble
       </div>
       <ol>
-        <li>Locate the adjustment screw on the rocker arm — it is a slotted screw with a lock nut.</li>
-        <li>Hold the adjustment screw with a flat-head screwdriver to prevent it rotating, and loosen the lock nut with an 8 mm spanner (counter-clockwise).</li>
-        <li>With the feeler gauge in place, turn the adjustment screw:
-          <ul>
-            <li>Clockwise → decreases gap (tightens clearance)</li>
-            <li>Counter-clockwise → increases gap (widens clearance)</li>
-          </ul>
-        </li>
-        <li>Adjust until the feeler gauge moves with a slight, consistent drag.</li>
-        <li>Hold the adjustment screw firmly in position and tighten the lock nut. The act of tightening the lock nut often rotates the adjustment screw slightly — recheck clearance after the nut is tight.</li>
-        <li>Repeat for the other valve.</li>
-        <li>Recheck both valves one final time after all lock nuts are tightened.</li>
+        <li>Route the new belt over the rear clutch pulley first, ensuring it sits centrally in the groove.</li>
+        <li>While compressing the rear pulley faces together, loop the belt over the front variator. Release the rear pulley — the spring tension will pull the belt taut.</li>
+        <li>Rotate the rear wheel by hand to seat the belt evenly and check that it tracks centrally on both pulleys without twisting.</li>
+        <li>Clean the CVT cover interior and replace the gasket if torn or compressed flat.</li>
+        <li>Refit the CVT cover. Tighten bolts in a cross pattern to approximately <strong>10–12 Nm</strong>. Do not overtighten — the cover threads strip easily.</li>
       </ol>
     </div>
 
     <div class="callout callout-tip">
-      💡 <strong>Tip:</strong> If your engine has been difficult to start, runs roughly at idle, or you hear a persistent ticking from the cylinder head area, check valves before replacing the spark plug or cleaning the carburetor. Tight valves are frequently misdiagnosed as carburetor problems.
+      💡 <strong>Break-in tip:</strong> After fitting a new belt, avoid full-throttle acceleration for the first 100–200 km. New belts need time to seat and conform to the pulley surfaces. Premature hard acceleration can glaze or crack a new belt prematurely.
     </div>
 
-    <div>
-      <div class="step-heading">
-        <div class="step-number">5</div>
-        Reassemble
-      </div>
-      <ol>
-        <li>Clean the valve cover mating surface on the cylinder head with a clean rag.</li>
-        <li>Refit the valve cover gasket. If the gasket is compressed or cracked, replace it — a leaking valve cover allows oil to contaminate the air filter via the breather.</li>
-        <li>Refit the valve cover and tighten the two bolts to approximately <strong>10 Nm</strong>. Do not overtighten — the cylinder head is aluminium and strips easily.</li>
-        <li>Reconnect the breather hose.</li>
-        <li>Reinstall the timing inspection plug and any engine covers removed.</li>
-        <li>Start the engine. A slight increase in idle smoothness and a reduction in valve noise confirm a successful adjustment.</li>
-      </ol>
-    </div>
-
-    <h2>Symptoms of Incorrect Valve Clearance</h2>
+    <h2>Torque Specifications Summary</h2>
     <table>
-      <tr><th>Symptom</th><th>Likely Cause</th></tr>
-      <tr><td>Ticking/clattering from engine top at idle</td><td>Valve clearance too large (excessive lash)</td></tr>
-      <tr><td>Hard starting, especially when cold</td><td>Valve clearance too small (insufficient lash — valves may not seat fully)</td></tr>
-      <tr><td>Loss of compression / low power</td><td>Intake or exhaust valve stuck open from zero clearance</td></tr>
-      <tr><td>Engine backfires on deceleration</td><td>Exhaust valve not seating fully — check exhaust valve clearance</td></tr>
-      <tr><td>Oil in air filter / blue smoke</td><td>Valve cover gasket leaking (secondary issue from valve access)</td></tr>
+      <tr><th>Fastener</th><th>Torque</th></tr>
+      <tr><td>Variator nut (front pulley)</td><td>49 Nm (36 ft-lb)</td></tr>
+      <tr><td>Clutch bell nut (rear pulley)</td><td>49 Nm (36 ft-lb)</td></tr>
+      <tr><td>CVT cover bolts</td><td>10–12 Nm</td></tr>
     </table>
 
     <h2>Related Videos</h2>
     <div class="related-videos">
       <div class="video-card">
-        <h4>QMB139 &amp; GY6 Valve Adjustment — The Easy Way</h4>
-        <p>Clear demonstration of finding TDC and setting valve clearance on both 50cc (139QMB) and 125/150cc (157QMJ) engines with a feeler gauge.</p>
-        <a href="https://www.youtube.com/watch?v=Y8R28-v5mz0" target="_blank" rel="noopener">Watch on YouTube →</a>
+        <h4>GY6 Variator Roller Replacement</h4>
+        <p>Focused guide on removing the variator, inspecting and replacing the centrifugal rollers, and checking belt condition on a GY6 scooter.</p>
+        <a href="https://www.youtube.com/watch?v=SQ5GmXbJKQs" target="_blank" rel="noopener">Watch on YouTube →</a>
       </div>
       <div class="video-card">
-        <h4>GY6 Valve Adjustment — Step by Step (Bintelli)</h4>
-        <p>Concise walkthrough from rocker cover removal through feeler gauge measurement and lock-nut tightening on a typical GY6 clone scooter.</p>
-        <a href="https://www.youtube.com/watch?v=v335dScngi8" target="_blank" rel="noopener">Watch on YouTube →</a>
+        <h4>Complete Belt &amp; Variator Service — Vespa 150 3V</h4>
+        <p>Full variator and drive belt service on a modern Vespa 150 — useful reference for Piaggio-platform belt routing and torque procedures.</p>
+        <a href="https://www.youtube.com/watch?v=85_u6xw0i7k" target="_blank" rel="noopener">Watch on YouTube →</a>
       </div>
     </div>
 
@@ -416,7 +432,7 @@
   <!-- Footer -->
   <footer class="guide-footer">
     <p>Page auto-generated by ISRM Content Sync on 2026-05-07. Content summarised from external technical sources for educational purposes.</p>
-    <p style="margin-top: 0.5rem;">Always verify specifications against your scooter's workshop manual before performing repairs.</p>
+    <p style="margin-top: 0.5rem;">Always verify torque specifications against your scooter's workshop manual before performing repairs.</p>
     <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISRM Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Repair Guides</a></p>
   </footer>
 

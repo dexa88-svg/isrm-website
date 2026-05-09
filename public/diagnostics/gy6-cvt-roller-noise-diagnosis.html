@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metallic Noise from Engine — CVT Roller Diagnosis — GY6 Scooter — ISRM</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .guide-content {
+      max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem 4rem;
+    }
+    .guide-content h2 {
+      font-size: 1.55rem; color: var(--text-primary);
+      margin-top: 2.5rem; margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+    }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 0; margin-bottom: 0.75rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol { padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary); }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th { background: var(--surface-2); color: var(--text-primary); font-weight: 600; padding: 0.7rem 1rem; text-align: left; border: 1px solid var(--border); }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26, 35, 50, 0.6); }
+    .callout { padding: 1rem 1.25rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 1.5rem 0; font-size: 0.95rem; color: var(--text-secondary); }
+    .callout strong { color: var(--text-primary); }
+    .callout-tip { background: rgba(6, 167, 125, 0.08); border: 1px solid rgba(6, 167, 125, 0.25); border-left: 4px solid var(--success); }
+    .callout-warn { background: rgba(245, 166, 35, 0.08); border: 1px solid rgba(245, 166, 35, 0.3); border-left: 4px solid var(--warning); }
+    .callout-danger { background: rgba(214, 48, 49, 0.08); border: 1px solid rgba(214, 48, 49, 0.3); border-left: 4px solid var(--danger); }
+    .check-section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+    .check-section:hover { border-color: rgba(0, 168, 204, 0.4); }
+    .pass { color: var(--success); font-weight: 700; }
+    .fail { color: var(--danger); font-weight: 700; }
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 3rem 2rem 2rem; position: relative; overflow: hidden; border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before { content: "🔩"; position: absolute; right: 6%; top: 50%; transform: translateY(-50%); font-size: 9rem; opacity: 0.07; pointer-events: none; line-height: 1; }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 { font-size: 2rem; line-height: 1.2; background: linear-gradient(135deg, var(--text-primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1.2rem; }
+    .breadcrumb { padding: 0.9rem 2rem; max-width: 900px; margin: 0 auto; font-size: 0.85rem; color: var(--text-tertiary); }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+    .guide-meta { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; font-size: 0.875rem; color: var(--text-tertiary); margin-bottom: 1rem; }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+    .guide-tag { background: rgba(0, 168, 204, 0.1); color: var(--accent); border: 1px solid rgba(0, 168, 204, 0.3); padding: 0.25rem 0.7rem; border-radius: 20px; font-size: 0.78rem; font-weight: 500; }
+    .applies-to { background: rgba(255, 107, 53, 0.07); border: 1px solid rgba(255, 107, 53, 0.2); border-left: 4px solid var(--primary); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 1rem 1.25rem; margin-top: 1.5rem; font-size: 0.95rem; color: var(--text-secondary); }
+    .applies-to strong { color: var(--text-primary); }
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-lg); margin: 1.5rem 0; border: 1px solid var(--border); }
+    .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .video-caption { font-size: 0.85rem; color: var(--text-tertiary); margin-top: -0.75rem; margin-bottom: 1.5rem; text-align: center; }
+    .guide-footer { background: var(--surface); border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.825rem; color: var(--text-tertiary); }
+    @media (max-width: 768px) {
+      .guide-content { padding: 1.5rem 1rem 3rem; }
+      .breadcrumb { padding: 0.9rem 1rem; }
+      .nav-menu { display: none; }
+      .nav-toggle { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand"><span class="brand-icon">⚙️</span><span class="brand-text">ISRM</span></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link active">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../community/index.html" class="nav-link">Community</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="../index.html">ISRM Home</a>
+    <span>›</span>
+    <a href="index.html">Diagnostics</a>
+    <span>›</span>
+    Metallic Noise — CVT Roller Diagnosis
+  </div>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <h1>Metallic Noise from the Engine — CVT Roller Diagnosis</h1>
+      <div class="guide-meta">
+        <span>CVT / Transmission</span>
+        <span>·</span>
+        <span>~25 min (diagnosis + inspection)</span>
+        <span>·</span>
+        <span>Variator puller, socket set</span>
+      </div>
+      <div class="guide-tags">
+        <span class="guide-tag">GY6</span>
+        <span class="guide-tag">CVT</span>
+        <span class="guide-tag">Rollers</span>
+        <span class="guide-tag">Noise</span>
+        <span class="guide-tag">Variator</span>
+      </div>
+      <div class="applies-to">
+        <strong>Applies to:</strong> All GY6 scooters with CVT transmission (BTC Riva, La Souris Sourini/City, Santini Capri and equivalents). Also applicable to Piaggio/Vespa CVT (Zip 4T, Primavera, Sprint). This guide focuses on metallic rattling, clanking, or scraping sounds that are most evident under acceleration or at low speeds.
+      </div>
+    </div>
+  </section>
+
+  <main class="guide-content">
+
+    <h2>Understanding the Sound</h2>
+    <p>A metallic rattling, knocking, or scraping noise from the front-left side of the engine (CVT cover side) on a GY6 scooter is a classic symptom of <strong>worn or broken CVT variator rollers</strong>. When rollers wear unevenly, crack, or flatten on one side, they no longer roll smoothly in the variator ramps — instead they slide, bounce, and strike the variator housing walls.</p>
+    <p>The noise typically:</p>
+    <ul>
+      <li>Is most pronounced at <strong>low to mid throttle</strong> (when the variator is mid-travel)</li>
+      <li>Increases or changes pitch with acceleration</li>
+      <li><strong>Disappears or decreases at full throttle</strong> (rollers pressed hard against the outer ramp)</li>
+      <li>May be accompanied by <strong>poor acceleration, flat spots, or the scooter reaching top speed more slowly</strong></li>
+    </ul>
+
+    <h2>Reference Video</h2>
+    <div class="video-embed">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/l3kabcwTPeg"
+        title="CVT Roller Noise Diagnosis — GY6 Scooter"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <p class="video-caption">Demonstration of the metallic CVT roller noise and how to identify it on a GY6 scooter.</p>
+
+    <h2>Quick Symptom Table</h2>
+    <table>
+      <tr><th>Noise Description</th><th>Most Likely Cause</th><th>Action</th></tr>
+      <tr><td>Metallic rattle, worst at 20–50 km/h under gentle throttle</td><td>Worn/flat CVT rollers</td><td>Inspect rollers — this guide</td></tr>
+      <tr><td>Clunking when pulling away from standstill</td><td>Broken roller fragment loose inside variator</td><td>Inspect immediately — broken piece can damage variator</td></tr>
+      <tr><td>Continuous scraping at all speeds</td><td>CVT belt contacting side of casing, or large debris inside</td><td>Open CVT cover, inspect belt and casing walls</td></tr>
+      <tr><td>High-pitched squeal under load</td><td>Worn/glazed CVT belt</td><td>Inspect belt width and condition — see <a href="../repair-guides/gy6-cvt-variator-belt-replacement.html">belt replacement guide</a></td></tr>
+      <tr><td>Clicking from rear — worse under braking</td><td>Not CVT — check rear brake disc, caliper, or wheel bearing</td><td>Inspect rear end separately</td></tr>
+    </table>
+
+    <h2>What Are CVT Rollers?</h2>
+    <p>CVT rollers (also called <strong>variator weights</strong>) are cylindrical weights that sit inside the drive face of the variator (front pulley). Under centrifugal force as engine rpm rises, the rollers move outward along angled ramps, pushing the movable drive face inward, which increases the effective pulley diameter and changes the drive ratio — this is how the CVT automatically varies its ratio without a conventional gearbox.</p>
+    <p>GY6 engines typically use <strong>6 rollers</strong>. Standard weights are 10–18 grams depending on engine size and application. Over time, the plastic or rubber outer skin of the roller wears flat on one side, the roller deforms under heat, or the outer casing cracks — all of which cause noise and loss of performance.</p>
+
+    <h2>Step-by-Step Diagnosis</h2>
+
+    <div class="check-section">
+      <h3>Step 1 — Confirm the Noise Source</h3>
+      <ol>
+        <li>Start the engine and hold the scooter on the centre stand with the rear wheel clear of the ground.</li>
+        <li>Slowly open the throttle from idle to about half throttle. Listen carefully for the metallic rattle.</li>
+        <li>Place your hand lightly on the <strong>CVT cover (left side panel)</strong> — you should be able to feel a vibration corresponding to the noise if rollers are the cause.</li>
+        <li>Have an assistant press on the rear of the scooter to load the rear wheel while you hold the throttle steady at ~3,000–4,000 rpm. A loaded CVT accentuates roller noise.</li>
+        <li><span class="pass">CONFIRMED:</span> Noise is clearly from the CVT cover area, varies with throttle position. Proceed to Step 2.</li>
+        <li><span class="fail">NOT CVT:</span> Noise comes from the engine cases, exhaust, or head area — check valve clearance, cam chain, or exhaust gasket instead.</li>
+      </ol>
+    </div>
+
+    <div class="check-section">
+      <h3>Step 2 — Open the CVT Cover</h3>
+      <div class="callout callout-warn">
+        <strong>⚠ Safety:</strong> Engine must be fully off and cool before opening the CVT cover. The CVT belt and variator spin at high speed and can cause serious injury.
+      </div>
+      <ol>
+        <li>Remove the left side panel (two to four screws, depending on model).</li>
+        <li>Remove the CVT cover — typically 5–7 bolts around the perimeter. On GY6 engines these are M6 bolts.</li>
+        <li>Carefully remove the cover. Note if there is any debris, rubber dust, or fragments inside the casing — this indicates a broken roller or belt.</li>
+      </ol>
+    </div>
+
+    <div class="check-section">
+      <h3>Step 3 — Inspect the Variator and Rollers</h3>
+      <ol>
+        <li>Grip the front variator assembly and rotate it by hand to feel for roughness.</li>
+        <li>Using a variator holder tool (or improvised wedge), lock the variator against rotation.</li>
+        <li>Remove the variator nut (typically M20, left-hand thread on GY6 — turn <strong>clockwise</strong> to loosen). Use a breaker bar.</li>
+        <li>Slide off the front variator face. The rollers will be visible in the ramp channels of the rear variator half (the slotted disc).</li>
+        <li>Remove each roller by hand and inspect:</li>
+      </ol>
+      <table style="margin-top:0.75rem;">
+        <tr><th>Roller Condition</th><th>Diagnosis</th><th>Action</th></tr>
+        <tr><td>Smooth, round, uniform surface</td><td>Good — roller is serviceable</td><td>Clean and reinstall</td></tr>
+        <tr><td>Flat spot on one side (D-shaped cross section)</td><td>Worn — causing rattle and performance loss</td><td>Replace full set of 6</td></tr>
+        <tr><td>Cracked, chipped, or broken outer skin</td><td>Failed — urgent replacement</td><td>Replace full set of 6 immediately</td></tr>
+        <tr><td>Oval or bulging shape</td><td>Heat-deformed — common with wrong weight rollers</td><td>Replace full set with correct weight</td></tr>
+        <tr><td>Metal core visible through worn plastic</td><td>Severely worn</td><td>Replace full set; inspect ramp channels for gouging</td></tr>
+      </table>
+    </div>
+
+    <div class="check-section">
+      <h3>Step 4 — Inspect Ramp Channels</h3>
+      <p>While the rollers are removed, inspect the angled ramp channels in the variator disc (the rear variator half). Run your fingernail across each ramp surface.</p>
+      <ul>
+        <li>Surface should be smooth and slightly shiny.</li>
+        <li>Grooves, gouges, or rough patches indicate the rollers were running in worn condition for a long time.</li>
+        <li>Light surface marks are acceptable. Deep grooves mean the variator itself should be replaced.</li>
+      </ul>
+    </div>
+
+    <h2>Replacement: Roller Specifications</h2>
+    <table>
+      <tr><th>Engine</th><th>Standard Roller Weight</th><th>Quantity</th><th>Roller Dimensions (typical)</th></tr>
+      <tr><td>GY6 50cc (139QMB)</td><td>6–7 g</td><td>6</td><td>Ø15 × 12 mm</td></tr>
+      <tr><td>GY6 125cc (152QMI)</td><td>12–13 g</td><td>6</td><td>Ø18 × 14 mm or Ø15 × 12 mm</td></tr>
+      <tr><td>GY6 150cc (157QMJ)</td><td>15–16 g</td><td>6</td><td>Ø18 × 14 mm</td></tr>
+      <tr><td>Piaggio Vespa Primavera 125</td><td>11 g</td><td>6</td><td>Ø23 × 18 mm (Piaggio-specific)</td></tr>
+      <tr><td>Piaggio Zip 4T 50cc</td><td>6–7 g</td><td>6</td><td>Ø15 × 12 mm</td></tr>
+    </table>
+
+    <div class="callout callout-tip">
+      <strong>Performance tip:</strong> Heavier rollers cause the variator to shift up (higher ratio) at lower rpm — more top speed, slower acceleration. Lighter rollers cause earlier upshift — quicker acceleration, lower top speed. For daily commuting, stick to OEM specification weight.
+    </div>
+
+    <h2>Reassembly Notes</h2>
+    <ul>
+      <li>Install all 6 new rollers in the ramp channels. Ensure each roller sits in its slot fully before reassembling the front variator face.</li>
+      <li>Apply a very light smear of clean grease (high-melting-point grease, not lithium) to the ramp channels — but do <strong>not</strong> grease the roller outer surface or the belt pulley faces.</li>
+      <li>Torque the variator nut to the specification for your engine: typically <strong>35–45 Nm</strong> for GY6, <strong>50 Nm</strong> for Piaggio. The nut is left-hand thread on GY6 — tighten counter-clockwise.</li>
+      <li>Reinstall the CVT cover and test-ride at varying throttle positions to confirm the rattle has gone.</li>
+    </ul>
+
+    <div class="callout callout-warn">
+      <strong>Always replace all 6 rollers at once.</strong> Mixing old and new rollers results in uneven loading on the variator ramps, which causes noise, uneven wear, and poor shifting — exactly the problem you were trying to fix.
+    </div>
+
+    <h2>Related Guides</h2>
+    <ul>
+      <li><a href="../repair-guides/gy6-cvt-variator-belt-replacement.html">CVT Variator and Belt Replacement</a></li>
+      <li><a href="../repair-guides/scooter-cvt-clutch-variator-guide.html">CVT Clutch and Variator Complete Guide</a></li>
+    </ul>
+
+    <p style="margin-top:2rem; font-size:0.82rem; color:var(--text-tertiary);">
+      Sources: GY6 CVT service documentation; community-verified diagnostic information from scootdawg.com. Video reference: YouTube Short by @its-that-easy. Licensed CC BY-SA 4.0.
+    </p>
+
+  </main>
+
+  <script src="../script.js"></script>
+
+  <footer class="guide-footer">
+    <p>ISRM — Interactive Scooter Repair Manuals. Content for educational purposes. CC BY-SA 4.0.</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISRM Home</a> · <a href="index.html" style="color: var(--accent);">← All Diagnostics</a></p>
+  </footer>
+
+</body>
+</html>

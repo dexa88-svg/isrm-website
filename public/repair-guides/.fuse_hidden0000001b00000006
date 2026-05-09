@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GY6 Spark Plug Replacement Guide — ISRM</title>
+  <title>GY6 Valve Clearance Adjustment Guide — ISRM</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
     .guide-header {
@@ -122,15 +122,33 @@
       border: 1px solid rgba(245, 166, 35, 0.25);
       border-left: 4px solid var(--warning);
     }
-    .callout-danger {
-      background: rgba(214, 48, 49, 0.08);
-      border: 1px solid rgba(214, 48, 49, 0.25);
-      border-left: 4px solid var(--danger);
-    }
     .callout-tip {
       background: rgba(6, 167, 125, 0.08);
       border: 1px solid rgba(6, 167, 125, 0.25);
       border-left: 4px solid var(--success);
+    }
+    .step-heading {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .step-number {
+      background: var(--primary);
+      color: white;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      flex-shrink: 0;
     }
     .guide-footer {
       background: var(--surface);
@@ -161,6 +179,8 @@
       .guide-header h1 { font-size: 1.7rem; }
       .guide-content { padding: 1.5rem 1rem 3rem; }
       .breadcrumb { padding: 0.9rem 1rem; }
+      .nav-menu { display: none; }
+      .nav-toggle { display: block; }
     }
   </style>
 </head>
@@ -190,16 +210,16 @@
     <span>›</span>
     <a href="index.html">Repair Guides</a>
     <span>›</span>
-    Spark Plug Replacement
+    GY6 Valve Clearance Adjustment
   </div>
 
   <!-- Page Hero -->
   <section class="page-hero">
     <div class="page-hero-inner">
       <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
-        <a href="../index.html">ISRM Home</a><span>›</span><a href="index.html">Repair Guides</a><span>›</span>GY6 Spark Plug Replacement Guide
+        <a href="../index.html">ISRM Home</a><span>›</span><a href="index.html">Repair Guides</a><span>›</span>GY6 Valve Clearance Adjustment Guide
       </div>
-      <h1>GY6 Spark Plug Replacement Guide</h1>
+      <h1>GY6 Valve Clearance Adjustment Guide</h1>
     </div>
   </section>
 
@@ -247,98 +267,147 @@
   <!-- Guide Content -->
   <main class="guide-content">
 
-    <p>The spark plug is one of the cheapest and most impactful maintenance items on any petrol scooter. A worn or incorrectly gapped plug causes hard starting, rough idle, misfires, and increased fuel consumption. Replacing it takes 10–15 minutes and costs less than €5 for a standard NGK.</p>
+    <p>Valve clearance (also called valve lash) is the small gap between the rocker arm and the top of the valve stem. Too little clearance causes valves to stay slightly open — leading to burnt valves, overheating, and compression loss. Too much clearance produces a characteristic ticking noise and reduced power. On GY6 engines, the valves are the single most commonly neglected maintenance item.</p>
 
-    <h2>Spark Plug Specifications</h2>
+    <h2>Valve Clearance Specifications</h2>
     <table>
-      <tr><th>Engine</th><th>Standard Plug</th><th>Upgrade (Iridium)</th><th>Gap</th></tr>
-      <tr><td>GY6 50cc (139QMB)</td><td>NGK C7HSA</td><td>NGK CR7HIX</td><td>0.6–0.7 mm</td></tr>
-      <tr><td>GY6 125/150cc (157QMJ)</td><td>NGK CR7HSA</td><td>NGK CR7HIX</td><td>0.6–0.7 mm</td></tr>
-      <tr><td>Vespa Primavera 125 iGet</td><td>NGK ILZKBR7B8DG (OEM)</td><td>—</td><td>0.7–0.8 mm</td></tr>
+      <tr><th>Engine</th><th>Intake Valve</th><th>Exhaust Valve</th><th>Condition</th></tr>
+      <tr><td>GY6 50cc (139QMB)</td><td>0.10 mm (0.004 in)</td><td>0.10 mm (0.004 in)</td><td>Cold engine</td></tr>
+      <tr><td>GY6 150cc (157QMJ)</td><td>0.10–0.12 mm</td><td>0.10–0.12 mm</td><td>Cold engine</td></tr>
     </table>
+    <p>Always measure and adjust valve clearance on a <strong>cold engine</strong> (not run for at least 2 hours). Hot metal expands — measuring hot gives an incorrect reading.</p>
 
-    <div class="callout callout-tip">
-      💡 <strong>Tip:</strong> Keep a spare NGK CR7HSA under your seat. It weighs nothing, costs under €4, and can save a long walk home if the plug fails on the road.
-    </div>
-
-    <h2>Tools &amp; Materials Required</h2>
+    <h2>Tools Required</h2>
     <ul>
-      <li>Spark plug socket — <strong>16 mm</strong> for most GY6 engines (check your cap diameter first)</li>
-      <li>Socket wrench extension (the plug is often deep in the head)</li>
-      <li>Feeler gauge (to verify the gap on the new plug)</li>
-      <li>Torque wrench (optional but recommended — 10–14 Nm)</li>
-      <li>Compressed air or a rag to clean the plug recess</li>
-      <li>New spark plug (see specifications above)</li>
+      <li>Feeler gauge set (metric) — must include 0.10 mm and 0.12 mm blades</li>
+      <li>10 mm spanner or socket (for valve cover bolts)</li>
+      <li>8 mm spanner (for rocker arm lock nuts, on some variants)</li>
+      <li>Flat-head screwdriver</li>
+      <li>17 mm socket (for crankshaft rotation via CVT or flywheel bolt)</li>
+      <li>Timing mark inspection torch</li>
     </ul>
 
-    <h2>Reading the Old Plug — What It Tells You</h2>
-    <p>Before discarding the old plug, inspect the electrode. The color and condition reveal a lot about engine health:</p>
-    <table>
-      <tr><th>Electrode appearance</th><th>Diagnosis</th><th>Action</th></tr>
-      <tr><td>Light tan/grey, slight electrode wear</td><td>✅ Normal — engine running correctly</td><td>Replace at service interval</td></tr>
-      <tr><td>Dry black, sooty carbon deposits</td><td>Rich mixture or clogged air filter</td><td>Check/clean air filter; check carb jetting</td></tr>
-      <tr><td>Wet/oily, black</td><td>Oil in combustion — worn piston rings or valve seals</td><td>Engine inspection needed</td></tr>
-      <tr><td>White or pale grey, blistered</td><td>Lean mixture or overheating</td><td>Check fuel delivery, coolant/air flow</td></tr>
-      <tr><td>Rounded/eroded electrode</td><td>Normal wear — replace now</td><td>Standard replacement</td></tr>
-    </table>
+    <div class="callout callout-warn">
+      ⚠️ <strong>Do not attempt valve adjustment on a warm engine.</strong> Thermal expansion will cause you to set the clearance incorrectly, which can lead to immediate valve damage when the engine reaches operating temperature.
+    </div>
 
     <div class="video-embed">
-      <div class="video-embed-title">🎬 Video Guide — Replacing the Spark Plug on a Chinese Scooter (GY6)</div>
+      <div class="video-embed-title">🎬 Video Guide — Highly Detailed GY6 Valve Adjustment Step By Step</div>
       <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/oHWW1GAanqo"
-          title="Replacing Spark Plug on Chinese Scooter GY6"
+        <iframe src="https://www.youtube.com/embed/5vl1mrTVCQ0"
+          title="Highly Detailed GY6 Valve Adjustment Step By Step"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
       </div>
-      <p class="video-source"><strong>Video:</strong> "Replacing Spark Plug on Chinese Scooter GY6" | YouTube &nbsp;
-        <a href="https://www.youtube.com/watch?v=oHWW1GAanqo" target="_blank" rel="noopener">↗ Watch on YouTube</a>
+      <p class="video-source"><strong>Video:</strong> "Highly Detailed GY6 Valve Adjustment Step By Step" | YouTube &nbsp;
+        <a href="https://www.youtube.com/watch?v=5vl1mrTVCQ0" target="_blank" rel="noopener">↗ Watch on YouTube</a>
       </p>
     </div>
 
-    <h2>Step-by-Step Replacement Procedure</h2>
-    <ol>
-      <li><strong>Let the engine cool for at least 10 minutes.</strong> Working on a hot engine risks burns and can cause the plug to seize in the aluminium head if torqued incorrectly when hot.</li>
-      <li><strong>Remove the spark plug cap</strong> by pulling it straight off the plug. Pull the cap, not the wire — pulling the wire can damage the HT lead connection inside the cap.</li>
-      <li><strong>Clean around the plug recess</strong> with compressed air or a dry rag. Any debris that falls into the cylinder when the plug is removed can score the bore.</li>
-      <li><strong>Unscrew the old plug</strong> counter-clockwise using the spark plug socket. If it is tight, apply penetrating oil (WD-40 or equivalent) around the base and wait 5 minutes before trying again. Do not force it.</li>
-      <li><strong>Inspect and note the condition</strong> of the old plug electrode as described in the reading guide above.</li>
-      <li><strong>Check the gap on the new plug</strong> with a feeler gauge. For GY6 engines, the gap should be <strong>0.6–0.7 mm</strong>. Most NGK plugs are pre-gapped but verify. To adjust, carefully bend only the side (ground) electrode — never the centre electrode.</li>
-      <li><strong>Thread the new plug in by hand</strong> for the first 3–4 turns. Cross-threading an aluminium cylinder head is an expensive mistake. If it does not thread smoothly by hand, stop and recheck alignment.</li>
-      <li><strong>Tighten with the socket.</strong> With a new plug and a copper washer seat: hand-tight + <strong>¼ turn</strong>. With a torque wrench: <strong>10–14 Nm</strong>. Do not overtighten — aluminium threads strip easily.</li>
-      <li><strong>Reconnect the spark plug cap</strong> firmly until it seats fully. A loose cap is a common cause of intermittent misfires.</li>
-      <li><strong>Start the engine</strong> and confirm it runs cleanly at idle and through the rev range.</li>
-    </ol>
+    <h2>Step-by-Step Procedure</h2>
 
-    <div class="callout callout-warn">
-      ⚠️ <strong>Note on anti-seize compound:</strong> Do not apply anti-seize paste to spark plug threads in aluminium heads. The torque specification is designed for bare threads. Anti-seize changes the effective clamping force and can cause under- or over-tightening.
+    <div>
+      <div class="step-heading">
+        <div class="step-number">1</div>
+        Access the Valve Cover
+      </div>
+      <ol>
+        <li>Remove the seat and any panels necessary to access the top of the engine cylinder head. On most GY6 scooters the head is under the floor panel or accessible from under the seat.</li>
+        <li>Disconnect the breather hose from the valve cover (small rubber hose, usually routing to the air box).</li>
+        <li>Remove the valve cover bolts — typically two bolts, 10 mm. Remove the cover and set the gasket aside carefully (reuse it if it is not torn or compressed flat).</li>
+        <li>You will see two rocker arms — the <strong>intake rocker</strong> (connected to the intake valve, facing toward the carburettor side) and the <strong>exhaust rocker</strong> (facing toward the exhaust pipe).</li>
+      </ol>
     </div>
 
-    <h2>Spark Plug Service Intervals</h2>
-    <table>
-      <tr><th>Plug type</th><th>Inspection</th><th>Replacement</th></tr>
-      <tr><td>Standard copper (NGK C7HSA / CR7HSA)</td><td>Every 3,000 km</td><td>Every 3,000–5,000 km</td></tr>
-      <tr><td>Iridium (NGK CR7HIX)</td><td>Every 5,000 km</td><td>Every 10,000–15,000 km</td></tr>
-      <tr><td>Vespa OEM iridium</td><td>Per Piaggio service schedule</td><td>Every 8,000–10,000 km</td></tr>
-    </table>
+    <div>
+      <div class="step-heading">
+        <div class="step-number">2</div>
+        Find Top Dead Centre (TDC)
+      </div>
+      <p style="color: var(--text-secondary); margin-bottom: 0.75rem;">Valve clearance must be measured when the piston is at Top Dead Centre (TDC) on the compression stroke — the moment when both valves are closed and the cam lobe is pointing away from both rocker arms.</p>
+      <ol>
+        <li>Locate the inspection window on the left side of the engine casing (round rubber or metal plug). Remove it to see the flywheel timing marks.</li>
+        <li>Also remove the small plug on the top of the cylinder head — this is the manual decompressor or TDC inspection port on some models.</li>
+        <li>Rotate the engine slowly by hand using the rear wheel (in gear) or by turning the flywheel bolt clockwise (when viewed from the flywheel side). Do not use the electric starter for this.</li>
+        <li>Watch the timing mark through the inspection window. When the line marked <strong>"T"</strong> (or "上" on some Chinese engines) aligns with the pointer, the piston is at TDC.</li>
+        <li>Confirm you are on the <strong>compression stroke</strong> (not the exhaust stroke, which also puts the piston at TDC): at compression TDC, both rocker arms should be loose — you should be able to wiggle them slightly by hand. If one rocker is pressing down on a valve, rotate the engine one full turn and realign the T mark.</li>
+      </ol>
+    </div>
+
+    <div>
+      <div class="step-heading">
+        <div class="step-number">3</div>
+        Measure Valve Clearance
+      </div>
+      <ol>
+        <li>Slide the 0.10 mm feeler gauge blade between the rocker arm and the top of the valve stem (or the cam follower surface, depending on configuration).</li>
+        <li>The gauge should slide through with light, uniform drag — not tight, not loose. If it slides freely with no resistance, the clearance is too large. If it does not fit at all, the clearance is too small.</li>
+        <li>Repeat for both intake and exhaust rockers.</li>
+        <li>Record the current clearance: too tight (gauge does not fit), correct (slight drag), or too loose (gauge falls through).</li>
+      </ol>
+    </div>
+
+    <div>
+      <div class="step-heading">
+        <div class="step-number">4</div>
+        Adjust if Required
+      </div>
+      <ol>
+        <li>Locate the adjustment screw on the rocker arm — it is a slotted screw with a lock nut.</li>
+        <li>Hold the adjustment screw with a flat-head screwdriver to prevent it rotating, and loosen the lock nut with an 8 mm spanner (counter-clockwise).</li>
+        <li>With the feeler gauge in place, turn the adjustment screw:
+          <ul>
+            <li>Clockwise → decreases gap (tightens clearance)</li>
+            <li>Counter-clockwise → increases gap (widens clearance)</li>
+          </ul>
+        </li>
+        <li>Adjust until the feeler gauge moves with a slight, consistent drag.</li>
+        <li>Hold the adjustment screw firmly in position and tighten the lock nut. The act of tightening the lock nut often rotates the adjustment screw slightly — recheck clearance after the nut is tight.</li>
+        <li>Repeat for the other valve.</li>
+        <li>Recheck both valves one final time after all lock nuts are tightened.</li>
+      </ol>
+    </div>
 
     <div class="callout callout-tip">
-      💡 <strong>Upgrade tip:</strong> The NGK CR7HIX iridium plug is a genuine upgrade for GY6 engines. It produces a stronger, more consistent spark which improves cold starting and smooth idle. At roughly €8–12 it costs more than the standard plug but lasts 3× longer.
+      💡 <strong>Tip:</strong> If your engine has been difficult to start, runs roughly at idle, or you hear a persistent ticking from the cylinder head area, check valves before replacing the spark plug or cleaning the carburettor. Tight valves are frequently misdiagnosed as carburettor problems.
     </div>
 
-    <h2>Applicable Models</h2>
-    <p>This procedure applies to all GY6-engined scooters including the <strong>BTC Riva</strong>, <strong>La Souris Sourini / City</strong>, <strong>Santini Capri</strong>, and all other <code>139QMB</code> / <code>157QMJ</code> engine family scooters. For Vespa Primavera and Sprint models, the plug location and cap type differ but the procedure is identical — consult your model's service manual for the exact plug recess location.</p>
+    <div>
+      <div class="step-heading">
+        <div class="step-number">5</div>
+        Reassemble
+      </div>
+      <ol>
+        <li>Clean the valve cover mating surface on the cylinder head with a clean rag.</li>
+        <li>Refit the valve cover gasket. If the gasket is compressed or cracked, replace it — a leaking valve cover allows oil to contaminate the air filter via the breather.</li>
+        <li>Refit the valve cover and tighten the two bolts to approximately <strong>10 Nm</strong>. Do not overtighten — the cylinder head is aluminium and strips easily.</li>
+        <li>Reconnect the breather hose.</li>
+        <li>Reinstall the timing inspection plug and any engine covers removed.</li>
+        <li>Start the engine. A slight increase in idle smoothness and a reduction in valve noise confirm a successful adjustment.</li>
+      </ol>
+    </div>
+
+    <h2>Symptoms of Incorrect Valve Clearance</h2>
+    <table>
+      <tr><th>Symptom</th><th>Likely Cause</th></tr>
+      <tr><td>Ticking/clattering from engine top at idle</td><td>Valve clearance too large (excessive lash)</td></tr>
+      <tr><td>Hard starting, especially when cold</td><td>Valve clearance too small (insufficient lash — valves may not seat fully)</td></tr>
+      <tr><td>Loss of compression / low power</td><td>Intake or exhaust valve stuck open from zero clearance</td></tr>
+      <tr><td>Engine backfires on deceleration</td><td>Exhaust valve not seating fully — check exhaust valve clearance</td></tr>
+      <tr><td>Oil in air filter / blue smoke</td><td>Valve cover gasket leaking (secondary issue from valve access)</td></tr>
+    </table>
 
     <h2>Related Videos</h2>
     <div class="related-videos">
       <div class="video-card">
-        <h4>Spark Plug Gap Setting &amp; Installation — GY6</h4>
-        <p>Demonstrates how to check and correctly set the plug gap using a feeler gauge on NGK plugs for GY6 scooters before installation.</p>
-        <a href="https://www.youtube.com/watch?v=Zf5eEE0yivA" target="_blank" rel="noopener">Watch on YouTube →</a>
+        <h4>QMB139 &amp; GY6 Valve Adjustment — The Easy Way</h4>
+        <p>Clear demonstration of finding TDC and setting valve clearance on both 50cc (139QMB) and 125/150cc (157QMJ) engines with a feeler gauge.</p>
+        <a href="https://www.youtube.com/watch?v=Y8R28-v5mz0" target="_blank" rel="noopener">Watch on YouTube →</a>
       </div>
       <div class="video-card">
-        <h4>Changing Spark Plug on a 150cc GY6 Scooter</h4>
-        <p>Full plug removal, inspection, gap check and installation on a 150cc GY6 scooter — includes plug socket choice and torque guidance.</p>
-        <a href="https://www.youtube.com/watch?v=DG10KTYJYEk" target="_blank" rel="noopener">Watch on YouTube →</a>
+        <h4>GY6 Valve Adjustment — Step by Step (Bintelli)</h4>
+        <p>Concise walkthrough from rocker cover removal through feeler gauge measurement and lock-nut tightening on a typical GY6 clone scooter.</p>
+        <a href="https://www.youtube.com/watch?v=v335dScngi8" target="_blank" rel="noopener">Watch on YouTube →</a>
       </div>
     </div>
 
@@ -346,8 +415,8 @@
 
   <!-- Footer -->
   <footer class="guide-footer">
-    <p>Page generated by ISRM Content Sync on 2026-05-07. Content summarised from external technical sources for educational purposes.</p>
-    <p style="margin-top: 0.5rem;">Always verify spark plug type and torque specification against your scooter's specific workshop manual.</p>
+    <p>Page auto-generated by ISRM Content Sync on 2026-05-07. Content summarised from external technical sources for educational purposes.</p>
+    <p style="margin-top: 0.5rem;">Always verify specifications against your scooter's workshop manual before performing repairs.</p>
     <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISRM Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Repair Guides</a></p>
   </footer>
 

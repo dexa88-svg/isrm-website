@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GY6 Spark Plug Replacement Guide — ISRM</title>
+  <title>GY6 Brake Pads & Drum Shoes Replacement Guide — ISRM</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
     .guide-header {
@@ -166,7 +166,6 @@
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="../index.html" class="nav-brand">
@@ -184,22 +183,12 @@
     </div>
   </nav>
 
-  <!-- Breadcrumb -->
-  <div class="breadcrumb">
-    <a href="../index.html">ISRM Home</a>
-    <span>›</span>
-    <a href="index.html">Repair Guides</a>
-    <span>›</span>
-    Spark Plug Replacement
-  </div>
-
-  <!-- Page Hero -->
   <section class="page-hero">
     <div class="page-hero-inner">
       <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
-        <a href="../index.html">ISRM Home</a><span>›</span><a href="index.html">Repair Guides</a><span>›</span>GY6 Spark Plug Replacement Guide
+        <a href="../index.html">ISRM Home</a><span>›</span><a href="index.html">Repair Guides</a><span>›</span>GY6 Brake Pads & Drum Shoes Replacement Guide
       </div>
-      <h1>GY6 Spark Plug Replacement Guide</h1>
+      <h1>GY6 Brake Pads & Drum Shoes Replacement Guide</h1>
     </div>
   </section>
 
@@ -244,110 +233,146 @@
   </style>
 
 
-  <!-- Guide Content -->
+  <div class="breadcrumb">
+    <a href="../index.html">ISRM Home</a>
+    <span>›</span>
+    <a href="index.html">Repair Guides</a>
+    <span>›</span>
+    Brake Pads &amp; Drum Shoes
+  </div>
+
+  <header class="guide-header">
+    <div class="guide-header-inner">
+      <h1>Brake Pads &amp; Drum Shoes Replacement</h1>
+
+      <div class="guide-meta">
+        <span>Added: 2026-05-07</span>
+        <span class="guide-meta-sep">|</span>
+        <span>Sources:
+          <a href="https://www.youtube.com/watch?v=nat0lVKkuSk" target="_blank" rel="noopener">YouTube — Scooter Brake How-To</a>,
+          <a href="https://www.extrememotorsales.com/Parts/150cc-scooter-parts/brakes/" target="_blank" rel="noopener">Extreme Motor Sales</a>
+        </span>
+      </div>
+
+      <div class="guide-tags">
+        <span class="guide-tag">repair-guides</span>
+        <span class="guide-tag">GY6</span>
+        <span class="guide-tag">Vespa</span>
+        <span class="guide-tag">brakes</span>
+        <span class="guide-tag">safety</span>
+      </div>
+
+      <div class="applies-to">
+        📌 <strong>Applies to:</strong> GY6 125/150cc scooters (front disc + rear drum), Vespa Primavera / Sprint (front &amp; rear disc).
+        Inspect every <strong>3,000 km</strong>. Replace when friction material is ≤ 2 mm thick or when any wear symptoms appear.
+      </div>
+    </div>
+  </header>
+
   <main class="guide-content">
 
-    <p>The spark plug is one of the cheapest and most impactful maintenance items on any petrol scooter. A worn or incorrectly gapped plug causes hard starting, rough idle, misfires, and increased fuel consumption. Replacing it takes 10–15 minutes and costs less than €5 for a standard NGK.</p>
+    <p>Brakes are the single most safety-critical system on your scooter. On most GY6 clones the front uses a hydraulic disc brake with pads, and the rear uses a mechanical drum brake with shoes. Vespa Primavera and Sprint models use disc brakes on both wheels. This guide covers both types.</p>
 
-    <h2>Spark Plug Specifications</h2>
-    <table>
-      <tr><th>Engine</th><th>Standard Plug</th><th>Upgrade (Iridium)</th><th>Gap</th></tr>
-      <tr><td>GY6 50cc (139QMB)</td><td>NGK C7HSA</td><td>NGK CR7HIX</td><td>0.6–0.7 mm</td></tr>
-      <tr><td>GY6 125/150cc (157QMJ)</td><td>NGK CR7HSA</td><td>NGK CR7HIX</td><td>0.6–0.7 mm</td></tr>
-      <tr><td>Vespa Primavera 125 iGet</td><td>NGK ILZKBR7B8DG (OEM)</td><td>—</td><td>0.7–0.8 mm</td></tr>
-    </table>
-
-    <div class="callout callout-tip">
-      💡 <strong>Tip:</strong> Keep a spare NGK CR7HSA under your seat. It weighs nothing, costs under €4, and can save a long walk home if the plug fails on the road.
+    <div class="callout callout-danger">
+      🔴 <strong>Safety:</strong> Never ride with brakes worn to the metal backing plate. Stopping distance increases dramatically and rotor or drum damage will occur. Wear nitrile gloves when handling brake components — brake dust may contain asbestos fibres in older pads.
     </div>
+
+    <h2>When to Replace</h2>
+    <ul>
+      <li><strong>Squealing or grinding noise</strong> when braking — wear indicators contacting the rotor</li>
+      <li><strong>Increased lever/pedal travel</strong> — lever reaching the handlebar before full braking force</li>
+      <li><strong>Pulsing or vibration</strong> through the lever — warped rotor or uneven pad wear</li>
+      <li><strong>Friction material ≤ 2 mm</strong> on visual inspection through the caliper inspection slot</li>
+      <li><strong>One pad much more worn than the other</strong> — indicates a seized caliper piston or slide pin</li>
+    </ul>
 
     <h2>Tools &amp; Materials Required</h2>
     <ul>
-      <li>Spark plug socket — <strong>16 mm</strong> for most GY6 engines (check your cap diameter first)</li>
-      <li>Socket wrench extension (the plug is often deep in the head)</li>
-      <li>Feeler gauge (to verify the gap on the new plug)</li>
-      <li>Torque wrench (optional but recommended — 10–14 Nm)</li>
-      <li>Compressed air or a rag to clean the plug recess</li>
-      <li>New spark plug (see specifications above)</li>
+      <li>10 mm socket (caliper mounting bolts on most GY6)</li>
+      <li>Flat-head screwdriver or piston retraction tool</li>
+      <li>12 mm open-end spanner (rear drum adjuster nut)</li>
+      <li>Brake cleaner spray</li>
+      <li>Copper grease / anti-seize (for pad backs and slide pins — <em>not</em> friction surfaces)</li>
+      <li>New front brake pads (GY6 generic disc pads)</li>
+      <li>New rear drum brake shoes (GY6 generic drum shoe set)</li>
+      <li>Nitrile gloves</li>
     </ul>
 
-    <h2>Reading the Old Plug — What It Tells You</h2>
-    <p>Before discarding the old plug, inspect the electrode. The color and condition reveal a lot about engine health:</p>
-    <table>
-      <tr><th>Electrode appearance</th><th>Diagnosis</th><th>Action</th></tr>
-      <tr><td>Light tan/grey, slight electrode wear</td><td>✅ Normal — engine running correctly</td><td>Replace at service interval</td></tr>
-      <tr><td>Dry black, sooty carbon deposits</td><td>Rich mixture or clogged air filter</td><td>Check/clean air filter; check carb jetting</td></tr>
-      <tr><td>Wet/oily, black</td><td>Oil in combustion — worn piston rings or valve seals</td><td>Engine inspection needed</td></tr>
-      <tr><td>White or pale grey, blistered</td><td>Lean mixture or overheating</td><td>Check fuel delivery, coolant/air flow</td></tr>
-      <tr><td>Rounded/eroded electrode</td><td>Normal wear — replace now</td><td>Standard replacement</td></tr>
-    </table>
-
     <div class="video-embed">
-      <div class="video-embed-title">🎬 Video Guide — Replacing the Spark Plug on a Chinese Scooter (GY6)</div>
+      <div class="video-embed-title">🎬 Video Guide — Replace Scooter Front Brakes &amp; Adjust Rear Drum</div>
       <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/oHWW1GAanqo"
-          title="Replacing Spark Plug on Chinese Scooter GY6"
+        <iframe src="https://www.youtube.com/embed/nat0lVKkuSk"
+          title="Replace Scooter Front Brakes and Adjust Rear Drum"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
       </div>
-      <p class="video-source"><strong>Video:</strong> "Replacing Spark Plug on Chinese Scooter GY6" | YouTube &nbsp;
-        <a href="https://www.youtube.com/watch?v=oHWW1GAanqo" target="_blank" rel="noopener">↗ Watch on YouTube</a>
+      <p class="video-source"><strong>Video:</strong> "Replace Scooter Front Brakes &amp; Adjust Rear Drum" | YouTube &nbsp;
+        <a href="https://www.youtube.com/watch?v=nat0lVKkuSk" target="_blank" rel="noopener">↗ Watch on YouTube</a>
       </p>
     </div>
 
-    <h2>Step-by-Step Replacement Procedure</h2>
-    <ol>
-      <li><strong>Let the engine cool for at least 10 minutes.</strong> Working on a hot engine risks burns and can cause the plug to seize in the aluminium head if torqued incorrectly when hot.</li>
-      <li><strong>Remove the spark plug cap</strong> by pulling it straight off the plug. Pull the cap, not the wire — pulling the wire can damage the HT lead connection inside the cap.</li>
-      <li><strong>Clean around the plug recess</strong> with compressed air or a dry rag. Any debris that falls into the cylinder when the plug is removed can score the bore.</li>
-      <li><strong>Unscrew the old plug</strong> counter-clockwise using the spark plug socket. If it is tight, apply penetrating oil (WD-40 or equivalent) around the base and wait 5 minutes before trying again. Do not force it.</li>
-      <li><strong>Inspect and note the condition</strong> of the old plug electrode as described in the reading guide above.</li>
-      <li><strong>Check the gap on the new plug</strong> with a feeler gauge. For GY6 engines, the gap should be <strong>0.6–0.7 mm</strong>. Most NGK plugs are pre-gapped but verify. To adjust, carefully bend only the side (ground) electrode — never the centre electrode.</li>
-      <li><strong>Thread the new plug in by hand</strong> for the first 3–4 turns. Cross-threading an aluminium cylinder head is an expensive mistake. If it does not thread smoothly by hand, stop and recheck alignment.</li>
-      <li><strong>Tighten with the socket.</strong> With a new plug and a copper washer seat: hand-tight + <strong>¼ turn</strong>. With a torque wrench: <strong>10–14 Nm</strong>. Do not overtighten — aluminium threads strip easily.</li>
-      <li><strong>Reconnect the spark plug cap</strong> firmly until it seats fully. A loose cap is a common cause of intermittent misfires.</li>
-      <li><strong>Start the engine</strong> and confirm it runs cleanly at idle and through the rev range.</li>
-    </ol>
+    <h2>Part A — Front Disc Brake Pad Replacement</h2>
 
     <div class="callout callout-warn">
-      ⚠️ <strong>Note on anti-seize compound:</strong> Do not apply anti-seize paste to spark plug threads in aluminium heads. The torque specification is designed for bare threads. Anti-seize changes the effective clamping force and can cause under- or over-tightening.
+      ⚠️ When pushing the caliper piston back in, brake fluid is displaced upward into the master cylinder reservoir. Check the reservoir level before you start and remove a small amount with a syringe if it is at MAX — otherwise it will overflow when the piston is retracted.
     </div>
 
-    <h2>Spark Plug Service Intervals</h2>
+    <ol>
+      <li><strong>Support the scooter</strong> on its centre stand on a flat, stable surface.</li>
+      <li><strong>Remove the two caliper mounting bolts</strong> (usually 10 mm) and slide the caliper off the rotor. Support the caliper with a wire or bungee cord — do not let it hang by the brake line.</li>
+      <li><strong>Remove the pad retaining pin</strong> (a bolt or cotter pin depending on caliper type) and slide the old pads out of the caliper.</li>
+      <li><strong>Inspect the brake rotor</strong> for deep grooves, scoring, or cracks. Minimum thickness is typically stamped on the rotor. A heavily grooved rotor reduces new pad effectiveness and should be replaced.</li>
+      <li><strong>Retract the caliper piston:</strong> place the old pad against the piston face and press it back into the caliper body using a large flat-head screwdriver or C-clamp. Push slowly and evenly. The piston must be fully retracted to accommodate the thickness of new pads.</li>
+      <li><strong>Clean the caliper carrier</strong> with brake cleaner — remove all dust, rust, and debris from the pad slide channels.</li>
+      <li><strong>Apply a thin film of copper grease</strong> to the back face of each new pad and to the caliper slide pins. Do not get any grease on the friction surface or the rotor.</li>
+      <li><strong>Insert the new pads</strong> into the caliper and refit the retaining pin. Reinstall the caliper and torque the mounting bolts to <strong>25–30 Nm</strong>.</li>
+      <li><strong>Pump the brake lever</strong> 10–15 times until the lever feels firm — this pushes the pistons out to contact the new pads. Check the brake fluid reservoir level and top up to MAX if needed.</li>
+      <li><strong>Bed in the pads:</strong> perform 5–6 firm stops from 30 km/h before normal riding. This transfers a thin even layer of pad material onto the rotor surface for optimal friction.</li>
+    </ol>
+
+    <h2>Part B — Rear Drum Brake Shoe Replacement (GY6)</h2>
+    <ol>
+      <li><strong>Remove the rear wheel:</strong> loosen the axle nut, disconnect the rear brake cable or rod, and slide the wheel off. Place the scooter on a paddock stand or support it securely.</li>
+      <li><strong>Expose the brake shoes:</strong> the drum is integral to the wheel hub. The shoes are mounted on a brake plate (backing plate) attached to the swingarm. With the wheel removed, the shoes are visible.</li>
+      <li><strong>Photograph the spring arrangement</strong> before removing anything — reassembly requires knowing exactly where each return spring attaches.</li>
+      <li><strong>Remove the return springs</strong> using brake spring pliers or needle-nose pliers. Slide the old shoes off the pivot pins and cam.</li>
+      <li><strong>Inspect the drum surface</strong> (inside the wheel hub) for scoring. Light scores are normal; deep grooves require drum skimming or replacement.</li>
+      <li><strong>Clean the backing plate</strong> with brake cleaner. Apply a small amount of high-temperature grease to the shoe contact points on the backing plate — the raised pads where the shoe metal slides. Do not apply any grease near the friction surface.</li>
+      <li><strong>Fit the new shoes</strong> onto the pivot pins and cam. Reattach the return springs — the springs should pull the shoes back toward each other (away from the drum).</li>
+      <li><strong>Reinstall the wheel</strong> and tighten the axle nut to the specified torque (typically 50–60 Nm).</li>
+      <li><strong>Adjust the brake cable or rod</strong> so the rear brake has approximately 10–15 mm of free play at the lever/pedal tip before resistance begins. Too little free play causes the brake to drag; too much increases stopping distance.</li>
+      <li><strong>Test</strong> by walking the scooter and applying the rear brake firmly several times before riding.</li>
+    </ol>
+
+    <h2>GY6 Brake Pad &amp; Shoe Reference</h2>
     <table>
-      <tr><th>Plug type</th><th>Inspection</th><th>Replacement</th></tr>
-      <tr><td>Standard copper (NGK C7HSA / CR7HSA)</td><td>Every 3,000 km</td><td>Every 3,000–5,000 km</td></tr>
-      <tr><td>Iridium (NGK CR7HIX)</td><td>Every 5,000 km</td><td>Every 10,000–15,000 km</td></tr>
-      <tr><td>Vespa OEM iridium</td><td>Per Piaggio service schedule</td><td>Every 8,000–10,000 km</td></tr>
+      <tr><th>Component</th><th>Type</th><th>Minimum thickness</th><th>Notes</th></tr>
+      <tr><td>Front disc pads (GY6 125/150)</td><td>Sintered or organic</td><td>2 mm (friction material)</td><td>Generic GY6 pads fit most clones</td></tr>
+      <tr><td>Rear drum shoes (GY6)</td><td>Bonded lining</td><td>1 mm above rivet heads</td><td>Replace both shoes together</td></tr>
+      <tr><td>Vespa front/rear disc pads</td><td>OEM sintered</td><td>2 mm</td><td>Use Piaggio OEM or equivalent quality</td></tr>
     </table>
 
     <div class="callout callout-tip">
-      💡 <strong>Upgrade tip:</strong> The NGK CR7HIX iridium plug is a genuine upgrade for GY6 engines. It produces a stronger, more consistent spark which improves cold starting and smooth idle. At roughly €8–12 it costs more than the standard plug but lasts 3× longer.
+      💡 <strong>Tip:</strong> If one front pad is significantly more worn than the other, the caliper slide pins are likely seized with corrosion. Remove, clean, and lubricate them with silicone grease. Failing to do this will cause the new pads to wear unevenly again within 1,000 km.
     </div>
 
     <h2>Applicable Models</h2>
-    <p>This procedure applies to all GY6-engined scooters including the <strong>BTC Riva</strong>, <strong>La Souris Sourini / City</strong>, <strong>Santini Capri</strong>, and all other <code>139QMB</code> / <code>157QMJ</code> engine family scooters. For Vespa Primavera and Sprint models, the plug location and cap type differ but the procedure is identical — consult your model's service manual for the exact plug recess location.</p>
+    <p>Front disc procedure applies to all GY6 125/150cc scooters with hydraulic front disc brakes including <strong>BTC Riva 125</strong>, <strong>La Souris Sourini</strong>, <strong>Santini Capri</strong>, and most Chinese 125cc clones. Rear drum procedure applies to GY6 models with drum rear brakes. For Vespa Primavera, Sprint, and ZIP models, the front and rear caliper designs differ — consult the Piaggio workshop manual for caliper bolt torques.</p>
 
     <h2>Related Videos</h2>
     <div class="related-videos">
       <div class="video-card">
-        <h4>Spark Plug Gap Setting &amp; Installation — GY6</h4>
-        <p>Demonstrates how to check and correctly set the plug gap using a feeler gauge on NGK plugs for GY6 scooters before installation.</p>
-        <a href="https://www.youtube.com/watch?v=Zf5eEE0yivA" target="_blank" rel="noopener">Watch on YouTube →</a>
-      </div>
-      <div class="video-card">
-        <h4>Changing Spark Plug on a 150cc GY6 Scooter</h4>
-        <p>Full plug removal, inspection, gap check and installation on a 150cc GY6 scooter — includes plug socket choice and torque guidance.</p>
-        <a href="https://www.youtube.com/watch?v=DG10KTYJYEk" target="_blank" rel="noopener">Watch on YouTube →</a>
+        <h4>Replacing Scooter Disc Brake Pads</h4>
+        <p>Professional step-by-step disc pad replacement on a generic scooter caliper — covers piston retraction, slide pin lubrication and pad bedding-in procedure.</p>
+        <a href="https://www.youtube.com/watch?v=9liExSECt2Y" target="_blank" rel="noopener">Watch on YouTube →</a>
       </div>
     </div>
 
   </main>
 
-  <!-- Footer -->
   <footer class="guide-footer">
     <p>Page generated by ISRM Content Sync on 2026-05-07. Content summarised from external technical sources for educational purposes.</p>
-    <p style="margin-top: 0.5rem;">Always verify spark plug type and torque specification against your scooter's specific workshop manual.</p>
+    <p style="margin-top: 0.5rem;">Brakes are safety-critical. Always verify procedures against your scooter's official workshop manual before attempting repair.</p>
     <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISRM Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Repair Guides</a></p>
   </footer>
 

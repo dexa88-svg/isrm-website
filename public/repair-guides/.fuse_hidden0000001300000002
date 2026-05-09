@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CVT Variator and Roller Inspection Guide — ISRM</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* Guide Page Container */
+    main.guide-content {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+
+    /* Metadata */
+    .meta {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      margin: 1.5rem 0;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .meta a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .meta a:hover {
+      color: var(--primary);
+    }
+
+    /* Source Attribution Box */
+    .source-box {
+      background: rgba(0, 168, 204, 0.08);
+      border-left: 4px solid var(--accent);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: var(--radius-md);
+    }
+
+    .source-box a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .source-box a:hover {
+      color: var(--primary);
+    }
+
+    /* Tags */
+    .tag {
+      display: inline-block;
+      background: var(--surface);
+      color: var(--warning);
+      border: 1px solid var(--warning);
+      border-radius: var(--radius-lg);
+      padding: 4px 12px;
+      font-size: 0.8rem;
+      margin-right: 8px;
+      margin-bottom: 4px;
+      transition: var(--transition);
+    }
+
+    .tag:hover {
+      background: var(--surface-2);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    /* Lists */
+    ol, ul {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+
+    ol li, ul li {
+      margin-bottom: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Warning Box */
+    .warn {
+      background: rgba(245, 166, 35, 0.1);
+      border-left: 4px solid var(--warning);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: var(--radius-md);
+      color: var(--text-secondary);
+    }
+
+    .warn strong {
+      color: var(--warning);
+    }
+
+    /* Tip Box */
+    .tip {
+      background: rgba(6, 167, 125, 0.1);
+      border-left: 4px solid var(--success);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: var(--radius-md);
+      color: var(--text-secondary);
+    }
+
+    .tip strong {
+      color: var(--success);
+    }
+
+    /* Info Box */
+    .meta-info {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: var(--radius-md);
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    th {
+      background: var(--surface-2);
+      color: var(--warning);
+      padding: 0.8rem 1rem;
+      text-align: left;
+      font-weight: 600;
+      border-bottom: 2px solid var(--border);
+    }
+
+    td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover {
+      background: var(--surface-2);
+    }
+
+    /* Video Hero Section */
+    .video-hero {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .video-hero h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin: 1rem 0;
+      border-radius: var(--radius-md);
+      background: var(--bg-dark);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: var(--radius-md);
+    }
+
+    .video-source {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-top: 0.8rem;
+    }
+
+    .video-source a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .video-source a:hover {
+      color: var(--primary);
+    }
+
+    /* Related Videos Grid */
+    .related-videos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .video-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .video-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .video-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      background: var(--bg-dark);
+    }
+
+    .video-card h4 {
+      color: var(--primary);
+      padding: 0.8rem 1rem 0.3rem;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .video-card p {
+      color: var(--text-secondary);
+      padding: 0 1rem 0.5rem;
+      margin: 0;
+      font-size: 0.85rem;
+    }
+
+    .video-card a {
+      display: inline-block;
+      padding: 0.5rem 1rem 1rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+
+    .video-card a:hover {
+      color: var(--primary);
+    }
+
+    /* Guide Footer */
+    .guide-footer {
+      max-width: 900px;
+      margin: 3rem auto 2rem;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-tertiary);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .guide-footer a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .guide-footer a:hover {
+      color: var(--primary);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      main.guide-content {
+        padding: 0 1.5rem;
+      }
+
+      .related-videos {
+        grid-template-columns: 1fr;
+      }
+
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; }
+      h3 { font-size: 1.2rem; }
+
+      table {
+        font-size: 0.9rem;
+      }
+
+      th, td {
+        padding: 0.6rem 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      main.guide-content {
+        padding: 0 1rem;
+        margin: 1rem auto;
+      }
+
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.2rem; }
+      h3 { font-size: 1rem; }
+
+      .meta {
+        font-size: 0.8rem;
+      }
+
+      .source-box,
+      .warn,
+      .tip,
+      .meta-info {
+        padding: 0.8rem 1rem;
+      }
+
+      table {
+        font-size: 0.85rem;
+      }
+
+      th, td {
+        padding: 0.5rem;
+      }
+
+      .guide-footer {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand"><span class="brand-icon">⚙️</span><span class="brand-text">ISRM</span></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../community/index.html" class="nav-link">Community</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
+        <a href="../index.html">ISRM Home</a><span>›</span><a href="index.html">Repair Guides</a><span>›</span>CVT Variator and Roller Inspection
+      </div>
+      <h1>CVT Variator and Roller Inspection Guide</h1>
+    </div>
+  </section>
+
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 3rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "🔧";
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem;
+      opacity: 0.07;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0 0 1rem;
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+  </style>
+
+  <main class="guide-content">
+    <h1>CVT Variator and Roller Inspection and Replacement Guide</h1>
+
+    <div class="meta">
+      Added: 2026-05-08 &nbsp;|&nbsp; Updated: 2026-05-08 &nbsp;|&nbsp; Sources: <a href="https://www.wemoto.com/info/guide-to-scooter-clutches-variators-and-rollers" target="_blank" rel="noopener">wemoto.com</a>, <a href="https://www.louis-moto.com/en-ww/magazin/rund-ums-bike/schraubertipps/variomatik-und-kupplung" target="_blank" rel="noopener">louis-moto.com</a>
+      <br><span class="tag">GY6</span> <span class="tag">Piaggio</span> <span class="tag">Vespa</span> <span class="tag">CVT</span>
+    </div>
+
+    <div class="source-box">
+      📌 <strong>Applies to:</strong> GY6 50/125/150cc (139QMB, 152QMI, 157QMJ), Piaggio/Vespa 50/125/150cc models with CVT transmission. Carburetor and EFI variants.
+    </div>
+
+    <p>The continuously variable transmission (CVT) is the automatic gearbox found on virtually all modern petrol scooters — both GY6-platform Chinese machines and Piaggio/Vespa models. It consists of two pulleys connected by a rubber drive belt, with the engine-side pulley (the variator) automatically adjusting its effective diameter based on engine speed. The result is a smooth, stepless gear ratio change without the rider needing to do anything.</p>
+
+    <p>CVT components wear gradually and silently. Many riders only notice problems when performance has already significantly degraded. Routine inspection every 6,000–10,000 km will prevent most CVT-related failures.</p>
+
+    <!-- REQUIRED: Video Hero Section -->
+    <div class="video-hero">
+      <h2>Video Guide</h2>
+      <div class="video-container">
+        <iframe
+          width="100%"
+          height="480"
+          src="https://www.youtube-nocookie.com/embed/e5RjDHnuBc8"
+          title="GY6 CVT Roller and Belt Maintenance Guide"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="video-source">
+        <strong>Video:</strong> GY6 CVT Roller and Belt Maintenance Guide
+        <a href="https://youtube.com/watch?v=e5RjDHnuBc8" target="_blank" rel="noopener">↗ Watch on YouTube</a>
+      </p>
+    </div>
+
+    <!-- Metadata Info -->
+    <div class="meta-info">
+      <strong>Difficulty:</strong> Intermediate &nbsp;|&nbsp;
+      <strong>Time Required:</strong> 1.5–2 hours &nbsp;|&nbsp;
+      <strong>Cost:</strong> $40–$120 (parts only)
+    </div>
+
+    <div class="warn">
+      ⚠️ <strong>Safety Warning:</strong> The variator can spin freely when disassembled. Always wear eye protection when working with springs and roller weights, as they can fly out under tension. Do not lose the small roller weights—they're easily misplaced and difficult to source individually.
+    </div>
+
+    <h2>Tools Required</h2>
+    <ul>
+      <li>Socket set (metric: 8mm, 10mm, 12mm, 14mm)</li>
+      <li>Combination wrench set (metric)</li>
+      <li>Torque wrench (0–60 Nm range)</li>
+      <li>Strap wrench or flywheel holder tool (to prevent variator spin)</li>
+      <li>Screwdriver set (Phillips and flathead)</li>
+      <li>Gasket scraper (plastic preferred to avoid gouging)</li>
+      <li>High-temperature grease (bearing or molybdenum disulfide grease)</li>
+      <li>Shop rags or clean cloth</li>
+      <li>Oil drain pan</li>
+      <li>Vernier caliper (for measuring clutch shoe lining thickness)</li>
+    </ul>
+
+    <h2>Parts & Materials</h2>
+    <table>
+      <tr>
+        <th>Part Name</th>
+        <th>OEM Part # (Example: GY6)</th>
+        <th>Approximate Cost</th>
+      </tr>
+      <tr>
+        <td>Variator Roller Weights (set of 6, 15×12mm)</td>
+        <td>139QMB: 152QI-050100</td>
+        <td>$25–$45</td>
+      </tr>
+      <tr>
+        <td>Variator Roller Weights (set of 6, 16×13mm)</td>
+        <td>152QMI: 152QI-050200</td>
+        <td>$30–$50</td>
+      </tr>
+      <tr>
+        <td>Variator Roller Weights (set of 6, 18×14mm)</td>
+        <td>157QMJ: 152QI-050300</td>
+        <td>$30–$50</td>
+      </tr>
+      <tr>
+        <td>Transmission Cover Gasket</td>
+        <td>152QI-009000</td>
+        <td>$5–$12</td>
+      </tr>
+      <tr>
+        <td>CVT Drive Belt (GY6 50cc)</td>
+        <td>139QMB: 152QI-059000</td>
+        <td>$20–$35</td>
+      </tr>
+      <tr>
+        <td>CVT Drive Belt (GY6 125cc)</td>
+        <td>152QMI: 152QI-059100</td>
+        <td>$25–$40</td>
+      </tr>
+    </table>
+
+    <div class="tip">
+      💡 <strong>Pro Tip:</strong> Roller weights are often sold by weight (grams), not as a standard set. Stock weights suit most riders; lighter weights (5–8g) improve acceleration but increase engine wear; heavier weights (11–15g) improve fuel economy and reduce peak revs. Always replace all six rollers together—mixing weights causes vibration and reduces CVT lifespan.
+    </div>
+
+    <h2>How the GY6 / Piaggio CVT Works</h2>
+  <p>At low engine speed (idle, pulling away), the variator ramps push the rollers inward — the front pulley is narrow, the belt runs low, giving a low gear ratio for easy acceleration. As engine speed rises, centrifugal force pushes the roller weights outward along the ramps, widening the front pulley and raising the gear ratio until the belt is running at the top of the pulley — effectively "top gear". The rear clutch pulley (torque server / driven pulley) has a spring that provides resistance, ensuring the belt shifts smoothly between ratios.</p>
+
+  <h2>Key CVT Components</h2>
+  <ul>
+    <li><strong>Variator (front pulley assembly):</strong> Two-piece aluminium pulley with internal roller weights and ramps</li>
+    <li><strong>Roller weights:</strong> Small cylindrical or barrel-shaped weights (typically 6 per variator); they move the movable pulley face as engine speed changes</li>
+    <li><strong>Drive belt:</strong> Reinforced rubber V-belt; transfers power between front and rear pulley</li>
+    <li><strong>Rear clutch / torque server / driven pulley:</strong> Spring-loaded; also contains the centrifugal clutch shoes that engage the rear wheel above a set engine speed</li>
+    <li><strong>Clutch bell (driven housing):</strong> The outer drum that the clutch shoes press against to drive the final-reduction gears</li>
+  </ul>
+
+  <h2>Symptoms of CVT Wear</h2>
+  <table>
+    <tr><th>Symptom</th><th>Likely Component</th><th>Severity</th></tr>
+    <tr><td>Jerky, notchy acceleration (no longer smooth)</td><td>Flat-spotted roller weights</td><td>Medium — replace soon</td></tr>
+    <tr><td>Reduced top speed; engine over-revving at speed</td><td>Worn belt (too narrow) or worn rollers</td><td>High — replace belt promptly</td></tr>
+    <tr><td>Scooter creeps forward at idle / won't disengage</td><td>Clutch spring weakened; sticky clutch shoes</td><td>Medium — inspect clutch</td></tr>
+    <tr><td>Scooter does not pull away until high revs</td><td>Clutch shoes worn below minimum thickness</td><td>High — replace clutch shoes</td></tr>
+    <tr><td>Rattling or knocking from transmission cover at low speed</td><td>Worn rollers or loose variator nut</td><td>High — inspect immediately</td></tr>
+    <tr><td>Belt squealing</td><td>Belt contaminated with oil (chain case seal leak) or glazed belt surface</td><td>High — replace belt; find oil leak source</td></tr>
+    <tr><td>Vibration through floorboards at all speeds</td><td>Belt worn unevenly; variator face damaged</td><td>Medium</td></tr>
+  </table>
+
+  <h2>Roller Weight Specifications</h2>
+  <p>Roller weights are sold by diameter, length, and mass in grams. Using the correct weight is important: heavier rollers shift up earlier (better fuel economy, lower peak revs at speed); lighter rollers shift up later (more low-down acceleration, higher revving). Stock weights should be used for commuting; lighter weights suit performance builds.</p>
+  <table>
+    <tr><th>Engine / Model</th><th>Typical Roller Size</th><th>Stock Weight</th></tr>
+    <tr><td>GY6 50cc (139QMB)</td><td>15 × 12 mm</td><td>5–6 g</td></tr>
+    <tr><td>GY6 125cc (152QMI)</td><td>16 × 13 mm</td><td>10–11 g</td></tr>
+    <tr><td>GY6 150cc (157QMJ)</td><td>18 × 14 mm</td><td>12–14 g</td></tr>
+    <tr><td>Piaggio iGet 125 (Primavera / Sprint)</td><td>20 × 15 mm</td><td>11 g (Piaggio OEM)</td></tr>
+    <tr><td>Piaggio Zip 50 (2-stroke)</td><td>15 × 12 mm</td><td>4.5–5 g</td></tr>
+  </table>
+
+  <div class="warn">
+    ⚠️ <strong>Replace rollers as a complete set of six.</strong> If even one roller has a flat spot, the whole set is unbalanced. Mixing old and new rollers will not restore smooth operation.
+  </div>
+
+  <h2>Roller Replacement Procedure (GY6 Platform)</h2>
+  <ol>
+    <li>Remove the transmission cover (variator cover) — usually 4–6 bolts on the left side of the engine. Note the gasket or O-ring seal.</li>
+    <li>To prevent the variator from spinning when loosening the centre nut, insert a strap wrench around the variator face, or use a flywheel holder tool. <em>Do not jam the belt — this can damage it.</em></li>
+    <li>Remove the variator centre nut (typically M14 × 1.25, right-hand thread). On most GY6 engines this is torqued to 40–50 Nm.</li>
+    <li>Slide the outer variator face off the shaft, then lift the belt off the front pulley (it will remain on the rear clutch).</li>
+    <li>Remove the inner variator face (it may slide or require gentle persuasion). The six roller weights will be visible in the ramp housing. Tip them out.</li>
+    <li>Inspect ramps for grooves. Light polishing marks are acceptable; deep ridges require variator replacement.</li>
+    <li>Install six new rollers of the correct weight. Grease the ramp surfaces lightly with high-temperature grease.</li>
+    <li>Reassemble in reverse order. Torque the variator nut to spec (40–50 Nm GY6; consult your service manual for Piaggio).</li>
+    <li>Refit the cover with a new gasket if the old one is damaged.</li>
+  </ol>
+
+  <h2>Clutch Shoe Inspection</h2>
+  <p>Clutch shoes are the friction material pads on the rear clutch spider that press against the clutch bell drum. They wear thin over time and must be replaced when the lining thickness falls below approximately 2 mm (check your service manual for the exact limit). Worn shoes cause late clutch engagement (needing higher revs to pull away) and eventually slipping under load.</p>
+  <p>To inspect: with the rear clutch assembly removed, measure lining thickness with a vernier calliper. Also check the inside of the clutch bell for scoring. Lightly scored bells can be polished with fine emery cloth; deeply grooved bells must be replaced.</p>
+
+    <h2>Related Videos & Resources</h2>
+    <div class="related-videos">
+      <div class="video-card">
+        <img src="https://img.youtube.com/vi/j3Xw0YT_Gfk/mqdefault.jpg" alt="GY6 CVT Belt Replacement">
+        <h4>GY6 CVT Belt Replacement</h4>
+        <p>Complete guide to replacing the CVT drive belt on GY6 models</p>
+        <a href="https://youtube.com/watch?v=j3Xw0YT_Gfk" target="_blank" rel="noopener">Watch →</a>
+      </div>
+      <div class="video-card">
+        <img src="https://img.youtube.com/vi/XmA5c3xGnXk/mqdefault.jpg" alt="Vespa Primavera CVT Maintenance">
+        <h4>Vespa Primavera CVT Service</h4>
+        <p>CVT roller inspection and replacement for Piaggio Vespa models</p>
+        <a href="https://youtube.com/watch?v=XmA5c3xGnXk" target="_blank" rel="noopener">Watch →</a>
+      </div>
+      <div class="video-card">
+        <img src="https://img.youtube.com/vi/RBa_IqLJu1I/mqdefault.jpg" alt="Scooter Clutch System Explained">
+        <h4>How Scooter Clutch Systems Work</h4>
+        <p>Understanding the centrifugal clutch on modern scooters</p>
+        <a href="https://youtube.com/watch?v=RBa_IqLJu1I" target="_blank" rel="noopener">Watch →</a>
+      </div>
+    </div>
+
+    <div class="tip">
+      💡 <strong>Related ISRM Guides:</strong>
+      <a href="gy6-cvt-variator-belt-replacement.html">GY6 CVT Variator and Drive Belt Replacement</a> |
+      <a href="gy6-spark-plug-guide.html">GY6 Spark Plug Replacement</a> |
+      <a href="gy6-oil-change-guide.html">GY6 Oil Change Guide</a>
+    </div>
+  </main>
+
+  <footer class="guide-footer">
+    <p><strong>Sources:</strong> <a href="https://www.wemoto.com/info/guide-to-scooter-clutches-variators-and-rollers" target="_blank" rel="noopener">Wemoto — Guide to Scooter Clutches, Variators and Rollers</a>, <a href="https://www.louis-moto.com/en-ww/magazin/rund-ums-bike/schraubertipps/variomatik-und-kupplung" target="_blank" rel="noopener">Louis Moto — Variator and Clutch Service</a></p>
+    <p style="margin-top: 0.8rem;"><strong>Last Updated:</strong> 2026-05-08 | <strong>License:</strong> CC BY-SA 4.0</p>
+    <p style="margin-top: 0.8rem;"><em>Always verify with your scooter's official service manual and the original sources before performing repairs. This guide is for educational purposes only.</em></p>
+    <p style="margin-top: 1rem;"><a href="../index.html">⚙️ ISRM Home</a> &nbsp;·&nbsp; <a href="index.html">All Repair Guides</a> &nbsp;·&nbsp; <a href="https://github.com/dexa88-svg/isrm-website/issues">Report Issues</a></p>
+  </footer>
+</body>
+</html>

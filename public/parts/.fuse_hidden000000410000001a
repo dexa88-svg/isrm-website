@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parts & Compatibility — ISRM</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 4rem 2rem 3rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "🔩";
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem;
+      opacity: 0.07;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .page-hero-inner { max-width: 1100px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.75rem;
+    }
+    .page-hero p { color: var(--text-secondary); font-size: 1.05rem; max-width: 620px; margin-bottom: 1.5rem; }
+    .page-hero-stats { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .hero-stat { display: flex; flex-direction: column; gap: 0.15rem; }
+    .hero-stat-number { font-size: 1.6rem; font-weight: 700; color: var(--primary); line-height: 1; }
+    .hero-stat-label { font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .parts-controls {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .parts-controls input,
+    .parts-controls select {
+      padding: 0.8rem 1.2rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      color: var(--text-primary);
+      font-size: 0.95rem;
+    }
+
+    .parts-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .parts-table thead {
+      background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(0, 164, 204, 0.1));
+      border-bottom: 2px solid var(--border);
+    }
+
+    .parts-table th {
+      padding: 1rem 1.5rem;
+      text-align: left;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
+
+    .parts-table td {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    .parts-table tr:hover {
+      background: var(--surface-2);
+    }
+
+    .parts-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .part-name {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .compatibility-badge {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .compat-yes {
+      background: rgba(6, 167, 125, 0.2);
+      color: var(--success);
+    }
+
+    .compat-partial {
+      background: rgba(245, 166, 35, 0.2);
+      color: var(--warning);
+    }
+
+    .compat-no {
+      background: rgba(214, 48, 49, 0.2);
+      color: var(--danger);
+    }
+
+    .part-categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .part-category {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .part-category:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+    }
+
+    .part-category-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .part-category h3 {
+      margin-top: 0;
+      color: var(--text-primary);
+    }
+
+    @media (max-width: 768px) {
+      .parts-table {
+        font-size: 0.9rem;
+      }
+
+      .parts-table th,
+      .parts-table td {
+        padding: 0.8rem;
+      }
+
+      .parts-controls {
+        flex-direction: column;
+      }
+
+      .parts-controls input,
+      .parts-controls select {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      
+        <a href="../index.html" class="nav-brand">
+          <span class="brand-icon">⚙️</span>
+          <span class="brand-text">ISRM</span>
+        </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link active">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../community/index.html" class="nav-link">Community</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
+        <a href="../index.html">ISRM Home</a><span>›</span>Parts &amp; Compatibility
+      </div>
+      <h1>Parts &amp; Compatibility</h1>
+      <p>Find and verify compatible parts for GY6-platform and Vespa/Piaggio scooters. Compatibility tables sourced from official specifications.</p>
+      <div class="page-hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-number">GY6</span>
+          <span class="hero-stat-label">Platform</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number">Vespa</span>
+          <span class="hero-stat-label">Piaggio</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number">4</span>
+          <span class="hero-stat-label">Categories</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number">Free</span>
+          <span class="hero-stat-label">Always</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container" style="padding-top: 2rem; padding-bottom: 4rem;">
+    <div class="parts-controls">
+      <input type="text" placeholder="Search parts..." id="partSearch" style="flex: 1;" />
+      <select id="modelFilter" style="min-width: 200px;">
+        <option value="">All Models</option>
+        <option value="gy6">GY6 Scooters</option>
+        <option value="vespa">Vespa Models</option>
+      </select>
+    </div>
+
+    <h2 style="color: var(--text-primary);">Engine Parts</h2>
+    <table class="parts-table">
+      <thead>
+        <tr>
+          <th>Part Name</th>
+          <th>GY6 (139QMB)</th>
+          <th>Vespa Primavera</th>
+          <th>Vespa ZIP</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="part-name">Spark Plug</td>
+          <td><span class="compatibility-badge compat-yes">Compatible</span></td>
+          <td><span class="compatibility-badge compat-partial">NGK CR8E</span></td>
+          <td><span class="compatibility-badge compat-yes">Compatible</span></td>
+          <td>Check gap before installation</td>
+        </tr>
+        <tr>
+          <td class="part-name">Air Filter</td>
+          <td><span class="compatibility-badge compat-yes">Compatible</span></td>
+          <td><span class="compatibility-badge compat-no">Different</span></td>
+          <td><span class="compatibility-badge compat-no">Different</span></td>
+          <td>Model-specific cartridge required</td>
+        </tr>
+        <tr>
+          <td class="part-name">Oil Filter</td>
+          <td><span class="compatibility-badge compat-yes">Compatible</span></td>
+          <td><span class="compatibility-badge compat-no">Different</span></td>
+          <td><span class="compatibility-badge compat-no">Different</span></td>
+          <td>HF556 standard for GY6</td>
+        </tr>
+        <tr>
+          <td class="part-name">Piston Kit</td>
+          <td><span class="compatibility-badge compat-yes">Compatible</span></td>
+          <td><span class="compatibility-badge compat-no">Different</span></td>
+          <td><span class="compatibility-badge compat-partial">Check Size</span></td>
+          <td>Size varies by engine code</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 style="color: var(--text-primary); margin-top: 3rem;">Transmission Parts</h2>
+    <table class="parts-table">
+      <thead>
+        <tr>
+          <th>Part Name</th>
+          <th>GY6 (139QMB)</th>
+          <th>Vespa Primavera</th>
+          <th>Vespa ZIP</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="part-name">CVT Belt</td>
+          <td><span class="compatibility-badge compat-yes">Compatible</span></td>
+          <td><span class="compatibility-badge compat-no">Different</span></td>
+          <td><span class="compatibility-badge compat-no">Different</span></td>
+          <td>750x16 standard width</td>
+        </tr>
+        <tr>
+          <td class="part-name">Variator Rollers</td>
+          <td><span class="compatibility-badge compat-yes">Compatible</span></td>
+          <td><span class="compatibility-badge compat-no">Different</span></td>
+          <td><span class="compatibility-badge compat-no">Different</span></td>
+          <td>Weight depends on performance goal</td>
+        </tr>
+        <tr>
+          <td class="part-name">Clutch Belt</td>
+          <td><span class="compatibility-badge compat-partial">Drive Belt</span></td>
+          <td><span class="compatibility-badge compat-yes">Compatible</span></td>
+          <td><span class="compatibility-badge compat-yes">Compatible</span></td>
+          <td>Primary drive system</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 style="color: var(--text-primary); margin-top: 3rem;">Browse by Category</h2>
+    <div class="part-categories">
+      <div class="part-category">
+        <div class="part-category-icon">🔧</div>
+        <h3>Engine Parts</h3>
+        <p>Pistons, rings, gaskets, seals</p>
+      </div>
+      <div class="part-category">
+        <div class="part-category-icon">⚙️</div>
+        <h3>Transmission</h3>
+        <p>Belt, rollers, variator</p>
+      </div>
+      <div class="part-category">
+        <div class="part-category-icon">🔩</div>
+        <h3>Fasteners</h3>
+        <p>Bolts, nuts, washers</p>
+      </div>
+      <div class="part-category">
+        <div class="part-category-icon">🛢️</div>
+        <h3>Fluids</h3>
+        <p>Oil, coolant, brake fluid</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>ISRM</h4>
+          <p>Interactive Scooter Repair Manuals</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../repair-guides/index.html">Guides</a></li>
+            <li><a href="../models/index.html">Models</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Last sync: 2026-05-07</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

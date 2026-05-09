@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GY6 Carburetor Pilot &amp; Idle Jet Diagnosis and Cleaning — ISRM</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .guide-content { max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .guide-content h2 { font-size: 1.55rem; color: var(--text-primary); margin-top: 2.5rem; margin-bottom: 0.9rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 0; margin-bottom: 0.75rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol { padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary); }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th { background: var(--surface-2); color: var(--text-primary); font-weight: 600; padding: 0.7rem 1rem; text-align: left; border: 1px solid var(--border); }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26, 35, 50, 0.6); }
+    .callout { padding: 1rem 1.25rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 1.5rem 0; font-size: 0.95rem; color: var(--text-secondary); }
+    .callout strong { color: var(--text-primary); }
+    .callout-tip { background: rgba(6, 167, 125, 0.08); border: 1px solid rgba(6, 167, 125, 0.25); border-left: 4px solid var(--success); }
+    .callout-warn { background: rgba(245, 166, 35, 0.08); border: 1px solid rgba(245, 166, 35, 0.3); border-left: 4px solid var(--warning); }
+    .callout-danger { background: rgba(214, 48, 49, 0.08); border: 1px solid rgba(214, 48, 49, 0.3); border-left: 4px solid var(--danger); }
+    .check-section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+    .check-section:hover { border-color: rgba(0, 168, 204, 0.4); }
+    .pass { color: var(--success); font-weight: 700; }
+    .fail { color: var(--danger); font-weight: 700; }
+    .page-hero { background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%); padding: 3rem 2rem 2rem; position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
+    .page-hero::before { content: "🔧"; position: absolute; right: 6%; top: 50%; transform: translateY(-50%); font-size: 9rem; opacity: 0.07; pointer-events: none; line-height: 1; }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 { font-size: 2rem; line-height: 1.2; background: linear-gradient(135deg, var(--text-primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1.2rem; }
+    .breadcrumb { padding: 0.9rem 2rem; max-width: 900px; margin: 0 auto; font-size: 0.85rem; color: var(--text-tertiary); }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+    .guide-meta { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; font-size: 0.875rem; color: var(--text-tertiary); margin-bottom: 1rem; }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+    .guide-tag { background: rgba(0, 168, 204, 0.1); color: var(--accent); border: 1px solid rgba(0, 168, 204, 0.3); padding: 0.25rem 0.7rem; border-radius: 20px; font-size: 0.78rem; font-weight: 500; }
+    .applies-to { background: rgba(255, 107, 53, 0.07); border: 1px solid rgba(255, 107, 53, 0.2); border-left: 4px solid var(--primary); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 1rem 1.25rem; margin-top: 1.5rem; font-size: 0.95rem; color: var(--text-secondary); }
+    .applies-to strong { color: var(--text-primary); }
+    .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.5rem 0; }
+    .video-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; margin: 1.5rem 0; }
+    .video-wrap {}
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-lg); border: 1px solid var(--border); }
+    .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .video-caption { font-size: 0.82rem; color: var(--text-tertiary); margin-top: 0.4rem; text-align: center; }
+    .guide-footer { background: var(--surface); border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.825rem; color: var(--text-tertiary); }
+    @media (max-width: 700px) {
+      .video-grid, .video-grid-3 { grid-template-columns: 1fr; }
+      .guide-content { padding: 1.5rem 1rem 3rem; }
+      .breadcrumb { padding: 0.9rem 1rem; }
+      .nav-menu { display: none; }
+      .nav-toggle { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand"><span class="brand-icon">⚙️</span><span class="brand-text">ISRM</span></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link active">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../community/index.html" class="nav-link">Community</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="../index.html">ISRM Home</a>
+    <span>›</span>
+    <a href="index.html">Diagnostics</a>
+    <span>›</span>
+    Pilot &amp; Idle Jet Diagnosis
+  </div>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <h1>GY6 Carburetor Pilot &amp; Idle Jet — Diagnosis and Cleaning</h1>
+      <div class="guide-meta">
+        <span>Carburetor</span>
+        <span>·</span>
+        <span>~45 min</span>
+        <span>·</span>
+        <span>Carb cleaner, jet screwdrivers, compressed air</span>
+      </div>
+      <div class="guide-tags">
+        <span class="guide-tag">GY6</span>
+        <span class="guide-tag">Carburetor</span>
+        <span class="guide-tag">Pilot Jet</span>
+        <span class="guide-tag">Idle Jet</span>
+        <span class="guide-tag">Idle Problems</span>
+        <span class="guide-tag">Won't Start</span>
+      </div>
+      <div class="applies-to">
+        <strong>Applies to:</strong> All GY6 carbureted scooters (BTC Riva, La Souris Sourini/City, Santini Capri) with standard CV carburetor (PZ19, PZ20, or equivalent). The pilot jet (also called slow jet or idle jet on some sources) controls fuel delivery at idle and low throttle openings — it is the single most common cause of idle and low-speed running problems on GY6 scooters.
+      </div>
+    </div>
+  </section>
+
+  <main class="guide-content">
+
+    <h2>The Pilot Jet — What It Does and Why It Blocks</h2>
+    <p>The <strong>pilot jet</strong> (also called the <strong>slow jet</strong>) is a small brass jet with a tiny metering hole — typically 0.35–0.42 mm in diameter on a stock GY6 carburetor. It supplies fuel to the engine at idle and at throttle openings below approximately 1/4. At these low throttle positions, the main jet plays almost no role — the entire idle and low-speed fuel circuit depends entirely on the pilot jet being clean and clear.</p>
+    <p>Because the pilot jet hole is so small, even a microscopic deposit of varnish — formed when old fuel evaporates inside the carburetor — can partially or fully block it. This is extremely common on scooters that have been stored for a season, or that run on fuel with ethanol content (E10 or higher), which degrades faster and leaves more varnish residue.</p>
+
+    <h2>Symptoms of a Blocked Pilot Jet</h2>
+    <table>
+      <tr><th>Symptom</th><th>Pilot Jet Blocked?</th></tr>
+      <tr><td>Engine starts and runs at high rpm but will not idle — dies when throttle is released</td><td>Very likely — classic pilot jet blockage</td></tr>
+      <tr><td>Engine only runs with choke on; dies when choke is turned off</td><td>Very likely — choke enriches mixture to compensate for lean pilot circuit</td></tr>
+      <tr><td>Idle is erratic, surging, or hunting — not a steady rpm</td><td>Likely — combined with possible air leak (check both)</td></tr>
+      <tr><td>Engine starts fine when warm but not from cold</td><td>Likely — partial blockage that only affects cold idle circuit</td></tr>
+      <tr><td>Scooter runs well at half to full throttle but poorly at small throttle openings</td><td>Highly likely — pilot circuit is responsible for 0–1/4 throttle fuelling</td></tr>
+      <tr><td>Engine won't idle even with idle screw fully in (clockwise)</td><td>Likely pilot blockage or air/fuel mixture screw issue</td></tr>
+    </table>
+
+    <h2>Reference Videos</h2>
+
+    <h3>Idle Circuit — Diagnosis and Pilot Jet Identification</h3>
+    <div class="video-grid">
+      <div class="video-wrap">
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/4QuFHsGA5KE"
+            title="GY6 Carburetor Pilot Jet Diagnosis"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="video-caption">Identifying pilot jet blockage and the idle fuel circuit on GY6 carburetor.</p>
+      </div>
+      <div class="video-wrap">
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/_2ecpUtAYJU"
+            title="GY6 Idle Jet Cleaning Procedure"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="video-caption">Step-by-step pilot/idle jet cleaning procedure.</p>
+      </div>
+    </div>
+    <div class="video-grid">
+      <div class="video-wrap">
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/oHYrfK9MAuU"
+            title="GY6 Idle Screw and Pilot Jet Adjustment"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="video-caption">Idle screw and pilot jet adjustment after cleaning.</p>
+      </div>
+      <div class="video-wrap">
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/xhaVVH-sLNo"
+            title="GY6 Scooter Idling Bad — Pilot Jet Fix"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="video-caption">Poor idling caused by dirty pilot circuit — complete diagnosis and fix.</p>
+      </div>
+    </div>
+
+    <h2>GY6 Carburetor Idle Circuit — How It Works</h2>
+    <p>Understanding the circuit helps you know where to look and what to clean:</p>
+    <ul>
+      <li><strong>Pilot jet:</strong> A small brass jet screwed into the carb body, typically accessible from the bowl side. Meters fuel into the idle circuit.</li>
+      <li><strong>Pilot fuel passage:</strong> A small drilled channel inside the carb body that carries fuel from the pilot jet to the idle mixture screw and then up to the pilot outlet hole in the carb throat.</li>
+      <li><strong>Air/fuel mixture screw (pilot air screw):</strong> A tapered brass screw sealed with an O-ring, usually covered by a tamper-proof plug from the factory. It meters air (on some GY6 carbs) or fuel (on others) into the idle circuit. Standard setting is 1.5–2.5 turns out from lightly seated.</li>
+      <li><strong>Idle speed screw:</strong> A separate, larger screw (not the mixture screw) that controls how far the throttle slide sits off its seat at idle, setting engine speed. This does not affect mixture, only rpm.</li>
+      <li><strong>Pilot outlet port:</strong> A small hole in the carburetor throat (below the slide), through which the idle mixture enters the engine air stream. Can become blocked with varnish.</li>
+    </ul>
+    <p>A blockage at any point in this circuit causes idle failure. The most common blockage is in the pilot jet itself and in the small drillings within the carb body.</p>
+
+    <h2>Step-by-Step Pilot Jet Cleaning</h2>
+
+    <div class="check-section">
+      <h3>Step 1 — Preparation</h3>
+      <div class="callout callout-warn">
+        <strong>⚠ Fire safety:</strong> Work in a well-ventilated area away from ignition sources. Carburetor cleaner is highly flammable. Have a fire extinguisher nearby. Protect your eyes — carb cleaner is caustic.
+      </div>
+      <ol>
+        <li>Allow the engine to cool completely — at least 30 minutes after last running.</li>
+        <li>Turn the fuel petcock to <strong>OFF</strong> or close the fuel valve.</li>
+        <li>Place a small container under the float bowl drain screw (if fitted) or under the bowl itself. You will be draining residual fuel.</li>
+      </ol>
+    </div>
+
+    <div class="check-section">
+      <h3>Step 2 — Remove the Float Bowl</h3>
+      <ol>
+        <li>Locate the float bowl drain screw at the bottom of the carburetor bowl (if present) and loosen it to drain residual fuel.</li>
+        <li>Remove the single retaining screw (or two screws, depending on carb type) from the bottom of the float bowl.</li>
+        <li>Lower the float bowl carefully — it may still contain fuel. Note the condition of the fuel: if it is dark brown, thick, or smells of varnish, the entire carb needs a full clean.</li>
+        <li>Inspect the float bowl gasket — replace if it shows cracks, compression set, or deformation.</li>
+      </ol>
+    </div>
+
+    <div class="check-section">
+      <h3>Step 3 — Remove and Inspect the Pilot Jet</h3>
+      <ol>
+        <li>With the bowl removed, identify the <strong>pilot jet</strong>: it is the <strong>smaller</strong> of the two jets. On GY6 carbs it is typically the jet closest to the engine side (rear), while the main jet is larger and sits towards the centre or front.</li>
+        <li>Use a flat-head screwdriver that fits the slot precisely — a poor-fitting screwdriver will damage the soft brass jet head. A proper jet screwdriver with a wide, thin blade is ideal.</li>
+        <li>Unscrew the pilot jet anti-clockwise. It should come free with moderate effort. Do not use excessive force — the jet is soft brass and strips easily.</li>
+        <li>Hold the jet up to a light source and look through it. <span class="pass">Clear hole:</span> Jet is unobstructed. Move to cleaning the passages. <span class="fail">Blocked or no light visible:</span> Jet is blocked.</li>
+      </ol>
+    </div>
+
+    <div class="check-section">
+      <h3>Step 4 — Clean the Pilot Jet</h3>
+      <ol>
+        <li>Soak the pilot jet in <strong>carb cleaner</strong> for 10–15 minutes. Fresh cleaner dissolves varnish deposits effectively.</li>
+        <li>After soaking, spray carb cleaner through the jet from both ends using the tube nozzle on the carb cleaner can.</li>
+        <li>Hold the jet up to light — you should see a clean, round hole. If not, soak again for 30 minutes and repeat.</li>
+        <li><strong>Do not use wire, drill bits, or anything solid</strong> to push through the jet hole. The hole size is precisely calibrated — enlarging it even slightly will permanently alter the fuel mixture. The only acceptable mechanical cleaning is with a <strong>jet cleaning wire</strong> (a soft bristle from a brass wire brush, or a strand from a brass wire). Even this should be used with great care.</li>
+        <li>Blow the jet out with compressed air. Confirm the hole is clear visually.</li>
+      </ol>
+    </div>
+
+    <div class="check-section">
+      <h3>Step 5 — Clean the Carburetor Body Passages</h3>
+      <ol>
+        <li>With the pilot jet removed and the bowl off, spray carb cleaner into the <strong>pilot jet port</strong> (the threaded hole where the jet sits). Watch for cleaner to emerge from the small pilot outlet port in the carb throat — if it does, the main passage is clear.</li>
+        <li>Spray cleaner into all small holes and drillings visible in the carb body. Each small hole should show cleaner emerging from somewhere else in the carb — if it does not, the passage is blocked.</li>
+        <li>Use compressed air to blow through all passages after spraying with cleaner.</li>
+        <li>If the pilot outlet port in the carb throat (the small hole below the slide) is blocked with varnish, carefully clear it with a thin strand of wire or a strand of straw bristle. It is critical that this port is clear.</li>
+      </ol>
+    </div>
+
+    <div class="check-section">
+      <h3>Step 6 — Check and Clean the Air/Fuel Mixture Screw</h3>
+      <ol>
+        <li>Locate the mixture screw — a tapered brass screw on the engine side of the carb body, often covered with a small aluminium plug from the factory (emissions tamper-proof cap).</li>
+        <li>If a plug is present, remove it with a small pick or drill (use a 4 mm drill bit carefully — just enough to create a grip point for the pick).</li>
+        <li>Carefully unscrew the mixture screw fully. Note exactly how many turns it takes to remove it from lightly seated — this is your baseline. It should be approximately 1.5–2.5 turns out.</li>
+        <li>The mixture screw will have a small O-ring and a small spring — do not lose these.</li>
+        <li>Soak the screw in carb cleaner. Spray carb cleaner through the mixture screw port and the adjacent air bleed passages.</li>
+        <li>Inspect the O-ring — replace if hardened, cracked, or deformed (use a fuel-grade O-ring matching the original diameter).</li>
+        <li>Reinstall the mixture screw to its original number of turns. Do not tighten past lightly seated — the tapered tip seats on a soft aluminium seat and is easily damaged.</li>
+      </ol>
+    </div>
+
+    <div class="check-section">
+      <h3>Step 7 — Reassemble and Test</h3>
+      <ol>
+        <li>Reinstall the pilot jet. Tighten firmly but not with excessive force — snug is enough.</li>
+        <li>Reinstall the main jet (if removed).</li>
+        <li>Fit a new float bowl gasket if the old one is compromised. Reinstall the float bowl and tighten the screw.</li>
+        <li>Open the fuel petcock to ON. Check for fuel leaks around the bowl.</li>
+        <li>Start the engine. Allow it to warm for 2–3 minutes.</li>
+        <li>With the engine warm, set the idle speed to approximately <strong>1,500–1,800 rpm</strong> using the idle speed screw.</li>
+        <li>Fine-tune the mixture screw: turn it out (anti-clockwise) in 1/4-turn increments and listen. The idle should rise slightly as mixture richens. Find the position that gives the highest, smoothest idle, then turn the idle speed screw back down to your desired idle rpm.</li>
+      </ol>
+    </div>
+
+    <h2>Pilot Jet Size Reference (GY6 Stock)</h2>
+    <table>
+      <tr><th>Engine</th><th>Carburetor</th><th>Standard Pilot Jet</th><th>Standard Main Jet</th></tr>
+      <tr><td>GY6 50cc (139QMB)</td><td>PZ19 or PZ18</td><td>#38–#42</td><td>#78–#82</td></tr>
+      <tr><td>GY6 125cc (152QMI)</td><td>PZ20 or CV22</td><td>#38–#42</td><td>#95–#100</td></tr>
+      <tr><td>GY6 150cc (157QMJ)</td><td>PZ22 or CV24</td><td>#42–#45</td><td>#105–#110</td></tr>
+    </table>
+
+    <div class="callout callout-tip">
+      <strong>When to replace rather than clean:</strong> If the pilot jet is clear but the engine still idles poorly, and all passages are unobstructed, the jet itself may have enlarged from wear or improper cleaning. Replace with an exact OEM-spec jet — they cost less than €1 each. Always carry a spare pilot jet on older carbureted GY6 scooters.
+    </div>
+
+    <h2>After a Full Clean — Setting Idle Correctly</h2>
+    <p>After cleaning, the carburetor requires proper idle adjustment. There are two separate adjustments — do not confuse them:</p>
+    <ul>
+      <li><strong>Idle speed screw (large, spring-loaded, on the side of the carb body):</strong> Controls engine rpm at idle. Turn clockwise to raise idle, anti-clockwise to lower. Target: 1,500–1,800 rpm when fully warm.</li>
+      <li><strong>Air/fuel mixture screw (small, tapered, usually under a plug):</strong> Controls the richness of the idle mixture. Turn out (anti-clockwise) to richen, in (clockwise) to lean. Adjust for highest smooth idle, then set idle speed with the idle speed screw.</li>
+    </ul>
+
+    <h2>Related Guides</h2>
+    <ul>
+      <li><a href="../repair-guides/gy6-carburetor-cleaning-guide.html">GY6 Carburetor Full Cleaning Guide</a></li>
+      <li><a href="../repair-guides/gy6-carburetor-adjustment-guide.html">GY6 Carburetor Adjustment Guide</a></li>
+      <li><a href="../repair-guides/gy6-carburetor-jetting-guide.html">GY6 Carburetor Jetting Guide</a></li>
+      <li><a href="gy6-air-leak-diagnosis.html">Air Leak Diagnosis (can mimic pilot jet symptoms)</a></li>
+      <li><a href="gy6-no-start-troubleshooting.html">GY6 Won't Start — Full Troubleshooting Checklist</a></li>
+    </ul>
+
+    <p style="margin-top:2rem; font-size:0.82rem; color:var(--text-tertiary);">
+      Sources: GY6 carburetor service documentation; treatland.tv/blogs/news; scootdawg.com community repair threads; video references: YouTube Shorts by @its-that-easy and @zandri. Licensed CC BY-SA 4.0.
+    </p>
+
+  </main>
+
+  <script src="../script.js"></script>
+
+  <footer class="guide-footer">
+    <p>ISRM — Interactive Scooter Repair Manuals. Content for educational purposes. CC BY-SA 4.0.</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISRM Home</a> · <a href="index.html" style="color: var(--accent);">← All Diagnostics</a></p>
+  </footer>
+
+</body>
+</html>
