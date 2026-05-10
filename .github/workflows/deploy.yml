@@ -50,3 +50,27 @@ jobs:
             curl -k --create-dirs -u "$FTP_USERNAME:$FTP_PASSWORD" \
               -T "$file" "sftp://$FTP_SERVER:22/$file"
           done
+
+  smoke-test:
+    runs-on: ubuntu-latest
+    needs: deploy
+
+    steps:
+      - name: Wait for deployment to propagate
+        # Allow time for the FTP upload to become visible over HTTP
+        run: sleep 15
+
+      - name: Check key pages are up (HTTP 200)
+        run: |
+          PAGES=(
+            "https://ismr.online"
+            "https://ismr.online/repair-guides/gy6-oil-change-guide.html"
+            "https://ismr.online/diagnostics/gy6-no-start-troubleshooting.html"
+          )
+          FAILED=0
+          for URL in "${PAGES[@]}"; do
+            STATUS=$(curl -o /dev/null -s -w "%{http_code}" --max-time 30 "$URL")
+            echo "$URL → $STATUS"
+            [ "$STATUS" -eq 200 ] || { echo "ERROR: $URL returned $STATUS"; FAILED=1; }
+          done
+          exit $FAILED
