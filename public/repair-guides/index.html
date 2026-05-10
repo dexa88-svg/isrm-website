@@ -368,30 +368,73 @@
 
   <script src="../script.js"></script>
   <script>
-    // Category filter
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.guide-card');
-    const countEl = document.getElementById('visibleCount');
-    const noResults = document.getElementById('noResults');
+    // Category filter - Initialize after DOM is ready
+    function initializeFilters() {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.guide-card');
+      const countEl = document.getElementById('visibleCount');
+      const noResults = document.getElementById('noResults');
 
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const filter = btn.dataset.filter;
-        let visible = 0;
-
-        cards.forEach(card => {
-          const match = filter === 'all' || card.dataset.category === filter;
-          card.classList.toggle('hidden', !match);
-          if (match) visible++;
+      // Validate all elements exist
+      if (!filterBtns.length || !cards.length || !countEl || !noResults) {
+        console.warn('Filter elements not found:', {
+          filterBtns: filterBtns.length,
+          cards: cards.length,
+          countEl: !!countEl,
+          noResults: !!noResults
         });
+        return;
+      }
 
-        countEl.textContent = visible;
-        noResults.classList.toggle('visible', visible === 0);
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+
+          // Remove active class from all buttons
+          filterBtns.forEach(b => b.classList.remove('active'));
+          // Add active class to clicked button
+          btn.classList.add('active');
+
+          const filter = btn.getAttribute('data-filter');
+          let visible = 0;
+
+          // Filter cards
+          cards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            const match = filter === 'all' || cardCategory === filter;
+
+            if (match) {
+              card.classList.remove('hidden');
+              visible++;
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+
+          // Update count
+          countEl.textContent = visible;
+
+          // Show/hide no results message
+          if (visible === 0) {
+            noResults.classList.add('visible');
+          } else {
+            noResults.classList.remove('visible');
+          }
+
+          console.log(`Filter applied: ${filter}, visible cards: ${visible}`);
+        });
       });
-    });
+
+      console.log('Filter system initialized successfully');
+    }
+
+    // Run when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeFilters);
+    } else {
+      // DOM is already loaded
+      initializeFilters();
+    }
   </script>
 
 
