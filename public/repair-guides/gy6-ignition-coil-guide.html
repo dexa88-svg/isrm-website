@@ -11,6 +11,18 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GY6 ignition coil testing and replacement guide. Ohm specs for primary and secondary coil, CDI wiring, and spark test procedure.">
+  <link rel="canonical" href="https://ismr.online/repair-guides/gy6-ignition-coil-guide.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ismr.online/repair-guides/gy6-ignition-coil-guide.html">
+  <meta property="og:title" content="GY6 Ignition Coil (Bobine) Diagnosis & Replacement — ISMR">
+  <meta property="og:description" content="GY6 ignition coil testing and replacement guide. Ohm specs for primary and secondary coil, CDI wiring, and spark test procedure.">
+  <meta property="og:site_name" content="ISMR — Interactive Scooter Manuals for Repair">
+  <meta property="og:image" content="https://ismr.online/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GY6 Ignition Coil (Bobine) Diagnosis & Replacement — ISMR">
+  <meta name="twitter:description" content="GY6 ignition coil testing and replacement guide. Ohm specs for primary and secondary coil, CDI wiring, and spark test procedure.">
+  <meta name="twitter:image" content="https://ismr.online/og-image.jpg">
   <title>GY6 Ignition Coil (Bobine) Diagnosis & Replacement — ISMR</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
@@ -66,6 +78,62 @@
     .video-card a { color: var(--primary); font-weight: 600; font-size: 0.9rem; }
     @media (max-width: 768px) { .guide-header h1 { font-size: 1.7rem; } .guide-content { padding: 1.5rem 1rem 3rem; } .breadcrumb { padding: 0.9rem 1rem; } }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "GY6 Ignition Coil Testing and Replacement Guide",
+  "description": "How to test GY6 ignition coil resistance with a multimeter and replace it. Covers primary coil, secondary coil, and spark test.",
+  "url": "https://ismr.online/repair-guides/gy6-ignition-coil-guide.html",
+  "totalTime": "PT30M",
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "Multimeter (resistance / Ohms mode)"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "8 mm spanner (coil mounting bolts)"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "Replacement ignition coil (if needed)"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Disconnect the coil wiring",
+      "text": "Locate the ignition coil near the cylinder head. Disconnect the primary wire (from CDI) and the HT lead (to spark plug cap)."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Test primary coil resistance",
+      "text": "Set multimeter to resistance. Measure between the primary wire terminal and coil body earth. Spec: 0.3–1.0 Ohm. OL (open) or 0 Ohm indicates a failed primary winding."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Test secondary coil resistance",
+      "text": "Measure between the HT lead output and coil body earth. Spec: 7,000–12,000 Ohm (7–12 kOhm). OL or very high resistance indicates a failed secondary winding."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Test the HT lead and plug cap",
+      "text": "Test the spark plug cap resistance separately: typically 4,000–6,000 Ohm for a suppressed cap. OL indicates a broken internal resistor."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Replace the coil if out of specification",
+      "text": "Remove the two mounting bolts and fit the new coil. Reconnect primary wire and HT lead. Ensure the coil body has good earth contact to the engine."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Spark test after replacement",
+      "text": "Hold the spark plug cap on a known-good plug against the engine earth and crank. A strong blue spark confirms correct installation."
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
