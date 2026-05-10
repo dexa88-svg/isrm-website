@@ -163,6 +163,23 @@
     }
     .dot.filled { background: var(--primary); }
 
+    /* Search input in filters bar */
+    .filters-search {
+      margin-left: auto;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      padding: 0.35rem 0.85rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      outline: none;
+      min-width: 190px;
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+    .filters-search::placeholder { color: var(--text-muted); }
+    .filters-search:focus { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(0,168,204,0.15); }
+
     /* No results state */
     .no-results {
       grid-column: 1 / -1;
@@ -227,6 +244,7 @@
       <button class="filter-btn" data-filter="electrical">⚡ Electrical</button>
       <button class="filter-btn" data-filter="transmission">⚙️ Transmission</button>
       <button class="filter-btn" data-filter="advanced">🔬 Advanced</button>
+      <input type="search" class="filters-search" id="guidesSearch" placeholder="Search guides…" aria-label="Search repair guides">
     </div>
   </div>
 
@@ -388,71 +406,66 @@
 
   <script src="../script.js"></script>
   <script>
-    // Category filter - Initialize after DOM is ready
     function initializeFilters() {
       const filterBtns = document.querySelectorAll('.filter-btn');
       const cards = document.querySelectorAll('.guide-card');
       const countEl = document.getElementById('visibleCount');
       const noResults = document.getElementById('noResults');
+      const searchInput = document.getElementById('guidesSearch');
 
-      // Validate all elements exist
-      if (!filterBtns.length || !cards.length || !countEl || !noResults) {
-        console.warn('Filter elements not found:', {
-          filterBtns: filterBtns.length,
-          cards: cards.length,
-          countEl: !!countEl,
-          noResults: !!noResults
+      let activeCategory = 'all';
+
+      function applyFilters() {
+        const term = searchInput.value.trim().toLowerCase();
+        let visible = 0;
+
+        cards.forEach(card => {
+          const categoryMatch = activeCategory === 'all' || card.getAttribute('data-category') === activeCategory;
+
+          let textMatch = true;
+          if (term) {
+            const haystack = [
+              card.querySelector('h3')?.textContent,
+              card.querySelector('p')?.textContent,
+              card.querySelector('.card-tag')?.textContent,
+              card.querySelector('.tag')?.textContent,
+            ].filter(Boolean).join(' ').toLowerCase();
+            textMatch = haystack.includes(term);
+          }
+
+          const show = categoryMatch && textMatch;
+          card.classList.toggle('hidden', !show);
+          if (show) visible++;
         });
-        return;
+
+        countEl.textContent = visible;
+        noResults.classList.toggle('visible', visible === 0);
       }
 
       filterBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
           e.stopPropagation();
-
-          // Remove active class from all buttons
           filterBtns.forEach(b => b.classList.remove('active'));
-          // Add active class to clicked button
           btn.classList.add('active');
-
-          const filter = btn.getAttribute('data-filter');
-          let visible = 0;
-
-          // Filter cards
-          cards.forEach(card => {
-            const cardCategory = card.getAttribute('data-category');
-            const match = filter === 'all' || cardCategory === filter;
-
-            if (match) {
-              card.classList.remove('hidden');
-              visible++;
-            } else {
-              card.classList.add('hidden');
-            }
-          });
-
-          // Update count
-          countEl.textContent = visible;
-
-          // Show/hide no results message
-          if (visible === 0) {
-            noResults.classList.add('visible');
-          } else {
-            noResults.classList.remove('visible');
-          }
-
-          console.log(`Filter applied: ${filter}, visible cards: ${visible}`);
+          activeCategory = btn.getAttribute('data-filter');
+          applyFilters();
         });
       });
 
-      console.log('Filter system initialized successfully');
+      searchInput.addEventListener('input', applyFilters);
+
+      // Pre-fill from ?search= URL param (homepage search redirects here)
+      const urlSearch = new URLSearchParams(window.location.search).get('search');
+      if (urlSearch) {
+        searchInput.value = urlSearch;
+        applyFilters();
+        searchInput.focus();
+      }
     }
 
-    // Run when DOM is ready
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', initializeFilters);
     } else {
-      // DOM is already loaded
       initializeFilters();
     }
   </script>
