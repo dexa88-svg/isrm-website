@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piaggio ZIP 50/100 4T — Technical Overview — ISMR</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 3rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "🛵";
+      position: absolute; right: 6%; top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem; opacity: 0.07; pointer-events: none; line-height: 1;
+    }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: 2rem; line-height: 1.2;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0 0 1rem; margin: 0;
+      font-size: 0.85rem; color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+
+    .meta { color: var(--text-tertiary); font-size: 0.85rem; margin-bottom: 1.5rem; }
+    .meta a { color: var(--accent); }
+
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+    .guide-tag {
+      background: rgba(0, 168, 204, 0.1); color: var(--accent);
+      border: 1px solid rgba(0, 168, 204, 0.3);
+      padding: 0.25rem 0.7rem; border-radius: 20px;
+      font-size: 0.78rem; font-weight: 500;
+    }
+
+    .source-box {
+      background: rgba(255, 107, 53, 0.07);
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem; margin: 1.5rem 0;
+      font-size: 0.95rem; color: var(--text-secondary);
+    }
+    .source-box strong { color: var(--text-primary); }
+    .source-box a { color: var(--accent); }
+
+    .guide-content {
+      max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem 4rem;
+    }
+    .guide-content h2 {
+      font-size: 1.55rem; color: var(--text-primary);
+      margin-top: 2.5rem; margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+    }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.6rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.7; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol {
+      padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary);
+    }
+    .guide-content li { margin-bottom: 0.5rem; line-height: 1.6; }
+    .guide-content li strong { color: var(--text-primary); }
+
+    table { width: 100%; border-collapse: collapse; margin: 1.2rem 0 1.5rem; }
+    th {
+      background: var(--surface-2); color: var(--primary);
+      padding: 0.6rem 0.9rem; text-align: left;
+      border: 1px solid var(--border); font-size: 0.88rem;
+      font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    td { padding: 0.55rem 0.9rem; border: 1px solid var(--border); color: var(--text-secondary); font-size: 0.93rem; }
+    td strong { color: var(--text-primary); }
+    tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+    tr:hover td { background: rgba(255, 107, 53, 0.04); }
+
+    .warn {
+      background: rgba(245, 166, 35, 0.08);
+      border-left: 4px solid var(--warning);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 0.85rem 1.2rem; margin: 1.2rem 0; color: var(--text-secondary);
+    }
+    .warn strong { color: var(--warning); }
+
+    .tip {
+      background: rgba(6, 167, 125, 0.08);
+      border-left: 4px solid var(--success);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 0.85rem 1.2rem; margin: 1.2rem 0; color: var(--text-secondary);
+    }
+    .tip strong { color: var(--success); }
+
+    .spec-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem; margin: 1.5rem 0;
+    }
+    .spec-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.1rem;
+      text-align: center;
+    }
+    .spec-card-value {
+      font-size: 1.4rem; font-weight: 700;
+      color: var(--primary); line-height: 1; margin-bottom: 0.3rem;
+    }
+    .spec-card-label {
+      font-size: 0.75rem; color: var(--text-tertiary);
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+
+    .schedule-badge {
+      display: inline-block;
+      background: rgba(255, 107, 53, 0.15);
+      color: var(--primary); border: 1px solid rgba(255, 107, 53, 0.3);
+      border-radius: var(--radius-sm); padding: 0.2rem 0.6rem;
+      font-size: 0.78rem; font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .guide-content { padding: 1.5rem 1rem 3rem; }
+      .page-hero { padding: 2rem 1rem 1.5rem; }
+      .spec-highlight { grid-template-columns: repeat(2, 1fr); }
+      table { font-size: 0.85rem; }
+      th, td { padding: 0.45rem 0.6rem; }
+    }
+    @media (max-width: 480px) {
+      .spec-highlight { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand"><span class="brand-icon">⚙️</span><span class="brand-text">ISMR</span></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link active">Models</a></li>
+        <li><a href="../index.html#about" class="nav-link">About</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <a href="../index.html">ISMR Home</a><span>›</span>
+        <a href="index.html">Models</a><span>›</span>
+        Piaggio ZIP 50/100 4T — Technical Overview
+      </div>
+      <h1>Piaggio ZIP 50/100 4T — Technical Overview &amp; Maintenance Reference</h1>
+    </div>
+  </section>
+
+  <main class="guide-content">
+
+    <div class="meta">
+      Added: 2026-05-10 &nbsp;|&nbsp; Updated: 2026-05-10 &nbsp;|&nbsp;
+      Sources:
+      <a href="https://www.manualslib.com/brand/piaggio/zip/" target="_blank" rel="noopener">ManualsLib — Piaggio ZIP</a>,
+      Official Piaggio MSS ZIP 100 4T Service Station Manual,
+      Official Piaggio ZIP 50/100 4T Owner's Manual
+      &nbsp;|&nbsp;
+      <div class="guide-tags">
+        <span class="guide-tag">Piaggio</span>
+        <span class="guide-tag">ZIP</span>
+        <span class="guide-tag">4-Stroke</span>
+        <span class="guide-tag">Carburetor</span>
+        <span class="guide-tag">CVT</span>
+      </div>
+    </div>
+
+    <div class="source-box">
+      📌 <strong>Based on official documents:</strong>
+      Piaggio MSS ZIP 100 4T Service Station Manual (Piaggio &amp; C. S.p.A., Pontedera — KEIHIN CVK 20 carburettor variant) and the Piaggio ZIP 50–100 4T Owner's Manual (Ed. 03_10/2012). These documents have been uploaded to this project and used as primary sources for all specifications, torque values, and maintenance intervals on this page. Always verify against your specific vehicle's manual before performing repairs.
+    </div>
+
+    <p>The Piaggio ZIP is a lightweight urban scooter produced by Piaggio &amp; C. S.p.A. in Pontedera, Italy. Available in 50cc and 100cc 4-stroke variants, it uses a Piaggio-designed single-cylinder engine with SOHC timing, forced-air cooling, and a KEIHIN CVK carburettor. Unlike GY6-platform Chinese scooters, every drivetrain component on the ZIP is Piaggio-proprietary and requires Piaggio original or equivalent quality parts. The 100cc variant discussed in this overview carries the engine prefix <strong>M252M</strong> and chassis prefix <strong>LEMM25200</strong>.</p>
+
+    <!-- Key stats at a glance -->
+    <div class="spec-highlight">
+      <div class="spec-card">
+        <div class="spec-card-value">96.21 cc</div>
+        <div class="spec-card-label">Displacement (100cc)</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-card-value">4.2 kW</div>
+        <div class="spec-card-label">Max Power @ 6,750 rpm</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-card-value">1,500 rpm</div>
+        <div class="spec-card-label">Idle Speed (±150)</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-card-value">89 kg</div>
+        <div class="spec-card-label">Dry Weight (±3 kg)</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-card-value">~7 L</div>
+        <div class="spec-card-label">Fuel Tank (incl. 1.2 L reserve)</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-card-value">850 cm³</div>
+        <div class="spec-card-label">Engine Oil Capacity</div>
+      </div>
+    </div>
+
+    <h2>Engine Specifications</h2>
+    <table>
+      <tr><th>Specification</th><th>Value</th></tr>
+      <tr><td><strong>Engine type</strong></td><td>Single-cylinder, 4-stroke, SOHC, 2 valves</td></tr>
+      <tr><td><strong>Bore</strong></td><td>50 mm</td></tr>
+      <tr><td><strong>Stroke</strong></td><td>49 mm</td></tr>
+      <tr><td><strong>Displacement</strong></td><td>96.21 cc</td></tr>
+      <tr><td><strong>Compression ratio</strong></td><td>10.5 ÷ 11.5 : 1</td></tr>
+      <tr><td><strong>Timing system</strong></td><td>Single overhead camshaft, 2 valves, chain-driven (left side)</td></tr>
+      <tr><td><strong>Fuel system</strong></td><td>Gravity feed, KEIHIN CVK 20 depression carburettor</td></tr>
+      <tr><td><strong>CO adjustment</strong></td><td>3.2% ± 0.5</td></tr>
+      <tr><td><strong>Idle speed</strong></td><td>~1,500 ± 150 rpm</td></tr>
+      <tr><td><strong>Max power (at crankshaft)</strong></td><td>4.2 kW (5.7 CV) at 6,750 rpm</td></tr>
+      <tr><td><strong>Max torque (at crankshaft)</strong></td><td>6.92 Nm at 6,000 rpm</td></tr>
+      <tr><td><strong>Cooling</strong></td><td>Forced air</td></tr>
+      <tr><td><strong>Lubrication</strong></td><td>Lobe pump (inside crankcase), chain-driven, double filter: mesh and centrifugal</td></tr>
+      <tr><td><strong>Starting</strong></td><td>Electric starter + kick-start</td></tr>
+      <tr><td><strong>Valve clearance — intake (cold)</strong></td><td>0.10 mm</td></tr>
+      <tr><td><strong>Valve clearance — exhaust (cold)</strong></td><td>0.15 mm</td></tr>
+      <tr><td><strong>Air filter</strong></td><td>Foam sponge — impregnated with 50% Selenia Air Filter Oil + 50% unleaded petrol</td></tr>
+      <tr><td><strong>Engine oil capacity</strong></td><td>approx. 850 cm³</td></tr>
+      <tr><td><strong>Recommended engine oil</strong></td><td>SELENIA HI SCOOTER 4Tech — SAE 5W-40, API SL, ACEA A3, JASO MA (synthetic)</td></tr>
+      <tr><td><strong>Engine prefix (100 cc)</strong></td><td>M252M ÷ 1001</td></tr>
+    </table>
+
+    <div class="warn">
+      ⚠️ <strong>Fuel requirement:</strong> Use only unleaded petrol with a minimum octane rating of 95 RON. Do not use leaded fuel or ethanol blends beyond E5. Using non-recommended fuel shortens engine life and may void warranty.
+    </div>
+
+    <h2>Carburettor Specifications (KEIHIN CVK 20)</h2>
+    <table>
+      <tr><th>Specification</th><th>Value</th></tr>
+      <tr><td><strong>Brand &amp; Code</strong></td><td>KEIHIN CVK 20</td></tr>
+      <tr><td><strong>Type</strong></td><td>Vacuum (depression) carburettor</td></tr>
+      <tr><td><strong>Diffuser diameter</strong></td><td>Ø 20.5 mm throttle valve / Ø 19 mm diffuser</td></tr>
+      <tr><td><strong>Body stamping</strong></td><td>ADA</td></tr>
+      <tr><td><strong>Main (max) jet</strong></td><td>75</td></tr>
+      <tr><td><strong>Pilot (min/idle) jet</strong></td><td>35</td></tr>
+      <tr><td><strong>Starter nozzle</strong></td><td>45 (code 6ZC)</td></tr>
+      <tr><td><strong>Needle stamping</strong></td><td>4REEG — no notches from top (not adjustable)</td></tr>
+      <tr><td><strong>Petrol inlet hole</strong></td><td>Ø 1.6 mm</td></tr>
+      <tr><td><strong>Starter piston protrusion</strong></td><td>11 mm at 24°C</td></tr>
+      <tr><td><strong>Adjustment code</strong></td><td>AD8A</td></tr>
+    </table>
+
+    <div class="tip">
+      💡 <strong>Carburettor service note:</strong> The throttle valve (vacuum diaphragm slide) must move freely in the chamber. Any wear causing excessive clearance requires carburettor replacement, not adjustment. Replace all gaskets every time the carburettor is disassembled — petrol leaks from reused gaskets are a fire hazard.
+    </div>
+
+    <h2>Ignition System</h2>
+    <table>
+      <tr><th>Specification</th><th>Value</th></tr>
+      <tr><td><strong>Ignition type</strong></td><td>Capacitive discharge (CDI) electronic ignition with incorporated high-voltage coil</td></tr>
+      <tr><td><strong>Advance at idle (1,500 rpm)</strong></td><td>15° BTDC (10° per MSS manual check at 1,800 rpm)</td></tr>
+      <tr><td><strong>Advance at high rpm (5,000–6,000 rpm)</strong></td><td>22° BTDC (17° per MSS manual check)</td></tr>
+      <tr><td><strong>Rev limiter</strong></td><td>Progressive cut from 10,300 rpm; all sparks suppressed at 10,500 rpm</td></tr>
+      <tr><td><strong>Spark plug (100 cc)</strong></td><td>Champion RG4HC / Champion RG4PHP / NGK CR9EB</td></tr>
+      <tr><td><strong>Spark plug (50 cc)</strong></td><td>NGK CR8EB / Denso U24ESR-NB3</td></tr>
+      <tr><td><strong>Electrode gap</strong></td><td>0.7 – 0.8 mm</td></tr>
+      <tr><td><strong>Spark plug torque</strong></td><td>10 – 15 Nm</td></tr>
+      <tr><td><strong>Generator</strong></td><td>Single-phase alternating current</td></tr>
+      <tr><td><strong>Fuse (100 cc)</strong></td><td>10 A</td></tr>
+    </table>
+
+    <h2>Transmission &amp; Drivetrain</h2>
+    <table>
+      <tr><th>Specification</th><th>Value</th></tr>
+      <tr><td><strong>Type</strong></td><td>Automatic CVT — expandable pulley variator, torque server, V-belt, automatic centrifugal clutch, gear reduction unit</td></tr>
+      <tr><td><strong>Rear hub oil capacity</strong></td><td>approx. 80 cm³</td></tr>
+      <tr><td><strong>Rear hub oil specification</strong></td><td>AGIP ROTRA 80W-90 — SAE 80W/90, API GL3</td></tr>
+    </table>
+
+    <h2>Chassis, Suspension &amp; Brakes</h2>
+    <table>
+      <tr><th>Specification</th><th>Value</th></tr>
+      <tr><td><strong>Chassis type</strong></td><td>Welded tubular steel with stamped sheet reinforcements</td></tr>
+      <tr><td><strong>Overall length</strong></td><td>1,700 mm (MSS) / 1,880 mm (owner's manual — 100 cc)</td></tr>
+      <tr><td><strong>Overall width</strong></td><td>680 mm (MSS) / 735 mm (owner's manual)</td></tr>
+      <tr><td><strong>Overall height</strong></td><td>1,060 mm (MSS) / 1,150 mm (owner's manual)</td></tr>
+      <tr><td><strong>Wheelbase</strong></td><td>1,200 mm (MSS) / 1,340 mm (owner's manual)</td></tr>
+      <tr><td><strong>Dry weight</strong></td><td>89 ± 3 kg</td></tr>
+      <tr><td><strong>Front suspension</strong></td><td>Mechanical telescopic fork — 30 mm stems, 77 mm travel</td></tr>
+      <tr><td><strong>Rear suspension travel</strong></td><td>70 mm</td></tr>
+      <tr><td><strong>Front brake</strong></td><td>Disc — Ø 220 mm outer / Ø 175 mm effective, hydraulic (right handlebar lever)</td></tr>
+      <tr><td><strong>Rear brake</strong></td><td>Drum — Ø 140 mm outer / Ø 110 mm effective, mechanical expanding shoes (left handlebar lever)</td></tr>
+      <tr><td><strong>Front tyre</strong></td><td>100/80-10"</td></tr>
+      <tr><td><strong>Rear tyre</strong></td><td>120/70-10"</td></tr>
+      <tr><td><strong>Tyre pressure — front (100 cc)</strong></td><td>1.3 bar (adjust to load)</td></tr>
+      <tr><td><strong>Tyre pressure — rear (100 cc)</strong></td><td>1.6 – 1.8 bar (adjust to load)</td></tr>
+      <tr><td><strong>Rim size — front</strong></td><td>Light alloy 2.50×10"</td></tr>
+      <tr><td><strong>Rim size — rear</strong></td><td>Light alloy 3.00×10"</td></tr>
+      <tr><td><strong>Fuel tank capacity</strong></td><td>~7 L (including ~1.2 L reserve) — 100 cc; ~7.5 L — 50 cc</td></tr>
+    </table>
+
+    <div class="warn">
+      ⚠️ <strong>Tyre pressure:</strong> Always check and adjust tyre pressure with tyres at ambient temperature (cold). Pressure increases when tyres are warm — never bleed a warm tyre to reach the cold specification. Adjust pressure according to the combined weight of rider and accessories.
+    </div>
+
+    <h2>Tightening Torques</h2>
+    <p>The following torque values are extracted directly from the official Piaggio MSS ZIP 100 4T Service Station Manual. Use a calibrated torque wrench. Values marked with ° indicate additional angular rotation after the initial Nm figure.</p>
+
+    <h3>Engine Assembly</h3>
+    <table>
+      <tr><th>Component</th><th>Torque (Nm)</th></tr>
+      <tr><td>Spark plug</td><td>10 – 15 Nm</td></tr>
+      <tr><td>Head cover screws</td><td>8 – 10 Nm</td></tr>
+      <tr><td>Head-cylinder stud bolt nuts</td><td>6 – 7 Nm + 90° + 90°</td></tr>
+      <tr><td>Screws fixing head/cylinder to crankcase</td><td>8 – 10 Nm</td></tr>
+      <tr><td>Timing chain tensioner screws</td><td>8 – 10 Nm</td></tr>
+      <tr><td>Timing chain tensioner central screw</td><td>5 – 6 Nm</td></tr>
+      <tr><td>Camshaft pulley screw</td><td>12 – 14 Nm</td></tr>
+      <tr><td>Valve clearance adjustment lock nuts</td><td>7 – 9 Nm</td></tr>
+      <tr><td>Engine oil pre-filter cover</td><td>25 – 28 Nm</td></tr>
+      <tr><td>Engine oil drain cap</td><td>25 – 28 Nm</td></tr>
+      <tr><td>Alternator flywheel nut</td><td>40 – 44 Nm</td></tr>
+      <tr><td>Crankshaft pulley nut</td><td>18 – 20 Nm + 90° ± 10°</td></tr>
+      <tr><td>Clutch unit nut on pulley</td><td>55 – 60 Nm</td></tr>
+      <tr><td>Driven pulley shaft nut</td><td>40 – 44 Nm</td></tr>
+      <tr><td>Transmission cover screws</td><td>11 – 13 Nm</td></tr>
+      <tr><td>Rear hub oil drain screw</td><td>3 – 5 Nm</td></tr>
+      <tr><td>Rear hub cap screws</td><td>24 – 26 Nm</td></tr>
+      <tr><td>Crankcase half union screw</td><td>8 – 10 Nm</td></tr>
+      <tr><td>Inlet manifold screw</td><td>7 – 9 Nm</td></tr>
+      <tr><td>Carburettor/manifold clamp screw</td><td>1.2 – 1.5 Nm</td></tr>
+      <tr><td>Oil sump screws</td><td>8 – 10 Nm</td></tr>
+      <tr><td>Oil pump coupling screws</td><td>7 – 9 Nm</td></tr>
+    </table>
+
+    <h3>Frame &amp; Suspension</h3>
+    <table>
+      <tr><th>Component</th><th>Torque (Nm)</th></tr>
+      <tr><td>Engine-swinging arm bolt</td><td>33 – 41 Nm</td></tr>
+      <tr><td>Frame-swinging arm bolt</td><td>64 – 72 Nm</td></tr>
+      <tr><td>Rear wheel axle</td><td>104 – 126 Nm</td></tr>
+      <tr><td>Front wheel axle</td><td>45 – 50 Nm</td></tr>
+      <tr><td>Fork bottom screw</td><td>20 – 25 Nm</td></tr>
+      <tr><td>Upper steering ring nut</td><td>35 – 40 Nm</td></tr>
+      <tr><td>Lower steering ring nut</td><td>12 – 14 Nm</td></tr>
+      <tr><td>Handlebar clamping screw</td><td>20 – 25 Nm</td></tr>
+      <tr><td>Shock absorber to chassis</td><td>20 – 25 Nm</td></tr>
+      <tr><td>Shock absorber to engine</td><td>33 – 41 Nm</td></tr>
+      <tr><td>Stand bolt</td><td>25 – 30 Nm</td></tr>
+    </table>
+
+    <h3>Brakes</h3>
+    <table>
+      <tr><th>Component</th><th>Torque (Nm)</th></tr>
+      <tr><td>Brake fluid pump–hose fitting</td><td>20 – 25 Nm</td></tr>
+      <tr><td>Brake fluid pipe–calliper fitting</td><td>20 – 22 Nm</td></tr>
+      <tr><td>Calliper tightening screw</td><td>20 – 25 Nm</td></tr>
+      <tr><td>Oil bleed valve</td><td>8 – 12 Nm</td></tr>
+      <tr><td>Disc tightening screw</td><td>5 – 6.5 Nm</td></tr>
+    </table>
+
+    <div class="warn">
+      ⚠️ <strong>Lubrication before assembly:</strong> Per the official service manual, lubricate nuts and the threads they engage before assembly to ensure adequate locking torque. This applies particularly to wheel axle nuts and structural fasteners.
+    </div>
+
+    <h2>Scheduled Maintenance</h2>
+    <p>The following intervals are from the official Piaggio ZIP 50/100 4T Owner's Manual (Ed. 03_10/2012) and the MSS ZIP 100 4T Service Station Manual. I = Check and clean/adjust/lubricate/replace if necessary. C = Clean. R = Replace. A = Adjust. L = Lubricate.</p>
+
+    <h3>Time-Based Intervals</h3>
+    <table>
+      <tr><th>Interval</th><th>Task</th></tr>
+      <tr><td><span class="schedule-badge">Every 1,000 km / 4 months</span></td><td>Hub (rear gearbox) oil — <strong>change</strong></td></tr>
+      <tr><td><span class="schedule-badge">Every 3,000 km</span></td><td>Engine oil level — check &amp; top-up if needed</td></tr>
+      <tr><td><span class="schedule-badge">Every 3,000 km</span></td><td>Air filter sponge — clean (more frequently on dusty roads)</td></tr>
+      <tr><td><span class="schedule-badge">Every 2 years</span></td><td>Brake fluid — <strong>replace</strong> (DOT 4)</td></tr>
+    </table>
+
+    <h3>Distance-Based Service Schedule (every 3,000 km increments)</h3>
+    <table>
+      <tr><th>Task</th><th>3k</th><th>6k</th><th>9k</th><th>12k</th><th>15k</th><th>18k</th><th>21k</th></tr>
+      <tr><td>Spark plug</td><td>—</td><td>R</td><td>—</td><td>R</td><td>—</td><td>R</td><td>—</td></tr>
+      <tr><td>Drive belt</td><td>—</td><td>I/R</td><td>—</td><td>I/R</td><td>—</td><td>I/R</td><td>—</td></tr>
+      <tr><td>CVT rollers (variator)</td><td>—</td><td>I/R</td><td>—</td><td>I/R</td><td>—</td><td>I/R</td><td>—</td></tr>
+      <tr><td>Engine oil</td><td>I</td><td>R</td><td>I</td><td>R</td><td>I</td><td>R</td><td>I</td></tr>
+      <tr><td>Hub oil</td><td>—</td><td>R</td><td>—</td><td>I</td><td>—</td><td>R</td><td>—</td></tr>
+      <tr><td>Valve clearance</td><td>—</td><td>I</td><td>—</td><td>I</td><td>—</td><td>I</td><td>—</td></tr>
+      <tr><td>Idle speed</td><td>—</td><td>A</td><td>—</td><td>A</td><td>—</td><td>A</td><td>—</td></tr>
+      <tr><td>Throttle control</td><td>—</td><td>A</td><td>—</td><td>A</td><td>—</td><td>A</td><td>—</td></tr>
+      <tr><td>Brake pads / shoes</td><td>—</td><td>I</td><td>—</td><td>I</td><td>—</td><td>I</td><td>—</td></tr>
+      <tr><td>Brake fluid level</td><td>I</td><td>I</td><td>I</td><td>I</td><td>I</td><td>I</td><td>I</td></tr>
+      <tr><td>Tyre pressure &amp; condition</td><td>I</td><td>I</td><td>I</td><td>I</td><td>I</td><td>I</td><td>I</td></tr>
+      <tr><td>Electrical system &amp; battery</td><td>I</td><td>I</td><td>I</td><td>I</td><td>I</td><td>I</td><td>I</td></tr>
+      <tr><td>Safety fasteners</td><td>—</td><td>I</td><td>—</td><td>I</td><td>—</td><td>I</td><td>—</td></tr>
+      <tr><td>Suspension</td><td>—</td><td>I</td><td>—</td><td>I</td><td>—</td><td>I</td><td>—</td></tr>
+      <tr><td>Steering</td><td>—</td><td>A</td><td>—</td><td>A</td><td>—</td><td>A</td><td>—</td></tr>
+      <tr><td>Brake levers (grease)</td><td>—</td><td>L</td><td>—</td><td>L</td><td>—</td><td>L</td><td>—</td></tr>
+      <tr><td>Transmission lubrication</td><td>—</td><td>L</td><td>—</td><td>L</td><td>—</td><td>L</td><td>—</td></tr>
+      <tr><td>Road test</td><td>—</td><td>I</td><td>—</td><td>I</td><td>—</td><td>I</td><td>—</td></tr>
+    </table>
+
+    <h2>Lubricants &amp; Fluids — Recommended Products</h2>
+    <table>
+      <tr><th>Product</th><th>Application</th><th>Specification</th></tr>
+      <tr><td><strong>AGIP CITY HI TEC 4T / SELENIA HI SCOOTER 4Tech</strong></td><td>Engine oil</td><td>SAE 5W-40, API SL, ACEA A3, JASO MA — synthetic</td></tr>
+      <tr><td><strong>AGIP ROTRA 80W-90</strong></td><td>Rear hub / gearbox oil</td><td>SAE 80W/90, API GL3</td></tr>
+      <tr><td><strong>AGIP BRAKE 4</strong></td><td>Brake fluid</td><td>FMVSS DOT 4 synthetic</td></tr>
+      <tr><td><strong>AGIP FILTER OIL / SELENIA Air Filter Oil</strong></td><td>Air filter sponge treatment</td><td>Mineral oil with adhesive additives — mix 50/50 with petrol</td></tr>
+      <tr><td><strong>AGIP GP 330</strong></td><td>Brake levers, throttle grip</td><td>Calcium complex grease, NLGI 2</td></tr>
+      <tr><td><strong>MONTBLANC MOLYBDENUM GREASE</strong></td><td>Driven pulley shaft &amp; movable guide</td><td>Molybdenum disulphide (MoS₂) grease</td></tr>
+      <tr><td><strong>AGIP GREASE PV2</strong></td><td>Steering bearings, swinging arm bolt seats</td><td>Multi-purpose bearing grease</td></tr>
+    </table>
+
+    <h2>Engine Oil — Checking &amp; Changing</h2>
+    <p>The ZIP uses a dipstick on the right crankcase cover (no drain-plug sight glass). To check the level correctly:</p>
+    <ol>
+      <li>Park the scooter on level ground on the centre stand.</li>
+      <li>Remove the dipstick, wipe it clean, reinsert it fully (screw in tightly), then remove it again to read the level.</li>
+      <li>The oil level must be between the MIN and MAX marks. Do not overfill — excess oil causes foaming and oil consumption.</li>
+      <li>To drain, unscrew the drain plug at the bottom of the crankcase. Torque to <strong>25–28 Nm</strong> on refitting.</li>
+      <li>Fill with approximately <strong>850 cm³</strong> of SELENIA HI SCOOTER 4Tech or equivalent SAE 5W-40 synthetic meeting JASO MA.</li>
+    </ol>
+
+    <h2>Rear Hub Oil — Checking &amp; Changing</h2>
+    <ol>
+      <li>Park on the centre stand on level ground.</li>
+      <li>Unscrew the dipstick (cap A), wipe dry, reinsert fully, then remove and check level is between the 2nd and 3rd notches from the bottom (MIN to MAX).</li>
+      <li>To change: remove the oil fill cap/dipstick and unscrew the drain cap (B). Drain fully.</li>
+      <li>Refit drain cap and fill with approximately <strong>80 cm³</strong> of AGIP ROTRA 80W-90 (SAE 80W/90, API GL3).</li>
+      <li>Hub oil must be changed at every 1,000 km or 4 months (whichever comes first) during the initial break-in period.</li>
+    </ol>
+
+    <h2>Air Filter — Cleaning Procedure</h2>
+    <ol>
+      <li>Undo the 6 fixing screws and remove the air cleaner cover.</li>
+      <li>Extract the foam sponge filter element.</li>
+      <li>Wash with water and shampoo (household washing-up liquid is acceptable).</li>
+      <li>Rinse thoroughly, then dry with a clean cloth — do not wring or compress the sponge.</li>
+      <li>Soak the sponge in a 50/50 mixture of Selenia Air Filter Oil and unleaded petrol.</li>
+      <li>Allow to drip dry on a clean cloth, then gently squeeze by hand to remove excess oil without distorting the sponge.</li>
+      <li>Refit. Clean more frequently than the service schedule when riding on dusty roads.</li>
+    </ol>
+
+    <div class="warn">
+      ⚠️ <strong>Never run without air filter:</strong> Operating the engine with a missing or damaged air filter allows unfiltered air and dust to enter the cylinder, causing accelerated bore and piston ring wear.
+    </div>
+
+    <h2>Common Issues &amp; Known Faults</h2>
+    <ul>
+      <li><strong>Excessive fuel consumption:</strong> Most commonly caused by a blocked air filter restricting airflow (engine runs rich), a stuck automatic cold-start (choke) device, loose main or pilot jets, or an incorrect float level in the KEIHIN carburettor. Clean the air filter and check the starter device mechanically before disassembling the carburettor.</li>
+      <li><strong>Drive belt slipping or glazing:</strong> In urban stop-start use the drive belt can glaze before reaching its measured wear limit. If acceleration feels weak but the engine revs freely, inspect the belt surface for glazing and the clutch shoes for oil contamination.</li>
+      <li><strong>CVT roller flat-spotting:</strong> The variator rollers develop flat spots over distance, causing a harsh, stepped sensation during acceleration and a top-speed reduction. Inspect at every 6,000 km service; replace as a complete set — never mix old and new rollers.</li>
+      <li><strong>Rear wheel spinning at idle:</strong> Indicates idle speed set too high, or a faulty clutch with grease-contaminated friction masses. Verify idle is at 1,500 ± 150 rpm and inspect clutch masses for contamination.</li>
+      <li><strong>Front brake spongy feel:</strong> Air in the hydraulic circuit. Bleed the front brake circuit using DOT 4 fluid; bleed valve torque is 8–12 Nm.</li>
+      <li><strong>Oil weeping from crankcase joint:</strong> Crankcase half union screws (8–10 Nm) may need checking for torque and gasket condition if oil weeps from the centre joint.</li>
+    </ul>
+
+    <h2>Service Manual &amp; Documentation Resources</h2>
+    <ul>
+      <li><a href="https://www.manualslib.com/brand/piaggio/zip/" target="_blank" rel="noopener">ManualsLib — Piaggio ZIP manuals (PDF)</a></li>
+      <li><a href="https://www.carlsalter.com/piaggio-vespa-service-manuals.asp" target="_blank" rel="noopener">Carl Salter — Free Piaggio/Vespa Workshop Manuals</a></li>
+      <li><a href="https://www.modernvespa.com/forum/wiki-workshop-manuals" target="_blank" rel="noopener">Modern Vespa Forum — Workshop Manuals Wiki</a></li>
+      <li><a href="https://www.piaggio.com" target="_blank" rel="noopener">Piaggio official website</a> — contact authorised dealer for current service documentation</li>
+    </ul>
+
+    <div class="tip">
+      💡 <strong>50cc variant differences:</strong> The ZIP 50 4T uses the same chassis and body dimensions but a smaller engine (Piaggio-designed 49cc unit). Key differences: spark plug is NGK CR8EB (not CR9EB), front brake disc is smaller at Ø 175 mm effective, and the front brake is drum on some variants (Ø 110 mm). All fluid types and carburettor maintenance procedures are equivalent. Check the specific MSS manual for your 50cc engine variant for any differences in valve timing and compression ratio.
+    </div>
+
+  </main>
+
+  <script src="../script.js"></script>
+
+  <footer class="guide-footer">
+    <p><strong>Sources:</strong> Piaggio MSS ZIP 100 4T Service Station Manual (©2008 Piaggio &amp; C. S.p.A., Pontedera) · Piaggio ZIP 50–100 4T Owner's Manual (Ed. 03_10/2012, via ManualsLib)</p>
+    <p style="margin-top: 0.5rem;">Content reproduced for educational and repair reference purposes under fair use. Verify all specifications against your vehicle's workshop manual before performing any work. Always use original Piaggio or equivalent quality replacement parts.</p>
+    <p style="margin-top: 0.5rem;"><strong>Last Updated:</strong> 2026-05-10 &nbsp;|&nbsp; <strong>License:</strong> CC BY-SA 4.0</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISMR Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Models</a> &nbsp;·&nbsp; <a href="../diagnostics/piaggio-zip-100-troubleshooting.html" style="color: var(--accent);">ZIP Troubleshooting →</a></p>
+  </footer>
+
+</body>
+</html>

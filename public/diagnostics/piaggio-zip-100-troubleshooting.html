@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piaggio ZIP 50/100 4T — Troubleshooting Guide — ISMR</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 3rem 2rem 2rem;
+      position: relative; overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "🔍";
+      position: absolute; right: 6%; top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem; opacity: 0.07; pointer-events: none; line-height: 1;
+    }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: 2rem; line-height: 1.2;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0 0 1rem; margin: 0;
+      font-size: 0.85rem; color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+
+    .meta { color: var(--text-tertiary); font-size: 0.85rem; margin-bottom: 1.5rem; }
+    .meta a { color: var(--accent); }
+
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+    .guide-tag {
+      background: rgba(0, 168, 204, 0.1); color: var(--accent);
+      border: 1px solid rgba(0, 168, 204, 0.3);
+      padding: 0.25rem 0.7rem; border-radius: 20px;
+      font-size: 0.78rem; font-weight: 500;
+    }
+
+    .source-box {
+      background: rgba(255, 107, 53, 0.07);
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem; margin: 1.5rem 0;
+      font-size: 0.95rem; color: var(--text-secondary);
+    }
+    .source-box strong { color: var(--text-primary); }
+    .source-box a { color: var(--accent); }
+
+    .guide-content {
+      max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem 4rem;
+    }
+    .guide-content h2 {
+      font-size: 1.55rem; color: var(--text-primary);
+      margin-top: 2.5rem; margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+    }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.8rem; margin-bottom: 0.7rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.7; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol {
+      padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary);
+    }
+    .guide-content li { margin-bottom: 0.6rem; line-height: 1.6; }
+    .guide-content li strong { color: var(--text-primary); }
+
+    table { width: 100%; border-collapse: collapse; margin: 1.2rem 0 1.5rem; }
+    th {
+      background: var(--surface-2); color: var(--primary);
+      padding: 0.6rem 0.9rem; text-align: left;
+      border: 1px solid var(--border); font-size: 0.88rem;
+      font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    td { padding: 0.55rem 0.9rem; border: 1px solid var(--border); color: var(--text-secondary); font-size: 0.93rem; vertical-align: top; }
+    td strong { color: var(--text-primary); }
+    tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+
+    .warn {
+      background: rgba(245, 166, 35, 0.08);
+      border-left: 4px solid var(--warning);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 0.85rem 1.2rem; margin: 1.2rem 0; color: var(--text-secondary);
+    }
+    .warn strong { color: var(--warning); }
+
+    .tip {
+      background: rgba(6, 167, 125, 0.08);
+      border-left: 4px solid var(--success);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 0.85rem 1.2rem; margin: 1.2rem 0; color: var(--text-secondary);
+    }
+    .tip strong { color: var(--success); }
+
+    .fault-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.5rem 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .fault-section h3 {
+      color: var(--primary); font-size: 1.15rem;
+      margin-top: 0; margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+
+    .symptom-checklist {
+      display: flex; flex-direction: column; gap: 0.5rem; margin: 1rem 0 1.2rem;
+    }
+    .symptom-step {
+      display: flex; gap: 0.75rem; align-items: flex-start;
+    }
+    .step-num {
+      background: var(--primary); color: #fff;
+      border-radius: 50%; width: 1.5rem; height: 1.5rem;
+      flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700; margin-top: 0.1rem;
+    }
+    .step-content { color: var(--text-secondary); font-size: 0.93rem; line-height: 1.6; }
+    .step-content strong { color: var(--text-primary); }
+
+    @media (max-width: 768px) {
+      .guide-content { padding: 1.5rem 1rem 3rem; }
+      .page-hero { padding: 2rem 1rem 1.5rem; }
+      .fault-section { padding: 1rem 1rem 0.25rem; }
+      table { font-size: 0.85rem; }
+      th, td { padding: 0.45rem 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand"><span class="brand-icon">⚙️</span><span class="brand-text">ISMR</span></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link active">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../index.html#about" class="nav-link">About</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <a href="../index.html">ISMR Home</a><span>›</span>
+        <a href="index.html">Diagnostics</a><span>›</span>
+        Piaggio ZIP 50/100 4T — Troubleshooting
+      </div>
+      <h1>Piaggio ZIP 50/100 4T — Troubleshooting Guide</h1>
+    </div>
+  </section>
+
+  <main class="guide-content">
+
+    <div class="meta">
+      Added: 2026-05-10 &nbsp;|&nbsp; Updated: 2026-05-10 &nbsp;|&nbsp;
+      Sources: Official Piaggio MSS ZIP 100 4T Service Station Manual,
+      <a href="https://www.manualslib.com/brand/piaggio/zip/" target="_blank" rel="noopener">ManualsLib — Piaggio ZIP</a>
+      &nbsp;|&nbsp;
+      <div class="guide-tags">
+        <span class="guide-tag">Piaggio</span>
+        <span class="guide-tag">ZIP 50</span>
+        <span class="guide-tag">ZIP 100</span>
+        <span class="guide-tag">Carburetor</span>
+        <span class="guide-tag">Diagnostics</span>
+      </div>
+    </div>
+
+    <div class="source-box">
+      📌 <strong>Applies to:</strong> Piaggio ZIP 50 4T, ZIP 100 4T (all years, carburetor variants — KEIHIN CVK 20). Engine prefix M252M (100 cc). All causes and remedies on this page are extracted directly from the <strong>Piaggio MSS ZIP 100 4T Service Station Manual</strong> (©2008 Piaggio &amp; C. S.p.A., Pontedera) — see Troubleshooting section (TROUBL-39 onwards).
+    </div>
+
+    <p>This guide covers the official fault diagnosis and remedy procedures for the Piaggio ZIP 50/100 4T as published in the Piaggio service station manual. Work systematically through each possible cause in order. If a problem persists after addressing all listed causes, the vehicle should be referred to an authorised Piaggio Service Centre.</p>
+
+    <div class="warn">
+      ⚠️ <strong>Safety first:</strong> Always work on a cold engine unless the fault can only be detected at operating temperature (e.g., oil leaks under pressure, idle hunting). Use wheel chocks. Petrol is highly flammable — keep away from open flames and ensure adequate ventilation.
+    </div>
+
+    <!-- ENGINE WON'T START -->
+    <h2>Engine Will Not Start / Difficult to Start</h2>
+
+    <div class="fault-section">
+      <h3>🔌 1. Check the Spark Plug First</h3>
+      <table>
+        <tr><th width="35%">Possible Cause</th><th>Diagnosis &amp; Remedy</th></tr>
+        <tr>
+          <td><strong>Defective spark plug or incorrect electrode gap</strong></td>
+          <td>Remove the spark plug and inspect. Replace if the insulator is chipped, cracked, or heavily fouled. Check the electrode gap with a feeler gauge — correct gap is <strong>0.7–0.8 mm</strong>. If worn, bend the outer electrode carefully to restore gap. Torque to 10–15 Nm on reinstallation.<br><br><em>Correct spark plug: NGK CR9EB (100 cc) or NGK CR8EB (50 cc).</em></td>
+        </tr>
+        <tr>
+          <td><strong>Incorrect valve sealing or valve adjustment</strong></td>
+          <td>Low compression prevents starting. Check compression with a gauge (should be consistent with 10.5–11.5:1 compression ratio). If low, remove the head and grind valve seats, descale valve heads, replace faulty parts as needed. Verify valve clearance: <strong>intake 0.10 mm, exhaust 0.15 mm</strong> (cold engine). Lock nuts torque: 7–9 Nm.</td>
+        </tr>
+        <tr>
+          <td><strong>Wrong ignition advance</strong></td>
+          <td>Check flywheel keying on the crankshaft. If the woodruff key is sheared or displaced, ignition timing will be off. Replace CDI control unit if advance values cannot be corrected mechanically.</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="fault-section">
+      <h3>⛽ 2. Check Fuel Supply</h3>
+      <table>
+        <tr><th width="35%">Possible Cause</th><th>Diagnosis &amp; Remedy</th></tr>
+        <tr>
+          <td><strong>Vacuum-operated fuel cock failure</strong></td>
+          <td>The fuel tap on the ZIP is vacuum-operated. Check that fuel flows adequately through the pipe by applying a vacuum on the suction pipe. If fuel does not flow freely when vacuum is applied, replace the fuel tap.</td>
+        </tr>
+        <tr>
+          <td><strong>Carburettor jets clogged or dirty</strong></td>
+          <td>Disassemble the carburettor (KEIHIN CVK 20). Clean all passages with solvent and dry with compressed air. Verify main jet (75) and pilot jet (35) are clear and properly seated. Replace all gaskets on reassembly.</td>
+        </tr>
+        <tr>
+          <td><strong>Altered or degraded fuel</strong></td>
+          <td>If the scooter has been stored for extended periods, the petrol in the tank and carburettor bowl may have degraded. Drain all fuel from tank and carburettor. Refill with fresh unleaded petrol (minimum 95 RON).</td>
+        </tr>
+        <tr>
+          <td><strong>Engine flooded</strong></td>
+          <td>If the engine has been repeatedly cranked without starting, it may be flooded (excess fuel in cylinder). To clear: hold the throttle fully open and crank the engine for approximately 5 seconds, then stop for 5 seconds. Repeat 3–4 times. If still flooded: remove the spark plug, crank with the throttle open (keep the HT cap touching the plug body, earthed away from the hole), refit a dry spark plug and attempt to start.</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="fault-section">
+      <h3>🌡️ 3. Check the Automatic Cold-Start Device (Choke)</h3>
+      <table>
+        <tr><th width="35%">Possible Cause</th><th>Diagnosis &amp; Remedy</th></tr>
+        <tr>
+          <td><strong>Automatic starter (choke) not functioning</strong></td>
+          <td>The ZIP uses an automatic thermostatic cold-start device on the carburettor. Check the electrical wiring and mechanical movement. If the starter device fails open (remains on when engine is warm), the engine will run very rich. Replace the starter device if defective. Starter piston protrusion should be <strong>11 mm at 24°C</strong>.</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="fault-section">
+      <h3>🔋 4. Check the Battery &amp; Starter Motor</h3>
+      <table>
+        <tr><th width="35%">Possible Cause</th><th>Diagnosis &amp; Remedy</th></tr>
+        <tr>
+          <td><strong>Battery discharged or sulphated</strong></td>
+          <td>Check the battery state. If sluggish cranking, charge the battery. If the battery shows signs of sulphation (white crust on plates, will not hold charge), replace it. Charge a new battery for 8 hours at 1/10 of its capacity (e.g., 0.4 A for a 4 Ah battery) before first use.</td>
+        </tr>
+        <tr>
+          <td><strong>Starter motor failure / start-up rpm too low</strong></td>
+          <td>If the battery tests good but cranking is slow or the starter does not engage, check starter motor brushes, the starter relay, and wiring connections. A weak crank that can't overcome compression indicates a failing starter motor or corroded wiring.</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- POOR PERFORMANCE -->
+    <h2>Poor Engine Performance / Loss of Power</h2>
+
+    <div class="fault-section">
+      <h3>📉 Low Compression</h3>
+      <table>
+        <tr><th width="35%">Possible Cause</th><th>Diagnosis &amp; Remedy</th></tr>
+        <tr>
+          <td><strong>Wrong valve adjustment</strong></td>
+          <td>Adjust valve clearance with a cold engine: <strong>intake 0.10 mm, exhaust 0.15 mm</strong>. Lock nuts torque: 7–9 Nm.</td>
+        </tr>
+        <tr>
+          <td><strong>Incorrect valve sealing</strong></td>
+          <td>Remove the head and valves. Grind valve seats, descale valve heads. Replace any cracked or bent valve. Check valve stem clearance.</td>
+        </tr>
+        <tr>
+          <td><strong>Valve seat distorted</strong></td>
+          <td>Replace the complete head assembly — seat distortion cannot be corrected by grinding alone.</td>
+        </tr>
+        <tr>
+          <td><strong>Worn or broken piston rings</strong></td>
+          <td>Measure cylinder bore and piston clearance. Standard piston-cylinder clearance: <strong>0.038–0.052 mm</strong>. If bore is worn beyond first oversize (+0.2 mm), replace the piston and cylinder assembly. Piston rings are available in standard, 1st oversize (+0.2 mm), 2nd oversize (+0.4 mm), and 3rd oversize (+0.6 mm).</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="fault-section">
+      <h3>🐌 General Power Loss (Compression OK)</h3>
+      <table>
+        <tr><th width="35%">Possible Cause</th><th>Diagnosis &amp; Remedy</th></tr>
+        <tr>
+          <td><strong>Carburettor dirty / vacuum cock failure</strong></td>
+          <td>Disassemble the KEIHIN CVK 20. Wash all parts with solvent, dry passages with compressed air. Inspect the vacuum diaphragm (throttle slide) for cracks or holes — a perforated diaphragm causes very poor throttle response. Replace if damaged; a cracked diaphragm cannot be repaired.</td>
+        </tr>
+        <tr>
+          <td><strong>Excess carbon deposits in combustion chamber</strong></td>
+          <td>Decarbonise the cylinder, piston crown, head, and valves. Stubborn deposits on valves require removal and cleaning with a wire brush or valve seat tool.</td>
+        </tr>
+        <tr>
+          <td><strong>Incorrect timing or worn timing chain</strong></td>
+          <td>Re-check camshaft timing mark alignment. A stretched timing chain can cause mild retard. Inspect chain and tensioner; replace if worn.</td>
+        </tr>
+        <tr>
+          <td><strong>Exhaust muffler obstructed</strong></td>
+          <td>A blocked catalytic converter or baffles cause severe back-pressure and power loss. If blowing through the exhaust confirms obstruction, replace the silencer.</td>
+        </tr>
+        <tr>
+          <td><strong>Overheated or burnt valves</strong></td>
+          <td>Caused by incorrect clearance (too tight) or poor seating. Remove the head, grind or replace the valves and seats.</td>
+        </tr>
+        <tr>
+          <td><strong>Drive belt worn</strong></td>
+          <td>A worn, cracked, or glazed drive belt slips under load. Inspect the belt surface — replace as a complete set including the variator rollers if the belt has been slipping.</td>
+        </tr>
+        <tr>
+          <td><strong>Inefficient automatic transmission (CVT)</strong></td>
+          <td>Inspect the variator rollers for flat spots and oval wear. Check the pulley faces for wear grooves. Replace damaged parts as a set. Lubricate the movable driven pulley guide with <strong>Montblanc Molybdenum Grease</strong> (never use any other grease here — incorrect lubricant causes belt slippage).</td>
+        </tr>
+        <tr>
+          <td><strong>Clutch slipping</strong></td>
+          <td>Check the clutch friction masses for oil contamination or abnormal wear. Verify the clutch bell is not scored. The clutch mass contact with the bell should be predominantly in the middle and equal across all three masses. Replace clutch masses and/or bell if worn.</td>
+        </tr>
+        <tr>
+          <td><strong>Oil level exceeds maximum</strong></td>
+          <td>Excess engine oil causes crankcase foaming, which can enter the combustion chamber. Check for cause (failed gasket, overfilling). Drain to correct level (MAX mark on dipstick).</td>
+        </tr>
+        <tr>
+          <td><strong>Air filter blocked</strong></td>
+          <td>A saturated air filter restricts airflow, making the mixture very rich. Engine runs flat and smokes. Clean the filter sponge (water, shampoo, then 50/50 oil/petrol soak).</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- EXCESSIVE FUEL CONSUMPTION -->
+    <h2>Excessive Fuel Consumption</h2>
+    <table>
+      <tr><th width="35%">Possible Cause</th><th>Diagnosis &amp; Remedy</th></tr>
+      <tr>
+        <td><strong>Air filter obstructed or dirty</strong></td>
+        <td>A blocked filter forces the engine to draw in less air, running excessively rich. Clean the sponge: wash with water and shampoo, soak in 50% Selenia Air Filter Oil + 50% petrol, wring gently by hand without twisting, allow to drip-dry, then refit.</td>
+      </tr>
+      <tr>
+        <td><strong>Automatic cold-start (choke) remains on</strong></td>
+        <td>Verify the automatic starter device de-activates correctly as the engine warms up. Check electrical wiring to the thermostatic starter and mechanical movement. Replace if stuck in the open (enriched) position.</td>
+      </tr>
+      <tr>
+        <td><strong>Loose or incorrect jets</strong></td>
+        <td>Check that the main jet (75) and pilot jet (35) are correctly fitted and tightened. A loose jet allows fuel to flow unmetered.</td>
+      </tr>
+      <tr>
+        <td><strong>Incorrect float level</strong></td>
+        <td>Remove the float bowl. The float must be parallel to the upper cover contact plane (the throttle valve membrane cover) when held upside down. Adjust the tab on the float arm if the level is incorrect. An incorrect float level causes the carburettor to flood or run lean.</td>
+      </tr>
+    </table>
+
+    <!-- REAR WHEEL SPINS AT IDLE -->
+    <h2>Rear Wheel Spins at Idle</h2>
+    <table>
+      <tr><th width="35%">Possible Cause</th><th>Diagnosis &amp; Remedy</th></tr>
+      <tr>
+        <td><strong>Idle rpm set too high</strong></td>
+        <td>Adjust the idle speed screw on the carburettor. Correct idle: <strong>1,500 ± 150 rpm</strong> (CO: 3.2% ± 0.5). Also verify the C.O. (carbon monoxide) level if an exhaust gas analyser is available.</td>
+      </tr>
+      <tr>
+        <td><strong>Clutch fault</strong></td>
+        <td>Check the clutch springs for fatigue and the friction masses for wear or oil contamination. If the masses are glazed or oil-contaminated, clean with brake cleaner (or replace) and inspect for the source of oil ingress. Check the clutch bell for scoring.</td>
+      </tr>
+      <tr>
+        <td><strong>Air filter housing not sealed</strong></td>
+        <td>If the air box lid or intake boot is not fully sealed, unmetered air enters the engine, causing a lean condition and erratic high idle. Refit the housing correctly; replace any damaged seals or the housing itself.</td>
+      </tr>
+      <tr>
+        <td><strong>Carburettor–air filter connection damaged</strong></td>
+        <td>Inspect the rubber boot between the carburettor and air filter box. Cracks or splits allow air leaks that lean out the mixture at idle and cause hunting. Replace the connection boot if damaged.</td>
+      </tr>
+    </table>
+
+    <!-- CLUTCH FAULT -->
+    <h2>Clutch Faults</h2>
+    <table>
+      <tr><th width="35%">Symptom / Cause</th><th>Diagnosis &amp; Remedy</th></tr>
+      <tr>
+        <td><strong>Clutch slips (engine revs but vehicle does not accelerate)</strong></td>
+        <td>Inspect the clutch friction masses — verify no grease or oil is present on the contact surfaces. The contact pattern with the clutch bell should be mainly in the middle, uniform across all three masses. Verify the clutch bell is not scored or worn abnormally. Replace worn or contaminated components.</td>
+      </tr>
+      <tr>
+        <td><strong>Clutch drag (vehicle creeps at idle)</strong></td>
+        <td>First check idle speed is at 1,500 ± 150 rpm. If idle is correct, inspect clutch spring tension and mass pivot pins. Replace springs if fatigued (set, not elastic). Check for deformed clutch bell.</td>
+      </tr>
+    </table>
+
+    <!-- QUICK REFERENCE TABLE -->
+    <h2>Quick-Reference Diagnostic Table</h2>
+    <table>
+      <tr><th>Symptom</th><th>Start Here</th><th>If No Improvement</th></tr>
+      <tr>
+        <td>Engine cranks but won't fire</td>
+        <td>Check spark plug (gap 0.7–0.8 mm, NGK CR9EB). Check fuel supply via vacuum cock.</td>
+        <td>Check compression; inspect carburettor for blocked jets; check CDI/ignition advance.</td>
+      </tr>
+      <tr>
+        <td>Hard to start when cold</td>
+        <td>Check automatic cold-start device wiring and mechanical movement.</td>
+        <td>Inspect choke piston protrusion (11 mm @ 24°C); replace if stuck.</td>
+      </tr>
+      <tr>
+        <td>Hard to start when hot (flooded)</td>
+        <td>Crank with throttle wide open to clear flood. Check float level.</td>
+        <td>Inspect needle valve — replace if worn (float level drifts).</td>
+      </tr>
+      <tr>
+        <td>Weak acceleration, low top speed</td>
+        <td>Inspect drive belt surface for glazing/cracks. Check CVT roller condition.</td>
+        <td>Check clutch masses for oil; inspect variator pulley faces; check air filter.</td>
+      </tr>
+      <tr>
+        <td>Engine revs but no drive</td>
+        <td>Clutch masses worn, oil-contaminated, or spring-fatigued. Inspect and replace.</td>
+        <td>Check drive belt for breakage.</td>
+      </tr>
+      <tr>
+        <td>Rear wheel turns at idle</td>
+        <td>Reduce idle to 1,500 rpm with idle screw. Check for air leaks at intake boot.</td>
+        <td>Inspect clutch spring tension; replace fatigued springs.</td>
+      </tr>
+      <tr>
+        <td>Excessive fuel consumption</td>
+        <td>Clean or replace air filter. Check cold-start device is not stuck open.</td>
+        <td>Check float level; verify jets (main 75, pilot 35) are correct and tight.</td>
+      </tr>
+      <tr>
+        <td>Engine runs rough at idle only</td>
+        <td>Pilot (idle) jet (35) blocked — disassemble carburettor and clean with compressed air.</td>
+        <td>Air leak at carburettor boot or air box; intake manifold screws loose (7–9 Nm).</td>
+      </tr>
+      <tr>
+        <td>Engine smokes (blue)</td>
+        <td>Oil level above MAX — drain to correct level. Check valve stem seals.</td>
+        <td>Measure cylinder/piston clearance; replace rings if worn.</td>
+      </tr>
+    </table>
+
+    <div class="tip">
+      💡 <strong>Systematic approach:</strong> Always work through the simplest, most accessible checks first (spark plug, fuel supply, air filter, idle speed) before dismantling the carburettor or engine internals. More than 70% of no-start and poor-performance faults on carbureted scooters are resolved at the spark plug, fuel, or air filter level.
+    </div>
+
+    <h2>Valve Clearance — Quick Reference</h2>
+    <p>Incorrect valve clearance is a common cause of hard starting and poor performance. Check only on a <strong>cold engine</strong> (ambient temperature, not run for at least 2 hours).</p>
+    <table>
+      <tr><th>Valve</th><th>Clearance</th><th>Lock Nut Torque</th></tr>
+      <tr><td><strong>Intake (inlet)</strong></td><td>0.10 mm</td><td>7 – 9 Nm</td></tr>
+      <tr><td><strong>Exhaust (discharge)</strong></td><td>0.15 mm</td><td>7 – 9 Nm</td></tr>
+    </table>
+
+    <h2>Related Pages</h2>
+    <ul>
+      <li><a href="../models/piaggio-zip-100-technical-overview.html">Piaggio ZIP 100 4T — Full Technical Specifications</a> — complete specs, torque table, maintenance schedule</li>
+      <li><a href="gy6-no-start-troubleshooting.html">GY6 Scooter Won't Start — Troubleshooting Checklist</a></li>
+      <li><a href="gy6-carburetor-pilot-idle-jet.html">GY6 Carburetor Pilot/Idle Jet Diagnosis</a></li>
+      <li><a href="../repair-guides/gy6-spark-plug-guide.html">Spark Plug Replacement Guide</a></li>
+    </ul>
+
+  </main>
+
+  <script src="../script.js"></script>
+
+  <footer class="guide-footer">
+    <p><strong>Sources:</strong> Piaggio MSS ZIP 100 4T Service Station Manual — Troubleshooting section (TROUBL-39 to TROUBL-42) ©2008 Piaggio &amp; C. S.p.A., Pontedera. Reproduced for educational purposes.</p>
+    <p style="margin-top: 0.5rem;">All fault diagnosis and remedy information is taken directly from the official Piaggio service documentation. Always verify with the workshop manual specific to your vehicle before performing repairs. Complex repairs should be referred to an authorised Piaggio Service Centre.</p>
+    <p style="margin-top: 0.5rem;"><strong>Last Updated:</strong> 2026-05-10 &nbsp;|&nbsp; <strong>License:</strong> CC BY-SA 4.0</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISMR Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Diagnostics</a> &nbsp;·&nbsp; <a href="../models/piaggio-zip-100-technical-overview.html" style="color: var(--accent);">ZIP 100 Specs →</a></p>
+  </footer>
+
+</body>
+</html>
