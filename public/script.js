@@ -1,5 +1,5 @@
 // ============================================
-// ISRM - Interactive JavaScript
+// ISMR - Interactive JavaScript
 // ============================================
 
 // Navigation Mobile Toggle
@@ -206,4 +206,4 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-console.log('ISRM Interactive features loaded successfully');
+console.log('ISMR Interactive features loaded successfully');

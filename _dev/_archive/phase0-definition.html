@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ISRM Phase 0 — Product Definition Worksheet</title>
+    <title>ISMR Phase 0 — Product Definition Worksheet</title>
     <style>
         :root {
             --primary: #2563eb;
@@ -361,7 +361,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>🛴 ISRM Phase 0</h1>
+            <h1>🛴 ISMR Phase 0</h1>
             <p class="subtitle">Lock vision, scope & naming — Product Definition Worksheet</p>
         </header>
 
@@ -377,7 +377,7 @@
 
             <div class="form-group">
                 <label>Draft your one-liner:</label>
-                <small>What is ISRM, in one sentence? (Try 10-20 words max.)</small>
+                <small>What is ISMR, in one sentence? (Try 10-20 words max.)</small>
                 <textarea id="oneLiner" placeholder="e.g., 'The free, crowdsourced repair wiki for scooter owners.'"></textarea>
                 <div class="counter"><span id="oneLineCount">0</span> characters</div>
             </div>
@@ -428,7 +428,7 @@
                 <div>
                     <div class="form-group">
                         <label>What frustrates them? (Pain points)</label>
-                        <small>What problems is ISRM solving for them?</small>
+                        <small>What problems is ISMR solving for them?</small>
                         <textarea id="personaPains" placeholder="e.g., Don't know which part to buy, procedures are scattered across forums..."></textarea>
                     </div>
 
@@ -453,7 +453,7 @@
             </div>
 
             <div class="explanation">
-                Your product likely solves 3 core problems. Think about the jobs your user tries to accomplish (not features, but <em>outcomes</em>). For ISRM, the roadmap suggests: find the right part, find the right procedure, diagnose the problem. But you should refine these.
+                Your product likely solves 3 core problems. Think about the jobs your user tries to accomplish (not features, but <em>outcomes</em>). For ISMR, the roadmap suggests: find the right part, find the right procedure, diagnose the problem. But you should refine these.
             </div>
 
             <div class="tip">
@@ -465,7 +465,7 @@
                     <h4>Job #1: Find the Right Part</h4>
                     <label style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 13px;">
                         Refine this job:
-                        <small style="display: block; font-weight: normal; color: var(--text-light); margin-top: 4px;">What does the user want to accomplish? How will ISRM help?</small>
+                        <small style="display: block; font-weight: normal; color: var(--text-light); margin-top: 4px;">What does the user want to accomplish? How will ISMR help?</small>
                     </label>
                     <textarea id="job1"></textarea>
                 </div>
@@ -474,7 +474,7 @@
                     <h4>Job #2: Learn the Repair Procedure</h4>
                     <label style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 13px;">
                         Refine this job:
-                        <small style="display: block; font-weight: normal; color: var(--text-light); margin-top: 4px;">What does the user want to accomplish? How will ISRM help?</small>
+                        <small style="display: block; font-weight: normal; color: var(--text-light); margin-top: 4px;">What does the user want to accomplish? How will ISMR help?</small>
                     </label>
                     <textarea id="job2"></textarea>
                 </div>
@@ -483,7 +483,7 @@
                     <h4>Job #3: Diagnose the Problem</h4>
                     <label style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 13px;">
                         Refine this job:
-                        <small style="display: block; font-weight: normal; color: var(--text-light); margin-top: 4px;">What does the user want to accomplish? How will ISRM help?</small>
+                        <small style="display: block; font-weight: normal; color: var(--text-light); margin-top: 4px;">What does the user want to accomplish? How will ISMR help?</small>
                     </label>
                     <textarea id="job3"></textarea>
                 </div>
@@ -629,7 +629,7 @@
             const job2 = document.getElementById('job2').value;
             const job3 = document.getElementById('job3').value;
 
-            let md = `# ISRM Phase 0 — Product Definition\n\n`;
+            let md = `# ISMR Phase 0 — Product Definition\n\n`;
             md += `**Date:** ${new Date().toISOString().split('T')[0]}\n\n`;
 
             md += `## 1. One-Liner (Value Proposition)\n\n`;
@@ -646,13 +646,13 @@
             if (job2) md += `### Job 2: Learn the Repair Procedure\n${job2}\n\n`;
             if (job3) md += `### Job 3: Diagnose the Problem\n${job3}\n\n`;
 
-            md += `---\n\nGenerated from ISRM Phase 0 worksheet.\n`;
+            md += `---\n\nGenerated from ISMR Phase 0 worksheet.\n`;
 
             const blob = new Blob([md], { type: 'text/markdown' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `ISRM-Phase0-Definition-${new Date().toISOString().split('T')[0]}.md`;
+            a.download = `ISMR-Phase0-Definition-${new Date().toISOString().split('T')[0]}.md`;
             a.click();
             URL.revokeObjectURL(url);
         }
@@ -678,7 +678,7 @@
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `ISRM-Phase0-Definition-${new Date().toISOString().split('T')[0]}.json`;
+            a.download = `ISMR-Phase0-Definition-${new Date().toISOString().split('T')[0]}.json`;
             a.click();
             URL.revokeObjectURL(url);
         }
@@ -690,7 +690,7 @@
             const job2 = document.getElementById('job2').value;
             const job3 = document.getElementById('job3').value;
 
-            const text = `ISRM Phase 0 Definition\n\n1. One-Liner:\n${oneLiner}\n\n2. Target User:\n${personaWho}\n\n3. Jobs to Be Done:\n- ${job1}\n- ${job2}\n- ${job3}`;
+            const text = `ISMR Phase 0 Definition\n\n1. One-Liner:\n${oneLiner}\n\n2. Target User:\n${personaWho}\n\n3. Jobs to Be Done:\n- ${job1}\n- ${job2}\n- ${job3}`;
 
             navigator.clipboard.writeText(text).then(() => {
                 alert('Copied to clipboard!');

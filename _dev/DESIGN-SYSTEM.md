@@ -1,8 +1,8 @@
-# ISRM Design System & Implementation Guide
+# ISMR Design System & Implementation Guide
 
 ## Overview
 
-The new ISRM website is built on a **modern, lightweight, and interactive** design system. It uses **vanilla HTML/CSS/JavaScript** (no heavy frameworks) for maximum performance and compatibility.
+The new ISMR website is built on a **modern, lightweight, and interactive** design system. It uses **vanilla HTML/CSS/JavaScript** (no heavy frameworks) for maximum performance and compatibility.
 
 **Key Features:**
 - ✨ Modern, professional aesthetics
@@ -173,13 +173,13 @@ Always use `<a class="nav-brand">`, never `<div class="nav-brand">`:
 <!-- Root level pages -->
 <a href="index.html" class="nav-brand">
   <span class="brand-icon">⚙️</span>
-  <span class="brand-text">ISRM</span>
+  <span class="brand-text">ISMR</span>
 </a>
 
 <!-- Pages in subdirectories (repair-guides/, parts/, etc.) -->
 <a href="../index.html" class="nav-brand">
   <span class="brand-icon">⚙️</span>
-  <span class="brand-text">ISRM</span>
+  <span class="brand-text">ISMR</span>
 </a>
 ```
 
@@ -330,7 +330,7 @@ Update all href attributes to point to your actual content paths:
 4. **Main Categories** - 8 category cards (Get Started)
 5. **Featured Content** - Tabbed section (Guides, Trending, Videos, Community)
 6. **Quick Parts Finder** - Model selector
-7. **About Section** - ISRM mission and vision
+7. **About Section** - ISMR mission and vision
 8. **Footer** - Links and metadata
 
 ---

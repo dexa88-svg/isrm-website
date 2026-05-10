@@ -1,4 +1,4 @@
-# ISRM — Interactive Scooter Repair Manuals
+# ISMR — Interactive Scooter Manuals for Repair
 
 A free, wiki-style repair reference for GY6 (Chinese 50/125/150cc) and Piaggio/Vespa scooters. Static HTML — no framework, no build step, no login required.
 

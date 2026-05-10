@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ISRM Roadmap Planner</title>
+    <title>ISMR Roadmap Planner</title>
     <style>
         :root {
             --primary: #2563eb;
@@ -299,7 +299,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>🛴 ISRM Roadmap Planner</h1>
+            <h1>🛴 ISMR Roadmap Planner</h1>
             <p class="vision">A free, wiki-driven, 3D-interactive repair guide for scooters that auto-updates and grows itself</p>
             <div class="header-controls">
                 <button class="btn-primary" onclick="markAllComplete()">✓ Mark All Done</button>
@@ -659,7 +659,7 @@
 
         function exportProgress() {
             const progress = getProgress();
-            let text = 'ISRM Roadmap Progress\n';
+            let text = 'ISMR Roadmap Progress\n';
             text += '=' .repeat(50) + '\n\n';
 
             roadmapData.phases.forEach(phase => {
@@ -680,7 +680,7 @@
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `ISRM-Progress-${new Date().toISOString().split('T')[0]}.txt`;
+            a.download = `ISMR-Progress-${new Date().toISOString().split('T')[0]}.txt`;
             a.click();
             URL.revokeObjectURL(url);
         }

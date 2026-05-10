@@ -196,5 +196,71 @@
     ],
     "addedAt": "2026-05-08T14:14:23Z",
     "lastChecked": "2026-05-09T10:01:00Z"
+  },
+  {
+    "url": "internal:gy6-air-leak-diagnosis",
+    "title": "Diagnosing Air Leaks and Vacuum Sucking \u2014 GY6 Scooter",
+    "category": "diagnostics",
+    "file": "diagnostics/gy6-air-leak-diagnosis.html",
+    "sources": [
+      "internal"
+    ],
+    "addedAt": "2026-05-09T18:04:54Z",
+    "lastChecked": "2026-05-10T10:01:00Z"
+  },
+  {
+    "url": "internal:gy6-carburetor-pilot-idle-jet",
+    "title": "GY6 Carburetor Pilot & Idle Jet Diagnosis and Cleaning",
+    "category": "diagnostics",
+    "file": "diagnostics/gy6-carburetor-pilot-idle-jet.html",
+    "sources": [
+      "internal"
+    ],
+    "addedAt": "2026-05-09T18:04:54Z",
+    "lastChecked": "2026-05-10T10:01:00Z"
+  },
+  {
+    "url": "internal:gy6-cvt-roller-noise-diagnosis",
+    "title": "Metallic Noise from Engine \u2014 CVT Roller Diagnosis \u2014 GY6 Scooter",
+    "category": "diagnostics",
+    "file": "diagnostics/gy6-cvt-roller-noise-diagnosis.html",
+    "sources": [
+      "internal"
+    ],
+    "addedAt": "2026-05-09T18:04:54Z",
+    "lastChecked": "2026-05-10T10:01:00Z"
+  },
+  {
+    "url": "internal:gy6-dirty-buttons-no-start",
+    "title": "Dirty Handlebar Buttons Causing No-Start \u2014 GY6 Scooter",
+    "category": "diagnostics",
+    "file": "diagnostics/gy6-dirty-buttons-no-start.html",
+    "sources": [
+      "internal"
+    ],
+    "addedAt": "2026-05-09T18:04:54Z",
+    "lastChecked": "2026-05-10T10:01:00Z"
+  },
+  {
+    "url": "internal:gy6-efi-cel-flash-codes",
+    "title": "GY6 EFI CEL Flash Codes \u2014 Manual Diagnostic Mode",
+    "category": "diagnostics",
+    "file": "diagnostics/gy6-efi-cel-flash-codes.html",
+    "sources": [
+      "internal"
+    ],
+    "addedAt": "2026-05-09T18:04:54Z",
+    "lastChecked": "2026-05-10T10:01:00Z"
+  },
+  {
+    "url": "internal:gy6-side-stand-kill-switch",
+    "title": "Side Stand Kill Switch \u2014 Scooter Won't Start Diagnosis",
+    "category": "diagnostics",
+    "file": "diagnostics/gy6-side-stand-kill-switch.html",
+    "sources": [
+      "internal"
+    ],
+    "addedAt": "2026-05-09T18:04:54Z",
+    "lastChecked": "2026-05-10T10:01:00Z"
   }
 ]

@@ -1,8 +1,8 @@
-# ISRM Design System - Complete Documentation Index
+# ISMR Design System - Complete Documentation Index
 
 ## 📁 What You Have Here
 
-This folder contains the **complete design system, style guide, and compliance audit** for the ISRM website. All instructions, specifications, and action items are organized and ready to use.
+This folder contains the **complete design system, style guide, and compliance audit** for the ISMR website. All instructions, specifications, and action items are organized and ready to use.
 
 ---
 
@@ -19,7 +19,7 @@ This folder contains the **complete design system, style guide, and compliance a
 
 ---
 
-### 2. **ISRM_StyleGuide.docx**
+### 2. **ISMR_StyleGuide.docx**
 **Professional design system specification (41 KB)**
 
 Contains:
@@ -102,7 +102,7 @@ Contains:
 
 ---
 
-### 7. **ISRM_StyleGuide_Compliance_Audit.txt**
+### 7. **ISMR_StyleGuide_Compliance_Audit.txt**
 **Detailed technical audit of all website pages**
 
 Contains:
@@ -126,11 +126,11 @@ documentation/
 │   ├── INDEX.md            ← Master index (this file)
 │   ├── QUICKSTART.md       ← Start here first!
 │   ├── README.md           ← Design system guide
-│   ├── ISRM_StyleGuide.docx        ← Main style guide
+│   ├── ISMR_StyleGuide.docx        ← Main style guide
 │   ├── styles-reference.css        ← CSS reference
 │   ├── ACTION_PLAN.md              ← Fix instructions
 │   ├── AUDIT_SUMMARY.txt           ← Audit overview
-│   └── ISRM_StyleGuide_Compliance_Audit.txt ← Detailed audit
+│   └── ISMR_StyleGuide_Compliance_Audit.txt ← Detailed audit
 └── README.md               ← Documentation hub
 
 PROJECT ROOT (../..)
@@ -148,25 +148,25 @@ PROJECT ROOT (../..)
 
 ### Scenario 1: "I'm Building a New Page"
 1. Read: **QUICKSTART.md** (5 min)
-2. Reference: **ISRM_StyleGuide.docx** for design specs
+2. Reference: **ISMR_StyleGuide.docx** for design specs
 3. Copy from: **styles-reference.css** for CSS variables
 4. Follow: **README.md** best practices
 
 ### Scenario 2: "I Need to Fix a Page"
 1. Read: **AUDIT_SUMMARY.txt** (5 min) - understand what's broken
 2. Follow: **ACTION_PLAN.md** step-by-step
-3. Reference: **ISRM_StyleGuide.docx** if unsure about design
+3. Reference: **ISMR_StyleGuide.docx** if unsure about design
 4. Test using: Checklist at end of ACTION_PLAN.md
 
 ### Scenario 3: "I Need to Understand the System"
 1. Start: **QUICKSTART.md** learning path (1-3 hours)
 2. Study: **README.md** (10 min)
-3. Review: **ISRM_StyleGuide.docx** (20 min)
+3. Review: **ISMR_StyleGuide.docx** (20 min)
 4. Explore: **styles-reference.css** (10 min)
 5. Practice: Build a test page
 
 ### Scenario 4: "I Want Detailed Technical Information"
-1. Read: **ISRM_StyleGuide_Compliance_Audit.txt** for comprehensive audit
+1. Read: **ISMR_StyleGuide_Compliance_Audit.txt** for comprehensive audit
 2. Reference: **ACTION_PLAN.md** Phase 2 & 3 for advanced topics
 3. Check: **styles-reference.css** for exact values
 
@@ -232,7 +232,7 @@ See **ACTION_PLAN.md** for detailed checklist by page.
 ## 📖 Reading Guide by Role
 
 ### If You're a Designer
-1. **ISRM_StyleGuide.docx** - Main reference
+1. **ISMR_StyleGuide.docx** - Main reference
 2. **README.md** - Implementation context
 3. **AUDIT_SUMMARY.txt** - Current status
 
@@ -250,7 +250,7 @@ See **ACTION_PLAN.md** for detailed checklist by page.
 ### If You're Onboarding
 1. **QUICKSTART.md** - Orientation
 2. **README.md** - Principles
-3. **ISRM_StyleGuide.docx** - Specifications
+3. **ISMR_StyleGuide.docx** - Specifications
 4. **styles-reference.css** - Implementation
 
 ---
@@ -276,7 +276,7 @@ See **ACTION_PLAN.md** for detailed checklist by page.
 
 | Question | Answer | Reference |
 |----------|--------|-----------|
-| What colors should I use? | Check color palette | ISRM_StyleGuide.docx |
+| What colors should I use? | Check color palette | ISMR_StyleGuide.docx |
 | How do I make it responsive? | Add media queries at 768px & 480px | ACTION_PLAN.md Phase 2 |
 | What's the spacing unit? | 8px base | README.md section 3 |
 | Which pages need fixing? | 8 listed in audit | AUDIT_SUMMARY.txt |
@@ -342,7 +342,7 @@ You now have:
 - ✅ Accessibility and performance guidelines
 - ✅ Quick start guide and learning paths
 
-**Everything needed to maintain and improve design consistency across ISRM is here.**
+**Everything needed to maintain and improve design consistency across ISMR is here.**
 
 ---
 
@@ -350,7 +350,7 @@ You now have:
 
 1. **Bookmark QUICKSTART.md** - Your go-to reference
 2. **Keep ACTION_PLAN.md open** - While fixing pages
-3. **Reference ISRM_StyleGuide.docx** - When uncertain about design
+3. **Reference ISMR_StyleGuide.docx** - When uncertain about design
 4. **Copy from styles-reference.css** - Don't memorize values
 5. **Share AUDIT_SUMMARY.txt** - Show stakeholders status
 6. **Use index.html as example** - It's fully compliant

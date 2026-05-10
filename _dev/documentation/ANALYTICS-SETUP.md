@@ -1,4 +1,4 @@
-# ISRM Google Analytics Setup Guide
+# ISMR Google Analytics Setup Guide
 
 **Date:** 2026-05-08  
 **Purpose:** Track unique vs. returning visitors per page  
@@ -14,7 +14,7 @@
 2. Sign in with your Google account (dexa88@gmail.com)
 3. Click **"Create"** → **"Property"**
 4. Fill in:
-   - **Property name:** `ISRM - Interactive Scooter Repair Manuals`
+   - **Property name:** `ISMR - Interactive Scooter Manuals for Repair`
    - **Website URL:** `https://ismr.online` (or current domain)
    - **Industry:** Automotive or DIY & Repair
 5. Accept terms and click **"Create Property"**
@@ -99,7 +99,7 @@ After 24 hours, go to **analytics.google.com** and:
 
 ---
 
-## Implementation Steps for ISRM
+## Implementation Steps for ISMR
 
 ### Step 1: Add Script to Index Page
 ```html
@@ -107,7 +107,7 @@ After 24 hours, go to **analytics.google.com** and:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ISRM - Interactive Scooter Repair Manuals</title>
+  <title>ISMR - Interactive Scooter Manuals for Repair</title>
   <link rel="stylesheet" href="styles.css">
   
   <!-- Google Analytics -->

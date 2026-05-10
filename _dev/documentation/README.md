@@ -1,6 +1,6 @@
-# ISRM Documentation
+# ISMR Documentation
 
-Central documentation hub for the Interactive Scooter Repair Manuals project.
+Central documentation hub for the Interactive Scooter Manuals for Repair project.
 
 ## 📂 Folder Structure
 
@@ -8,14 +8,14 @@ Central documentation hub for the Interactive Scooter Repair Manuals project.
 documentation/
 ├── design-system/          # Design tokens, style guide, CSS reference
 │   ├── README.md          # Design system overview & guidelines
-│   ├── ISRM_StyleGuide.docx     # Comprehensive style guide
+│   ├── ISMR_StyleGuide.docx     # Comprehensive style guide
 │   └── styles-reference.css      # CSS variable reference
 └── README.md              # This file
 ```
 
 ## 🎨 Design System (`/design-system`)
 
-**Purpose:** Single source of truth for visual consistency across ISRM
+**Purpose:** Single source of truth for visual consistency across ISMR
 
 **Contains:**
 - Complete style guide with all design tokens
@@ -36,7 +36,7 @@ documentation/
 - Training new team members
 
 **Key files:**
-- `ISRM_StyleGuide.docx` - Detailed guide with color swatches and specifications
+- `ISMR_StyleGuide.docx` - Detailed guide with color swatches and specifications
 - `styles-reference.css` - All CSS variables and base styles
 - `README.md` - Quick reference and best practices
 
@@ -46,7 +46,7 @@ documentation/
 
 ### 1. First Time Setup
 1. Read `design-system/README.md` for an overview
-2. Open `ISRM_StyleGuide.docx` to understand the design philosophy
+2. Open `ISMR_StyleGuide.docx` to understand the design philosophy
 3. Explore `styles-reference.css` to see how tokens are implemented
 
 ### 2. Building New Pages

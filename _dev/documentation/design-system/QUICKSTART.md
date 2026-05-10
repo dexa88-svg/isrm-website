@@ -1,6 +1,6 @@
 # Design System Quick Start Guide
 
-Welcome to the ISRM Design System documentation! This folder contains everything you need to understand, implement, and maintain visual consistency across the website.
+Welcome to the ISMR Design System documentation! This folder contains everything you need to understand, implement, and maintain visual consistency across the website.
 
 ---
 
@@ -10,7 +10,7 @@ Welcome to the ISRM Design System documentation! This folder contains everything
 
 | File | Purpose | Read Time |
 |------|---------|-----------|
-| **ISRM_StyleGuide.docx** | Complete design system specification with color swatches, typography, components, and patterns | 20 min |
+| **ISMR_StyleGuide.docx** | Complete design system specification with color swatches, typography, components, and patterns | 20 min |
 | **styles-reference.css** | CSS source file with all design tokens as variables | 5 min |
 | **README.md** | Design system overview, best practices, and implementation guidelines | 10 min |
 
@@ -19,7 +19,7 @@ Welcome to the ISRM Design System documentation! This folder contains everything
 | File | Purpose | Read Time |
 |------|---------|-----------|
 | **AUDIT_SUMMARY.txt** | Executive summary of compliance audit with quick checklist | 5 min |
-| **ISRM_StyleGuide_Compliance_Audit.txt** | Detailed technical audit of all 16 website pages | 15 min |
+| **ISMR_StyleGuide_Compliance_Audit.txt** | Detailed technical audit of all 16 website pages | 15 min |
 | **ACTION_PLAN.md** | Step-by-step instructions to fix non-compliant pages | 10 min |
 
 ### This File
@@ -35,7 +35,7 @@ Welcome to the ISRM Design System documentation! This folder contains everything
 ### If You're Building New Pages
 
 1. **Read** the **README.md** (~10 min) for design principles
-2. **Open** the **ISRM_StyleGuide.docx** to see design specifications
+2. **Open** the **ISMR_StyleGuide.docx** to see design specifications
 3. **Copy** CSS variables from **styles-reference.css** into your stylesheet
 4. **Follow** the component patterns documented in the style guide
 
@@ -50,7 +50,7 @@ Welcome to the ISRM Design System documentation! This folder contains everything
 
 1. **Start** with **README.md** for overview
 2. **Study** **styles-reference.css** for actual implementation
-3. **Review** **ISRM_StyleGuide.docx** for design decisions and specifications
+3. **Review** **ISMR_StyleGuide.docx** for design decisions and specifications
 4. **Look** at **index.html** in the project root for a working example
 
 ---
@@ -124,7 +124,7 @@ Critical Issues:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page Title - ISRM</title>
+  <title>Page Title - ISMR</title>
   <link rel="stylesheet" href="styles.css">  <!-- Link to main stylesheet -->
   <style>
     /* Your custom styles here, using CSS variables */
@@ -207,11 +207,11 @@ Before pushing any changes, verify:
 ```
 documentation/
 ├── design-system/
-│   ├── ISRM_StyleGuide.docx          ← Main design guide
+│   ├── ISMR_StyleGuide.docx          ← Main design guide
 │   ├── styles-reference.css          ← CSS variable reference
 │   ├── README.md                     ← Implementation guide
 │   ├── AUDIT_SUMMARY.txt             ← Compliance audit summary
-│   ├── ISRM_StyleGuide_Compliance_Audit.txt  ← Detailed audit
+│   ├── ISMR_StyleGuide_Compliance_Audit.txt  ← Detailed audit
 │   ├── ACTION_PLAN.md                ← Fix instructions
 │   └── QUICKSTART.md                 ← This file
 └── README.md                         ← Documentation hub
@@ -222,7 +222,7 @@ documentation/
 ## 🆘 I'm Stuck
 
 ### "Where do I find the color for X?"
-→ Check **ISRM_StyleGuide.docx** color palette section
+→ Check **ISMR_StyleGuide.docx** color palette section
 
 ### "What's the spacing between elements?"
 → See **styles-reference.css** or README.md spacing section
@@ -245,11 +245,11 @@ documentation/
 
 | Need | Document |
 |------|----------|
-| Design specs & colors | ISRM_StyleGuide.docx |
+| Design specs & colors | ISMR_StyleGuide.docx |
 | CSS variable names | styles-reference.css |
 | Implementation guide | README.md |
 | Compliance status | AUDIT_SUMMARY.txt |
-| Detailed audit findings | ISRM_StyleGuide_Compliance_Audit.txt |
+| Detailed audit findings | ISMR_StyleGuide_Compliance_Audit.txt |
 | How to fix pages | ACTION_PLAN.md |
 | Help & navigation | QUICKSTART.md (this file) |
 
@@ -260,7 +260,7 @@ documentation/
 ### Beginner (1 hour)
 1. Read QUICKSTART.md (this file) - 5 min
 2. Read README.md - 10 min
-3. Browse ISRM_StyleGuide.docx - 20 min
+3. Browse ISMR_StyleGuide.docx - 20 min
 4. Look at index.html for examples - 15 min
 5. Explore styles-reference.css - 10 min
 
@@ -286,7 +286,7 @@ All of Intermediate, plus:
 
 1. **Read this file** (you are here!)
 2. **Read README.md** (~10 min) for principles
-3. **Open ISRM_StyleGuide.docx** for reference
+3. **Open ISMR_StyleGuide.docx** for reference
 4. **Check your page** against the compliance checklist
 5. **Use ACTION_PLAN.md** if fixes are needed
 

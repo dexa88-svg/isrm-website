@@ -1,11 +1,11 @@
 ---
 name: isrm-consistency-check
-description: Audit and fix ISRM website structure, content scope, and navigation after the daily content sync
+description: Audit and fix ISMR website structure, content scope, and navigation after the daily content sync
 ---
 
-## ISRM Consistency Checker & Fixer
+## ISMR Consistency Checker & Fixer
 
-You are maintaining the **Interactive Scooter Repair Manuals (ISRM)** website. This task runs after the daily content sync to detect and fix structural, scope, and navigation inconsistencies.
+You are maintaining the **Interactive Scooter Manuals for Repair (ISMR)** website. This task runs after the daily content sync to detect and fix structural, scope, and navigation inconsistencies.
 
 ---
 
@@ -40,7 +40,7 @@ Load `sync-manifest.json` at the start. Apply all changes in memory. Write the u
 
 ## PROJECT SCOPE (must be enforced)
 
-ISRM covers **petrol/gasoline scooters only**:
+ISMR covers **petrol/gasoline scooters only**:
 - **GY6-engined scooters**: BTC Riva, La Souris Sourini, La Souris City, Santini Capri, and similar GY6 125cc/150cc scooters
 - **Piaggio models**: Vespa Primavera, Vespa ZIP, and other current Piaggio petrol scooters
 - Both **carburettor** and **fuel-injected** variants
@@ -55,7 +55,7 @@ Out of scope (remove or flag):
 ## WORKSPACE
 
 All published website files live under:
-`/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISRM/public/`
+`/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISMR/public/`
 
 Supporting files (both inside `public/`):
 - `public/sync-manifest.json` — tracks all generated content pages
@@ -119,7 +119,7 @@ For each HTML file in `public/` category folders (excluding `_removed/`), confir
 - `<!DOCTYPE html>`
 - `<meta charset="UTF-8">`
 - `<meta name="viewport" ...>`
-- A `<title>` ending in `— ISRM`
+- A `<title>` ending in `— ISMR`
 - A `<nav>` element
 - A `<footer>` element
 - No `<script>` tags (flag as anomaly if found)
@@ -149,7 +149,7 @@ Read `public/index.html`. It should list the **5 most recently added pages** acr
 ## RUN SUMMARY
 
 ```
-=== ISRM Consistency Check — [date] ===
+=== ISMR Consistency Check — [date] ===
 
 CHECK 1 — Scope violations
   Files moved to _removed/: N

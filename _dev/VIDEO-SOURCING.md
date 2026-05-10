@@ -1,6 +1,6 @@
 # VIDEO-SOURCING.md — Finding & Embedding Repair Videos
 
-**A practical guide for sourcing, vetting, and embedding videos in ISRM guides**
+**A practical guide for sourcing, vetting, and embedding videos in ISMR guides**
 
 ---
 
@@ -122,7 +122,7 @@ OEM service manuals sometimes include video links.
 
 ## Step 2: Vetting Videos (Quality Checklist)
 
-Before adding a video to ISRM, verify:
+Before adding a video to ISMR, verify:
 
 ### Authority
 - [ ] Creator is a professional, verified channel, or experienced hobbyist?
@@ -178,7 +178,7 @@ The part after `v=` is your video ID.
 </iframe>
 ```
 
-**ISRM Modification (Privacy + Responsiveness):**
+**ISMR Modification (Privacy + Responsiveness):**
 ```html
 <div class="video-container">
   <iframe 
@@ -208,7 +208,7 @@ The part after `v=` is your video ID.
 2. Click **Share** (top right)
 3. Copy the **Embed** code
 
-**ISRM Format:**
+**ISMR Format:**
 ```html
 <div class="video-container">
   <iframe 
@@ -384,13 +384,13 @@ In the guide's `<footer>`, add the video sources:
 
 5. **Document licensing**
    - In guide footer, state video license (usually same as upload platform)
-   - ISRM content is CC BY-SA 4.0, but linked videos may differ
+   - ISMR content is CC BY-SA 4.0, but linked videos may differ
 
 ---
 
 ## Common Video Licenses Explained
 
-| License | Use ISRM? | Requirements |
+| License | Use ISMR? | Requirements |
 |---------|-----------|--------------|
 | **CC BY** (Attribution) | ✅ Yes | Credit author |
 | **CC BY-SA** (ShareAlike) | ✅ Yes | Credit + same license |
@@ -407,7 +407,7 @@ In the guide's `<footer>`, add the video sources:
 
 This means:
 - Video is deleted or private
-- Video is age-restricted (18+) — can't embed in ISRM
+- Video is age-restricted (18+) — can't embed in ISMR
 - Video is blocked in your region
 
 **Solution:**
@@ -540,7 +540,7 @@ If only low-quality version exists:
 
 ---
 
-**Questions?** Reach out in the [discussions](https://github.com/ISRM/discussions) or email [dexa88@gmail.com](mailto:dexa88@gmail.com)
+**Questions?** Reach out in the [discussions](https://github.com/ISMR/discussions) or email [dexa88@gmail.com](mailto:dexa88@gmail.com)
 
 **Last Updated:** 2026-05-07  
-**Maintained by:** ISRM Contributors
+**Maintained by:** ISMR Contributors

@@ -1,8 +1,8 @@
-# Interactive Scooter Repair Manuals (ISRM) - Project Instructions
+# Interactive Scooter Manuals for Repair (ISMR) - Project Instructions
 
 ## Project Overview
 
-The ISRM project is about building an interactive website with comprehensive guides (videos, pictures, text, etc.) that help users choose the right parts and perform repair procedures correctly.
+The ISMR project is about building an interactive website with comprehensive guides (videos, pictures, text, etc.) that help users choose the right parts and perform repair procedures correctly.
 
 This platform should function similarly to ETKA for VAG, where repair manuals and technical data are available, but with enhanced interactivity featuring 3D models and other interactive elements.
 

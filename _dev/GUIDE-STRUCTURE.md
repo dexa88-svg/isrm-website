@@ -1,4 +1,4 @@
-# ISRM Repair Guide Structure & Format
+# ISMR Repair Guide Structure & Format
 
 **Version:** 1.0  
 **Last Updated:** 2026-05-07  
@@ -8,7 +8,7 @@
 
 ## Overview
 
-Every repair guide in ISRM follows a **standardized HTML structure** that includes:
+Every repair guide in ISMR follows a **standardized HTML structure** that includes:
 - Text-based step-by-step instructions
 - **Video demonstrations (minimum 1 required)**
 - Safety warnings and tips
@@ -200,7 +200,7 @@ After the main content, add a "Related Videos" section linking to supplementary 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[Scooter Model] [Repair Type] Guide — ISRM</title>
+  <title>[Scooter Model] [Repair Type] Guide — ISMR</title>
   <style>
     /* Use the same CSS as existing guides + video CSS above */
   </style>
@@ -208,7 +208,7 @@ After the main content, add a "Related Videos" section linking to supplementary 
 <body>
   <!-- Navigation -->
   <nav>
-    <a href="../../index.html">ISRM Home</a> › 
+    <a href="../../index.html">ISMR Home</a> › 
     <a href="../index.html">Repair Guides</a> › 
     <a href="#">[Specific Guide]</a>
   </nav>

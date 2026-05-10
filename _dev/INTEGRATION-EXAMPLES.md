@@ -1,4 +1,4 @@
-# ISRM Content Integration Guide
+# ISMR Content Integration Guide
 
 ## Quick Start
 
@@ -406,4 +406,4 @@ When you're ready to add actual 3D content:
 3. **Integrate** - Connect to your content and backend APIs
 4. **Deploy** - Go live with your beautiful new site
 
-Enjoy your new ISRM website! 🚀
+Enjoy your new ISMR website! 🚀

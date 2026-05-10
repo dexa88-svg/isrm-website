@@ -1,4 +1,4 @@
-# ISRM — Interactive Scooter Repair Manuals
+# ISMR — Interactive Scooter Manuals for Repair
 ## End-to-End Build Roadmap (solo, near-zero budget, ASAP MVP, scalable)
 
 **One-line vision:** A free, wiki-driven, 3D-interactive repair guide for scooters (motor + electric, scalable to other vehicles) that pulls trusted info from forums, manufacturers, and YouTube — and uses AI to help owners diagnose and fix their ride.
@@ -18,7 +18,7 @@
 **Outcome:** A one-page brief and a registered domain.
 
 - Pin the one-liner, target user (DIY owner, not pro mechanic), and three "jobs to be done" (find right part, find right procedure, diagnose a symptom).
-- Decide the brand name. Working name: **ISRM** — fine for now, but pick something owners will type. Candidates: ScootWiki, FixMyScoot, ScooterDoc, RideManual, OpenMoto.
+- Decide the brand name. Working name: **ISMR** — fine for now, but pick something owners will type. Candidates: ScootWiki, FixMyScoot, ScooterDoc, RideManual, OpenMoto.
 - Buy a domain. Free options: a `.pages.dev` (Cloudflare) or `.vercel.app` subdomain to start; spend ~$10/yr later on a real `.com`. Free TLDs (`.tk`, `.ml`) are unreliable — skip.
 - Define MVP boundary (what's in v0.1 vs later): **in** = browse, search, structured procedures, embed videos, manual seed content; **out** = auth, AI chat, 3D, ingestion (those come in later phases).
 

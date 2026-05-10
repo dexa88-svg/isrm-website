@@ -1,4 +1,4 @@
-# ISRM Phase 0 — Quick Guidance
+# ISMR Phase 0 — Quick Guidance
 
 ## Task: "Pin the one-liner, target user, and three 'jobs to be done'"
 
@@ -16,7 +16,7 @@ This task is about nailing down **what** you're building and **why**. Don't skip
 - Wikipedia: "The free encyclopedia"
 - AirBnB: "Belong anywhere"
 
-**For ISRM, start with:**
+**For ISMR, start with:**
 "[adjective] repair [medium] for [target user]"
 
 **Candidates:**
@@ -83,17 +83,17 @@ This task is about nailing down **what** you're building and **why**. Don't skip
 **What's a "job to be done"?**
 Not a feature. Not a button. A **job** = an outcome the user is trying to achieve.
 
-Examples (not ISRM):
+Examples (not ISMR):
 - Uber: "Get somewhere fast without planning logistics"
 - Spotify: "Discover songs that match my mood right now"
 - GitHub: "Share my code and track changes with collaborators"
 
-**For ISRM, the roadmap suggests these three:**
+**For ISMR, the roadmap suggests these three:**
 
 ### Job 1: Find the Right Part
 **The user's goal:** "I know part XYZ is broken. I need to know the OEM number, where to order it, and how much it costs."
 
-**How ISRM helps:**
+**How ISMR helps:**
 - Link from symptom → subsystem → part with OEM numbers
 - Show affiliate links to buy (Amazon, AliExpress, eBay)
 - Show compatible aftermarket alternatives
@@ -106,7 +106,7 @@ Examples (not ISRM):
 ### Job 2: Learn the Repair Procedure
 **The user's goal:** "I have the part. Now I need step-by-step instructions to install/fix it without breaking anything."
 
-**How ISRM helps:**
+**How ISMR helps:**
 - Numbered procedure with photos/video for each step
 - List of tools needed upfront
 - Difficulty rating (1–5)
@@ -121,12 +121,12 @@ Examples (not ISRM):
 ### Job 3: Diagnose the Problem
 **The user's goal:** "Something's wrong. I don't know what. Help me figure it out."
 
-**How ISRM helps (now, MVP):**
+**How ISMR helps (now, MVP):**
 - Searchable symptom list ("brakes feel mushy", "motor won't spin", "battery dies fast")
 - Symptom → Procedure link
 - FAQ for model-specific quirks
 
-**How ISRM helps (later, Phase 7):**
+**How ISMR helps (later, Phase 7):**
 - AI chat: "Describe your problem" → suggests procedures
 
 **Refine it:** Do you start with symptom list or AI chat? How detailed should the symptom descriptions be?

@@ -1,7 +1,7 @@
-# ISRM Project Setup Summary
+# ISMR Project Setup Summary
 
 ## Project Overview
-**Interactive Scooter Repair Manuals (ISRM)** - Building an interactive website with comprehensive guides (videos, pictures, text, 3D models) helping users choose parts and perform repair procedures.
+**Interactive Scooter Manuals for Repair (ISMR)** - Building an interactive website with comprehensive guides (videos, pictures, text, 3D models) helping users choose parts and perform repair procedures.
 
 **MVP Scope:**
 - GY6-based scooters (BTC Riva, La Souris Sourini/City, Santini Capri, etc.)
@@ -65,7 +65,7 @@
 3. Connected ismr.online domain to hosting (shown as "Ready")
 4. Installed WordPress successfully
 5. Configured WordPress with:
-   - Site title: Interactive Scooter Repair Manuals
+   - Site title: Interactive Scooter Manuals for Repair
    - Email: dexa88@gmail.com
    - Admin credentials: (user-defined, securely stored)
 

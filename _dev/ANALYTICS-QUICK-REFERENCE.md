@@ -1,4 +1,4 @@
-# ISRM Google Analytics — Quick Reference
+# ISMR Google Analytics — Quick Reference
 
 **View your statistics at:** [analytics.google.com](https://analytics.google.com)
 

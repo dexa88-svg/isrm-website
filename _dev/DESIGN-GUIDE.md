@@ -1,8 +1,8 @@
-# ISRM Design System & Guidelines
+# ISMR Design System & Guidelines
 
 ## Overview
 
-The ISRM website has been redesigned with a modern, professional aesthetic that prioritizes usability, performance, and visual hierarchy. The design follows contemporary web trends while maintaining a lightweight footprint using vanilla HTML, CSS, and JavaScript.
+The ISMR website has been redesigned with a modern, professional aesthetic that prioritizes usability, performance, and visual hierarchy. The design follows contemporary web trends while maintaining a lightweight footprint using vanilla HTML, CSS, and JavaScript.
 
 ---
 
@@ -307,7 +307,7 @@ The entire design is optimized for dark mode. If implementing light mode:
 ## Version History
 
 - **v2.0** (2026-05-07): Complete redesign with modern aesthetic, interactive elements, responsive improvements
-- **v1.0** (2026-05-07): Initial ISRM website
+- **v1.0** (2026-05-07): Initial ISMR website
 
 ---
 

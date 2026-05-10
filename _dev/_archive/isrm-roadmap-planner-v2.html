@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ISRM Roadmap Planner v2</title>
+    <title>ISMR Roadmap Planner v2</title>
     <style>
         :root {
             --primary: #2563eb;
@@ -500,7 +500,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>🛴 ISRM Roadmap Planner v2</h1>
+            <h1>🛴 ISMR Roadmap Planner v2</h1>
             <p class="vision">Now with artifacts, links, comments, and sub-tasks per step</p>
             <div class="header-controls">
                 <button class="btn-primary" onclick="markAllComplete()">✓ Mark All Done</button>
@@ -536,7 +536,7 @@
                     outcome: 'A one-page brief and a registered domain.',
                     items: [
                         'Pin the one-liner, target user (DIY owner, not pro mechanic), and three "jobs to be done"',
-                        'Decide the brand name. Working name: **ISRM** — fine for now, but pick something owners will type. Candidates: ScootWiki, FixMyScoot, ScooterDoc, RideManual, OpenMoto.',
+                        'Decide the brand name. Working name: **ISMR** — fine for now, but pick something owners will type. Candidates: ScootWiki, FixMyScoot, ScooterDoc, RideManual, OpenMoto.',
                         'Buy a domain. Free options: a `.pages.dev` (Cloudflare) or `.vercel.app` subdomain to start; spend ~$10/yr later on a real `.com`. Free TLDs (`.tk`, `.ml`) are unreliable — skip.',
                         'Define MVP boundary (what\'s in v0.1 vs later): **in** = browse, search, structured procedures, embed videos, manual seed content; **out** = auth, AI chat, 3D, ingestion (those come in later phases).'
                     ]
@@ -899,7 +899,7 @@
         }
 
         function exportProgress() {
-            let text = 'ISRM Roadmap Progress\n';
+            let text = 'ISMR Roadmap Progress\n';
             text += '='.repeat(70) + '\n\n';
 
             roadmapData.phases.forEach(phase => {
@@ -934,7 +934,7 @@
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `ISRM-Progress-${new Date().toISOString().split('T')[0]}.txt`;
+            a.download = `ISMR-Progress-${new Date().toISOString().split('T')[0]}.txt`;
             a.click();
             URL.revokeObjectURL(url);
         }

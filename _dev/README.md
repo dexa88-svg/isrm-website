@@ -1,4 +1,4 @@
-# ISRM — Interactive Scooter Repair Manuals
+# ISMR — Interactive Scooter Manuals for Repair
 
 **Your free, community-driven repair guide for scooters (GY6, Vespa, Piaggio, and more)**
 
@@ -57,7 +57,7 @@ Every repair guide follows a **standardized structure** with video support:
 ### Folder Structure
 
 ```
-ISRM/
+ISMR/
 ├── repair-guides/       # Step-by-step repair procedures
 ├── parts/              # Parts lookup & compatibility
 ├── diagnostics/        # Troubleshooting guides
@@ -126,7 +126,7 @@ We pull trusted information from:
 
 ### Option 2: Submit via Discussion
 Can't use Git? No problem.
-- [Start a discussion](https://github.com/ISRM/discussions)
+- [Start a discussion](https://github.com/ISMR/discussions)
 - Share your guide as a text/HTML snippet
 - We'll format & integrate it
 
@@ -178,16 +178,16 @@ See [`PHASE0-GUIDANCE.md`](PHASE0-GUIDANCE.md) for detailed phase definitions.
 ## FAQ
 
 **Q: Can I use your guides for my YouTube channel?**  
-A: Yes! They're CC BY-SA 4.0 licensed. Just credit ISRM and link back.
+A: Yes! They're CC BY-SA 4.0 licensed. Just credit ISMR and link back.
 
 **Q: What if I find incorrect information in a guide?**  
-A: [Report it here](https://github.com/ISRM/issues). We'll investigate & correct it.
+A: [Report it here](https://github.com/ISMR/issues). We'll investigate & correct it.
 
 **Q: Can I contribute without technical knowledge?**  
 A: Absolutely. You can contribute by: finding videos, reviewing guides, translating, or just pointing out errors.
 
 **Q: How do I propose a new scooter model?**  
-A: [Start a discussion](https://github.com/ISRM/discussions/new). We prioritize based on community demand.
+A: [Start a discussion](https://github.com/ISMR/discussions/new). We prioritize based on community demand.
 
 **Q: When will you add [electric scooter model]?**  
 A: Phase 2+. We're focusing on benzine scooters (GY6, Vespa) for MVP to maintain quality.
@@ -196,8 +196,8 @@ A: Phase 2+. We're focusing on benzine scooters (GY6, Vespa) for MVP to maintain
 
 ## Keep in Touch
 
-- **GitHub Issues:** [Report bugs or request features](https://github.com/ISRM/issues)
-- **GitHub Discussions:** [Ask questions, share ideas](https://github.com/ISRM/discussions)
+- **GitHub Issues:** [Report bugs or request features](https://github.com/ISMR/issues)
+- **GitHub Discussions:** [Ask questions, share ideas](https://github.com/ISMR/discussions)
 - **Email:** [dexa88@gmail.com](mailto:dexa88@gmail.com)
 - **Community Forums:** [Coming soon]
 

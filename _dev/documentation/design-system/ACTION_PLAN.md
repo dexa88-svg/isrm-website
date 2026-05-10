@@ -1,4 +1,4 @@
-# ISRM Style Guide Compliance - Action Plan
+# ISMR Style Guide Compliance - Action Plan
 
 ## Executive Summary
 
@@ -414,9 +414,9 @@ After completing all three phases, the website should:
 
 ## Resources
 
-- **Style Guide:** `ISRM_StyleGuide.docx` - Reference for design decisions
+- **Style Guide:** `ISMR_StyleGuide.docx` - Reference for design decisions
 - **CSS Variables:** `styles-reference.css` - Copy variable definitions
-- **Audit Report:** `ISRM_StyleGuide_Compliance_Audit.txt` - Detailed technical findings
+- **Audit Report:** `ISMR_StyleGuide_Compliance_Audit.txt` - Detailed technical findings
 - **This Plan:** `ACTION_PLAN.md` - Step-by-step fix instructions
 
 ---

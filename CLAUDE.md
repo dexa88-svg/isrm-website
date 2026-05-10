@@ -1,4 +1,4 @@
-# ISRM — Interactive Scooter Repair Manuals
+# ISMR — Interactive Scooter Manuals for Repair
 ## Claude Code Context File
 
 **Project owner:** Den (Dzianis) — dexa88@gmail.com  
@@ -9,7 +9,7 @@
 
 ## What Is This Project
 
-ISRM is a free, community-driven, wiki-style repair manual website for scooter owners. Think Wikipedia meets ETKA (VAG parts catalog), but for DIY scooter repair — with embedded videos, future 3D models, and eventual AI-assisted diagnostics.
+ISMR is a free, community-driven, wiki-style repair manual website for scooter owners. Think Wikipedia meets ETKA (VAG parts catalog), but for DIY scooter repair — with embedded videos, future 3D models, and eventual AI-assisted diagnostics.
 
 **One-liner candidates (not yet locked):**
 - "The Wikipedia of scooter repair"
@@ -24,7 +24,7 @@ ISRM is a free, community-driven, wiki-style repair manual website for scooter o
 The project is split into two clear areas: **`public/`** holds live publishable content (HTML guides, assets), and **`_dev/`** holds all development code, documentation, and tooling.
 
 ```
-interactive scooter repair manuals - ISRM/
+interactive scooter repair manuals - ISMR/
 ├── CLAUDE.md                        ← this file
 ├── .github/
 │   └── workflows/
@@ -68,8 +68,8 @@ interactive scooter repair manuals - ISRM/
     │   ├── FTP-AUTO-DEPLOY-PROCESS.md ← GitHub → Hetzner FTP pipeline docs
     │   └── design-system/           ← design tokens & style guide
     │       ├── README.md
-    │       ├── ISRM_StyleGuide.docx ← comprehensive style guide
-    │       ├── ISRM_StyleGuide_Compliance_Audit.txt ← compliance audit results
+    │       ├── ISMR_StyleGuide.docx ← comprehensive style guide
+    │       ├── ISMR_StyleGuide_Compliance_Audit.txt ← compliance audit results
     │       ├── styles-reference.css ← all CSS variables
     │       ├── INDEX.md
     │       ├── QUICKSTART.md
@@ -236,7 +236,7 @@ Prohibited on this hosting: adult content, hate speech, gambling, IP violations,
 4. First hero seed model for full 3D treatment
 
 **Resolved:**
-- ✅ Brand name: **ISRM** (Interactive Scooter Manuals for Repair), domain ismr.online
+- ✅ Brand name: **ISMR** (Interactive Scooter Manuals for Repair), domain ismr.online
 - ✅ Framework: **Astro** — chosen for Phase 2 (scaffold removed from local workspace)
 - ✅ Deploy pipeline: GitHub Actions → Hetzner FTP (active)
 

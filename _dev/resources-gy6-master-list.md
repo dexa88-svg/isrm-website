@@ -1,6 +1,6 @@
 # GY6 Chinese Scooter — Master Resource Directory
 
-A sourcing map for the ISRM content pipeline. Organized so each category can become an automated ingestion source (scraper, RSS, YouTube API, forum crawler, etc.) feeding the interactive manual.
+A sourcing map for the ISMR content pipeline. Organized so each category can become an automated ingestion source (scraper, RSS, YouTube API, forum crawler, etc.) feeding the interactive manual.
 
 Last compiled: May 2026.
 
@@ -79,7 +79,7 @@ These are gold for free, redistributable PDFs. Most are mirrors of the same hand
 
 ---
 
-## 5. Forums (single most important content well for ISRM)
+## 5. Forums (single most important content well for ISMR)
 
 These are where real-world failure modes, fixes, and tribal knowledge live. They are also the highest-leverage scrape: a structured Q&A extraction from these would beat any single PDF manual.
 
@@ -171,20 +171,20 @@ YouTube is the largest single source of GY6 repair content. Worth running a chan
 
 ---
 
-## 11. Adjacent / inspirational platforms (for the ISRM product itself)
+## 11. Adjacent / inspirational platforms (for the ISMR product itself)
 
 ETKA-style structured data + interactivity reference points:
 
 - **ETKA** (VAG) — gold standard for OEM-level parts trees.
 - **Microcat** (multiple OEMs) — interactive parts catalog UX.
 - **Cyclepedia** — closest to ETKA in spirit for powersports.
-- **iFixit** — best community-edited interactive repair-guide UX in the world; their schema (device → guide → step → tool → part) is the right mental model for ISRM.
+- **iFixit** — best community-edited interactive repair-guide UX in the world; their schema (device → guide → step → tool → part) is the right mental model for ISMR.
 - **AllData / Mitchell1** — automotive service-data UX.
 - **Haynes Online / HaynesPro** — interactive technical data.
 
 ---
 
-## 12. Suggested ingestion priorities for ISRM
+## 12. Suggested ingestion priorities for ISMR
 
 If you're building a phased pipeline, this is the leverage order:
 
@@ -199,7 +199,7 @@ If you're building a phased pipeline, this is the leverage order:
 
 ## 13. Gaps worth noting
 
-- No single source publishes a clean cross-reference of brand → engine code → frame VIN format. This is a real differentiator if ISRM builds it.
+- No single source publishes a clean cross-reference of brand → engine code → frame VIN format. This is a real differentiator if ISMR builds it.
 - 3D models of GY6 components are scarce. GrabCAD has some user-uploaded GY6 parts ([grabcad.com](https://grabcad.com/)) but coverage is thin — original CAD work or photogrammetry is the path.
 - Liquid-cooled GY6 variants (152QMI-LC, 161QMK) are massively underdocumented in English. Translation of Chinese-language sources is high-leverage.
 - Reddit lacks a GY6-specific sub — community-building opportunity.

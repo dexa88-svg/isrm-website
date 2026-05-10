@@ -1,8 +1,8 @@
-# ISRM Scheduled Tasks - Split Work Approach
+# ISMR Scheduled Tasks - Split Work Approach
 
 ## Overview
 
-Two complementary scheduled tasks work together to maintain ISRM website quality:
+Two complementary scheduled tasks work together to maintain ISMR website quality:
 
 ```
 Monday 9:00 AM    →  Design Compliance Check (Weekly)
@@ -21,7 +21,7 @@ Monday 10:01 AM   →  Consistency Check (Daily)
 
 ### What It Does
 
-Audits all 16 pages against the ISRM style guide:
+Audits all 16 pages against the ISMR style guide:
 
 1. ✓ Stylesheet links (can access CSS variables)
 2. ✓ No hardcoded colors (using var(--primary), etc.)
@@ -218,7 +218,7 @@ documentation/
 ├── design-system/
 │   ├── QUICKSTART.md              ← Start here
 │   ├── README.md                  ← Implementation guide
-│   ├── ISRM_StyleGuide.docx       ← Design specs
+│   ├── ISMR_StyleGuide.docx       ← Design specs
 │   ├── styles-reference.css       ← CSS variables
 │   ├── ACTION_PLAN.md             ← How to fix issues
 │   ├── WEEKLY_COMPLIANCE_REPORT_*.md  ← Reports (new each week)
@@ -307,7 +307,7 @@ A: Yes, they're saved in `/documentation/design-system/WEEKLY_COMPLIANCE_REPORT_
 - **QUICKSTART.md** — How to use the design system
 - **ACTION_PLAN.md** — Step-by-step fix instructions
 - **AUDIT_SUMMARY.txt** — Current audit status
-- **ISRM_StyleGuide.docx** — Design specifications
+- **ISMR_StyleGuide.docx** — Design specifications
 - **styles-reference.css** — CSS variable reference
 
 ---

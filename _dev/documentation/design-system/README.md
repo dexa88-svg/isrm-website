@@ -1,10 +1,10 @@
-# ISRM Design System
+# ISMR Design System
 
-This folder contains the complete design system and style guide for the Interactive Scooter Repair Manuals (ISRM) website.
+This folder contains the complete design system and style guide for the Interactive Scooter Manuals for Repair (ISMR) website.
 
 ## 📋 Files
 
-### `ISRM_StyleGuide.docx`
+### `ISMR_StyleGuide.docx`
 **Comprehensive style guide document** containing:
 - Color palette with CSS variables
 - Typography system (font families, sizes, weights)
@@ -83,7 +83,7 @@ Based on 8px unit:
 
 ### Building New Pages
 
-1. **Reference the style guide** (`ISRM_StyleGuide.docx`) for design decisions
+1. **Reference the style guide** (`ISMR_StyleGuide.docx`) for design decisions
 2. **Copy CSS variables** from `styles-reference.css` into your new stylesheet
 3. **Follow the component patterns** documented in the guide
 4. **Maintain consistent spacing, colors, and typography**
@@ -287,7 +287,7 @@ Refer to:
 
 ### Current Status
 
-An audit was completed on all 16 HTML pages in the ISRM website:
+An audit was completed on all 16 HTML pages in the ISMR website:
 
 - **Compliance:** 47% (8 compliant, 8 non-compliant)
 - **Critical Issues:** 5 categories requiring fixes
@@ -296,7 +296,7 @@ An audit was completed on all 16 HTML pages in the ISRM website:
 **Three detailed documents have been created:**
 
 1. **AUDIT_SUMMARY.txt** - Executive summary with quick fix checklist
-2. **ISRM_StyleGuide_Compliance_Audit.txt** - Detailed technical audit of all pages
+2. **ISMR_StyleGuide_Compliance_Audit.txt** - Detailed technical audit of all pages
 3. **ACTION_PLAN.md** - Step-by-step fix instructions organized by priority
 
 ### Top Issues to Fix

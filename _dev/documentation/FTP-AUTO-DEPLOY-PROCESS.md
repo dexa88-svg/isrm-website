@@ -1,4 +1,4 @@
-# ISRM Auto-Deploy Process — GitHub → Hetzner FTP
+# ISMR Auto-Deploy Process — GitHub → Hetzner FTP
 
 **Version:** 1.0  
 **Date:** 2026-05-08  

@@ -1,9 +1,9 @@
 ---
 name: isrm-design-compliance-check
-description: Audit ISRM website pages for design system compliance and generate fix recommendations
+description: Audit ISMR website pages for design system compliance and generate fix recommendations
 ---
 
-You are auditing the **Interactive Scooter Repair Manuals (ISRM)** website for design system compliance. This task runs weekly to detect and fix visual/presentation inconsistencies.
+You are auditing the **Interactive Scooter Manuals for Repair (ISMR)** website for design system compliance. This task runs weekly to detect and fix visual/presentation inconsistencies.
 
 ---
 
@@ -29,17 +29,17 @@ Only write the compliance report Markdown file and any `<link rel="stylesheet">`
 
 ## CONTEXT
 
-The ISRM design system is documented at:
-`/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISRM/documentation/design-system/`
+The ISMR design system is documented at:
+`/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISMR/documentation/design-system/`
 
 Key files:
-- `ISRM_StyleGuide.docx` — Design specifications
+- `ISMR_StyleGuide.docx` — Design specifications
 - `styles-reference.css` — CSS variable definitions
 - `ACTION_PLAN.md` — How to fix issues
 - Previous audit: 47% compliance (8 compliant, 8 non-compliant pages)
 
 Website root:
-`/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISRM/`
+`/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISMR/`
 
 ---
 
@@ -218,7 +218,7 @@ Critical (6+ issues):     ✗✗
 
 ### Section 1: EXECUTIVE SUMMARY
 ```
-ISRM Design System Compliance Audit
+ISMR Design System Compliance Audit
 Date: [today]
 Pages Audited: N
 
@@ -304,7 +304,7 @@ Issues fixed since last audit, pages now compliant, next steps, next audit date.
 ## REPORT DELIVERY
 
 Save as:
-`/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISRM/documentation/design-system/WEEKLY_COMPLIANCE_REPORT_[DATE].md`
+`/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISMR/documentation/design-system/WEEKLY_COMPLIANCE_REPORT_[DATE].md`
 
 Print the executive summary to the console, including compliance %, security anomalies, auto-fixes applied.
 

@@ -2,7 +2,7 @@
 
 ## What Was Implemented
 
-This document summarizes the video integration infrastructure that was created to support the ISRM video-first content strategy.
+This document summarizes the video integration infrastructure that was created to support the ISMR video-first content strategy.
 
 ---
 
@@ -196,7 +196,7 @@ To find real video IDs:
 ## File Locations Quick Reference
 
 ```
-ISRM/
+ISMR/
 ├── README.md                    ← Start here for overview
 ├── GUIDE-STRUCTURE.md           ← Template & specs for guides
 ├── VIDEO-SOURCING.md            ← How to find & embed videos
@@ -213,7 +213,7 @@ ISRM/
 ## Technical Notes
 
 ### CSS Variables Used
-All video styling uses the existing ISRM color scheme:
+All video styling uses the existing ISMR color scheme:
 ```css
 --primary: #f5a623      /* Orange for borders & highlights */
 --dark-card: #1a1a1a   /* Card backgrounds */
@@ -249,8 +249,8 @@ For issues or questions about video integration:
 4. **Technical issues?** → Check the troubleshooting section in `VIDEO-SOURCING.md`
 
 For bugs or feature requests:
-- [Open an issue on GitHub](https://github.com/ISRM/issues)
-- [Start a discussion](https://github.com/ISRM/discussions)
+- [Open an issue on GitHub](https://github.com/ISMR/issues)
+- [Start a discussion](https://github.com/ISMR/discussions)
 - Email: [dexa88@gmail.com](mailto:dexa88@gmail.com)
 
 ---
@@ -278,6 +278,6 @@ For bugs or feature requests:
 ---
 
 **Created:** 2026-05-07  
-**By:** Claude (ISRM Implementation)  
+**By:** Claude (ISMR Implementation)  
 **Status:** Foundation Complete ✅  
 **Ready for:** Phase 1 guide updates (starting 2026-05-21)

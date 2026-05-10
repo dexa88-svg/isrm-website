@@ -1,6 +1,6 @@
-# ISRM Project Scope & Mandated Resources
+# ISMR Project Scope & Mandated Resources
 
-**Project Name:** Interactive Scooter Repair Manuals (ISRM)
+**Project Name:** Interactive Scooter Manuals for Repair (ISMR)
 
 **Last Updated:** May 7, 2026
 
@@ -58,7 +58,7 @@ The platform aims to be similar to ETKA for VAG but more interactive, with 3D mo
 
 ### Content Sync Task (Daily — 8:01 AM)
 
-The automated ISRM content sync task (`isrm-content-sync`) runs daily and checks the following sources:
+The automated ISMR content sync task (`isrm-content-sync`) runs daily and checks the following sources:
 
 #### **Forums & Communities** (Mandatory)
 - https://www.scootdawg.com/ — major English-language GY6 & Chinese scooter forum
@@ -137,7 +137,7 @@ The sync task runs 10 WebSearch queries daily to discover new qualifying sources
 ## Project Files & Locations
 
 **Workspace:**
-`/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISRM/`
+`/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISMR/`
 
 **Key Files:**
 - `sources-registry.json` — All known and active content sources
@@ -147,7 +147,7 @@ The sync task runs 10 WebSearch queries daily to discover new qualifying sources
 
 ---
 
-## Contributing to ISRM
+## Contributing to ISMR
 
 (Future Wiki/Contribution Guidelines — To be defined)
 
