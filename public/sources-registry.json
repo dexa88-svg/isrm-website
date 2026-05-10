@@ -1148,5 +1148,136 @@
     "addedAt": "2026-05-07T00:00:00Z",
     "lastChecked": "2026-05-09T10:00:00Z",
     "active": true
+  },
+  {
+    "note": "=== NEW SOURCES — DISCOVERED 2026-05-10 ===",
+    "url": "https://www.bmsmotor.com/",
+    "name": "BMS Motor — Scooter Manufacturer & Carburetor Service Guides",
+    "type": "manufacturer",
+    "category": "repair-guides",
+    "models": ["BTC Riva", "GY6 150cc"],
+    "addedAt": "2026-05-10T00:00:00Z",
+    "lastChecked": "2026-05-10T00:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://monsterscooterparts.com/",
+    "name": "Monster Scooter Parts — Carburetor & Engine Repair Kits",
+    "type": "other",
+    "category": "parts",
+    "models": ["GY6 50cc", "GY6 125cc", "GY6 150cc"],
+    "addedAt": "2026-05-10T00:00:00Z",
+    "lastChecked": "2026-05-10T00:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.smallfastthings.com/",
+    "name": "Small Fast Things — GY6 Engine Guides & Technical Articles",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": ["GY6 50cc", "GY6 150cc"],
+    "addedAt": "2026-05-10T00:00:00Z",
+    "lastChecked": "2026-05-10T00:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.vaderparts.com/",
+    "name": "Vader Parts — GY6 Service Manuals & Technical Guides",
+    "type": "wiki",
+    "category": "repair-guides",
+    "models": ["GY6 50cc", "GY6 150cc"],
+    "addedAt": "2026-05-10T00:00:00Z",
+    "lastChecked": "2026-05-10T00:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.emanualonline.com/",
+    "name": "eManual Online — Scooter Service & Repair Manual Repository",
+    "type": "wiki",
+    "category": "repair-guides",
+    "models": ["Vespa", "Piaggio", "GY6"],
+    "addedAt": "2026-05-10T00:00:00Z",
+    "lastChecked": "2026-05-10T00:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://gokartsusa.biz/",
+    "name": "GoKarts USA — GY6 Scooter Parts & Compatibility",
+    "type": "other",
+    "category": "parts",
+    "models": ["GY6 50cc", "GY6 150cc"],
+    "addedAt": "2026-05-10T00:00:00Z",
+    "lastChecked": "2026-05-10T00:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://get2itparts.com/",
+    "name": "Get 2 It Sales LLC — GY6 Parts & Compatibility",
+    "type": "other",
+    "category": "parts",
+    "models": ["GY6 125cc", "GY6 150cc", "GY6 180cc"],
+    "addedAt": "2026-05-10T00:00:00Z",
+    "lastChecked": "2026-05-10T00:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.manualslib.com/",
+    "name": "ManualsLib — Scooter Service & Owner's Manuals",
+    "type": "wiki",
+    "category": "repair-guides",
+    "models": ["Vespa", "Piaggio", "GY6"],
+    "addedAt": "2026-05-10T00:00:00Z",
+    "lastChecked": "2026-05-10T00:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.manualzz.com/",
+    "name": "ManualZz — Vespa & Piaggio Scooter Manuals",
+    "type": "wiki",
+    "category": "repair-guides",
+    "models": ["Vespa", "Piaggio"],
+    "addedAt": "2026-05-10T00:00:00Z",
+    "lastChecked": "2026-05-10T00:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.itstillruns.com/",
+    "name": "It Still Runs — Common Mechanical Problems & Troubleshooting",
+    "type": "blog",
+    "category": "diagnostics",
+    "models": ["general", "scooters"],
+    "addedAt": "2026-05-10T00:00:00Z",
+    "lastChecked": "2026-05-10T00:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.howtomotorcyclerepair.com/",
+    "name": "How to Motorcycle Repair — Carburetor & Mechanical Guides",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": ["general", "scooters"],
+    "addedAt": "2026-05-10T00:00:00Z",
+    "lastChecked": "2026-05-10T00:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.totalruckus2020.com/",
+    "name": "Total Ruckus — GY6 EFI & Scooter Modification Forum",
+    "type": "forum",
+    "category": "community",
+    "models": ["GY6 150cc", "GY6 232cc"],
+    "addedAt": "2026-05-10T00:00:00Z",
+    "lastChecked": "2026-05-10T00:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.modernbuddy.com/",
+    "name": "Modern Buddy — Piaggio & Vespa Forum & Discussions",
+    "type": "forum",
+    "category": "community",
+    "models": ["Piaggio", "Vespa"],
+    "addedAt": "2026-05-10T00:00:00Z",
+    "lastChecked": "2026-05-10T00:00:00Z",
+    "active": true
   }
 ]
