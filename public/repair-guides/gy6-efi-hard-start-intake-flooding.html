@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-53LY3KPDYM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-53LY3KPDYM');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GY6 EFI hard starting caused by intake flooding — cracked intake insulator gasket or leaking fuel injector. Diagnosis and repair guide with real photos and video.">
+  <link rel="canonical" href="https://ismr.online/repair-guides/gy6-efi-hard-start-intake-flooding.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ismr.online/repair-guides/gy6-efi-hard-start-intake-flooding.html">
+  <meta property="og:title" content="GY6 EFI Hard Start: Intake Flooding from Cracked Insulator or Leaking Injector — ISMR">
+  <meta property="og:description" content="GY6 EFI hard starting caused by intake flooding — cracked intake insulator gasket or leaking fuel injector. Diagnosis and repair guide with real photos and video.">
+  <meta property="og:site_name" content="ISMR — Interactive Scooter Manuals for Repair">
+  <meta property="og:image" content="https://ismr.online/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GY6 EFI Hard Start: Intake Flooding from Cracked Insulator or Leaking Injector — ISMR">
+  <meta name="twitter:description" content="GY6 EFI hard starting caused by intake flooding — cracked intake insulator gasket or leaking fuel injector. Diagnosis and repair guide with real photos and video.">
+  <meta name="twitter:image" content="https://ismr.online/og-image.jpg">
+  <title>GY6 EFI Hard Start: Intake Flooding — Cracked Insulator &amp; Leaking Injector — ISMR</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .guide-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 4rem;
+    }
+    .guide-content h2 {
+      font-size: 1.55rem;
+      color: var(--text-primary);
+      margin-top: 2.5rem;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.75rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th {
+      background: var(--surface-2);
+      color: var(--text-primary);
+      font-weight: 600;
+      padding: 0.7rem 1rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26, 35, 50, 0.6); }
+    .callout {
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .callout strong { color: var(--text-primary); }
+    .callout-tip {
+      background: rgba(6, 167, 125, 0.08);
+      border: 1px solid rgba(6, 167, 125, 0.25);
+      border-left: 4px solid var(--success);
+    }
+    .callout-warn {
+      background: rgba(245, 166, 35, 0.08);
+      border: 1px solid rgba(245, 166, 35, 0.3);
+      border-left: 4px solid var(--warning);
+    }
+    .callout-danger {
+      background: rgba(214, 48, 49, 0.08);
+      border: 1px solid rgba(214, 48, 49, 0.3);
+      border-left: 4px solid var(--danger);
+    }
+    .check-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+    .check-section:hover { border-color: rgba(0, 168, 204, 0.4); }
+    .pass { color: var(--success); font-weight: 700; }
+    .fail { color: var(--danger); font-weight: 700; }
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 3rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "⛽";
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem;
+      opacity: 0.07;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0.9rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+    .guide-meta {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+      align-items: center; font-size: 0.875rem; color: var(--text-tertiary); margin-bottom: 1rem;
+    }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+    .guide-tag {
+      background: rgba(0, 168, 204, 0.1); color: var(--accent);
+      border: 1px solid rgba(0, 168, 204, 0.3);
+      padding: 0.25rem 0.7rem; border-radius: 20px; font-size: 0.78rem; font-weight: 500;
+    }
+    .applies-to {
+      background: rgba(255, 107, 53, 0.07);
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem; margin-top: 1.5rem; font-size: 0.95rem; color: var(--text-secondary);
+    }
+    .applies-to strong { color: var(--text-primary); }
+    .guide-footer {
+      background: var(--surface); border-top: 1px solid var(--border);
+      padding: 2rem; text-align: center; font-size: 0.825rem; color: var(--text-tertiary);
+    }
+    .video-hero {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border-left: 4px solid var(--warning);
+    }
+    .video-hero h3 { color: var(--warning); margin-top: 0; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin: 1rem 0;
+      border-radius: var(--radius-md);
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+    .video-source { color: var(--text-tertiary); font-size: 0.82rem; margin-top: 0.5rem; }
+    .step-photo {
+      margin: 1.25rem 0;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .step-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 420px;
+      object-fit: cover;
+      object-position: center;
+    }
+    .step-photo figcaption {
+      background: var(--surface-2);
+      padding: 0.6rem 1rem;
+      font-size: 0.82rem;
+      color: var(--text-tertiary);
+      border-top: 1px solid var(--border);
+    }
+    .step-photo figcaption strong { color: var(--text-secondary); }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.25rem 0;
+    }
+    @media (max-width: 600px) {
+      .photo-grid { grid-template-columns: 1fr; }
+      .guide-content { padding: 1.5rem 1rem 3rem; }
+      .breadcrumb { padding: 0.9rem 1rem; }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "GY6 EFI Hard Start Due to Intake Flooding — Cracked Insulator & Leaking Injector",
+  "description": "Diagnose and fix hard starting on GY6 EFI scooters caused by excess fuel in the intake — from a cracked rubber intake insulator or a leaking fuel injector.",
+  "url": "https://ismr.online/repair-guides/gy6-efi-hard-start-intake-flooding.html",
+  "totalTime": "PT60M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "EUR",
+    "value": "10"
+  },
+  "tool": [
+    { "@type": "HowToTool", "name": "Flat-blade screwdriver" },
+    { "@type": "HowToTool", "name": "Phillips screwdriver" },
+    { "@type": "HowToTool", "name": "10 mm spanner" },
+    { "@type": "HowToTool", "name": "Clean rag" }
+  ],
+  "supply": [
+    { "@type": "HowToSupply", "name": "GY6 EFI intake insulator / rubber manifold gasket" },
+    { "@type": "HowToSupply", "name": "Fuel injector O-ring kit or replacement injector" }
+  ],
+  "step": [
+    { "@type": "HowToStep", "name": "Confirm flooding", "text": "Remove the spark plug. If the electrode is wet and smells of petrol, the intake is flooded." },
+    { "@type": "HowToStep", "name": "Clear the flood", "text": "Leave the plug out, hold full throttle open, and crank the engine 5–8 times to expel excess fuel from the cylinder." },
+    { "@type": "HowToStep", "name": "Inspect the intake insulator", "text": "Remove the throttle body and inspect the rubber insulator between the throttle body and the cylinder head. Look for cracks, splits, or deformation." },
+    { "@type": "HowToStep", "name": "Inspect the fuel injector", "text": "Check the injector O-ring seals for hardening or cracking. Check for fuel wetness around the injector body at rest. A leaking injector drips fuel into the intake port when the engine is off." },
+    { "@type": "HowToStep", "name": "Replace faulty parts", "text": "Fit a new intake insulator and/or injector O-ring kit as required. Reassemble and start." }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-icon">⚙️</span>
+        <span class="brand-text">ISMR</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link active">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../index.html#about" class="nav-link">About</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="../index.html">ISMR Home</a>
+    <span>›</span>
+    <a href="index.html">Repair Guides</a>
+    <span>›</span>
+    GY6 EFI Hard Start: Intake Flooding
+  </div>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <h1>GY6 EFI Hard Start: Intake Flooding — Cracked Insulator &amp; Leaking Injector</h1>
+      <div class="guide-meta">
+        <span>EFI &amp; Intake</span>
+        <span>·</span>
+        <span>Intermediate</span>
+        <span>·</span>
+        <span>45–60 min</span>
+        <span>·</span>
+        <span>Parts: €5–20</span>
+      </div>
+      <div class="guide-tags">
+        <span class="guide-tag">GY6 EFI</span>
+        <span class="guide-tag">Hard Starting</span>
+        <span class="guide-tag">Intake Flooding</span>
+        <span class="guide-tag">Intake Insulator</span>
+        <span class="guide-tag">Fuel Injector</span>
+        <span class="guide-tag">Throttle Body</span>
+        <span class="guide-tag">157QMJ</span>
+      </div>
+      <div class="applies-to">
+        <strong>Applies to:</strong> GY6 EFI (fuel-injected) scooters — 125cc and 150cc engines with a throttle body and ECU. Common on newer Chinese-engine scooters after 3–5 years of use. If your scooter has a float bowl carburetor, see the <a href="gy6-hard-start-intake-flooding.html" style="color:var(--accent);">carburetor version of this guide</a> instead.
+      </div>
+    </div>
+  </section>
+
+  <main class="guide-content">
+
+    <h2>What Is Intake Flooding on an EFI Scooter?</h2>
+    <div class="callout callout-tip" style="margin-top:0;">
+      <strong>This guide covers EFI (fuel-injected) GY6 engines only</strong> — scooters with a throttle body, fuel injector, and ECU. There is no float bowl or needle valve. If your scooter has a carburetor with a float bowl, see the <a href="gy6-hard-start-intake-flooding.html">GY6 Carburetor Intake Flooding guide</a> instead.
+    </div>
+    <p>Most hard-start guides tell you the engine is starved of fuel. This guide covers the opposite problem: <strong>too much fuel in the intake</strong>. When excess petrol pools in the intake port or cylinder, the spark plug drowns and cannot ignite the mixture. The engine cranks normally but refuses to fire — or fires once with a cough of black smoke and immediately dies.</p>
+    <p>On EFI GY6 engines, intake flooding has two common causes: a <strong>cracked rubber intake insulator</strong> (the mounting block between the throttle body and the cylinder head) or a <strong>leaking fuel injector</strong> that drips raw fuel into the intake port when the engine is switched off. Both allow liquid fuel to pool in the port rather than being delivered as a precisely metered mist on demand.</p>
+
+    <div class="video-hero">
+      <h3>Video: EFI Intake Flooding — Real Example</h3>
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/ywegXGFAnCs"
+          title="GY6 EFI hard start — intake flooding from cracked insulator and leaking injector"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="video-source">Video shows a real EFI scooter with fuel pooled in the intake — cracked insulator and injector leak identified and repaired.</p>
+    </div>
+
+    <h2>Symptoms</h2>
+    <table>
+      <tr><th>Symptom</th><th>Flooding Likelihood</th></tr>
+      <tr><td>Engine cranks freely but will not fire at all</td><td>High</td></tr>
+      <tr><td>Starts briefly, fires once or twice, then immediately dies</td><td>Very high</td></tr>
+      <tr><td>Black smoke from the exhaust on the rare occasions it fires</td><td>Very high</td></tr>
+      <tr><td>Strong petrol smell from the airbox or around the engine</td><td>High</td></tr>
+      <tr><td>Spark plug electrode is wet and smells of petrol when removed</td><td>Definitive confirmation</td></tr>
+      <tr><td>Engine starts after leaving it overnight (fuel evaporates)</td><td>High</td></tr>
+      <tr><td>Fuel visible or wet residue inside the intake port</td><td>Definitive confirmation</td></tr>
+      <tr><td>No fault codes on the ECU (flooding is a mechanical problem, not a sensor fault)</td><td>Supports flooding diagnosis</td></tr>
+    </table>
+
+    <div class="callout callout-warn">
+      <strong>Do not confuse with a lean no-start.</strong> A lean no-start (blocked injector, failed fuel pump, bad TPS) produces a dry, light-coloured spark plug. An intake flood produces a wet, fuel-soaked plug. Remove the plug first — it tells you immediately which problem you are dealing with. If you have ECU fault codes, check the <a href="../diagnostics/gy6-efi-fuel-injection-troubleshooting.html">EFI Fuel Injection Troubleshooting guide</a> first.
+    </div>
+
+    <h2>The Two Main Causes</h2>
+
+    <h3>Cause 1 — Cracked Intake Insulator (Manifold Gasket Block)</h3>
+    <p>The intake insulator is the rubber block connecting the throttle body to the cylinder head inlet port. It absorbs vibration and provides a heat barrier. After several years, the rubber cracks — often across the top, along the inner bore, or at the mounting flange. On an EFI engine, a cracked insulator allows unmetered air in (confusing the ECU's fuelling calculations) and, critically, lets condensed or dripped fuel bypass the intake air path and pool directly in the port.</p>
+
+    <div class="photo-grid">
+      <figure class="step-photo">
+        <img src="images/intake_gasket_broken.jpg" alt="Cracked GY6 rubber intake insulator held in hand, showing a visible crack across the top of the inner bore">
+        <figcaption><strong>Cracked intake insulator.</strong> Crack visible across the top of the inner bore — this is the rubber block between the throttle body and the cylinder head. Once cracked, it must be replaced; silicone is not a permanent fix.</figcaption>
+      </figure>
+      <figure class="step-photo">
+        <img src="images/intake_full_of_fuel.png" alt="GY6 EFI engine intake port with fuel pooled inside, visible as wet residue around the port opening">
+        <figcaption><strong>Intake port flooded with fuel.</strong> Fuel has pooled in the intake port — this is what the engine encounters when a cracked insulator or leaking injector allows raw fuel to collect rather than reaching the cylinder as a calibrated mist.</figcaption>
+      </figure>
+    </div>
+
+    <h3>Cause 2 — Leaking Fuel Injector</h3>
+    <p>The fuel injector on a GY6 EFI engine is held in the intake manifold by two rubber O-rings (top and bottom). When these O-rings harden and crack with age, fuel weeps past the seal and drips into the intake port while the engine is at rest — the fuel rail remains pressurised for some time after the engine is switched off. Even a slow drip accumulates quickly enough to flood the cylinder overnight. A leaking injector body itself (cracked solenoid housing, degraded pintle seal) is less common but produces the same symptom.</p>
+
+    <div class="callout callout-tip">
+      <strong>Quick check:</strong> Switch off the engine and wait 5 minutes. Remove the air intake duct and shine a torch into the throttle body bore. If you can see a wet sheen or fuel droplets on the port walls — and the engine has been off for several minutes — the injector is leaking past its seals.
+    </div>
+
+    <h2>Tools &amp; Parts Needed</h2>
+    <table>
+      <tr><th>Item</th><th>Why needed</th><th>Approx. cost</th></tr>
+      <tr><td>Flat-blade screwdriver (3 mm &amp; 5 mm)</td><td>Clamp screws, air duct clips</td><td>—</td></tr>
+      <tr><td>Phillips #2 screwdriver</td><td>Side panel screws, air filter cover</td><td>—</td></tr>
+      <tr><td>10 mm spanner</td><td>Intake insulator mounting nuts</td><td>—</td></tr>
+      <tr><td>Torx T20 or T25 (varies by model)</td><td>Throttle body mounting screws on some models</td><td>—</td></tr>
+      <tr><td>Clean rags</td><td>Absorbing spilled fuel</td><td>—</td></tr>
+      <tr><td>GY6 EFI intake insulator (rubber manifold block)</td><td>Replace if cracked</td><td>€3–8</td></tr>
+      <tr><td>Fuel injector O-ring kit</td><td>Replace both O-rings if injector is weeping</td><td>€2–5</td></tr>
+      <tr><td>Replacement injector (same part number)</td><td>Only if injector body itself is cracked or pintle seal failed</td><td>€15–40</td></tr>
+      <tr><td>Spark plug (NGK CR6HIX or equivalent)</td><td>Replace if plug was severely fouled with fuel</td><td>€4–8</td></tr>
+    </table>
+
+    <h2>Step-by-Step Procedure</h2>
+
+    <div class="check-section">
+      <h3>Step 1 — Confirm Flooding and Clear the Cylinder</h3>
+      <ol>
+        <li>Turn the ignition off. On EFI engines the fuel pump stays primed — if possible, locate the fuel pump fuse and remove it to depressurise the rail before opening anything.</li>
+        <li>Remove the spark plug using a 16 mm plug socket. Inspect it: if it is wet and smells strongly of petrol, flooding is confirmed.</li>
+        <li>With the plug still out, hold the throttle fully open and crank the engine for 5–8 seconds (electric starter). This expels excess fuel from the cylinder as vapour.</li>
+        <li>Leave the plug out for 5–10 minutes to allow the cylinder to air out further.</li>
+        <li>Reinstall the spark plug (or a new one if the old plug is fuel-fouled). Tighten finger-tight plus one-quarter turn.</li>
+      </ol>
+      <div class="callout callout-tip">
+        <strong>Test start now:</strong> Reinstall the fuel pump fuse, turn the ignition on, wait for the pump prime cycle (2–3 seconds), then start. If it starts and runs normally, the flooding was a one-off event. If it floods again within minutes of stopping — there is an underlying leak to fix.
+      </div>
+    </div>
+
+    <div class="check-section">
+      <h3>Step 2 — Inspect the Intake Insulator</h3>
+      <ol>
+        <li>Remove the side panel or access cover to expose the throttle body.</li>
+        <li>Loosen both clamps securing the throttle body — the air duct side and the head-side insulator clamp.</li>
+        <li>Twist and pull the throttle body slightly away from the insulator to expose it. You do not need to disconnect all wiring harness connectors at this stage — just rotate it enough to see the insulator.</li>
+        <li>Squeeze and flex the insulator in all directions. Cracks often hide on the inner bore surface, along the top edge, or at the head-facing flange. Look for crazing, splits, or any visible gap.</li>
+        <li><span class="fail">CRACKED:</span> Replace immediately — see Step 4.</li>
+        <li><span class="pass">INTACT:</span> Refit the throttle body clamp. Proceed to Step 3 to check the injector.</li>
+      </ol>
+    </div>
+
+    <div class="check-section">
+      <h3>Step 3 — Inspect the Fuel Injector O-Rings</h3>
+      <ol>
+        <li>With the fuel pump fuse removed, fully disconnect the throttle body (harness connectors, throttle cable, coolant hoses if fitted). Set it on a clean rag.</li>
+        <li>Locate the fuel injector — it sits in a bore in the intake manifold or throttle body, held by a retaining clip or bracket. Release the clip and pull the injector straight out.</li>
+        <li>Inspect both O-rings on the injector body. They should be soft, uniformly round, and black. If they are flat, cracked, or shiny-hardened, they are no longer sealing.</li>
+        <li>Also inspect the injector body for fuel staining or wetness at the O-ring grooves — this confirms the leak path.</li>
+        <li><span class="fail">O-RINGS DEGRADED:</span> Replace with a new O-ring kit — see Step 5.</li>
+        <li><span class="fail">INJECTOR BODY DAMAGED:</span> Replace the entire injector — match the part number stamped on the injector body.</li>
+        <li><span class="pass">O-RINGS INTACT:</span> Reinstall and check float height (not applicable — EFI). Re-examine for other causes such as a leaking fuel pressure regulator or a failed fuel pump check valve holding rail pressure after shutdown.</li>
+      </ol>
+    </div>
+
+    <div class="check-section">
+      <h3>Step 4 — Replace the Intake Insulator</h3>
+      <ol>
+        <li>Fully disconnect the throttle body (wiring harness, throttle cable, breather hoses) and set it aside.</li>
+        <li>Remove the two M6 nuts or bolts holding the insulator to the cylinder head studs. Use a 10 mm spanner or socket.</li>
+        <li>Pull the insulator free. Clean the cylinder head mating face — remove any old gasket material or debris.</li>
+        <li>Fit the new insulator. Ensure the paper or rubber gasket on the head-facing side is in place. Tighten the mounting nuts evenly to approximately 10 Nm — do not overtighten in the aluminium head.</li>
+        <li>Refit the throttle body into the insulator bore. Tighten both clamps firmly but not so tight that the clamp cuts into the rubber.</li>
+        <li>Reconnect all harness connectors, throttle cable, and hoses.</li>
+      </ol>
+      <div class="callout callout-warn">
+        <strong>Do not use RTV silicone</strong> on the intake insulator as a repair or seal. Silicone pieces can detach and enter the engine. Always replace with a new insulator.
+      </div>
+    </div>
+
+    <div class="check-section">
+      <h3>Step 5 — Replace the Injector O-Rings</h3>
+      <ol>
+        <li>Source an O-ring kit for your injector. Most GY6 EFI injectors use standard 14 mm × 1.5 mm and 11 mm × 1.5 mm Viton O-rings — confirm by measuring the old ones or searching your injector part number.</li>
+        <li>Lubricate the new O-rings lightly with clean engine oil before fitting — this prevents tearing on installation and ensures a proper seat.</li>
+        <li>Slide both O-rings onto the injector body into their respective grooves.</li>
+        <li>Push the injector squarely back into its bore in the manifold. It should seat without force — if it resists, check the O-ring is not folded or misaligned.</li>
+        <li>Refit the retaining clip or bracket so the injector cannot be pushed out by fuel pressure.</li>
+        <li>Reconnect the fuel rail and injector electrical connector.</li>
+      </ol>
+    </div>
+
+    <div class="check-section">
+      <h3>Step 6 — Verify the Repair</h3>
+      <ol>
+        <li>Reinstall the fuel pump fuse. Turn the ignition to ON (do not start) — you should hear the pump prime for 2–3 seconds. Wait 60 seconds and check around the injector and manifold for any fuel drips.</li>
+        <li>If no drips: start the engine and allow it to reach operating temperature (approximately 4–5 minutes).</li>
+        <li>Switch the engine off and wait 10 minutes. Remove the spark plug and confirm it is dry. Reinstall and start normally.</li>
+        <li>A cold start should now require just the normal key-on pump prime and one or two cranks.</li>
+      </ol>
+    </div>
+
+    <h2>Troubleshooting Table</h2>
+    <table>
+      <tr><th>Problem after repair</th><th>Likely cause</th><th>Action</th></tr>
+      <tr>
+        <td>Still floods immediately after stopping</td>
+        <td>Injector O-ring not seated correctly, or injector body itself is cracked</td>
+        <td>Re-inspect O-rings. If body has visible cracks or fuel staining through the housing, replace the whole injector.</td>
+      </tr>
+      <tr>
+        <td>Floods after sitting overnight but not immediately</td>
+        <td>Fuel pump check valve failed — rail depressurises slowly, injector weeps under lower pressure</td>
+        <td>Replace the fuel pump assembly (check valve is internal). Confirm by installing a fuel rail pressure gauge and watching if pressure bleeds off after shutdown.</td>
+      </tr>
+      <tr>
+        <td>Erratic idle after insulator replacement</td>
+        <td>Throttle body-to-insulator clamp loose, or air duct not reseated</td>
+        <td>Tighten both clamps. Re-run the spray test from the <a href="../diagnostics/gy6-air-leak-diagnosis.html">Air Leak Diagnosis guide</a>. Check for new ECU fault codes (unmetered air will upset fuelling trim).</td>
+      </tr>
+      <tr>
+        <td>CEL / fault code after repair</td>
+        <td>ECU learned incorrect fuel trim during the flooding period</td>
+        <td>Clear fault codes with a diagnostic tool or by disconnecting the battery for 30 seconds. Allow the ECU to re-learn idle trim over a short test ride.</td>
+      </tr>
+    </table>
+
+    <h2>Related Guides</h2>
+    <ul>
+      <li><a href="gy6-hard-start-intake-flooding.html">GY6 Carburetor Hard Start: Intake Flooding (cracked insulator &amp; needle valve — carbureted engines)</a></li>
+      <li><a href="../diagnostics/gy6-efi-fuel-injection-troubleshooting.html">GY6 EFI Fuel Injection Troubleshooting (fault codes, fuel pump, sensors)</a></li>
+      <li><a href="../diagnostics/gy6-air-leak-diagnosis.html">Diagnosing Air Leaks &amp; Vacuum Sucking (lean air leak — opposite problem)</a></li>
+      <li><a href="../diagnostics/gy6-no-start-troubleshooting.html">GY6 Won't Start — Full Troubleshooting Checklist</a></li>
+      <li><a href="gy6-spark-plug-guide.html">Reading Your Spark Plug — Fuel, Oil, and Heat Diagnosis</a></li>
+    </ul>
+
+    <p style="margin-top:2rem; font-size:0.82rem; color:var(--text-tertiary);">
+      Photos: original ISMR content (CC BY-SA 4.0). Video: YouTube. Sources: GY6 EFI service documentation; community-contributed real-world repair cases. Last updated: 2026-05-10. Licensed CC BY-SA 4.0.
+    </p>
+
+  </main>
+
+  <script src="../script.js"></script>
+
+  <footer class="guide-footer">
+    <p>ISMR — Interactive Scooter Manuals for Repair. Content for educational purposes. CC BY-SA 4.0.</p>
+    <p style="margin-top: 1rem;">
+      <a href="../index.html" style="color: var(--accent);">⚙️ ISMR Home</a>
+      &nbsp;·&nbsp;
+      <a href="index.html" style="color: var(--accent);">← All Repair Guides</a>
+    </p>
+  </footer>
+
+</body>
+</html>

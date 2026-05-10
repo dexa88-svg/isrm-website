@@ -262,5 +262,30 @@
     ],
     "addedAt": "2026-05-09T18:04:54Z",
     "lastChecked": "2026-05-10T10:01:00Z"
+  },
+  {
+    "url": "internal:gy6-efi-hard-start-intake-flooding",
+    "title": "GY6 EFI Hard Start: Intake Flooding \u2014 Cracked Insulator & Leaking Injector",
+    "category": "repair-guides",
+    "file": "repair-guides/gy6-efi-hard-start-intake-flooding.html",
+    "sources": [
+      "internal",
+      "original-photos",
+      "youtube:ywegXGFAnCs"
+    ],
+    "addedAt": "2026-05-10T12:00:00Z",
+    "lastChecked": "2026-05-10T12:00:00Z"
+  },
+  {
+    "url": "internal:gy6-hard-start-intake-flooding",
+    "title": "GY6 Hard Start: Intake Flooding \u2014 Cracked Insulator & Carburetor Overflow",
+    "category": "repair-guides",
+    "file": "repair-guides/gy6-hard-start-intake-flooding.html",
+    "sources": [
+      "internal",
+      "original-photos"
+    ],
+    "addedAt": "2026-05-10T00:00:00Z",
+    "lastChecked": "2026-05-10T00:00:00Z"
   }
 ]

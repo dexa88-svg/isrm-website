@@ -208,5 +208,17 @@
     <priority>0.6</priority>
     <lastmod>2026-05-10</lastmod>
   </url>
+  <url>
+    <loc>https://ismr.online/repair-guides/gy6-hard-start-intake-flooding.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-10</lastmod>
+  </url>
+  <url>
+    <loc>https://ismr.online/repair-guides/gy6-efi-hard-start-intake-flooding.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-10</lastmod>
+  </url>
 
 </urlset>
