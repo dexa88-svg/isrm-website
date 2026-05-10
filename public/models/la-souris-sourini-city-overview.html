@@ -3,28 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La Souris Sourini / City S — Model Overview & Technical Guide — ISRM</title>
+  <title>La Souris Sourini / City S — Model Overview & Technical Guide — ISMR</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
-    .meta { color: #888; font-size: 0.85rem; margin-bottom: 1.5rem; }
-    .source-box { background: #1a1a1a; border-left: 4px solid #f5a623; padding: 0.8rem 1.2rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; }
-    .tag { display: inline-block; background: #222; color: #f5a623; border: 1px solid #f5a623; border-radius: 12px; padding: 2px 10px; font-size: 0.78rem; margin-right: 6px; }
-    .warn { background: #2a1a00; border-left: 4px solid #f5a623; padding: 0.8rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
-    .tip { background: #0a2a1a; border-left: 4px solid #4caf50; padding: 0.8rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+    .meta { color: var(--text-tertiary); font-size: 0.85rem; margin-bottom: 1.5rem; }
+    .source-box { background: var(--surface); border-left: 4px solid var(--primary); padding: 0.8rem 1.2rem; margin: 1.5rem 0; border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+    .tag { display: inline-block; background: var(--surface-2); color: var(--warning); border: 1px solid var(--warning); border-radius: var(--radius-xl); padding: 2px 10px; font-size: 0.78rem; margin-right: 6px; }
+    .warn { background: rgba(245, 166, 35, 0.08); border-left: 4px solid var(--warning); padding: 0.8rem 1.2rem; margin: 1rem 0; border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+    .tip { background: rgba(6, 167, 125, 0.08); border-left: 4px solid var(--success); padding: 0.8rem 1.2rem; margin: 1rem 0; border-radius: 0 var(--radius-md) var(--radius-md) 0; }
     table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-    th { background: #1a1a1a; color: #f5a623; text-align: left; padding: 0.5rem 0.8rem; border: 1px solid #333; }
-    td { padding: 0.5rem 0.8rem; border: 1px solid #333; }
-    tr:nth-child(even) td { background: #151515; }
+    th { background: var(--surface); color: var(--warning); text-align: left; padding: 0.5rem 0.8rem; border: 1px solid var(--border); }
+    td { padding: 0.5rem 0.8rem; border: 1px solid var(--border); }
+    tr:nth-child(even) td { background: var(--surface-2); }
     ol li, ul li { margin-bottom: 0.5rem; }
-    code { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-family: monospace; color: #7ec8e3; }
+    code { background: var(--surface); padding: 2px 6px; border-radius: var(--radius-sm); font-family: monospace; color: var(--accent-light); }
     .related-links a { display: block; margin: 0.3rem 0; }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .page-hero h1 {
+        font-size: 1.5rem;
+      }
+
+      table {
+        font-size: 0.9rem;
+      }
+
+      th, td {
+        padding: 0.4rem 0.6rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .page-hero h1 {
+        font-size: 1.2rem;
+      }
+
+      table {
+        font-size: 0.8rem;
+        overflow-x: auto;
+        display: block;
+      }
+
+      th, td {
+        padding: 0.3rem 0.5rem;
+      }
+
+      .tag {
+        font-size: 0.7rem;
+        padding: 1px 6px;
+        margin-right: 4px;
+      }
+
+      .source-box, .warn, .tip {
+        padding: 0.6rem 1rem;
+        margin: 1rem 0;
+      }
+    }
   </style>
 </head>
 <body>
 
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="../index.html" class="nav-brand"><span class="brand-icon">⚙️</span><span class="brand-text">ISRM</span></a>
+      <a href="../index.html" class="nav-brand"><span class="brand-icon">⚙️</span><span class="brand-text">ISMR</span></a>
       <ul class="nav-menu" id="navMenu">
         <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
         <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
@@ -38,7 +80,7 @@
   <section class="page-hero">
     <div class="page-hero-inner">
       <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
-        <a href="../index.html">ISRM Home</a><span>›</span><a href="index.html">Models</a><span>›</span>La Souris Sourini / City S — Model Overview & Technical Guide
+        <a href="../index.html">ISMR Home</a><span>›</span><a href="index.html">Models</a><span>›</span>La Souris Sourini / City S — Model Overview & Technical Guide
       </div>
       <h1>La Souris Sourini / City S — Model Overview & Technical Guide</h1>
     </div>
@@ -86,7 +128,7 @@
 
 
   <div class="breadcrumb">
-    <a href="../index.html">ISRM Home</a><span>›</span>
+    <a href="../index.html">ISMR Home</a><span>›</span>
     <a href="index.html">Models</a><span>›</span>
     La Souris Sourini / City Overview
   </div>
@@ -177,7 +219,7 @@
     <tr><td>Tyre pressure check</td><td>Monthly — front 1.75 bar, rear 2.00–2.25 bar</td></tr>
   </table>
 
-  <h2>Related Guides on ISRM</h2>
+  <h2>Related Guides on ISMR</h2>
   <div class="related-links">
     <a href="../repair-guides/gy6-carburetor-adjustment-guide.html">🔧 GY6 Carburetor Adjustment & Tuning Guide</a>
     <a href="../repair-guides/gy6-valve-adjustment-guide.html">🔧 GY6 Valve Clearance Adjustment Guide</a>
@@ -189,9 +231,9 @@
 
 
   <footer class="guide-footer">
-    <p>Page auto-generated by ISRM Content Sync on 2026-05-08. Content summarised from multiple technical sources for educational purposes.</p>
+    <p>Page auto-generated by ISMR Content Sync on 2026-05-08. Content summarised from multiple technical sources for educational purposes.</p>
     <p style="margin-top: 0.5rem;">Always verify with the original source and your scooter's workshop manual before performing repairs.</p>
-    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISRM Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Models</a></p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISMR Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Models</a></p>
   </footer>
 </body>
 </html>
