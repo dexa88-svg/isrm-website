@@ -4,24 +4,26 @@ const fs = require('fs');
 const path = require('path');
 
 /**
- * Generate site statistics by counting repair guide HTML files and writing
- * the result to a JSON file.
+ * Generate site statistics by counting repair guide and video HTML files and
+ * writing the result to a JSON file.
  *
  * @param {object} [options]
  * @param {string} [options.guidesDir]  Directory containing guide HTML files.
+ * @param {string} [options.videosDir]  Directory containing video HTML files.
  * @param {string} [options.outputDir]  Directory where stats.json is written.
- * @returns {{ guides: number, lastUpdated: string }}
+ * @returns {{ guides: number, videos: number, lastUpdated: string }}
  */
-function generateStats({ guidesDir, outputDir } = {}) {
+function generateStats({ guidesDir, videosDir, outputDir } = {}) {
   const resolvedGuidesDir = guidesDir || path.join(__dirname, '../public/repair-guides');
+  const resolvedVideosDir = videosDir || path.join(__dirname, '../public/videos');
   const resolvedOutputDir = outputDir || path.join(__dirname, '../public/data');
 
-  // Count repair guide files (exclude index.html)
-  const guideFiles = fs.readdirSync(resolvedGuidesDir)
-    .filter(file => file.endsWith('.html') && file !== 'index.html');
+  const countHtml = dir => fs.readdirSync(dir)
+    .filter(file => file.endsWith('.html') && file !== 'index.html').length;
 
   const stats = {
-    guides: guideFiles.length,
+    guides: countHtml(resolvedGuidesDir),
+    videos: countHtml(resolvedVideosDir),
     lastUpdated: new Date().toISOString()
   };
 
@@ -35,7 +37,7 @@ function generateStats({ guidesDir, outputDir } = {}) {
   const statsFile = path.join(resolvedOutputDir, 'stats.json');
   fs.writeFileSync(statsFile, JSON.stringify(stats, null, 2));
 
-  console.log(`✓ Generated stats: ${stats.guides} guides`);
+  console.log(`✓ Generated stats: ${stats.guides} guides, ${stats.videos} videos`);
   console.log(`✓ File written to: ${statsFile}`);
 
   return stats;

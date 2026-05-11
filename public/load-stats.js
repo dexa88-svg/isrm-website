@@ -15,6 +15,13 @@ async function loadStats() {
     if (statNumbers[0]) {
       statNumbers[0].textContent = stats.guides;
     }
+
+    // Update video count on videos/index.html
+    if (stats.videos !== undefined) {
+      document.querySelectorAll('[data-stat="videos"]').forEach(el => {
+        el.textContent = stats.videos;
+      });
+    }
   } catch (error) {
     console.log('Stats file not found (expected during development)');
   }
