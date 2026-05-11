@@ -48,7 +48,7 @@
       font-size: 0.85rem;
       color: var(--text-tertiary);
     }
-    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a { color: var(--accent); transition: var(--transition); }
     .breadcrumb a:hover { color: var(--primary); }
     .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
     .guide-meta {
@@ -69,7 +69,7 @@
       color: var(--accent);
       border: 1px solid rgba(0, 168, 204, 0.3);
       padding: 0.25rem 0.7rem;
-      border-radius: 20px;
+      border-radius: var(--radius-pill);
       font-size: 0.78rem;
       font-weight: 500;
     }
@@ -231,12 +231,12 @@
       margin-bottom: 1rem;
     }
     .video-thumb-link { display: block; text-decoration: none; }
-    .video-thumb-wrap { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 0.75rem; }
+    .video-thumb-wrap { position: relative; width: 100%; aspect-ratio: 16/9; background: var(--bg-dark); border-radius: var(--radius-md); overflow: hidden; margin-bottom: 0.75rem; }
     .video-thumb-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.2s; }
     .video-thumb-link:hover .video-thumb-img { opacity: 0.75; }
     .video-play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
-    .video-play-icon { width: 68px; height: 48px; background: rgba(200,0,0,0.9); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.4rem; transition: background 0.2s, transform 0.15s; }
-    .video-thumb-link:hover .video-play-icon { background: #f00; transform: scale(1.06); }
+    .video-play-icon { width: 68px; height: 48px; background: rgba(214,48,49,0.9); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.4rem; transition: background 0.2s, transform 0.15s; }
+    .video-thumb-link:hover .video-play-icon { background: var(--danger); transform: scale(1.06); }
     .video-source { font-size: 0.85rem; color: var(--text-tertiary); }
     .video-source a { color: var(--accent); }
 
@@ -293,6 +293,14 @@
         width: 100%;
         text-align: center;
       }
+    }
+    @media (max-width: 480px) {
+      .guide-header h1 { font-size: 1.35rem; }
+      .guide-header { padding: 2rem 1rem 1.5rem; }
+      .guide-content h2 { font-size: 1.2rem; }
+      .related-videos { grid-template-columns: 1fr; }
+      .video-embed { padding: 1rem; }
+      .guide-tags { gap: 0.3rem; }
     }
   </style>
   <script type="application/ld+json">

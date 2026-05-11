@@ -53,7 +53,7 @@
   },
   {
     "url": "internal:gy6-no-start-troubleshooting",
-    "title": "GY6 Scooter Won't Start \u2014 Troubleshooting Checklist",
+    "title": "GY6 Scooter Won't Start — Troubleshooting Checklist",
     "category": "diagnostics",
     "file": "diagnostics/gy6-no-start-troubleshooting.html",
     "sources": [
@@ -66,7 +66,7 @@
   },
   {
     "url": "internal:la-souris-sourini-city-overview",
-    "title": "La Souris Sourini / City S \u2014 Model Overview & Technical Guide",
+    "title": "La Souris Sourini / City S — Model Overview & Technical Guide",
     "category": "models",
     "file": "models/la-souris-sourini-city-overview.html",
     "sources": [
@@ -106,7 +106,7 @@
   },
   {
     "url": "https://www.manualslib.com/manual/1279452/Vespa-Primavera-125.html",
-    "title": "Vespa Primavera 125 \u2014 Technical Overview & Maintenance Reference",
+    "title": "Vespa Primavera 125 — Technical Overview & Maintenance Reference",
     "category": "models",
     "file": "models/vespa-primavera-125-technical-overview.html",
     "summary": "Full specs, maintenance schedule, common faults, and service manual resources for the Piaggio Vespa Primavera 125 iGet.",
@@ -124,7 +124,7 @@
   },
   {
     "url": "https://www.wemoto.com/info/guide-to-scooter-clutches-variators-and-rollers",
-    "title": "Scooter CVT Clutch & Variator Rollers \u2014 Inspection & Replacement",
+    "title": "Scooter CVT Clutch & Variator Rollers — Inspection & Replacement",
     "category": "repair-guides",
     "file": "repair-guides/scooter-cvt-clutch-variator-guide.html",
     "summary": "How the CVT works, symptoms of wear, roller weight specs for GY6 and Piaggio, and step-by-step roller replacement procedure.",
@@ -144,7 +144,7 @@
   },
   {
     "url": "internal:gy6-air-filter-guide",
-    "title": "GY6 Air Filter \u2014 Clean or Replace Guide",
+    "title": "GY6 Air Filter — Clean or Replace Guide",
     "category": "repair-guides",
     "file": "repair-guides/gy6-air-filter-guide.html",
     "sources": [
@@ -199,7 +199,7 @@
   },
   {
     "url": "internal:gy6-air-leak-diagnosis",
-    "title": "Diagnosing Air Leaks and Vacuum Sucking \u2014 GY6 Scooter",
+    "title": "Diagnosing Air Leaks and Vacuum Sucking — GY6 Scooter",
     "category": "diagnostics",
     "file": "diagnostics/gy6-air-leak-diagnosis.html",
     "sources": [
@@ -221,7 +221,7 @@
   },
   {
     "url": "internal:gy6-cvt-roller-noise-diagnosis",
-    "title": "Metallic Noise from Engine \u2014 CVT Roller Diagnosis \u2014 GY6 Scooter",
+    "title": "Metallic Noise from Engine — CVT Roller Diagnosis — GY6 Scooter",
     "category": "diagnostics",
     "file": "diagnostics/gy6-cvt-roller-noise-diagnosis.html",
     "sources": [
@@ -232,7 +232,7 @@
   },
   {
     "url": "internal:gy6-dirty-buttons-no-start",
-    "title": "Dirty Handlebar Buttons Causing No-Start \u2014 GY6 Scooter",
+    "title": "Dirty Handlebar Buttons Causing No-Start — GY6 Scooter",
     "category": "diagnostics",
     "file": "diagnostics/gy6-dirty-buttons-no-start.html",
     "sources": [
@@ -243,7 +243,7 @@
   },
   {
     "url": "internal:gy6-efi-cel-flash-codes",
-    "title": "GY6 EFI CEL Flash Codes \u2014 Manual Diagnostic Mode",
+    "title": "GY6 EFI CEL Flash Codes — Manual Diagnostic Mode",
     "category": "diagnostics",
     "file": "diagnostics/gy6-efi-cel-flash-codes.html",
     "sources": [
@@ -254,7 +254,7 @@
   },
   {
     "url": "internal:gy6-side-stand-kill-switch",
-    "title": "Side Stand Kill Switch \u2014 Scooter Won't Start Diagnosis",
+    "title": "Side Stand Kill Switch — Scooter Won't Start Diagnosis",
     "category": "diagnostics",
     "file": "diagnostics/gy6-side-stand-kill-switch.html",
     "sources": [
@@ -265,7 +265,7 @@
   },
   {
     "url": "internal:gy6-efi-hard-start-intake-flooding",
-    "title": "GY6 EFI Hard Start: Intake Flooding \u2014 Cracked Insulator & Leaking Injector",
+    "title": "GY6 EFI Hard Start: Intake Flooding — Cracked Insulator & Leaking Injector",
     "category": "repair-guides",
     "file": "repair-guides/gy6-efi-hard-start-intake-flooding.html",
     "sources": [
@@ -278,7 +278,7 @@
   },
   {
     "url": "internal:gy6-hard-start-intake-flooding",
-    "title": "GY6 Hard Start: Intake Flooding \u2014 Cracked Insulator & Carburetor Overflow",
+    "title": "GY6 Hard Start: Intake Flooding — Cracked Insulator & Carburetor Overflow",
     "category": "repair-guides",
     "file": "repair-guides/gy6-hard-start-intake-flooding.html",
     "sources": [
@@ -287,5 +287,88 @@
     ],
     "addedAt": "2026-05-10T00:00:00Z",
     "lastChecked": "2026-05-10T00:00:00Z"
+  },
+  {
+    "url": "internal:gy6-cdi-no-spark-diagnosis",
+    "title": "GY6 CDI No-Spark Diagnosis & Replacement",
+    "category": "repair-guides",
+    "file": "repair-guides/gy6-cdi-no-spark-diagnosis.html",
+    "sources": [
+      "buggydepot.com/tech-center/gy6-150cc-ignition-troubleshooting-guide-no-spark",
+      "moowiring.com/2025/05/24/gy6-dc-cdi-wiring-diagram"
+    ],
+    "addedAt": "2026-05-11T08:01:00Z",
+    "lastChecked": "2026-05-11T08:01:00Z"
+  },
+  {
+    "url": "internal:vespa-primavera-sprint-oil-change",
+    "title": "Vespa Primavera & Sprint 125-150 Oil Change Guide",
+    "category": "repair-guides",
+    "file": "repair-guides/vespa-primavera-sprint-oil-change.html",
+    "sources": [
+      "youtube.com/watch?v=6IeMd82uwW4",
+      "youtube.com/watch?v=A_oOKEi_cIY",
+      "manuals.vespa.com"
+    ],
+    "addedAt": "2026-05-11T08:01:00Z",
+    "lastChecked": "2026-05-11T08:01:00Z"
+  },
+  {
+    "url": "internal:gy6-fuel-pump-maintenance",
+    "title": "GY6 Fuel Pump: Maintenance, Troubleshooting & Replacement",
+    "category": "repair-guides",
+    "file": "repair-guides/gy6-fuel-pump-maintenance.html",
+    "sources": [
+      "kemsoracing.com/blogs/news/the-ultimate-guide-to-gy6-fuel-pump-maintenance-troubleshooting-replacement"
+    ],
+    "addedAt": "2026-05-11T08:01:00Z",
+    "lastChecked": "2026-05-11T08:01:00Z"
+  },
+  {
+    "url": "internal:btc-riva-50-model-overview",
+    "title": "BTC Riva 50 — Model Overview & Technical Guide",
+    "category": "models",
+    "file": "models/btc-riva-50-model-overview.html",
+    "sources": [
+      "btcbikes.com",
+      "49ccscoot.com",
+      "isrm-community-data"
+    ],
+    "addedAt": "2026-05-11T08:01:00Z",
+    "lastChecked": "2026-05-11T08:01:00Z"
+  },
+  {
+    "url": "internal:vespa-primavera-oil-change-video",
+    "title": "Video: DIY Vespa Oil Change — Primavera / GTS / Sprint",
+    "category": "videos",
+    "file": "videos/vespa-primavera-oil-change-video.html",
+    "sources": [
+      "youtube.com/watch?v=6IeMd82uwW4",
+      "youtube.com/watch?v=A_oOKEi_cIY"
+    ],
+    "addedAt": "2026-05-11T08:01:00Z",
+    "lastChecked": "2026-05-11T08:01:00Z"
+  },
+  {
+    "url": "internal:piaggio-zip-100-troubleshooting",
+    "title": "Piaggio ZIP 50/100 4T — Troubleshooting Guide",
+    "category": "diagnostics",
+    "file": "diagnostics/piaggio-zip-100-troubleshooting.html",
+    "sources": [
+      "internal"
+    ],
+    "addedAt": "2026-05-10T11:52:19Z",
+    "lastChecked": "2026-05-11T10:01:00Z"
+  },
+  {
+    "url": "internal:piaggio-zip-100-technical-overview",
+    "title": "Piaggio ZIP 50/100 4T — Technical Overview",
+    "category": "models",
+    "file": "models/piaggio-zip-100-technical-overview.html",
+    "sources": [
+      "internal"
+    ],
+    "addedAt": "2026-05-10T11:52:19Z",
+    "lastChecked": "2026-05-11T10:01:00Z"
   }
 ]

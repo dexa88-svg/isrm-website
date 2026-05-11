@@ -18,11 +18,11 @@
   <meta property="og:title" content="GY6 Spark Plug Replacement Guide — ISMR">
   <meta property="og:description" content="GY6 spark plug replacement guide. Correct plug specs (NGK C7HSA / CR7HSA), gap settings, and torque for 50cc, 125cc, and 150cc engines.">
   <meta property="og:site_name" content="ISMR — Interactive Scooter Manuals for Repair">
-  <meta property="og:image" content="https://ismr.online/og-image.jpg">
+  <meta property="og:image" content="https://ismr.online/repair-guides/images/spark_plug_map.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="GY6 Spark Plug Replacement Guide — ISMR">
   <meta name="twitter:description" content="GY6 spark plug replacement guide. Correct plug specs (NGK C7HSA / CR7HSA), gap settings, and torque for 50cc, 125cc, and 150cc engines.">
-  <meta name="twitter:image" content="https://ismr.online/og-image.jpg">
+  <meta name="twitter:image" content="https://ismr.online/repair-guides/images/spark_plug_map.png">
   <title>GY6 Spark Plug Replacement Guide — ISMR</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
@@ -177,10 +177,78 @@
     .video-card h4 { color: var(--text-primary); margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600; }
     .video-card p { font-size: 0.875rem; margin-bottom: 0.75rem; color: var(--text-secondary); }
     .video-card a { color: var(--primary); font-weight: 600; font-size: 0.9rem; }
+    .step-photo {
+      margin: 1.25rem 0;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .step-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 420px;
+      object-fit: cover;
+      object-position: center;
+    }
+    .step-photo figcaption {
+      background: var(--surface-2);
+      padding: 0.6rem 1rem;
+      font-size: 0.82rem;
+      color: var(--text-tertiary);
+      border-top: 1px solid var(--border);
+    }
+    .step-photo figcaption strong { color: var(--text-secondary); }
+    .plug-analysis {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+      margin: 0 0 1.5rem;
+    }
+    .plug-analysis-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 0.75rem 0;
+    }
+    .plug-analysis-col ul {
+      margin: 0.4rem 0 0;
+      padding-left: 1.25rem;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    .plug-analysis-col li { margin-bottom: 0.35rem; }
+    .plug-analysis-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin: 0 0 0.3rem;
+    }
+    .plug-analysis-good { color: var(--success); }
+    .plug-analysis-warn { color: var(--warning); }
+    .plug-verdict {
+      background: rgba(6, 167, 125, 0.07);
+      border-left: 4px solid var(--success);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 0.75rem 1rem;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+    }
+    .plug-verdict strong { color: var(--text-primary); }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.25rem 0;
+    }
     @media (max-width: 768px) {
       .guide-header h1 { font-size: 1.7rem; }
       .guide-content { padding: 1.5rem 1rem 3rem; }
       .breadcrumb { padding: 0.9rem 1rem; }
+      .photo-grid { grid-template-columns: 1fr; }
+      .plug-analysis-grid { grid-template-columns: 1fr; }
     }
   </style>
   <script type="application/ld+json">
@@ -380,6 +448,42 @@
       <tr><td>White or pale grey, blistered</td><td>Lean mixture or overheating</td><td>Check fuel delivery, coolant/air flow</td></tr>
       <tr><td>Rounded/eroded electrode</td><td>Normal wear — replace now</td><td>Standard replacement</td></tr>
     </table>
+
+    <div class="photo-grid">
+      <figure class="step-photo">
+        <img src="images/spark_plug_map.png" alt="Spark plug color reference chart showing four states: normal tan/grey, carbon fouled black, overheated white chalky, and oil fouled wet black">
+        <figcaption><strong>Spark plug color reference.</strong> Left to right: Normal (light tan/grey) — Carbon Fouled (dry black, sooty) — Overheated/Ash Fouled (white, blistered) — Oil Fouled (wet, oily black). Compare your removed plug against this chart before replacing.</figcaption>
+      </figure>
+      <figure class="step-photo">
+        <img src="images/spark_plug_color.jpg" alt="Used NGK spark plug removed from a GY6 scooter showing slightly dark deposits on the electrode area and threads — within acceptable range">
+        <figcaption><strong>Real-world example: GY6 plug in acceptable condition.</strong> Insulator shows brownish/tan colour (good). Some dark sooty buildup around the electrode and carbon-coated threads. See full analysis below.</figcaption>
+      </figure>
+    </div>
+
+    <div class="plug-analysis">
+      <h3 style="margin-top:0; color: var(--text-primary); font-size: 1.05rem;">Analysis — This Plug</h3>
+      <div class="plug-analysis-grid">
+        <div class="plug-analysis-col">
+          <p class="plug-analysis-label plug-analysis-good">Good signs</p>
+          <ul>
+            <li>Insulator (ceramic nose) is brownish/tan — correct combustion temperature</li>
+            <li>No wet or oily deposits — no oil burning</li>
+            <li>No white chalky residue — not running lean or overheating</li>
+          </ul>
+        </div>
+        <div class="plug-analysis-col">
+          <p class="plug-analysis-label plug-analysis-warn">Minor concerns</p>
+          <ul>
+            <li>Some dark sooty buildup around the electrode area</li>
+            <li>Threads look dirty/carbon-coated</li>
+          </ul>
+        </div>
+      </div>
+      <div class="plug-verdict">
+        <strong>Verdict: acceptable — within normal range.</strong> The slight darkening can indicate lots of idling or short trips, a slightly rich fuel mixture, a dirty air filter, or simply normal wear after time in service. The engine appears to be running okay.
+      </div>
+      <p style="margin: 0.75rem 0 0; color: var(--text-secondary); font-size: 0.92rem;"><strong style="color:var(--text-primary);">Recommendations:</strong> Check the electrode gap with a feeler gauge. Inspect the air filter — a clogged filter often causes this slight richness. You can clean the plug with a wire brush and reuse it, or replace it if it has been in service a long time. A new NGK plug costs under €5 and is cheap insurance.</p>
+    </div>
 
     <div class="video-embed">
       <div class="video-embed-title">🎬 Video Guide — Replacing the Spark Plug on a Chinese Scooter (GY6)</div>

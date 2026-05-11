@@ -42,7 +42,7 @@
 
     /* Video card preview thumbnail placeholder */
     .video-thumb {
-      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      background: linear-gradient(135deg, var(--surface), var(--bg-dark));
       border-radius: var(--radius-md);
       height: 130px;
       display: flex;
@@ -71,15 +71,30 @@
       bottom: 0.5rem;
       left: 0.75rem;
       background: var(--primary);
-      color: #fff;
+      color: var(--bg-light);
       font-size: 0.7rem;
       font-weight: 700;
       padding: 0.2rem 0.5rem;
-      border-radius: 4px;
+      border-radius: var(--radius-sm);
       text-transform: uppercase;
     }
-    .guide-card:hover .video-thumb { border-color: var(--primary); }
-  </style>
+    .guide-card { transition: var(--transition); }
+    .guide-card:hover .video-thumb { border-color: var(--primary); transition: var(--transition); }
+    @media (max-width: 768px) {
+      .page-hero { padding: 2.5rem 1rem 2rem; }
+      .page-hero h1 { font-size: 1.8rem; }
+      .page-hero-stats { gap: 1.2rem; }
+      .guides-section { padding: 2rem 1rem 3rem; }
+      .nav-menu { display: none; }
+      .nav-toggle { display: block; }
+    }
+    @media (max-width: 480px) {
+      .page-hero h1 { font-size: 1.4rem; }
+      .page-hero { padding: 2rem 1rem 1.5rem; }
+      .hero-stat-number { font-size: 1.2rem; }
+      .video-thumb { height: 100px; }
+    }
+</style>
 </head>
 <body>
 
@@ -96,6 +111,7 @@
     </div>
   </nav>
 
+  <main role="main">
   <section class="page-hero">
     <div class="page-hero-inner">
       <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
@@ -131,11 +147,28 @@
           <a href="gy6-carburetor-intake-change-tutorial.html" class="read-more">Watch &amp; Read</a>
         </article>
 
+        <article class="guide-card">
+          <div class="video-thumb">
+            <span class="video-thumb-label">YouTube</span>
+          </div>
+          <div class="card-tag">Vespa · Piaggio</div>
+          <h3>DIY Vespa Oil Change — Primavera / GTS / Sprint</h3>
+          <p>Step-by-step oil change for the Piaggio iGet engine. Covers drain plug torque, correct oil spec (5W-40 JASO MA2), fill volume, dipstick check, and service light reset.</p>
+          <div class="card-meta">
+            <span class="tag">Primavera</span>
+            <span class="tag">Sprint</span>
+            <span class="time">20 min</span>
+          </div>
+          <a href="vespa-primavera-oil-change-video.html" class="read-more">Watch &amp; Read</a>
+        </article>
+
       </div>
     </div>
   </section>
 
   <script src="../script.js"></script>
+
+  </main>
 
   <footer class="guide-footer">
     <p>ISMR — Interactive Scooter Manuals for Repair. Content for educational purposes. CC BY-SA 4.0.</p>

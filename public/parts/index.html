@@ -88,7 +88,7 @@
       padding: 0.85rem 2rem;
       background: var(--primary);
       border: none; border-radius: var(--radius-md);
-      color: #fff; font-size: 0.95rem; font-weight: 600;
+      color: var(--bg-light); font-size: 0.95rem; font-weight: 600;
       cursor: pointer; transition: var(--transition);
     }
     .finder-btn:hover { background: var(--primary-dark); }
@@ -227,6 +227,7 @@
       border-radius: var(--radius-lg);
       padding: 1.5rem; text-align: center;
       transition: var(--transition); cursor: pointer;
+      display: block; text-decoration: none; color: inherit;
     }
     .cat-card:hover { border-color: var(--primary); transform: translateY(-3px); }
     .cat-card-icon { font-size: 2.2rem; margin-bottom: 0.75rem; }
@@ -879,41 +880,41 @@
       <h2>Browse by Category</h2>
     </div>
     <div class="cat-grid">
-      <div class="cat-card" onclick="document.getElementById('sec-engine').scrollIntoView({behavior:'smooth'})">
+      <a class="cat-card" href="#sec-engine">
         <div class="cat-card-icon">🔧</div>
         <h3>Engine Parts</h3>
         <p>Spark plugs, pistons, gaskets, carburetors, oil</p>
-      </div>
-      <div class="cat-card" onclick="document.getElementById('sec-transmission').scrollIntoView({behavior:'smooth'})">
+      </a>
+      <a class="cat-card" href="#sec-transmission">
         <div class="cat-card-icon">⚙️</div>
         <h3>Transmission &amp; CVT</h3>
         <p>Belt, rollers, clutch, gear oil</p>
-      </div>
-      <div class="cat-card" onclick="document.getElementById('sec-brakes').scrollIntoView({behavior:'smooth'})">
+      </a>
+      <a class="cat-card" href="#sec-brakes">
         <div class="cat-card-icon">🛑</div>
         <h3>Brakes</h3>
         <p>Pads, shoes, rotors, fluid, cables</p>
-      </div>
-      <div class="cat-card" onclick="document.getElementById('sec-tyres').scrollIntoView({behavior:'smooth'})">
+      </a>
+      <a class="cat-card" href="#sec-tyres">
         <div class="cat-card-icon">🛞</div>
         <h3>Tyres &amp; Wheels</h3>
         <p>Sizes, tubes, wheel bearings</p>
-      </div>
-      <div class="cat-card" onclick="document.getElementById('sec-chassis').scrollIntoView({behavior:'smooth'})">
+      </a>
+      <a class="cat-card" href="#sec-chassis">
         <div class="cat-card-icon">🏗️</div>
         <h3>Chassis &amp; Suspension</h3>
         <p>Forks, shocks, steering bearings</p>
-      </div>
-      <div class="cat-card" onclick="document.getElementById('sec-electrical').scrollIntoView({behavior:'smooth'})">
+      </a>
+      <a class="cat-card" href="#sec-electrical">
         <div class="cat-card-icon">⚡</div>
         <h3>Electrical</h3>
         <p>Battery, CDI, coil, rectifier, starter</p>
-      </div>
-      <div class="cat-card" onclick="document.getElementById('sec-fluids').scrollIntoView({behavior:'smooth'})">
+      </a>
+      <a class="cat-card" href="#sec-fluids">
         <div class="cat-card-icon">🛢️</div>
         <h3>Fluids &amp; Consumables</h3>
         <p>Oils, brake fluid, lubricants</p>
-      </div>
+      </a>
     </div>
 
   </main>

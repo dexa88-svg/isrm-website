@@ -50,7 +50,19 @@
       border-bottom: 1px solid var(--border);
     }
     .section-label:first-child { margin-top: 0; }
-  </style>
+    @media (max-width: 768px) {
+      .page-hero { padding: 2.5rem 1rem 2rem; }
+      .page-hero h1 { font-size: 1.8rem; }
+      .page-hero-stats { gap: 1.2rem; }
+      .nav-menu { display: none; }
+      .nav-toggle { display: block; }
+    }
+    @media (max-width: 480px) {
+      .page-hero h1 { font-size: 1.4rem; }
+      .page-hero { padding: 2rem 1rem 1.5rem; }
+      .hero-stat-number { font-size: 1.2rem; }
+    }
+</style>
 </head>
 <body>
 
@@ -67,6 +79,7 @@
     </div>
   </nav>
 
+  <main role="main">
   <section class="page-hero">
     <div class="page-hero-inner">
       <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
@@ -227,6 +240,8 @@
   </section>
 
   <script src="../script.js"></script>
+
+  </main>
 
   <footer class="guide-footer">
     <p>ISMR — Interactive Scooter Manuals for Repair. Content for educational purposes. CC BY-SA 4.0.</p>

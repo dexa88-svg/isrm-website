@@ -48,7 +48,7 @@
       font-size: 0.85rem;
       color: var(--text-tertiary);
     }
-    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a { color: var(--accent); transition: var(--transition); }
     .breadcrumb a:hover { color: var(--primary); }
     .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
     .guide-meta {
@@ -69,7 +69,7 @@
       color: var(--accent);
       border: 1px solid rgba(0, 168, 204, 0.3);
       padding: 0.25rem 0.7rem;
-      border-radius: 20px;
+      border-radius: var(--radius-pill);
       font-size: 0.78rem;
       font-weight: 500;
     }
@@ -153,6 +153,7 @@
       padding: 1.25rem 1.5rem;
       margin: 1.25rem 0;
     }
+    .check-section { transition: var(--transition); }
     .check-section:hover { border-color: rgba(0, 168, 204, 0.4); }
 
     .pass { color: var(--success); font-weight: 700; }
@@ -174,6 +175,12 @@
       .breadcrumb { padding: 0.9rem 1rem; }
       .nav-menu { display: none; }
       .nav-toggle { display: block; }
+    }
+    @media (max-width: 480px) {
+      .guide-header h1 { font-size: 1.35rem; }
+      .guide-header { padding: 2rem 1rem 1.5rem; }
+      .guide-content h2 { font-size: 1.2rem; }
+      .guide-tags { gap: 0.3rem; }
     }
   </style>
 </head>

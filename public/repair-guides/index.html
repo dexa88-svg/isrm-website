@@ -110,7 +110,7 @@
       border: 1px solid var(--border);
       color: var(--text-muted);
       padding: 0.4rem 1rem;
-      border-radius: 20px;
+      border-radius: var(--radius-pill);
       font-size: 0.85rem;
       font-weight: 500;
       cursor: pointer;
@@ -124,7 +124,7 @@
     .filter-btn.active {
       background: var(--primary);
       border-color: var(--primary);
-      color: #fff;
+      color: var(--bg-light);
     }
 
     /* Guide count label */
@@ -170,7 +170,7 @@
       border: 1px solid var(--border);
       color: var(--text-primary);
       padding: 0.35rem 0.85rem;
-      border-radius: 20px;
+      border-radius: var(--radius-pill);
       font-size: 0.85rem;
       outline: none;
       min-width: 190px;
@@ -178,7 +178,7 @@
       flex-shrink: 0;
     }
     .filters-search::placeholder { color: var(--text-muted); }
-    .filters-search:focus { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(0,168,204,0.15); }
+    .filters-search:focus { border-color: var(--accent); box-shadow: var(--shadow-sm); }
 
     /* No results state */
     .no-results {
@@ -189,7 +189,23 @@
       display: none;
     }
     .no-results.visible { display: block; }
-  </style>
+    @media (max-width: 768px) {
+      .page-hero { padding: 2.5rem 1rem 2rem; }
+      .page-hero h1 { font-size: 1.8rem; }
+      .page-hero-stats { gap: 1.2rem; }
+      .filters-bar { padding: 0 1rem; top: 56px; }
+      .guides-section { padding: 2rem 1rem 3rem; }
+      .nav-menu { display: none; }
+      .nav-toggle { display: block; }
+    }
+    @media (max-width: 480px) {
+      .page-hero h1 { font-size: 1.4rem; }
+      .page-hero { padding: 2rem 1rem 1.5rem; }
+      .hero-stat-number { font-size: 1.2rem; }
+      .filters-inner { gap: 0.15rem; }
+      .filter-btn { padding: 0.35rem 0.75rem; font-size: 0.78rem; }
+    }
+</style>
 </head>
 <body>
 
@@ -206,6 +222,7 @@
     </div>
   </nav>
 
+  <main role="main">
   <!-- Page Hero -->
   <section class="page-hero">
     <div class="page-hero-inner">
@@ -398,6 +415,61 @@
           <a href="gy6-valve-adjustment-guide.html" class="read-more">Read Guide</a>
         </article>
 
+        <article class="guide-card" data-category="electrical">
+          <div class="card-tag">GY6</div>
+          <h3>CDI No-Spark Diagnosis &amp; Replacement</h3>
+          <p>Step-by-step electrical diagnosis of the GY6 ignition circuit — pick-up coil, ignition coil, and CDI tests with a multimeter, plus replacement guide.</p>
+          <div class="card-meta">
+            <span class="tag">Electrical</span>
+            <span class="time">30 min</span>
+          </div>
+          <a href="gy6-cdi-no-spark-diagnosis.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card" data-category="maintenance">
+          <div class="card-tag">Vespa</div>
+          <h3>Vespa Primavera &amp; Sprint Oil Change</h3>
+          <p>Full oil change procedure for the Piaggio iGet engine (Primavera 125/150, Sprint 125/150) — correct spec, torque values, dipstick check, and service light reset.</p>
+          <div class="card-meta">
+            <span class="tag">Maintenance</span>
+            <span class="time">25 min</span>
+          </div>
+          <a href="vespa-primavera-sprint-oil-change.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card" data-category="maintenance">
+          <div class="card-tag">GY6</div>
+          <h3>GY6 Fuel Pump: Maintenance &amp; Troubleshooting</h3>
+          <p>Covers both vacuum-diaphragm pumps (carburetted) and electric pumps (EFI) — diagnosis, pressure testing, and step-by-step replacement.</p>
+          <div class="card-meta">
+            <span class="tag">Fuel System</span>
+            <span class="time">30 min</span>
+          </div>
+          <a href="gy6-fuel-pump-maintenance.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card" data-category="fuel-system">
+          <div class="card-tag">GY6 EFI</div>
+          <h3>GY6 EFI Hard Start: Intake Flooding</h3>
+          <p>GY6 EFI hard starting caused by intake flooding — cracked intake insulator gasket or leaking fuel injector. Diagnosis and repair guide with real photos and video.</p>
+          <div class="card-meta">
+            <span class="tag">EFI / Fuel System</span>
+            <span class="time">45 min</span>
+          </div>
+          <a href="gy6-efi-hard-start-intake-flooding.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card" data-category="fuel-system">
+          <div class="card-tag">GY6</div>
+          <h3>GY6 Hard Start: Intake Flooding</h3>
+          <p>GY6 hard starting caused by intake flooding — cracked intake insulator gasket or leaking carburetor needle valve. Diagnosis and repair guide with real photos.</p>
+          <div class="card-meta">
+            <span class="tag">Carburetor / Fuel System</span>
+            <span class="time">30 min</span>
+          </div>
+          <a href="gy6-hard-start-intake-flooding.html" class="read-more">Read Guide</a>
+        </article>
+
         <div class="no-results" id="noResults">No guides in this category yet.</div>
 
       </div>
@@ -470,6 +542,8 @@
     }
   </script>
 
+
+  </main>
 
   <footer class="guide-footer">
     <p>ISMR — Interactive Scooter Manuals for Repair. Content for educational purposes. CC BY-SA 4.0.</p>

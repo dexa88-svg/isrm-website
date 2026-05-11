@@ -39,7 +39,20 @@
     .guides-section-inner { max-width: 1100px; margin: 0 auto; }
     .guides-count { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem; }
     .guides-count strong { color: var(--text-primary); }
-  </style>
+    @media (max-width: 768px) {
+      .page-hero { padding: 2.5rem 1rem 2rem; }
+      .page-hero h1 { font-size: 1.8rem; }
+      .page-hero-stats { gap: 1.2rem; }
+      .guides-section { padding: 2rem 1rem 3rem; }
+      .nav-menu { display: none; }
+      .nav-toggle { display: block; }
+    }
+    @media (max-width: 480px) {
+      .page-hero h1 { font-size: 1.4rem; }
+      .page-hero { padding: 2rem 1rem 1.5rem; }
+      .hero-stat-number { font-size: 1.2rem; }
+    }
+</style>
 </head>
 <body>
 
@@ -56,6 +69,7 @@
     </div>
   </nav>
 
+  <main role="main">
   <section class="page-hero">
     <div class="page-hero-inner">
       <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
@@ -112,11 +126,25 @@
           <a href="la-souris-sourini-city-overview.html" class="read-more">View Model</a>
         </article>
 
+        <article class="guide-card">
+          <div class="card-tag">GY6 · BTC</div>
+          <h3>BTC Riva 50 — Model Overview</h3>
+          <p>Technical specifications, carburetor jetting, CVT data, valve clearances, routine maintenance schedule, and parts compatibility notes for the BTC Riva 50.</p>
+          <div class="card-meta">
+            <span class="tag">Carburetor</span>
+            <span class="tag">139QMB</span>
+            <span class="time">Reference</span>
+          </div>
+          <a href="btc-riva-50-model-overview.html" class="read-more">View Model</a>
+        </article>
+
       </div>
     </div>
   </section>
 
   <script src="../script.js"></script>
+
+  </main>
 
   <footer class="guide-footer">
     <p>ISMR — Interactive Scooter Manuals for Repair. Content for educational purposes. CC BY-SA 4.0.</p>

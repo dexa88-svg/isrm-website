@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GY6 CDI No-Spark Diagnosis & Replacement — ISRM</title>
+  <style>
+    body { font-family: Georgia, serif; background: #0f0f0f; color: #e8e8e8; max-width: 820px; margin: 2rem auto; padding: 1rem 2rem; line-height: 1.7; }
+    h1 { color: #f5a623; border-bottom: 2px solid #f5a623; padding-bottom: 0.4rem; }
+    h2 { color: #f5a623; margin-top: 2rem; }
+    a { color: #7ec8e3; }
+    .meta { color: #888; font-size: 0.85rem; margin-bottom: 1.5rem; }
+    .source-box { background: #1a1a1a; border-left: 4px solid #f5a623; padding: 0.8rem 1.2rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; }
+    .tag { display: inline-block; background: #222; color: #f5a623; border: 1px solid #f5a623; border-radius: 12px; padding: 2px 10px; font-size: 0.78rem; margin-right: 6px; }
+    nav { margin-bottom: 2rem; font-size: 0.9rem; } nav a { margin-right: 1rem; }
+    footer { margin-top: 3rem; border-top: 1px solid #333; padding-top: 1rem; color: #555; font-size: 0.8rem; }
+    .warning { background: #2a1a00; border-left: 4px solid #f5a623; padding: 0.8rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th { background: #1a2332; color: #f5a623; text-align: left; padding: 0.5rem 0.8rem; }
+    td { padding: 0.5rem 0.8rem; border-bottom: 1px solid #2a3548; }
+    code { background: #1a2332; padding: 2px 6px; border-radius: 3px; font-family: monospace; color: #7ec8e3; }
+  </style>
+</head>
+<body>
+  <nav><a href="../index.html">🔧 ISRM Home</a> › <a href="index.html">Repair Guides</a></nav>
+  <h1>GY6 CDI No-Spark Diagnosis &amp; Replacement</h1>
+  <div class="meta">
+    Added: 2026-05-11 &nbsp;|&nbsp; Sources: <a href="https://www.buggydepot.com/tech-center/gy6-150cc-ignition-troubleshooting-guide-no-spark/" target="_blank" rel="noopener">buggydepot.com</a>, <a href="https://moowiring.com/2025/05/24/gy6-dc-cdi-wiring-diagram/" target="_blank" rel="noopener">moowiring.com</a>
+    &nbsp;|&nbsp; <span class="tag">GY6</span> <span class="tag">Ignition</span> <span class="tag">CDI</span> <span class="tag">Carburettor</span> <span class="tag">Fuel Injection</span>
+  </div>
+  <div class="source-box">
+    📌 <strong>Primary sources:</strong>
+    <a href="https://www.buggydepot.com/tech-center/gy6-150cc-ignition-troubleshooting-guide-no-spark/" target="_blank" rel="noopener">GY6 150cc Ignition Troubleshooting Guide: No Spark? — Buggy Depot Technical Center</a> and
+    <a href="https://moowiring.com/2025/05/24/gy6-dc-cdi-wiring-diagram/" target="_blank" rel="noopener">How to Wire a GY6 DC CDI — Moo Wiring</a>
+  </div>
+
+  <p>A GY6-engine scooter that cranks normally but produces no spark is one of the most common breakdown scenarios. The ignition system has three main electrical components that work together to fire the spark plug: the <strong>stator / pick-up coil</strong>, the <strong>CDI unit</strong> (Capacitor Discharge Ignition), and the <strong>ignition coil</strong>. This guide walks through a logical, test-before-replace diagnostic sequence so you replace only the component that has actually failed.</p>
+
+  <p><strong>Applies to:</strong> All GY6 50 cc (139QMB) and 125/150 cc (157QMJ / QMI152) engines — both carburetor and fuel-injected variants. The AC-CDI ignition circuit is identical across carburetted and EFI models.</p>
+
+  <div class="warning">
+    ⚠️ <strong>Safety:</strong> Work with the ignition off and the kill switch in the OFF position except when explicitly told to crank the engine during a test step. Keep hands and tools clear of the flywheel and cooling fan during cranking.
+  </div>
+
+  <h2>Understanding the GY6 Ignition Circuit</h2>
+  <p>On all standard GY6 engines the CDI is an AC-CDI: the stator generates its own alternating current to power the CDI capacitor — the main battery is not involved in spark production. Current flow is: stator charging coil → CDI capacitor → CDI trigger from pick-up coil → ignition coil primary winding → secondary winding → HT lead → spark plug.</p>
+
+  <p>The most commonly sold replacement CDIs for GY6 scooters are the 5-pin AC-CDI (most 50 cc models) and the 6-pin AC-CDI (most 125/150 cc models). DC-CDI units (powered from the battery) are found on some fuel-injected variants and EFI conversion kits.</p>
+
+  <h2>Tools Required</h2>
+  <ul>
+    <li>Digital multimeter (AC and DC voltage, resistance)</li>
+    <li>Inline spark tester or spare known-good spark plug</li>
+    <li>Screwdrivers (Phillips and flat)</li>
+    <li>Side cutters and electrical tape or crimp connectors for any wiring repairs</li>
+  </ul>
+
+  <h2>Step 1 — Confirm the Symptom Is No Spark</h2>
+  <ol>
+    <li>Remove the spark plug and reconnect the HT lead to it.</li>
+    <li>Lay the plug body against the engine casing (good earth contact is essential).</li>
+    <li>Ask a helper to crank the engine for 3–4 seconds while you watch the plug gap.</li>
+    <li>A healthy spark is bright blue-white and consistent. A weak orange/yellow spark or no spark at all requires investigation.</li>
+  </ol>
+
+  <h2>Step 2 — Inspect the Basics Before Testing Components</h2>
+  <p>Before reaching for the multimeter, visually inspect these quick-fail points — they account for roughly 40 % of no-spark faults:</p>
+  <ul>
+    <li><strong>Spark plug condition:</strong> A fouled, cracked, or incorrectly gapped plug will not spark. Replace it with a new <code>NGK C7HSA</code> (50 cc) or <code>NGK CR7HSA</code> (125/150 cc) and retest.</li>
+    <li><strong>Kill switch:</strong> Disconnect the kill-switch wire from the CDI. Many kill switches fail internally and earth the CDI permanently. Retest with it disconnected.</li>
+    <li><strong>Side-stand switch:</strong> Some models have a side-stand interlock that grounds the CDI when the stand is down. Raise the stand and retest, or disconnect the switch wire.</li>
+    <li><strong>Earth/ground wires:</strong> Inspect every earth strap on the engine, frame, and battery. A corroded or broken ground is a very common cause of no-spark.</li>
+    <li><strong>HT lead and cap:</strong> A cracked lead or a loose cap will break the secondary circuit. Replace if the rubber insulation is hard or cracked.</li>
+  </ul>
+
+  <h2>Step 3 — Test the Pick-Up Coil (Trigger Coil)</h2>
+  <p>The pick-up coil sits inside the left-hand engine cover behind the flywheel and generates the timing pulse that tells the CDI when to fire.</p>
+  <ol>
+    <li>Locate the pick-up coil connector — typically a 2-pin or 3-pin connector coming out of the stator cover. On a 5-pin CDI the trigger wires are usually <strong>white/green</strong> and <strong>green</strong>; on 6-pin CDIs, <strong>white/green</strong> and <strong>black/white</strong>.</li>
+    <li>Set the multimeter to AC voltage. With the connector unplugged, backprobe the two trigger pins and crank the engine.</li>
+    <li>A healthy pick-up coil produces <strong>0.5–2.5 V AC</strong> at cranking speed.</li>
+    <li>If voltage is 0 V, set the meter to resistance (Ω). A healthy pick-up coil measures approximately <strong>80–120 Ω</strong> across the two trigger wires. Open-circuit (OL) or a short to earth means a failed coil.</li>
+    <li>Also test the stator charging coil (the yellow/yellow wires): should produce <strong>2–5 V AC</strong> at cranking speed and read <strong>1–3 Ω</strong> resistance.</li>
+  </ol>
+
+  <h2>Step 4 — Test the Ignition Coil</h2>
+  <p>The ignition coil takes the CDI's capacitor discharge and steps it up to ~15,000–25,000 V for the spark plug. Testing it in-circuit is straightforward:</p>
+  <ol>
+    <li>Disconnect the primary coil wires (normally <strong>orange</strong> from the CDI and <strong>black</strong> earth).</li>
+    <li>Measure resistance across the primary winding (the two thin wires): should read <strong>0.3–1.5 Ω</strong>. Open-circuit = failed coil.</li>
+    <li>Measure across the secondary winding (between the HT cap and the earth wire, with the spark plug removed from the cap): should read <strong>6–15 kΩ</strong>.</li>
+    <li>If both windings are in spec but there is still no spark, the coil may have an internal insulation breakdown only visible under the load of a real discharge. Swap with a known-good coil as the final check.</li>
+  </ol>
+
+  <h2>Step 5 — Test and Replace the CDI Unit</h2>
+  <p>CDI units are solid-state and cannot be repaired — they must be swapped. However, test the input signals first so you know whether a new CDI will cure the fault:</p>
+  <ol>
+    <li>Plug the CDI back in. Backprobe the charging input pins (yellow wires) at the CDI connector with the multimeter on AC voltage. Crank the engine. You should see <strong>at least 2 V AC</strong>. If you see 0 V, the fault is upstream (stator/wiring), not the CDI.</li>
+    <li>Backprobe the trigger input pins. Crank. You should see a pulsing voltage (0.5–2.5 V AC). If no pulse, the pick-up coil or its wiring is the fault.</li>
+    <li>If both inputs are present but there is still no spark at the output (ignition coil primary), the CDI has failed internally. Replace it.</li>
+  </ol>
+
+  <h2>Replacing the CDI</h2>
+  <p>Identify the correct replacement before ordering — count the pins on your CDI connector (5-pin or 6-pin) and note whether your engine uses AC-CDI (most carburetted and EFI scooters) or DC-CDI (battery-powered, found on some EFI conversions). The connector positions vary by manufacturer but the wiring function is standardised:</p>
+
+  <table>
+    <tr><th>Wire Colour (typical)</th><th>Function</th></tr>
+    <tr><td><code>Yellow / Yellow</code></td><td>Stator AC charging input</td></tr>
+    <tr><td><code>White / Green</code></td><td>Pick-up coil trigger input</td></tr>
+    <tr><td><code>Green</code></td><td>Earth / Ground</td></tr>
+    <tr><td><code>Orange</code></td><td>Ignition coil output</td></tr>
+    <tr><td><code>Black / White</code> (6-pin)</td><td>Kill switch / EFI trigger signal</td></tr>
+    <tr><td><code>Red</code> (DC-CDI only)</td><td>Battery +12 V input</td></tr>
+  </table>
+
+  <ol>
+    <li>Locate the CDI unit — usually mounted under the seat or behind the front fairing, secured with a rubber strap or bracket.</li>
+    <li>Unplug the harness connector (press the release tab, pull straight out).</li>
+    <li>Fit the new CDI, routing the harness away from hot engine parts and sharp edges.</li>
+    <li>Reconnect, crank, and confirm spark before reassembling bodywork.</li>
+  </ol>
+
+  <h2>Diagnostic Quick-Reference</h2>
+  <table>
+    <tr><th>Symptom</th><th>Most Likely Cause</th></tr>
+    <tr><td>No spark; kill switch disconnection fixes it</td><td>Faulty kill switch earthing CDI signal wire</td></tr>
+    <tr><td>No spark; 0 Ω across pick-up coil</td><td>Shorted pick-up coil — replace stator plate</td></tr>
+    <tr><td>No spark; OL (open) pick-up coil resistance</td><td>Broken pick-up coil wire — replace stator plate</td></tr>
+    <tr><td>No spark; coil primary resistance OL</td><td>Open-circuit ignition coil — replace coil</td></tr>
+    <tr><td>Weak orange spark only</td><td>Ignition coil secondary partially failed, or fouled plug</td></tr>
+    <tr><td>No spark; all components test OK</td><td>CDI internal failure — replace CDI</td></tr>
+    <tr><td>Intermittent spark (warm engine only)</td><td>Heat-cracked CDI capacitor or coil insulation</td></tr>
+  </table>
+
+  <h2>OEM Part References</h2>
+  <ul>
+    <li><strong>CDI 5-pin AC (GY6 50 cc / 139QMB):</strong> Generic AC-CDI 5-pin, fits most 50 cc GY6 builds. Brands: Kymco-OEM equivalent, Lifan.</li>
+    <li><strong>CDI 6-pin AC (GY6 125/150 cc / 157QMJ):</strong> Generic AC-CDI 6-pin, widely available. Performance CDIs with variable advance curves are available from NCY and Malossi.</li>
+    <li><strong>Spark plug (50 cc):</strong> NGK C7HSA — gap 0.6–0.7 mm</li>
+    <li><strong>Spark plug (125/150 cc):</strong> NGK CR7HSA — gap 0.6–0.7 mm</li>
+    <li><strong>Ignition coil (universal GY6):</strong> Standard 2-pin primary coil, widely available. Gap between coil and flywheel magnet: 0.3–0.5 mm.</li>
+  </ul>
+
+  <footer>
+    Page auto-generated by ISRM Content Sync on 2026-05-11. Content summarised from external sources for educational purposes. Always verify with the original source before performing repairs.
+  </footer>
+</body>
+</html>
