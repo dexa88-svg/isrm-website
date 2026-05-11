@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #0f1419;
+    color: #f5f5f5;
+    padding: 16px 16px 40px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  h2 { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+  .sub { font-size: 11px; color: #64748b; margin-bottom: 14px; }
+
+  .legend {
+    display: flex; gap: 10px; flex-wrap: wrap;
+    margin-bottom: 16px; padding: 8px 12px;
+    background: #1a2332; border-radius: 6px; border: 1px solid #2a3548;
+  }
+  .li { display: flex; align-items: center; gap: 5px; font-size: 10px; color: #94a3b8; }
+  .ld { width: 9px; height: 9px; border-radius: 2px; flex-shrink:0; }
+
+  /* Tree */
+  .tree { display: flex; flex-direction: column; }
+
+  .row {
+    display: flex; align-items: center; flex-wrap: nowrap;
+    min-height: 26px; margin-bottom: 3px;
+  }
+
+  /* Indent spacers */
+  .sp { display: inline-block; width: 18px; flex-shrink: 0; }
+  .conn { display: inline-block; color: #334155; font-size: 11px; font-family: monospace; flex-shrink: 0; margin-right: 3px; width: 14px; }
+
+  /* Edge label */
+  .e {
+    font-size: 10px; color: #64748b;
+    background: #1e293b; border: 1px solid #2a3548;
+    border-radius: 10px; padding: 1px 7px;
+    margin-right: 6px; white-space: nowrap; flex-shrink: 0;
+    line-height: 1.4;
+  }
+  .e.carb { background: #1a2a1a; border-color: #2d4a2d; color: #86efac; }
+  .e.efi  { background: #1a1a2a; border-color: #2d2d6a; color: #a5b4fc; }
+
+  /* Question box */
+  .q {
+    background: #1a2332; border: 1px solid #334155;
+    border-radius: 6px; padding: 4px 10px;
+    color: #cbd5e1; font-weight: 600; font-size: 11.5px;
+    white-space: nowrap;
+  }
+  .q .lbl { font-size: 9.5px; color: #475569; font-weight: 400; text-transform: uppercase; letter-spacing: 0.05em; margin-right: 4px; }
+
+  /* Root */
+  .root { background: #1e3a5f; border: 1px solid #2563eb; border-radius: 6px; padding: 6px 14px; font-size: 13px; color: #93c5fd; font-weight: 700; }
+
+  /* Diagnosis chips */
+  .d { border-radius: 6px; padding: 3px 9px; font-size: 11px; font-weight: 600; white-space: nowrap; border: 1px solid transparent; }
+  .easy  { background: #0c2a1e; border-color: #16a34a; color: #86efac; }
+  .mod   { background: #2a1f0a; border-color: #d97706; color: #fcd34d; }
+  .major { background: #2a0f0f; border-color: #dc2626; color: #fca5a5; }
+  .info  { background: #1a1a2a; border-color: #4f46e5; color: #a5b4fc; }
+
+  /* Section banners */
+  .section {
+    font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+    color: #334155; padding: 10px 0 4px; border-bottom: 1px solid #1e293b;
+    margin-bottom: 5px; margin-top: 8px;
+  }
+  .section.a { color: #ef4444; border-color: #2a1010; }
+  .section.b { color: #22c55e; border-color: #0c2a0c; }
+  .section.carb { color: #86efac; border-color: #1a2a1a; font-size: 9.5px; margin-top:4px; }
+  .section.efi  { color: #a5b4fc; border-color: #1a1a2a; font-size: 9.5px; margin-top:4px; }
+
+  .note {
+    font-size: 10px; color: #475569; font-style: italic;
+    padding: 2px 8px; border-left: 2px solid #2a3548;
+    margin: 2px 0 2px 22px;
+  }
+</style>
+</head>
+<body>
+
+<h2>🔍 Diagnosis Wizard — Revised Decision Tree (v3)</h2>
+<p class="sub">Drawn from guide content · Carb + EFI paths · 35 nodes · Reply with changes before implementation</p>
+
+<div class="legend">
+  <div class="li"><div class="ld" style="background:#1e3a5f;border:1px solid #2563eb"></div> Question</div>
+  <div class="li"><div class="ld" style="background:#0c2a1e;border:1px solid #16a34a"></div> 🟢 Easy fix</div>
+  <div class="li"><div class="ld" style="background:#2a1f0a;border:1px solid #d97706"></div> 🟡 Moderate</div>
+  <div class="li"><div class="ld" style="background:#2a0f0f;border:1px solid #dc2626"></div> 🔴 Major · stop riding</div>
+  <div class="li"><div class="ld" style="background:#1a1a2a;border:1px solid #4f46e5"></div> 🔵 Action needed first</div>
+  <div class="li"><div class="ld" style="background:#1a2a1a;border:1px solid #2d4a2d"></div> 🟩 Carb path</div>
+  <div class="li"><div class="ld" style="background:#1a1a2a;border:1px solid #2d2d6a"></div> 🟦 EFI path</div>
+</div>
+
+<div class="tree">
+
+<!-- ROOT -->
+<div class="row"><div class="root">🔑 Does your scooter START?</div></div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<div class="section a">A — NO, won't start at all</div>
+
+<!-- A1 Crank? -->
+<div class="row"><span class="sp"></span><span class="e">🚫 No</span><div class="q"><span class="lbl">A1</span>Does the engine CRANK when you press the starter?</div></div>
+
+<!-- A1 NO — no crank -->
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">No crank</span><div class="q"><span class="lbl">A1a</span>What do you HEAR pressing the starter?</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Single heavy click</span><div class="d mod">⚡ Starter relay or starter motor fault</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Rapid clicking</span><div class="d easy">🔋 Battery too weak to crank — charge / replace</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Grinding / just whirs</span><div class="d mod">⚙️ Starter drive gear or one-way clutch</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e">Complete silence</span><div class="q"><span class="lbl">A1b</span>Do lights / dash / horn work?</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">No / very dim</span><div class="d easy">🔋 Dead battery or blown main fuse (check 15–20A fuse under seat)</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e">Yes, electrics OK</span><div class="q"><span class="lbl">A1c</span>Is kill switch set to RUN (not STOP)?</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Was on STOP!</span><div class="d easy">✅ Kill switch was off — that's all</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e">Is on RUN</span><div class="d easy">⚡ Blown starter fuse / failed relay / worn ignition switch</div></div>
+
+<!-- A1 YES — cranks -->
+<div class="row" style="margin-top:6px"><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e">Yes — cranks</span><div class="q"><span class="lbl">A2</span>Is the fuel system CARBURETOR or EFI (fuel injection)?</div></div>
+<div class="note">EFI = electric fuel pump hum on key-on; no choke lever; often has a fault lamp (CEL/MIL) on dash</div>
+
+<!-- ── CARB PATH ── -->
+<div class="section carb" style="margin-left:36px">Carburetor path</div>
+
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e carb">Carbureted</span><div class="q"><span class="lbl">A3</span>Does it briefly FIRE or pop with full choke pulled / easy-start sprayed in?</div></div>
+<div class="note">Tip from guide: if it fires with choke, spark + compression are OK — fault is fuel circuit</div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Yes — coughs / pops</span><div class="d mod">⛽ Lean mixture — blocked pilot jet, closed petcock, or blocked filter</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e">No — nothing</span><div class="q"><span class="lbl">A4</span>SPARK TEST — remove plug, ground body on engine, crank. What do you see?</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Strong blue spark</span><div class="q"><span class="lbl">A5</span>Is FUEL reaching the carb? (disconnect fuel line, check flow)</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Yes / plug is wet</span><div class="q"><span class="lbl">A5a</span>COMPRESSION — cover plug hole with thumb, crank. Feel strong pressure?</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Yes — good compression</span><div class="d easy">💧 Engine flooded — remove plug, wide-open throttle, crank 10× to clear</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e">Low / no compression</span><div class="d major">🔩 Low compression — head gasket blown / valves not seating / worn rings (GY6 50cc min: 70 PSI)</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e">No flow / plug dry</span><div class="q"><span class="lbl">A5b</span>Set petcock to PRI position — does fuel flow now?</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Yes — flows on PRI</span><div class="d easy">🔧 Vacuum petcock not opening — use PRI or clean vacuum port. Check in-line fuel filter.</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e">Still no flow</span><div class="d easy">⛽ Empty tank / blocked petcock screen / pinched fuel line</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Weak / yellow spark</span><div class="q"><span class="lbl">A6</span>Have you fitted a NEW spark plug? (A7TC for 50cc / A7RTC for 125–150cc)</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Not yet</span><div class="d easy">🔌 Replace the plug first — cheapest step, eliminates the plug as variable</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e">Yes, still weak</span><div class="d mod">⚡ Ignition coil degrading (check: primary 0.4–0.6 Ω, secondary 4–6 kΩ) or CDI failing</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e">No spark at all</span><div class="q"><span class="lbl">A7</span>Have you fitted a NEW spark plug and disconnected the kill switch?</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">New plug + disconnected kill sw → sparks now</span><div class="d easy">🔴 Kill switch internally shorted (passes current even in RUN). Replace handlebar switch.</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e">Still no spark</span><div class="d mod">⚡ CDI unit / ignition coil (bobine) / pick-up coil (stator, 80–120 Ω) — test each in sequence</div></div>
+
+<!-- ── EFI PATH ── -->
+<div class="section efi" style="margin-left:36px">EFI (fuel injection) path</div>
+
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e efi">EFI / injected</span><div class="q"><span class="lbl">B1</span>On key-ON (don't start), do you hear the fuel pump prime? (2-sec buzz/hum)</div></div>
+<div class="note">EFI needs ≥ 11.5 V to operate correctly — check battery first</div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">No pump sound</span><div class="d mod">⛽ Fuel pump dead / EFI fuse blown / pump relay fault — check fuel pump fuse and relay first</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e">Yes — pump primes</span><div class="q"><span class="lbl">B2</span>Is the CEL / fault lamp (MIL) lit or flashing?</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Yes — CEL lit</span><div class="q"><span class="lbl">B3</span>Read FLASH CODES: key-on, don't start. Count long flashes (tens) + short (units).</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Code 11</span><div class="d mod">📡 Crank position sensor — check gap and wiring</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Code 13</span><div class="d easy">📊 MAP sensor — check vacuum hose connection first (most common cause)</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Code 14</span><div class="d easy">🌡️ Intake air temp sensor (IAT) — check connector for corrosion</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Code 21</span><div class="d easy">🌡️ Coolant temp sensor (CTS) — check resistance (2–3 kΩ at 20°C) and connector</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Code 22</span><div class="d mod">🎚️ TPS fault — check connector / idle voltage (0.4–0.8 V at idle, sweep to ~4.5 V at WOT)</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Code 44</span><div class="d mod">💨 O₂ sensor lean — air leak into intake / weak fuel pressure / aging O₂ sensor</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e">Code 45</span><div class="d mod">💉 O₂ sensor rich — injector stuck open (test resistance: 11–16 Ω) / O₂ sensor failed</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e">No CEL</span><div class="q"><span class="lbl">B4</span>SPARK TEST — remove plug, ground, crank. Spark present?</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Yes — good spark</span><div class="d mod">💉 Injector clogged or fuel pressure too low — test pressure (target 15–25 PSI). Check injector resistance (11–16 Ω).</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e">No spark</span><div class="d mod">⚡ Ignition coil (bobine) / CDI / pick-up coil — test coil primary 0.4–0.6 Ω, secondary 4–6 kΩ</div></div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<div class="section b" style="margin-top:10px">B — YES, starts — but something is wrong</div>
+
+<div class="row"><span class="sp"></span><span class="e">✅ Yes, starts</span><div class="q"><span class="lbl">C1</span>Is the fuel system CARBURETOR or EFI?</div></div>
+
+<!-- ── CARB RUNS ── -->
+<div class="section carb" style="margin-left:20px">Carburetor — running problems</div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e carb">Carbureted</span><div class="q"><span class="lbl">C2</span>Main symptom?</div></div>
+
+<!-- Idle -->
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Idle / stalling</span><div class="q"><span class="lbl">C2a</span>When does the idle problem occur?</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Cold engine only</span><div class="d easy">❄️ Auto-choke (thermostatic enricher) — test plunger extension cold/hot. Pilot jet partially blocked.</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Hot engine only</span><div class="d mod">🔥 CDI heat failure (common on old scooters) / vapour lock in fuel line / auto-choke stuck ON</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e">Always rough</span><div class="q"><span class="lbl">C2b</span>Black or sooty exhaust smoke?</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Yes — black smoke</span><div class="d easy">⬛ Rich: float level too high / float needle leaking / choke stuck closed / blocked air filter</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e">No smoke</span><div class="d easy">🔩 Pilot jet blocked (0.38–0.42mm orifice) — clean with carb cleaner + air, never wire</div></div>
+
+<!-- Power -->
+<div class="row" style="margin-top:4px"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Poor power / bogs</span><div class="q"><span class="lbl">C3</span>When does power loss occur?</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">0–¼ throttle</span><div class="d mod">🐌 Pilot circuit lean / air leak at manifold boot — spray carb cleaner around inlet while running</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">¼–¾ throttle</span><div class="d mod">📊 Needle clip position / CV slide diaphragm punctured / main jet partially blocked</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e">Won't reach top speed</span><div class="d mod">🏁 CVT rollers worn flat / drive belt slipping / main jet too lean at full throttle</div></div>
+
+<!-- Noise -->
+<div class="row" style="margin-top:4px"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Strange noise</span><div class="q"><span class="lbl">C4</span>Where is the noise from?</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Rear / belt area</span><div class="d mod">⚙️ CVT belt / rollers / clutch bell — belt snap risk if not checked</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Engine top — ticking</span><div class="d mod">🎵 Valve clearance — check every 3,000–5,000 km (inlet ~0.05 mm, exhaust ~0.10 mm)</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e">Engine deep — knock</span><div class="d major">🔨 Big-end / main bearing — STOP RIDING IMMEDIATELY</div></div>
+
+<!-- Overheat -->
+<div class="row" style="margin-top:4px"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e">Overheating</span><div class="q"><span class="lbl">C5</span>Air-cooled or liquid-cooled?</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Air-cooled</span><div class="d mod">💨 Lean mix / blocked fins / missing air shroud / wrong oil</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e">Liquid-cooled</span><div class="d mod">💧 Low coolant / thermostat stuck / water pump / head gasket leak</div></div>
+
+<!-- ── EFI RUNS ── -->
+<div class="section efi" style="margin-left:20px">EFI — running problems</div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e efi">EFI / injected</span><div class="q"><span class="lbl">D1</span>Main symptom?</div></div>
+
+<!-- EFI Idle -->
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Rough idle / stalling</span><div class="q"><span class="lbl">D1a</span>Is the CEL fault lamp lit?</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Yes CEL lit</span><div class="d info">📋 Read flash codes — TPS (22) / MAP (13) / CTS (21) / O₂ (44/45) — see code table above</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e">No CEL</span><div class="q"><span class="lbl">D1b</span>When does it occur?</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Cold only</span><div class="d easy">❄️ CTS fault (check 2–3 kΩ at 20°C) — cold-start enrichment not activating</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Hot only</span><div class="d mod">🔥 TPS voltage drifting with heat / vapour lock in fuel line</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e">Always rough</span><div class="d mod">🔧 IAC (idle air control) valve stuck or dirty / air leak / TPS out of range — check TPS idle voltage (0.4–0.8 V)</div></div>
+
+<!-- EFI Rich/Lean -->
+<div class="row" style="margin-top:4px"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Black smoke / runs rich</span><div class="d mod">⬛ TPS stuck or miscalibrated / injector leaking (test resistance 11–16 Ω) / O₂ sensor failed / regulator overvoltage</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">White smoke / runs lean</span><div class="d mod">💨 Fuel pump pressure low (target 15–25 PSI) / injector clogged / air leak at intake / O₂ sensor lean (code 44)</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Loss of power</span><div class="d mod">📉 Fuel pump not holding pressure at demand / TPS response flat / MAP sensor fault (code 13)</div></div>
+
+<!-- EFI Noise / Overheat — shared -->
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">├</span><span class="e">Strange noise</span><div class="d info">🔊 → Same as carb noise path above (C4) — mechanical, not EFI-related</div></div>
+<div class="row"><span class="sp"></span><span class="sp"></span><span class="sp"></span><span class="conn">└</span><span class="e">Overheating</span><div class="d info">🌡️ → Same as carb overheat path above (C5)</div></div>
+
+</div><!-- /tree -->
+
+<div style="margin-top:16px;padding:10px 12px;background:#1a2332;border:1px solid #2a3548;border-radius:6px;font-size:10.5px;color:#64748b;line-height:1.8;">
+  <strong style="color:#94a3b8;">~35 nodes.</strong>
+  Added vs v2: Carb/EFI fork at entry · Fuel pump prime check · Flash codes 11/13/14/21/22/44/45 · TPS, MAP, CTS, O₂, IAC, injector resistance tests · Spark plug replacement step before CDI · Kill-switch disconnect test · Compression + head gasket fork · Vacuum petcock (PRI) test · Auto-choke cold/hot test · Ignition coil (bobine) resistance values.
+  <br><br>Reply with any changes — add branches, rename questions, reorder — and I'll update then implement.
+</div>
+
+</body>
+</html>

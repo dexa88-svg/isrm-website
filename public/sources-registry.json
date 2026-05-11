@@ -1389,5 +1389,64 @@
     "lastChecked": "2026-05-11T08:01:00Z",
     "active": true,
     "note": "GY6 and Piaggio ignition, CDI and electrical parts"
+  },
+  {
+    "url": "https://www.vespamaintenance.com/",
+    "name": "Vespa Maintenance \u2014 Fuel & Carburetor Tuning Guides",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "Vespa",
+      "Piaggio"
+    ],
+    "addedAt": "2026-05-11T14:30:00Z",
+    "lastChecked": "2026-05-11T14:30:00Z",
+    "active": true,
+    "note": "Dedicated Vespa carburetor tuning and fuel system guides"
+  },
+  {
+    "url": "https://www.vespamag.com/",
+    "name": "Vespa Magazine \u2014 Carburetor & Technical Guides",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "Vespa",
+      "Piaggio"
+    ],
+    "addedAt": "2026-05-11T14:30:00Z",
+    "lastChecked": "2026-05-11T14:30:00Z",
+    "active": true,
+    "note": "Comprehensive Vespa carburetor structure and adjustment guides"
+  },
+  {
+    "url": "https://www.roller-aus-blech.de/",
+    "name": "RAB Scootershop (Roller-Aus-Blech) \u2014 Vespa & Piaggio Parts & Guides",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "Vespa",
+      "Piaggio",
+      "Lambretta"
+    ],
+    "addedAt": "2026-05-11T14:30:00Z",
+    "lastChecked": "2026-05-11T14:30:00Z",
+    "active": true,
+    "note": "German-language Vespa & Piaggio parts and carburetor adjustment guides"
+  },
+  {
+    "url": "https://www.scooterhelp.com/",
+    "name": "ScooterHelp \u2014 Comprehensive Scooter Maintenance & Repair Database",
+    "type": "wiki",
+    "category": "repair-guides",
+    "models": [
+      "general",
+      "Vespa",
+      "Piaggio",
+      "GY6"
+    ],
+    "addedAt": "2026-05-11T14:30:00Z",
+    "lastChecked": "2026-05-11T14:30:00Z",
+    "active": true,
+    "note": "Comprehensive collection of scooter maintenance, tuning, and repair guides covering fuel, brakes, electrics, transmission"
   }
 ]

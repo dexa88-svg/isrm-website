@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-53LY3KPDYM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-53LY3KPDYM');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive scooter diagnosis wizard — answer a few questions and we'll pinpoint the likely fault on your GY6 or Piaggio/Vespa scooter.">
+  <link rel="canonical" href="https://ismr.online/diagnostics/wizard.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ismr.online/diagnostics/wizard.html">
+  <meta property="og:title" content="Diagnosis Wizard — ISMR">
+  <meta property="og:description" content="Step-by-step scooter fault diagnosis for GY6 and Piaggio/Vespa. Answer questions, get a diagnosis.">
+  <meta property="og:site_name" content="ISMR — Interactive Scooter Manuals for Repair">
+  <meta property="og:image" content="https://ismr.online/og-image.jpg">
+  <title>Diagnosis Wizard — ISMR</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* ── Hero ────────────────────────────────────── */
+    .wizard-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 3.5rem 2rem 2.5rem;
+      border-bottom: 1px solid var(--border);
+      position: relative; overflow: hidden;
+    }
+    .wizard-hero::before {
+      content: "🔍";
+      position: absolute; right: 5%; top: 50%;
+      transform: translateY(-50%);
+      font-size: 10rem; opacity: 0.06; pointer-events: none; line-height: 1;
+    }
+    .wizard-hero-inner { max-width: 860px; margin: 0 auto; }
+    .wizard-hero .breadcrumb { padding: 0 0 1rem; margin: 0; font-size: 0.85rem; color: var(--text-tertiary); }
+    .wizard-hero .breadcrumb a { color: var(--accent); }
+    .wizard-hero .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+    .wizard-hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+    .wizard-hero p { color: var(--text-secondary); font-size: 1rem; max-width: 540px; margin: 0; }
+
+    /* ── Layout ──────────────────────────────────── */
+    .wizard-outer { padding: 2rem 2rem 5rem; min-height: 60vh; }
+    .wizard-inner { max-width: 860px; margin: 0 auto; }
+
+    /* ── Path trail ──────────────────────────────── */
+    .path-trail {
+      display: flex; flex-wrap: wrap; align-items: center;
+      gap: 0.3rem; margin-bottom: 1.25rem;
+      font-size: 0.76rem; color: var(--text-tertiary); min-height: 1.4rem;
+    }
+    .path-trail.empty { display: none; }
+    .path-crumb {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: var(--radius-pill); padding: 0.18rem 0.6rem; white-space: nowrap;
+    }
+    .path-sep { color: var(--border); }
+
+    /* ── Step card ───────────────────────────────── */
+    .step-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-xl); padding: 2.25rem 2rem;
+      position: relative; overflow: hidden;
+    }
+    .step-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+    }
+
+    /* ── Icon ────────────────────────────────────── */
+    .step-icon {
+      font-size: 2.8rem; line-height: 1; margin-bottom: 0.85rem; display: block;
+      animation: iconPop 0.38s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+    @keyframes iconPop {
+      from { transform: scale(0.5); opacity: 0; }
+      to   { transform: scale(1);   opacity: 1; }
+    }
+
+    /* ── Question ────────────────────────────────── */
+    .step-question {
+      font-size: clamp(1.1rem, 2.8vw, 1.55rem); font-weight: 700;
+      color: var(--text-primary); line-height: 1.3; margin-bottom: 0.65rem;
+    }
+    .step-hint {
+      font-size: 0.88rem; color: var(--text-secondary);
+      background: var(--surface-2); border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 0.55rem 0.9rem; margin-bottom: 1.5rem;
+    }
+    .step-hint:empty { display: none; }
+
+    /* ── Answer buttons ──────────────────────────── */
+    .answers-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0.75rem; margin-top: 1.25rem;
+    }
+    .answers-grid.cols-1 { grid-template-columns: 1fr; }
+    .answers-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+    .answer-btn {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 1rem 1.1rem;
+      cursor: pointer; transition: var(--transition); text-align: left; width: 100%;
+      color: inherit; font-family: inherit;
+    }
+    .answer-btn:hover {
+      border-color: var(--accent);
+      background: rgba(0,168,204,0.07);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,168,204,0.13);
+    }
+    .answer-btn:active { transform: translateY(0); }
+    .answer-icon { font-size: 1.5rem; line-height: 1; flex-shrink: 0; margin-top: 0.1rem; }
+    .answer-text { display: flex; flex-direction: column; gap: 0.15rem; }
+    .answer-label { font-size: 0.93rem; font-weight: 600; color: var(--text-primary); line-height: 1.3; }
+    .answer-desc  { font-size: 0.78rem; color: var(--text-secondary); }
+
+    /* ── Nav row ─────────────────────────────────── */
+    .wizard-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border);
+    }
+    .btn-back {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      background: none; border: 1px solid var(--border); border-radius: var(--radius-pill);
+      color: var(--text-secondary); padding: 0.45rem 1rem; font-size: 0.85rem;
+      cursor: pointer; transition: var(--transition); font-family: inherit;
+    }
+    .btn-back:hover:not(:disabled) { border-color: var(--text-secondary); color: var(--text-primary); }
+    .btn-back:disabled { opacity: 0.3; cursor: not-allowed; }
+    .btn-restart {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      background: rgba(255,107,53,0.1); border: 1px solid rgba(255,107,53,0.3);
+      border-radius: var(--radius-pill); color: var(--primary);
+      padding: 0.45rem 1rem; font-size: 0.85rem;
+      cursor: pointer; transition: var(--transition); font-family: inherit;
+    }
+    .btn-restart:hover { background: rgba(255,107,53,0.2); }
+    .step-counter {
+      font-size: 0.78rem; color: var(--text-tertiary);
+      background: var(--surface-2); padding: 0.28rem 0.75rem; border-radius: var(--radius-pill);
+    }
+
+    /* ── Slide animations ────────────────────────── */
+    .slide-fwd  { animation: slideFwd  0.3s cubic-bezier(0.4,0,0.2,1) both; }
+    .slide-back { animation: slideBack 0.3s cubic-bezier(0.4,0,0.2,1) both; }
+    @keyframes slideFwd  { from { opacity:0; transform:translateX(28px); } to { opacity:1; transform:translateX(0); } }
+    @keyframes slideBack { from { opacity:0; transform:translateX(-28px); } to { opacity:1; transform:translateX(0); } }
+
+    /* ── Diagnosis ───────────────────────────────── */
+    .diag-header { display: flex; align-items: flex-start; gap: 1.1rem; margin-bottom: 1.25rem; }
+    .diag-icon-wrap {
+      width: 68px; height: 68px; flex-shrink: 0; border-radius: var(--radius-lg);
+      display: flex; align-items: center; justify-content: center; font-size: 2rem;
+    }
+    .diag-icon-wrap.easy  { background: rgba(6,167,125,0.15); }
+    .diag-icon-wrap.mod   { background: rgba(245,166,35,0.15); }
+    .diag-icon-wrap.major { background: rgba(214,48,49,0.15); }
+    .diag-icon-wrap.info  { background: rgba(79,70,229,0.15); }
+
+    .diag-title-group { display: flex; flex-direction: column; gap: 0.45rem; }
+    .diag-title { font-size: clamp(1.15rem, 3vw, 1.65rem); font-weight: 700; color: var(--text-primary); line-height: 1.2; }
+
+    .sev-badge {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+      padding: 0.28rem 0.75rem; border-radius: var(--radius-pill); width: fit-content;
+    }
+    .sev-badge.easy  { background: rgba(6,167,125,0.15); color: #06a77d; }
+    .sev-badge.mod   { background: rgba(245,166,35,0.15); color: #f5a623; }
+    .sev-badge.major { background: rgba(214,48,49,0.15);  color: #d63031; }
+    .sev-badge.info  { background: rgba(79,70,229,0.15);  color: #818cf8; }
+
+    .diag-summary {
+      font-size: 0.97rem; color: var(--text-secondary); line-height: 1.7;
+      border-left: 3px solid var(--primary); padding-left: 1rem; margin-bottom: 1.4rem;
+    }
+    .diag-sec-title {
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--text-tertiary); margin-bottom: 0.6rem;
+    }
+    .causes-list { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; margin-bottom: 1.6rem; }
+    .causes-list li { display: flex; align-items: flex-start; gap: 0.55rem; font-size: 0.9rem; color: var(--text-secondary); }
+    .causes-list li::before { content: '→'; color: var(--primary); flex-shrink: 0; font-weight: 700; margin-top: 0.05rem; }
+
+    .diag-divider { border: none; border-top: 1px solid var(--border); margin: 1.25rem 0; }
+
+    .guide-links { display: flex; flex-direction: column; gap: 0.6rem; }
+    .guide-link-card {
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 0.85rem 1.1rem;
+      transition: var(--transition); color: inherit; text-decoration: none;
+    }
+    .guide-link-card:hover { border-color: var(--accent); background: rgba(0,168,204,0.06); }
+    .guide-link-title { font-size: 0.9rem; font-weight: 600; color: var(--text-primary); }
+    .guide-link-arrow { color: var(--accent); font-size: 1.1rem; flex-shrink: 0; }
+
+    /* ── Responsive ──────────────────────────────── */
+    @media (max-width: 620px) {
+      .wizard-hero { padding: 2rem 1rem 1.5rem; }
+      .wizard-outer { padding: 1.25rem 1rem 4rem; }
+      .step-card { padding: 1.5rem 1.1rem; }
+      .answers-grid, .answers-grid.cols-3 { grid-template-columns: 1fr; }
+      .diag-header { flex-direction: column; }
+    }
+    @media (max-width: 768px) {
+      .nav-menu { display: none; }
+      .nav-toggle { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-icon">⚙️</span><span class="brand-text">ISMR</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link active">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../index.html#about" class="nav-link">About</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <section class="wizard-hero">
+    <div class="wizard-hero-inner">
+      <div class="breadcrumb">
+        <a href="../index.html">ISMR Home</a><span>›</span>
+        <a href="index.html">Diagnostics</a><span>›</span>
+        Diagnosis Wizard
+      </div>
+      <h1>Diagnosis Wizard</h1>
+      <p>Answer a few questions about your scooter's symptoms and we'll narrow down the likely fault — with links to the relevant repair guide.</p>
+    </div>
+  </section>
+
+  <div class="wizard-outer">
+    <div class="wizard-inner">
+      <div class="path-trail empty" id="pathTrail" aria-label="Diagnosis path"></div>
+      <div class="step-card" id="stepCard" role="region" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <script src="../script.js"></script>
+  <script>
+  /* ═══════════════════════════════════════════════════════
+     DECISION TREE  —  v3
+     type:'question'  → icon, question, hint?, answers:[{label,desc,icon,next}]
+     type:'diagnosis' → icon, severity, title, summary, causes[], guides[]
+  ═══════════════════════════════════════════════════════ */
+  const TREE = {
+
+    /* ── ROOT ─────────────────────────────────────────────── */
+    root: {
+      type:'question', icon:'🔑',
+      question:'Does your scooter start?',
+      hint:'Turn the key to ON, make sure the kill switch is on RUN, then press the starter.',
+      answers:[
+        { icon:'🚫', label:"No — won't start at all",        desc:'Engine won\'t fire no matter what',          next:'no_start'      },
+        { icon:'⚠️', label:'Yes — but something is wrong',   desc:'Engine runs but has a noticeable problem',   next:'runs_carb_efi' }
+      ]
+    },
+
+    /* ════════════════════════════════════════════════════════
+       BRANCH A — WON'T START
+    ════════════════════════════════════════════════════════ */
+    no_start: {
+      type:'question', icon:'🔄',
+      question:'Does the engine crank (turn over) when you press the starter?',
+      hint:'Listen for the "chug-chug" of the engine turning over — different from the starter motor briefly whirring.',
+      answers:[
+        { icon:'🔇', label:'No — silent or a click',     desc:'No cranking at all',                   next:'no_crank'   },
+        { icon:'🔊', label:'Yes — cranks but won\'t fire', desc:'Engine turns but doesn\'t start',    next:'cranks_fuel_type' }
+      ]
+    },
+
+    /* ── A1: No crank ──────────────────────────────────────── */
+    no_crank: {
+      type:'question', icon:'👂',
+      question:'What do you hear when you press the starter button?',
+      answers:[
+        { icon:'🖱️', label:'Single heavy click',    desc:'One thunk from the relay area',                      next:'diag_relay_click'  },
+        { icon:'🔁', label:'Rapid clicking',         desc:'Fast repeating clicks — like a camera shutter',     next:'diag_battery_weak' },
+        { icon:'⚙️', label:'Grinding / just whirs',  desc:'Motor spins but engine doesn\'t turn over',         next:'diag_starter_gear' },
+        { icon:'🔇', label:'Complete silence',        desc:'Absolutely nothing — no sound at all',              next:'silence_lights'    }
+      ]
+    },
+
+    silence_lights: {
+      type:'question', icon:'💡',
+      question:'Do headlights, dashboard, or horn work?',
+      hint:'Turn key to ON (do not press start) and test any electrical accessory.',
+      answers:[
+        { icon:'🔋', label:'No / very dim',          desc:'No power to electrics at all',            next:'diag_battery_dead'   },
+        { icon:'✅', label:'Yes — electrics OK',      desc:'Lights and dash are normal',              next:'kill_switch_check'   }
+      ]
+    },
+
+    kill_switch_check: {
+      type:'question', icon:'🔴',
+      question:'Is the handlebar kill switch set to RUN (not STOP)?',
+      hint:'The red rocker/slider on the right handlebar. It must be in the RUN or green position.',
+      answers:[
+        { icon:'🎉', label:'It was on STOP — fixed!',  desc:'Kill switch was the problem',            next:'diag_kill_sw_off'    },
+        { icon:'✓',  label:'Yes, already on RUN',      desc:'Kill switch is correctly positioned',    next:'diag_fuse_relay'     }
+      ]
+    },
+
+    /* ── A2: Cranks — carb or EFI? ─────────────────────────── */
+    cranks_fuel_type: {
+      type:'question', icon:'⛽',
+      question:'Is your fuel system a carburetor or EFI (fuel injection)?',
+      hint:'EFI clues: electric fuel pump hum on key-ON; no manual choke lever; often has a fault lamp (CEL/MIL) on the dashboard. Most pre-2020 GY6 and Piaggio ZIP are carbureted.',
+      answers:[
+        { icon:'🔩', label:'Carburetor',              desc:'Manual choke, no fuel pump hum',          next:'carb_choke_test'  },
+        { icon:'💉', label:'EFI / fuel injection',    desc:'Electric pump, possible fault lamp',       next:'efi_pump_prime'   }
+      ]
+    },
+
+    /* ── A2 CARB path ──────────────────────────────────────── */
+    carb_choke_test: {
+      type:'question', icon:'🌡️',
+      question:'Does it briefly fire or pop with the choke pulled fully on?',
+      hint:'Pull the choke lever all the way. If no choke lever, try a short burst of easy-start into the airbox — but never use easy-start on an EFI engine.',
+      answers:[
+        { icon:'💨', label:'Yes — briefly fires / coughs',  desc:'Shows signs of life with choke',      next:'diag_carb_lean'       },
+        { icon:'🚫', label:'No — nothing at all',           desc:'Zero response even with full choke',  next:'carb_spark_test'      }
+      ]
+    },
+
+    carb_spark_test: {
+      type:'question', icon:'⚡',
+      question:'Spark test: remove the plug, press its body against the engine, crank. What do you see?',
+      hint:'A healthy spark is a fat, bright blue-white flash. Orange/yellow is weak. Nothing at all means no ignition signal reaching the plug.',
+      answers:[
+        { icon:'💙', label:'Strong blue spark',       desc:'Ignition is working',                      next:'carb_fuel_check'     },
+        { icon:'🟡', label:'Weak / yellow spark',     desc:'Faint or intermittent flash',              next:'carb_new_plug_weak'  },
+        { icon:'🚫', label:'No spark at all',          desc:'Plug shows no flash when cranking',        next:'carb_no_spark_plug'  }
+      ]
+    },
+
+    carb_fuel_check: {
+      type:'question', icon:'⛽',
+      question:'Is fuel reaching the carb? Disconnect the fuel line at the carb inlet and check flow.',
+      hint:'Tap must be ON or RES. Fuel should drip freely. Also check: is the removed spark plug wet with fuel after cranking?',
+      answers:[
+        { icon:'💧', label:'Fuel flows / plug is wet',  desc:'Fuel is getting through to the engine',   next:'carb_compression'   },
+        { icon:'🏜️', label:'No flow / plug is dry',    desc:'No fuel reaching the engine',             next:'carb_petcock_test'  }
+      ]
+    },
+
+    carb_compression: {
+      type:'question', icon:'💪',
+      question:'Compression check: cover the plug hole with your thumb and crank. What do you feel?',
+      hint:'You should feel strong, repeated pressure pushing your thumb off. GY6 50cc minimum: 70 PSI. GY6 150cc minimum: 80 PSI.',
+      answers:[
+        { icon:'💪', label:'Good — thumb gets pushed off firmly',  desc:'Compression is present',        next:'diag_flooded'           },
+        { icon:'😟', label:'Weak — barely any pressure',          desc:'Low or no compression',          next:'diag_low_compression'   }
+      ]
+    },
+
+    carb_petcock_test: {
+      type:'question', icon:'🔧',
+      question:'Set the fuel tap to PRI (prime) position — does fuel flow freely now?',
+      hint:'PRI bypasses the vacuum diaphragm and opens the tap directly. If it flows on PRI but not ON, the vacuum petcock is the issue.',
+      answers:[
+        { icon:'✅', label:'Yes — flows on PRI',      desc:'Tap works on PRI, not on ON/RES',          next:'diag_vacuum_petcock'  },
+        { icon:'🚫', label:'Still no flow',           desc:'Nothing on any tap position',              next:'diag_no_fuel_supply'  }
+      ]
+    },
+
+    carb_new_plug_weak: {
+      type:'question', icon:'🔌',
+      question:'Have you fitted a new spark plug? (A7TC for 50cc · A7RTC for 125–150cc)',
+      hint:'A new plug is the cheapest and most important first step when spark is weak. Eliminates the plug as a variable before testing expensive ignition components.',
+      answers:[
+        { icon:'🛒', label:'Not yet',                 desc:'Haven\'t changed the plug yet',            next:'diag_try_new_plug'    },
+        { icon:'🔌', label:'Yes — new plug fitted, still weak',  desc:'Plug swapped, spark still poor',  next:'diag_coil_cdi_weak'  }
+      ]
+    },
+
+    carb_no_spark_plug: {
+      type:'question', icon:'🔌',
+      question:'Fit a new plug AND disconnect the kill switch wires. Is there spark now?',
+      hint:'Unplug the kill switch connector and hold the bare wires apart. A shorted kill switch cuts spark even when in the RUN position.',
+      answers:[
+        { icon:'⚡', label:'Yes — spark with kill switch disconnected',  desc:'Kill switch is internally shorted',  next:'diag_kill_sw_shorted' },
+        { icon:'🚫', label:'Still no spark at all',                      desc:'New plug + disconnect made no difference',  next:'diag_cdi_coil_pickup' }
+      ]
+    },
+
+    /* ── A2 EFI path ───────────────────────────────────────── */
+    efi_pump_prime: {
+      type:'question', icon:'👂',
+      question:'On key-ON (do not press start) — do you hear the fuel pump prime for ~2 seconds?',
+      hint:'A small electric hum or buzz from under the seat/tank area for about 2 seconds, then silence. EFI needs battery voltage ≥ 11.5 V to operate — charge the battery first if in doubt.',
+      answers:[
+        { icon:'🔇', label:'No pump sound at all',     desc:'Complete silence on key-ON',               next:'diag_efi_pump_dead'  },
+        { icon:'🔊', label:'Yes — pump primes',        desc:'Hear the 2-second hum',                    next:'efi_cel_check'       }
+      ]
+    },
+
+    efi_cel_check: {
+      type:'question', icon:'⚠️',
+      question:'Is the CEL (check engine / fault lamp) lit or flashing on the dashboard?',
+      answers:[
+        { icon:'🔴', label:'Yes — CEL is lit / flashing',  desc:'Fault lamp is active',                next:'efi_flash_codes'     },
+        { icon:'⚫', label:'No — no fault lamp',           desc:'Dashboard shows no warning',           next:'efi_no_cel_spark'    }
+      ]
+    },
+
+    efi_flash_codes: {
+      type:'question', icon:'📋',
+      question:'Read the flash codes: key ON (don\'t start), count long flashes (tens) + short flashes (units). Which code?',
+      hint:'Example: 2 long flashes + 2 short = Code 22. Write down the sequence carefully. If multiple codes, start with the lowest number.',
+      answers:[
+        { icon:'1️⃣', label:'Code 11 — crank sensor',     desc:'No crank position signal',             next:'diag_code11_crank'   },
+        { icon:'1️⃣', label:'Code 13 — MAP sensor',       desc:'Manifold pressure signal fault',       next:'diag_code13_map'     },
+        { icon:'2️⃣', label:'Code 21 — coolant sensor',   desc:'Coolant temp sensor fault',            next:'diag_code21_cts'     },
+        { icon:'2️⃣', label:'Code 22 — TPS fault',        desc:'Throttle position sensor out of range', next:'diag_code22_tps'    }
+      ]
+    },
+
+    efi_no_cel_spark: {
+      type:'question', icon:'⚡',
+      question:'Spark test: remove plug, ground its body on the engine, crank. Is there spark?',
+      answers:[
+        { icon:'⚡', label:'Yes — good spark',   desc:'Ignition system is producing spark',             next:'diag_efi_injector'   },
+        { icon:'🚫', label:'No spark',           desc:'No flash at all when cranking',                  next:'diag_efi_no_spark'   }
+      ]
+    },
+
+    /* ════════════════════════════════════════════════════════
+       BRANCH B — STARTS BUT PROBLEM
+    ════════════════════════════════════════════════════════ */
+    runs_carb_efi: {
+      type:'question', icon:'🛵',
+      question:'Is the fuel system a carburetor or EFI (fuel injection)?',
+      hint:'EFI: electric fuel pump hum on key-ON, no manual choke, possible CEL on dash.',
+      answers:[
+        { icon:'🔩', label:'Carburetor',            desc:'Manual choke, no fuel pump hum',              next:'symptom_carb'    },
+        { icon:'💉', label:'EFI / fuel injection',  desc:'Electric pump, possible fault lamp',           next:'symptom_efi'     }
+      ]
+    },
+
+    /* ── B CARB: running symptoms ──────────────────────────── */
+    symptom_carb: {
+      type:'question', icon:'🛵',
+      question:'What is the main symptom?',
+      answers:[
+        { icon:'🔁', label:'Idle / stalling problems',  desc:'Won\'t hold idle, stalls at lights',      next:'carb_idle_when'    },
+        { icon:'📉', label:'Poor power or bogs',         desc:'Sluggish, won\'t reach top speed',        next:'carb_power_when'   },
+        { icon:'🔊', label:'Strange noise',              desc:'Knocking, rattling, squealing',           next:'noise_where'       },
+        { icon:'🌡️', label:'Overheating',               desc:'Running hot, smells hot, temp warning',   next:'overheat_cooling'  }
+      ]
+    },
+
+    carb_idle_when: {
+      type:'question', icon:'🔄',
+      question:'When does the idle problem occur?',
+      answers:[
+        { icon:'❄️', label:'Cold engine only',          desc:'Fine once fully warm',                    next:'diag_autochoke'     },
+        { icon:'🔥', label:'Hot engine only',            desc:'Gets worse as temperature rises',         next:'diag_cdi_heat'      },
+        { icon:'😰', label:'Always rough — any temp',   desc:'Bad idle regardless of temperature',      next:'carb_smoke_check'   }
+      ]
+    },
+
+    carb_smoke_check: {
+      type:'question', icon:'💨',
+      question:'Is there black or sooty smoke from the exhaust?',
+      hint:'Black = too much fuel (rich). Blue = burning oil. Pale grey or none = lean or normal.',
+      answers:[
+        { icon:'⬛', label:'Yes — black / sooty smoke',  desc:'Running rich',                          next:'diag_rich_float'   },
+        { icon:'☁️', label:'No noticeable smoke',        desc:'Exhaust looks normal',                  next:'diag_pilot_jet'    }
+      ]
+    },
+
+    carb_power_when: {
+      type:'question', icon:'📉',
+      question:'When exactly does the power loss or bog occur?',
+      answers:[
+        { icon:'🐌', label:'From idle — won\'t pull away',  desc:'Bogs immediately from 0 throttle',   next:'diag_bog_low'       },
+        { icon:'📊', label:'Mid-range flat spot',           desc:'Hesitation between ¼ and ¾ throttle', next:'diag_bog_mid'      },
+        { icon:'🏁', label:'Won\'t reach top speed',        desc:'Pulls OK but hits a ceiling',         next:'diag_cvt_main_jet' }
+      ]
+    },
+
+    /* ── B EFI: running symptoms ───────────────────────────── */
+    symptom_efi: {
+      type:'question', icon:'💉',
+      question:'What is the main symptom?',
+      answers:[
+        { icon:'🔁', label:'Rough idle / stalling',      desc:'Won\'t hold idle, intermittent stall',   next:'efi_idle_cel'      },
+        { icon:'⬛', label:'Black smoke / runs rich',    desc:'Sooty exhaust, fuel smell, poor economy', next:'diag_efi_rich'     },
+        { icon:'💨', label:'Lean / loss of power',       desc:'White-ish smoke, weak, stumbles',        next:'diag_efi_lean'     },
+        { icon:'🔊', label:'Strange noise',              desc:'Mechanical noise, not ECU-related',      next:'noise_where'       }
+      ]
+    },
+
+    efi_idle_cel: {
+      type:'question', icon:'⚠️',
+      question:'Is the CEL / fault lamp lit on the dashboard?',
+      answers:[
+        { icon:'🔴', label:'Yes — CEL is active',   desc:'Fault lamp is on or flashing',               next:'efi_idle_codes'    },
+        { icon:'⚫', label:'No fault lamp',          desc:'Dashboard looks normal',                     next:'efi_idle_when'     }
+      ]
+    },
+
+    efi_idle_codes: {
+      type:'question', icon:'📋',
+      question:'Read the flash codes (key ON, don\'t start). Which code?',
+      hint:'Count long flashes (tens digit) + short flashes (units digit). Code 22 = 2 long + 2 short.',
+      answers:[
+        { icon:'2️⃣', label:'Code 22 — TPS',         desc:'Throttle position sensor fault',            next:'diag_code22_tps'   },
+        { icon:'1️⃣', label:'Code 13 — MAP',          desc:'Manifold pressure fault',                  next:'diag_code13_map'   },
+        { icon:'4️⃣', label:'Code 44 — O₂ lean',     desc:'Lambda sensor reading lean',                next:'diag_code44_o2'    },
+        { icon:'4️⃣', label:'Code 45 — O₂ rich',     desc:'Lambda sensor reading rich',                next:'diag_code45_o2'    }
+      ]
+    },
+
+    efi_idle_when: {
+      type:'question', icon:'🔄',
+      question:'When does the idle problem occur?',
+      answers:[
+        { icon:'❄️', label:'Cold engine only',       desc:'Runs fine once fully warm',                 next:'diag_cts_cold'     },
+        { icon:'🔥', label:'Hot engine only',         desc:'Gets worse as temperature rises',           next:'diag_tps_heat'     },
+        { icon:'😰', label:'Always rough',            desc:'Bad idle at any temperature',              next:'diag_iac_air_leak' }
+      ]
+    },
+
+    /* ── Noise (shared) ────────────────────────────────────── */
+    noise_where: {
+      type:'question', icon:'🔊',
+      question:'Where is the noise coming from?',
+      hint:'Try to isolate — under the seat (CVT/belt), top of engine (head), or deep in the engine (crank area).',
+      answers:[
+        { icon:'⚙️', label:'Rear / belt / transmission',   desc:'Whirring, slapping, or rattling',         next:'diag_cvt_noise'    },
+        { icon:'🎵', label:'Engine top — rhythmic ticking', desc:'Changes speed with engine RPM',           next:'diag_valve_tick'   },
+        { icon:'🔨', label:'Engine deep — heavy knock',     desc:'Thudding from low in the engine',         next:'diag_bottom_knock' }
+      ]
+    },
+
+    /* ── Overheat (shared) ─────────────────────────────────── */
+    overheat_cooling: {
+      type:'question', icon:'🌡️',
+      question:'Is the engine air-cooled or liquid-cooled?',
+      hint:'Air-cooled: only cooling fins on the cylinder, no radiator. Liquid-cooled: has a small radiator and coolant reservoir visible.',
+      answers:[
+        { icon:'💨', label:'Air-cooled (fins only)',  desc:'No radiator or coolant system',              next:'diag_aircooled'    },
+        { icon:'💧', label:'Liquid-cooled',           desc:'Has a radiator and coolant reservoir',        next:'diag_liquid_cool'  }
+      ]
+    },
+
+    /* ════════════════════════════════════════════════════════
+       DIAGNOSIS NODES
+    ════════════════════════════════════════════════════════ */
+
+    /* ─ Starter / battery ─────────────────────────────────── */
+    diag_relay_click: {
+      type:'diagnosis', icon:'⚡', severity:'mod',
+      title:'Starter Relay or Starter Motor',
+      summary:'A single heavy click means the relay is energising but the starter motor isn\'t spinning — or the relay contacts are burned. Battery voltage may also be collapsing under starter load even though it powers the lights.',
+      causes:[
+        'Starter relay contacts burnt or fused open',
+        'Starter motor brushes worn out or armature seized',
+        'Poor earth/ground from starter motor to engine block',
+        'Battery marginally low — enough for lights, not the starter (test voltage under load)'
+      ],
+      guides:[
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist', url:'gy6-no-start-troubleshooting.html' }
+      ]
+    },
+
+    diag_battery_weak: {
+      type:'diagnosis', icon:'🔋', severity:'easy',
+      title:'Weak or Discharged Battery',
+      summary:'Rapid relay clicking is the textbook symptom of a battery too flat to crank — just enough voltage to repeatedly close the relay, but not enough to spin the starter motor.',
+      causes:[
+        'Battery discharged — short trips only, or sat unused for weeks',
+        'Battery internally failed and won\'t hold charge after charging',
+        'Stator or rectifier/regulator not charging the battery while riding',
+        'Parasitic drain — something staying live with the key off'
+      ],
+      guides:[
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist', url:'gy6-no-start-troubleshooting.html' }
+      ]
+    },
+
+    diag_starter_gear: {
+      type:'diagnosis', icon:'⚙️', severity:'mod',
+      title:'Starter Drive Gear or One-Way Clutch',
+      summary:'The starter motor is spinning but not engaging the engine. The one-way (sprag) clutch or starter drive gear is slipping or has stripped teeth.',
+      causes:[
+        'One-way sprag clutch worn or seized — very common on high-mileage GY6',
+        'Starter drive gear teeth stripped',
+        'Starter idler gear damaged or missing'
+      ],
+      guides:[
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist', url:'gy6-no-start-troubleshooting.html' }
+      ]
+    },
+
+    diag_battery_dead: {
+      type:'diagnosis', icon:'🔋', severity:'easy',
+      title:'Dead Battery or Blown Main Fuse',
+      summary:'No electrics at all points to either a completely dead battery, a blown main fuse, or a broken earth connection.',
+      causes:[
+        'Battery fully discharged or internally failed',
+        'Main fuse blown — usually 15 A or 20 A blade fuse under the seat or near the battery',
+        'Battery terminal loose, corroded, or disconnected',
+        'Main earth/ground cable broken or corroded through'
+      ],
+      guides:[
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist', url:'gy6-no-start-troubleshooting.html' }
+      ]
+    },
+
+    diag_kill_sw_off: {
+      type:'diagnosis', icon:'✅', severity:'easy',
+      title:'Kill Switch Was in STOP Position',
+      summary:'The simplest fix. The handlebar kill switch completely cuts power to the ignition system. Even experienced riders get caught by this.',
+      causes:[ 'Kill switch accidentally knocked to STOP' ],
+      guides:[
+        { title:'Dirty Handlebar Buttons — No-Start Diagnosis', url:'gy6-dirty-buttons-no-start.html' },
+        { title:'Side Stand Kill Switch Diagnosis',              url:'gy6-side-stand-kill-switch.html' }
+      ]
+    },
+
+    diag_fuse_relay: {
+      type:'diagnosis', icon:'⚡', severity:'easy',
+      title:'Blown Starter Fuse, Failed Relay, or Ignition Switch',
+      summary:'Electrics work but the starter circuit is dead. The starter has its own fuse and relay, separate from the main fuse — any one of these can fail silently.',
+      causes:[
+        'Starter circuit fuse blown (separate from main fuse — check the loom)',
+        'Starter relay failed internally — not clicking at all',
+        'Ignition switch contacts worn or corroded',
+        'Broken or corroded wire anywhere in the starter circuit'
+      ],
+      guides:[
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist',  url:'gy6-no-start-troubleshooting.html' },
+        { title:'Dirty Handlebar Buttons — No-Start Diagnosis',   url:'gy6-dirty-buttons-no-start.html'   }
+      ]
+    },
+
+    /* ─ Carb no-start ─────────────────────────────────────── */
+    diag_carb_lean: {
+      type:'diagnosis', icon:'⛽', severity:'mod',
+      title:'Lean Mixture — Pilot Jet or Fuel Delivery',
+      summary:'Firing with full choke proves spark and compression are working. The normal fuel circuit is too lean. Most commonly a blocked pilot jet — the orifice is only 0.38–0.42 mm and blocks very easily.',
+      causes:[
+        'Pilot jet blocked with varnish or ethanol residue — most common cause of no-start',
+        'Air leak at the carburettor manifold boot or inlet gasket',
+        'Float level too low — starving the fuel bowl',
+        'Fuel tap closed or vacuum diaphragm not opening — try PRI position',
+        'Clogged inline fuel filter'
+      ],
+      guides:[
+        { title:'Carburetor Pilot & Idle Jet — Diagnosis & Cleaning', url:'gy6-carburetor-pilot-idle-jet.html' },
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist',       url:'gy6-no-start-troubleshooting.html'  }
+      ]
+    },
+
+    diag_flooded: {
+      type:'diagnosis', icon:'💧', severity:'easy',
+      title:'Engine Flooded',
+      summary:'Spark is strong, fuel is arriving, and compression is good — the engine is simply flooded with raw fuel. This is common after repeated failed start attempts.',
+      causes:[
+        'Too many failed start attempts — excess fuel accumulated',
+        'Float needle valve not seating — fuel continuously draining into the engine',
+        'Choke used unnecessarily on a warm engine'
+      ],
+      causes_fix:'To clear: remove spark plug, hold throttle wide open, crank 10 seconds. Refit plug and try starting with throttle open.',
+      guides:[
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist', url:'gy6-no-start-troubleshooting.html' }
+      ]
+    },
+
+    diag_low_compression: {
+      type:'diagnosis', icon:'🔩', severity:'major',
+      title:'Low Compression — Head Gasket / Valves / Rings',
+      summary:'Low compression means the engine cannot build enough pressure to ignite the mixture reliably. Check valve clearance first before assuming the worst — tight valves are a common and cheap fix.',
+      causes:[
+        'Valve clearance too tight — valves not fully seating (check clearance first: inlet ~0.05 mm, exhaust ~0.10 mm)',
+        'Blown head gasket — check for coolant in oil or white smoke',
+        'Worn piston rings or scored bore — piston slap under compression check',
+        'Burnt or bent valve not seating',
+        'Cam chain jumped a tooth — ignition timing completely out'
+      ],
+      guides:[
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist',   url:'gy6-no-start-troubleshooting.html'   },
+        { title:'Piaggio ZIP 50/100 — Full Troubleshooting Guide', url:'piaggio-zip-100-troubleshooting.html' }
+      ]
+    },
+
+    diag_vacuum_petcock: {
+      type:'diagnosis', icon:'🔧', severity:'easy',
+      title:'Vacuum Petcock Not Opening',
+      summary:'Fuel flows freely on PRI but not on ON/RES. The vacuum-operated diaphragm inside the petcock is not receiving the vacuum signal from the engine, so the tap stays closed.',
+      causes:[
+        'Vacuum hose from inlet manifold to petcock disconnected or cracked',
+        'Petcock diaphragm cracked or perished — needs replacement',
+        'Inlet manifold vacuum port blocked'
+      ],
+      guides:[
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist', url:'gy6-no-start-troubleshooting.html' }
+      ]
+    },
+
+    diag_no_fuel_supply: {
+      type:'diagnosis', icon:'⛽', severity:'easy',
+      title:'No Fuel Supply — Tank / Petcock / Line',
+      summary:'No fuel reaching the carb on any tap position. Work from the tank downward.',
+      causes:[
+        'Fuel tank actually empty — verify visually with a dip stick (gauges can be wrong)',
+        'Petcock filter screen completely blocked — remove and clean',
+        'Fuel line kinked, pinched, or perished shut',
+        'In-line fuel filter completely blocked'
+      ],
+      guides:[
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist', url:'gy6-no-start-troubleshooting.html' }
+      ]
+    },
+
+    diag_try_new_plug: {
+      type:'diagnosis', icon:'🔌', severity:'easy',
+      title:'Replace the Spark Plug First',
+      summary:'A weak spark is very often just a worn, fouled, or wrong-heat-range plug. Replacing it costs very little, takes 5 minutes, and eliminates the plug as a variable before testing the expensive ignition components.',
+      causes:[
+        'Plug electrode worn or bridged with carbon',
+        'Plug fouled with oil or fuel — indicates another problem but plug still needs changing',
+        'Wrong heat range — A7TC (50cc) or A7RTC (125–150cc) standard',
+        'Plug gap too wide — standard gap 0.6–0.7 mm'
+      ],
+      guides:[
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist', url:'gy6-no-start-troubleshooting.html' }
+      ]
+    },
+
+    diag_coil_cdi_weak: {
+      type:'diagnosis', icon:'⚡', severity:'mod',
+      title:'Ignition Coil (Bobine) or CDI Degrading',
+      summary:'New plug fitted and spark is still weak or orange — the coil or CDI unit is losing output. Test the coil first as it\'s easier to check with a multimeter.',
+      causes:[
+        'Ignition coil (bobine) secondary winding breaking down — test: primary 0.4–0.6 Ω, secondary (to plug cap) 4–6 kΩ',
+        'CDI (igniter) unit degrading — common on scooters over 5 years old',
+        'HT lead cracked or arcing to earth — check the rubber insulation',
+        'Spark plug cap carbon-tracked or corroded internally'
+      ],
+      guides:[
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist', url:'gy6-no-start-troubleshooting.html' }
+      ]
+    },
+
+    diag_kill_sw_shorted: {
+      type:'diagnosis', icon:'🔴', severity:'easy',
+      title:'Kill Switch Internally Shorted',
+      summary:'The kill switch is passing an earth signal to the CDI even in the RUN position, cutting the spark. This is a common failure on older scooters where moisture or corrosion gets into the handlebar switch.',
+      causes:[
+        'Kill switch contacts corroded and bridged internally',
+        'Water ingress into the right handlebar switch block',
+        'Chafed wire shorting to earth inside the switch housing'
+      ],
+      guides:[
+        { title:'Dirty Handlebar Buttons — No-Start Diagnosis', url:'gy6-dirty-buttons-no-start.html' },
+        { title:'Side Stand Kill Switch Diagnosis',             url:'gy6-side-stand-kill-switch.html' }
+      ]
+    },
+
+    diag_cdi_coil_pickup: {
+      type:'diagnosis', icon:'⚡', severity:'mod',
+      title:'CDI / Ignition Coil / Pick-up Coil — Systematic Test',
+      summary:'With a new plug and kill switch disconnected there is still no spark. The fault is somewhere in the core ignition chain. Test each component in order from cheapest to replace.',
+      causes:[
+        '1. CDI unit failed — swap with a known-good unit to test (most common)',
+        '2. Ignition coil (bobine) open circuit — primary 0.4–0.6 Ω, secondary 4–6 kΩ',
+        '3. Pick-up / trigger coil on stator failed — resistance typically 80–120 Ω (access via left engine cover)',
+        '4. Side stand inhibitor switch stuck open — bypass to test',
+        '5. Broken wire or corroded connector in the ignition loom'
+      ],
+      guides:[
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist',  url:'gy6-no-start-troubleshooting.html'  },
+        { title:'Side Stand Kill Switch Diagnosis',               url:'gy6-side-stand-kill-switch.html'    },
+        { title:'Dirty Handlebar Buttons — No-Start Diagnosis',   url:'gy6-dirty-buttons-no-start.html'    }
+      ]
+    },
+
+    /* ─ EFI no-start ──────────────────────────────────────── */
+    diag_efi_pump_dead: {
+      type:'diagnosis', icon:'⛽', severity:'mod',
+      title:'Fuel Pump Not Priming — Pump / Fuse / Relay',
+      summary:'No pump prime sound on key-ON means the ECU is either not receiving power or is not commanding the pump. Check the simplest things first.',
+      causes:[
+        'EFI-specific fuse blown — often a separate 10 A or 15 A fuse in the EFI harness',
+        'Fuel pump relay failed',
+        'ECU not receiving power — check ECU fuse and main harness connector',
+        'Fuel pump itself failed — test voltage at pump connector on key-ON (should be battery voltage)',
+        'Battery below 11.5 V — EFI systems need clean voltage to operate'
+      ],
+      guides:[
+        { title:'GY6 EFI Fuel Injection Troubleshooting', url:'gy6-efi-fuel-injection-troubleshooting.html' }
+      ]
+    },
+
+    diag_code11_crank: {
+      type:'diagnosis', icon:'📡', severity:'mod',
+      title:'Code 11 — Crank Position Sensor',
+      summary:'The ECU is not receiving a signal from the crankshaft position sensor. Without this signal the ECU cannot time injection or ignition, so the engine will not fire.',
+      causes:[
+        'Sensor air gap too large — adjust to manufacturer spec (typically 0.5–1.0 mm)',
+        'Sensor wiring broken or connector corroded',
+        'Trigger wheel tooth damaged or missing',
+        'Sensor itself failed — test resistance per spec'
+      ],
+      guides:[
+        { title:'GY6 EFI Fuel Injection Troubleshooting', url:'gy6-efi-fuel-injection-troubleshooting.html' },
+        { title:'EFI CEL Flash Codes — Manual Diagnostic Mode', url:'gy6-efi-cel-flash-codes.html' }
+      ]
+    },
+
+    diag_code13_map: {
+      type:'diagnosis', icon:'📊', severity:'easy',
+      title:'Code 13 — MAP Sensor Out of Range',
+      summary:'The manifold absolute pressure sensor is reading outside its expected range. The vacuum hose is the most common cause — check it before replacing the sensor.',
+      causes:[
+        'Vacuum hose between inlet manifold and MAP sensor disconnected or split — check first',
+        'MAP sensor connector loose or corroded',
+        'Air leak at inlet manifold distorting the vacuum reading',
+        'MAP sensor itself failed — replacement is inexpensive'
+      ],
+      guides:[
+        { title:'GY6 EFI Fuel Injection Troubleshooting', url:'gy6-efi-fuel-injection-troubleshooting.html' },
+        { title:'EFI CEL Flash Codes — Manual Diagnostic Mode', url:'gy6-efi-cel-flash-codes.html' }
+      ]
+    },
+
+    diag_code21_cts: {
+      type:'diagnosis', icon:'🌡️', severity:'easy',
+      title:'Code 21 — Coolant Temperature Sensor (CTS)',
+      summary:'The CTS tells the ECU the engine temperature, enabling cold-start enrichment. A fault here causes poor cold starting, rough idle, and incorrect fuelling.',
+      causes:[
+        'CTS connector corroded or pushed back — clean and reseat first',
+        'CTS resistance out of spec — typical: 2–3 kΩ at 20°C, falling to ~300 Ω at 80°C',
+        'CTS wiring open circuit or short to earth',
+        'CTS sensor itself failed — inexpensive replacement'
+      ],
+      guides:[
+        { title:'GY6 EFI Fuel Injection Troubleshooting', url:'gy6-efi-fuel-injection-troubleshooting.html' },
+        { title:'EFI CEL Flash Codes — Manual Diagnostic Mode', url:'gy6-efi-cel-flash-codes.html' }
+      ]
+    },
+
+    diag_code22_tps: {
+      type:'diagnosis', icon:'🎚️', severity:'mod',
+      title:'Code 22 — Throttle Position Sensor (TPS) Fault',
+      summary:'The TPS voltage is outside the expected range. This causes the ECU to inject incorrect fuel quantities at all throttle positions, leading to rough idle, poor response, or rich/lean running.',
+      causes:[
+        'TPS connector loose or corroded — clean and reseat',
+        'TPS idle voltage out of range — spec: 0.4–0.8 V at closed throttle',
+        'TPS sweep non-linear — should rise smoothly from ~0.5 V to ~4.5 V at full throttle',
+        'TPS body cracked or throttle shaft worn, causing erratic voltage',
+        'TPS itself failed — test voltage sweep with multimeter on 0–5 V DC range'
+      ],
+      guides:[
+        { title:'GY6 EFI Fuel Injection Troubleshooting', url:'gy6-efi-fuel-injection-troubleshooting.html' },
+        { title:'EFI CEL Flash Codes — Manual Diagnostic Mode', url:'gy6-efi-cel-flash-codes.html' }
+      ]
+    },
+
+    diag_code44_o2: {
+      type:'diagnosis', icon:'💨', severity:'mod',
+      title:'Code 44 — O₂ / Lambda Sensor (Lean)',
+      summary:'The oxygen sensor is reporting a lean mixture. The ECU is trying to add fuel but can\'t reach the target air/fuel ratio. An air leak is the most common cause.',
+      causes:[
+        'Air leak at inlet manifold, airbox joint, or secondary air system',
+        'Fuel pump pressure dropping — test: should hold 15–25 PSI',
+        'Injector partially clogged — flow rate reduced',
+        'O₂ sensor ageing and drifting lean — replace if over 3 years old',
+        'Blocked fuel filter reducing flow to injector'
+      ],
+      guides:[
+        { title:'GY6 EFI Fuel Injection Troubleshooting', url:'gy6-efi-fuel-injection-troubleshooting.html' },
+        { title:'EFI CEL Flash Codes — Manual Diagnostic Mode', url:'gy6-efi-cel-flash-codes.html' }
+      ]
+    },
+
+    diag_code45_o2: {
+      type:'diagnosis', icon:'💉', severity:'mod',
+      title:'Code 45 — O₂ / Lambda Sensor (Rich) / Injector Leak',
+      summary:'The O₂ sensor is reporting a rich mixture. Injector leak is the most likely hardware cause — the injector is dribbling fuel when it should be closed.',
+      causes:[
+        'Injector stuck partially open or leaking past its seat — test resistance: 11–16 Ω (outside range = suspect)',
+        'Injector O-ring failed — fuel pooling in intake port',
+        'TPS miscalibrated — reporting incorrect throttle position to ECU',
+        'O₂ sensor itself failed and reading rich falsely',
+        'ECU fuel map issue (aftermarket EFI kits)'
+      ],
+      guides:[
+        { title:'GY6 EFI Fuel Injection Troubleshooting', url:'gy6-efi-fuel-injection-troubleshooting.html' },
+        { title:'EFI CEL Flash Codes — Manual Diagnostic Mode', url:'gy6-efi-cel-flash-codes.html' }
+      ]
+    },
+
+    diag_efi_injector: {
+      type:'diagnosis', icon:'💉', severity:'mod',
+      title:'Injector Clogged or No Fuel Pressure',
+      summary:'Spark is good and ECU shows no faults, but the engine won\'t fire. Fuel is not being delivered to the combustion chamber in sufficient quantity.',
+      causes:[
+        'Injector clogged — test resistance (11–16 Ω); clean with ultrasonic cleaner or injector kit',
+        'Fuel pressure too low — target 15–25 PSI; pump may be weakening',
+        'Fuel filter blocked — replace as first step',
+        'Injector wiring connector corroded — no pulse reaching injector solenoid'
+      ],
+      guides:[
+        { title:'GY6 EFI Fuel Injection Troubleshooting', url:'gy6-efi-fuel-injection-troubleshooting.html' }
+      ]
+    },
+
+    diag_efi_no_spark: {
+      type:'diagnosis', icon:'⚡', severity:'mod',
+      title:'No Spark — EFI Ignition Fault',
+      summary:'EFI system primes correctly but there is no spark. On EFI engines the ignition coil (bobine) and pick-up coil are still separate from the ECU fuel control.',
+      causes:[
+        'Spark plug dead — replace first (cheap and quick)',
+        'Ignition coil (bobine) failed — primary 0.4–0.6 Ω, secondary 4–6 kΩ',
+        'CDI or ignition module fault',
+        'Crankshaft pick-up coil signal absent — code 11 may not be stored if ECU itself has no power',
+        'Kill switch internally shorted — disconnect to test'
+      ],
+      guides:[
+        { title:'GY6 EFI Fuel Injection Troubleshooting',  url:'gy6-efi-fuel-injection-troubleshooting.html' },
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist', url:'gy6-no-start-troubleshooting.html'      }
+      ]
+    },
+
+    /* ─ Carb running faults ───────────────────────────────── */
+    diag_autochoke: {
+      type:'diagnosis', icon:'❄️', severity:'easy',
+      title:'Auto-Choke (Thermostatic Enricher) Issue',
+      summary:'Cold-only idle problems that clear up when warm are classic auto-choke territory. The wax-element enricher should extend when cold and retract when warm — if it\'s stuck or slow, cold starting and cold idle suffer.',
+      causes:[
+        'Auto-choke plunger stuck or slow — test: cold = plunger extended; warm (after 1 min with heat gun) = retracted',
+        'Pilot jet partially blocked — makes lean cold idle worse',
+        'Idle speed set too low for a cold engine — turn idle screw clockwise 1–2 turns',
+        'Auto-choke heater element failed — choke stays permanently cold'
+      ],
+      guides:[
+        { title:'Carburetor Pilot & Idle Jet — Diagnosis & Cleaning', url:'gy6-carburetor-pilot-idle-jet.html' },
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist',       url:'gy6-no-start-troubleshooting.html'  }
+      ]
+    },
+
+    diag_cdi_heat: {
+      type:'diagnosis', icon:'🔥', severity:'mod',
+      title:'Heat-Related CDI Failure or Vapour Lock',
+      summary:'Idle degrading as the engine gets hot points to a heat-sensitive electronic component or fuel issue that worsens with temperature.',
+      causes:[
+        'CDI unit failing when hot — very common on scooters over 5 years old; swap with a known-good CDI to confirm',
+        'Ignition coil (bobine) breaking down under sustained heat',
+        'Vapour lock — fuel boiling in the line close to the engine on a hot day',
+        'Auto-choke stuck ON (enricher not retracting) — runs progressively richer as engine warms'
+      ],
+      guides:[
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist',       url:'gy6-no-start-troubleshooting.html'  },
+        { title:'Piaggio ZIP 50/100 — Full Troubleshooting Guide',     url:'piaggio-zip-100-troubleshooting.html'}
+      ]
+    },
+
+    diag_rich_float: {
+      type:'diagnosis', icon:'⬛', severity:'easy',
+      title:'Rich Mixture at Idle — Float Level or Stuck Choke',
+      summary:'Black sooty smoke and a lumpy idle means the engine is getting too much fuel at idle. Float level and the auto-choke are the first suspects.',
+      causes:[
+        'Float level set too high — fuel overflowing into the engine',
+        'Float needle valve not seating — fuel continuously draining into the carb',
+        'Auto-choke (enricher) stuck in the ON/closed position',
+        'Air filter completely blocked — engine starved of air, appears rich'
+      ],
+      guides:[
+        { title:'Carburetor Pilot & Idle Jet — Diagnosis & Cleaning', url:'gy6-carburetor-pilot-idle-jet.html' }
+      ]
+    },
+
+    diag_pilot_jet: {
+      type:'diagnosis', icon:'🔩', severity:'easy',
+      title:'Blocked Pilot Jet — #1 Idle Fault',
+      summary:'The pilot jet controls fuel at idle and below ¼ throttle. Its orifice is only 0.38–0.42 mm wide — ethanol residue and varnish from old fuel block it very easily. This is the most common idle fault on carbureted scooters.',
+      causes:[
+        'Pilot jet orifice blocked with varnish — clean with carb cleaner + compressed air (never use wire)',
+        'Pilot jet emulsion tube ports blocked',
+        'Air/fuel mixture screw set too lean — standard: 2–2.5 turns out from gently seated',
+        'Air leak at the carburettor inlet boot or airbox joint'
+      ],
+      guides:[
+        { title:'Carburetor Pilot & Idle Jet — Diagnosis & Cleaning', url:'gy6-carburetor-pilot-idle-jet.html' },
+        { title:'Piaggio ZIP 50/100 — Full Troubleshooting Guide',     url:'piaggio-zip-100-troubleshooting.html'}
+      ]
+    },
+
+    diag_bog_low: {
+      type:'diagnosis', icon:'🐌', severity:'mod',
+      title:'Low-RPM Bog — Pilot Circuit or Air Leak',
+      summary:'Hesitation and bogging from idle under throttle is controlled by the same pilot circuit as the idle. Air leaks mimic a lean pilot circuit and have identical symptoms.',
+      causes:[
+        'Pilot jet partially blocked or pilot air jet obstructed',
+        'Air/fuel mixture screw set too lean — try 2.5 turns out, then adjust in small increments',
+        'Air leak at inlet manifold or carburettor boot — spray carb cleaner around joints while running',
+        'Throttle slide needle clip in too-lean position',
+        'CV slide diaphragm punctured — engine runs but slide won\'t fully rise'
+      ],
+      guides:[
+        { title:'Carburetor Pilot & Idle Jet — Diagnosis & Cleaning', url:'gy6-carburetor-pilot-idle-jet.html' }
+      ]
+    },
+
+    diag_bog_mid: {
+      type:'diagnosis', icon:'📊', severity:'mod',
+      title:'Mid-Range Flat Spot — Needle or Slide Diaphragm',
+      summary:'A flat spot between ¼ and ¾ throttle is controlled by the needle position and the CV slide. Wrong clip position, a worn needle, or a punctured diaphragm all show up here.',
+      causes:[
+        'Needle clip too lean (clip in top groove = leanest; move clip down one notch to richen)',
+        'Throttle needle worn oval — allows variable mixture',
+        'CV slide diaphragm punctured or cracked — slide won\'t lift correctly',
+        'Main jet partially blocked (affects mid to full throttle)'
+      ],
+      guides:[
+        { title:'Carburetor Pilot & Idle Jet — Diagnosis & Cleaning', url:'gy6-carburetor-pilot-idle-jet.html' },
+        { title:'Piaggio ZIP 50/100 — Full Troubleshooting Guide',     url:'piaggio-zip-100-troubleshooting.html'}
+      ]
+    },
+
+    diag_cvt_main_jet: {
+      type:'diagnosis', icon:'🏁', severity:'mod',
+      title:'Top Speed Limited — CVT Wear or Lean Main Jet',
+      summary:'Good pull up to a point then hitting a ceiling is usually the CVT variator not reaching its maximum ratio, or the engine going lean at full throttle.',
+      causes:[
+        'CVT rollers worn flat — won\'t reach maximum overdrive ratio; replace as a set',
+        'Drive belt worn narrow or glazed — slipping at full load',
+        'Variator ramp plates worn',
+        'Main jet too small — engine goes lean above half throttle',
+        'Restricted exhaust or blocked catalytic converter'
+      ],
+      guides:[
+        { title:'Piaggio ZIP 50/100 — Full Troubleshooting Guide', url:'piaggio-zip-100-troubleshooting.html' }
+      ]
+    },
+
+    /* ─ EFI running faults ────────────────────────────────── */
+    diag_cts_cold: {
+      type:'diagnosis', icon:'❄️', severity:'easy',
+      title:'CTS Fault — Cold-Start Enrichment Not Activating',
+      summary:'The coolant temperature sensor is not giving the ECU an accurate cold reading, so the cold-start enrichment fuel map is not activated. The engine starts hard when cold and idles poorly until fully warm.',
+      causes:[
+        'CTS connector corroded or loose — clean and reseat first',
+        'CTS resistance out of spec: should be 2–3 kΩ at 20°C',
+        'CTS wiring open circuit to ECU',
+        'CTS failed internally — inexpensive part, replace if readings are out of range'
+      ],
+      guides:[
+        { title:'GY6 EFI Fuel Injection Troubleshooting', url:'gy6-efi-fuel-injection-troubleshooting.html' }
+      ]
+    },
+
+    diag_tps_heat: {
+      type:'diagnosis', icon:'🔥', severity:'mod',
+      title:'TPS Voltage Drift or Vapour Lock (Hot Engine)',
+      summary:'EFI idle that worsens only when the engine is hot points to TPS voltage changing with temperature or a fuel issue worsened by heat.',
+      causes:[
+        'TPS voltage drifting as it heats — idle voltage should stay 0.4–0.8 V at all temperatures',
+        'Vapour lock in the fuel line close to the engine',
+        'Fuel pump weakening under sustained heat — pressure drops below 15 PSI when hot'
+      ],
+      guides:[
+        { title:'GY6 EFI Fuel Injection Troubleshooting', url:'gy6-efi-fuel-injection-troubleshooting.html' }
+      ]
+    },
+
+    diag_iac_air_leak: {
+      type:'diagnosis', icon:'🔧', severity:'mod',
+      title:'IAC Valve Stuck / Dirty or Air Leak',
+      summary:'Persistent rough idle at all temperatures on EFI is often the idle air control (IAC) valve, which regulates the amount of air bypassing the throttle at idle. An air leak has identical symptoms.',
+      causes:[
+        'IAC valve dirty or carbon-fouled — remove and clean with carb/throttle body cleaner',
+        'IAC valve seized or failed — test electrical resistance and movement',
+        'Air leak at throttle body, inlet manifold, or vacuum hose',
+        'TPS idle voltage out of spec — check: should be 0.4–0.8 V at closed throttle',
+        'Poor earth/ground on EFI system — a common cause of erratic idle on GY6 EFI'
+      ],
+      guides:[
+        { title:'GY6 EFI Fuel Injection Troubleshooting', url:'gy6-efi-fuel-injection-troubleshooting.html' }
+      ]
+    },
+
+    diag_efi_rich: {
+      type:'diagnosis', icon:'⬛', severity:'mod',
+      title:'EFI Running Rich — TPS / Injector / O₂ Sensor',
+      summary:'Black smoke and poor fuel economy on an EFI engine points to the ECU injecting too much fuel. The most common hardware causes are TPS miscalibration and a leaking injector.',
+      causes:[
+        'TPS stuck or miscalibrated — ECU sees high throttle even at idle; check sweep 0.5–4.5 V',
+        'Injector leaking past its seat — test resistance (11–16 Ω) and look for fuel smell in intake',
+        'O₂ sensor failed and stuck lean — ECU over-compensates by adding fuel',
+        'Regulator/rectifier overcharging battery — high voltage disrupts sensor readings',
+        'MAP sensor fault (code 13) causing incorrect load calculation'
+      ],
+      guides:[
+        { title:'GY6 EFI Fuel Injection Troubleshooting',      url:'gy6-efi-fuel-injection-troubleshooting.html' },
+        { title:'EFI CEL Flash Codes — Manual Diagnostic Mode', url:'gy6-efi-cel-flash-codes.html'               }
+      ]
+    },
+
+    diag_efi_lean: {
+      type:'diagnosis', icon:'💨', severity:'mod',
+      title:'EFI Running Lean — Fuel Pressure / Injector / Air Leak',
+      summary:'White-ish exhaust, stumbling under load, and loss of power on an EFI engine indicates insufficient fuel reaching the combustion chamber.',
+      causes:[
+        'Fuel pump pressure too low — target 15–25 PSI; test with a gauge',
+        'Fuel filter blocked — replace as first step',
+        'Injector partially clogged — reduced flow rate; professional ultrasonic cleaning or replace',
+        'Air leak at throttle body or inlet manifold — check all vacuum hoses',
+        'O₂ sensor fault (code 44) — sensor ageing and reading lean'
+      ],
+      guides:[
+        { title:'GY6 EFI Fuel Injection Troubleshooting',      url:'gy6-efi-fuel-injection-troubleshooting.html' },
+        { title:'EFI CEL Flash Codes — Manual Diagnostic Mode', url:'gy6-efi-cel-flash-codes.html'               }
+      ]
+    },
+
+    /* ─ Noise ─────────────────────────────────────────────── */
+    diag_cvt_noise: {
+      type:'diagnosis', icon:'⚙️', severity:'mod',
+      title:'CVT Transmission Noise',
+      summary:'Noise from the belt or CVT area is almost always mechanical wear. A worn or cracked belt is urgent — a snap means instant engine stall at speed.',
+      causes:[
+        'Drive belt worn, cracked, or fraying — inspect and replace if in doubt; costs little',
+        'CVT rollers worn flat — causes vibration and noise through the variator',
+        'Variator ramp plates worn — audible rattling at certain RPM',
+        'Clutch bell scored or worn',
+        'Clutch springs weak — slipping and squealing under load'
+      ],
+      guides:[
+        { title:'Piaggio ZIP 50/100 — Full Troubleshooting Guide', url:'piaggio-zip-100-troubleshooting.html' }
+      ]
+    },
+
+    diag_valve_tick: {
+      type:'diagnosis', icon:'🎵', severity:'mod',
+      title:'Valve Train Noise — Clearance Adjustment',
+      summary:'A rhythmic ticking from the cylinder head that changes speed with RPM is almost always valve clearance. GY6 and Piaggio 4-stroke engines need checking every 3,000–5,000 km.',
+      causes:[
+        'Valve clearances too wide — set to spec: inlet typically 0.05 mm, exhaust 0.10 mm (always verify in your manual)',
+        'Cam chain stretched — chain slap, or tensioner worn and not taking up slack',
+        'Rocker arm or pivot pin worn',
+        'Camshaft lobe worn flat'
+      ],
+      guides:[
+        { title:'Piaggio ZIP 50/100 — Full Troubleshooting Guide', url:'piaggio-zip-100-troubleshooting.html' }
+      ]
+    },
+
+    diag_bottom_knock: {
+      type:'diagnosis', icon:'🔨', severity:'major',
+      title:'⚠️ Bottom End Knock — Stop Riding Immediately',
+      summary:'A deep knock from low in the engine is serious. Continued riding risks complete engine seizure. Park the scooter now and do not start it again until the source of the knock is identified.',
+      causes:[
+        'Big-end (connecting rod) bearing worn or failing',
+        'Small-end (wrist pin / gudgeon pin) bearing worn',
+        'Main crankshaft bearings worn — deeper, lower rumble',
+        'Piston slap — piston and bore worn oval',
+        'Low oil level accelerating bearing damage (check dipstick first)'
+      ],
+      guides:[
+        { title:'Piaggio ZIP 50/100 — Full Troubleshooting Guide', url:'piaggio-zip-100-troubleshooting.html' }
+      ]
+    },
+
+    /* ─ Overheat ──────────────────────────────────────────── */
+    diag_aircooled: {
+      type:'diagnosis', icon:'🌡️', severity:'mod',
+      title:'Air-Cooled Engine Overheating',
+      summary:'Air-cooled scooters rely on airflow over the cylinder fins and correct fuelling for cooling. A lean mixture is the most common cause — the engine runs hot because there isn\'t enough fuel to cool the combustion.',
+      causes:[
+        'Lean fuel mixture — pilot or main jet too small for the altitude/temperature',
+        'Air shroud missing or cracked — disrupts directed airflow over the cooling fins',
+        'Ignition timing advanced too far',
+        'Cylinder head fins caked with grime — insulating the engine from airflow',
+        'Wrong engine oil grade or critically low oil level'
+      ],
+      guides:[
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist',    url:'gy6-no-start-troubleshooting.html'   },
+        { title:'Piaggio ZIP 50/100 — Full Troubleshooting Guide',  url:'piaggio-zip-100-troubleshooting.html'}
+      ]
+    },
+
+    diag_liquid_cool: {
+      type:'diagnosis', icon:'💧', severity:'mod',
+      title:'Liquid-Cooled Engine Overheating',
+      summary:'Liquid cooling problems are usually straightforward — check the obvious first before dismantling anything.',
+      causes:[
+        'Low coolant level — check reservoir and radiator cap cold (never open a hot radiator)',
+        'Thermostat stuck closed — coolant not circulating through the radiator',
+        'Water pump impeller worn, corroded, or failed',
+        'Air pocket trapped in the cooling system after coolant change',
+        'Radiator fins blocked with bugs or road debris',
+        'Head gasket leaking — combustion gas entering the coolant (check for bubbles in coolant)'
+      ],
+      guides:[
+        { title:'Piaggio ZIP 50/100 — Full Troubleshooting Guide', url:'piaggio-zip-100-troubleshooting.html' }
+      ]
+    }
+
+  }; // end TREE
+
+  /* ═══════════════════════════════════════════════════════
+     WIZARD ENGINE
+  ═══════════════════════════════════════════════════════ */
+  let history    = [];
+  let breadcrumb = [];
+  let currentId  = 'root';
+
+  const card      = document.getElementById('stepCard');
+  const pathTrail = document.getElementById('pathTrail');
+
+  function navigate(nextId, answerLabel) {
+    breadcrumb.push({ a: answerLabel });
+    history.push(currentId);
+    currentId = nextId;
+    render('fwd');
+    if (window.gtag) gtag('event', 'wizard_step', { node: nextId, answer: answerLabel });
+  }
+
+  function goBack() {
+    if (!history.length) return;
+    breadcrumb.pop();
+    currentId = history.pop();
+    render('back');
+  }
+
+  function restart() {
+    history = []; breadcrumb = []; currentId = 'root';
+    render('back');
+    if (window.gtag) gtag('event', 'wizard_restart', {});
+  }
+
+  function render(dir) {
+    const node = TREE[currentId];
+    if (!node) { console.error('Unknown node:', currentId); return; }
+
+    card.classList.remove('slide-fwd','slide-back');
+    void card.offsetWidth;
+    card.classList.add(dir === 'fwd' ? 'slide-fwd' : 'slide-back');
+
+    card.innerHTML = node.type === 'question'
+      ? buildQuestion(node)
+      : buildDiagnosis(node);
+
+    /* ── Attach button listeners AFTER innerHTML set ── */
+    card.querySelectorAll('.answer-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        navigate(btn.dataset.next, btn.dataset.label);
+      });
+    });
+    card.querySelectorAll('.btn-back').forEach(btn => {
+      btn.addEventListener('click', goBack);
+    });
+    card.querySelectorAll('.btn-restart').forEach(btn => {
+      btn.addEventListener('click', restart);
+    });
+
+    renderPath();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function buildQuestion(node) {
+    const cols = node.answers.length === 3 ? 'cols-3' : node.answers.length === 1 ? 'cols-1' : '';
+    const btns = node.answers.map(a =>
+      `<button class="answer-btn" data-next="${a.next}" data-label="${escAttr(a.label)}">
+        <span class="answer-icon">${a.icon}</span>
+        <span class="answer-text">
+          <span class="answer-label">${a.label}</span>
+          <span class="answer-desc">${a.desc}</span>
+        </span>
+      </button>`
+    ).join('');
+    return `
+      <span class="step-icon">${node.icon}</span>
+      <p class="step-question">${node.question}</p>
+      <p class="step-hint">${node.hint || ''}</p>
+      <div class="answers-grid ${cols}">${btns}</div>
+      ${navRow()}`;
+  }
+
+  function buildDiagnosis(node) {
+    const sev = node.severity;
+    const sevLabel = { easy:'🟢 Easy fix', mod:'🟡 Moderate', major:'🔴 Major fault', info:'🔵 Action needed' }[sev] || '';
+    const causes = node.causes.map(c => `<li>${c}</li>`).join('');
+    const guides = node.guides.map(g =>
+      `<a href="${g.url}" class="guide-link-card">
+        <span class="guide-link-title">📖 ${g.title}</span>
+        <span class="guide-link-arrow">→</span>
+      </a>`
+    ).join('');
+    return `
+      <div class="diag-header">
+        <div class="diag-icon-wrap ${sev}">${node.icon}</div>
+        <div class="diag-title-group">
+          <span class="diag-title">${node.title}</span>
+          <span class="sev-badge ${sev}">${sevLabel}</span>
+        </div>
+      </div>
+      <p class="diag-summary">${node.summary}</p>
+      <p class="diag-sec-title">Likely causes</p>
+      <ul class="causes-list">${causes}</ul>
+      <hr class="diag-divider">
+      <p class="diag-sec-title">Recommended repair guides</p>
+      <div class="guide-links">${guides}</div>
+      ${navRow()}`;
+  }
+
+  function navRow() {
+    const depth = history.length;
+    return `
+      <div class="wizard-nav">
+        <button class="btn-back" ${depth === 0 ? 'disabled' : ''}>← Back</button>
+        ${depth > 0 ? `<span class="step-counter">Step ${depth + 1}</span>` : '<span></span>'}
+        <button class="btn-restart">↺ Start over</button>
+      </div>`;
+  }
+
+  function renderPath() {
+    if (!breadcrumb.length) { pathTrail.innerHTML = ''; pathTrail.classList.add('empty'); return; }
+    pathTrail.classList.remove('empty');
+    pathTrail.innerHTML = breadcrumb.map((c, i) =>
+      `<span class="path-crumb">${c.a}</span>${i < breadcrumb.length - 1 ? '<span class="path-sep">›</span>' : ''}`
+    ).join('');
+  }
+
+  /* Escape special chars for use inside an HTML attribute value */
+  function escAttr(str) {
+    return str.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  /* Boot */
+  render('fwd');
+  </script>
+
+</body>
+</html>
