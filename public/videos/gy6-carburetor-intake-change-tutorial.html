@@ -26,160 +26,272 @@
   <title>Video: GY6 Carburetor & Intake Change Tutorial (150cc) — ISMR</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
-    .meta { color: #888; font-size: 0.85rem; margin-bottom: 1.5rem; }
-    .source-box { background: #1a1a1a; border-left: 4px solid #f5a623; padding: 0.8rem 1.2rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; }
-    .tag { display: inline-block; background: #222; color: #f5a623; border: 1px solid #f5a623; border-radius: 12px; padding: 2px 10px; font-size: 0.78rem; margin-right: 6px; }
-    ol li, ul li { margin-bottom: 0.5rem; }
-    .tip { background: #0a1f0a; border-left: 4px solid #4caf50; padding: 0.7rem 1.2rem; margin: 1rem 0; border-radius: 0 4px 4px 0; }
-    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 1.5rem 0; }
-    .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-    th { background: #1a1a1a; color: #f5a623; padding: 0.5rem 0.8rem; text-align: left; border: 1px solid #333; }
-    td { padding: 0.5rem 0.8rem; border: 1px solid #333; }
-    tr:nth-child(even) { background: #141414; }
-  </style>
-</head>
-<body>
-
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="../index.html" class="nav-brand"><span class="brand-icon">⚙️</span><span class="brand-text">ISMR</span></a>
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
-        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
-        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
-        <li><a href="../models/index.html" class="nav-link">Models</a></li>
-        <li><a href="../index.html#about" class="nav-link">About</a></li>      </ul>
-      <button class="nav-toggle" id="navToggle">☰</button>
-    </div>
-  </nav>
-
-  <section class="page-hero">
-    <div class="page-hero-inner">
-      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
-        <a href="../index.html">ISMR Home</a><span>›</span><a href="index.html">Video Tutorials</a><span>›</span>Video: GY6 Carburetor & Intake Change Tutorial (150cc)
-      </div>
-      <h1>Video: GY6 Carburetor & Intake Change Tutorial (150cc)</h1>
-    </div>
-  </section>
-
-  <style>
-    .page-hero {
-      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
-      padding: 3rem 2rem 2rem;
-      position: relative;
-      overflow: hidden;
+    .guide-header {
+      background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
       border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem 2rem;
     }
-    .page-hero::before {
-      content: "📹";
-      position: absolute;
-      right: 6%;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 9rem;
-      opacity: 0.07;
-      pointer-events: none;
-      line-height: 1;
-    }
-    .page-hero-inner { max-width: 900px; margin: 0 auto; }
-    .page-hero h1 {
-      font-size: 2rem;
+    .guide-header-inner { max-width: 900px; margin: 0 auto; }
+    .guide-header h1 {
+      font-size: 2.4rem;
       line-height: 1.2;
-      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      background: linear-gradient(135deg, var(--accent), var(--primary));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       margin-bottom: 1.2rem;
     }
     .breadcrumb {
-      padding: 0 0 1rem;
-      margin: 0;
+      padding: 0.9rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
       font-size: 0.85rem;
       color: var(--text-tertiary);
     }
     .breadcrumb a { color: var(--accent); }
     .breadcrumb a:hover { color: var(--primary); }
     .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+    .guide-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+      margin-bottom: 1rem;
+    }
+    .guide-meta a { color: var(--accent); }
+    .guide-meta-sep { opacity: 0.4; }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+    .guide-tag {
+      background: rgba(0, 168, 204, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(0, 168, 204, 0.3);
+      padding: 0.25rem 0.7rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+    .applies-to {
+      background: rgba(255, 107, 53, 0.07);
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem;
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .applies-to strong { color: var(--text-primary); }
+    .guide-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 4rem;
+    }
+    .guide-content h2 {
+      font-size: 1.55rem;
+      color: var(--text-primary);
+      margin-top: 2.5rem;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.6rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th {
+      background: var(--surface-2);
+      color: var(--primary);
+      font-weight: 600;
+      padding: 0.7rem 1rem;
+      text-align: left;
+      border: 1px solid var(--border);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: 0.8rem;
+    }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26, 35, 50, 0.6); }
+    .callout {
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .callout strong { color: var(--text-primary); }
+    .callout-tip {
+      background: rgba(6, 167, 125, 0.08);
+      border: 1px solid rgba(6, 167, 125, 0.25);
+      border-left: 4px solid var(--success);
+    }
+    .video-embed { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin: 1.5rem 0; }
+    .video-embed-title { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; }
+    .video-wrap-16x9 { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 0.75rem; }
+    .video-wrap-16x9 iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+    .video-source { font-size: 0.85rem; color: var(--text-tertiary); margin-top: 0.75rem; }
+    .video-source a { color: var(--accent); }
+    .guide-footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.825rem;
+      color: var(--text-tertiary);
+    }
+    @media (max-width: 600px) {
+      .guide-header h1 { font-size: 1.7rem; }
+      .guide-content { padding: 1.5rem 1rem 3rem; }
+      .breadcrumb { padding: 0.9rem 1rem; }
+    }
   </style>
-
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-icon">⚙️</span>
+        <span class="brand-text">ISMR</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="index.html" class="nav-link active">Videos</a></li>
+        <li><a href="../index.html#about" class="nav-link">About</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
 
   <div class="breadcrumb">
     <a href="../index.html">ISMR Home</a><span>›</span>
     <a href="index.html">Videos</a><span>›</span>
-    GY6 carburetor &amp; Intake Change Tutorial
+    GY6 Carburetor &amp; Intake Change Tutorial
   </div>
 
-  <main class="guide-content">
-  <h1>Video: How to Change the Carburetor &amp; Intake on a 150cc Scooter (GY6 Full Tutorial)</h1>
-  <div class="meta">
-    Added: 2026-05-08 &nbsp;|&nbsp; Source: <a href="https://www.youtube.com/watch?v=TNdw8z0B-K0" target="_blank" rel="noopener">youtube.com</a>
-    &nbsp;|&nbsp; <span class="tag">GY6</span> <span class="tag">Carburetor</span> <span class="tag">157QMJ</span> <span class="tag">VIP</span>
-  </div>
+  <header class="guide-header">
+    <div class="guide-header-inner">
+      <h1>GY6 Carburetor &amp; Intake Change Tutorial (150cc)</h1>
+      <div class="guide-meta">
+        <span>Added: 2026-05-08</span>
+        <span class="guide-meta-sep">|</span>
+        <span>Source: <a href="https://www.youtube.com/watch?v=TNdw8z0B-K0" target="_blank" rel="noopener">YouTube</a></span>
+        <span class="guide-meta-sep">|</span>
+        <span>Format: <strong>Full tutorial video</strong></span>
+      </div>
+      <div class="guide-tags">
+        <span class="guide-tag">GY6</span>
+        <span class="guide-tag">157QMJ</span>
+        <span class="guide-tag">Carburetor</span>
+        <span class="guide-tag">Intake</span>
+      </div>
+      <div class="applies-to">
+        📌 <strong>Applies to:</strong> Any GY6 157QMJ-engined scooter, including the BTC Riva 50/125, Santini Capri 50/125, La Souris Sourini, Sym Orbit II, Kymco Agility 125, and any other scooter sharing the 150cc GY6 platform.
+      </div>
+    </div>
+  </header>
 
-  <div class="source-box">
-    📌 <strong>Original video:</strong> <a href="https://www.youtube.com/watch?v=TNdw8z0B-K0" target="_blank" rel="noopener">How to change the carburetor &amp; intake on a 150cc Scooter (Full Tutorial for a VIP &amp; GY6 engine)</a> — YouTube (July 2025)
-  </div>
+  <main role="main">
+    <div class="guide-content">
 
-  <div class="video-wrap">
-    <iframe src="https://www.youtube.com/embed/TNdw8z0B-K0" allowfullscreen title="How to change the carburetor and intake on a 150cc GY6 scooter"></iframe>
-  </div>
+      <div class="video-embed">
+        <div class="video-embed-title">📹 GY6 Carburetor &amp; Intake Change — Full Tutorial</div>
+        <div class="video-wrap-16x9">
+          <iframe src="https://www.youtube-nocookie.com/embed/TNdw8z0B-K0"
+            title="How to change the carburetor and intake on a 150cc GY6 scooter"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <p class="video-source">
+          <strong>Video:</strong> How to change the carburetor &amp; intake on a 150cc Scooter (Full Tutorial for a VIP &amp; GY6 engine)
+          — <a href="https://www.youtube.com/watch?v=TNdw8z0B-K0" target="_blank" rel="noopener">↗ Watch on YouTube</a>
+        </p>
+      </div>
 
-  <h2>Video Summary</h2>
-  <p>This full tutorial demonstrates a complete carburetor and intake manifold replacement on a 150cc scooter fitted with a GY6 157QMJ engine — one of the most common engine platforms in Chinese-built scooters including the BTC Riva, Santini Capri, and many others. The procedure is filmed on a VIP-style bodywork scooter, but the engine access and component layout are directly applicable to any GY6-engined machine.</p>
+      <h2>Video Summary</h2>
+      <p>This full tutorial demonstrates a complete carburetor and intake manifold replacement on a 150cc scooter fitted with a GY6 157QMJ engine — one of the most common engine platforms in Chinese-built scooters including the BTC Riva, Santini Capri, and many others. The procedure is filmed on a VIP-style bodywork scooter, but the engine access and component layout are directly applicable to any GY6-engined machine.</p>
 
-  <h2>What the Video Covers</h2>
-  <ul>
-    <li>Removing the body panel and access cover to reach the carburetor</li>
-    <li>Disconnecting the fuel line, throttle cable, and choke linkage safely</li>
-    <li>Removing the intake manifold (inlet pipe) between the engine head and carburetor</li>
-    <li>Inspecting the old carburetor for wear, blockage, and gasket condition</li>
-    <li>Installing a new PD24J or equivalent carburetor on the replacement intake manifold</li>
-    <li>Reconnecting all cables and lines with correct routing</li>
-    <li>Initial idle adjustment and cold-start testing</li>
-  </ul>
+      <h2>What the Video Covers</h2>
+      <ul>
+        <li>Removing the body panel and access cover to reach the carburetor</li>
+        <li>Disconnecting the fuel line, throttle cable, and choke linkage safely</li>
+        <li>Removing the intake manifold (inlet pipe) between the engine head and carburetor</li>
+        <li>Inspecting the old carburetor for wear, blockage, and gasket condition</li>
+        <li>Installing a new PD24J or equivalent carburetor on the replacement intake manifold</li>
+        <li>Reconnecting all cables and lines with correct routing</li>
+        <li>Initial idle adjustment and cold-start testing</li>
+      </ul>
 
-  <h2>Approximate Timestamps</h2>
-  <table>
-    <tr><th>Time</th><th>Topic</th></tr>
-    <tr><td>0:00</td><td>Introduction and parts overview</td></tr>
-    <tr><td>~1:30</td><td>Panel removal and carb access</td></tr>
-    <tr><td>~3:00</td><td>Fuel line and cable disconnection</td></tr>
-    <tr><td>~5:00</td><td>Intake manifold removal</td></tr>
-    <tr><td>~8:00</td><td>New carb and intake fitment</td></tr>
-    <tr><td>~11:00</td><td>Cable routing and reconnection</td></tr>
-    <tr><td>~14:00</td><td>First start and idle adjustment</td></tr>
-  </table>
-  <p><em>Note: Timestamps are approximate based on the video title and common tutorial structure for this type of repair. Watch the full video for exact timings.</em></p>
+      <h2>Approximate Timestamps</h2>
+      <table>
+        <thead>
+          <tr><th>Time</th><th>Topic</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0:00</td><td>Introduction and parts overview</td></tr>
+          <tr><td>~1:30</td><td>Panel removal and carb access</td></tr>
+          <tr><td>~3:00</td><td>Fuel line and cable disconnection</td></tr>
+          <tr><td>~5:00</td><td>Intake manifold removal</td></tr>
+          <tr><td>~8:00</td><td>New carb and intake fitment</td></tr>
+          <tr><td>~11:00</td><td>Cable routing and reconnection</td></tr>
+          <tr><td>~14:00</td><td>First start and idle adjustment</td></tr>
+        </tbody>
+      </table>
+      <p><em>Timestamps are approximate based on common tutorial structure for this type of repair. Watch the full video for exact timings.</em></p>
 
-  <h2>Parts &amp; Tools Referenced</h2>
-  <ul>
-    <li>Replacement carburetor: PD24J (standard for GY6 150cc / 157QMJ) — available from <a href="https://www.vmcchineseparts.com/" target="_blank" rel="noopener">VMC Chinese Parts</a>, <a href="https://www.scooterworks.com/collections/gy6" target="_blank" rel="noopener">Scooterworks USA</a></li>
-    <li>Intake manifold: GY6 150cc inlet manifold with carb-to-head gasket</li>
-    <li>JIS cross-head screwdrivers (#1, #2)</li>
-    <li>Needle-nose pliers (for fuel line clamps)</li>
-    <li>Flat-blade screwdriver (for carb clamps and jets)</li>
-    <li>New fuel line clamps (recommended if reusing old hoses)</li>
-  </ul>
+      <h2>Parts &amp; Tools Referenced</h2>
+      <ul>
+        <li>Replacement carburetor: PD24J (standard for GY6 150cc / 157QMJ) — available from <a href="https://www.vmcchineseparts.com/" target="_blank" rel="noopener">VMC Chinese Parts</a>, <a href="https://www.scooterworks.com/collections/gy6" target="_blank" rel="noopener">Scooterworks USA</a></li>
+        <li>Intake manifold: GY6 150cc inlet manifold with carb-to-head gasket</li>
+        <li>JIS cross-head screwdrivers (#1, #2)</li>
+        <li>Needle-nose pliers (for fuel line clamps)</li>
+        <li>Flat-blade screwdriver (for carb clamps and jets)</li>
+        <li>New fuel line clamps (recommended if reusing old hoses)</li>
+      </ul>
 
-  <div class="tip">
-    💡 <strong>Applicable models:</strong> This procedure is relevant to any GY6 157QMJ-engined scooter, including the BTC Riva 50/125, Santini Capri 50/125, La Souris Sourini, Sym Orbit II, Kymco Agility 125, and any other scooter sharing the 150cc GY6 platform.
-  </div>
+      <div class="callout callout-tip">
+        <strong>💡 Applicable models:</strong> This procedure is relevant to any GY6 157QMJ-engined scooter, including the BTC Riva 50/125, Santini Capri 50/125, La Souris Sourini, Sym Orbit II, Kymco Agility 125, and any other scooter sharing the 150cc GY6 platform.
+      </div>
 
-  <h2>Related Guides</h2>
-  <ul>
-    <li><a href="../repair-guides/gy6-carburetor-cleaning-guide.html">GY6 carburetor Deep-Cleaning Guide</a></li>
-    <li><a href="../repair-guides/gy6-carburetor-adjustment-guide.html">GY6 carburetor Adjustment &amp; Tuning</a></li>
-    <li><a href="../repair-guides/gy6-carburetor-jetting-guide.html">GY6 carburetor Jetting Guide</a></li>
-    <li><a href="../diagnostics/gy6-no-start-troubleshooting.html">GY6 Won't Start — Troubleshooting</a></li>
-  </ul>
+      <h2>Related Guides</h2>
+      <ul>
+        <li><a href="../repair-guides/gy6-carburetor-cleaning-guide.html">GY6 Carburetor Deep-Cleaning Guide</a></li>
+        <li><a href="../repair-guides/gy6-carburetor-adjustment-guide.html">GY6 Carburetor Adjustment &amp; Tuning</a></li>
+        <li><a href="../repair-guides/gy6-carburetor-jetting-guide.html">GY6 Carburetor Jetting Guide</a></li>
+        <li><a href="../diagnostics/gy6-no-start-troubleshooting.html">GY6 Won't Start — Troubleshooting</a></li>
+      </ul>
+
+    </div>
   </main>
 
-
   <footer class="guide-footer">
-    <p>Page auto-generated by ISMR Content Sync on 2026-05-08. Content summarised from multiple technical sources for educational purposes.</p>
-    <p style="margin-top: 0.5rem;">Always verify with the original source and your scooter's workshop manual before performing repairs.</p>
-    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISMR Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Videos</a></p>
+    <p>
+      <strong>Source:</strong>
+      <a href="https://www.youtube.com/watch?v=TNdw8z0B-K0" target="_blank" rel="noopener">YouTube — GY6 Carburetor &amp; Intake Change Tutorial</a>
+    </p>
+    <p style="margin-top: 0.5rem;">
+      <strong>Added:</strong> 2026-05-08 &nbsp;|&nbsp;
+      <strong>License:</strong> <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>
+    </p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">
+      Always verify procedures with your scooter's official service manual before attempting repairs.
+    </p>
+    <p style="margin-top: 1rem;"><a href="index.html" style="color: var(--accent);">← Back to Videos</a></p>
   </footer>
+
+  <script src="../script.js"></script>
 </body>
 </html>

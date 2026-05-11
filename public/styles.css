@@ -481,6 +481,15 @@ a { text-decoration: none; color: inherit; }
   color: var(--text-primary);
 }
 
+.guide-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.guide-card h3 a:hover {
+  color: var(--accent);
+}
+
 .guide-card p {
   margin-bottom: 1.5rem;
   font-size: 0.95rem;

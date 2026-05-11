@@ -1,86 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-53LY3KPDYM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-53LY3KPDYM');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Video: DIY Vespa Oil Change — Primavera / GTS / Sprint — ISRM</title>
+  <meta name="description" content="Curated video guide for the DIY Vespa oil change — covers Primavera, Sprint, and GTS models with iGet engines. Timestamps, specs, and related written guide.">
+  <link rel="canonical" href="https://ismr.online/videos/vespa-primavera-oil-change-video.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ismr.online/videos/vespa-primavera-oil-change-video.html">
+  <meta property="og:title" content="Video: DIY Vespa Oil Change — Primavera / GTS / Sprint — ISMR">
+  <meta property="og:description" content="Curated video guide for the DIY Vespa oil change — covers Primavera, Sprint, and GTS models with iGet engines. Timestamps, specs, and related written guide.">
+  <meta property="og:site_name" content="ISMR — Interactive Scooter Manuals for Repair">
+  <meta property="og:image" content="https://ismr.online/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Video: DIY Vespa Oil Change — Primavera / GTS / Sprint — ISMR">
+  <meta name="twitter:description" content="Curated video guide for the DIY Vespa oil change — covers Primavera, Sprint, and GTS models with iGet engines. Timestamps, specs, and related written guide.">
+  <meta name="twitter:image" content="https://ismr.online/og-image.jpg">
+  <title>Video: DIY Vespa Oil Change — Primavera / GTS / Sprint — ISMR</title>
+  <link rel="stylesheet" href="../styles.css">
   <style>
-    body { font-family: Georgia, serif; background: #0f0f0f; color: #e8e8e8; max-width: 820px; margin: 2rem auto; padding: 1rem 2rem; line-height: 1.7; }
-    h1 { color: #f5a623; border-bottom: 2px solid #f5a623; padding-bottom: 0.4rem; }
-    h2 { color: #f5a623; margin-top: 2rem; }
-    a { color: #7ec8e3; }
-    .meta { color: #888; font-size: 0.85rem; margin-bottom: 1.5rem; }
-    .source-box { background: #1a1a1a; border-left: 4px solid #f5a623; padding: 0.8rem 1.2rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; }
-    .tag { display: inline-block; background: #222; color: #f5a623; border: 1px solid #f5a623; border-radius: 12px; padding: 2px 10px; font-size: 0.78rem; margin-right: 6px; }
-    nav { margin-bottom: 2rem; font-size: 0.9rem; } nav a { margin-right: 1rem; }
-    footer { margin-top: 3rem; border-top: 1px solid #333; padding-top: 1rem; color: #555; font-size: 0.8rem; }
-    .tip { background: #0a1a2a; border-left: 4px solid #00a8cc; padding: 0.8rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
-    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-    th { background: #1a2332; color: #f5a623; text-align: left; padding: 0.5rem 0.8rem; }
-    td { padding: 0.5rem 0.8rem; border-bottom: 1px solid #2a3548; }
-    code { background: #1a2332; padding: 2px 6px; border-radius: 3px; font-family: monospace; color: #7ec8e3; }
-    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 1.5rem 0; }
-    .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-    .video-card { background: #1a2332; border: 1px solid #2a3548; border-radius: 8px; padding: 1rem 1.2rem; margin: 1.5rem 0; }
-    .video-card h3 { color: #f5a623; margin: 0 0 0.4rem 0; font-size: 1rem; }
+    .guide-header {
+      background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem 2rem;
+    }
+    .guide-header-inner { max-width: 900px; margin: 0 auto; }
+    .guide-header h1 {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0.9rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+    .guide-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+      margin-bottom: 1rem;
+    }
+    .guide-meta a { color: var(--accent); }
+    .guide-meta-sep { opacity: 0.4; }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+    .guide-tag {
+      background: rgba(0, 168, 204, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(0, 168, 204, 0.3);
+      padding: 0.25rem 0.7rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+    .applies-to {
+      background: rgba(255, 107, 53, 0.07);
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem;
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .applies-to strong { color: var(--text-primary); }
+    .guide-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 4rem;
+    }
+    .guide-content h2 {
+      font-size: 1.55rem;
+      color: var(--text-primary);
+      margin-top: 2.5rem;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.6rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th {
+      background: var(--surface-2);
+      color: var(--primary);
+      font-weight: 600;
+      padding: 0.7rem 1rem;
+      text-align: left;
+      border: 1px solid var(--border);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: 0.8rem;
+    }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26, 35, 50, 0.6); }
+    .callout {
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .callout strong { color: var(--text-primary); }
+    .callout-tip {
+      background: rgba(6, 167, 125, 0.08);
+      border: 1px solid rgba(6, 167, 125, 0.25);
+      border-left: 4px solid var(--success);
+    }
+    .video-embed { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin: 1.5rem 0; }
+    .video-embed-title { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; }
+    .video-wrap-16x9 { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 0.75rem; }
+    .video-wrap-16x9 iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+    .video-source { font-size: 0.85rem; color: var(--text-tertiary); margin-top: 0.75rem; }
+    .video-source a { color: var(--accent); }
+    .guide-footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.825rem;
+      color: var(--text-tertiary);
+    }
+    @media (max-width: 600px) {
+      .guide-header h1 { font-size: 1.7rem; }
+      .guide-content { padding: 1.5rem 1rem 3rem; }
+      .breadcrumb { padding: 0.9rem 1rem; }
+    }
   </style>
 </head>
 <body>
-  <nav><a href="../index.html">🔧 ISRM Home</a> › <a href="index.html">Videos</a></nav>
-  <h1>Video: DIY Vespa Oil Change — Primavera / GTS / Sprint</h1>
-  <div class="meta">
-    Added: 2026-05-11 &nbsp;|&nbsp; Source: <a href="https://www.youtube.com/watch?v=6IeMd82uwW4" target="_blank" rel="noopener">YouTube</a>
-    &nbsp;|&nbsp; <span class="tag">Piaggio</span> <span class="tag">Vespa</span> <span class="tag">Primavera</span> <span class="tag">GTS</span> <span class="tag">Sprint</span> <span class="tag">Fuel Injection</span>
-  </div>
-  <div class="source-box">
-    📌 <strong>Original video:</strong> <a href="https://www.youtube.com/watch?v=6IeMd82uwW4" target="_blank" rel="noopener">DIY Vespa oil change — Primavera / GTS / Sprint (YouTube)</a>
-  </div>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-icon">⚙️</span>
+        <span class="brand-text">ISMR</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="index.html" class="nav-link active">Videos</a></li>
+        <li><a href="../index.html#about" class="nav-link">About</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
 
-  <p>This curated video collection covers the oil change procedure for modern Vespa scooters — primarily the Primavera, Sprint, and GTS models — all powered by Piaggio's fuel-injected iGet engine family. These are beginner-friendly DIY procedures that require only basic tools and take 20–30 minutes.</p>
-
-  <h2>Main Video</h2>
-  <div class="video-wrap">
-    <iframe src="https://www.youtube-nocookie.com/embed/6IeMd82uwW4" allowfullscreen title="DIY Vespa oil change — Primavera / GTS / Sprint"></iframe>
-  </div>
-
-  <h2>What This Video Covers</h2>
-  <ul>
-    <li>Locating the drain plug and oil filler cap on iGet-engine Vespa scooters</li>
-    <li>Correct oil specification for Primavera and Sprint (5W-40 full synthetic, JASO MA2)</li>
-    <li>Drain plug copper washer replacement</li>
-    <li>Correct torque for the drain plug: <strong>22 Nm</strong></li>
-    <li>Correct oil fill volume: <strong>800 ml (125 cc)</strong> or <strong>900 ml (150 cc)</strong></li>
-    <li>Checking the dipstick level after refill</li>
-    <li>Resetting the service reminder light on the Vespa dashboard</li>
-  </ul>
-
-  <div class="tip">
-    💡 <strong>Compatible models:</strong> This procedure applies to Vespa Primavera 125, Primavera 150, Sprint 125, Sprint 150 (all years 2013–present), Vespa GTS 125, GTS 150, GTS 300 (iGet engine versions from approx. 2019 onwards). Earlier GTS models (2005–2018) with the HPE/Super 300 engine have a slightly different procedure — consult the model-specific service manual.
+  <div class="breadcrumb">
+    <a href="../index.html">ISMR Home</a><span>›</span>
+    <a href="index.html">Videos</a><span>›</span>
+    DIY Vespa Oil Change — Primavera / GTS / Sprint
   </div>
 
-  <h2>Additional Related Video</h2>
-  <div class="video-card">
-    <h3>DIY Vespa Sprint 150 &amp; Primavera 150 — First Oil Change</h3>
-    <p>Covers the first oil change at the factory-break-in interval (typically 1,000 km) with notes on what to expect from a brand-new engine's first drain.</p>
-    <a href="https://www.youtube-nocookie.com/embed/A_oOKEi_cIY" target="_blank" rel="noopener">Watch on YouTube →</a>
-  </div>
+  <header class="guide-header">
+    <div class="guide-header-inner">
+      <h1>DIY Vespa Oil Change — Primavera / GTS / Sprint</h1>
+      <div class="guide-meta">
+        <span>Added: 2026-05-11</span>
+        <span class="guide-meta-sep">|</span>
+        <span>Source: <a href="https://www.youtube.com/watch?v=6IeMd82uwW4" target="_blank" rel="noopener">YouTube</a></span>
+        <span class="guide-meta-sep">|</span>
+        <span>Difficulty: <strong>Easy</strong></span>
+        <span class="guide-meta-sep">|</span>
+        <span>Time: <strong>20–30 min</strong></span>
+      </div>
+      <div class="guide-tags">
+        <span class="guide-tag">Piaggio</span>
+        <span class="guide-tag">Vespa</span>
+        <span class="guide-tag">Primavera</span>
+        <span class="guide-tag">Sprint</span>
+        <span class="guide-tag">GTS</span>
+        <span class="guide-tag">iGet</span>
+        <span class="guide-tag">Oil Change</span>
+      </div>
+      <div class="applies-to">
+        📌 <strong>Applies to:</strong> Vespa Primavera 125/150, Sprint 125/150 (2013–present), Vespa GTS 125/150/300 (iGet engine variants, approx. 2019 onwards). Earlier GTS models (2005–2018) with the HPE/Super 300 engine have a slightly different procedure — consult the model-specific service manual.
+      </div>
+    </div>
+  </header>
 
-  <h2>Key Timestamps (Main Video)</h2>
-  <table>
-    <tr><th>Time</th><th>Content</th></tr>
-    <tr><td>0:00–0:45</td><td>Introduction — tools needed and overview</td></tr>
-    <tr><td>0:45–2:00</td><td>Warming the engine and locating the drain plug</td></tr>
-    <tr><td>2:00–4:00</td><td>Draining old oil, replacing copper washer, refitting drain plug</td></tr>
-    <tr><td>4:00–5:30</td><td>Refilling with fresh oil, dipstick check</td></tr>
-    <tr><td>5:30–6:30</td><td>Leak check after start-up, service light reset</td></tr>
-  </table>
-  <p><em>Note: timestamps are approximate — exact times vary by video encoding.</em></p>
+  <main role="main">
+    <div class="guide-content">
 
-  <h2>Related ISRM Guide</h2>
-  <p>For a complete written step-by-step walkthrough of the same procedure (including specifications, torque values, and part numbers), see the <a href="../repair-guides/vespa-primavera-sprint-oil-change.html">Vespa Primavera &amp; Sprint 125–150 Oil Change Guide</a>.</p>
+      <p>This curated video covers the oil change procedure for modern Vespa scooters — primarily the Primavera, Sprint, and GTS models powered by Piaggio's fuel-injected iGet engine. A beginner-friendly DIY job requiring only basic tools and taking 20–30 minutes.</p>
 
-  <footer>
-    Page auto-generated by ISRM Content Sync on 2026-05-11. Content summarised from external sources for educational purposes. Always verify with the original source before performing repairs.
+      <h2>Main Video</h2>
+      <div class="video-embed">
+        <div class="video-embed-title">📹 DIY Vespa Oil Change — Primavera / Sprint / GTS</div>
+        <div class="video-wrap-16x9">
+          <iframe src="https://www.youtube-nocookie.com/embed/6IeMd82uwW4"
+            title="DIY Vespa oil change — Primavera / GTS / Sprint"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <p class="video-source">
+          <strong>Video:</strong> DIY Vespa oil change — Primavera / GTS / Sprint
+          — <a href="https://www.youtube.com/watch?v=6IeMd82uwW4" target="_blank" rel="noopener">↗ Watch on YouTube</a>
+        </p>
+      </div>
+
+      <h2>What This Video Covers</h2>
+      <ul>
+        <li>Locating the drain plug and oil filler cap on iGet-engine Vespa scooters</li>
+        <li>Correct oil specification for Primavera and Sprint (<strong>5W-40 full synthetic, JASO MA2</strong>)</li>
+        <li>Drain plug copper washer replacement</li>
+        <li>Correct torque for the drain plug: <strong>22 Nm</strong></li>
+        <li>Correct oil fill volume: <strong>800 ml (125 cc)</strong> or <strong>900 ml (150 cc)</strong></li>
+        <li>Checking the dipstick level after refill</li>
+        <li>Resetting the service reminder light on the Vespa dashboard</li>
+      </ul>
+
+      <h2>Key Timestamps</h2>
+      <table>
+        <thead>
+          <tr><th>Time</th><th>Content</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0:00–0:45</td><td>Introduction — tools needed and overview</td></tr>
+          <tr><td>0:45–2:00</td><td>Warming the engine and locating the drain plug</td></tr>
+          <tr><td>2:00–4:00</td><td>Draining old oil, replacing copper washer, refitting drain plug</td></tr>
+          <tr><td>4:00–5:30</td><td>Refilling with fresh oil, dipstick check</td></tr>
+          <tr><td>5:30–6:30</td><td>Leak check after start-up, service light reset</td></tr>
+        </tbody>
+      </table>
+      <p><em>Timestamps are approximate — exact times vary by video encoding.</em></p>
+
+      <h2>Additional Video — First Oil Change</h2>
+      <div class="video-embed">
+        <div class="video-embed-title">📹 Vespa Sprint 150 &amp; Primavera 150 — First Oil Change</div>
+        <div class="video-wrap-16x9">
+          <iframe src="https://www.youtube-nocookie.com/embed/A_oOKEi_cIY"
+            title="Vespa Sprint 150 and Primavera 150 — First Oil Change"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <p class="video-source">
+          Covers the first oil change at the factory break-in interval (~1,000 km) with notes on what to expect from a brand-new engine's first drain.
+          — <a href="https://www.youtube.com/watch?v=A_oOKEi_cIY" target="_blank" rel="noopener">↗ Watch on YouTube</a>
+        </p>
+      </div>
+
+      <div class="callout callout-tip">
+        <strong>💡 Compatible models:</strong> Vespa Primavera 125, Primavera 150, Sprint 125, Sprint 150 (all years 2013–present), Vespa GTS 125, GTS 150, GTS 300 (iGet engine versions from approx. 2019 onwards). Earlier GTS models (2005–2018) with the HPE/Super 300 engine have a slightly different procedure — consult the model-specific service manual.
+      </div>
+
+      <h2>Related Guide</h2>
+      <p>For a complete written step-by-step walkthrough of the same procedure (including specifications, torque values, and part numbers), see the <a href="../repair-guides/vespa-primavera-sprint-oil-change.html">Vespa Primavera &amp; Sprint 125–150 Oil Change Guide</a>.</p>
+
+    </div>
+  </main>
+
+  <footer class="guide-footer">
+    <p>
+      <strong>Source:</strong>
+      <a href="https://www.youtube.com/watch?v=6IeMd82uwW4" target="_blank" rel="noopener">YouTube — DIY Vespa Oil Change (Primavera / GTS / Sprint)</a>
+    </p>
+    <p style="margin-top: 0.5rem;">
+      <strong>Added:</strong> 2026-05-11 &nbsp;|&nbsp;
+      <strong>License:</strong> <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>
+    </p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">
+      Always verify procedures with your scooter's official service manual before attempting repairs.
+    </p>
+    <p style="margin-top: 1rem;"><a href="index.html" style="color: var(--accent);">← Back to Videos</a></p>
   </footer>
+
+  <script src="../script.js"></script>
 </body>
 </html>
