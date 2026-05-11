@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-53LY3KPDYM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-53LY3KPDYM');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GY6 speedometer cable diagnosis and replacement guide. Covers broken cable symptoms, diagnosis steps, and full replacement procedure for La Souris, Santini Capri, BTC Riva 50, and other GY6 50cc scooters.">
+  <link rel="canonical" href="https://ismr.online/repair-guides/gy6-speedometer-cable-replacement.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ismr.online/repair-guides/gy6-speedometer-cable-replacement.html">
+  <meta property="og:title" content="GY6 Speedometer Cable — Diagnosis & Replacement — ISMR">
+  <meta property="og:description" content="GY6 speedometer cable diagnosis and replacement guide. Covers broken cable symptoms, diagnosis steps, and full replacement procedure for La Souris, Santini Capri, BTC Riva 50, and other GY6 50cc scooters.">
+  <meta property="og:site_name" content="ISMR — Interactive Scooter Manuals for Repair">
+  <meta property="og:image" content="https://ismr.online/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GY6 Speedometer Cable — Diagnosis & Replacement — ISMR">
+  <meta name="twitter:description" content="GY6 speedometer cable diagnosis and replacement guide. Covers broken cable symptoms, diagnosis steps, and full replacement procedure for La Souris, Santini Capri, BTC Riva 50, and other GY6 50cc scooters.">
+  <meta name="twitter:image" content="https://ismr.online/og-image.jpg">
+  <title>GY6 Speedometer Cable — Diagnosis & Replacement — ISMR</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .guide-header {
+      background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem 2rem;
+    }
+    .guide-header-inner { max-width: 900px; margin: 0 auto; }
+    .guide-header h1 {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0.9rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+    .guide-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+      margin-bottom: 1rem;
+    }
+    .guide-meta a { color: var(--accent); }
+    .guide-meta a:hover { color: var(--primary); }
+    .guide-meta-sep { opacity: 0.4; }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+    .guide-tag {
+      background: rgba(0, 168, 204, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(0, 168, 204, 0.3);
+      padding: 0.25rem 0.7rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+    .applies-to {
+      background: rgba(255, 107, 53, 0.07);
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem;
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .applies-to strong { color: var(--text-primary); }
+    .guide-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 4rem;
+    }
+    .guide-content h2 {
+      font-size: 1.55rem;
+      color: var(--text-primary);
+      margin-top: 2.5rem;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.6rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content code {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--accent-light);
+      padding: 0.15rem 0.45rem;
+      border-radius: var(--radius-sm);
+      font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+      font-size: 0.87em;
+    }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th {
+      background: var(--surface-2);
+      color: var(--primary);
+      font-weight: 600;
+      padding: 0.7rem 1rem;
+      text-align: left;
+      border: 1px solid var(--border);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: 0.8rem;
+    }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26, 35, 50, 0.6); }
+    .callout {
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .callout strong { color: var(--text-primary); }
+    .callout-warn {
+      background: rgba(245, 166, 35, 0.08);
+      border: 1px solid rgba(245, 166, 35, 0.25);
+      border-left: 4px solid var(--warning);
+    }
+    .callout-tip {
+      background: rgba(6, 167, 125, 0.08);
+      border: 1px solid rgba(6, 167, 125, 0.25);
+      border-left: 4px solid var(--success);
+    }
+    .callout-info {
+      background: rgba(0, 168, 204, 0.07);
+      border: 1px solid rgba(0, 168, 204, 0.2);
+      border-left: 4px solid var(--accent);
+    }
+    .guide-footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.825rem;
+      color: var(--text-tertiary);
+    }
+    .video-embed { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin: 1.5rem 0; }
+    .video-embed-title { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; }
+    .video-wrap { position: relative; width: 100%; aspect-ratio: 9/16; max-width: 400px; margin: 0 auto; background: #000; border-radius: var(--radius-md); overflow: hidden; }
+    .video-wrap-16x9 { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 0.75rem; }
+    .video-wrap iframe, .video-wrap-16x9 iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+    .video-source { font-size: 0.85rem; color: var(--text-tertiary); margin-top: 0.75rem; }
+    .video-source a { color: var(--accent); }
+    .diag-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.25rem 0;
+    }
+    .diag-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+    }
+    .diag-card h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .diag-card ul { margin: 0; padding-left: 1.2rem; font-size: 0.88rem; color: var(--text-secondary); }
+    .diag-card ul li { margin-bottom: 0.3rem; }
+    .diag-broken { border-top: 3px solid var(--danger, #d63031); }
+    .diag-worn { border-top: 3px solid var(--warning); }
+    @media (max-width: 600px) {
+      .guide-header h1 { font-size: 1.7rem; }
+      .guide-content { padding: 1.5rem 1rem 3rem; }
+      .breadcrumb { padding: 0.9rem 1rem; }
+      .diag-grid { grid-template-columns: 1fr; }
+      .video-wrap { max-width: 280px; }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "GY6 Speedometer Cable — Diagnosis & Replacement",
+  "description": "How to diagnose a non-functioning speedometer on GY6 50cc scooters and replace the mechanical drive cable.",
+  "url": "https://ismr.online/repair-guides/gy6-speedometer-cable-replacement.html",
+  "totalTime": "PT45M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "EUR",
+    "value": "8"
+  },
+  "tool": [
+    { "@type": "HowToTool", "name": "Phillips (cross-head) screwdriver" },
+    { "@type": "HowToTool", "name": "White lithium grease or thick gear oil" },
+    { "@type": "HowToTool", "name": "Replacement speedometer cable (GY6 50cc universal)" }
+  ],
+  "step": [
+    { "@type": "HowToStep", "name": "Identify the symptom", "text": "Confirm whether the needle is dead, erratic, or the odometer has stopped — this determines whether you need a cable or a drive box." },
+    { "@type": "HowToStep", "name": "Check the cable ends", "text": "Inspect both the speedometer head connection and the front wheel drive box for obvious disconnection, kinking, or breakage." },
+    { "@type": "HowToStep", "name": "Test the inner cable", "text": "Detach the cable at the speedometer head, pull the inner cable a few centimetres, and try to spin it. It should rotate freely with no binding." },
+    { "@type": "HowToStep", "name": "Remove the old cable", "text": "Unscrew the ferrule nut at the speedometer head by hand, unclip or unscrew the lower end at the wheel drive box, then route the cable free." },
+    { "@type": "HowToStep", "name": "Grease and install the new cable", "text": "Apply a thin coat of white lithium grease to the full length of the inner cable before threading it into the outer sheath, then route and connect both ends." },
+    { "@type": "HowToStep", "name": "Test", "text": "Push the scooter forward at walking pace and confirm the speedometer needle moves smoothly." }
+  ]
+}
+  </script>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-icon">⚙️</span>
+        <span class="brand-text">ISMR</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link active">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../index.html#about" class="nav-link">About</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="../index.html">ISMR Home</a><span>›</span>
+    <a href="index.html">Repair Guides</a><span>›</span>
+    GY6 Speedometer Cable — Diagnosis &amp; Replacement
+  </div>
+
+  <header class="guide-header">
+    <div class="guide-header-inner">
+      <h1>GY6 Speedometer Cable — Diagnosis &amp; Replacement</h1>
+      <div class="guide-meta">
+        <span>Added: 2026-05-11</span>
+        <span class="guide-meta-sep">|</span>
+        <span>Last Updated: 2026-05-11</span>
+        <span class="guide-meta-sep">|</span>
+        <span>Difficulty: <strong>Easy</strong></span>
+        <span class="guide-meta-sep">|</span>
+        <span>Time: <strong>30–45 min</strong></span>
+        <span class="guide-meta-sep">|</span>
+        <span>Cost: <strong>~€5–15</strong></span>
+      </div>
+      <div class="guide-tags">
+        <span class="guide-tag">GY6 50cc</span>
+        <span class="guide-tag">139QMB</span>
+        <span class="guide-tag">Maintenance</span>
+        <span class="guide-tag">Instruments</span>
+        <span class="guide-tag">Speedometer</span>
+      </div>
+      <div class="applies-to">
+        📌 <strong>Applies to:</strong> La Souris Sourini, La Souris City, Santini Capri, BTC Riva 50, and all GY6 50cc scooters (engine code 139QMB) with a <strong>mechanical</strong> speedometer drive cable. Not applicable to scooters with electronic (hall-sensor) speedometers.
+      </div>
+    </div>
+  </header>
+
+  <main role="main">
+    <div class="guide-content">
+
+      <p>
+        On GY6-platform 50cc scooters the speedometer is driven mechanically: a small plastic drive box on the front wheel hub spins the inner cable, which runs up through the fork to the speedometer head. When this cable breaks or seizes, the speedometer needle stops moving — or starts jumping erratically. The fix is almost always straightforward: a replacement cable costs around €5–10 and the job takes under an hour with basic tools.
+      </p>
+
+      <!-- Lead video -->
+      <div class="video-embed">
+        <div class="video-embed-title">📹 Quick Reference — Speedometer Cable Replacement</div>
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/V1ZQe-nvpbs"
+            title="GY6 Speedometer Cable Replacement — Short Guide"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="video-source">
+          <strong>Video:</strong> Speedometer cable replacement short tutorial
+          — <a href="https://www.youtube.com/shorts/V1ZQe-nvpbs" target="_blank" rel="noopener">↗ Watch on YouTube</a>
+        </p>
+      </div>
+
+      <h2>How the Mechanical Speedometer Drive Works</h2>
+      <p>
+        A drive box is press-fit into the front wheel hub and contains a small pin that engages with slots in the wheel axle area. As the wheel turns, the drive box rotates the square-ended inner cable inside a flexible outer sheath. The cable routes up through the fork, through any cable guides on the fairing, and connects at the back of the speedometer head. Inside the speedometer, a magnet assembly converts this rotation into needle deflection.
+      </p>
+      <p>
+        The inner cable is the most common failure point. It is a thin steel wire and will eventually fatigue and snap — especially if it was ever run dry (no grease), kinked sharply, or routed with too tight a bend radius. When the inner cable breaks, the outer sheath and drive box are usually still fine and do not need replacing.
+      </p>
+
+      <div class="callout callout-info">
+        <strong>ℹ️ Mechanical vs electronic speedometer:</strong> GY6 50cc scooters sold under various brand names (La Souris, BTC, Santini, Jonway, etc.) almost all use a mechanical cable drive. If you see a plastic sensor on the fork/hub area with a wire going to the instrument cluster — not a cable housing — you have an electronic speedometer and this guide does not apply.
+      </div>
+
+      <h2>Symptoms</h2>
+
+      <div class="diag-grid">
+        <div class="diag-card diag-broken">
+          <h4>⛔ Broken inner cable</h4>
+          <ul>
+            <li>Speedometer needle completely dead at all speeds</li>
+            <li>Odometer has stopped advancing</li>
+            <li>No resistance when you try to spin the cable end by hand</li>
+            <li>You may find a piece of cable rattling inside the sheath</li>
+          </ul>
+        </div>
+        <div class="diag-card diag-worn">
+          <h4>⚠️ Dry / worn cable</h4>
+          <ul>
+            <li>Needle fluctuates or jumps erratically at low speeds</li>
+            <li>Squealing or grinding noise from the front wheel area, more pronounced under acceleration</li>
+            <li>Speedometer reads correctly at high speed but drops out at idle</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Diagnosis</h2>
+
+      <h3>Step 1 — Visual inspection of both ends</h3>
+      <p>
+        Trace the cable from the speedometer head (under the instrument panel or handlebar cover) down to the front wheel hub. Look for:
+      </p>
+      <ul>
+        <li>The upper ferrule nut at the speedometer — is it still screwed in, or has it worked loose?</li>
+        <li>Kinks, sharp bends, or crushed sections anywhere along the cable run</li>
+        <li>The lower end at the wheel drive box — is the cable housing still clipped in?</li>
+      </ul>
+
+      <h3>Step 2 — Test the inner cable</h3>
+      <ol>
+        <li>Unscrew the knurled ferrule nut at the speedometer head by hand (anti-clockwise). On some models it is a push-and-twist bayonet fitting.</li>
+        <li>Pull the cable housing away from the speedometer by about 3–4 cm to expose the inner cable tip.</li>
+        <li>Try to spin the inner cable between your fingers. It should rotate freely with a slight resistance from the cable's own weight. <strong>If it spins without resistance (no feel of the cable), the inner cable is broken inside the sheath.</strong></li>
+        <li>Ask a helper to slowly push the scooter forward whilst you watch the inner cable tip — it should rotate at the same pace as the wheel. If the wheel moves but the cable does not rotate, the drive box is the fault, not the cable.</li>
+      </ol>
+
+      <div class="callout callout-tip">
+        <strong>💡 Tip:</strong> Before ordering a cable, disconnect it completely from the drive box and try spinning the drive box stub by hand whilst turning the wheel. If the drive box stub does not turn when the wheel does, the drive box is cracked or stripped — order a drive box as well.
+      </div>
+
+      <h2>Tools &amp; Parts Required</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Phillips (cross-head) screwdriver</td>
+            <td>For instrument panel screws and cable guide clips</td>
+          </tr>
+          <tr>
+            <td>White lithium grease or thick gear oil</td>
+            <td>To lube the new inner cable before installation</td>
+          </tr>
+          <tr>
+            <td>Replacement speedometer cable — GY6 50cc</td>
+            <td>Generic "universal" cables for GY6 139QMB fit most Chinese clone scooters. Verify length against the old cable (~€5–10). Order the drive box too (~€3–5) if Step 2 showed the box is faulty.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Replacement Procedure</h2>
+
+      <h3>Step 1 — Disconnect the upper end (speedometer head)</h3>
+      <ol>
+        <li>If the instrument panel has a cover or surround, unclip it to gain access to the back of the speedometer. On most 50cc scooters this is a simple two-piece plastic housing held by two or three Phillips screws.</li>
+        <li>Unscrew the ferrule nut at the speedometer end by hand — it should be finger-tight only. If it is seized, grip the hexagonal section with pliers and turn gently.</li>
+        <li>Pull the cable housing away and set the speedometer end aside.</li>
+      </ol>
+
+      <h3>Step 2 — Free the cable along the routing</h3>
+      <ol>
+        <li>Follow the cable down the fork leg and note any cable clamps, zip ties, or plastic clips holding it to the frame or fairing. Release them — do not cut zip ties you plan to reuse.</li>
+        <li>On scooters where the cable runs inside a fairing panel, you may need to remove one or two body panels. Take note of the exact routing as you go — a photo on your phone before disassembly saves time on reassembly.</li>
+      </ol>
+
+      <h3>Step 3 — Disconnect the lower end (wheel drive box)</h3>
+      <ol>
+        <li>At the front wheel hub, locate the drive box — a small dome-shaped plastic fitting on the hub, with the cable housing plugging into it.</li>
+        <li>The cable housing usually has a simple push-in clip or a small retaining nut. Unclip or unscrew it, then pull the cable housing straight out of the drive box.</li>
+        <li>Withdraw the full cable and sheath from the routing path.</li>
+      </ol>
+
+      <h3>Step 4 — Prepare and route the new cable</h3>
+      <ol>
+        <li>Before threading the new inner cable into its sheath, apply a thin, even coat of white lithium grease — or a few drops of thick gear oil — along the full length of the inner cable. This is the single most effective way to prevent premature failure and squealing.</li>
+        <li>Route the new cable through the same path as the old one. The key rule: <strong>no bend tighter than 90°, and no bend with a radius smaller than ~5 cm.</strong> A sharp kink will snap the cable within a few hundred kilometres.</li>
+        <li>Ensure the cable is not routed near the exhaust or any heat source.</li>
+      </ol>
+
+      <h3>Step 5 — Connect the lower end first</h3>
+      <ol>
+        <li>Push the cable housing into the drive box and clip or screw it in. The square tip of the inner cable must seat into the square socket of the drive box stub. You will feel it click or seat positively — if it does not engage, rotate the inner cable slightly until it drops in.</li>
+        <li>Turn the front wheel by hand and confirm the inner cable rotates at the top end.</li>
+      </ol>
+
+      <h3>Step 6 — Connect the upper end (speedometer head)</h3>
+      <ol>
+        <li>Feed the square tip of the inner cable into the back of the speedometer. Rotate it slightly until it seats into the drive slot inside the speedo body.</li>
+        <li>Push the cable housing ferrule into the speedometer port and screw the ferrule nut on finger-tight. Do not overtighten — the nut only needs to be snug.</li>
+        <li>Refit any panel covers or cable clips you removed during disassembly.</li>
+      </ol>
+
+      <h3>Step 7 — Test</h3>
+      <ol>
+        <li>Push the scooter forward at walking pace and watch the speedometer needle. It should move smoothly with no jumping.</li>
+        <li>Listen for any grinding or squealing from the front wheel area — if present, the cable is binding somewhere or the inner cable is not fully seated in the drive box.</li>
+        <li>Take a short test ride and confirm the odometer is advancing and the speedometer reads plausibly at riding speed.</li>
+      </ol>
+
+      <div class="callout callout-tip">
+        <strong>💡 Long-term tip:</strong> Every 10,000 km, disconnect the cable at the speedometer head, pull the inner cable out fully, wipe it down, re-grease it, and reinstall. A greased cable will last the life of the scooter; a dry one will snap within a season.
+      </div>
+
+      <h2>Troubleshooting</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Symptom</th>
+            <th>Most Likely Cause</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Needle still dead after new cable fitted</td>
+            <td>Inner cable not seated in the drive box or speedometer slot</td>
+            <td>Disconnect both ends, confirm the inner cable tip is square (not rounded), re-seat both ends</td>
+          </tr>
+          <tr>
+            <td>Needle jumps or is erratic</td>
+            <td>Sharp bend in the cable routing, or cable not greased</td>
+            <td>Re-route with gentler bends; grease the inner cable</td>
+          </tr>
+          <tr>
+            <td>Grinding noise from front wheel after new cable</td>
+            <td>Drive box cracked or worn; inner cable tip rounded off</td>
+            <td>Replace the drive box; inspect the inner cable tip</td>
+          </tr>
+          <tr>
+            <td>Cable broke again quickly after replacement</td>
+            <td>Sharp kink in the routing, or the drive box is worn and putting side-load on the cable</td>
+            <td>Check routing for tight bends; replace drive box</td>
+          </tr>
+          <tr>
+            <td>Wheel turns but drive box stub does not rotate</td>
+            <td>Drive box cracked or stripped internally</td>
+            <td>Replace the drive box — ~€3–5 for a GY6 universal unit</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Related Guides</h2>
+      <ul>
+        <li><a href="../models/la-souris-sourini-city-overview.html">La Souris Sourini / City — Model Overview</a></li>
+        <li><a href="../models/btc-riva-50-model-overview.html">BTC Riva 50 — Model Overview</a></li>
+        <li><a href="gy6-brake-pads-guide.html">GY6 Brake Pads &amp; Drum Shoes — Replacement Guide</a></li>
+        <li><a href="../diagnostics/gy6-no-start-troubleshooting.html">GY6 No-Start Troubleshooting</a></li>
+      </ul>
+
+    </div>
+  </main>
+
+  <footer class="guide-footer">
+    <p>
+      <strong>Source:</strong>
+      Video demonstration — <a href="https://www.youtube.com/shorts/V1ZQe-nvpbs" target="_blank" rel="noopener">YouTube Shorts: speedometer cable replacement</a>
+    </p>
+    <p style="margin-top: 0.5rem;">
+      <strong>Last Updated:</strong> 2026-05-11 &nbsp;|&nbsp;
+      <strong>License:</strong> <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>
+    </p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">
+      Always verify procedures with your scooter's official service manual before attempting repairs.
+    </p>
+    <p style="margin-top: 1rem;"><a href="index.html" style="color: var(--accent);">← Back to Repair Guides</a></p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
