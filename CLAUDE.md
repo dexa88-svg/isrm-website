@@ -43,6 +43,17 @@ No transpilation, no bundler. One global stylesheet (`styles.css`), one JS file 
 ### Content page structure
 Pages live under `public/repair-guides/`, `public/diagnostics/`, `public/models/`, `public/videos/`. Every category has an `index.html` listing page. When adding a new guide, follow the template in `_dev/GUIDE-STRUCTURE.md`.
 
+**Model page style rules** (gold-standard template: `public/models/piaggio-zip-100-technical-overview.html`):
+- All `<style>` blocks must be in `<head>` — never in `<body>`
+- Single H1 per page, inside `.page-hero-inner` only
+- Single breadcrumb, inside `.page-hero-inner` only — no additional breadcrumbs in `<main>`
+- Use `.guide-tag` (teal: `rgba(0,168,204,0.1)` bg, `var(--accent)` text) — not `.tag` (yellow `var(--warning)`)
+- Table `<th>`: `var(--primary)` text, `var(--surface-2)` bg, `text-transform: uppercase`, `letter-spacing: 0.04em`
+- `.source-box`: `rgba(255,107,53,0.07)` bg, `rgba(255,107,53,0.2)` border, `4px solid var(--primary)` left border
+- `code`: `var(--surface-2)` bg, `1px solid var(--border)` border, JetBrains Mono font stack
+- Add `<script src="../script.js"></script>` before `</body>` for navbar toggle
+- Add `class="nav-link active"` to the matching nav link for the current section
+
 ### Stats pipeline
 `scripts/generate-stats.js` counts HTML files in `public/repair-guides/` and `public/diagnostics/` (excluding `index.html`), then writes `public/data/stats.json`. `public/load-stats.js` fetches that JSON on DOMContentLoaded and updates `.feature-badge` and `.stat-number` DOM elements. The deploy workflow runs this script before uploading.
 
