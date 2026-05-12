@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-53LY3KPDYM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-53LY3KPDYM');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Step-by-step setup guide for HUD ECU Hacker on GY6 EFI scooters. Install FTDI drivers, connect OBD2 KKL adapter to the 6-pin diagnostic port, and read live data and fault codes.">
+  <link rel="canonical" href="https://ismr.online/diagnostics/gy6-efi-hud-ecu-hacker-setup.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ismr.online/diagnostics/gy6-efi-hud-ecu-hacker-setup.html">
+  <meta property="og:title" content="GY6 EFI Diagnostics — HUD ECU Hacker Setup Guide — ISMR">
+  <meta property="og:description" content="Step-by-step setup guide for HUD ECU Hacker on GY6 EFI scooters. Install FTDI drivers, connect OBD2 KKL adapter to the 6-pin diagnostic port, and read live data and fault codes.">
+  <meta property="og:site_name" content="ISMR — Interactive Scooter Manuals for Repair">
+  <meta property="og:image" content="https://ismr.online/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GY6 EFI Diagnostics — HUD ECU Hacker Setup Guide — ISMR">
+  <meta name="twitter:description" content="Step-by-step setup guide for HUD ECU Hacker on GY6 EFI scooters. Install FTDI drivers, connect OBD2 KKL adapter to the 6-pin diagnostic port, and read live data and fault codes.">
+  <meta name="twitter:image" content="https://ismr.online/og-image.jpg">
+  <title>GY6 EFI Diagnostics — HUD ECU Hacker Setup Guide — ISMR</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 3rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "🔌";
+      position: absolute; right: 6%; top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem; opacity: 0.06; pointer-events: none; line-height: 1;
+    }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: 2rem; line-height: 1.2;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0 0 1rem; margin: 0;
+      font-size: 0.85rem; color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+
+    .guide-meta { color: var(--text-tertiary); font-size: 0.85rem; margin-bottom: 1rem; }
+    .guide-meta a { color: var(--accent); }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+    .guide-tag {
+      background: rgba(0, 168, 204, 0.1); color: var(--accent);
+      border: 1px solid rgba(0, 168, 204, 0.3);
+      padding: 0.25rem 0.7rem; border-radius: var(--radius-pill);
+      font-size: 0.78rem; font-weight: 500;
+    }
+
+    .guide-content {
+      max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem 4rem;
+    }
+    .guide-content h2 {
+      font-size: 1.55rem; color: var(--text-primary);
+      margin-top: 2.5rem; margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+    }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.8rem; margin-bottom: 0.65rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.75; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol {
+      padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary);
+    }
+    .guide-content li { margin-bottom: 0.55rem; line-height: 1.65; }
+    .guide-content li strong { color: var(--text-primary); }
+
+    /* Source / applies-to box */
+    .source-box {
+      background: rgba(255, 107, 53, 0.07);
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem; margin: 1.5rem 0;
+      font-size: 0.95rem; color: var(--text-secondary);
+    }
+    .source-box strong { color: var(--text-primary); }
+    .source-box a { color: var(--accent); }
+
+    /* Callouts */
+    .callout {
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.4rem 0; font-size: 0.95rem; color: var(--text-secondary);
+    }
+    .callout strong { color: var(--text-primary); }
+    .callout-tip {
+      background: rgba(6, 167, 125, 0.08);
+      border: 1px solid rgba(6, 167, 125, 0.25);
+      border-left: 4px solid var(--success);
+    }
+    .callout-tip strong { color: var(--success); }
+    .callout-warn {
+      background: rgba(245, 166, 35, 0.08);
+      border: 1px solid rgba(245, 166, 35, 0.3);
+      border-left: 4px solid var(--warning);
+    }
+    .callout-warn strong { color: var(--warning); }
+    .callout-danger {
+      background: rgba(214, 48, 49, 0.08);
+      border: 1px solid rgba(214, 48, 49, 0.3);
+      border-left: 4px solid #d63031;
+    }
+    .callout-danger strong { color: #e17055; }
+    .callout-info {
+      background: rgba(0, 168, 204, 0.07);
+      border: 1px solid rgba(0, 168, 204, 0.25);
+      border-left: 4px solid var(--accent);
+    }
+    .callout-info strong { color: var(--accent); }
+
+    /* Tables */
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.2rem 0 1.5rem; }
+    .guide-content th {
+      background: var(--surface-2); color: var(--primary);
+      padding: 0.6rem 0.9rem; text-align: left;
+      border: 1px solid var(--border); font-size: 0.88rem;
+      font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .guide-content td { padding: 0.55rem 0.9rem; border: 1px solid var(--border); color: var(--text-secondary); font-size: 0.93rem; }
+    .guide-content td strong { color: var(--text-primary); }
+    .guide-content tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+    .guide-content tr:hover td { background: rgba(255, 107, 53, 0.04); }
+
+    /* Code inline */
+    .guide-content code {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 0.15em 0.45em;
+      font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+      font-size: 0.88em;
+      color: var(--accent);
+    }
+
+    /* Step blocks */
+    .step {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.5rem;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+    .step:hover { border-color: rgba(0, 168, 204, 0.35); }
+    .step-number {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 2rem; height: 2rem;
+      background: var(--primary); color: #fff;
+      border-radius: 50%; font-weight: 700; font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+    }
+    .step h3 { margin-top: 0; }
+
+    /* Image grid */
+    .img-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem; margin: 1.5rem 0;
+    }
+    .img-grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .img-grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .guide-img {
+      width: 100%; border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      display: block; object-fit: cover;
+    }
+    .img-caption {
+      font-size: 0.8rem; color: var(--text-tertiary);
+      text-align: center; margin-top: 0.4rem; display: block;
+    }
+    .img-wrap { }
+
+    /* Video */
+    .video-hero {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border-left: 4px solid var(--primary);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+    }
+    .video-container {
+      position: relative; width: 100%;
+      padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 1rem 0;
+    }
+    .video-container iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      border-radius: var(--radius-md);
+    }
+    .video-source { color: var(--text-tertiary); font-size: 0.85rem; margin-top: 0.5rem; }
+
+    /* Difficulty meta bar */
+    .meta-bar {
+      display: flex; flex-wrap: wrap; gap: 1.2rem;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 1rem 1.25rem;
+      margin: 1.5rem 0; align-items: center;
+    }
+    .meta-item { display: flex; flex-direction: column; gap: 0.15rem; }
+    .meta-label { font-size: 0.72rem; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; }
+    .meta-value { font-size: 0.95rem; color: var(--text-primary); font-weight: 600; }
+    .meta-value.ok { color: var(--success); }
+    .meta-value.med { color: var(--warning); }
+
+    /* Parts table highlight */
+    .buy-link { color: var(--accent); font-size: 0.88rem; }
+    .buy-link:hover { color: var(--primary); }
+
+    /* Caveats numbered list styling */
+    .caveat-list { list-style: none; padding: 0; margin: 0; }
+    .caveat-list li {
+      display: flex; gap: 0.9rem; align-items: flex-start;
+      padding: 0.8rem 0; border-bottom: 1px solid var(--border);
+      color: var(--text-secondary); line-height: 1.65;
+    }
+    .caveat-list li:last-child { border-bottom: none; }
+    .caveat-icon { font-size: 1.25rem; flex-shrink: 0; margin-top: 0.1rem; }
+
+    @media (max-width: 768px) {
+      .guide-content { padding: 1.5rem 1rem 3rem; }
+      .page-hero { padding: 2rem 1rem 1.5rem; }
+      .img-grid-2, .img-grid-3 { grid-template-columns: 1fr; }
+      .meta-bar { gap: 0.8rem; }
+      table { font-size: 0.82rem; }
+      th, td { padding: 0.45rem 0.6rem; }
+    }
+
+    button:focus, a:focus, input:focus, select:focus, textarea:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+    }
+  </style>
+
+  <!-- Schema.org — HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "GY6 EFI Diagnostics — HUD ECU Hacker Setup Guide",
+    "description": "How to set up HUD ECU Hacker on a Windows laptop and connect it to a GY6 EFI scooter via the 6-pin diagnostic connector using an OBD2 KKL adapter with FTDI FT232RL chip.",
+    "url": "https://ismr.online/diagnostics/gy6-efi-hud-ecu-hacker-setup.html",
+    "image": "https://ismr.online/og-image.jpg",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "EUR",
+      "value": "10"
+    },
+    "totalTime": "PT45M",
+    "tool": [
+      { "@type": "HowToTool", "name": "OBD2 KKL adapter (FTDI FT232RL chip)" },
+      { "@type": "HowToTool", "name": "6-pin diagnostic adapter cable" },
+      { "@type": "HowToTool", "name": "Windows laptop" }
+    ],
+    "supply": [
+      { "@type": "HowToSupply", "name": "HUD ECU Hacker software (free)" },
+      { "@type": "HowToSupply", "name": "FTDI FT232RL drivers" }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Install FTDI FT232RL drivers",
+        "text": "Download and install the official FTDI VCP drivers from ftdichip.com before connecting the adapter.",
+        "url": "https://ismr.online/diagnostics/gy6-efi-hud-ecu-hacker-setup.html#step1"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Download and install HUD ECU Hacker",
+        "text": "Download the latest version of HUD ECU Hacker from netcult.ch and install it on your Windows laptop.",
+        "url": "https://ismr.online/diagnostics/gy6-efi-hud-ecu-hacker-setup.html#step2"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Locate the scooter diagnostic connector",
+        "text": "Open the scooter seat and find the 6-pin diagnostic connector near the battery or ECU area.",
+        "url": "https://ismr.online/diagnostics/gy6-efi-hud-ecu-hacker-setup.html#step3"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Connect the adapter chain",
+        "text": "Connect the 6-pin adapter to the scooter connector, then the OBD2 end to the KKL cable, and plug the USB into your laptop.",
+        "url": "https://ismr.online/diagnostics/gy6-efi-hud-ecu-hacker-setup.html#step4"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Configure HUD ECU Hacker and connect",
+        "text": "Select the correct ECU model and COM port in HUD ECU Hacker, run the Echo Test, then click Connect.",
+        "url": "https://ismr.online/diagnostics/gy6-efi-hud-ecu-hacker-setup.html#step5"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Read live data and fault codes",
+        "text": "Use the Dashboard, Data Grid, and DTC tabs to view sensor readings and clear fault codes.",
+        "url": "https://ismr.online/diagnostics/gy6-efi-hud-ecu-hacker-setup.html#step6"
+      }
+    ],
+    "author": {
+      "@type": "Organization",
+      "name": "ISMR",
+      "url": "https://ismr.online"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ISMR",
+      "url": "https://ismr.online"
+    },
+    "datePublished": "2026-05-12",
+    "dateModified": "2026-05-12",
+    "inLanguage": "en"
+  }
+  </script>
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#ff6b35">
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand"><span class="brand-icon">⚙️</span><span class="brand-text">ISMR</span></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link active">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../index.html#about" class="nav-link">About</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <a href="../index.html">ISMR Home</a><span>›</span>
+        <a href="index.html">Diagnostics</a><span>›</span>
+        GY6 EFI — HUD ECU Hacker Setup Guide
+      </div>
+      <h1>GY6 EFI Diagnostics — HUD ECU Hacker Setup Guide</h1>
+      <div class="guide-meta">
+        Added: 2026-05-12 &nbsp;|&nbsp; Last Updated: <strong>2026-05-12</strong> &nbsp;|&nbsp;
+        Sources:
+        <a href="https://www.netcult.ch/elmue/HUD%20ECU%20Hacker/" target="_blank" rel="noopener">HUD ECU Hacker (netcult.ch)</a>,
+        <a href="https://www.gy6-injectie-centrum.nl/ecu-software/hud-ecu-hacker-windows/ecu-verbinden" target="_blank" rel="noopener">GY6 Injectie Centrum</a>
+      </div>
+      <div class="guide-tags">
+        <span class="guide-tag">diagnostics</span>
+        <span class="guide-tag">GY6 EFI</span>
+        <span class="guide-tag">HUD ECU Hacker</span>
+        <span class="guide-tag">OBD2 KKL</span>
+        <span class="guide-tag">Delphi MT05</span>
+        <span class="guide-tag">fault codes</span>
+        <span class="guide-tag">Windows</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="guide-content">
+
+    <div class="source-box">
+      📌 <strong>Applies to:</strong> GY6 EFI scooters with Delphi MT05 / MT05.2 or Rongmao MT05 ECU and a 6-pin diagnostic connector — including
+      <strong>BTC Riva</strong>, <strong>La Souris Sourini / City</strong>, <strong>Santini Capri</strong>, and similar Chinese 50–150 cc EFI models
+      (Euro 3 / Euro 4). Petrol / injection only.
+      <br><br>
+      ⚠️ <strong>Not compatible</strong> with generic ELM327 Bluetooth adapters or standard OBD2 car scanners — the protocol is K-line, not CAN bus.
+    </div>
+
+    <p>
+      Most GY6 EFI scooters sold in Europe from 2016 onwards carry a <strong>Delphi MT05 or MT05.2 ECU</strong> that exposes a
+      K-line diagnostic interface through a 6-pin connector hidden under the seat. With a €5–10 adapter and the free
+      <strong>HUD ECU Hacker</strong> software you can read and clear fault codes, monitor every live sensor, and even
+      back up or reflash the ECU — directly from any Windows laptop.
+    </p>
+    <p>
+      This guide walks you through the complete setup: buying the right hardware, installing drivers, locating the scooter connector,
+      and making your first live connection.
+    </p>
+
+    <!-- Difficulty meta bar -->
+    <div class="meta-bar">
+      <div class="meta-item">
+        <span class="meta-label">Difficulty</span>
+        <span class="meta-value ok">Beginner</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Time Required</span>
+        <span class="meta-value">30 – 45 min</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Software Cost</span>
+        <span class="meta-value ok">Free</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Hardware Cost</span>
+        <span class="meta-value">€5 – €15</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">OS</span>
+        <span class="meta-value">Windows 7 / 10 / 11</span>
+      </div>
+    </div>
+
+    <!-- ─── VIDEO ─── -->
+    <div class="video-hero">
+      <h2 style="margin-top:0; border-bottom:none; padding-bottom:0;">Video Guide</h2>
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/cF_D_Exy86Y"
+          title="HUD ECU HACKER!! A Must Have Diagnostic Software Tool for GY6 EFI Scooters"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="video-source">
+        <strong>Video:</strong> "HUD ECU HACKER!! A Must Have Diag Software Tool." (2026)
+        <a href="https://www.youtube.com/watch?v=cF_D_Exy86Y" target="_blank" rel="noopener">↗ Watch on YouTube</a>
+      </p>
+    </div>
+
+    <!-- ─── HARDWARE ─── -->
+    <h2>What You Need</h2>
+
+    <h3>Hardware</h3>
+    <p>
+      The connection chain is simple: <strong>scooter 6-pin connector → 6-pin-to-OBD2 adapter → OBD2 KKL USB cable → laptop</strong>.
+      You need exactly two pieces of hardware:
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Chip / Spec</th>
+          <th>Notes</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>OBD2 KKL USB cable</strong> (VAG KKL 409.1)</td>
+          <td>FTDI FT232RL <em>(essential)</em></td>
+          <td>Blue cable, K-line support. Avoid CH340 chips — they cause timeouts on K-line.</td>
+          <td><a class="buy-link" href="https://nl.aliexpress.com/item/1005011569161432.html" target="_blank" rel="noopener sponsored">AliExpress →</a></td>
+        </tr>
+        <tr>
+          <td><strong>6-pin to OBD2 adapter</strong></td>
+          <td>GY6 Delphi 6-pin female ↔ OBD2 16-pin male</td>
+          <td>Small short cable. Plugs scooter diag port into the KKL cable.</td>
+          <td><a class="buy-link" href="https://nl.aliexpress.com/item/1005009348874599.html" target="_blank" rel="noopener sponsored">AliExpress →</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-warn">
+      <strong>⚠️ Chip matters:</strong> Only buy the KKL cable with the <strong>FTDI FT232RL</strong> chip. Cheaper CH340-based cables
+      often cause connection timeouts or are silently blocked by Windows 11 security policies. The Aliexpress listing linked above
+      specifies FTDI FT232RL explicitly.
+    </div>
+
+    <!-- Cable photo gallery -->
+    <div class="img-grid img-grid-2">
+      <div class="img-wrap">
+        <img class="guide-img" src="images/ecu-hacker/1cables.jpg"
+             alt="VAG KKL OBD2 USB cable (blue) and 6-pin GY6 diagnostic adapter laid out on a table"
+             loading="lazy">
+        <span class="img-caption">The two adapters you need: VAG KKL USB cable (blue) and the 6-pin scooter adapter</span>
+      </div>
+      <div class="img-wrap">
+        <img class="guide-img" src="images/ecu-hacker/4cables.jpg"
+             alt="VAG KKL and 6-pin adapter connected together on grass, showing full cable chain"
+             loading="lazy">
+        <span class="img-caption">The full cable chain connected: 6-pin adapter → OBD2 → KKL → USB to laptop</span>
+      </div>
+    </div>
+
+    <div class="img-grid img-grid-2">
+      <div class="img-wrap">
+        <img class="guide-img" src="images/ecu-hacker/2cables.jpg"
+             alt="Close-up of the 6-pin GY6 diagnostic connector showing yellow internal contacts"
+             loading="lazy">
+        <span class="img-caption">The 6-pin scooter diagnostic connector — white housing, yellow contacts</span>
+      </div>
+      <div class="img-wrap">
+        <img class="guide-img" src="images/ecu-hacker/3cables.jpg"
+             alt="Close-up of the OBD2 16-pin male plug of the adapter cable"
+             loading="lazy">
+        <span class="img-caption">OBD2 16-pin plug on the adapter — this mates with the KKL cable</span>
+      </div>
+    </div>
+
+    <h3>Software (free)</h3>
+    <ul>
+      <li><strong>HUD ECU Hacker</strong> — free, Windows-only diagnostic suite for Delphi / Rongmao ECUs.
+          <a href="https://www.netcult.ch/elmue/HUD%20ECU%20Hacker/" target="_blank" rel="noopener">Download from netcult.ch →</a></li>
+      <li><strong>FTDI VCP drivers</strong> — required before plugging in the KKL cable. Usually provided on CD with the KKL cable supplier, or
+          <a href="https://ftdichip.com/drivers/" target="_blank" rel="noopener">download from ftdichip.com →</a></li>
+    </ul>
+
+    <!-- ─── STEP 1: DRIVERS ─── -->
+    <h2>Setup Steps</h2>
+
+    <div class="step" id="step1">
+      <div class="step-number">1</div>
+      <h3>Install the FTDI FT232RL Drivers</h3>
+      <p>
+        The KKL cable uses an FTDI FT232RL chip that appears to Windows as a virtual COM port (VCP).
+        You must install the drivers <em>before</em> plugging in the cable, otherwise Windows may assign
+        a generic driver that does not expose a COM port to HUD ECU Hacker.
+      </p>
+      <ol>
+        <li>Download and install the <strong>FTDI VCP drivers</strong>. You have two options:
+          <ul style="margin-top:0.5rem;">
+            <li><strong>From CD:</strong> Many KKL cable suppliers include driver files on a CD or in a download link. Check the package or supplier documentation first.</li>
+            <li><strong>From ftdichip.com:</strong> Go to <a href="https://ftdichip.com/drivers/" target="_blank" rel="noopener">ftdichip.com/drivers</a> and download the official <strong>VCP Drivers</strong> for your version of Windows (Windows 7 / 8.1 / 10 / 11).</li>
+          </ul>
+        </li>
+        <li>Run the installer as Administrator and follow the prompts. Restart is usually not required.</li>
+        <li>Now plug the KKL USB cable into your laptop. Windows should show a notification:
+            <em>"Device driver software installed successfully"</em>.</li>
+        <li>Open <strong>Device Manager</strong> (<code>Win + X → Device Manager</code>) and look under
+            <em>Ports (COM &amp; LPT)</em>. You should see <strong>USB Serial Port (COMx)</strong>.
+            Note the COM number — you will need it in Step 5.</li>
+      </ol>
+      <div class="callout callout-tip">
+        <strong>💡 Windows 11 tip:</strong> If the device appears under <em>Other devices</em> with a yellow exclamation mark,
+        right-click it → <em>Update driver</em> → <em>Browse my computer</em> → point it to the folder where you extracted
+        the FTDI zip. This manually forces the correct VCP driver.
+      </div>
+    </div>
+
+    <!-- ─── STEP 2: SOFTWARE ─── -->
+    <div class="step" id="step2">
+      <div class="step-number">2</div>
+      <h3>Download and Install HUD ECU Hacker</h3>
+      <ol>
+        <li>Visit <a href="https://www.netcult.ch/elmue/HUD%20ECU%20Hacker/" target="_blank" rel="noopener">netcult.ch/elmue/HUD ECU Hacker</a>
+            and scroll to the download section. The software is free with no registration required.</li>
+        <li>Download the latest installer (e.g. <code>HudEcuHackerSetup.exe</code>).</li>
+        <li>Run the installer. Windows Defender SmartScreen may warn that the publisher is unknown —
+            click <em>"More info → Run anyway"</em>. The software has been widely used in the GY6 community since 2015.</li>
+        <li>Launch HUD ECU Hacker. <strong>Do not connect the scooter yet</strong> — configure the software first.</li>
+      </ol>
+      <div class="callout callout-warn">
+        <strong>⚠️ Licence prompt:</strong> When HUD ECU Hacker opens for the first time it may show a licence / disclaimer dialog.
+        Read it carefully and tick the correct boxes. If you tick the <em>wrong</em> boxes, the software locks itself — the only
+        fix is to fully uninstall and reinstall it.
+      </div>
+    </div>
+
+    <!-- ─── STEP 3: LOCATE CONNECTOR ─── -->
+    <div class="step" id="step3">
+      <div class="step-number">3</div>
+      <h3>Locate the 6-Pin Diagnostic Connector on Your Scooter</h3>
+      <p>
+        Open the scooter seat. On most GY6 EFI models the 6-pin diagnostic connector is located
+        <strong>near the battery</strong>, in the under-seat compartment. It is a white or light-grey
+        square connector, often capped with a rubber dust cover or small rubber plug.
+      </p>
+      <p>
+        On some models (e.g. BTC Riva, La Souris) the connector hangs loose near the battery terminals;
+        on others it is cable-tied to the wiring loom beside the ECU. The connector is usually left
+        unconnected when no diagnostic tool is attached — this is normal.
+      </p>
+
+      <div class="img-grid img-grid-2">
+        <div class="img-wrap">
+          <img class="guide-img" src="images/ecu-hacker/6connector.jpg"
+               alt="Under-seat area of a GY6 scooter showing the 6-pin diagnostic connector near the battery"
+               loading="lazy">
+          <span class="img-caption">Under-seat area — the 6-pin connector is the white plug near the battery</span>
+        </div>
+        <div class="img-wrap">
+          <img class="guide-img" src="images/ecu-hacker/7connector.jpg"
+               alt="Hand holding the GY6 scooter 6-pin diagnostic plug showing orange internal contacts"
+               loading="lazy">
+          <span class="img-caption">The 6-pin diagnostic plug — orange/yellow contacts, white housing</span>
+        </div>
+      </div>
+
+      <div class="callout callout-info">
+        <strong>ℹ️ Can't find it?</strong> On the Delphi EFI system the connector is almost always near the battery.
+        On some models it may be taped to the wiring harness or tucked behind a side panel near the ECU box.
+        Consult the wiring diagram for your specific model if needed.
+      </div>
+    </div>
+
+    <!-- ─── STEP 4: CONNECT ─── -->
+    <div class="step" id="step4">
+      <div class="step-number">4</div>
+      <h3>Connect the Adapter Chain</h3>
+      <ol>
+        <li>Plug the <strong>6-pin end</strong> of the adapter cable into the scooter's diagnostic connector.
+            It fits in one orientation only — do not force it.</li>
+        <li>Connect the <strong>OBD2 end</strong> of the adapter to the OBD2 socket of the KKL cable.</li>
+        <li>Plug the <strong>USB end</strong> of the KKL cable into your laptop.</li>
+        <li>Turn the scooter ignition to <strong>ON</strong> (do not start the engine — key-on is sufficient).</li>
+      </ol>
+      <div class="callout callout-warn">
+        <strong>⚠️ Ignition must be ON:</strong> The ECU only powers its K-line interface when the ignition is on.
+        Connecting with the ignition off will result in a "Timeout waiting for response" error in HUD ECU Hacker.
+      </div>
+
+      <div class="img-grid" style="grid-template-columns: 1fr;">
+        <div class="img-wrap">
+          <img class="guide-img" src="images/ecu-hacker/5cables_laptop.jpg"
+               alt="VAG KKL cable connected to a Lenovo laptop, ready to connect to scooter"
+               loading="lazy" style="max-height:420px; object-fit:cover;">
+          <span class="img-caption">Cable connected to the laptop — USB end in, ready to plug into the scooter</span>
+        </div>
+      </div>
+      <div class="img-grid" style="grid-template-columns: 1fr;">
+        <div class="img-wrap">
+          <img class="guide-img" src="images/ecu-hacker/8setupconnected.jpg"
+               alt="Full diagnostic setup: scooter open under seat, KKL cable running to laptop on the ground"
+               loading="lazy" style="max-height:420px; object-fit:cover;">
+          <span class="img-caption">Full setup in the field — laptop next to the scooter, cable connected to the 6-pin port</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── STEP 5: CONFIGURE ─── -->
+    <div class="step" id="step5">
+      <div class="step-number">5</div>
+      <h3>Configure HUD ECU Hacker and Connect</h3>
+      <ol>
+        <li>Open HUD ECU Hacker. In the <strong>Control</strong> tab, click <strong>ECU Model</strong> and select the correct ECU for your scooter:
+          <ul>
+            <li><strong>Delphi MT05 / MT05.2</strong> — most GY6 EFI scooters sold in Europe (BTC Riva, La Souris, Santini, etc.)</li>
+            <li><strong>Rongmao MT05</strong> — some Chinese-market and grey-import models</li>
+            <li><strong>Motion SE08</strong> — certain Euro 5 models (2021+), though compatibility varies — see Caveats below</li>
+          </ul>
+          Not sure which ECU your scooter has? Check the label on the ECU box under the seat.
+        </li>
+        <li>From the <strong>COM port</strong> dropdown, select the port you noted in Step 1 (e.g. <code>COM3</code>).
+            If you see multiple ports, try each one until the connection succeeds.</li>
+        <li>Click <strong>Echo Test</strong>, then click <strong>Connect</strong>.
+            You will see a stream of raw data in the Trace tab. If no red "Timeout" errors appear, the Echo Test passed.</li>
+        <li>Click <strong>Echo Test</strong> again to toggle it off, then click <strong>Connect</strong> to establish a live session with the ECU.</li>
+        <li>The status bar should now show <strong>Connected</strong> and a session timer.</li>
+      </ol>
+
+      <div class="img-grid" style="grid-template-columns: 1fr;">
+        <div class="img-wrap">
+          <img class="guide-img" src="images/ecu-hacker/9appview.jpg"
+               alt="HUD ECU Hacker software main screen showing the Control tab with ECU model and COM port selection"
+               loading="lazy" style="max-height:450px; object-fit:cover;">
+          <span class="img-caption">HUD ECU Hacker v5.8.8 — Control tab showing ECU model selector and Connect button</span>
+        </div>
+      </div>
+
+      <div class="callout callout-warn">
+        <strong>⚠️ "Timeout waiting for response" — this is normal.</strong> K-line timing is highly sensitive.
+        The connection may fail on the first 5–10 attempts. Simply go back to the Control tab and click Connect again.
+        If it consistently fails after many attempts, try reducing the baud rate in the software's Troubleshooting settings
+        (see the HUD ECU Hacker documentation on netcult.ch under "Trouble Shooting").
+      </div>
+    </div>
+
+    <!-- ─── STEP 6: DATA ─── -->
+    <div class="step" id="step6">
+      <div class="step-number">6</div>
+      <h3>Read Live Data and Fault Codes</h3>
+      <p>Once connected you have access to all ECU data in real time. Key tabs:</p>
+      <ul>
+        <li><strong>Dashboard</strong> — graphical overview of all sensor groups: engine, throttle, fuel, O2 sensors, temperatures.</li>
+        <li><strong>Data Grid</strong> — tabular view of every raw parameter: RPM, coolant temp, MAP pressure, IAT, throttle position,
+            short/long term fuel trims, spark advance, vehicle speed, and more.</li>
+        <li><strong>DTC (Fault Codes)</strong> — read and clear stored Diagnostic Trouble Codes.
+            On Euro 4 and later models, codes must be cleared with this tool — they do not auto-reset after the fault disappears.</li>
+        <li><strong>Graph</strong> — plot any parameter over time for intermittent fault diagnosis.</li>
+        <li><strong>Tuning</strong> — advanced: read/write ECU maps (only for experienced users).</li>
+      </ul>
+
+      <div class="img-grid img-grid-2">
+        <div class="img-wrap">
+          <img class="guide-img" src="images/ecu-hacker/10livedata.jpg"
+               alt="HUD ECU Hacker Data Grid showing live sensor readings: coolant temp, MAP, throttle, fuel trims"
+               loading="lazy">
+          <span class="img-caption">Data Grid — all live sensor values including coolant temp, MAP pressure and fuel trims</span>
+        </div>
+        <div class="img-wrap">
+          <img class="guide-img" src="images/ecu-hacker/12livedata.jpg"
+               alt="HUD ECU Hacker Dashboard view showing comprehensive sensor panels across the full screen"
+               loading="lazy">
+          <span class="img-caption">Dashboard view — all sensor groups visible simultaneously when connected</span>
+        </div>
+      </div>
+
+      <div class="img-grid" style="grid-template-columns: 1fr;">
+        <div class="img-wrap">
+          <img class="guide-img" src="images/ecu-hacker/11livedata.jpg"
+               alt="HUD ECU Hacker Data Grid alternative view showing emission count DTC and O2 sensor data"
+               loading="lazy" style="max-height:420px; object-fit:cover;">
+          <span class="img-caption">Data Grid with emission DTC count visible — O2 sensor status and closed-loop operation</span>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <strong>💡 Clearing fault codes:</strong> Navigate to the DTC tab, confirm the codes, resolve the underlying fault,
+        then click <em>Clear DTCs</em>. On Euro 4 scooters the MIL (engine warning light) will only go off after the ECU
+        confirms the fault is no longer present — clearing the code alone does not guarantee the light stays off if the
+        problem persists.
+      </div>
+    </div>
+
+    <!-- ─── SECOND VIDEO ─── -->
+    <div class="video-hero" style="margin-top: 2.5rem;">
+      <h2 style="margin-top:0; border-bottom:none; padding-bottom:0; font-size:1.2rem;">Additional Reference Video</h2>
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/BI4WgTFN8mM"
+          title="Testing HUD ECU Hacker on a Chinese scooter — Lexmoto Titan walkthrough"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="video-source">
+        <strong>Video:</strong> "Testing HUD ECU Hacker — Lexmoto Titan" (2024) — real-world walkthrough on a Chinese EFI scooter with Delphi ECU.
+        <a href="https://www.youtube.com/watch?v=BI4WgTFN8mM" target="_blank" rel="noopener">↗ Watch on YouTube</a>
+      </p>
+    </div>
+
+    <!-- ─── IMPORTANT CAVEATS ─── -->
+    <h2>Important Caveats</h2>
+    <p>
+      Based on community experience and forum reports, be aware of the following before you start:
+    </p>
+
+    <ul class="caveat-list">
+      <li>
+        <span class="caveat-icon">🚫</span>
+        <span>
+          <strong>Generic OBD2 readers will not work.</strong>
+          Many users with standard Bluetooth ELM327 scanners or generic car-OBD apps receive a
+          <em>"Vehicle not connected"</em> error. This is because the GY6 ECU uses the K-line (ISO 9141-2 / KWP2000)
+          protocol — not the CAN bus found in modern cars. Standard ELM327 dongles often lack K-line support or have
+          incompatible timing. The OBD2 KKL cable with FTDI chip and HUD ECU Hacker together form a K-line-aware
+          combination that actually works.
+          <span style="display:block; margin-top:0.4rem; font-size:0.85rem; color:var(--text-tertiary);">
+            Source: <a href="https://scooterforum.net/tags/la-souris/" target="_blank" rel="noopener">ScooterForum.net</a>
+          </span>
+        </span>
+      </li>
+      <li>
+        <span class="caveat-icon">⚠️</span>
+        <span>
+          <strong>Euro 4 fault codes do not self-clear.</strong>
+          From Euro 4 onwards, stored DTCs remain in the ECU memory even after the underlying fault is repaired.
+          The engine warning light will stay on until you actively clear the codes with a diagnostic tool like HUD ECU Hacker.
+          Simply fixing the problem is not enough — you must connect and erase the codes.
+          <span style="display:block; margin-top:0.4rem; font-size:0.85rem; color:var(--text-tertiary);">
+            Source: <a href="https://www.gentlemen-riders.com/lecteur-obdii-pour-code-defaut/9519-lecteur-obdii-pour-moto-euro4.html" target="_blank" rel="noopener">Gentlemen Riders</a>
+          </span>
+        </span>
+      </li>
+      <li>
+        <span class="caveat-icon">🔴</span>
+        <span>
+          <strong>Motion EFI (Euro 5, some 2021+ models) may not connect.</strong>
+          Some newer scooters — particularly those with a <strong>Motion SE08</strong> ECU introduced for Euro 5 compliance —
+          use a proprietary protocol that HUD ECU Hacker cannot fully support. If your scooter was registered after 2021 and
+          HUD ECU Hacker consistently fails to connect despite correct hardware and settings, check the ECU label.
+          If it reads "Motion" or "SE08 E5", you likely need a dedicated Motion diagnostic scanner instead.
+        </span>
+      </li>
+      <li>
+        <span class="caveat-icon">⏳</span>
+        <span>
+          <strong>Connection attempts may take multiple tries.</strong>
+          K-line timing is extremely sensitive. It is normal for the first 5–15 connection attempts to time out.
+          Simply return to the Control tab and click Connect again. If it never connects after 20+ attempts with the ignition on,
+          try a different COM port or reduce the baud rate via the software's Troubleshooting settings.
+        </span>
+      </li>
+      <li>
+        <span class="caveat-icon">💾</span>
+        <span>
+          <strong>Never use the Tuning / Flash functions unless you know what you are doing.</strong>
+          HUD ECU Hacker can read and write ECU flash memory and fuel maps. Incorrect values can make the scooter unrideable
+          or damage the ECU. The diagnostic and DTC functions covered in this guide are safe; the Tuning tab is for experienced users only.
+        </span>
+      </li>
+    </ul>
+
+    <!-- ─── TROUBLESHOOTING ─── -->
+    <h2>Troubleshooting</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Problem</th>
+          <th>Likely Cause</th>
+          <th>Solution</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>No COM port in Device Manager</strong></td>
+          <td>FTDI drivers not installed, or Windows assigned a generic driver</td>
+          <td>Install the FTDI VCP driver from ftdichip.com, then replug the cable</td>
+        </tr>
+        <tr>
+          <td><strong>HUD ECU Hacker doesn't show COM port</strong></td>
+          <td>Cable not plugged in when software opened</td>
+          <td>Plug in the cable first, then start HUD ECU Hacker</td>
+        </tr>
+        <tr>
+          <td><strong>"Timeout waiting for response"</strong></td>
+          <td>K-line timing mismatch, or ignition not on</td>
+          <td>Ensure ignition is ON; retry Connect 10–20 times; if persistent, reduce baud rate in Troubleshooting settings</td>
+        </tr>
+        <tr>
+          <td><strong>"Vehicle not connected"</strong></td>
+          <td>Wrong ECU model selected, or incompatible adapter</td>
+          <td>Verify ECU model on the ECU label; confirm you have a KKL cable (not ELM327)</td>
+        </tr>
+        <tr>
+          <td><strong>Connection drops after a few seconds</strong></td>
+          <td>Poor USB connection or power fluctuation</td>
+          <td>Try a different USB port; connect directly to laptop (avoid USB hubs); check cable for damage</td>
+        </tr>
+        <tr>
+          <td><strong>Software locks after licence dialog</strong></td>
+          <td>Wrong tick boxes selected in the disclaimer</td>
+          <td>Fully uninstall HUD ECU Hacker, delete any remaining config files, and reinstall</td>
+        </tr>
+        <tr>
+          <td><strong>Connects but no live data (all zeros)</strong></td>
+          <td>Engine not running (some parameters only populate at idle)</td>
+          <td>Start the engine; MAP, RPM and O2 sensors only show values with the engine running</td>
+        </tr>
+        <tr>
+          <td><strong>MIL (warning light) stays on after clearing codes</strong></td>
+          <td>Fault is still present / recurring</td>
+          <td>The ECU re-sets the code because the fault was not actually fixed — diagnose and repair the root cause first</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ─── FAQ ─── -->
+    <h2>Frequently Asked Questions</h2>
+
+    <details style="margin-bottom:0.8rem;">
+      <summary style="cursor:pointer; color:var(--text-primary); font-weight:600; padding:0.7rem 0;">
+        Does this work on macOS or Linux?
+      </summary>
+      <p style="margin-top:0.6rem;">
+        HUD ECU Hacker is Windows-only. It does not run natively on macOS or Linux. You can use a Windows virtual machine
+        (VMware, Parallels, VirtualBox) and pass through the USB adapter — most users report this works well.
+        Alternatively, keep an old cheap Windows laptop (like the Lenovo ThinkPad shown in the photos) dedicated to scooter diagnostics.
+      </p>
+    </details>
+
+    <details style="margin-bottom:0.8rem;">
+      <summary style="cursor:pointer; color:var(--text-primary); font-weight:600; padding:0.7rem 0;">
+        Can I use this on a Piaggio Vespa (Primavera, Zip, Sprint)?
+      </summary>
+      <p style="margin-top:0.6rem;">
+        No — Piaggio uses its own proprietary diagnostic interface (Piaggio Diagnostic Tool / PDT), not the Delphi K-line
+        protocol used by GY6 clones. HUD ECU Hacker is specifically for Chinese GY6 EFI systems with Delphi or Rongmao ECUs.
+      </p>
+    </details>
+
+    <details style="margin-bottom:0.8rem;">
+      <summary style="cursor:pointer; color:var(--text-primary); font-weight:600; padding:0.7rem 0;">
+        Is HUD ECU Hacker really free?
+      </summary>
+      <p style="margin-top:0.6rem;">
+        Yes, HUD ECU Hacker is free for diagnostics (reading data, reading and clearing fault codes, monitoring sensors).
+        Advanced features such as ECU flash and map editing are unlocked with a small paid licence.
+        For the purposes of this guide — setting up, connecting, and reading/clearing codes — everything is free.
+      </p>
+    </details>
+
+    <details style="margin-bottom:0.8rem;">
+      <summary style="cursor:pointer; color:var(--text-primary); font-weight:600; padding:0.7rem 0;">
+        What fault codes are available on the GY6 Delphi ECU?
+      </summary>
+      <p style="margin-top:0.6rem;">
+        The Delphi MT05 reports standard OBD2 DTC codes plus some manufacturer-specific codes covering: oxygen sensor faults,
+        coolant temperature sensor, throttle position sensor (TPS), MAP sensor, IAT sensor, injector circuit, IACV (idle air control),
+        and ignition coil. Refer to our
+        <a href="gy6-efi-cel-flash-codes.html">GY6 EFI CEL Flash Codes guide</a> for a full list of codes and their meanings.
+      </p>
+    </details>
+
+    <details style="margin-bottom:0.8rem;">
+      <summary style="cursor:pointer; color:var(--text-primary); font-weight:600; padding:0.7rem 0;">
+        The 6-pin connector on my scooter looks different — could it still work?
+      </summary>
+      <p style="margin-top:0.6rem;">
+        There are a few variants of the GY6 diagnostic connector. The most common is the 6-pin white rectangular connector
+        shown in this guide. Some models use a 4-pin connector or a different housing. If your connector doesn't match,
+        check the ECU label to confirm it is a Delphi MT05 — if it is, the wiring pinout is the same and an adapter may
+        still exist. Post on a GY6-specific forum with photos for community guidance.
+      </p>
+    </details>
+
+    <!-- ─── RELATED GUIDES ─── -->
+    <h2>Related Guides</h2>
+    <ul>
+      <li><a href="gy6-efi-cel-flash-codes.html">GY6 EFI CEL Flash Codes — Manual Diagnostic Mode</a> — decode check-engine blink patterns without any tools</li>
+      <li><a href="gy6-efi-fuel-injection-troubleshooting.html">GY6 EFI Fuel Injection Troubleshooting</a> — systematic guide to injection faults</li>
+      <li><a href="../repair-guides/index.html">All Repair Guides</a></li>
+    </ul>
+
+    <!-- ─── FOOTER ─── -->
+    <div class="source-box" style="margin-top:2.5rem;">
+      <strong>Sources &amp; References:</strong><br>
+      <a href="https://www.netcult.ch/elmue/HUD%20ECU%20Hacker/" target="_blank" rel="noopener">HUD ECU Hacker — Official Site (netcult.ch)</a> &nbsp;·&nbsp;
+      <a href="https://www.gy6-injectie-centrum.nl/ecu-software/hud-ecu-hacker-windows/ecu-verbinden" target="_blank" rel="noopener">GY6 Injectie Centrum — ECU Verbinden</a> &nbsp;·&nbsp;
+      <a href="https://ftdichip.com/drivers/" target="_blank" rel="noopener">FTDI Official Drivers</a> &nbsp;·&nbsp;
+      <a href="https://scooterforum.net/tags/la-souris/" target="_blank" rel="noopener">ScooterForum.net</a> &nbsp;·&nbsp;
+      <a href="https://www.gentlemen-riders.com/lecteur-obdii-pour-code-defaut/9519-lecteur-obdii-pour-moto-euro4.html" target="_blank" rel="noopener">Gentlemen Riders — Euro 4 OBD2</a>
+    </div>
+
+    <p style="font-size:0.82rem; color:var(--text-tertiary); margin-top:1.5rem;">
+      <strong>Last Updated:</strong> 2026-05-12 &nbsp;|&nbsp;
+      <strong>License:</strong> CC BY-SA 4.0 &nbsp;|&nbsp;
+      <em>Have corrections or improvements?
+        <a href="https://github.com/ismr-online/ismr/issues" target="_blank" rel="noopener">Submit feedback on GitHub</a>
+      </em>
+    </p>
+
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html>

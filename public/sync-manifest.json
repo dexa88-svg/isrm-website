@@ -448,5 +448,21 @@
     ],
     "addedAt": "2026-05-11T19:36:09Z",
     "lastChecked": "2026-05-12T10:01:00Z"
+  },
+  {
+    "url": "https://ismr.online/diagnostics/gy6-efi-hud-ecu-hacker-setup.html",
+    "title": "GY6 EFI Diagnostics \u2014 HUD ECU Hacker Setup Guide",
+    "category": "diagnostics",
+    "file": "diagnostics/gy6-efi-hud-ecu-hacker-setup.html",
+    "sources": [
+      "netcult.ch/elmue/HUD ECU Hacker",
+      "gy6-injectie-centrum.nl/ecu-software/hud-ecu-hacker-windows/ecu-verbinden",
+      "ftdichip.com/drivers",
+      "scooterforum.net",
+      "gentlemen-riders.com"
+    ],
+    "summary": "Step-by-step guide to set up HUD ECU Hacker on Windows, install FTDI FT232RL drivers, and connect to a GY6 EFI scooter via OBD2 KKL cable and 6-pin diagnostic connector to read live data and fault codes.",
+    "addedAt": "2026-05-12T12:00:00Z",
+    "lastChecked": "2026-05-12T12:00:00Z"
   }
 ]
