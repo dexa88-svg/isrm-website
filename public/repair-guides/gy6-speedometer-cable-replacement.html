@@ -26,6 +26,8 @@
   <title>GY6 Speedometer Cable — Diagnosis & Replacement — ISMR</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
+
+
     .guide-header {
       background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
       border-bottom: 1px solid var(--border);
@@ -69,7 +71,7 @@
       color: var(--accent);
       border: 1px solid rgba(0, 168, 204, 0.3);
       padding: 0.25rem 0.7rem;
-      border-radius: 20px;
+      border-radius: var(--radius-pill);
       font-size: 0.78rem;
       font-weight: 500;
     }
@@ -115,7 +117,7 @@
       color: var(--accent-light);
       padding: 0.15rem 0.45rem;
       border-radius: var(--radius-sm);
-      font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       font-size: 0.87em;
     }
     .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
@@ -185,7 +187,7 @@
     .diag-card h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.5rem; }
     .diag-card ul { margin: 0; padding-left: 1.2rem; font-size: 0.88rem; color: var(--text-secondary); }
     .diag-card ul li { margin-bottom: 0.3rem; }
-    .diag-broken { border-top: 3px solid var(--danger, #d63031); }
+    .diag-broken { border-top: 3px solid var(--danger, var(--danger)); }
     .diag-worn { border-top: 3px solid var(--warning); }
     @media (max-width: 600px) {
       .guide-header h1 { font-size: 1.7rem; }
@@ -194,6 +196,32 @@
       .diag-grid { grid-template-columns: 1fr; }
       .video-wrap { max-width: 280px; }
     }
+  /* Accessibility: Focus states */
+  button:focus,
+  a:focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+  }
+
+  /* Responsive Design - Tablet */
+  @media (max-width: 768px) {
+    body { font-size: 15px; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.2rem; }
+  }
+
+  /* Responsive Design - Mobile */
+  @media (max-width: 480px) {
+    body { font-size: 14px; }
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.2rem; }
+    h3 { font-size: 1rem; }
+  }
+
   </style>
   <script type="application/ld+json">
 {

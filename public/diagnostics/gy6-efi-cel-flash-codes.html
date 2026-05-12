@@ -26,6 +26,8 @@
   <title>GY6 EFI CEL Flash Codes — Manual Diagnostic Mode — ISMR</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
+
+
     .guide-header {
       background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
       border-bottom: 1px solid var(--border);
@@ -66,7 +68,7 @@
       color: var(--accent);
       border: 1px solid rgba(0, 168, 204, 0.3);
       padding: 0.25rem 0.7rem;
-      border-radius: 20px;
+      border-radius: var(--radius-pill);
       font-size: 0.78rem;
       font-weight: 500;
     }
@@ -164,7 +166,7 @@
       width: 28px;
       height: 14px;
       background: var(--warning);
-      border-radius: 3px;
+      border-radius: var(--radius-sm);
       opacity: 0.9;
     }
     .flash-short {
@@ -172,7 +174,7 @@
       width: 10px;
       height: 14px;
       background: var(--accent);
-      border-radius: 3px;
+      border-radius: var(--radius-sm);
       opacity: 0.9;
     }
     .flash-gap {
@@ -240,6 +242,17 @@
       .nav-menu { display: none; }
       .nav-toggle { display: block; }
     }
+  /* Accessibility: Focus states */
+  button:focus,
+  a:focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+  }
+
+  
   </style>
 </head>
 <body>

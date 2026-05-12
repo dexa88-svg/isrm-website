@@ -26,6 +26,8 @@
   <title>Videos — ISMR</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
+
+
     .page-hero { background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%); padding: 4rem 2rem 3rem; position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
     .page-hero::before { content: "📹"; position: absolute; right: 6%; top: 50%; transform: translateY(-50%); font-size: 9rem; opacity: 0.07; pointer-events: none; line-height: 1; }
     .page-hero-inner { max-width: 1100px; margin: 0 auto; }
@@ -94,7 +96,18 @@
       .hero-stat-number { font-size: 1.2rem; }
       .video-thumb { height: 100px; }
     }
-</style>
+  /* Accessibility: Focus states */
+  button:focus,
+  a:focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+  }
+
+  
+  </style>
 </head>
 <body>
 
@@ -120,7 +133,7 @@
       <h1>Video Tutorials</h1>
       <p>Curated YouTube repair tutorials with structured summaries for GY6 and Piaggio/Vespa scooters. Each video is verified and summarised for quick reference.</p>
       <div class="page-hero-stats">
-        <div class="hero-stat"><span class="hero-stat-number" data-stat="videos">2</span><span class="hero-stat-label">Tutorials</span></div>
+        <div class="hero-stat"><span class="hero-stat-number" data-stat="videos">3</span><span class="hero-stat-label">Tutorials</span></div>
         <div class="hero-stat"><span class="hero-stat-number">YouTube</span><span class="hero-stat-label">Source</span></div>
         <div class="hero-stat"><span class="hero-stat-number">Free</span><span class="hero-stat-label">Always</span></div>
       </div>
@@ -129,7 +142,7 @@
 
   <section class="guides-section">
     <div class="guides-section-inner">
-      <p class="guides-count"><strong data-stat="videos">2</strong> video tutorial</p>
+      <p class="guides-count"><strong data-stat="videos">3</strong> video tutorials</p>
       <div class="guides-grid">
 
         <article class="guide-card">
@@ -160,6 +173,21 @@
             <span class="time">20 min</span>
           </div>
           <a href="vespa-primavera-oil-change-video.html" class="read-more">Watch &amp; Read</a>
+        </article>
+
+        <article class="guide-card">
+          <div class="video-thumb">
+            <span class="video-thumb-label">YouTube</span>
+          </div>
+          <div class="card-tag">Vespa · 50cc 4T</div>
+          <h3><a href="vespa-carb-idle-adjustment-video.html">Basic Carb Adjustments for Carbureted Vespa Scooters</a></h3>
+          <p>Idle speed screw, mixture screw, and throttle cable setup for Dell'Orto PHBN carbureted Vespa/Piaggio 50cc 4T scooters — embedded video with structured guide.</p>
+          <div class="card-meta">
+            <span class="tag">Dell'Orto PHBN</span>
+            <span class="tag">Carburettor</span>
+            <span class="time">15 min</span>
+          </div>
+          <a href="vespa-carb-idle-adjustment-video.html" class="read-more">Watch &amp; Read</a>
         </article>
 
       </div>

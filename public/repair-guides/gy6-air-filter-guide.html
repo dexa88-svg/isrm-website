@@ -26,6 +26,8 @@
   <title>GY6 Air Filter — Clean or Replace Guide — ISMR</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
+
+
     .guide-header { background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%); border-bottom: 1px solid var(--border); padding: 3rem 2rem 2rem; }
     .guide-header-inner { max-width: 900px; margin: 0 auto; }
     .guide-header h1 { font-size: 2.4rem; line-height: 1.2; background: linear-gradient(135deg, var(--accent), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1.2rem; }
@@ -36,7 +38,7 @@
     .guide-meta a { color: var(--accent); }
     .guide-meta-sep { opacity: 0.4; }
     .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
-    .guide-tag { background: rgba(0, 168, 204, 0.1); color: var(--accent); border: 1px solid rgba(0, 168, 204, 0.3); padding: 0.25rem 0.7rem; border-radius: 20px; font-size: 0.78rem; font-weight: 500; }
+    .guide-tag { background: rgba(0, 168, 204, 0.1); color: var(--accent); border: 1px solid rgba(0, 168, 204, 0.3); padding: 0.25rem 0.7rem; border-radius: var(--radius-pill); font-size: 0.78rem; font-weight: 500; }
     .applies-to { background: rgba(255, 107, 53, 0.07); border: 1px solid rgba(255, 107, 53, 0.2); border-left: 4px solid var(--primary); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 1rem 1.25rem; margin-top: 1.5rem; font-size: 0.95rem; color: var(--text-secondary); }
     .applies-to strong { color: var(--text-primary); }
     .guide-content { max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
@@ -48,7 +50,7 @@
     .guide-content ul, .guide-content ol { padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary); }
     .guide-content li { margin-bottom: 0.5rem; }
     .guide-content li strong { color: var(--text-primary); }
-    .guide-content code { background: var(--surface-2); border: 1px solid var(--border); color: var(--accent-light); padding: 0.15rem 0.45rem; border-radius: var(--radius-sm); font-family: monospace; font-size: 0.87em; }
+    .guide-content code { background: var(--surface-2); border: 1px solid var(--border); color: var(--accent-light); padding: 0.15rem 0.45rem; border-radius: var(--radius-sm); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; font-size: 0.87em; }
     .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
     .guide-content th { background: var(--surface-2); color: var(--text-primary); font-weight: 600; padding: 0.7rem 1rem; text-align: left; border: 1px solid var(--border); }
     .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
@@ -66,7 +68,7 @@
     .video-thumb-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.2s; }
     .video-thumb-link:hover .video-thumb-img { opacity: 0.75; }
     .video-play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
-    .video-play-icon { width: 68px; height: 48px; background: rgba(200,0,0,0.9); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.4rem; transition: background 0.2s, transform 0.15s; }
+    .video-play-icon { width: 68px; height: 48px; background: rgba(200,0,0,0.9); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.4rem; transition: background 0.2s, transform 0.15s; }
     .video-thumb-link:hover .video-play-icon { background: #f00; transform: scale(1.06); }
     .video-source { font-size: 0.85rem; color: var(--text-tertiary); }
     .video-source a { color: var(--accent); }
@@ -77,6 +79,17 @@
     .video-card p { font-size: 0.875rem; margin-bottom: 0.75rem; color: var(--text-secondary); }
     .video-card a { color: var(--primary); font-weight: 600; font-size: 0.9rem; }
     @media (max-width: 768px) { .guide-header h1 { font-size: 1.7rem; } .guide-content { padding: 1.5rem 1rem 3rem; } .breadcrumb { padding: 0.9rem 1rem; } }
+  /* Accessibility: Focus states */
+  button:focus,
+  a:focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+  }
+
+  
   </style>
   <script type="application/ld+json">
 {

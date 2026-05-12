@@ -22,6 +22,8 @@
   <title>Diagnosis Wizard — ISMR</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
+
+
     /* ── Hero ────────────────────────────────────── */
     .wizard-hero {
       background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
@@ -111,7 +113,7 @@
       background: var(--surface-2); border: 1px solid var(--border);
       border-radius: var(--radius-lg); padding: 1rem 1.1rem;
       cursor: pointer; transition: var(--transition); text-align: left; width: 100%;
-      color: inherit; font-family: inherit;
+      color: inherit; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     }
     .answer-btn:hover {
       border-color: var(--accent);
@@ -134,7 +136,7 @@
       display: inline-flex; align-items: center; gap: 0.35rem;
       background: none; border: 1px solid var(--border); border-radius: var(--radius-pill);
       color: var(--text-secondary); padding: 0.45rem 1rem; font-size: 0.85rem;
-      cursor: pointer; transition: var(--transition); font-family: inherit;
+      cursor: pointer; transition: var(--transition); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     }
     .btn-back:hover:not(:disabled) { border-color: var(--text-secondary); color: var(--text-primary); }
     .btn-back:disabled { opacity: 0.3; cursor: not-allowed; }
@@ -143,7 +145,7 @@
       background: rgba(255,107,53,0.1); border: 1px solid rgba(255,107,53,0.3);
       border-radius: var(--radius-pill); color: var(--primary);
       padding: 0.45rem 1rem; font-size: 0.85rem;
-      cursor: pointer; transition: var(--transition); font-family: inherit;
+      cursor: pointer; transition: var(--transition); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     }
     .btn-restart:hover { background: rgba(255,107,53,0.2); }
     .step-counter {
@@ -176,9 +178,9 @@
       font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
       padding: 0.28rem 0.75rem; border-radius: var(--radius-pill); width: fit-content;
     }
-    .sev-badge.easy  { background: rgba(6,167,125,0.15); color: #06a77d; }
-    .sev-badge.mod   { background: rgba(245,166,35,0.15); color: #f5a623; }
-    .sev-badge.major { background: rgba(214,48,49,0.15);  color: #d63031; }
+    .sev-badge.easy  { background: rgba(6,167,125,0.15); color: var(--success); }
+    .sev-badge.mod   { background: rgba(245,166,35,0.15); color: var(--warning); }
+    .sev-badge.major { background: rgba(214,48,49,0.15);  color: var(--danger); }
     .sev-badge.info  { background: rgba(79,70,229,0.15);  color: #818cf8; }
 
     .diag-summary {
@@ -218,6 +220,17 @@
       .nav-menu { display: none; }
       .nav-toggle { display: block; }
     }
+  /* Accessibility: Focus states */
+  button:focus,
+  a:focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+  }
+
+  
   </style>
 </head>
 <body>

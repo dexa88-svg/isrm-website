@@ -26,6 +26,8 @@
   <title>GY6 CVT Variator & Drive Belt Replacement Guide — ISMR</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
+
+
     /* ── Guide page layout ─────────────────────────── */
     .guide-header {
       background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
@@ -123,7 +125,7 @@
       color: var(--accent-light);
       padding: 0.15rem 0.45rem;
       border-radius: var(--radius-sm);
-      font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       font-size: 0.87em;
     }
 
@@ -236,6 +238,17 @@
       .video-embed { padding: 1rem; }
       .guide-tags { gap: 0.3rem; }
     }
+  /* Accessibility: Focus states */
+  button:focus,
+  a:focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+  }
+
+  
   </style>
   <script type="application/ld+json">
 {

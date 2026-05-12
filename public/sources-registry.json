@@ -1445,8 +1445,90 @@
       "GY6"
     ],
     "addedAt": "2026-05-11T14:30:00Z",
-    "lastChecked": "2026-05-11T14:30:00Z",
+    "lastChecked": "2026-05-12T08:01:00Z",
     "active": true,
     "note": "Comprehensive collection of scooter maintenance, tuning, and repair guides covering fuel, brakes, electrics, transmission"
+  },
+  {
+    "note": "=== NEW SOURCES — DISCOVERED 2026-05-12 ===",
+    "url": "https://www.af1racing.com/Vespa-Piaggio-Service-Manual-Downloads",
+    "name": "AF1 Racing — Official Vespa & Piaggio Service Manual Downloads",
+    "type": "manufacturer",
+    "category": "repair-guides",
+    "models": [
+      "Vespa GTS",
+      "Vespa GTV",
+      "Vespa ET4",
+      "Vespa Sprint",
+      "Piaggio Fly",
+      "Piaggio Beverly"
+    ],
+    "addedAt": "2026-05-12T08:01:00Z",
+    "lastChecked": "2026-05-12T08:01:00Z",
+    "active": true,
+    "note": "Authorized Aprilia/Vespa/Piaggio dealer — sells OEM factory workshop PDF manuals"
+  },
+  {
+    "url": "https://vespavirgin.com/",
+    "name": "Vespa Virgin — Vespa DIY Maintenance & Ownership Guide",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "Vespa GTS",
+      "Vespa Primavera",
+      "Vespa Sprint",
+      "Vespa LX"
+    ],
+    "addedAt": "2026-05-12T08:01:00Z",
+    "lastChecked": "2026-05-12T08:01:00Z",
+    "active": true,
+    "note": "Beginner-friendly Vespa DIY maintenance tips and ownership guide"
+  },
+  {
+    "url": "https://www.rrd-preparation.com/en/",
+    "name": "RRD Preparation — Piaggio/Gilera 50cc Carburetor Settings & Parts",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "Piaggio Zip 50",
+      "Piaggio NRG",
+      "Piaggio Typhoon",
+      "Gilera Runner",
+      "Vespa ET 50"
+    ],
+    "addedAt": "2026-05-12T08:01:00Z",
+    "lastChecked": "2026-05-12T08:01:00Z",
+    "active": true,
+    "note": "French resource with Piaggio/Gilera 50cc carburetor settings, spare parts specs and tuning reference"
+  },
+  {
+    "url": "https://www.motor-x.com/blog/",
+    "name": "Motor-X Blog — GY6 Cylinder & Piston Technical Guides",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "GY6 50cc",
+      "GY6 125cc",
+      "GY6 150cc"
+    ],
+    "addedAt": "2026-05-12T08:01:00Z",
+    "lastChecked": "2026-05-12T08:01:00Z",
+    "active": true,
+    "note": "Technical articles on GY6 cylinder and piston selection, measurement, and replacement"
+  },
+  {
+    "url": "https://bartmotoco.com/blogs/build-resources/",
+    "name": "Bart Moto Co — Carburetor Tuning & Build Resources",
+    "type": "blog",
+    "category": "repair-guides",
+    "models": [
+      "general",
+      "GY6",
+      "motorcycles"
+    ],
+    "addedAt": "2026-05-12T08:01:00Z",
+    "lastChecked": "2026-05-12T08:01:00Z",
+    "active": true,
+    "note": "Build resource guides including carburetor tuning principles applicable to GY6 scooters"
   }
 ]

@@ -3,23 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
   <title>GY6 Fuel Pump: Maintenance, Troubleshooting & Replacement — ISRM</title>
   <style>
-    body { font-family: Georgia, serif; background: #0f0f0f; color: #e8e8e8; max-width: 820px; margin: 2rem auto; padding: 1rem 2rem; line-height: 1.7; }
-    h1 { color: #f5a623; border-bottom: 2px solid #f5a623; padding-bottom: 0.4rem; }
-    h2 { color: #f5a623; margin-top: 2rem; }
+
+
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; background: #0f0f0f; color: #e8e8e8; max-width: 820px; margin: 2rem auto; padding: 1rem 2rem; line-height: 1.7; }
+    h1 { color: var(--warning); border-bottom: 2px solid var(--warning); padding-bottom: 0.4rem; }
+    h2 { color: var(--warning); margin-top: 2rem; }
     a { color: #7ec8e3; }
     .meta { color: #888; font-size: 0.85rem; margin-bottom: 1.5rem; }
-    .source-box { background: #1a1a1a; border-left: 4px solid #f5a623; padding: 0.8rem 1.2rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; }
-    .tag { display: inline-block; background: #222; color: #f5a623; border: 1px solid #f5a623; border-radius: 12px; padding: 2px 10px; font-size: 0.78rem; margin-right: 6px; }
+    .source-box { background: #1a1a1a; border-left: 4px solid var(--warning); padding: 0.8rem 1.2rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; }
+    .tag { display: inline-block; background: #222; color: var(--warning); border: 1px solid var(--warning); border-radius: var(--radius-lg); padding: 2px 10px; font-size: 0.78rem; margin-right: 6px; }
     nav { margin-bottom: 2rem; font-size: 0.9rem; } nav a { margin-right: 1rem; }
     footer { margin-top: 3rem; border-top: 1px solid #333; padding-top: 1rem; color: #555; font-size: 0.8rem; }
-    .warning { background: #2a1a00; border-left: 4px solid #f5a623; padding: 0.8rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
-    .tip { background: #0a1a2a; border-left: 4px solid #00a8cc; padding: 0.8rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+    .warning { background: #2a1a00; border-left: 4px solid var(--warning); padding: 0.8rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+    .tip { background: #0a1a2a; border-left: 4px solid var(--accent); padding: 0.8rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
     table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-    th { background: #1a2332; color: #f5a623; text-align: left; padding: 0.5rem 0.8rem; }
-    td { padding: 0.5rem 0.8rem; border-bottom: 1px solid #2a3548; }
-    code { background: #1a2332; padding: 2px 6px; border-radius: 3px; font-family: monospace; color: #7ec8e3; }
+    th { background: var(--surface); color: var(--warning); text-align: left; padding: 0.5rem 0.8rem; }
+    td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
+    code { background: var(--surface); padding: 2px 6px; border-radius: var(--radius-sm); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; color: #7ec8e3; }
+  /* Accessibility: Focus states */
+  button:focus,
+  a:focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    body { font-size: 15px; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+  }
+
+  @media (max-width: 480px) {
+    body { font-size: 14px; }
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.2rem; }
+  }
+
+  
   </style>
 </head>
 <body>

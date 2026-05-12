@@ -26,6 +26,8 @@
   <title>Diagnostics — ISMR</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
+
+
     .page-hero { background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%); padding: 4rem 2rem 3rem; position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
     .page-hero::before { content: "🔍"; position: absolute; right: 6%; top: 50%; transform: translateY(-50%); font-size: 9rem; opacity: 0.07; pointer-events: none; line-height: 1; }
     .page-hero-inner { max-width: 1100px; margin: 0 auto; }
@@ -62,7 +64,18 @@
       .page-hero { padding: 2rem 1rem 1.5rem; }
       .hero-stat-number { font-size: 1.2rem; }
     }
-</style>
+  /* Accessibility: Focus states */
+  button:focus,
+  a:focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+  }
+
+  
+  </style>
 </head>
 <body>
 

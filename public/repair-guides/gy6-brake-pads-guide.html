@@ -26,6 +26,8 @@
   <title>GY6 Brake Pads & Drum Shoes Replacement Guide — ISMR</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
+
+
     .guide-header {
       background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
       border-bottom: 1px solid var(--border);
@@ -69,7 +71,7 @@
       color: var(--accent);
       border: 1px solid rgba(0, 168, 204, 0.3);
       padding: 0.25rem 0.7rem;
-      border-radius: 20px;
+      border-radius: var(--radius-pill);
       font-size: 0.78rem;
       font-weight: 500;
     }
@@ -115,7 +117,7 @@
       color: var(--accent-light);
       padding: 0.15rem 0.45rem;
       border-radius: var(--radius-sm);
-      font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       font-size: 0.87em;
     }
     .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
@@ -168,7 +170,7 @@
     .video-thumb-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.2s; }
     .video-thumb-link:hover .video-thumb-img { opacity: 0.75; }
     .video-play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
-    .video-play-icon { width: 68px; height: 48px; background: rgba(200,0,0,0.9); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.4rem; transition: background 0.2s, transform 0.15s; }
+    .video-play-icon { width: 68px; height: 48px; background: rgba(200,0,0,0.9); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.4rem; transition: background 0.2s, transform 0.15s; }
     .video-thumb-link:hover .video-play-icon { background: #f00; transform: scale(1.06); }
     .video-source { font-size: 0.85rem; color: var(--text-tertiary); }
     .video-source a { color: var(--accent); }
@@ -183,6 +185,17 @@
       .guide-content { padding: 1.5rem 1rem 3rem; }
       .breadcrumb { padding: 0.9rem 1rem; }
     }
+  /* Accessibility: Focus states */
+  button:focus,
+  a:focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+  }
+
+  
   </style>
   <script type="application/ld+json">
 {

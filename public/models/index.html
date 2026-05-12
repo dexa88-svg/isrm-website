@@ -26,6 +26,8 @@
   <title>Models — ISMR</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
+
+
     .page-hero { background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%); padding: 4rem 2rem 3rem; position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
     .page-hero::before { content: "🛵"; position: absolute; right: 6%; top: 50%; transform: translateY(-50%); font-size: 9rem; opacity: 0.07; pointer-events: none; line-height: 1; }
     .page-hero-inner { max-width: 1100px; margin: 0 auto; }
@@ -52,7 +54,18 @@
       .page-hero { padding: 2rem 1rem 1.5rem; }
       .hero-stat-number { font-size: 1.2rem; }
     }
-</style>
+  /* Accessibility: Focus states */
+  button:focus,
+  a:focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+  }
+
+  
+  </style>
 </head>
 <body>
 
@@ -78,7 +91,7 @@
       <h1>Scooter Models</h1>
       <p>Model-specific technical overviews, maintenance schedules, common faults, and specs for GY6-platform and Piaggio/Vespa petrol scooters.</p>
       <div class="page-hero-stats">
-        <div class="hero-stat"><span class="hero-stat-number">3</span><span class="hero-stat-label">Models</span></div>
+        <div class="hero-stat"><span class="hero-stat-number">5</span><span class="hero-stat-label">Models</span></div>
         <div class="hero-stat"><span class="hero-stat-number">GY6 + Piaggio</span><span class="hero-stat-label">Platforms</span></div>
         <div class="hero-stat"><span class="hero-stat-number">Free</span><span class="hero-stat-label">Always</span></div>
       </div>
@@ -87,8 +100,20 @@
 
   <section class="guides-section">
     <div class="guides-section-inner">
-      <p class="guides-count"><strong>3</strong> model overviews</p>
+      <p class="guides-count"><strong>5</strong> model overviews</p>
       <div class="guides-grid">
+
+        <article class="guide-card">
+          <div class="card-tag">Piaggio · ZIP 50</div>
+          <h3><a href="vespa-zip-50-4t-technical-overview.html">Piaggio ZIP 50 4T — Technical Overview</a></h3>
+          <p>Full specs, maintenance schedule, Dell'Orto PHBN carburettor settings, common faults, and model history for the Piaggio ZIP 50 4T (2001–present, carbureted variants).</p>
+          <div class="card-meta">
+            <span class="tag">Carburetor</span>
+            <span class="tag">4-Stroke</span>
+            <span class="time">Reference</span>
+          </div>
+          <a href="vespa-zip-50-4t-technical-overview.html" class="read-more">View Model</a>
+        </article>
 
         <article class="guide-card">
           <div class="card-tag">Piaggio · ZIP</div>
