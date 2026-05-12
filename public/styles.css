@@ -236,6 +236,20 @@ a { text-decoration: none; color: inherit; }
   background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
   border-radius: 50%;
   animation: float 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Mouse-tracking glow orb — position & colour are lerped via JS rAF */
+.hero-mouse-glow {
+  position: absolute;
+  width: 640px;
+  height: 640px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  will-change: left, top, background, opacity;
+  z-index: 1;
+  opacity: 0;
 }
 
 @keyframes float {

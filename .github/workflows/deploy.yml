@@ -50,3 +50,17 @@ jobs:
             curl -k --create-dirs -u "$FTP_USERNAME:$FTP_PASSWORD" \
               -T "$file" "sftp://$FTP_SERVER:22/$file"
           done
+
+      - name: Ping IndexNow
+        run: |
+          # Extract all URLs from sitemap and submit to IndexNow in bulk
+          URLS=$(grep -oP '(?<=<loc>)[^<]+' public/sitemap.xml | jq -R . | jq -s .)
+          curl -s -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "{
+              \"host\": \"ismr.online\",
+              \"key\": \"767a47df1cd247ea9a300510d2c3af76\",
+              \"keyLocation\": \"https://ismr.online/767a47df1cd247ea9a300510d2c3af76.txt\",
+              \"urlList\": $URLS
+            }"
+          echo "IndexNow ping sent for $(echo $URLS | jq length) URLs"
