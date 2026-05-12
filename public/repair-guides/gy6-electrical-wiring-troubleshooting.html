@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-53LY3KPDYM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-53LY3KPDYM');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GY6 electrical system and wiring troubleshooting guide. Diagnose no-spark, charging faults, and lighting issues on 50cc/125cc/150cc GY6 scooters.">
+  <link rel="canonical" href="https://ismr.online/repair-guides/gy6-electrical-wiring-troubleshooting.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ismr.online/repair-guides/gy6-electrical-wiring-troubleshooting.html">
+  <meta property="og:title" content="GY6 Electrical System & Wiring Troubleshooting Guide — ISMR">
+  <meta property="og:description" content="GY6 electrical system and wiring troubleshooting guide. Diagnose no-spark, charging faults, and lighting issues on 50cc/125cc/150cc GY6 scooters.">
+  <meta property="og:site_name" content="ISMR — Interactive Scooter Manuals for Repair">
+  <meta property="og:image" content="https://ismr.online/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GY6 Electrical System & Wiring Troubleshooting Guide — ISMR">
+  <meta name="twitter:description" content="GY6 electrical system and wiring troubleshooting guide. Diagnose no-spark, charging faults, and lighting issues on 50cc/125cc/150cc GY6 scooters.">
+  <meta name="twitter:image" content="https://ismr.online/og-image.jpg">
+  <title>GY6 Electrical System & Wiring Troubleshooting Guide — ISMR</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 3rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "⚡";
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem;
+      opacity: 0.07;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0 0 1rem;
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+    .guide-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+      margin-bottom: 1.5rem;
+    }
+    .guide-meta a { color: var(--accent); }
+    .guide-meta a:hover { color: var(--primary); }
+    .guide-meta-sep { opacity: 0.4; }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .guide-tag {
+      background: rgba(0, 168, 204, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(0, 168, 204, 0.3);
+      padding: 0.25rem 0.7rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+    .source-box {
+      background: rgba(255, 107, 53, 0.07);
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .source-box a { color: var(--accent); }
+    .guide-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 4rem;
+    }
+    .guide-content h2 {
+      font-size: 1.55rem;
+      color: var(--text-primary);
+      margin-top: 2.5rem;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.6rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content code {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--accent-light);
+      padding: 0.15rem 0.45rem;
+      border-radius: var(--radius-sm);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      font-size: 0.87em;
+    }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th {
+      background: var(--surface-2);
+      color: var(--text-primary);
+      font-weight: 600;
+      padding: 0.7rem 1rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26, 35, 50, 0.6); }
+    .callout {
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .callout strong { color: var(--text-primary); }
+    .callout-warn {
+      background: rgba(245, 166, 35, 0.08);
+      border: 1px solid rgba(245, 166, 35, 0.25);
+      border-left: 4px solid var(--warning);
+    }
+    .callout-tip {
+      background: rgba(6, 167, 125, 0.08);
+      border: 1px solid rgba(6, 167, 125, 0.25);
+      border-left: 4px solid var(--success);
+    }
+    .component-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .component-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.75rem;
+    }
+    .component-card h4 { color: var(--accent); margin: 0 0 0.4rem; font-size: 0.95rem; }
+    .component-card p { margin: 0; font-size: 0.85rem; color: var(--text-secondary); }
+    @media (max-width: 768px) {
+      .page-hero h1 { font-size: 1.7rem; }
+      .guide-content { padding: 1.5rem 1rem 3rem; }
+      .nav-menu { display: none; }
+      .nav-toggle { display: block; }
+    }
+    @media (max-width: 600px) {
+      .component-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .page-hero h1 { font-size: 1.35rem; }
+      .page-hero { padding: 2rem 1rem 1.5rem; }
+      .guide-content h2 { font-size: 1.2rem; }
+      .guide-tags { gap: 0.3rem; }
+    }
+    button:focus,
+    a:focus,
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-icon">⚙️</span>
+        <span class="brand-text">ISMR</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link active">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../index.html#about" class="nav-link">About</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <a href="../index.html">ISMR Home</a><span>›</span><a href="index.html">Repair Guides</a><span>›</span>GY6 Electrical System &amp; Wiring Troubleshooting
+      </div>
+      <h1>GY6 Electrical System &amp; Wiring Troubleshooting Guide</h1>
+    </div>
+  </section>
+
+  <main class="guide-content">
+
+    <div class="guide-meta">
+      Added: 2026-05-12 <span class="guide-meta-sep">|</span>
+      Sources: <a href="https://www.buggydepot.com/tech-center/gy6-150cc-ignition-troubleshooting-guide-no-spark/" target="_blank" rel="noopener">Buggy Depot</a>,
+      <a href="https://moowiring.com/" target="_blank" rel="noopener">Moo Wiring</a>,
+      <a href="https://scootdawg.proboards.com/" target="_blank" rel="noopener">ScootDawg Forum</a>
+      <span class="guide-meta-sep">|</span>
+      <div class="guide-tags">
+        <span class="guide-tag">GY6</span>
+        <span class="guide-tag">Electrical</span>
+        <span class="guide-tag">Wiring</span>
+      </div>
+    </div>
+
+    <div class="source-box">
+      📌 <strong>Original sources:</strong>
+      <a href="https://www.buggydepot.com/tech-center/gy6-150cc-ignition-troubleshooting-guide-no-spark/" target="_blank" rel="noopener">Buggy Depot — GY6 150cc Ignition Troubleshooting</a> ·
+      <a href="https://moowiring.com/" target="_blank" rel="noopener">Moo Wiring — GY6 DC CDI Wiring Diagrams</a>
+    </div>
+
+    <p>Electrical faults are among the most common and misdiagnosed problems on GY6-engine scooters. Poor grounding, corroded connectors, and misunderstood wiring configurations account for the majority of intermittent starting failures, charging issues, and lighting faults. This guide explains the GY6 electrical system architecture and provides a systematic diagnostic process.</p>
+
+    <h2>GY6 Electrical System Overview</h2>
+    <p>The GY6 uses a <strong>magneto-based AC/DC charging system</strong>. All modern GY6 scooters use a DC electrical system (battery-powered), but the stator generates AC current which the regulator/rectifier converts to regulated DC. There are two common ignition system configurations:</p>
+
+    <div class="component-grid">
+      <div class="component-card">
+        <h4>AC CDI System</h4>
+        <p>Older configuration. CDI fires directly from AC current produced by the stator's pickup coil. Does not rely on battery voltage for spark. Common on pre-2010 GY6 50cc models.</p>
+      </div>
+      <div class="component-card">
+        <h4>DC CDI System</h4>
+        <p>Modern configuration. CDI draws energy from the battery (12V DC). Requires a charged battery to fire spark. Standard on 125cc/150cc models and all Euro 4 variants.</p>
+      </div>
+    </div>
+
+    <h2>Key Electrical Components</h2>
+    <table>
+      <tr>
+        <th>Component</th>
+        <th>Function</th>
+        <th>Typical Failure Symptoms</th>
+      </tr>
+      <tr>
+        <td><strong>Stator (Magneto)</strong></td>
+        <td>Generates AC current for charging and (on AC systems) ignition</td>
+        <td>No charge, no spark (AC CDI), weak spark</td>
+      </tr>
+      <tr>
+        <td><strong>Regulator/Rectifier (RR)</strong></td>
+        <td>Converts AC to DC, regulates voltage to ~14V</td>
+        <td>Battery overcharge or no charge, flickering lights</td>
+      </tr>
+      <tr>
+        <td><strong>CDI Unit</strong></td>
+        <td>Controls spark timing and ignition pulse</td>
+        <td>No spark, spark only at low RPM, intermittent starting</td>
+      </tr>
+      <tr>
+        <td><strong>Ignition Coil</strong></td>
+        <td>Steps up low voltage CDI pulse to 20,000+ V for spark plug</td>
+        <td>No spark or weak spark, spark plug fouling rapidly</td>
+      </tr>
+      <tr>
+        <td><strong>Pickup Coil (Trigger)</strong></td>
+        <td>Detects crankshaft position and signals CDI</td>
+        <td>No spark at all RPMs, engine won't start</td>
+      </tr>
+      <tr>
+        <td><strong>Battery (12V 5–7 Ah)</strong></td>
+        <td>Powers DC CDI, starter motor, lights, horn</td>
+        <td>No electric start, no spark (DC CDI), weak crank</td>
+      </tr>
+      <tr>
+        <td><strong>Main Fuse (10–15 A)</strong></td>
+        <td>Protects main wiring harness from overcurrent</td>
+        <td>Complete electrical shutdown</td>
+      </tr>
+    </table>
+
+    <h2>Standard GY6 Wire Colour Codes</h2>
+    <p>Wire colour conventions are relatively consistent across GY6 manufacturers, though not 100% universal. Always verify against your specific wiring diagram:</p>
+
+    <table>
+      <tr><th>Wire Colour</th><th>Typical Function</th></tr>
+      <tr><td>Red</td><td>Battery positive (+12V switched or permanent)</td></tr>
+      <tr><td>Black</td><td>Ground (chassis / battery negative)</td></tr>
+      <tr><td>Yellow</td><td>AC output from stator (charging coil)</td></tr>
+      <tr><td>Green</td><td>Ground (often for lighting circuits)</td></tr>
+      <tr><td>Blue</td><td>DC power from regulator/rectifier</td></tr>
+      <tr><td>White</td><td>AC lighting coil or kill switch</td></tr>
+      <tr><td>Orange</td><td>CDI signal / ignition pulse</td></tr>
+      <tr><td>Pink / Light Green</td><td>Pickup coil signal</td></tr>
+      <tr><td>Grey / Brown</td><td>Lighting circuits (varies by model)</td></tr>
+    </table>
+
+    <div class="callout callout-tip">
+      💡 <strong>Always obtain the wiring diagram for your specific model.</strong> ScootDawg Forum and 49ccScoot host generic GY6 wiring diagrams. Many BTC Riva, La Souris Sourini, and Santini Capri models use a nearly identical loom to the generic GY6 150cc Chinese scooter diagram.
+    </div>
+
+    <h2>Systematic Fault Diagnosis</h2>
+
+    <h3>Before You Start — Ground First</h3>
+    <p>Poor grounding is the single most common electrical fault on Chinese scooters. Before testing any component, do the following:</p>
+    <ol>
+      <li>Locate the main ground point — usually a black wire bolted to the engine case or frame near the battery.</li>
+      <li>Unbolt it, clean the contact surface with sandpaper until shiny, and re-bolt firmly.</li>
+      <li>Inspect all black wire connectors in the loom. Clean or replace corroded connectors.</li>
+      <li>Check that the battery negative cable makes a solid connection to the frame.</li>
+    </ol>
+
+    <h3>No Spark Diagnosis</h3>
+    <ol>
+      <li><strong>Check for spark:</strong> Remove the spark plug. Reconnect the plug lead. Hold the plug against the engine case (ground). Crank the engine. You should see a strong blue spark. A weak yellow spark or no spark means a fault in the ignition chain.</li>
+      <li><strong>Check the kill switch:</strong> Disconnect the kill switch wire from the CDI (usually the white/black wire). Try cranking again. If spark returns, the kill switch is shorted — clean or replace it.</li>
+      <li><strong>Check the sidestand switch:</strong> Many GY6s cut ignition when the sidestand is down. Disconnect the sidestand switch and jump its two terminals together. If spark returns, the switch is faulty.</li>
+      <li><strong>Check CDI input voltage (DC CDI only):</strong> With a multimeter, probe the red/battery wire on the CDI connector to ground. You should read 12V when the ignition is on. No voltage → check fuse and ignition switch.</li>
+      <li><strong>Test the pickup coil:</strong> Disconnect the pickup coil from the CDI. Measure resistance across the two pickup coil wires with a multimeter. Typical specification is 80–150 Ω. Open circuit (infinite resistance) or short to ground means replace the stator assembly.</li>
+      <li><strong>Test the ignition coil primary:</strong> Measure resistance between the coil's two primary terminals (where the CDI wire connects). Typical: 0.3–0.8 Ω. Test secondary (plug cap to ground): 5,000–15,000 Ω. Out-of-specification → replace coil.</li>
+      <li><strong>Substitute the CDI:</strong> If all components test within specification but there is still no spark, the CDI itself is likely faulty. CDI units are inexpensive (€10–30); swap with a known-good unit to confirm.</li>
+    </ol>
+
+    <h3>Charging System Diagnosis</h3>
+    <ol>
+      <li><strong>Battery voltage:</strong> Measure battery voltage at rest (engine off, 15 minutes after last use). Healthy 12V AGM battery: 12.6–12.8V. Below 12.0V indicates a discharged or failing battery.</li>
+      <li><strong>Charging voltage:</strong> Start the engine. Measure battery voltage with the engine running at ~3,500 RPM. Should read 13.8–14.5V. Above 15V indicates a failed regulator/rectifier (RR). Below 13.5V at speed indicates a weak stator or failed RR.</li>
+      <li><strong>Stator AC output:</strong> Disconnect the stator yellow wire from the RR. With the engine running at 3,500 RPM, measure AC voltage between the yellow wire and engine ground. Should read 30–60V AC. Low output suggests a weak stator winding.</li>
+      <li><strong>RR diode test:</strong> With a multimeter in diode test mode, test each diode leg of the rectifier section of the RR. A shorted diode (reads 0 in both directions) means replace the RR.</li>
+    </ol>
+
+    <h3>Lighting Fault Diagnosis</h3>
+    <ol>
+      <li><strong>Headlight not working:</strong> First check the main fuse and the dedicated headlight fuse/relay if fitted. Check for 12V at the headlight connector with ignition on. If voltage is present, the bulb is blown — replace with correct rating (typically 12V 35/35W halogen, BA20d base).</li>
+      <li><strong>Indicators flashing too fast or too slow:</strong> Caused by mismatched bulb wattage or a failing flasher relay. Replace with standard 10W indicator bulbs and/or the flasher relay.</li>
+      <li><strong>Brake light not working:</strong> Check both front (lever) and rear (pedal) brake light switches. Measure resistance across the switch — should read closed circuit (0 Ω) when brake is applied. Clean or adjust switch if sticking open.</li>
+    </ol>
+
+    <h2>Essential Multimeter Tests at a Glance</h2>
+    <table>
+      <tr>
+        <th>Test</th>
+        <th>Meter Setting</th>
+        <th>Good Result</th>
+        <th>Bad Result</th>
+      </tr>
+      <tr><td>Battery voltage (rest)</td><td>DC Volts</td><td>12.6–12.8V</td><td>&lt;12.0V — charge or replace</td></tr>
+      <tr><td>Charging voltage</td><td>DC Volts (engine on)</td><td>13.8–14.5V</td><td>&lt;13.5V or &gt;15V</td></tr>
+      <tr><td>Stator AC output</td><td>AC Volts (engine on)</td><td>30–60V AC</td><td>&lt;20V — check stator</td></tr>
+      <tr><td>Pickup coil resistance</td><td>Resistance (Ω)</td><td>80–150 Ω</td><td>0 Ω (short) or OL (open)</td></tr>
+      <tr><td>Ignition coil primary</td><td>Resistance (Ω)</td><td>0.3–0.8 Ω</td><td>OL (open) — replace coil</td></tr>
+      <tr><td>Ignition coil secondary</td><td>Resistance (Ω)</td><td>5,000–15,000 Ω</td><td>OL or &lt;1,000 Ω</td></tr>
+      <tr><td>Ground continuity</td><td>Continuity / Ω</td><td>0–0.5 Ω</td><td>&gt;1 Ω — clean ground</td></tr>
+    </table>
+
+    <div class="callout callout-tip">
+      💡 <strong>GY6 wiring diagrams:</strong> Generic DC CDI GY6 150cc wiring diagrams are available at <a href="https://moowiring.com/" target="_blank" rel="noopener">moowiring.com</a> and on the <a href="https://scootdawg.proboards.com/" target="_blank" rel="noopener">ScootDawg forum</a>. The BTC Riva 50, La Souris Sourini, and Santini Capri all use a loom closely matching the standard Chinese 50cc GY6 DC CDI diagram.
+    </div>
+
+    <h2>Common Wiring Connector Problems on GY6 Scooters</h2>
+    <p>GY6 scooters use generic Molex-style multi-pin connectors that are vulnerable to corrosion, especially in wet climates. The most problematic connectors to check are the main harness junction block (usually under the headset covers), the CDI connector, the RR connector (which handles high charging current and can melt if undersized), and the ignition switch connector. Apply dielectric grease to all connectors when reassembling to prevent future corrosion.</p>
+
+  </main>
+
+  <script src="../script.js"></script>
+
+  <footer class="guide-footer">
+    <p>Page auto-generated by ISMR Content Sync on 2026-05-12. Content summarised from technical references for educational purposes. Always verify against your specific model's wiring diagram before working on electrical systems.</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISMR Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Repair Guides</a></p>
+  </footer>
+</body>
+</html>

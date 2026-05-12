@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-53LY3KPDYM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-53LY3KPDYM');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GY6 top end rebuild guide. Piston ring replacement, cylinder inspection, and head torque specs for 139QMB (50cc) and 157QMJ (125cc/150cc) engines.">
+  <link rel="canonical" href="https://ismr.online/repair-guides/gy6-top-end-rebuild-piston-rings.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ismr.online/repair-guides/gy6-top-end-rebuild-piston-rings.html">
+  <meta property="og:title" content="GY6 Top End Rebuild & Piston Ring Replacement — ISMR">
+  <meta property="og:description" content="GY6 top end rebuild guide. Piston ring replacement, cylinder inspection, and head torque specs for 139QMB (50cc) and 157QMJ (125cc/150cc) engines.">
+  <meta property="og:site_name" content="ISMR — Interactive Scooter Manuals for Repair">
+  <meta property="og:image" content="https://ismr.online/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GY6 Top End Rebuild & Piston Ring Replacement — ISMR">
+  <meta name="twitter:description" content="GY6 top end rebuild guide. Piston ring replacement, cylinder inspection, and head torque specs for 139QMB (50cc) and 157QMJ (125cc/150cc) engines.">
+  <meta name="twitter:image" content="https://ismr.online/og-image.jpg">
+  <title>GY6 Top End Rebuild & Piston Ring Replacement — ISMR</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 3rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "🔩";
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem;
+      opacity: 0.07;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0 0 1rem;
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+    .guide-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+      margin-bottom: 1.5rem;
+    }
+    .guide-meta a { color: var(--accent); }
+    .guide-meta a:hover { color: var(--primary); }
+    .guide-meta-sep { opacity: 0.4; }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .guide-tag {
+      background: rgba(0, 168, 204, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(0, 168, 204, 0.3);
+      padding: 0.25rem 0.7rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+    .source-box {
+      background: rgba(255, 107, 53, 0.07);
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .source-box a { color: var(--accent); }
+    .guide-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 4rem;
+    }
+    .guide-content h2 {
+      font-size: 1.55rem;
+      color: var(--text-primary);
+      margin-top: 2.5rem;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.6rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content code {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--accent-light);
+      padding: 0.15rem 0.45rem;
+      border-radius: var(--radius-sm);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      font-size: 0.87em;
+    }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th {
+      background: var(--surface-2);
+      color: var(--text-primary);
+      font-weight: 600;
+      padding: 0.7rem 1rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26, 35, 50, 0.6); }
+    .callout {
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .callout strong { color: var(--text-primary); }
+    .callout-warn {
+      background: rgba(245, 166, 35, 0.08);
+      border: 1px solid rgba(245, 166, 35, 0.25);
+      border-left: 4px solid var(--warning);
+    }
+    .callout-tip {
+      background: rgba(6, 167, 125, 0.08);
+      border: 1px solid rgba(6, 167, 125, 0.25);
+      border-left: 4px solid var(--success);
+    }
+    .video-embed {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .video-embed-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+    .video-wrap-16x9 {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+    }
+    .video-wrap-16x9 iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .video-source { font-size: 0.85rem; color: var(--text-tertiary); margin-top: 0.75rem; }
+    .video-source a { color: var(--accent); }
+    @media (max-width: 768px) {
+      .page-hero h1 { font-size: 1.7rem; }
+      .guide-content { padding: 1.5rem 1rem 3rem; }
+      .nav-menu { display: none; }
+      .nav-toggle { display: block; }
+    }
+    @media (max-width: 480px) {
+      .page-hero h1 { font-size: 1.35rem; }
+      .page-hero { padding: 2rem 1rem 1.5rem; }
+      .guide-content h2 { font-size: 1.2rem; }
+      .video-embed { padding: 1rem; }
+      .guide-tags { gap: 0.3rem; }
+    }
+    button:focus,
+    a:focus,
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-icon">⚙️</span>
+        <span class="brand-text">ISMR</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link active">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../index.html#about" class="nav-link">About</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <a href="../index.html">ISMR Home</a><span>›</span><a href="index.html">Repair Guides</a><span>›</span>GY6 Top End Rebuild &amp; Piston Ring Replacement
+      </div>
+      <h1>GY6 Top End Rebuild &amp; Piston Ring Replacement</h1>
+    </div>
+  </section>
+
+  <main class="guide-content">
+
+    <div class="guide-meta">
+      Added: 2026-05-12 <span class="guide-meta-sep">|</span>
+      Sources: <a href="https://www.49ccscoot.com/bbk.html" target="_blank" rel="noopener">49ccScoot.com</a>,
+      <a href="https://www.motor-x.com/blog/gy6-scooter-cylinder-piston-replacement-selection" target="_blank" rel="noopener">Motor-X</a>,
+      <a href="https://www.buggydepot.com/tech-center/" target="_blank" rel="noopener">Buggy Depot Tech Center</a>
+      <span class="guide-meta-sep">|</span>
+      <div class="guide-tags">
+        <span class="guide-tag">GY6</span>
+        <span class="guide-tag">139QMB</span>
+        <span class="guide-tag">157QMJ</span>
+        <span class="guide-tag">Advanced</span>
+      </div>
+    </div>
+
+    <div class="source-box">
+      📌 <strong>Original sources:</strong>
+      <a href="https://www.49ccscoot.com/bbk.html" target="_blank" rel="noopener">49ccScoot GY6 Big Bore Kit Install How-To</a> ·
+      <a href="https://www.motor-x.com/blog/gy6-scooter-cylinder-piston-replacement-selection" target="_blank" rel="noopener">Motor-X GY6 Cylinder and Piston Guide</a> ·
+      <a href="https://www.buggydepot.com/tech-center/" target="_blank" rel="noopener">Buggy Depot Technical Center</a>
+    </div>
+
+    <p>A GY6 top end rebuild — replacing the piston, piston rings, and cylinder — is required when an engine shows signs of excessive blow-by, blue-white exhaust smoke, low compression, or significantly increased oil consumption. This guide covers both a standard piston ring swap (rings only) and a full top end rebuild with new cylinder, applicable to the <strong>GY6 139QMB</strong> (50cc) and <strong>GY6 157QMJ</strong> (125cc/150cc) engine families.</p>
+
+    <div class="callout callout-warn">
+      ⚠️ <strong>Safety note:</strong> Always work on a cold engine. Allow at least two hours after last use before disassembling. Dispose of used engine oil responsibly at a recycling centre.
+    </div>
+
+    <h2>When Is a Top End Rebuild Needed?</h2>
+    <ul>
+      <li>Persistent blue or white smoke from the exhaust, especially on acceleration</li>
+      <li>Compression below 100 psi (service limit) on a compression gauge test</li>
+      <li>Engine consuming more than 0.1 litre of oil per 1,000 km</li>
+      <li>Severe loss of power not resolved by carburetor or valve adjustment</li>
+      <li>Worn or scuffed cylinder bore visible on inspection (score marks)</li>
+      <li>Piston rings with end gap exceeding 0.5 mm (worn past service limit)</li>
+    </ul>
+
+    <h2>Tools &amp; Parts Required</h2>
+    <ul>
+      <li>Metric socket set (8 mm, 10 mm, 12 mm, 17 mm)</li>
+      <li>Torque wrench (0–30 Nm range)</li>
+      <li>Piston ring compressor (or a hose clamp as a substitute)</li>
+      <li>Piston pin circlip pliers (snap-ring pliers)</li>
+      <li>Feeler gauges (for valve clearance check after rebuild)</li>
+      <li>Cylinder bore gauge or vernier callipers</li>
+      <li>Assembly lubricant (clean engine oil or light grease)</li>
+      <li>Gasket set (head gasket + base gasket)</li>
+      <li>New piston + piston ring set (matched to your engine code)</li>
+      <li>New cylinder (if bore is worn beyond tolerance)</li>
+      <li>Piston pin (gudgeon pin) — replace if visibly worn or blued</li>
+      <li>New piston circlips (always replace — they are single-use)</li>
+    </ul>
+
+    <h3>Identifying Your Engine Code</h3>
+    <p>The engine code is stamped on the left crankcase, above the kickstand mount. Common codes and their standard bore sizes are shown below:</p>
+
+    <table>
+      <tr>
+        <th>Engine Code</th>
+        <th>Displacement</th>
+        <th>Standard Bore</th>
+        <th>Standard Stroke</th>
+      </tr>
+      <tr><td><code>139QMB</code></td><td>50 cc</td><td>39 mm</td><td>41.4 mm</td></tr>
+      <tr><td><code>152QMI</code></td><td>125 cc</td><td>54 mm</td><td>54.5 mm</td></tr>
+      <tr><td><code>157QMJ</code></td><td>150 cc</td><td>57.4 mm</td><td>57.8 mm</td></tr>
+      <tr><td><code>161QMK</code></td><td>150 cc</td><td>57.4 mm</td><td>57.8 mm (A-block variant)</td></tr>
+    </table>
+
+    <p>Before ordering parts, measure the existing bore diameter with callipers. Cylinders are often available in standard bore and +0.25 mm, +0.50 mm oversizes to accommodate light honing of a worn bore.</p>
+
+    <h2>Video Reference</h2>
+    <div class="video-embed">
+      <div class="video-embed-title">🎬 GY6 Piston Ring Installation — Ring Order and Clocking</div>
+      <div class="video-wrap-16x9">
+        <iframe src="https://www.youtube-nocookie.com/embed/ioC5nKeP3yE" allowfullscreen title="GY6 Piston Ring Installation — Ring Order and Clocking"></iframe>
+      </div>
+      <p class="video-source">Piston ring installation, ring order, and clocking for GY6 157QMJ/152QMI engines.</p>
+    </div>
+
+    <h2>Step-by-Step Procedure</h2>
+
+    <h3>Step 1 — Prepare the Engine</h3>
+    <ol>
+      <li>Park the scooter on its centre stand on a flat surface.</li>
+      <li>Drain the engine oil completely via the drain bolt (allow 10 minutes to drain fully).</li>
+      <li>Turn the fuel tap to <strong>OFF</strong> and disconnect the fuel line from the carburettor.</li>
+      <li>Remove the seat and any body panels needed to access the engine.</li>
+      <li>Disconnect the spark plug lead and remove the spark plug.</li>
+    </ol>
+
+    <h3>Step 2 — Remove the Cylinder Head</h3>
+    <ol>
+      <li>Remove the intake manifold and carburettor (or throttle body on EFI variants) from the head.</li>
+      <li>Remove the exhaust pipe at the cylinder head flange — two 12 mm nuts.</li>
+      <li>Remove the valve cover (two or four 8 mm bolts). Take note of the camshaft timing marks.</li>
+      <li>Rotate the crankshaft by hand (kick-starter) until the piston reaches <strong>Top Dead Centre (TDC)</strong> on the compression stroke — both valves closed, timing marks aligned.</li>
+      <li>Loosen the cam sprocket bolt. Slide the timing chain off the sprocket and secure the chain with a wire or zip-tie so it cannot fall into the crankcase.</li>
+      <li>Remove the camshaft and rocker arm assembly. Keep parts in order for reassembly.</li>
+      <li>Undo the four cylinder head nuts in a cross pattern, gradually and evenly. Lift the head straight up.</li>
+      <li>Remove the old head gasket. Note any coolant passages if your engine is liquid-cooled.</li>
+    </ol>
+
+    <h3>Step 3 — Remove the Cylinder and Piston</h3>
+    <ol>
+      <li>Remove the two cylinder base nuts (or bolts, depending on variant).</li>
+      <li>Lift the cylinder straight up over the studs. Support the piston with your hand as it exits the bore.</li>
+      <li>Remove the old base gasket and clean the mating surface on the crankcase.</li>
+      <li>Using circlip pliers, remove both piston pin circlips (one on each side). <strong>Do not reuse old circlips.</strong></li>
+      <li>Tap the piston pin (gudgeon pin) out with a smooth punch. The pin should slide out with light hand pressure — heat the piston crown gently with a heat gun if it is tight.</li>
+      <li>Slide the piston off the connecting rod and set aside.</li>
+    </ol>
+
+    <h3>Step 4 — Inspect the Old Parts</h3>
+    <p>Before ordering replacements, inspect the old piston and cylinder:</p>
+    <ul>
+      <li><strong>Bore taper:</strong> Measure the cylinder bore at the top and bottom of the piston travel using callipers. A difference of more than 0.05 mm indicates taper — the cylinder should be replaced or honed by a machine shop.</li>
+      <li><strong>Piston ring end gap:</strong> Insert each ring into the bore and square it with the piston. Measure the end gap with a feeler gauge. Standard gap is 0.10–0.30 mm; replace rings if gap exceeds 0.5 mm.</li>
+      <li><strong>Piston skirt clearance:</strong> Measure the piston diameter 10 mm from the bottom of the skirt (perpendicular to pin). Standard clearance between piston and bore is 0.02–0.05 mm.</li>
+      <li><strong>Piston pin play:</strong> Wiggle the pin in the piston boss. Perceptible rocking (more than 0.02 mm clearance) means replace the pin and possibly the connecting rod small-end bearing.</li>
+    </ul>
+
+    <div class="callout callout-tip">
+      💡 <strong>Tip:</strong> If the cylinder bore shows light scoring (scratches less than 0.1 mm deep), honing with a ball hone and light oil can restore a good surface for rings to seat. Heavy scoring or taper beyond 0.05 mm requires a new cylinder.
+    </div>
+
+    <h3>Step 5 — Install the New Piston Rings</h3>
+    <p>GY6 pistons use three rings in two grooves:</p>
+    <ol>
+      <li><strong>Top groove:</strong> one compression ring (barrel-face profile, marked "T" or "TOP" — install this mark facing up).</li>
+      <li><strong>Second groove:</strong> one compression ring (tapered-face, often chrome-edged — marked "2" or "TOP", install mark facing up).</li>
+      <li><strong>Third (oil) groove:</strong> a three-piece oil ring set — two thin steel rails with a corrugated spacer/expander between them.</li>
+    </ol>
+    <p>Install the oil ring set first: fit the spacer/expander into the bottom groove (ends must not overlap — butt them together), then fit one rail above and one rail below the spacer.</p>
+    <p>Install the second compression ring, then the top compression ring. <strong>Clock the ring end gaps:</strong> space the end gaps 120° apart from each other, and ensure no gap is aligned with the piston pin axis or the thrust side of the piston.</p>
+
+    <div class="callout callout-warn">
+      ⚠️ <strong>Caution:</strong> Piston rings are brittle cast iron. Expand them only just enough to slide over the piston. Over-expanding breaks them. Use a piston ring installer tool if available.
+    </div>
+
+    <h3>Step 6 — Install the New Piston</h3>
+    <ol>
+      <li>Lubricate the small-end bearing, piston pin, and pin bores with clean engine oil.</li>
+      <li>Note the directional arrow or "IN" mark on the piston crown — this must face the intake side (towards the carburettor).</li>
+      <li>Slide the piston onto the connecting rod, align the pin bore, and push the piston pin in by hand. It should slide smoothly with light oil applied.</li>
+      <li>Install both new circlips. Seat them fully in their grooves — check that each circlip is flush and cannot be displaced by a fingernail push.</li>
+    </ol>
+
+    <h3>Step 7 — Install the New Cylinder</h3>
+    <ol>
+      <li>Fit the new base gasket over the studs (no sealant required on paper gaskets).</li>
+      <li>Lubricate the cylinder bore lightly with clean engine oil.</li>
+      <li>Compress the piston rings with a ring compressor tool (or carefully squeeze rings by hand, one at a time).</li>
+      <li>Lower the cylinder over the piston, guiding the timing chain through the chain tunnel.</li>
+      <li>Gently tap the cylinder down with the palm of your hand — never force it. If it sticks, a ring has escaped — lift the cylinder and re-compress.</li>
+      <li>Fit the base nuts and tighten to 10 Nm in a cross pattern.</li>
+    </ol>
+
+    <h3>Step 8 — Reinstall the Cylinder Head</h3>
+    <ol>
+      <li>Place the new head gasket over the studs.</li>
+      <li>Lower the cylinder head onto the studs.</li>
+      <li>Hand-tighten all four nuts, then torque in a cross pattern to <strong>20–22 Nm</strong> (GY6 139QMB) or <strong>24–26 Nm</strong> (GY6 157QMJ). Always use a torque wrench — over-tightening warps aluminium heads.</li>
+      <li>Reinstall the camshaft, aligning the timing marks. Fit the cam sprocket and timing chain. Tighten the cam sprocket bolt to <strong>12–15 Nm</strong>.</li>
+      <li>Reinstall rocker arms, valve cover, and all ancillaries.</li>
+      <li>Set valve clearances: intake 0.08–0.10 mm, exhaust 0.10–0.12 mm (cold, at TDC compression).</li>
+    </ol>
+
+    <h3>Step 9 — Run-In Procedure</h3>
+    <ol>
+      <li>Refill the engine with fresh oil to the correct level (0.8 L for 139QMB, 1.0 L for 157QMJ).</li>
+      <li>Reconnect the spark plug, fuel line, and all electrical connectors.</li>
+      <li>Start the engine and let it idle for 5 minutes. Check for oil leaks at the head and base gasket joints.</li>
+      <li>For the first <strong>500 km</strong> after rebuild: avoid sustained full throttle. Vary engine speed frequently to allow rings to seat evenly against the bore.</li>
+      <li>Change the engine oil after the first 500 km — the oil will contain metallic particles from the ring bedding-in process.</li>
+      <li>After the run-in period, re-check valve clearances and re-torque cylinder head nuts (heads often settle slightly after first heat cycle).</li>
+    </ol>
+
+    <h2>Torque Reference</h2>
+    <table>
+      <tr>
+        <th>Fastener</th>
+        <th>GY6 139QMB (50cc)</th>
+        <th>GY6 157QMJ (150cc)</th>
+      </tr>
+      <tr><td>Cylinder head nuts (M7)</td><td>20–22 Nm</td><td>24–26 Nm</td></tr>
+      <tr><td>Cylinder base nuts (M6)</td><td>8–10 Nm</td><td>10–12 Nm</td></tr>
+      <tr><td>Cam sprocket bolt (M6)</td><td>12–15 Nm</td><td>12–15 Nm</td></tr>
+      <tr><td>Valve cover bolts (M6)</td><td>8–10 Nm</td><td>8–10 Nm</td></tr>
+      <tr><td>Spark plug (M10×1.0)</td><td>12–15 Nm</td><td>12–15 Nm</td></tr>
+    </table>
+
+    <h2>Compression Specification</h2>
+    <p>After rebuild, a healthy GY6 should produce 120–150 psi (8.3–10.3 bar) on a compression gauge. Values below 100 psi (6.9 bar) after a fresh rebuild indicate a ring seating problem or valve leak. Squirt a small amount of engine oil into the spark plug hole and retest — if compression rises significantly, the rings are the problem; if it stays the same, suspect valves.</p>
+
+  </main>
+
+  <script src="../script.js"></script>
+
+  <footer class="guide-footer">
+    <p>Page auto-generated by ISMR Content Sync on 2026-05-12. Content summarised from multiple technical sources for educational purposes. Always verify with the original sources and manufacturer specifications before performing repairs.</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISMR Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Repair Guides</a></p>
+  </footer>
+</body>
+</html>
