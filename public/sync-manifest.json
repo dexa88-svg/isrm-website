@@ -464,5 +464,108 @@
     "summary": "Step-by-step guide to set up HUD ECU Hacker on Windows, install FTDI FT232RL drivers, and connect to a GY6 EFI scooter via OBD2 KKL cable and 6-pin diagnostic connector to read live data and fault codes.",
     "addedAt": "2026-05-12T12:00:00Z",
     "lastChecked": "2026-05-12T12:00:00Z"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=nDa7IZfF_bU",
+    "title": "Video: Vespa Primavera & Sprint \u2014 Belt and Transmission Assembly",
+    "category": "videos",
+    "file": "videos/vespa-primavera-belt-transmission-video.html",
+    "sources": [
+      "https://www.youtube.com/watch?v=nDa7IZfF_bU"
+    ],
+    "addedAt": "2026-05-13T08:01:00Z",
+    "lastChecked": "2026-05-13T08:01:00Z"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=pTDPOe4TsKs",
+    "title": "Video: Advanced Vespa/Piaggio Transmission Clutch & Driven Pulley Repair",
+    "category": "videos",
+    "file": "videos/vespa-piaggio-advanced-clutch-repair-video.html",
+    "sources": [
+      "https://www.youtube.com/watch?v=pTDPOe4TsKs"
+    ],
+    "addedAt": "2026-05-13T08:01:00Z",
+    "lastChecked": "2026-05-13T08:01:00Z"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=tpFNAYn9_RQ",
+    "title": "Vespa Primavera \u2014 Dent Repair & Bodywork Restoration Guide",
+    "category": "repair-guides",
+    "file": "repair-guides/vespa-primavera-dent-bodywork-repair.html",
+    "sources": [
+      "https://www.youtube.com/watch?v=tpFNAYn9_RQ"
+    ],
+    "addedAt": "2026-05-13T08:01:00Z",
+    "lastChecked": "2026-05-13T08:01:00Z"
+  },
+  {
+    "url": "internal:scooter-cvt-clutch-variator-guide",
+    "title": "CVT Variator and Roller Inspection Guide \u2014 ISRM",
+    "category": "repair-guides",
+    "sources": [],
+    "addedAt": "2026-05-13T06:08:56Z"
+  },
+  {
+    "url": "internal:vespa-primavera-dent-bodywork-repair",
+    "title": "Vespa Primavera Dent Repair & Bodywork Restoration Guide \u2014 ISRM",
+    "category": "repair-guides",
+    "sources": [],
+    "addedAt": "2026-05-13T06:36:38Z"
+  },
+  {
+    "url": "internal:gy6-carburetor-cleaning-guide",
+    "title": "GY6 Carburetor Deep-Cleaning Guide \u2014 ISRM",
+    "category": "repair-guides",
+    "sources": [],
+    "addedAt": "2026-05-12T12:54:18Z"
+  },
+  {
+    "url": "internal:gy6-carburetor-jetting-guide",
+    "title": "GY6 Carburetor Jetting & Rejetting Guide \u2014 ISRM",
+    "category": "repair-guides",
+    "sources": [],
+    "addedAt": "2026-05-12T12:54:18Z"
+  },
+  {
+    "url": "internal:gy6-efi-fuel-injection-troubleshooting",
+    "title": "GY6 EFI Fuel Injection Troubleshooting Guide \u2014 ISRM",
+    "category": "diagnostics",
+    "sources": [],
+    "addedAt": "2026-05-12T17:10:56Z"
+  },
+  {
+    "url": "internal:vespa-primavera-125-technical-overview",
+    "title": "Vespa Primavera 125 \u2014 Technical Overview \u2014 ISRM",
+    "category": "models",
+    "sources": [],
+    "addedAt": "2026-05-12T12:54:18Z"
+  },
+  {
+    "url": "internal:vespa-carb-idle-adjustment-video",
+    "title": "Basic Carb Adjustments for Carbureted Vespa Scooters \u2014 ISRM",
+    "category": "videos",
+    "sources": [],
+    "addedAt": "2026-05-12T12:54:18Z"
+  },
+  {
+    "url": "internal:gy6-carburetor-intake-change-tutorial",
+    "title": "Video: GY6 Carburetor & Intake Change Tutorial (150cc) \u2014 ISRM",
+    "category": "videos",
+    "sources": [],
+    "addedAt": "2026-05-12T12:54:18Z"
+  },
+  {
+    "url": "internal:vespa-primavera-belt-transmission-video",
+    "title": "Video: Vespa Primavera & Sprint Belt and Transmission Assembly \u2014 ISRM",
+    "category": "videos",
+    "sources": [],
+    "addedAt": "2026-05-13T06:35:16Z"
+  },
+  {
+    "url": "internal:vespa-piaggio-advanced-clutch-repair-video",
+    "title": "Video: Advanced Vespa/Piaggio Transmission Clutch & Driven Pulley Repair \u2014 ISRM",
+    "category": "videos",
+    "sources": [],
+    "addedAt": "2026-05-13T06:35:49Z"
   }
 ]
