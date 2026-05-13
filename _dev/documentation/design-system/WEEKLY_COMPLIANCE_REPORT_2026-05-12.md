@@ -1,4 +1,4 @@
-# ISRM Design System Compliance Audit
+# ISMR Design System Compliance Audit
 **Date:** Tuesday, 12 May 2026  
 **Auditor:** Claude (Automated Scheduled Task — `isrm-design-compliance`)  
 **Audit Type:** Weekly Design System Compliance Check (9 Checks)  
@@ -10,7 +10,7 @@
 ## Section 1: EXECUTIVE SUMMARY
 
 ```
-ISRM Design System Compliance Audit
+ISMR Design System Compliance Audit
 Date: 2026-05-12
 Pages Audited: 13 (community/index.html does not yet exist)
 

@@ -1,4 +1,4 @@
-# ISRM Design System Compliance Audit
+# ISMR Design System Compliance Audit
 **Date:** May 10, 2026 (Friday)  
 **Auditor:** Claude (Automated Task)  
 **Pages Audited:** 15  
@@ -606,7 +606,7 @@ design: Update la-souris page to design system compliance
 ## CONCLUSION
 
 ### Achievement Summary
-The ISRM website has made **significant progress** on design system compliance:
+The ISMR website has made **significant progress** on design system compliance:
 
 - **26 percentage point improvement** since last week (47% → 73%)
 - **11 of 15 pages are now fully compliant**

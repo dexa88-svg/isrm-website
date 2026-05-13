@@ -1,7 +1,7 @@
 {
   "name": "ISMR — Interactive Scooter Manuals for Repair",
   "short_name": "ISMR",
-  "description": "Free wiki-style repair manuals for GY6 and Piaggio/Vespa scooters.",
+  "description": "Free interactive repair manuals for GY6 and Piaggio/Vespa scooters.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f1419",

@@ -1,0 +1,354 @@
+================================================================================
+ISRM STYLE GUIDE COMPLIANCE AUDIT - EXECUTIVE SUMMARY
+================================================================================
+
+OVERALL COMPLIANCE: 47%
+- 8 pages fully compliant (100%)
+- 0 pages partially compliant
+- 8 pages non-compliant (47%)
+
+CRITICAL ISSUES FOUND:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. HARDCODED COLORS (50% of pages)
+   Issue: 8 pages use hardcoded hex colors instead of CSS variables
+   Impact: Design system ineffective, difficult to update colors globally
+   Example:
+     #f5a623 instead of var(--warning)
+     #7ec8e3 instead of var(--accent)
+     #0f0f0f instead of var(--bg-dark)
+
+2. MISSING STYLESHEET LINKS (50% of pages)
+   Issue: 6 pages lack <link rel="stylesheet" href="../../styles.css">
+   Impact: No access to CSS variables or design system styles
+   Affected Pages:
+     - repair-guides/gy6-oil-change-guide.html
+     - repair-guides/gy6-valve-adjustment-guide.html
+     - repair-guides/gy6-carburetor-adjustment-guide.html
+     - repair-guides/gy6-cvt-variator-belt-replacement.html
+     - diagnostics/gy6-no-start-troubleshooting.html
+     - models/la-souris-sourini-city-overview.html
+
+3. NO RESPONSIVE DESIGN (50% of pages)
+   Issue: 8 pages use fixed max-width: 820px with no media queries
+   Impact: Mobile users experience broken layout
+   Missing: @media (max-width: 768px) and @media (max-width: 480px)
+
+4. WRONG FONT-FAMILY (50% of pages)
+   Issue: 8 pages use Georgia serif instead of system font stack
+   Impact: Visual inconsistency, brand dilution
+   Should Be: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, etc.
+
+5. INCONSISTENT BORDERS (50% of pages)
+   Issue: Hardcoded border-radius: 6px instead of var(--radius-md)
+   Impact: Visual inconsistency
+   Should Be: var(--radius-md) = 8px, var(--radius-sm) = 4px
+
+
+AFFECTED PAGES BY SEVERITY
+================================================================================
+
+CRITICAL (50% - Missing Stylesheet + Hardcoded Colors):
+  ✗ repair-guides/gy6-oil-change-guide.html
+  ✗ repair-guides/gy6-valve-adjustment-guide.html
+  ✗ repair-guides/gy6-carburetor-adjustment-guide.html
+  ✗ repair-guides/gy6-cvt-variator-belt-replacement.html
+  ✗ diagnostics/gy6-no-start-troubleshooting.html
+  ✗ models/la-souris-sourini-city-overview.html
+
+HIGH (50% - Partially Non-Compliant):
+  Additional issues with typography and responsive design
+
+
+COMPLIANCE BY CATEGORY
+================================================================================
+
+Stylesheet Linking:          50% compliant (8/16 pages)
+CSS Variables Usage:         50% compliant (8/16 pages)
+Color Palette:               50% compliant (8/16 pages)
+Typography (Font Family):    50% compliant (8/16 pages)
+Typography (Sizes/Weights):  75% compliant (12/16 pages)
+Spacing/Grid:                50% compliant (8/16 pages)
+Border Radius:               50% compliant (8/16 pages)
+Shadows:                     50% compliant (8/16 pages)
+Transitions:                 50% compliant (8/16 pages)
+Responsive Design:           50% compliant (8/16 pages)
+Navigation Consistency:      50% compliant (8/16 pages)
+Component Patterns:          50% compliant (8/16 pages)
+
+
+QUICK FIX CHECKLIST
+================================================================================
+
+Priority: CRITICAL (Complete This Week)
+Time: ~2 hours
+
+□ Add stylesheet links to 6 pages (5 minutes)
+  Add: <link rel="stylesheet" href="../../styles.css">
+  To: 6 guide pages listed above
+
+□ Replace hardcoded colors (30 minutes)
+  #f5a623 → var(--warning)
+  #7ec8e3 → var(--accent)
+  #0f0f0f → var(--bg-dark)
+  #e8e8e8 → var(--text-primary)
+  #1a1a1a → var(--surface)
+  #151515 → var(--surface-2)
+  #4caf50 → var(--success)
+  #333 → var(--border)
+
+□ Update fonts (10 minutes)
+  Find: font-family: Georgia, serif;
+  Replace: font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+
+□ Fix border-radius (10 minutes)
+  Find: border-radius: 6px;
+  Replace: border-radius: var(--radius-md);
+  Find: border-radius: 3px;
+  Replace: border-radius: var(--radius-sm);
+
+After Phase 1: 60% compliance → 100% compliance
+
+
+Priority: HIGH (Complete Next 2 Weeks)
+Time: ~2 hours
+
+□ Add responsive media queries (45 minutes)
+  Add @media (max-width: 768px) block
+  Add @media (max-width: 480px) block
+
+□ Update navigation (20 minutes)
+  Use design system navbar classes
+  Ensure consistency with main site
+
+□ Add transitions (15 minutes)
+  Use var(--transition) on hover states
+
+
+Priority: MEDIUM (Complete This Month)
+Time: ~1 hour
+
+□ Add shadow effects (15 minutes)
+  Use var(--shadow) and var(--shadow-sm)
+
+□ Refine components (30 minutes)
+  Verify all interactive elements
+
+□ Final testing (15 minutes)
+  Test all breakpoints and interactions
+
+
+FULLY COMPLIANT PAGES (No Issues) ✓
+================================================================================
+
+These 8 pages properly implement the design system:
+  ✓ index.html
+  ✓ repair-guides/index.html
+  ✓ diagnostics/index.html
+  ✓ models/index.html
+  ✓ parts/index.html
+  ✓ news/index.html
+  ✓ videos/index.html
+  ✓ community/index.html
+
+What They Do Right:
++ Use external stylesheet with proper path
++ CSS variables for all colors
++ System font stack (no serif)
++ Responsive design with media queries
++ Design system components (cards, buttons, badges)
++ Proper spacing (8px base unit)
++ CSS variable border-radius
++ Smooth transitions
++ Shadow effects
++ Navigation consistency
+
+
+HARDCODED COLOR EXAMPLES
+================================================================================
+
+Example of NON-COMPLIANT Code:
+┌─────────────────────────────────────────────────────────────────────┐
+│ h1 { color: #f5a623; border-bottom: 2px solid #f5a623; }            │
+│ body { background: #0f0f0f; color: #e8e8e8; }                       │
+│ a { color: #7ec8e3; }                                               │
+│ .warn { background: #2a1a00; border-left: 4px solid #f5a623; }      │
+│ .tip { background: #0a2a1a; border-left: 4px solid #4caf50; }       │
+└─────────────────────────────────────────────────────────────────────┘
+
+Example of COMPLIANT Code (What Guides Should Use):
+┌─────────────────────────────────────────────────────────────────────┐
+│ h1 { color: var(--warning); border-bottom: 2px solid var(--warning);│
+│ body { background: var(--bg-dark); color: var(--text-primary); }    │
+│ a { color: var(--accent); }                                         │
+│ .warn { background: rgba(245,166,35,0.1);                          │
+│         border-left: 4px solid var(--warning); }                    │
+│ .tip { background: rgba(6,167,125,0.1);                            │
+│        border-left: 4px solid var(--success); }                     │
+└─────────────────────────────────────────────────────────────────────┘
+
+
+RESPONSIVE DESIGN MISSING
+================================================================================
+
+Current Structure (Non-Compliant):
+┌─────────────────────────────────────────────────────────────────────┐
+│ body { max-width: 820px; margin: 2rem auto; padding: 1rem 2rem; }   │
+│ /* No media queries - breaks on mobile! */                         │
+└─────────────────────────────────────────────────────────────────────┘
+
+Required Structure (Compliant):
+┌─────────────────────────────────────────────────────────────────────┐
+│ body { max-width: 100%; padding: 1rem 2rem; }                       │
+│ h1 { font-size: 4rem; }                                             │
+│ h2 { font-size: 2.5rem; }                                           │
+│                                                                     │
+│ @media (max-width: 768px) {                                        │
+│   h1 { font-size: 2rem; }                                           │
+│   h2 { font-size: 1.5rem; }                                         │
+│   body { padding: 1rem; }                                           │
+│ }                                                                   │
+│                                                                     │
+│ @media (max-width: 480px) {                                        │
+│   h1 { font-size: 1.5rem; }                                         │
+│   h2 { font-size: 1.2rem; }                                         │
+│   body { padding: 0.5rem; }                                         │
+│ }                                                                   │
+└─────────────────────────────────────────────────────────────────────┘
+
+
+DESIGN SYSTEM REFERENCE
+================================================================================
+
+The 8 compliant pages use these CSS variables correctly:
+
+Colors:
+--primary: #ff6b35              --secondary: #004e89
+--primary-dark: #e55a24         --accent: #00a8cc
+--success: #06a77d              --warning: #f5a623
+--danger: #d63031               --bg-dark: #0f1419
+--surface: #1a2332              --surface-2: #242f3e
+--text-primary: #f5f5f5         --text-secondary: #a0a0a0
+--text-tertiary: #707070        --border: #2a3548
+
+Effects:
+--shadow: 0 4px 20px rgba(0, 0, 0, 0.3)
+--shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2)
+--transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+
+Spacing:
+--radius-sm: 4px                --radius-md: 8px
+--radius-lg: 12px               --radius-xl: 16px
+Base unit: 8px (1rem = 16px)
+
+Typography:
+Font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif
+h1-h4: font-weight 600
+Line-height: 1.6
+
+Responsive:
+768px (tablet)
+480px (mobile)
+
+
+TIMELINE & EFFORT ESTIMATE
+================================================================================
+
+Phase 1: CRITICAL (Stylesheet + Colors + Typography)
+├─ Time: ~2 hours
+├─ Impact: High (enables design system)
+├─ Effort: Bulk find-replace operations
+└─ Result: 60% compliance
+
+Phase 2: HIGH (Responsive + Navigation)
+├─ Time: ~2 hours
+├─ Impact: High (fixes mobile experience)
+├─ Effort: Design and implement media queries
+└─ Result: 85% compliance
+
+Phase 3: MEDIUM (Polish)
+├─ Time: ~1 hour
+├─ Impact: Medium (visual refinement)
+├─ Effort: Add shadows, finalize components
+└─ Result: 100% compliance
+
+TOTAL: 5-6 hours for full compliance
+
+
+RECOMMENDED APPROACH
+================================================================================
+
+1. ASSIGN RESPONSIBILITY
+   - Identify team members responsible for guide pages
+   - Assign pages in pairs (2 hours each)
+   - Create pull request for each fix
+
+2. EXECUTE PHASE 1 (This Week)
+   - Add stylesheet links (5 min per page)
+   - Bulk replace colors (30 min all files)
+   - Update fonts (10 min all files)
+   - Fix border-radius (10 min all files)
+
+3. EXECUTE PHASE 2 (Next 2 Weeks)
+   - Add responsive media queries (30-45 min per page)
+   - Update navigation structure
+   - Add transitions
+
+4. EXECUTE PHASE 3 (Next Month)
+   - Add shadows and final polish
+   - Test thoroughly
+   - Deploy with confidence
+
+5. IMPLEMENT PREVENTIVE MEASURES
+   - Create guide page template
+   - Add to code review checklist
+   - Document in style guide
+   - Consider automation
+
+
+WHAT'S AT STAKE
+================================================================================
+
+If NOT fixed:
+- Design system is ineffective
+- Difficult to apply global color changes
+- Mobile users have poor experience
+- Inconsistent brand presentation
+- Technical debt accumulates
+
+If fixed:
+- Full design system compliance
+- Easy future theme/color updates
+- Excellent mobile experience
+- Professional appearance
+- Clean codebase for future work
+
+
+QUESTIONS TO RESOLVE
+================================================================================
+
+1. Are guide pages auto-generated? If so, update the generation template
+2. Why are some pages using hardcoded colors? Different template/author?
+3. Should guide pages follow the same design system as index pages?
+4. What's the timeline for fixing these issues?
+5. Who will be responsible for maintenance going forward?
+
+
+FULL REPORT AVAILABLE AT:
+ISRM_StyleGuide_Compliance_Audit.txt (20KB, 665 lines)
+
+Contains:
+- Detailed audit of all 17 pages
+- Category-by-category analysis
+- Priority-ranked issue list
+- Implementation roadmap
+- Testing verification checklist
+- Long-term recommendations
+
+================================================================================
+Report Date: May 7, 2026
+Pages Audited: 17 HTML files
+Overall Compliance: 47% → Target 100%
+Estimated Fix Time: 5-6 hours
+Severity: MEDIUM-HIGH (immediate action recommended)
+================================================================================

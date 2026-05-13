@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISMR Phase 0 — Product Definition Worksheet</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --bg: #f9fafb;
+            --bg-card: #ffffff;
+            --border: #e5e7eb;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-lighter: #9ca3af;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .section-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 18px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 22px;
+            color: var(--text);
+            flex: 1;
+        }
+
+        .explanation {
+            background: #f0f9ff;
+            border-left: 4px solid var(--primary);
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .form-group small {
+            display: block;
+            color: var(--text-light);
+            font-size: 13px;
+            margin-bottom: 10px;
+            margin-top: -5px;
+        }
+
+        textarea, input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
+
+        textarea:focus, input[type="text"]:focus, input[type="number"]:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: #f0f9ff;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .job-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .job-card {
+            background: linear-gradient(135deg, #667eea15, #764ba215);
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s;
+        }
+
+        .job-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+        }
+
+        .job-card h4 {
+            color: var(--primary);
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .job-card textarea {
+            font-size: 13px;
+            min-height: 120px;
+        }
+
+        .persona-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .persona-section {
+                grid-template-columns: 1fr;
+            }
+            .job-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .persona-subsection {
+            background: #f9fafb;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 3px solid var(--secondary);
+        }
+
+        .persona-subsection h4 {
+            color: var(--secondary);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .persona-subsection ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .persona-subsection li {
+            padding: 8px 0;
+            color: var(--text-light);
+            font-size: 14px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .persona-subsection li:last-child {
+            border-bottom: none;
+        }
+
+        .preview-section {
+            background: linear-gradient(135deg, #ecfdf5, #f0fdf4);
+            border: 2px solid var(--success);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 25px;
+        }
+
+        .preview-section h3 {
+            color: var(--success);
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .preview-box {
+            background: white;
+            border-left: 4px solid var(--success);
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .preview-box strong {
+            color: var(--text);
+        }
+
+        .preview-box .label {
+            display: inline-block;
+            background: #ecfdf5;
+            color: var(--success);
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-right: 8px;
+            text-transform: uppercase;
+        }
+
+        button {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .exports {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background: var(--text-light);
+            padding: 10px 18px;
+            font-size: 13px;
+        }
+
+        .counter {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 12px;
+            background: #f9fafb;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        .checklist-icon {
+            font-size: 16px;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .tip {
+            background: #fef3c7;
+            border-left: 4px solid var(--warning);
+            padding: 12px 15px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #92400e;
+            margin: 15px 0;
+        }
+
+        .footer {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            color: var(--text-light);
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .status-banner {
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .status-banner.complete {
+            background: #ecfdf5;
+            border-left: 4px solid var(--success);
+            color: #065f46;
+        }
+
+        .status-banner.incomplete {
+            background: #fef3c7;
+            border-left: 4px solid var(--warning);
+            color: #92400e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛴 ISMR Phase 0</h1>
+            <p class="subtitle">Lock vision, scope & naming — Product Definition Worksheet</p>
+        </header>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">1</div>
+                <h2>The One-Liner (Your Core Value Proposition)</h2>
+            </div>
+
+            <div class="explanation">
+                A <strong>one-liner</strong> is a single, punchy sentence that captures the core idea of your product. It should be memorable enough that a user could repeat it to a friend. Think: Slack = "Where work happens", Figma = "The collaborative design tool". Your one-liner is NOT the full feature list—it's the <em>essence</em>.
+            </div>
+
+            <div class="form-group">
+                <label>Draft your one-liner:</label>
+                <small>What is ISMR, in one sentence? (Try 10-20 words max.)</small>
+                <textarea id="oneLiner" placeholder="e.g., 'The free, crowdsourced repair wiki for scooter owners.'"></textarea>
+                <div class="counter"><span id="oneLineCount">0</span> characters</div>
+            </div>
+
+            <div class="tip">
+                <strong>💡 Tip:</strong> Start with "[What] for [who]". Examples:
+                <ul style="margin: 8px 0 0 20px; font-size: 12px;">
+                    <li>Wikipedia = "The free encyclopedia"</li>
+                    <li>Airbnb = "Belong anywhere"</li>
+                    <li>Notion = "All-in-one workspace"</li>
+                </ul>
+            </div>
+
+            <div class="preview-section" id="preview1" style="display: none;">
+                <h3>✓ Your One-Liner</h3>
+                <div class="preview-box">
+                    <span class="label">Value Prop</span>
+                    <span id="previewOneLiner"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">2</div>
+                <h2>Target User Persona</h2>
+            </div>
+
+            <div class="explanation">
+                You're building for <strong>DIY scooter owners, not professional mechanics</strong>. But who exactly? Define them in detail: what they know, what they don't, what frustrates them, what motivates them. This guide every design decision later.
+            </div>
+
+            <div class="persona-section">
+                <div>
+                    <div class="form-group">
+                        <label>Who is this person? (Describe in 2-3 sentences)</label>
+                        <small>Example: "Alex owns a Xiaomi M365 e-scooter for commuting. They're tech-comfortable but not a mechanic. When something breaks, they search YouTube first."</small>
+                        <textarea id="personaWho" placeholder="Type here..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>What do they want? (Their goals & motivations)</label>
+                        <small>Why would they visit your site?</small>
+                        <textarea id="personaWants" placeholder="e.g., Save money, learn, keep their ride running..."></textarea>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="form-group">
+                        <label>What frustrates them? (Pain points)</label>
+                        <small>What problems is ISMR solving for them?</small>
+                        <textarea id="personaPains" placeholder="e.g., Don't know which part to buy, procedures are scattered across forums..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>What do they know (and not know)?</label>
+                        <small>Skill level, prior experience</small>
+                        <textarea id="personaKnows" placeholder="e.g., Knows basic tools, understands electric motors, but not mechanics..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview-section" id="preview2" style="display: none;">
+                <h3>✓ Your Target User Persona</h3>
+                <div class="preview-box" id="personaPreview"></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">3</div>
+                <h2>The Three "Jobs to Be Done"</h2>
+            </div>
+
+            <div class="explanation">
+                Your product likely solves 3 core problems. Think about the jobs your user tries to accomplish (not features, but <em>outcomes</em>). For ISMR, the roadmap suggests: find the right part, find the right procedure, diagnose the problem. But you should refine these.
+            </div>
+
+            <div class="tip">
+                <strong>🎯 Jobs to Be Done Framework:</strong> Instead of "features", think of the actual <em>jobs</em> users hire your product to do. E.g., not "search bar", but "find the right part quickly".
+            </div>
+
+            <div class="job-container">
+                <div class="job-card">
+                    <h4>Job #1: Find the Right Part</h4>
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 13px;">
+                        Refine this job:
+                        <small style="display: block; font-weight: normal; color: var(--text-light); margin-top: 4px;">What does the user want to accomplish? How will ISMR help?</small>
+                    </label>
+                    <textarea id="job1"></textarea>
+                </div>
+
+                <div class="job-card">
+                    <h4>Job #2: Learn the Repair Procedure</h4>
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 13px;">
+                        Refine this job:
+                        <small style="display: block; font-weight: normal; color: var(--text-light); margin-top: 4px;">What does the user want to accomplish? How will ISMR help?</small>
+                    </label>
+                    <textarea id="job2"></textarea>
+                </div>
+
+                <div class="job-card">
+                    <h4>Job #3: Diagnose the Problem</h4>
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 13px;">
+                        Refine this job:
+                        <small style="display: block; font-weight: normal; color: var(--text-light); margin-top: 4px;">What does the user want to accomplish? How will ISMR help?</small>
+                    </label>
+                    <textarea id="job3"></textarea>
+                </div>
+            </div>
+
+            <div class="preview-section" id="preview3" style="display: none;">
+                <h3>✓ Your Three Jobs to Be Done</h3>
+                <div class="preview-box" id="job1Preview"></div>
+                <div class="preview-box" id="job2Preview"></div>
+                <div class="preview-box" id="job3Preview"></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">4</div>
+                <h2>Summary & Next Steps</h2>
+            </div>
+
+            <div id="statusBanner"></div>
+
+            <div class="checklist-item">
+                <div class="checklist-icon">📌</div>
+                <div>
+                    <strong>Next: Brand Name & Domain</strong><br>
+                    Once you lock this definition, move on to Phase 0 task #2: choose a brand name (ScootWiki? FixMyScoot? Your own?) and register a domain.
+                </div>
+            </div>
+
+            <div class="checklist-item">
+                <div class="checklist-icon">💾</div>
+                <div>
+                    <strong>Export & Share</strong><br>
+                    Save your answers as a markdown file or share with early users to validate your thinking.
+                </div>
+            </div>
+
+            <div class="checklist-item">
+                <div class="checklist-icon">✨</div>
+                <div>
+                    <strong>Revisit Often</strong><br>
+                    During Phase 1–3 build-out, refer back to this definition. If you feel lost, re-read it.
+                </div>
+            </div>
+
+            <div class="exports">
+                <button onclick="exportMarkdown()">⬇ Export as Markdown</button>
+                <button class="btn-secondary" onclick="downloadJSON()">⬇ Export as JSON</button>
+                <button class="btn-secondary" onclick="copyToClipboard()">📋 Copy to Clipboard</button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>✨ Fill in each section, and your one-pager takes shape. Save it—you'll reference it constantly.</p>
+            <p style="margin-top: 10px; font-size: 12px; color: var(--text-lighter);">All data is saved to your browser. Nothing is sent anywhere.</p>
+        </div>
+    </div>
+
+    <script>
+        // Auto-save to localStorage
+        const fields = [
+            'oneLiner', 'personaWho', 'personaWants', 'personaPains', 'personaKnows',
+            'job1', 'job2', 'job3'
+        ];
+
+        fields.forEach(field => {
+            const el = document.getElementById(field);
+            if (!el) return;
+
+            // Load from storage
+            const stored = localStorage.getItem(`phase0-${field}`);
+            if (stored) el.value = stored;
+
+            // Save on change
+            el.addEventListener('input', () => {
+                localStorage.setItem(`phase0-${field}`, el.value);
+                updatePreviews();
+                updateStatus();
+            });
+        });
+
+        function updatePreviews() {
+            const oneLiner = document.getElementById('oneLiner').value;
+            const personaWho = document.getElementById('personaWho').value;
+            const personaWants = document.getElementById('personaWants').value;
+            const personaPains = document.getElementById('personaPains').value;
+            const personaKnows = document.getElementById('personaKnows').value;
+            const job1 = document.getElementById('job1').value;
+            const job2 = document.getElementById('job2').value;
+            const job3 = document.getElementById('job3').value;
+
+            // One-liner preview
+            if (oneLiner) {
+                document.getElementById('preview1').style.display = 'block';
+                document.getElementById('previewOneLiner').textContent = oneLiner;
+                document.getElementById('oneLineCount').textContent = oneLiner.length;
+            }
+
+            // Persona preview
+            if (personaWho || personaWants || personaPains || personaKnows) {
+                document.getElementById('preview2').style.display = 'block';
+                let personaHtml = '';
+                if (personaWho) personaHtml += `<div style="margin-bottom: 12px;"><strong>Who:</strong> ${personaWho}</div>`;
+                if (personaWants) personaHtml += `<div style="margin-bottom: 12px;"><strong>Wants:</strong> ${personaWants}</div>`;
+                if (personaPains) personaHtml += `<div style="margin-bottom: 12px;"><strong>Frustrations:</strong> ${personaPains}</div>`;
+                if (personaKnows) personaHtml += `<div><strong>Knows:</strong> ${personaKnows}</div>`;
+                document.getElementById('personaPreview').innerHTML = personaHtml;
+            }
+
+            // Jobs preview
+            if (job1 || job2 || job3) {
+                document.getElementById('preview3').style.display = 'block';
+                if (job1) document.getElementById('job1Preview').innerHTML = `<span class="label">Job 1</span> ${job1}`;
+                if (job2) document.getElementById('job2Preview').innerHTML = `<span class="label">Job 2</span> ${job2}`;
+                if (job3) document.getElementById('job3Preview').innerHTML = `<span class="label">Job 3</span> ${job3}`;
+            }
+        }
+
+        function updateStatus() {
+            const oneLiner = document.getElementById('oneLiner').value;
+            const persona = document.getElementById('personaWho').value;
+            const jobs = document.getElementById('job1').value && document.getElementById('job2').value && document.getElementById('job3').value;
+
+            const allFilled = oneLiner && persona && jobs;
+            const banner = document.getElementById('statusBanner');
+
+            if (allFilled) {
+                banner.className = 'status-banner complete';
+                banner.innerHTML = '✓ <strong>Phase 0 Foundation Complete!</strong> You\'re ready to move to task #2 (brand name & domain).';
+            } else {
+                banner.className = 'status-banner incomplete';
+                banner.innerHTML = '⏳ <strong>In Progress:</strong> Fill in all three sections above to complete Phase 0 foundation.';
+            }
+        }
+
+        function exportMarkdown() {
+            const oneLiner = document.getElementById('oneLiner').value;
+            const personaWho = document.getElementById('personaWho').value;
+            const personaWants = document.getElementById('personaWants').value;
+            const personaPains = document.getElementById('personaPains').value;
+            const personaKnows = document.getElementById('personaKnows').value;
+            const job1 = document.getElementById('job1').value;
+            const job2 = document.getElementById('job2').value;
+            const job3 = document.getElementById('job3').value;
+
+            let md = `# ISMR Phase 0 — Product Definition\n\n`;
+            md += `**Date:** ${new Date().toISOString().split('T')[0]}\n\n`;
+
+            md += `## 1. One-Liner (Value Proposition)\n\n`;
+            md += `${oneLiner || '(not yet filled in)'}\n\n`;
+
+            md += `## 2. Target User Persona\n\n`;
+            if (personaWho) md += `### Who\n${personaWho}\n\n`;
+            if (personaWants) md += `### Wants/Goals\n${personaWants}\n\n`;
+            if (personaPains) md += `### Pain Points\n${personaPains}\n\n`;
+            if (personaKnows) md += `### Knowledge & Skills\n${personaKnows}\n\n`;
+
+            md += `## 3. Three Jobs to Be Done\n\n`;
+            if (job1) md += `### Job 1: Find the Right Part\n${job1}\n\n`;
+            if (job2) md += `### Job 2: Learn the Repair Procedure\n${job2}\n\n`;
+            if (job3) md += `### Job 3: Diagnose the Problem\n${job3}\n\n`;
+
+            md += `---\n\nGenerated from ISMR Phase 0 worksheet.\n`;
+
+            const blob = new Blob([md], { type: 'text/markdown' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `ISMR-Phase0-Definition-${new Date().toISOString().split('T')[0]}.md`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function downloadJSON() {
+            const data = {
+                oneLiner: document.getElementById('oneLiner').value,
+                persona: {
+                    who: document.getElementById('personaWho').value,
+                    wants: document.getElementById('personaWants').value,
+                    pains: document.getElementById('personaPains').value,
+                    knows: document.getElementById('personaKnows').value
+                },
+                jobsToBeeDone: {
+                    job1: document.getElementById('job1').value,
+                    job2: document.getElementById('job2').value,
+                    job3: document.getElementById('job3').value
+                },
+                exportedAt: new Date().toISOString()
+            };
+
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `ISMR-Phase0-Definition-${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function copyToClipboard() {
+            const oneLiner = document.getElementById('oneLiner').value;
+            const personaWho = document.getElementById('personaWho').value;
+            const job1 = document.getElementById('job1').value;
+            const job2 = document.getElementById('job2').value;
+            const job3 = document.getElementById('job3').value;
+
+            const text = `ISMR Phase 0 Definition\n\n1. One-Liner:\n${oneLiner}\n\n2. Target User:\n${personaWho}\n\n3. Jobs to Be Done:\n- ${job1}\n- ${job2}\n- ${job3}`;
+
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copied to clipboard!');
+            });
+        }
+
+        // Initialize
+        updatePreviews();
+        updateStatus();
+    </script>
+</body>
+</html>

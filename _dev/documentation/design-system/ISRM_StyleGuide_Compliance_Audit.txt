@@ -1,5 +1,5 @@
 ================================================================================
-ISRM WEBSITE STYLE GUIDE COMPLIANCE AUDIT REPORT
+ISMR WEBSITE STYLE GUIDE COMPLIANCE AUDIT REPORT
 ================================================================================
 Date: May 7, 2026
 Audited Pages: 17 HTML files
@@ -636,7 +636,7 @@ Prevention:
 CONCLUSION
 ================================================================================
 
-The ISRM website has a solid design system foundation with comprehensive
+The ISMR website has a solid design system foundation with comprehensive
 CSS variables and responsive patterns. However, 50% of non-index pages
 (8 out of 16) violate the style guide by using hardcoded colors and
 missing stylesheet links.
@@ -658,7 +658,7 @@ Expected outcome: 100% style guide compliance across all pages
 
 ================================================================================
 Report Generated: 2026-05-07
-Audited By: ISRM Design System Compliance Audit
+Audited By: ISMR Design System Compliance Audit
 Total Pages Analyzed: 17 HTML files
 Overall Compliance: 47% → Target 100%
 Estimated Time to Compliance: 5-6 hours

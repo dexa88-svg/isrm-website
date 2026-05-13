@@ -6,7 +6,7 @@
 
 ## Executive Summary
 
-All design system compliance issues identified in the audit have been **successfully fixed**. The ISRM website now achieves **100% design system compliance** across all 15 pages.
+All design system compliance issues identified in the audit have been **successfully fixed**. The ISMR website now achieves **100% design system compliance** across all 15 pages.
 
 ### Compliance Progress
 
@@ -282,7 +282,7 @@ Fixes: Audit findings from 2026-05-10
 
 ✅ **100% Design System Compliance Achieved**
 
-All 15 pages of the ISRM website now fully comply with the design system standards. The website is:
+All 15 pages of the ISMR website now fully comply with the design system standards. The website is:
 - ✅ **Themeable** — Colors controlled by CSS variables
 - ✅ **Responsive** — Optimized for mobile, tablet, desktop
 - ✅ **Maintainable** — All styles follow design patterns

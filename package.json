@@ -1,7 +1,7 @@
 {
   "name": "isrm-website",
   "version": "1.0.0",
-  "description": "Interactive Scooter Repair Manuals",
+  "description": "Interactive Scooter Manuals for Repair",
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --coverage",

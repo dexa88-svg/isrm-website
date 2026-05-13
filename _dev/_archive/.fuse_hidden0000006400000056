@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive Scooter Manuals for Repair - Your collaborative guide to electric scooter repair, maintenance, and diagnostics">
+  <title>Interactive Scooter Manuals for Repair (ISMR) — Repair Guides & Parts Database</title>
+
+  <style>
+    /* ==================== VARIABLES & RESET ==================== */
+    :root {
+      --primary: #f5a623;
+      --secondary: #7ec8e3;
+      --dark: #0f0f0f;
+      --dark-card: #1a1a1a;
+      --text-light: #e8e8e8;
+      --text-muted: #a0a0a0;
+      --border: #2a2a2a;
+      --success: #4caf50;
+      --warning: #ff9800;
+      --danger: #f44336;
+      --radius: 12px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--dark);
+      color: var(--text-light);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    /* ==================== HEADER & NAVIGATION ==================== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark-card) 100%);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      background-color: rgba(15, 15, 15, 0.95);
+    }
+
+    .header-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .logo:hover {
+      transform: translateY(-2px);
+      color: var(--secondary);
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      flex: 1;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .search-container {
+      position: relative;
+      flex: 0 1 350px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.8rem 1.2rem 0.8rem 2.5rem;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      color: var(--text-light);
+      font-size: 0.95rem;
+      transition: var(--transition);
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: var(--primary);
+      background: var(--dark-card);
+      box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.1);
+    }
+
+    .search-input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.8rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+    }
+
+    /* ==================== HERO SECTION ==================== */
+    .hero {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark-card) 50%, rgba(245, 166, 35, 0.05) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 2rem;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(245, 166, 35, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 800;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #ff8c42);
+      color: #000;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(245, 166, 35, 0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid var(--secondary);
+      color: var(--secondary);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(126, 200, 227, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* ==================== MAIN CONTENT ==================== */
+    main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .section {
+      margin-bottom: 5rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2.5rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin: 0;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .view-all {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+    }
+
+    .view-all:hover {
+      gap: 1rem;
+      color: var(--primary);
+    }
+
+    /* ==================== CATEGORY GRID ==================== */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .category-card {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      cursor: pointer;
+      transition: var(--transition);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      block-size: 100%;
+    }
+
+    .category-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
+    }
+
+    .category-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(245, 166, 35, 0.15);
+    }
+
+    .category-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .category-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .category-card h3 {
+      color: var(--secondary);
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      margin-top: 0;
+    }
+
+    .category-card p {
+      color: var(--text-muted);
+      flex: 1;
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+
+    .category-card .card-meta {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .card-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      transition: var(--transition);
+    }
+
+    .category-card:hover .card-link {
+      gap: 1rem;
+    }
+
+    /* ==================== FEATURED CONTENT ==================== */
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .content-card {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .content-card:hover {
+      border-color: var(--secondary);
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(126, 200, 227, 0.1);
+    }
+
+    .content-card-image {
+      height: 200px;
+      background: linear-gradient(135deg, var(--dark) 0%, var(--border) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .content-card-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(245, 166, 35, 0.1) 0%, transparent);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .content-card:hover .content-card-image::after {
+      opacity: 1;
+    }
+
+    .content-card-body {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+      color: var(--text-light);
+      line-height: 1.4;
+    }
+
+    .content-card .card-description {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      flex: 1;
+      line-height: 1.6;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .card-tag {
+      display: inline-block;
+      background: rgba(245, 166, 35, 0.15);
+      color: var(--primary);
+      padding: 0.3rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    /* ==================== TABS ==================== */
+    .tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: var(--transition);
+      position: relative;
+      font-size: 1rem;
+    }
+
+    .tab:hover {
+      color: var(--primary);
+    }
+
+    .tab.active {
+      color: var(--primary);
+    }
+
+    .tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--primary);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* ==================== STATS ==================== */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .stat-card {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .stat-card:hover {
+      border-color: var(--primary);
+      transform: scale(1.05);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* ==================== MODAL ==================== */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      max-width: 600px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      padding: 2rem;
+      position: relative;
+      animation: slideIn 0.3s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .modal-close:hover {
+      color: var(--primary);
+    }
+
+    .modal h2 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      margin-top: 0;
+    }
+
+    /* ==================== FOOTER ==================== */
+    footer {
+      background: var(--dark-card);
+      border-top: 1px solid var(--border);
+      padding: 3rem 2rem;
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-section h4 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .footer-section a {
+      display: block;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 0.8rem;
+      transition: var(--transition);
+    }
+
+    .footer-section a:hover {
+      color: var(--secondary);
+      transform: translateX(4px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      margin-top: 2rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* ==================== RESPONSIVE ==================== */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        padding: 1rem;
+      }
+
+      nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+      }
+
+      nav a {
+        padding-left: 0;
+      }
+
+      .search-container {
+        flex: 1;
+        width: 100%;
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        padding: 2rem 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        padding: 2rem 1rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .cta-buttons .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .tabs {
+        gap: 0.5rem;
+      }
+
+      .tab {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+      }
+
+      .modal-content {
+        margin: 1rem;
+        max-height: 90vh;
+      }
+    }
+
+    /* ==================== ANIMATIONS ==================== */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .category-card {
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+
+    .category-card:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    .category-card:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+
+    .category-card:nth-child(4) {
+      animation-delay: 0.3s;
+    }
+
+    .category-card:nth-child(5) {
+      animation-delay: 0.4s;
+    }
+
+    .category-card:nth-child(6) {
+      animation-delay: 0.5s;
+    }
+
+    .category-card:nth-child(7) {
+      animation-delay: 0.6s;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<header>
+  <div class="header-content">
+    <a href="#" class="logo">
+      <div class="logo-icon">🔧</div>
+      <span>ISMR</span>
+    </a>
+
+    <nav>
+      <a href="#guides">Guides</a>
+      <a href="#parts">Parts</a>
+      <a href="#models">Models</a>
+      <a href="#community">Community</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <div class="search-container">
+      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+      <input type="text" class="search-input" id="searchInput" placeholder="Search guides, parts, models...">
+    </div>
+  </div>
+</header>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Repair Your Scooter with Confidence</h1>
+    <p>Access step-by-step guides, interactive parts diagrams, and community expertise—all in one place. Learn from mechanics and enthusiasts worldwide.</p>
+    <div class="cta-buttons">
+      <button class="btn btn-primary" onclick="document.getElementById('searchInput').focus()">
+        <span>🔍</span> Search Guides
+      </button>
+      <a href="#parts" class="btn btn-secondary">Explore Parts Database</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MAIN CONTENT ==================== -->
+<main>
+
+  <!-- ==================== STATS ==================== -->
+  <section class="section">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">1,247</div>
+        <div class="stat-label">Repair Guides</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">4,892</div>
+        <div class="stat-label">Parts Listed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">89</div>
+        <div class="stat-label">Scooter Models</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">15K+</div>
+        <div class="stat-label">Community Members</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MAIN CATEGORIES ==================== -->
+  <section class="section" id="guides">
+    <div class="section-header">
+      <h2>Get Started</h2>
+      <a href="#" class="view-all">View all <span>→</span></a>
+    </div>
+
+    <div class="category-grid">
+      <a href="repair-guides/index.html" class="category-card">
+        <div class="category-icon">🔨</div>
+        <h3>Repair Guides</h3>
+        <p>Detailed step-by-step instructions for fixing the most common scooter problems. From brakes to batteries.</p>
+        <div class="card-meta">
+          <span>📚 248 guides</span>
+        </div>
+        <div class="card-link">Browse Guides →</div>
+      </a>
+
+      <a href="parts/index.html" class="category-card">
+        <div class="category-icon">⚙️</div>
+        <h3>Parts & Compatibility</h3>
+        <p>Find compatible parts for your scooter model. Learn what's interchangeable and where to buy.</p>
+        <div class="card-meta">
+          <span>🔩 4,892 parts</span>
+        </div>
+        <div class="card-link">View Parts →</div>
+      </a>
+
+      <a href="models/index.html" class="category-card">
+        <div class="category-icon">📱</div>
+        <h3>Model Guides</h3>
+        <p>Model-specific information, common issues, and dedicated repair procedures for your exact scooter.</p>
+        <div class="card-meta">
+          <span>🏷️ 89 models</span>
+        </div>
+        <div class="card-link">Browse Models →</div>
+      </a>
+
+      <a href="videos/index.html" class="category-card">
+        <div class="category-icon">🎬</div>
+        <h3>Video Tutorials</h3>
+        <p>Curated videos from expert technicians with timestamped guides and embedded walkthroughs.</p>
+        <div class="card-meta">
+          <span>▶️ 156 videos</span>
+        </div>
+        <div class="card-link">Watch Videos →</div>
+      </a>
+
+      <a href="diagnostics/index.html" class="category-card">
+        <div class="category-icon">🔍</div>
+        <h3>Diagnostics</h3>
+        <p>Error code decoder and troubleshooting trees. Identify what's wrong before you start fixing.</p>
+        <div class="card-meta">
+          <span>⚠️ 324 codes</span>
+        </div>
+        <div class="card-link">View Diagnostics →</div>
+      </a>
+
+      <a href="news/index.html" class="category-card">
+        <div class="category-icon">📰</div>
+        <h3>News & Updates</h3>
+        <p>Firmware releases, manufacturer announcements, recalls, and critical updates for all brands.</p>
+        <div class="card-meta">
+          <span>📢 Always updated</span>
+        </div>
+        <div class="card-link">Read News →</div>
+      </a>
+
+      <a href="community/index.html" class="category-card">
+        <div class="category-icon">💬</div>
+        <h3>Community</h3>
+        <p>Connect with other scooter owners, share tips, ask questions, and contribute your expertise.</p>
+        <div class="card-meta">
+          <span>👥  15K+ members</span>
+        </div>
+        <div class="card-link">Join Community →</div>
+      </a>
+
+      <a href="models/index.html" class="category-card">
+        <div class="category-icon">🎯</div>
+        <h3>3D Models</h3>
+        <p>Interactive 3D visualizations of scooter parts. Rotate, zoom, and explore every component.</p>
+        <div class="card-meta">
+          <span>🧩 Coming soon</span>
+        </div>
+        <div class="card-link">Preview →</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURED CONTENT ==================== -->
+  <section class="section" id="featured">
+    <div class="section-header">
+      <h2>Featured This Week</h2>
+      <a href="#" class="view-all">See more <span>→</span></a>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="guides-featured">📚 Latest Guides</button>
+      <button class="tab" data-tab="trending">🔥 Trending</button>
+      <button class="tab" data-tab="videos-featured">🎬 Top Videos</button>
+      <button class="tab" data-tab="community-featured">💬 Community Picks</button>
+    </div>
+
+    <div id="guides-featured" class="tab-content active">
+      <div class="featured-grid">
+        <a href="repair-guides/index.html" class="content-card">
+          <div class="content-card-image">🔌</div>
+          <div class="content-card-body">
+            <h3>Battery Replacement Guide</h3>
+            <p class="card-description">Complete guide to safely replacing your scooter's battery. Covers all major brands with safety warnings.</p>
+            <div class="card-footer">
+              <span class="card-tag">repair</span>
+              <span>5 min read</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="diagnostics/index.html" class="content-card">
+          <div class="content-card-image">⚡</div>
+          <div class="content-card-body">
+            <h3>Motor Troubleshooting</h3>
+            <p class="card-description">Diagnose motor issues with our interactive flowchart. Covers noise, vibration, and performance problems.</p>
+            <div class="card-footer">
+              <span class="card-tag">diagnostics</span>
+              <span>7 min read</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="repair-guides/index.html" class="content-card">
+          <div class="content-card-image">🛞</div>
+          <div class="content-card-body">
+            <h3>Tire Replacement & Repair</h3>
+            <p class="card-description">Step-by-step instructions for replacing pneumatic tires and fixing punctures safely.</p>
+            <div class="card-footer">
+              <span class="card-tag">maintenance</span>
+              <span>8 min read</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div id="trending" class="tab-content">
+      <div class="featured-grid">
+        <a href="models/index.html" class="content-card">
+          <div class="content-card-image">🔥</div>
+          <div class="content-card-body">
+            <h3>Ninebot Max Common Issues</h3>
+            <p class="card-description">The top 5 issues reported this month with quick fixes. Updated daily from community reports.</p>
+            <div class="card-footer">
+              <span class="card-tag">trending</span>
+              <span>4.2K views</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="news/index.html" class="content-card">
+          <div class="content-card-image">⚠️</div>
+          <div class="content-card-body">
+            <h3>Firmware Update Known Issues</h3>
+            <p class="card-description">Safety warnings and known issues with the latest firmware releases across all major brands.</p>
+            <div class="card-footer">
+              <span class="card-tag">warning</span>
+              <span>2.8K views</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="repair-guides/index.html" class="content-card">
+          <div class="content-card-image">💡</div>
+          <div class="content-card-body">
+            <h3>Pro Tips: Winter Maintenance</h3>
+            <p class="card-description">Keep your scooter running in cold weather. Maintenance tips from experienced riders worldwide.</p>
+            <div class="card-footer">
+              <span class="card-tag">tips</span>
+              <span>3.1K views</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div id="videos-featured" class="tab-content">
+      <div class="featured-grid">
+        <a href="videos/index.html" class="content-card">
+          <div class="content-card-image">▶️</div>
+          <div class="content-card-body">
+            <h3>Brake Pad Replacement (5 min)</h3>
+            <p class="card-description">Quick visual guide from electric-scooter.guide covering all brake types safely and efficiently.</p>
+            <div class="card-footer">
+              <span class="card-tag">video</span>
+              <span>3.5K views</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="videos/index.html" class="content-card">
+          <div class="content-card-image">▶️</div>
+          <div class="content-card-body">
+            <h3>Throttle Sensor Recalibration</h3>
+            <p class="card-description">Detailed video tutorial on fixing unresponsive throttles. Works on most controller types.</p>
+            <div class="card-footer">
+              <span class="card-tag">video</span>
+              <span>2.1K views</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="videos/index.html" class="content-card">
+          <div class="content-card-image">▶️</div>
+          <div class="content-card-body">
+            <h3>Chain Maintenance & Repair</h3>
+            <p class="card-description">Complete guide to lubricating, tensioning, and replacing scooter chains without tools.</p>
+            <div class="card-footer">
+              <span class="card-tag">video</span>
+              <span>1.8K views</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div id="community-featured" class="tab-content">
+      <div class="featured-grid">
+        <a href="community/index.html" class="content-card">
+          <div class="content-card-image">👥</div>
+          <div class="content-card-body">
+            <h3>Best Places to Buy Spare Parts</h3>
+            <p class="card-description">Community consensus on the most reliable retailers for genuine and aftermarket parts.</p>
+            <div class="card-footer">
+              <span class="card-tag">community</span>
+              <span>42 comments</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="community/index.html" class="content-card">
+          <div class="content-card-image">👥</div>
+          <div class="content-card-body">
+            <h3>DIY Upgrades That Actually Work</h3>
+            <p class="card-description">Tried and tested modifications from the community with safety considerations.</p>
+            <div class="card-footer">
+              <span class="card-tag">tips</span>
+              <span>78 comments</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="community/index.html" class="content-card">
+          <div class="content-card-image">👥</div>
+          <div class="content-card-body">
+            <h3>Scooter Repair Near You</h3>
+            <p class="card-description">Find professional repair shops and local experts recommended by community members.</p>
+            <div class="card-footer">
+              <span class="card-tag">community</span>
+              <span>156 locations</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== QUICK ACCESS ==================== -->
+  <section class="section" id="parts">
+    <div class="section-header">
+      <h2>Quick Part Finder</h2>
+      <a href="parts/index.html" class="view-all">View database <span>→</span></a>
+    </div>
+
+    <div style="background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; text-align: center;">
+      <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Select your scooter model and we'll show you compatible parts and replacements.</p>
+
+      <select id="modelSelect" style="padding: 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--dark); color: var(--text-light); font-size: 1rem; margin-bottom: 1rem; width: 100%; max-width: 400px;">
+        <option value="">-- Select Your Scooter Model --</option>
+        <option value="ninebot">Ninebot / Segway</option>
+        <option value="xiaomi">Xiaomi</option>
+        <option value="apollo">Apollo City / Explore</option>
+        <option value="dualtron">Dualtron</option>
+        <option value="kaabo">Kaabo / Minimotors</option>
+        <option value="other">Other Brand</option>
+      </select>
+
+      <button class="btn btn-primary" onclick="alert('Parts database filtering coming soon! This will show compatible parts for your model.')">Find Compatible Parts</button>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT SECTION ==================== -->
+  <section class="section" id="about">
+    <div style="background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem;">
+      <h2 style="color: var(--primary); margin-top: 0;">About ISMR</h2>
+
+      <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem;">
+        <strong style="color: var(--text-light);">Interactive Scooter Manuals for Repair</strong> is a free, community-driven resource for electric scooter owners, mechanics, and enthusiasts. We aggregate repair guides, technical documentation, video tutorials, and user wisdom from trusted sources worldwide—including professional repair sites, manufacturers, YouTube creators, and verified community forums.
+      </p>
+
+      <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem;">
+        Our mission is to make scooter repair knowledge <strong style="color: var(--text-light);">accessible, interactive, and continuously updated</strong>—similar to ETKA for Volkswagen vehicles, but designed specifically for electric scooters with features like 3D part visualizations, video embeds, and collaborative community contributions.
+      </p>
+
+      <p style="color: var(--text-muted); line-height: 1.8;">
+        <strong style="color: var(--text-light);">We're building:</strong> A wiki-like repair database that stays current with new models and firmware updates, a searchable parts compatibility chart, interactive 3D diagrams, and eventually a mobile app for repairs on-the-go.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>Resources</h4>
+      <a href="repair-guides/index.html">Repair Guides</a>
+      <a href="parts/index.html">Parts Database</a>
+      <a href="models/index.html">Model Guides</a>
+      <a href="videos/index.html">Video Tutorials</a>
+      <a href="diagnostics/index.html">Error Codes</a>
+    </div>
+
+    <div class="footer-section">
+      <h4>Community</h4>
+      <a href="community/index.html">Join Forum</a>
+      <a href="#">Contribute Guide</a>
+      <a href="#">Report Issue</a>
+      <a href="#">Suggest Feature</a>
+      <a href="#">Code of Conduct</a>
+    </div>
+
+    <div class="footer-section">
+      <h4>Brand Guides</h4>
+      <a href="#">Ninebot / Segway</a>
+      <a href="#">Xiaomi</a>
+      <a href="#">Apollo</a>
+      <a href="#">Dualtron</a>
+      <a href="#">Kaabo</a>
+    </div>
+
+    <div class="footer-section">
+      <h4>About</h4>
+      <a href="#about">About ISMR</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Contact</a>
+      <a href="#">Donate</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>Interactive Scooter Manuals for Repair (ISMR) — Built for the community, by the community.</p>
+    <p>Last updated: May 7, 2026 | Content sourced from professional repair sites, manufacturer resources, and verified community forums. Always verify procedures with your scooter's official manual.</p>
+  </div>
+</footer>
+
+<!-- ==================== MODAL ==================== -->
+<div id="searchModal" class="modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h2>Search Results</h2>
+    <div id="searchResults"></div>
+  </div>
+</div>
+
+<!-- ==================== JAVASCRIPT ==================== -->
+<script>
+  // Tab functionality
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+      const tabName = this.getAttribute('data-tab');
+
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+      this.classList.add('active');
+      document.getElementById(tabName).classList.add('active');
+    });
+  });
+
+  // Search functionality
+  const searchInput = document.getElementById('searchInput');
+  searchInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      performSearch(this.value);
+    }
+  });
+
+  function performSearch(query) {
+    const modal = document.getElementById('searchModal');
+    const results = document.getElementById('searchResults');
+
+    if (query.trim() === '') {
+      alert('Please enter a search term');
+      return;
+    }
+
+    results.innerHTML = `
+      <div style="padding: 2rem; text-align: center; color: var(--text-muted);">
+        <p style="font-size: 1.1rem; margin-bottom: 1rem;">
+          Search for: <strong style="color: var(--primary);">"${query}"</strong>
+        </p>
+        <p>🔍 Search functionality will connect to your content database.</p>
+        <p style="font-size: 0.9rem; margin-top: 1rem;">In the production version, this will search across:</p>
+        <ul style="text-align: left; display: inline-block; color: var(--text-muted); margin-top: 1rem;">
+          <li>✓ Repair guides and tutorials</li>
+          <li>✓ Parts database</li>
+          <li>✓ Model specifications</li>
+          <li>✓ Video titles and descriptions</li>
+          <li>✓ Error codes and diagnostics</li>
+          <li>✓ Community discussions</li>
+        </ul>
+      </div>
+    `;
+
+    modal.classList.add('active');
+  }
+
+  function closeModal() {
+    document.getElementById('searchModal').classList.remove('active');
+  }
+
+  document.getElementById('searchModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeModal();
+    }
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href !== '#' && document.querySelector(href)) {
+        e.preventDefault();
+        document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  console.log('🎉 Interactive Scooter Manuals for Repair loaded successfully!');
+  console.log('📱 This is a modern, lightweight, responsive design.');
+  console.log('🚀 Ready to integrate your content!');
+</script>
+
+</body>
+</html>
