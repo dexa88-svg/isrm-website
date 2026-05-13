@@ -176,7 +176,7 @@
     .video-source a { color: var(--accent); }
     .related-videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 1rem; }
     .video-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; transition: var(--transition); }
-    .video-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow); }
+    .video-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow-sm); }
     .video-card h4 { color: var(--text-primary); margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600; }
     .video-card p { font-size: 0.875rem; margin-bottom: 0.75rem; color: var(--text-secondary); }
     .video-card a { color: var(--primary); font-weight: 600; font-size: 0.9rem; }
@@ -194,9 +194,10 @@
     outline: none;
     box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
   }
-
-  
-  </style>
+  @media (max-width: 480px) {
+    body { font-size: 15px; }
+  }
+</style>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",

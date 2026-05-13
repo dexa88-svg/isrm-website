@@ -25,7 +25,8 @@
   <meta name="twitter:image" content="https://ismr.online/og-image.jpg">
   <title>GY6 EFI Fuel Injection Troubleshooting Guide — ISMR</title>
   <link rel="stylesheet" href="../styles.css">
-  <style>
+  <style>  a, button, .btn, [class*="card"] { transition: var(--transition); }
+
     .page-hero {
       background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
       padding: 3rem 2rem 2rem;
@@ -135,7 +136,19 @@
 
     .guide-footer { max-width: 900px; margin: 0 auto; padding: 2rem; text-align: center; color: var(--text-tertiary); font-size: 0.85rem; border-top: 1px solid var(--border); }
     .guide-footer a { color: var(--accent); }
-  </style>
+  @media (max-width: 768px) {
+    .nav-menu { display: none; }
+    .nav-toggle { display: block; }
+    .cards-grid, .guides-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    body { font-size: 15px; }
+    h1 { font-size: 1.8rem; }
+  }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .video-embed, .callout, .source-box, .applies-to { box-shadow: var(--shadow-sm); }
+</style>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",

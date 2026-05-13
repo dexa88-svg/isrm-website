@@ -832,3 +832,47 @@ For detailed fix instructions, see:
 *Report generated automatically by `isrm-design-compliance-check` scheduled task on 2026-05-13.*  
 *Audit covers 9 compliance checks across 50 pages.*  
 *Previous report: `WEEKLY_COMPLIANCE_REPORT_2026-05-12.md`*
+
+---
+
+## POST-FIX ADDENDUM (2026-05-13)
+
+All issues identified in this audit were fixed in the same session. Final state:
+
+```
+STRICT COMPLIANCE (0 issues): 50/50  — 100%
+BROAD COMPLIANCE  (≤2 issues): 50/50  — 100%
+
+C1 Stylesheet Links     : 50/50 ✅
+C2 No Hardcoded Colors  : 50/50 ✅
+C3 Font Consistency     : 50/50 ✅
+C4 Border-Radius Vars   : 50/50 ✅
+C5 Responsive Design    : 50/50 ✅
+C6 Transitions          : 50/50 ✅
+C7 Shadow Usage         : 50/50 ✅
+C8 Component Patterns   : 50/50 ✅
+C9 Accessibility        : 50/50 ✅
+```
+
+### Changes made
+
+**styles.css (global — affects all 50 pages):**
+- Added `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }` — fixes C9 globally
+- Added `transition: var(--transition)` to `a, button, .btn, [class*="card"]` — fixes C6 globally
+- Added `box-shadow: var(--shadow-sm)` to `.card` base rule — fixes C7 for card elements globally
+
+**3 critical legacy pages fully refactored (C1–C9 all fixed):**
+- `repair-guides/vespa-primavera-dent-bodywork-repair.html`
+- `videos/vespa-piaggio-advanced-clutch-repair-video.html`
+- `videos/vespa-primavera-belt-transmission-video.html`
+
+**Per-page fixes across remaining pages:**
+- Replaced all hardcoded hex colors with CSS variables (8 pages — C2)
+- Replaced hardcoded `border-radius: Npx` with `var(--radius-*)` (3 pages — C4)
+- Added `@media (max-width: 480px)` breakpoints to 13 pages missing them (C5)
+- Added responsive blocks to 2 pages with no media queries at all (C5)
+- Added `transition: var(--transition)` to 21 pages with `:hover` but no transition (C6)
+- Added `box-shadow: var(--shadow-sm)` to 4 pages with no shadow declarations (C7)
+- Removed duplicate `.guide-card` CSS from `videos/index.html` (C8)
+- Replaced `.step-card` with `.card` in `diagnostics/wizard.html` (C8)
+- Added `:focus-visible` rule to 4 pages lacking it (C9)

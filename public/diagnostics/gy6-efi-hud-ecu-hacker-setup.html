@@ -25,7 +25,8 @@
   <meta name="twitter:image" content="https://ismr.online/og-image.jpg">
   <title>GY6 EFI Diagnostics — HUD ECU Hacker Setup Guide — ISMR</title>
   <link rel="stylesheet" href="../styles.css">
-  <style>
+  <style>  a, button, .btn, [class*="card"] { transition: var(--transition); }
+
     .page-hero {
       background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
       padding: 3rem 2rem 2rem;
@@ -117,9 +118,9 @@
     .callout-danger {
       background: rgba(214, 48, 49, 0.08);
       border: 1px solid rgba(214, 48, 49, 0.3);
-      border-left: 4px solid #d63031;
+      border-left: 4px solid var(--danger);
     }
-    .callout-danger strong { color: #e17055; }
+    .callout-danger strong { color: var(--primary-light); }
     .callout-info {
       background: rgba(0, 168, 204, 0.07);
       border: 1px solid rgba(0, 168, 204, 0.25);
@@ -144,7 +145,7 @@
     .guide-content code {
       background: var(--surface-2);
       border: 1px solid var(--border);
-      border-radius: 3px;
+      border-radius: var(--radius-sm);
       padding: 0.15em 0.45em;
       font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
       font-size: 0.88em;
@@ -249,7 +250,10 @@
       outline: none;
       box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
     }
-  </style>
+  @media (max-width: 480px) {
+    body { font-size: 15px; }
+  }
+</style>
 
   <!-- Schema.org — HowTo -->
   <script type="application/ld+json">

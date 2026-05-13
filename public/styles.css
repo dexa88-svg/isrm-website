@@ -47,6 +47,17 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Global focus styles — WCAG AA keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Global transitions for interactive elements */
+a, button, .btn, [class*="card"], .guide-card, .nav-link {
+  transition: var(--transition);
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   background: var(--bg-dark);
@@ -365,6 +376,7 @@ a { text-decoration: none; color: inherit; }
   gap: 1rem;
   cursor: pointer;
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
 
 .card::before {

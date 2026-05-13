@@ -384,7 +384,7 @@
     justify-content: center;
   }
   #cvtCanvas {
-    border-radius: 8px;
+    border-radius: var(--radius-md);
     background: var(--bg-dark);
     max-width: 100%;
     height: auto;
@@ -412,7 +412,7 @@
     flex: 1;
     -webkit-appearance: none;
     height: 6px;
-    border-radius: 3px;
+    border-radius: var(--radius-sm);
     background: var(--border);
     outline: none;
     cursor: pointer;
@@ -424,7 +424,7 @@
     border-radius: 50%;
     background: var(--primary);
     cursor: pointer;
-    box-shadow: 0 0 6px rgba(255,107,53,0.45);
+    box-shadow: var(--shadow-sm);
   }
   .cvt-rpm-val {
     font-size: 13px;
@@ -441,7 +441,7 @@
   }
   .cvt-gear-badge {
     padding: 3px 10px;
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.05em;

@@ -1,215 +1,121 @@
 # ISMR — Interactive Scooter Manuals for Repair
 
-**Your free, community-driven repair guide for scooters (GY6, Vespa, Piaggio, and more)**
+**Your free, community-driven repair guide for GY6 and Piaggio/Vespa scooters.**
 
-A wiki-style repair manual for DIY scooter owners featuring:
-- 📖 Step-by-step repair guides with **videos**
-- 🔧 Parts compatibility & sourcing
-- 🚨 Troubleshooting & diagnostics
-- 🎯 Model-specific technical data
-- 👥 Community contributions & updates
+A wiki-style repair manual for DIY scooter owners featuring step-by-step repair guides with embedded videos, parts compatibility tables, interactive diagnostics, and model-specific technical data.
+
+Live at **[ismr.online](https://ismr.online)**
 
 ---
 
-## Quick Links
+## Quick links
 
-- **[Start Repairing](repair-guides/)** — Browse all repair guides
-- **[Find Parts](parts/)** — OEM numbers, compatibility, sourcing
-- **[Troubleshoot Issues](diagnostics/)** — Symptom-to-solution guides
-- **[Model Overview](models/)** — Specs, quirks, maintenance schedules
-- **[Watch Videos](videos/)** — Video tutorials & playlists
+- [Repair Guides](../public/repair-guides/) — Browse all repair procedures
+- [Diagnostics](../public/diagnostics/) — Symptom-to-solution fault finding
+- [Parts & Compatibility](../public/parts/) — OEM numbers, fitment, sourcing
+- [Model Overviews](../public/models/) — Specs and technical data per model
+- [Videos](../public/videos/) — Curated video tutorials
 
 ---
 
-## For New Contributors
+## Supported scooters (Phase 1 scope)
 
-### Creating a Repair Guide
+### GY6 — 50 / 125 / 150cc
+- Engine codes: 139QMB (50cc), 152QMI (125cc), 157QMJ (150cc)
+- Models: BTC Riva, La Souris Sourini/City, Santini Capri, and Chinese-market variants
+- Both carburettor and fuel-injection variants covered
 
-Every repair guide follows a **standardized structure** with video support:
+### Piaggio / Vespa
+- Vespa Primavera 125 i.e. 3V
+- Vespa Sprint 125
+- Piaggio Zip 50 2T / 100 4T
+- Both carburettor and fuel-injection variants covered
 
-1. **Read the Template** → [`GUIDE-STRUCTURE.md`](GUIDE-STRUCTURE.md)
-   - Complete HTML template
-   - Video embedding best practices
-   - Metadata requirements
-   - Quality checklist
+Petrol only — electric scooters are out of scope until Phase 3.
 
-2. **Find Videos** → [`VIDEO-SOURCING.md`](VIDEO-SOURCING.md)
-   - Where to find repair videos
-   - Attribution & licensing
-   - Embedding tutorials
+---
 
-3. **See an Example** → [`repair-guides/gy6-carburetor-adjustment-guide.html`](repair-guides/gy6-carburetor-adjustment-guide.html)
-   - Reference implementation
-   - Video placement examples
-   - Inline video tips
+## For contributors
 
-### Key Requirements
+### Creating a repair guide
 
-✅ **Every guide must include:**
-- Minimum 1 embedded video (YouTube, Vimeo, or self-hosted)
-- Step-by-step text instructions
-- Tools & parts list
-- Difficulty & time estimate
+1. Read the template — [`GUIDE-STRUCTURE.md`](GUIDE-STRUCTURE.md) — complete HTML structure, metadata requirements, quality checklist
+2. Check the scope — [`PROJECT-SCOPE.md`](PROJECT-SCOPE.md) — mandated content sources and in/out-of-scope definitions
+3. See a reference implementation — [`public/models/piaggio-zip-100-technical-overview.html`](../public/models/piaggio-zip-100-technical-overview.html)
+
+Every guide must include:
+- At least one embedded video (`youtube-nocookie.com` embeds only)
+- Step-by-step instructions
+- Tools and parts list with part numbers where possible
+- Difficulty rating and time estimate
 - Safety warnings
 - Source attribution
-- Related videos section
+- A "Last Updated" date (see [`PAGE-UPDATE-TRACKING.md`](PAGE-UPDATE-TRACKING.md) for policy)
 
-### Folder Structure
+### Submitting
 
-```
-ISMR/
-├── repair-guides/       # Step-by-step repair procedures
-├── parts/              # Parts lookup & compatibility
-├── diagnostics/        # Troubleshooting guides
-├── models/             # Scooter model overviews
-├── videos/             # Video playlists & resources
-├── community/          # Community discussions, FAQs
-│
-├── GUIDE-STRUCTURE.md  # How to create a guide (with videos)
-├── VIDEO-SOURCING.md   # How to find & embed videos
-├── DESIGN-SYSTEM.md    # UI/UX guidelines
-├── PHASE0-GUIDANCE.md  # Project phase definitions
-└── README.md           # This file
-```
+Open a pull request — one topic per PR. If you can't use Git, email [dexa88@gmail.com](mailto:dexa88@gmail.com) with your draft and we'll handle formatting.
+
+### License
+
+All content is licensed under **CC BY-SA 4.0** (Creative Commons Attribution-ShareAlike 4.0). By contributing you agree your content is published under this licence. Videos are linked, not hosted — they retain their original creator's licence.
 
 ---
 
-## Supported Scooters (MVP)
+## Technology stack
 
-### GY6 Benzine 50cc / 125cc / 150cc
-- Engine codes: **139QMB** (50cc), **152QMI** (125cc), **157QMJ** (150cc)
-- Models: BTC Riva, La Souris Sourini/City, Santini Capri, and Chinese-market variants
-- Fuel: Carburetor & Fuel Injector versions
-- Content: Oil changes, carburetor tuning, CVT belt, valve adjustments, cooling system
+- **Frontend:** Vanilla HTML, CSS, JavaScript — no framework, no build step
+- **Styling:** CSS custom properties (design system in [`documentation/design-system/styles-reference.css`](documentation/design-system/styles-reference.css))
+- **Video:** YouTube `youtube-nocookie.com` embeds
+- **Hosting:** Hetzner (static files via SFTP)
+- **CI/CD:** GitHub Actions — push to `main` triggers tests then deploy
+- **Analytics:** Google Analytics 4
+- **Tests:** Jest (`npm test`)
 
-### Piaggio/Vespa (Coming Soon)
-- **Vespa Primavera** (50cc, 125cc)
-- **Vespa Sprint** (50cc, 125cc)
-- **Vespa Zip** (50cc, 125cc)
-- Fuel: Carburetor & Fuel Injector
-
-**Phases 3+:** Electric scooters, motorcycles, ATVs
+**Phase 2 (planned):** Migrate to Astro with Markdown/MDX content collections, Pagefind search, possibly Cloudflare Pages hosting.
 
 ---
 
-## Content Sources
+## Project phases
 
-We pull trusted information from:
-- 📘 Official manufacturer manuals (Piaggio, Yamaha, etc.)
-- 🎥 Professional repair YouTube channels & creators
-- 💬 Scooter forums & communities (49ccScoot, VespaForums, etc.)
-- 🛠️ Professional mechanics & certified shops
-- 👥 Community contributions (you!)
-
-**All sources are cited & credited.**
-
----
-
-## Technology Stack
-
-- **Frontend:** Vanilla HTML, CSS, JavaScript (no frameworks)
-- **Styling:** CSS variables for theming
-- **Video:** YouTube, Vimeo, self-hosted embeds
-- **Hosting:** Static site (GitHub Pages, Netlify, or custom)
-- **Future:** Astro static site generator, 3D model viewer, AI diagnostics
-
----
-
-## Getting Started as a Contributor
-
-### Option 1: Submit via GitHub
-1. Fork the repo
-2. Create a branch: `git checkout -b add/my-guide`
-3. Add your guide HTML file to the appropriate folder
-4. Commit & push: `git push origin add/my-guide`
-5. Create a pull request with your guide
-
-### Option 2: Submit via Discussion
-Can't use Git? No problem.
-- [Start a discussion](https://github.com/ISMR/discussions)
-- Share your guide as a text/HTML snippet
-- We'll format & integrate it
-
-### Option 3: Direct Contribution
-Working with Den? Email or DM your guide draft and we'll handle formatting.
-
----
-
-## Why Videos?
-
-Every guide includes at least one video because:
-- ✅ **Visual learning** is how most people prefer to learn mechanics
-- ✅ **Confidence** — seeing someone do it first builds confidence
-- ✅ **Accessibility** — written + video + images covers all learning styles
-- ✅ **Engagement** — users are more likely to complete a repair with video support
-
----
-
-## License
-
-All content is licensed under **CC BY-SA 4.0** (Creative Commons Attribution-ShareAlike).
-
-This means:
-- ✅ You can use, modify, and share
-- ✅ You must credit the original author(s)
-- ✅ Any derivative work must use the same license
-
-Videos are linked, not hosted, so they retain their original creator's license.
-
----
-
-## Project Phases
+See [`ROADMAP.md`](ROADMAP.md) for the full 13-phase plan. Current status:
 
 | Phase | Focus | Status |
 |-------|-------|--------|
-| **Phase 0** | Project definition & structure | 🔄 In Progress |
-| **Phase 1** | MVP launch (GY6 guides + videos) | 📋 Planned |
-| **Phase 2** | Piaggio/Vespa guides | 📋 Planned |
-| **Phase 3** | Parts sourcing & compatibility | 📋 Planned |
-| **Phase 4** | Community features (comments, uploads) | 📋 Planned |
-| **Phase 5** | 3D interactive models | 📋 Planned |
-| **Phase 6** | AI-powered diagnostics | 📋 Planned |
-| **Phase 7** | Mobile app | 📋 Planned |
+| Phase 1 | Static HTML site — GY6 + Piaggio/Vespa guides, deploy pipeline, automated tasks | Largely complete |
+| Phase 2 | Astro migration, MDX content, Pagefind search | Planned |
+| Phase 3 | Electric scooters, additional models | Planned |
+| Phase 4 | Wiki-style community contributions | Planned |
+| Phase 5 | Automated content ingestion pipeline | Planned |
+| Phase 6 | Interactive 3D / exploded-view models | Planned |
+| Phase 7 | AI-powered repair assistant (chat) | Planned |
+| Phase 8 | Mobile PWA / native app | Planned |
 
-See [`PHASE0-GUIDANCE.md`](PHASE0-GUIDANCE.md) for detailed phase definitions.
+---
+
+## Content sources
+
+We draw from and cite: official manufacturer service manuals (Piaggio, GY6 variants), professional repair YouTube channels, scooter forums and communities (49ccScoot, ModernVespa, etc.), and community contributions. All 91 known sources are tracked in [`public/sources-registry.json`](../public/sources-registry.json).
 
 ---
 
 ## FAQ
 
-**Q: Can I use your guides for my YouTube channel?**  
-A: Yes! They're CC BY-SA 4.0 licensed. Just credit ISMR and link back.
+**Can I use guides from this site in my own content?**  
+Yes — CC BY-SA 4.0. Credit ISMR and link back, and apply the same licence to derivatives.
 
-**Q: What if I find incorrect information in a guide?**  
-A: [Report it here](https://github.com/ISMR/issues). We'll investigate & correct it.
+**I found incorrect information. How do I report it?**  
+Open a GitHub issue or email [dexa88@gmail.com](mailto:dexa88@gmail.com).
 
-**Q: Can I contribute without technical knowledge?**  
-A: Absolutely. You can contribute by: finding videos, reviewing guides, translating, or just pointing out errors.
+**Can I contribute without knowing Git?**  
+Yes. You can find videos, review guides, flag errors, or email a text draft to Den.
 
-**Q: How do I propose a new scooter model?**  
-A: [Start a discussion](https://github.com/ISMR/discussions/new). We prioritize based on community demand.
-
-**Q: When will you add [electric scooter model]?**  
-A: Phase 2+. We're focusing on benzine scooters (GY6, Vespa) for MVP to maintain quality.
+**When will electric scooters be added?**  
+Phase 3. The MVP focuses on petrol GY6 and Piaggio/Vespa to maintain quality.
 
 ---
 
-## Keep in Touch
+## Contact
 
-- **GitHub Issues:** [Report bugs or request features](https://github.com/ISMR/issues)
-- **GitHub Discussions:** [Ask questions, share ideas](https://github.com/ISMR/discussions)
-- **Email:** [dexa88@gmail.com](mailto:dexa88@gmail.com)
-- **Community Forums:** [Coming soon]
-
----
-
-## Credits
-
-- **Lead:** Den (dexa88@gmail.com)
-- **Contributors:** [You?]
-
----
-
-**Last Updated:** 2026-05-07  
-**Version:** 1.0 (MVP Foundation)
-
+- **Lead:** Den — [dexa88@gmail.com](mailto:dexa88@gmail.com)
+- **Domain:** [ismr.online](https://ismr.online)
