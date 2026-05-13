@@ -364,6 +364,95 @@
         padding: 1rem;
       }
     }
+  /* CVT Interactive Animation */
+  .interactive-explainer {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin: 2rem 0;
+  }
+  .interactive-explainer h3 {
+    color: var(--primary);
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .cvt-canvas-wrap {
+    display: flex;
+    justify-content: center;
+  }
+  #cvtCanvas {
+    border-radius: 8px;
+    background: var(--bg-dark);
+    max-width: 100%;
+    height: auto;
+  }
+  .cvt-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1rem;
+  }
+  .cvt-rpm-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 540px;
+  }
+  .cvt-rpm-row label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    min-width: 70px;
+  }
+  #cvtSlider {
+    flex: 1;
+    -webkit-appearance: none;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--border);
+    outline: none;
+    cursor: pointer;
+  }
+  #cvtSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--primary);
+    cursor: pointer;
+    box-shadow: 0 0 6px rgba(255,107,53,0.45);
+  }
+  .cvt-rpm-val {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary);
+    min-width: 70px;
+    text-align: right;
+  }
+  .cvt-status-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 11px;
+  }
+  .cvt-gear-badge {
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: background 0.4s, color 0.4s, border-color 0.4s;
+    border: 1px solid;
+  }
+  .cvt-hint {
+    color: var(--text-secondary);
+    font-size: 11px;
+  }
+
   /* Accessibility: Focus states */
   button:focus,
   a:focus,
@@ -623,6 +712,206 @@
     <h2>How the GY6 / Piaggio CVT Works</h2>
   <p>At low engine speed (idle, pulling away), the variator ramps push the rollers inward — the front pulley is narrow, the belt runs low, giving a low gear ratio for easy acceleration. As engine speed rises, centrifugal force pushes the roller weights outward along the ramps, widening the front pulley and raising the gear ratio until the belt is running at the top of the pulley — effectively "top gear". The rear clutch pulley (torque server / driven pulley) has a spring that provides resistance, ensuring the belt shifts smoothly between ratios.</p>
 
+  <!-- CVT Interactive Animation -->
+  <div class="interactive-explainer">
+    <h3>Interactive Diagram — Drag the slider to see how ratio changes with RPM</h3>
+    <div class="cvt-canvas-wrap">
+      <canvas id="cvtCanvas" width="560" height="310"></canvas>
+    </div>
+    <div class="cvt-controls">
+      <div class="cvt-rpm-row">
+        <label for="cvtSlider">Engine RPM</label>
+        <input type="range" id="cvtSlider" min="0" max="100" value="15">
+        <span class="cvt-rpm-val" id="cvtRpmVal">1 500 rpm</span>
+      </div>
+      <div class="cvt-status-row">
+        <span class="cvt-gear-badge" id="cvtGearBadge">LOW GEAR</span>
+        <span class="cvt-hint" id="cvtHint">Rollers inward · Belt rides low on drive pulley</span>
+      </div>
+    </div>
+  </div>
+  <script>
+  (function() {
+    var canvas = document.getElementById('cvtCanvas');
+    var ctx = canvas.getContext('2d');
+    var slider = document.getElementById('cvtSlider');
+    var rpmVal = document.getElementById('cvtRpmVal');
+    var gearBadge = document.getElementById('cvtGearBadge');
+    var hintEl = document.getElementById('cvtHint');
+
+    var W = 560, H = 310, CY = 148;
+    var DX = 155, FX = 405;
+    var R_MAX = 66, R_MIN = 26, BELT_HW = 8;
+
+    function ease(x) { return x < 0.5 ? 4*x*x*x : 1 - Math.pow(-2*x+2,3)/2; }
+    function lerp(a,b,t) { return a+(b-a)*t; }
+    function lerpCol(t,h1,h2) {
+      var p=function(h){return[parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)];};
+      var a=p(h1),b=p(h2);
+      return 'rgb('+Math.round(lerp(a[0],b[0],t))+','+Math.round(lerp(a[1],b[1],t))+','+Math.round(lerp(a[2],b[2],t))+')';
+    }
+
+    function drawHalf(cx,cy,r,ang,flip) {
+      var iR=13,oR=r,dir=flip?1:-1;
+      var dy1=iR*Math.tan(ang),dy2=oR*Math.tan(ang);
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(cx+dir*iR,cy-dy1);ctx.lineTo(cx+dir*iR,cy+dy1);
+      ctx.lineTo(cx+dir*oR,cy+dy2);ctx.lineTo(cx+dir*oR,cy-dy2);
+      ctx.closePath();
+      var g=ctx.createLinearGradient(cx,cy-oR,cx,cy+oR);
+      g.addColorStop(0,'#3a4e68');g.addColorStop(0.5,'#242f3e');g.addColorStop(1,'#3a4e68');
+      ctx.fillStyle=g;ctx.fill();ctx.strokeStyle='#3a4e68';ctx.lineWidth=1;ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawShaft(cx,cy) {
+      ctx.save();ctx.beginPath();ctx.arc(cx,cy,13,0,Math.PI*2);
+      var g=ctx.createRadialGradient(cx-4,cy-4,1,cx,cy,13);
+      g.addColorStop(0,'#4a6080');g.addColorStop(1,'#1a2535');
+      ctx.fillStyle=g;ctx.fill();ctx.strokeStyle='#4a6080';ctx.lineWidth=1.5;ctx.stroke();ctx.restore();
+    }
+
+    function drawBelt(dR,fR) {
+      var dx=FX-DX,dy=fR-dR,dist=Math.sqrt(dx*dx+dy*dy);
+      var ang=Math.asin(dy/dist);
+      var tx1=DX+dR*Math.sin(ang),ty1=CY-dR*Math.cos(ang);
+      var tx2=FX+fR*Math.sin(ang),ty2=CY-fR*Math.cos(ang);
+      var bx1=DX-dR*Math.sin(ang),by1=CY+dR*Math.cos(ang);
+      var bx2=FX-fR*Math.sin(ang),by2=CY+fR*Math.cos(ang);
+      ctx.save();
+      ctx.shadowColor='rgba(255,107,53,0.25)';ctx.shadowBlur=5;
+      [[[tx1,ty1],[tx2,ty2]],[[bx1,by1],[bx2,by2]]].forEach(function(pts){
+        ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);ctx.lineTo(pts[1][0],pts[1][1]);
+        ctx.lineWidth=BELT_HW*2;ctx.strokeStyle='#ff6b35';ctx.lineCap='butt';ctx.stroke();
+      });
+      ctx.shadowBlur=0;
+      var sa=Math.PI/2-ang;
+      ctx.beginPath();ctx.arc(DX,CY,dR,-sa+Math.PI,sa+Math.PI,false);
+      ctx.lineWidth=BELT_HW*2;ctx.strokeStyle='#ff6b35';ctx.stroke();
+      ctx.beginPath();ctx.arc(FX,CY,fR,-sa,sa,false);
+      ctx.lineWidth=BELT_HW*2;ctx.strokeStyle='#ff6b35';ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawRollers(cx,cy,tn) {
+      var pos=lerp(19,41,tn);
+      for(var i=0;i<3;i++){
+        var a=(i/3)*Math.PI*0.9-Math.PI*0.45;
+        var rx=cx+Math.cos(a)*pos,ry=cy+Math.sin(a)*pos*0.6;
+        ctx.save();
+        var g=ctx.createRadialGradient(rx-2,ry-2,1,rx,ry,7);
+        g.addColorStop(0,'#c8d8e8');g.addColorStop(1,'#607080');
+        ctx.beginPath();ctx.arc(rx,ry,7,0,Math.PI*2);
+        ctx.fillStyle=g;ctx.fill();ctx.strokeStyle='#4a6080';ctx.lineWidth=1;ctx.stroke();
+        if(tn>0.3){
+          var al=(tn-0.3)/0.7;ctx.globalAlpha=al*0.8;
+          var nx=Math.cos(a),ny=Math.sin(a)*0.6,nm=Math.sqrt(nx*nx+ny*ny);
+          var al2=10*al,ex=rx+(nx/nm)*al2,ey=ry+(ny/nm)*al2;
+          ctx.strokeStyle='#ff6b35';ctx.lineWidth=1.5;
+          ctx.beginPath();ctx.moveTo(rx,ry);ctx.lineTo(ex,ey);ctx.stroke();
+          var px=-ny/nm,py=nx/nm;
+          ctx.beginPath();ctx.moveTo(ex,ey);
+          ctx.lineTo(ex-(nx/nm)*5+px*3,ey-(ny/nm)*5+py*3);
+          ctx.lineTo(ex-(nx/nm)*5-px*3,ey-(ny/nm)*5-py*3);
+          ctx.closePath();ctx.fillStyle='#ff6b35';ctx.fill();
+          ctx.globalAlpha=1;
+        }
+        ctx.restore();
+      }
+    }
+
+    function drawSpring(cx,cy,tn) {
+      var sw=9,coils=6,x0=cx+18,len=lerp(27,13,tn);
+      ctx.save();ctx.strokeStyle='#f5a623';ctx.lineWidth=2;
+      ctx.beginPath();
+      for(var i=0;i<=coils*8;i++){
+        var f=i/(coils*8),sx=x0+f*len,sy=cy+Math.sin(f*Math.PI*coils*2)*sw*(1-tn*0.3);
+        i===0?ctx.moveTo(sx,sy):ctx.lineTo(sx,sy);
+      }
+      ctx.stroke();ctx.restore();
+    }
+
+    function txt(x,y,s,c,a) {
+      ctx.save();ctx.font='11px Inter,system-ui,sans-serif';ctx.fillStyle=c||'#a0a0a0';
+      ctx.textAlign=a||'center';ctx.fillText(s,x,y);ctx.restore();
+    }
+
+    function draw(tn) {
+      ctx.clearRect(0,0,W,H);
+      ctx.fillStyle='#0f1419';ctx.beginPath();
+      if(ctx.roundRect){ctx.roundRect(0,0,W,H,8);} else {ctx.rect(0,0,W,H);}
+      ctx.fill();
+      ctx.save();ctx.strokeStyle='#2a3548';ctx.lineWidth=1;ctx.setLineDash([4,8]);
+      ctx.beginPath();ctx.moveTo(40,CY);ctx.lineTo(W-40,CY);ctx.stroke();
+      ctx.setLineDash([]);ctx.restore();
+
+      var dR=lerp(R_MIN,R_MAX,tn),fR=lerp(R_MAX,R_MIN,tn);
+      drawBelt(dR,fR);
+      var ca=0.40;
+      drawHalf(DX,CY,dR,ca,false);
+      ctx.save();ctx.translate(-lerp(8,0,tn),0);drawHalf(DX,CY,dR,ca,true);ctx.restore();
+      drawShaft(DX,CY);drawRollers(DX,CY,tn);
+      drawHalf(FX,CY,fR,ca,true);
+      ctx.save();ctx.translate(lerp(0,10,tn),0);drawHalf(FX,CY,fR,ca,false);ctx.restore();
+      drawShaft(FX,CY);drawSpring(FX,CY,tn);
+
+      // radius indicators
+      ctx.save();ctx.strokeStyle='#00a8cc';ctx.lineWidth=1.5;ctx.setLineDash([3,3]);
+      ctx.beginPath();ctx.moveTo(DX,CY);ctx.lineTo(DX,CY-dR);ctx.stroke();
+      ctx.beginPath();ctx.moveTo(FX,CY);ctx.lineTo(FX,CY-fR);ctx.stroke();
+      ctx.setLineDash([]);
+      [[DX,dR],[FX,fR]].forEach(function(p){
+        ctx.beginPath();ctx.arc(p[0],CY,p[1],-Math.PI*0.55,-Math.PI*0.45);ctx.lineWidth=3;ctx.stroke();
+      });
+      ctx.restore();
+
+      // labels
+      txt(DX,CY+104,'DRIVE PULLEY','#f5f5f5');txt(DX,CY+117,'(Variator)','#a0a0a0');
+      txt(FX,CY+104,'DRIVEN PULLEY','#f5f5f5');txt(FX,CY+117,'(Torque Server)','#a0a0a0');
+      txt((DX+FX)/2,CY-R_MIN+4,'V-BELT','#ff6b35');
+      // spring label
+      ctx.save();ctx.font='10px Inter,system-ui,sans-serif';ctx.fillStyle='#f5a623';ctx.textAlign='left';ctx.fillText('Spring',FX+20,CY+12);ctx.restore();
+      // roller label
+      if(tn>0.15){
+        ctx.save();ctx.globalAlpha=Math.min(1,(tn-0.1)/0.3);ctx.font='10px Inter,system-ui,sans-serif';ctx.fillStyle='#a0b0c0';ctx.textAlign='left';
+        ctx.fillText('Rollers pushed out',DX+48,CY-10);ctx.restore();
+      } else {
+        ctx.save();ctx.font='10px Inter,system-ui,sans-serif';ctx.fillStyle='#6a7a8a';ctx.textAlign='left';ctx.fillText('Rollers near centre',DX+40,CY-8);ctx.restore();
+      }
+      // ratio
+      var ratio=(fR/dR).toFixed(2);
+      ctx.save();ctx.textAlign='right';
+      ctx.font='bold 10px Inter,system-ui';ctx.fillStyle='#5a6880';ctx.fillText('RATIO',W-18,24);
+      ctx.font='bold 20px Inter,system-ui';ctx.fillStyle=lerpCol(tn,'#f5a623','#00a8cc');ctx.fillText(ratio+' : 1',W-18,48);
+      ctx.restore();
+    }
+
+    function update() {
+      var raw=slider.value/100, tn=ease(raw);
+      var rpm=Math.round(lerp(1000,8000,raw)/100)*100;
+      rpmVal.textContent=rpm.toLocaleString('fr-FR')+' rpm';
+      draw(tn);
+      if(tn<0.25){
+        gearBadge.textContent='LOW GEAR';
+        gearBadge.style.cssText='background:rgba(245,166,35,0.15);color:#f5a623;border-color:rgba(245,166,35,0.3)';
+        hintEl.textContent='Rollers inward · Belt rides low on drive pulley';
+      } else if(tn<0.65){
+        gearBadge.textContent='MID RATIO';
+        gearBadge.style.cssText='background:rgba(255,107,53,0.15);color:#ff6b35;border-color:rgba(255,107,53,0.3)';
+        hintEl.textContent='Rollers moving out · Pulley faces closing · Belt climbing';
+      } else {
+        gearBadge.textContent='TOP GEAR';
+        gearBadge.style.cssText='background:rgba(0,168,204,0.15);color:#00a8cc;border-color:rgba(0,168,204,0.3)';
+        hintEl.textContent='Rollers fully out · Belt at top of drive pulley · Max speed';
+      }
+    }
+
+    slider.addEventListener('input', update);
+    update();
+  })();
+  </script>
+
   <h2>Key CVT Components</h2>
   <ul>
     <li><strong>Variator (front pulley assembly):</strong> Two-piece aluminium pulley with internal roller weights and ramps</li>
@@ -682,22 +971,22 @@
     <h2>Related Videos & Resources</h2>
     <div class="related-videos">
       <div class="video-card">
-        <img src="https://img.youtube.com/vi/j3Xw0YT_Gfk/mqdefault.jpg" alt="GY6 CVT Belt Replacement">
-        <h4>GY6 CVT Belt Replacement</h4>
-        <p>Complete guide to replacing the CVT drive belt on GY6 models</p>
-        <a href="https://youtube.com/watch?v=j3Xw0YT_Gfk" target="_blank" rel="noopener">Watch →</a>
+        <img src="https://img.youtube.com/vi/SQ5GmXbJKQs/mqdefault.jpg" alt="GY6 Variator and Roller Replacement">
+        <h4>GY6 Variator/Roller Replacement & Tips</h4>
+        <p>Step-by-step walkthrough of variator disassembly, roller swap, and reassembly on GY6 models</p>
+        <a href="https://www.youtube.com/watch?v=SQ5GmXbJKQs" target="_blank" rel="noopener">Watch →</a>
       </div>
       <div class="video-card">
-        <img src="https://img.youtube.com/vi/XmA5c3xGnXk/mqdefault.jpg" alt="Vespa Primavera CVT Maintenance">
-        <h4>Vespa Primavera CVT Service</h4>
-        <p>CVT roller inspection and replacement for Piaggio Vespa models</p>
-        <a href="https://youtube.com/watch?v=XmA5c3xGnXk" target="_blank" rel="noopener">Watch →</a>
+        <img src="https://img.youtube.com/vi/v1KLE1uY7YQ/mqdefault.jpg" alt="Vespa Primavera Roller Change and Variator Cleaning">
+        <h4>Vespa Primavera Roller Change & Variator Cleaning</h4>
+        <p>Roller replacement and variator cleaning procedure specific to the Vespa Primavera</p>
+        <a href="https://www.youtube.com/watch?v=v1KLE1uY7YQ" target="_blank" rel="noopener">Watch →</a>
       </div>
       <div class="video-card">
-        <img src="https://img.youtube.com/vi/RBa_IqLJu1I/mqdefault.jpg" alt="Scooter Clutch System Explained">
-        <h4>How Scooter Clutch Systems Work</h4>
-        <p>Understanding the centrifugal clutch on modern scooters</p>
-        <a href="https://youtube.com/watch?v=RBa_IqLJu1I" target="_blank" rel="noopener">Watch →</a>
+        <img src="https://img.youtube.com/vi/D9d4qXreb8Q/mqdefault.jpg" alt="Centrifugal Clutch Explained">
+        <h4>Centrifugal Clutch — Explained</h4>
+        <p>How centrifugal clutches work — the mechanical principles behind scooter CVT engagement</p>
+        <a href="https://www.youtube.com/watch?v=D9d4qXreb8Q" target="_blank" rel="noopener">Watch →</a>
       </div>
     </div>
 
