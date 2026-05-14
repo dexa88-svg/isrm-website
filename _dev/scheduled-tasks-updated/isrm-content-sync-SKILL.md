@@ -193,6 +193,8 @@ Strictly follow this template. No `<script>` tags, no forms, no inline event han
 - `:focus` outline styles are mandatory for accessibility
 - `box-shadow` must use `var(--shadow)` or `var(--shadow-sm)` — never raw rgba values
 - `border-radius` must use `var(--radius-sm/md/lg/xl)` — never raw px values
+- **Canonical tag** — `<link rel="canonical" href="https://ismr.online/[section]/[slug].html">` is mandatory in every `<head>`, immediately after the viewport meta
+- **JSON-LD structured data** — a `<script type="application/ld+json">` block is mandatory in every `<head>`. Use `"@type": "HowTo"` for repair-guides, `"Article"` for diagnostics, `"TechArticle"` for models — see the template below
 
 ```html
 <!DOCTYPE html>
@@ -201,7 +203,19 @@ Strictly follow this template. No `<script>` tags, no forms, no inline event han
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://ismr.online/[SECTION]/[SLUG].html">
   <title>[Page Title] — ISMR</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "[HowTo | Article | TechArticle]",
+    "name": "[Page Title]",
+    "description": "[One-sentence description of the page content]",
+    "dateModified": "[YYYY-MM-DD]",
+    "author": { "@type": "Organization", "name": "ISMR", "url": "https://ismr.online" },
+    "publisher": { "@type": "Organization", "name": "ISMR", "url": "https://ismr.online" }
+  }
+  </script>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;

@@ -83,9 +83,9 @@ Three Claude tasks run automatically against this repo:
 
 | Task | Schedule | Purpose |
 |------|----------|---------|
-| `isrm-content-sync` | Daily 08:01 | Discover and generate new HTML guide pages |
-| `isrm-design-compliance` | Mon 09:00 | Audit all pages; write compliance report to `_dev/documentation/design-system/` |
-| `isrm-consistency-check` | Daily 10:01 | Fix broken links, enforce scope, sync manifest |
+| `isrm-content-sync` | Daily 08:00 | Discover and generate new HTML guide pages |
+| `isrm-design-compliance` | Daily 08:30 | Audit all pages; write compliance report to `_dev/documentation/design-system/` |
+| `isrm-consistency-check` | Daily 09:00 | Fix broken links, enforce scope, sync manifest |
 
 Prompts live in `_dev/scheduled-tasks-updated/`.
 

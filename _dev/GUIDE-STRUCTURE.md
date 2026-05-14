@@ -204,7 +204,60 @@ After the main content, add a "Related Videos" section linking to supplementary 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://ismr.online/[SECTION]/[SLUG].html">
   <title>[Scooter Model] [Repair Type] Guide — ISMR</title>
+  <!--
+    JSON-LD Structured Data — REQUIRED on every page.
+    • repair-guides  → use @type "HowTo"
+    • diagnostics    → use @type "Article"
+    • models         → use @type "TechArticle"
+    Replace ALL [PLACEHOLDER] values before publishing.
+  -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "[Scooter Model] [Repair Type] Guide",
+    "description": "[One-sentence description of what this guide teaches]",
+    "image": "https://ismr.online/images/[SLUG]-thumb.jpg",
+    "totalTime": "PT[N]H[M]M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "EUR",
+      "value": "[APPROXIMATE_COST]"
+    },
+    "tool": [
+      { "@type": "HowToTool", "name": "[Tool 1]" },
+      { "@type": "HowToTool", "name": "[Tool 2]" }
+    ],
+    "supply": [
+      { "@type": "HowToSupply", "name": "[Part/Material 1]" }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "[Step 1 Title]",
+        "text": "[Step 1 brief description]"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "[Step 2 Title]",
+        "text": "[Step 2 brief description]"
+      }
+    ],
+    "author": {
+      "@type": "Organization",
+      "name": "ISMR",
+      "url": "https://ismr.online"
+    },
+    "dateModified": "[YYYY-MM-DD]",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ISMR",
+      "url": "https://ismr.online"
+    }
+  }
+  </script>
   <style>
     /*
      * ⚠️ DESIGN SYSTEM — MANDATORY RULES:
@@ -538,7 +591,8 @@ Before publishing a guide, verify:
 4. **Embed Videos** — Add lead video + inline videos for complex steps
 5. **Test** — Verify links, video embeds, mobile layout
 6. **Publish** — Add to index, update sync manifest
-7. **Promote** — Link from related guides, model pages
+7. **Regenerate stats & sitemap** — Run `npm run generate-stats` after adding the page. This script now **also auto-regenerates `public/sitemap.xml`** — do not edit the sitemap manually.
+8. **Promote** — Link from related guides, model pages
 
 ### Video Strategy per Guide Type
 
