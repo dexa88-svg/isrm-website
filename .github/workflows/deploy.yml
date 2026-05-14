@@ -51,16 +51,38 @@ jobs:
               -T "$file" "sftp://$FTP_SERVER:22/$file"
           done
 
-      - name: Ping IndexNow
+      - name: Ping IndexNow (changed pages only)
         run: |
-          # Extract all URLs from sitemap and submit to IndexNow in bulk
-          URLS=$(grep -oP '(?<=<loc>)[^<]+' public/sitemap.xml | jq -R . | jq -s .)
-          curl -s -X POST "https://api.indexnow.org/indexnow" \
+          # Build list of URLs for HTML files changed in this push
+          CHANGED_URLS=$(git diff --name-only HEAD~1 HEAD -- 'public/**/*.html' \
+            | grep -v '_removed' \
+            | sed 's|^public/|https://ismr.online/|' \
+            | sed 's|/index\.html$|/|' \
+            | jq -R . | jq -s .)
+
+          COUNT=$(echo "$CHANGED_URLS" | jq length)
+
+          if [ "$COUNT" -eq 0 ]; then
+            echo "No HTML pages changed — skipping IndexNow ping."
+            exit 0
+          fi
+
+          echo "Pinging IndexNow for $COUNT changed URL(s): $CHANGED_URLS"
+
+          HTTP_STATUS=$(curl -s -o /tmp/indexnow_response.txt -w "%{http_code}" \
+            -X POST "https://api.indexnow.org/indexnow" \
             -H "Content-Type: application/json; charset=utf-8" \
             -d "{
               \"host\": \"ismr.online\",
               \"key\": \"767a47df1cd247ea9a300510d2c3af76\",
               \"keyLocation\": \"https://ismr.online/767a47df1cd247ea9a300510d2c3af76.txt\",
-              \"urlList\": $URLS
-            }"
-          echo "IndexNow ping sent for $(echo $URLS | jq length) URLs"
+              \"urlList\": $CHANGED_URLS
+            }")
+
+          echo "IndexNow response (HTTP $HTTP_STATUS):"
+          cat /tmp/indexnow_response.txt
+
+          # 200 = accepted, 202 = queued — both are success
+          if [ "$HTTP_STATUS" -ne 200 ] && [ "$HTTP_STATUS" -ne 202 ]; then
+            echo "Warning: unexpected IndexNow response $HTTP_STATUS"
+          fi
