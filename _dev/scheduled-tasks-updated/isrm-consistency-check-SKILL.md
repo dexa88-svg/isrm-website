@@ -160,6 +160,20 @@ Read `public/index.html`. It should list the **5 most recently added pages** acr
 
 ---
 
+## FINAL STEP — Regenerate stats and sitemap
+
+After writing `sync-manifest.json`, run:
+
+```bash
+npm run generate-stats
+```
+
+from the project root (`/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISRM/`).
+
+This regenerates both `public/data/stats.json` (guide/video counts) and `public/sitemap.xml` (all live page URLs). Do NOT edit either file manually — this script is the single source of truth for both. Log the output line in the run summary.
+
+---
+
 ## RUN SUMMARY
 
 ```
@@ -201,6 +215,9 @@ CHECK 8 — Design system quick-check (new pages only)
 
 CHECK 9 — Root index freshness
   Updated: yes/no
+
+FINAL STEP — generate-stats
+  Result: [output from npm run generate-stats — guides count, videos count, sitemap URL count]
 
 Total fixes applied: N
 ```

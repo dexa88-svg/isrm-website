@@ -26,52 +26,149 @@
   <title>GY6 Carburetor Deep-Cleaning Guide — ISMR</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
+    a, button, .btn, [class*="card"] { transition: var(--transition); }
 
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 3rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "🔧";
+      position: absolute; right: 6%; top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem; opacity: 0.07; pointer-events: none; line-height: 1;
+    }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: 2rem; line-height: 1.2;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0 0 1rem; margin: 0;
+      font-size: 0.85rem; color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
 
-    .meta { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1.5rem; }
-    .source-box { background: var(--surface); border-left: 4px solid var(--warning); padding: 0.8rem 1.2rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; }
-    .guide-tag { display: inline-block; background: var(--surface-2); color: var(--warning); border: 1px solid var(--warning); border-radius: var(--radius-lg); padding: 2px 10px; font-size: 0.78rem; margin-right: 6px; }
-    ol li, ul li { margin-bottom: 0.5rem; }
-    .warn { background: var(--surface-2); border-left: 4px solid var(--warning); padding: 0.7rem 1.2rem; margin: 1rem 0; border-radius: 0 4px 4px 0; }
-    .tip { background: var(--surface); border-left: 4px solid var(--success); padding: 0.7rem 1.2rem; margin: 1rem 0; border-radius: 0 4px 4px 0; }
-    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-    th { background: var(--surface); color: var(--warning); padding: 0.5rem 0.8rem; text-align: left; border: 1px solid var(--surface-2); }
-    td { padding: 0.5rem 0.8rem; border: 1px solid var(--surface-2); }
-    tr:nth-child(even) { background: var(--bg-dark); }
-  /* Accessibility: Focus states */
-  button:focus,
-  a:focus,
-  input:focus,
-  select:focus,
-  textarea:focus {
-    outline: none;
-    box-shadow: var(--shadow);
-  }
+    .meta { color: var(--text-tertiary); font-size: 0.85rem; margin-bottom: 1.5rem; }
+    .meta a { color: var(--accent); }
 
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    body { font-size: 15px; }
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.5rem; }
-  }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+    .guide-tag {
+      background: rgba(0, 168, 204, 0.1); color: var(--accent);
+      border: 1px solid rgba(0, 168, 204, 0.3);
+      padding: 0.25rem 0.7rem; border-radius: var(--radius-pill);
+      font-size: 0.78rem; font-weight: 500;
+    }
 
-  @media (max-width: 480px) {
-    body { font-size: 14px; }
-    h1 { font-size: 1.5rem; }
-    h2 { font-size: 1.2rem; }
-  }
+    .source-box {
+      background: rgba(255, 107, 53, 0.07);
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem; margin: 1.5rem 0;
+      font-size: 0.95rem; color: var(--text-secondary);
+    }
+    .source-box strong { color: var(--text-primary); }
+    .source-box a { color: var(--accent); }
 
-  
-  
-    /* Transitions */
-    a, button, .btn, .card { transition: var(--transition); }
+    .guide-content {
+      max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem 4rem;
+    }
+    .guide-content h2 {
+      font-size: 1.55rem; color: var(--text-primary);
+      margin-top: 2.5rem; margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+    }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.6rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.7; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol {
+      padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary);
+    }
+    .guide-content li { margin-bottom: 0.5rem; line-height: 1.6; }
+    .guide-content li strong { color: var(--text-primary); }
+
+    table { width: 100%; border-collapse: collapse; margin: 1.2rem 0 1.5rem; }
+    th {
+      background: var(--surface-2); color: var(--primary);
+      padding: 0.6rem 0.9rem; text-align: left;
+      border: 1px solid var(--border); font-size: 0.88rem;
+      font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    td { padding: 0.55rem 0.9rem; border: 1px solid var(--border); color: var(--text-secondary); font-size: 0.93rem; }
+    td strong { color: var(--text-primary); }
+    tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+    tr:hover td { background: rgba(255, 107, 53, 0.04); }
+
+    .warn {
+      background: rgba(245, 166, 35, 0.08);
+      border-left: 4px solid var(--warning);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 0.85rem 1.2rem; margin: 1.2rem 0; color: var(--text-secondary);
+    }
+    .warn strong { color: var(--warning); }
+
+    .tip {
+      background: rgba(6, 167, 125, 0.08);
+      border-left: 4px solid var(--success);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 0.85rem 1.2rem; margin: 1.2rem 0; color: var(--text-secondary);
+    }
+    .tip strong { color: var(--success); }
+
+    .video-embed {
+      position: relative; padding-bottom: 56.25%;
+      height: 0; overflow: hidden;
+      border-radius: var(--radius-lg);
+      margin: 1.5rem 0;
+      border: 1px solid var(--border);
+    }
+    .video-embed iframe {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%; border: 0;
+    }
+    .video-caption {
+      font-size: 0.82rem; color: var(--text-tertiary);
+      text-align: center; margin-top: 0.4rem; margin-bottom: 1.5rem;
+    }
+
+    code {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 0.1em 0.4em;
+      font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+      font-size: 0.88em;
+    }
+
+    @media (max-width: 768px) {
+      .guide-content { padding: 1.5rem 1rem 3rem; }
+      .page-hero { padding: 2rem 1rem 1.5rem; }
+      table { font-size: 0.85rem; }
+      th, td { padding: 0.45rem 0.6rem; }
+    }
+
+    /* Accessibility: Focus states */
+    button:focus, a:focus, input:focus, select:focus, textarea:focus {
+      outline: none;
+      box-shadow: var(--shadow);
+    }
   </style>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "GY6 Carburetor Cleaning Guide",
-  "description": "Full disassembly and cleaning of the GY6 carburetor (PD18/PZ19/PZ24). Covers jet removal, soaking, passage blow-through, and reassembly.",
+  "description": "Full disassembly and cleaning of the GY6 carburetor (PD18/PZ19/PD24). Covers jet removal, soaking, passage blow-through, and reassembly.",
   "url": "https://ismr.online/repair-guides/gy6-carburetor-cleaning-guide.html",
   "totalTime": "PT90M",
   "estimatedCost": {
@@ -80,77 +177,23 @@
     "value": "10"
   },
   "tool": [
-    {
-      "@type": "HowToTool",
-      "name": "Flat-blade and Phillips screwdrivers"
-    },
-    {
-      "@type": "HowToTool",
-      "name": "Carburetor cleaner spray"
-    },
-    {
-      "@type": "HowToTool",
-      "name": "Small parts tray or egg carton"
-    },
-    {
-      "@type": "HowToTool",
-      "name": "Compressed air"
-    },
-    {
-      "@type": "HowToTool",
-      "name": "Soft wire brush or toothbrush"
-    },
-    {
-      "@type": "HowToTool",
-      "name": "New carburetor gasket kit (recommended)"
-    }
+    { "@type": "HowToTool", "name": "Flat-blade and Phillips screwdrivers" },
+    { "@type": "HowToTool", "name": "Carburetor cleaner spray" },
+    { "@type": "HowToTool", "name": "Small parts tray or egg carton" },
+    { "@type": "HowToTool", "name": "Compressed air" },
+    { "@type": "HowToTool", "name": "Soft wire brush or toothbrush" },
+    { "@type": "HowToTool", "name": "New carburetor gasket kit (recommended)" }
   ],
   "step": [
-    {
-      "@type": "HowToStep",
-      "name": "Remove the carburetor",
-      "text": "Turn off the fuel tap. Loosen the airbox clamp and throttle cable. Remove the two mounting bolts or inlet clamp. Disconnect the fuel line and overflow tubes."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Drain the float bowl",
-      "text": "Remove the float bowl drain screw (if fitted) or the bowl retaining screw to drain residual fuel into a rag."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Remove the float bowl",
-      "text": "Unscrew the bowl retaining screw and lower the bowl carefully."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Remove the float and needle valve",
-      "text": "Slide out the float pivot pin, lift out the float, and remove the needle valve. Inspect the needle valve tip for wear grooves."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Remove the main jet and pilot jet",
-      "text": "Unscrew the main jet (larger brass jet in the bowl centre) and pilot/slow jet (smaller, beside it). Keep them separate in the parts tray — do not mix sizes."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Spray all passages with carb cleaner",
-      "text": "Spray carb cleaner through every orifice: main jet hole, pilot jet hole, idle circuit port, mixture screw port, and emulsion tube holes. Spray until it exits clean from the other side."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Blow through with compressed air",
-      "text": "Blow compressed air through every passage after soaking. Hold jets up to a light — you must see clean daylight through the hole."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Reassemble in reverse order",
-      "text": "Reinstall jets, float assembly, bowl gasket, and float bowl. Do not overtighten the bowl screw — hand-tight plus one quarter turn."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Reinstall and test",
-      "text": "Refit the carb on the engine, reconnect fuel line and throttle cable, open the fuel tap, and start. Check for fuel leaks at the bowl and inlet manifold joint."
-    }
+    { "@type": "HowToStep", "name": "Remove the carburetor", "text": "Turn off the fuel tap. Loosen the airbox clamp and throttle cable. Remove the two mounting bolts or inlet clamp. Disconnect the fuel line and overflow tubes." },
+    { "@type": "HowToStep", "name": "Drain the float bowl", "text": "Remove the float bowl drain screw (if fitted) or the bowl retaining screw to drain residual fuel into a rag." },
+    { "@type": "HowToStep", "name": "Remove the float bowl", "text": "Unscrew the bowl retaining screw and lower the bowl carefully." },
+    { "@type": "HowToStep", "name": "Remove the float and needle valve", "text": "Slide out the float pivot pin, lift out the float, and remove the needle valve. Inspect the needle valve tip for wear grooves." },
+    { "@type": "HowToStep", "name": "Remove the main jet and pilot jet", "text": "Unscrew the main jet and pilot/slow jet. Keep them separate in the parts tray — do not mix sizes." },
+    { "@type": "HowToStep", "name": "Spray all passages with carb cleaner", "text": "Spray carb cleaner through every orifice: main jet hole, pilot jet hole, idle circuit port, mixture screw port, and emulsion tube holes." },
+    { "@type": "HowToStep", "name": "Blow through with compressed air", "text": "Blow compressed air through every passage after soaking. Hold jets up to a light — you must see clean daylight through the hole." },
+    { "@type": "HowToStep", "name": "Reassemble in reverse order", "text": "Reinstall jets, float assembly, bowl gasket, and float bowl. Do not overtighten the bowl screw." },
+    { "@type": "HowToStep", "name": "Reinstall and test", "text": "Refit the carb on the engine, reconnect fuel line and throttle cable, open the fuel tap, and start. Check for fuel leaks at the bowl and inlet manifold joint." }
   ]
 }
   </script>
@@ -167,196 +210,185 @@
     <div class="nav-container">
       <a href="../index.html" class="nav-brand"><span class="brand-icon">⚙️</span><span class="brand-text">ISMR</span></a>
       <ul class="nav-menu" id="navMenu">
-        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../repair-guides/index.html" class="nav-link active">Guides</a></li>
         <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
         <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
         <li><a href="../models/index.html" class="nav-link">Models</a></li>
-        <li><a href="../index.html#about" class="nav-link">About</a></li>      </ul>
+        <li><a href="../index.html#about" class="nav-link">About</a></li>
+      </ul>
       <button class="nav-toggle" id="navToggle">☰</button>
     </div>
   </nav>
 
   <section class="page-hero">
     <div class="page-hero-inner">
-      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
+      <div class="breadcrumb">
         <a href="../index.html">ISMR Home</a><span>›</span><a href="index.html">Repair Guides</a><span>›</span>GY6 Carburetor Deep-Cleaning Guide
       </div>
       <h1>GY6 Carburetor Deep-Cleaning Guide</h1>
+      <div class="guide-tags">
+        <span class="guide-tag">GY6</span>
+        <span class="guide-tag">Carburetor</span>
+        <span class="guide-tag">139QMB</span>
+        <span class="guide-tag">157QMJ</span>
+      </div>
     </div>
   </section>
 
-  <style>  a, button, .btn, [class*="card"] { transition: var(--transition); }
-
-    .page-hero {
-      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
-      padding: 3rem 2rem 2rem;
-      position: relative;
-      overflow: hidden;
-      border-bottom: 1px solid var(--border);
-    }
-    .page-hero::before {
-      content: "🔧";
-      position: absolute;
-      right: 6%;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 9rem;
-      opacity: 0.07;
-      pointer-events: none;
-      line-height: 1;
-    }
-    .page-hero-inner { max-width: 900px; margin: 0 auto; }
-    .page-hero h1 {
-      font-size: 2rem;
-      line-height: 1.2;
-      background: linear-gradient(135deg, var(--text-primary), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 1.2rem;
-    }
-    .breadcrumb {
-      padding: 0 0 1rem;
-      margin: 0;
-      font-size: 0.85rem;
-      color: var(--text-tertiary);
-    }
-    .breadcrumb a { color: var(--accent); }
-    .breadcrumb a:hover { color: var(--primary); }
-    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
-  </style>
-
-
-  <div class="breadcrumb">
-    <a href="../index.html">ISMR Home</a><span>›</span>
-    <a href="index.html">Repair Guides</a><span>›</span>
-    GY6 Carburetor Deep-Cleaning Guide
-  </div>
-
   <main class="guide-content">
-  <div class="meta">
-    Added: 2026-05-08 &nbsp;|&nbsp; Sources: <a href="https://q9powersportsusa.com/blogs/technical-support-q9-powersports-usa/properly-clean-service-gy6-scooter" target="_blank" rel="noopener">q9powersportsusa.com</a>, <a href="https://www.scooterworks.com/blogs/news/carburetor-jetting-101" target="_blank" rel="noopener">scooterworks.com</a>, <a href="https://scooter.fandom.com/wiki/Tuning_a_carburetor" target="_blank" rel="noopener">scooter.fandom.com</a>
-    &nbsp;|&nbsp; <span class="guide-guide-tag">GY6</span> <span class="guide-guide-tag">Carburetor</span> <span class="guide-guide-tag">139QMB</span> <span class="guide-guide-tag">157QMJ</span>
-  </div>
 
-  <div class="source-box">
-    📌 <strong>Based on:</strong> Community guides and technical documentation from
-    <a href="https://q9powersportsusa.com/blogs/technical-support-q9-powersports-usa/properly-clean-service-gy6-scooter" target="_blank" rel="noopener">Q9 PowerSports USA Technical Blog (2026)</a>,
-    <a href="https://www.scooterworks.com/blogs/news/carburetor-jetting-101" target="_blank" rel="noopener">Scooterworks USA carburetor Guide</a>,
-    and the <a href="https://scooter.fandom.com/wiki/Tuning_a_carburetor" target="_blank" rel="noopener">Scooter Wiki Tuning Reference</a>.
-    Always verify procedures with your model's service manual before beginning.
-  </div>
+    <div class="meta">
+      Added: 2026-05-08 &nbsp;|&nbsp; Last Updated: 2026-05-14 &nbsp;|&nbsp;
+      Sources: <a href="https://q9powersportsusa.com/blogs/technical-support-q9-powersports-usa/properly-clean-service-gy6-scooter" target="_blank" rel="noopener">q9powersportsusa.com</a>,
+      <a href="https://www.scooterworks.com/blogs/news/carburetor-jetting-101" target="_blank" rel="noopener">scooterworks.com</a>,
+      <a href="https://scooter.fandom.com/wiki/Tuning_a_carburetor" target="_blank" rel="noopener">scooter.fandom.com</a>
+      &nbsp;|&nbsp; Difficulty: <strong>Beginner</strong> &nbsp;|&nbsp; Time: <strong>60–90 min</strong>
+    </div>
 
-  <p>A dirty or partially blocked carburetor is the most common cause of poor GY6 engine performance: rough idle, hard starting, hesitation on throttle, and stalling. This guide covers a thorough disassembly-and-clean — going further than a quick spray of carb cleaner — for the standard slide-type carburetors (PD18J / PD22J / PD24J / CVK) fitted to GY6 139QMB (50cc) and 157QMJ (125cc / 150cc) engines.</p>
+    <div class="source-box">
+      📌 <strong>Based on:</strong> Community guides and technical documentation from
+      <a href="https://q9powersportsusa.com/blogs/technical-support-q9-powersports-usa/properly-clean-service-gy6-scooter" target="_blank" rel="noopener">Q9 PowerSports USA Technical Blog</a>,
+      <a href="https://www.scooterworks.com/blogs/news/carburetor-jetting-101" target="_blank" rel="noopener">Scooterworks USA Carburetor Guide</a>,
+      and the <a href="https://scooter.fandom.com/wiki/Tuning_a_carburetor" target="_blank" rel="noopener">Scooter Wiki Tuning Reference</a>.
+      Always verify procedures with your model's service manual before beginning.
+    </div>
 
-  <h2>Tools &amp; Materials</h2>
-  <ul>
-    <li>JIS cross-head screwdrivers (sizes #1 and #2) — not standard Phillips</li>
-    <li>Flat-blade screwdriver, 3 mm and 5 mm</li>
-    <li>Aerosol carburetor cleaner (non-residue formula)</li>
-    <li>Compressed air with fine nozzle</li>
-    <li>Small wire brush (soft brass bristles)</li>
-    <li>Clean rag or lint-free cloth</li>
-    <li>Parts tray or egg carton (to sort jets and screws)</li>
-    <li>New float-bowl gasket (O-ring or flat, depending on carb model)</li>
-    <li>Nitrile gloves and eye protection</li>
-  </ul>
+    <p>A dirty or partially blocked carburetor is the most common cause of poor GY6 engine performance: rough idle, hard starting, hesitation on throttle, and stalling. This guide covers a thorough disassembly-and-clean — going further than a quick spray of carb cleaner — for the standard slide-type carburetors (PD18J / PD22J / PD24J / CVK) fitted to GY6 139QMB (50cc) and 157QMJ (125cc / 150cc) engines.</p>
 
-  <div class="warn">
-    ⚠️ <strong>Fire hazard:</strong> Work in a well-ventilated area away from ignition sources. Petrol and carburetor cleaner are highly flammable. Disconnect the fuel tap (petcock) before removing the float bowl.
-  </div>
+    <h2>Video Walkthrough</h2>
 
-  <h2>Step-by-Step Procedure</h2>
+    <div class="video-embed">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/T4YPi-qLLUo"
+        title="How to clean 50cc or 150cc GY6 scooter carburetor"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
+    <p class="video-caption">Video: How to clean a 50cc or 150cc GY6 scooter carburetor — full disassembly and jet cleaning.</p>
 
-  <h2>1 — Preparation</h2>
-  <ol>
-    <li>Allow the engine to cool completely. A warm carburetor is easier to smell fumes from, but a hot engine is a burn hazard.</li>
-    <li>Turn the fuel tap to the <strong>OFF</strong> or <strong>PRI</strong> (prime) position so no fuel flows to the carburetor.</li>
-    <li>Remove the side panel or access cover on your scooter to expose the carburetor body.</li>
-    <li>Place a rag or drain pan under the float bowl to catch residual fuel.</li>
-  </ol>
+    <div class="video-embed">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/NJ3eEBeMako"
+        title="Cleaning the carburetor in a 150cc GY6 Chinese scooter"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
+    <p class="video-caption">Video: Cleaning the carburetor in a 150cc GY6 Chinese scooter — alternative walkthrough showing CVK-style carburetors.</p>
 
-  <h2>2 — Remove the Carburetor</h2>
-  <ol>
-    <li>Loosen the intake manifold clamp screw (the band clamp connecting carburetor to engine inlet). Do not remove — just loosen until the carburetor can twist free.</li>
-    <li>Loosen the air-box clamp in the same way on the air-filter side.</li>
-    <li>Disconnect the throttle cable: compress the cable end and unhook it from the slide. Note the cable routing.</li>
-    <li>Detach the fuel line from the carburetor inlet nipple. Plug or clamp the line to prevent dripping.</li>
-    <li>Disconnect the choke cable (or automatic choke wiring connector if fitted).</li>
-    <li>Twist and pull the carburetor free from both clamps. Set it on your work surface.</li>
-  </ol>
+    <h2>Tools &amp; Materials</h2>
+    <ul>
+      <li>JIS cross-head screwdrivers (sizes #1 and #2) — not standard Phillips</li>
+      <li>Flat-blade screwdriver, 3 mm and 5 mm</li>
+      <li>Aerosol carburetor cleaner (non-residue formula)</li>
+      <li>Compressed air with fine nozzle</li>
+      <li>Small wire brush (soft brass bristles)</li>
+      <li>Clean rag or lint-free cloth</li>
+      <li>Parts tray or egg carton (to sort jets and screws)</li>
+      <li>New float-bowl gasket (O-ring or flat, depending on carb model)</li>
+      <li>Nitrile gloves and eye protection</li>
+    </ul>
 
-  <h2>3 — Disassemble the Float Bowl</h2>
-  <ol>
-    <li>Unscrew the float-bowl drain screw (bottom of bowl, if present) and drain remaining fuel into a container.</li>
-    <li>Remove the float-bowl retaining screw(s) — usually one or two at the bottom or side. Lift the bowl away.</li>
-    <li>Inspect the bowl for sediment, rust particles, or a dark varnish residue. These indicate stale fuel contamination.</li>
-    <li>Remove the float by pushing out its hinge pin sideways. The float and needle will come away as one unit.</li>
-    <li>Unscrew the main jet (brass screw in the centre of the carb body) using a flat-blade screwdriver. Note its size — it is stamped on the side (e.g., <code>#75</code>, <code>#85</code>, <code>#98</code>).</li>
-    <li>Unscrew the pilot jet (smaller brass screw nearby, sometimes recessed). Note its size as well.</li>
-  </ol>
+    <div class="warn">
+      ⚠️ <strong>Fire hazard:</strong> Work in a well-ventilated area away from ignition sources. Petrol and carburetor cleaner are highly flammable. Disconnect the fuel tap (petcock) before removing the float bowl.
+    </div>
 
-  <table>
-    <tr><th>Engine</th><th>Typical Main Jet</th><th>Pilot Jet</th><th>Carburetor</th></tr>
-    <tr><td>GY6 50cc (139QMB)</td><td>#75–#78</td><td>#35–#38</td><td>PD18J</td></tr>
-    <tr><td>GY6 125cc (152QMI)</td><td>#95–#98</td><td>#38–#42</td><td>PD22J / CVK22</td></tr>
-    <tr><td>GY6 150cc (157QMJ)</td><td>#98–#105</td><td>#38–#42</td><td>PD24J / CVK24</td></tr>
-  </table>
+    <h2>Step-by-Step Procedure</h2>
 
-  <h2>4 — Clean All Components</h2>
-  <ol>
-    <li><strong>Float bowl:</strong> Spray interior with carburetor cleaner, scrub with a soft brush, rinse, dry with compressed air.</li>
-    <li><strong>Main jet:</strong> Hold up to light and check that the hole is clear and round. Spray cleaner through it. If blocked, use a bristle from the wire brush — never a drill bit or wire, which will enlarge the calibrated orifice.</li>
-    <li><strong>Pilot jet:</strong> Same process. The pilot jet feeds fuel at idle and low throttle; a partially blocked pilot jet causes rough idle and stumbling below ¼ throttle.</li>
-    <li><strong>Carburetor body passages:</strong> Spray cleaner into every port and passage you can see, including the emulsion tube holes (the small holes in the main bore). Follow with compressed air from the opposite side to clear debris outward.</li>
-    <li><strong>Needle and slide:</strong> Remove the top cap of the carburetor to extract the slide. Inspect the needle for wear (grooves, bends). Clean the slide bore with a cloth dampened in cleaner.</li>
-    <li><strong>Air/fuel mixture screw:</strong> Count and record how many turns out it is currently set before removing. Remove it carefully (it may have a small O-ring, washer, and spring). Clean the passage with cleaner and air. Reinstall to the recorded position.</li>
-  </ol>
+    <h3>1 — Preparation</h3>
+    <ol>
+      <li>Allow the engine to cool completely. A warm carburetor is easier to smell fumes from, but a hot engine is a burn hazard.</li>
+      <li>Turn the fuel tap to the <strong>OFF</strong> or <strong>PRI</strong> (prime) position so no fuel flows to the carburetor.</li>
+      <li>Remove the side panel or access cover on your scooter to expose the carburetor body.</li>
+      <li>Place a rag or drain pan under the float bowl to catch residual fuel.</li>
+    </ol>
 
-  <div class="tip">
-    💡 <strong>Tip:</strong> If the carburetor body shows brown or black varnish inside the float bowl or emulsion passages, soak it for 30 minutes in a commercial carburetor dip (or a solution of acetone and water). This dissolves hardened gum deposits that aerosol cleaner cannot shift.
-  </div>
+    <h3>2 — Remove the Carburetor</h3>
+    <ol>
+      <li>Loosen the intake manifold clamp screw (the band clamp connecting carburetor to engine inlet). Do not remove — just loosen until the carburetor can twist free.</li>
+      <li>Loosen the air-box clamp in the same way on the air-filter side.</li>
+      <li>Disconnect the throttle cable: compress the cable end and unhook it from the slide. Note the cable routing.</li>
+      <li>Detach the fuel line from the carburetor inlet nipple. Plug or clamp the line to prevent dripping.</li>
+      <li>Disconnect the choke cable (or automatic choke wiring connector if fitted).</li>
+      <li>Twist and pull the carburetor free from both clamps. Set it on your work surface.</li>
+    </ol>
 
-  <h2>5 — Inspect the Float &amp; Needle Valve</h2>
-  <ol>
-    <li>Shake the float gently next to your ear — if you hear liquid sloshing inside, the float has a pinhole and must be replaced. A sinking float will cause fuel to flood the engine.</li>
-    <li>Inspect the tip of the needle valve (the rubber or brass cone that seats against the float seat). If it shows wear or has a groove, replace it — a worn needle valve will cause fuel overflow and a rich condition.</li>
-    <li>Set float height: with the float bowl mating face horizontal, the float arms should be roughly parallel to that face. Bend the small tab that contacts the needle valve to adjust if needed. Refer to your engine's service manual for the exact specification (typically 14–16 mm on GY6 157QMJ).</li>
-  </ol>
+    <h3>3 — Disassemble the Float Bowl</h3>
+    <ol>
+      <li>Unscrew the float-bowl drain screw (bottom of bowl, if present) and drain remaining fuel into a container.</li>
+      <li>Remove the float-bowl retaining screw(s) — usually one or two at the bottom or side. Lift the bowl away.</li>
+      <li>Inspect the bowl for sediment, rust particles, or a dark varnish residue. These indicate stale fuel contamination.</li>
+      <li>Remove the float by pushing out its hinge pin sideways. The float and needle will come away as one unit.</li>
+      <li>Unscrew the main jet (brass screw in the centre of the carb body) using a flat-blade screwdriver. Note its size — it is stamped on the side (e.g., <code>#75</code>, <code>#85</code>, <code>#98</code>).</li>
+      <li>Unscrew the pilot jet (smaller brass screw nearby, sometimes recessed). Note its size as well.</li>
+    </ol>
 
-  <h2>6 — Reassembly</h2>
-  <ol>
-    <li>Install jets finger-tight, then snug (do not overtighten — they are brass in an aluminium body).</li>
-    <li>Refit the float and hinge pin.</li>
-    <li>Install a new float-bowl O-ring or gasket if the old one is compressed or cracked.</li>
-    <li>Refit the float bowl and tighten evenly.</li>
-    <li>Reinstall the slide and needle (ensure the needle clip is seated in the correct groove — middle groove for standard tune).</li>
-    <li>Refit the carburetor to the scooter, reversing the removal steps. Ensure both clamps are properly tightened to prevent air leaks.</li>
-    <li>Reconnect fuel line, throttle cable, and choke cable.</li>
-    <li>Turn the fuel tap on and check for leaks before starting.</li>
-  </ol>
+    <table>
+      <tr><th>Engine</th><th>Typical Main Jet</th><th>Pilot Jet</th><th>Carburetor</th></tr>
+      <tr><td>GY6 50cc (139QMB)</td><td>#75–#78</td><td>#35–#38</td><td>PD18J</td></tr>
+      <tr><td>GY6 125cc (152QMI)</td><td>#95–#98</td><td>#38–#42</td><td>PD22J / CVK22</td></tr>
+      <tr><td>GY6 150cc (157QMJ)</td><td>#98–#105</td><td>#38–#42</td><td>PD24J / CVK24</td></tr>
+    </table>
 
-  <h2>7 — First-Start Tuning</h2>
-  <ol>
-    <li>Start the engine and allow it to reach operating temperature (approximately 5 minutes of running).</li>
-    <li>Adjust the idle speed screw (the large thumb or flat-blade screw on the side of the carb body) until idle is stable at approximately 1,500–1,800 rpm.</li>
-    <li>Adjust the air/fuel mixture screw (the small recessed screw) ½ turn at a time, waiting 30 seconds between adjustments, until idle is smooth and highest. Typical range is 1½ to 2½ turns out from gently seated.</li>
-    <li>Snap the throttle open and release it — the engine should rev cleanly without hesitation or hanging.</li>
-  </ol>
+    <h3>4 — Clean All Components</h3>
+    <ol>
+      <li><strong>Float bowl:</strong> Spray interior with carburetor cleaner, scrub with a soft brush, rinse, dry with compressed air.</li>
+      <li><strong>Main jet:</strong> Hold up to light and check that the hole is clear and round. Spray cleaner through it. If blocked, use a bristle from the wire brush — never a drill bit or wire, which will enlarge the calibrated orifice.</li>
+      <li><strong>Pilot jet:</strong> Same process. The pilot jet feeds fuel at idle and low throttle; a partially blocked pilot jet causes rough idle and stumbling below ¼ throttle.</li>
+      <li><strong>Carburetor body passages:</strong> Spray cleaner into every port and passage you can see, including the emulsion tube holes (the small holes in the main bore). Follow with compressed air from the opposite side to clear debris outward.</li>
+      <li><strong>Needle and slide:</strong> Remove the top cap of the carburetor to extract the slide. Inspect the needle for wear (grooves, bends). Clean the slide bore with a cloth dampened in cleaner.</li>
+      <li><strong>Air/fuel mixture screw:</strong> Count and record how many turns out it is currently set before removing. Remove it carefully (it may have a small O-ring, washer, and spring). Clean the passage with cleaner and air. Reinstall to the recorded position.</li>
+    </ol>
 
-  <div class="tip">
-    💡 <strong>Related guides:</strong>
-    <a href="gy6-carburetor-adjustment-guide.html">GY6 carburetor Adjustment & Tuning</a> |
-    <a href="gy6-carburetor-jetting-guide.html">GY6 carburetor Jetting Guide</a> |
-    <a href="../diagnostics/gy6-no-start-troubleshooting.html">GY6 Won't Start — Troubleshooting</a>
-  </div>
+    <div class="tip">
+      💡 <strong>Tip:</strong> If the carburetor body shows brown or black varnish inside the float bowl or emulsion passages, soak it for 30 minutes in a commercial carburetor dip (or a solution of acetone and water). This dissolves hardened gum deposits that aerosol cleaner cannot shift.
+    </div>
+
+    <h3>5 — Inspect the Float &amp; Needle Valve</h3>
+    <ol>
+      <li>Shake the float gently next to your ear — if you hear liquid sloshing inside, the float has a pinhole and must be replaced. A sinking float will cause fuel to flood the engine.</li>
+      <li>Inspect the tip of the needle valve (the rubber or brass cone that seats against the float seat). If it shows wear or has a groove, replace it — a worn needle valve will cause fuel overflow and a rich condition.</li>
+      <li>Set float height: with the float bowl mating face horizontal, the float arms should be roughly parallel to that face. Bend the small tab that contacts the needle valve to adjust if needed. Refer to your engine's service manual for the exact specification (typically 14–16 mm on GY6 157QMJ).</li>
+    </ol>
+
+    <h3>6 — Reassembly</h3>
+    <ol>
+      <li>Install jets finger-tight, then snug (do not overtighten — they are brass in an aluminium body).</li>
+      <li>Refit the float and hinge pin.</li>
+      <li>Install a new float-bowl O-ring or gasket if the old one is compressed or cracked.</li>
+      <li>Refit the float bowl and tighten evenly.</li>
+      <li>Reinstall the slide and needle (ensure the needle clip is seated in the correct groove — middle groove for standard tune).</li>
+      <li>Refit the carburetor to the scooter, reversing the removal steps. Ensure both clamps are properly tightened to prevent air leaks.</li>
+      <li>Reconnect fuel line, throttle cable, and choke cable.</li>
+      <li>Turn the fuel tap on and check for leaks before starting.</li>
+    </ol>
+
+    <h3>7 — First-Start Tuning</h3>
+    <ol>
+      <li>Start the engine and allow it to reach operating temperature (approximately 5 minutes of running).</li>
+      <li>Adjust the idle speed screw (the large thumb or flat-blade screw on the side of the carb body) until idle is stable at approximately 1,500–1,800 rpm.</li>
+      <li>Adjust the air/fuel mixture screw (the small recessed screw) ½ turn at a time, waiting 30 seconds between adjustments, until idle is smooth and highest. Typical range is 1½ to 2½ turns out from gently seated.</li>
+      <li>Snap the throttle open and release it — the engine should rev cleanly without hesitation or hanging.</li>
+    </ol>
+
+    <div class="tip">
+      💡 <strong>Related guides:</strong>
+      <a href="gy6-carburetor-adjustment-guide.html">GY6 Carburetor Adjustment &amp; Tuning</a> |
+      <a href="gy6-carburetor-jetting-guide.html">GY6 Carburetor Jetting Guide</a> |
+      <a href="../diagnostics/gy6-no-start-troubleshooting.html">GY6 Won't Start — Troubleshooting</a>
+    </div>
+
   </main>
 
-
   <footer class="guide-footer">
-    <p>Page auto-generated by ISMR Content Sync on 2026-05-08. Content summarised from multiple technical sources for educational purposes.</p>
+    <p>Page auto-generated by ISMR Content Sync on 2026-05-08. Updated 2026-05-14. Content summarised from multiple technical sources for educational purposes.</p>
     <p style="margin-top: 0.5rem;">Always verify with the original source and your scooter's workshop manual before performing repairs.</p>
     <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISMR Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Repair Guides</a></p>
   </footer>
+
+  <script src="../script.js"></script>
 </body>
 </html>
