@@ -75,7 +75,7 @@
     }
 
     /* Tags */
-    .tag {
+    .guide-tag {
       display: inline-block;
       background: var(--surface);
       color: var(--warning);
@@ -88,7 +88,7 @@
       transition: var(--transition);
     }
 
-    .tag:hover {
+    .guide-tag:hover {
       background: var(--surface-2);
       color: var(--primary);
       border-color: var(--primary);
@@ -460,10 +460,36 @@
   select:focus,
   textarea:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+    box-shadow: var(--shadow);
   }
 
   
+  
+    /* Button component — design system */
+    .btn, button {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-md, 8px);
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .btn-primary, button[type="submit"] {
+      background: var(--primary);
+      color: var(--text-primary);
+    }
+    .btn-primary:hover, button[type="submit"]:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: var(--surface-2);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
   </style>
   <script type="application/ld+json">
 {
@@ -610,7 +636,7 @@
 
     <div class="meta">
       Added: 2026-05-08 &nbsp;|&nbsp; Updated: 2026-05-08 &nbsp;|&nbsp; Sources: <a href="https://www.wemoto.com/info/guide-to-scooter-clutches-variators-and-rollers" target="_blank" rel="noopener">wemoto.com</a>, <a href="https://www.louis-moto.com/en-ww/magazin/rund-ums-bike/schraubertipps/variomatik-und-kupplung" target="_blank" rel="noopener">louis-moto.com</a>
-      <br><span class="tag">GY6</span> <span class="tag">Piaggio</span> <span class="tag">Vespa</span> <span class="tag">CVT</span>
+      <br><span class="guide-guide-tag">GY6</span> <span class="guide-guide-tag">Piaggio</span> <span class="guide-guide-tag">Vespa</span> <span class="guide-guide-tag">CVT</span>
     </div>
 
     <div class="source-box">

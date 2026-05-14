@@ -122,13 +122,27 @@ For each HTML file in `public/` category folders (excluding `_removed/`), confir
 - A `<title>` ending in `— ISMR`
 - A `<nav>` element
 - A `<footer>` element
-- No `<script>` tags (flag as anomaly if found)
+- No `<script>` tags other than `script.js` (flag any others as anomaly)
 - No `<form>` elements (flag as anomaly if found)
 - No inline event handlers such as `onclick=`, `onload=` (flag as anomaly if found)
 
-**Action**: Add missing structural markup. Flag and log any page containing `<script>`, `<form>`, or inline event handlers as a security anomaly — do not attempt to "fix" injected scripts, just log them for manual review.
+**Action**: Add missing structural markup. Flag and log any page containing unexpected `<script>`, `<form>`, or inline event handlers as a security anomaly — do not attempt to "fix" injected scripts, just log them for manual review.
 
-### CHECK 8 — Root index "recent pages" freshness
+### CHECK 8 (NEW) — Design system quick-check
+
+For each HTML file in `public/` category folders (excluding `_removed/`), run these fast checks on `<style>` block content:
+
+1. **Stylesheet link** — `<link rel="stylesheet" href="...styles.css">` must be present in `<head>`
+2. **No Georgia/serif fonts** — `font-family` must not contain `Georgia` or bare `serif`
+3. **No raw hex colors** — `<style>` blocks must not contain `#[0-9a-fA-F]{3,6}` values (CSS variables only)
+4. **Tag class** — HTML must not contain `class="tag"` (correct class is `guide-tag`)
+5. **Responsive breakpoints** — both `@media (max-width: 768px)` and `@media (max-width: 480px)` must be present
+
+If any of these fail on a newly-created page (modified today), fix them immediately using the compliant template in `_dev/scheduled-tasks-updated/isrm-content-sync-SKILL.md`.
+
+If failures are found on older pages, log them for the weekly `isrm-design-compliance` audit — do not modify older pages during this task.
+
+### CHECK 9 — Root index "recent pages" freshness
 
 Read `public/index.html`. It should list the **5 most recently added pages** across all categories. Cross-reference against `sync-manifest.json` sorted by `addedAt` descending.
 
@@ -180,7 +194,12 @@ CHECK 7 — HTML structure
   Files repaired: N
   Security anomalies (script/form/handlers found): N — [list filenames]
 
-CHECK 8 — Root index freshness
+CHECK 8 — Design system quick-check (new pages only)
+  Pages checked: N (created today)
+  Pages with design violations fixed: N
+  Pages flagged for weekly audit: N — [list filenames and which checks failed]
+
+CHECK 9 — Root index freshness
   Updated: yes/no
 
 Total fixes applied: N

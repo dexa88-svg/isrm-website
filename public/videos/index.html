@@ -102,10 +102,36 @@
   select:focus,
   textarea:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+    box-shadow: var(--shadow);
   }
 
   
+  
+    /* Button component — design system */
+    .btn, button {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-md, 8px);
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .btn-primary, button[type="submit"] {
+      background: var(--primary);
+      color: var(--text-primary);
+    }
+    .btn-primary:hover, button[type="submit"]:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: var(--surface-2);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
   </style>
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -154,12 +180,12 @@
           <div class="video-thumb">
             <span class="video-thumb-label">YouTube</span>
           </div>
-          <div class="card-tag">GY6 · 150cc</div>
+          <div class="card-guide-tag">GY6 · 150cc</div>
           <h3><a href="gy6-carburetor-intake-change-tutorial.html">Carburetor &amp; Intake Change Tutorial</a></h3>
           <p>Complete carburetor and intake manifold replacement on a GY6 157QMJ 150cc scooter — applicable to BTC Riva, Santini Capri, La Souris, and similar models.</p>
           <div class="card-meta">
-            <span class="tag">157QMJ</span>
-            <span class="tag">Carburetor</span>
+            <span class="guide-guide-tag">157QMJ</span>
+            <span class="guide-guide-tag">Carburetor</span>
             <span class="time">Full tutorial</span>
           </div>
           <a href="gy6-carburetor-intake-change-tutorial.html" class="read-more">Watch &amp; Read</a>
@@ -169,12 +195,12 @@
           <div class="video-thumb">
             <span class="video-thumb-label">YouTube</span>
           </div>
-          <div class="card-tag">Vespa · Piaggio</div>
+          <div class="card-guide-tag">Vespa · Piaggio</div>
           <h3><a href="vespa-primavera-oil-change-video.html">DIY Vespa Oil Change — Primavera / GTS / Sprint</a></h3>
           <p>Step-by-step oil change for the Piaggio iGet engine. Covers drain plug torque, correct oil spec (5W-40 JASO MA2), fill volume, dipstick check, and service light reset.</p>
           <div class="card-meta">
-            <span class="tag">Primavera</span>
-            <span class="tag">Sprint</span>
+            <span class="guide-guide-tag">Primavera</span>
+            <span class="guide-guide-tag">Sprint</span>
             <span class="time">20 min</span>
           </div>
           <a href="vespa-primavera-oil-change-video.html" class="read-more">Watch &amp; Read</a>
@@ -184,12 +210,12 @@
           <div class="video-thumb">
             <span class="video-thumb-label">YouTube</span>
           </div>
-          <div class="card-tag">Vespa · 50cc 4T</div>
+          <div class="card-guide-tag">Vespa · 50cc 4T</div>
           <h3><a href="vespa-carb-idle-adjustment-video.html">Basic Carb Adjustments for Carbureted Vespa Scooters</a></h3>
           <p>Idle speed screw, mixture screw, and throttle cable setup for Dell'Orto PHBN carbureted Vespa/Piaggio 50cc 4T scooters — embedded video with structured guide.</p>
           <div class="card-meta">
-            <span class="tag">Dell'Orto PHBN</span>
-            <span class="tag">Carburettor</span>
+            <span class="guide-guide-tag">Dell'Orto PHBN</span>
+            <span class="guide-guide-tag">Carburettor</span>
             <span class="time">15 min</span>
           </div>
           <a href="vespa-carb-idle-adjustment-video.html" class="read-more">Watch &amp; Read</a>
@@ -200,9 +226,9 @@
           <h3><a href="vespa-primavera-belt-transmission-video.html">Vespa Primavera &amp; Sprint — Belt and Transmission Assembly</a></h3>
           <p>Complete belt and driven pulley reassembly walkthrough for the Vespa Primavera 125/150 and Sprint 125/150 (i-Get engine family) — torque specs, belt wear identification, and tool list included.</p>
           <div class="card-meta">
-            <span class="tag">Piaggio</span>
-            <span class="tag">Vespa Primavera</span>
-            <span class="tag">CVT</span>
+            <span class="guide-guide-tag">Piaggio</span>
+            <span class="guide-guide-tag">Vespa Primavera</span>
+            <span class="guide-guide-tag">CVT</span>
             <span class="time">35 min</span>
           </div>
           <a href="vespa-primavera-belt-transmission-video.html" class="read-more">Watch &amp; Read</a>
@@ -213,9 +239,9 @@
           <h3><a href="vespa-piaggio-advanced-clutch-repair-video.html">Advanced Vespa/Piaggio Transmission Clutch &amp; Driven Pulley Repair</a></h3>
           <p>Advanced disassembly of the Vespa/Piaggio driven pulley — contra spring removal, clutch shoe inspection and measurement, and reassembly with correct preload. Covers GTS, Primavera, Sprint, LX, Liberty, Zip, and Fly.</p>
           <div class="card-meta">
-            <span class="tag">Piaggio</span>
-            <span class="tag">Vespa</span>
-            <span class="tag">Advanced</span>
+            <span class="guide-guide-tag">Piaggio</span>
+            <span class="guide-guide-tag">Vespa</span>
+            <span class="guide-guide-tag">Advanced</span>
             <span class="time">60 min</span>
           </div>
           <a href="vespa-piaggio-advanced-clutch-repair-video.html" class="read-more">Watch &amp; Read</a>

@@ -97,13 +97,15 @@ After the main content, add a "Related Videos" section linking to supplementary 
 
 ### Video CSS Styling
 
+> **Design system rule:** Use CSS variables only — no hardcoded hex colors. All variables are defined in `public/styles.css`.
+
 ```css
 .video-hero {
   margin: 2rem 0;
   padding: 1.5rem;
-  background: #1a1a1a;
-  border-radius: 12px;
-  border-left: 4px solid #f5a623;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--warning);
 }
 
 .video-container {
@@ -126,18 +128,18 @@ After the main content, add a "Related Videos" section linking to supplementary 
 .video-inline {
   margin: 1.5rem 0;
   padding: 1rem;
-  background: #151515;
-  border-radius: 8px;
+  background: var(--surface-2);
+  border-radius: var(--radius-md);
 }
 
 .video-source {
-  color: #a0a0a0;
+  color: var(--text-secondary);
   font-size: 0.85rem;
   margin-top: 0.5rem;
 }
 
 .video-caption {
-  color: #a0a0a0;
+  color: var(--text-secondary);
   font-size: 0.9rem;
   margin-top: 0.5rem;
 }
@@ -150,16 +152,17 @@ After the main content, add a "Related Videos" section linking to supplementary 
 }
 
 .video-card {
-  background: #1a1a1a;
-  border-radius: 12px;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid #2a2a2a;
-  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+  transition: var(--transition);
 }
 
 .video-card:hover {
-  border-color: #f5a623;
+  border-color: var(--warning);
   transform: translateY(-4px);
+  box-shadow: var(--shadow);
 }
 
 .video-card img {
@@ -169,13 +172,13 @@ After the main content, add a "Related Videos" section linking to supplementary 
 }
 
 .video-card h4 {
-  color: #f5a623;
+  color: var(--warning);
   padding: 0.8rem 1rem 0.3rem;
   margin: 0;
 }
 
 .video-card p {
-  color: #a0a0a0;
+  color: var(--text-secondary);
   padding: 0 1rem 0.5rem;
   margin: 0;
   font-size: 0.9rem;
@@ -184,9 +187,10 @@ After the main content, add a "Related Videos" section linking to supplementary 
 .video-card a {
   display: inline-block;
   padding: 0.5rem 1rem 1rem;
-  color: #7ec8e3;
+  color: var(--accent);
   text-decoration: none;
   font-size: 0.9rem;
+  transition: var(--transition);
 }
 ```
 
@@ -202,7 +206,20 @@ After the main content, add a "Related Videos" section linking to supplementary 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>[Scooter Model] [Repair Type] Guide — ISMR</title>
   <style>
-    /* Use the same CSS as existing guides + video CSS above */
+    /*
+     * ⚠️ DESIGN SYSTEM — MANDATORY RULES:
+     * 1. Use CSS variables (var(--primary), var(--accent) etc.) — never hardcoded hex colors
+     * 2. Font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, ... — never Georgia/serif
+     * 3. Tags: class="guide-tag" (teal) — never class="tag" (yellow)
+     * 4. Box-shadow: var(--shadow) or var(--shadow-sm) — never raw rgba values
+     * 5. Border-radius: var(--radius-sm/md/lg/xl) — never raw px values
+     * 6. Both @media (max-width: 768px) and @media (max-width: 480px) are required
+     * 7. :focus outline is required for accessibility
+     *
+     * See: _dev/scheduled-tasks-updated/isrm-content-sync-SKILL.md for the full
+     * compliant <style> block to copy verbatim when creating new pages.
+     * CSS variable reference: _dev/documentation/design-system/styles-reference.css
+     */
   </style>
 </head>
 <body>
@@ -222,9 +239,9 @@ After the main content, add a "Related Videos" section linking to supplementary 
     <a href="[SOURCE_URL]" target="_blank">[Source Name]</a>,
     <a href="[SOURCE_URL]" target="_blank">[Source Name]</a>
     &nbsp;|&nbsp; 
-    <span class="tag">repair</span>
-    <span class="tag">[Component]</span>
-    <span class="tag">[Scooter Type]</span>
+    <span class="guide-tag">repair</span>
+    <span class="guide-tag">[Component]</span>
+    <span class="guide-tag">[Scooter Type]</span>
   </div>
 
   <!-- Applicability Box -->

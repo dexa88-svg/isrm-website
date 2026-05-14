@@ -172,25 +172,138 @@ YouTube Video Searches:
 
 Strictly follow this template. No `<script>` tags, no forms, no inline event handlers.
 
+**⚠️ DESIGN SYSTEM RULES — mandatory, no exceptions:**
+- Use `var(--primary)`, `var(--accent)`, `var(--surface)` etc. — never hardcoded hex colors
+- Font must be the system stack (`-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, ...`) — never `Georgia` or `serif`
+- Tags must use class `guide-tag` (teal) — never `tag` (yellow/warning)
+- `source-box` must use `rgba(255,107,53,0.07)` bg and `var(--primary)` left border
+- Stylesheet link to `styles.css` is mandatory in every `<head>`
+- Both responsive breakpoints (768px, 480px) are mandatory
+- `:focus` outline styles are mandatory for accessibility
+- `box-shadow` must use `var(--shadow)` or `var(--shadow-sm)` — never raw rgba values
+- `border-radius` must use `var(--radius-sm/md/lg/xl)` — never raw px values
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>[Page Title] — ISMR</title>
   <style>
-    body { font-family: Georgia, serif; background: #0f0f0f; color: #e8e8e8; max-width: 820px; margin: 2rem auto; padding: 1rem 2rem; line-height: 1.7; }
-    h1 { color: #f5a623; border-bottom: 2px solid #f5a623; padding-bottom: 0.4rem; }
-    h2 { color: #f5a623; margin-top: 2rem; }
-    a { color: #7ec8e3; }
-    .meta { color: #888; font-size: 0.85rem; margin-bottom: 1.5rem; }
-    .source-box { background: #1a1a1a; border-left: 4px solid #f5a623; padding: 0.8rem 1.2rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; }
-    .tag { display: inline-block; background: #222; color: #f5a623; border: 1px solid #f5a623; border-radius: 12px; padding: 2px 10px; font-size: 0.78rem; margin-right: 6px; }
-    nav { margin-bottom: 2rem; font-size: 0.9rem; } nav a { margin-right: 1rem; }
-    footer { margin-top: 3rem; border-top: 1px solid #333; padding-top: 1rem; color: #555; font-size: 0.8rem; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      max-width: 820px;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+      line-height: 1.7;
+    }
+    h1 { color: var(--warning); border-bottom: 2px solid var(--warning); padding-bottom: 0.4rem; }
+    h2 { color: var(--warning); margin-top: 2rem; }
+    h3 { color: var(--text-secondary); margin-top: 1.4rem; }
+    a { color: var(--accent); transition: var(--transition); }
+    a:hover { opacity: 0.85; }
+    .meta { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1.5rem; }
+    .source-box {
+      background: rgba(255,107,53,0.07);
+      border: 1px solid rgba(255,107,53,0.2);
+      border-left: 4px solid var(--primary);
+      padding: 0.8rem 1.2rem;
+      margin: 1.5rem 0;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+    .guide-tag {
+      display: inline-block;
+      background: rgba(0,168,204,0.1);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: var(--radius-lg);
+      padding: 2px 10px;
+      font-size: 0.78rem;
+      margin-right: 6px;
+    }
+    nav { margin-bottom: 2rem; font-size: 0.9rem; }
+    nav a { margin-right: 1rem; }
+    footer {
+      margin-top: 3rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+    }
+    table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; }
+    th {
+      background: var(--surface-2);
+      color: var(--primary);
+      text-align: left;
+      padding: 0.6rem 0.8rem;
+      border: 1px solid var(--border);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    td { padding: 0.5rem 0.8rem; border: 1px solid var(--border); vertical-align: top; }
+    tr:nth-child(even) td { background: var(--surface); }
+    code {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 1px 5px;
+      font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+      font-size: 0.9em;
+      color: var(--accent);
+    }
+    .warning-box {
+      background: rgba(214,48,49,0.07);
+      border-left: 4px solid var(--danger);
+      padding: 0.8rem 1.2rem;
+      margin: 1.5rem 0;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+    .tip-box {
+      background: rgba(6,167,125,0.07);
+      border-left: 4px solid var(--success);
+      padding: 0.8rem 1.2rem;
+      margin: 1.5rem 0;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
     .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 1.5rem 0; }
     .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    ol li, ul li { margin-bottom: 0.4rem; }
+    /* Buttons */
+    .btn, button {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-md);
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .btn-primary { background: var(--primary); color: var(--text-primary); }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+    /* Focus — accessibility */
+    a:focus, button:focus, input:focus, [tabindex]:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    /* Responsive — tablet */
+    @media (max-width: 768px) {
+      body { padding: 1rem; margin: 1rem auto; }
+      table { font-size: 0.85rem; }
+      th, td { padding: 0.4rem 0.6rem; }
+    }
+    /* Responsive — mobile */
+    @media (max-width: 480px) {
+      body { padding: 0.75rem; font-size: 0.95rem; }
+      h1 { font-size: 1.4rem; }
+      h2 { font-size: 1.15rem; }
+      table { display: block; overflow-x: auto; }
+    }
   </style>
 </head>
 <body>
@@ -198,7 +311,7 @@ Strictly follow this template. No `<script>` tags, no forms, no inline event han
   <h1>[Page Title]</h1>
   <div class="meta">
     Added: [date] &nbsp;|&nbsp; Source: <a href="[original URL]" target="_blank" rel="noopener noreferrer">[source domain]</a>
-    &nbsp;|&nbsp; <span class="tag">[category tag]</span> <span class="tag">[model tag if applicable]</span>
+    &nbsp;|&nbsp; <span class="guide-tag">[category tag]</span> <span class="guide-tag">[model tag if applicable]</span>
   </div>
   <!-- For video pages only: <div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/[VIDEO_ID]" allowfullscreen title="[description]"></iframe></div> -->
   <div class="source-box">
@@ -208,8 +321,9 @@ Strictly follow this template. No `<script>` tags, no forms, no inline event han
   [CONTENT BODY — h2 for sections, ol for steps, ul for parts lists, code for model numbers/part codes. NO script tags. NO inline event handlers.]
 
   <footer>
-    Page auto-generated by ISMR Content Sync on [date]. Content summarised from external sources for educational purposes. Always verify with the original source before performing repairs.
+    Page auto-generated by ISMR Content Sync on [date]. Content summarised from external sources for educational purposes. Always verify with the original source before performing repairs. License: CC BY-SA 4.0.
   </footer>
+  <script src="../script.js"></script>
 </body>
 </html>
 ```

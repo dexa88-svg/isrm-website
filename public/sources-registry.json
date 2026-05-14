@@ -68,7 +68,7 @@
   },
   {
     "url": "https://www.scooterbbs.com/",
-    "name": "ScooterBBS — General Scooter Forum",
+    "name": "ScooterBBS \u2014 General Scooter Forum",
     "type": "forum",
     "category": "community",
     "models": [
@@ -143,7 +143,7 @@
   },
   {
     "url": "https://scootdawg.proboards.com/",
-    "name": "ScootDawg's Scooter Forum — GY6 Community",
+    "name": "ScootDawg's Scooter Forum \u2014 GY6 Community",
     "type": "forum",
     "category": "community",
     "models": [
@@ -157,7 +157,7 @@
   },
   {
     "url": "https://scooterdoc.proboards.com/",
-    "name": "Scooter Doc Forum — GY6 Tear-Down & Rebuild Guides",
+    "name": "Scooter Doc Forum \u2014 GY6 Tear-Down & Rebuild Guides",
     "type": "forum",
     "category": "repair-guides",
     "models": [
@@ -171,7 +171,7 @@
   },
   {
     "url": "https://hondaspree.net/phpBB3/",
-    "name": "Honda Spree Forum — Chinese GY6 Service Manuals",
+    "name": "Honda Spree Forum \u2014 Chinese GY6 Service Manuals",
     "type": "forum",
     "category": "repair-guides",
     "models": [
@@ -186,7 +186,7 @@
   },
   {
     "url": "https://scooterforum.net/",
-    "name": "ScooterForum.net — BTC Riva, La Souris, GY6 Community",
+    "name": "ScooterForum.net \u2014 BTC Riva, La Souris, GY6 Community",
     "type": "forum",
     "category": "community",
     "models": [
@@ -233,7 +233,7 @@
   },
   {
     "url": "https://www.scootersite.nl/",
-    "name": "ScooterSite.nl — NL Scooter Community",
+    "name": "ScooterSite.nl \u2014 NL Scooter Community",
     "type": "forum",
     "category": "community",
     "models": [
@@ -250,7 +250,7 @@
   {
     "note": "=== REPAIR GUIDES & TECHNICAL SITES ===",
     "url": "https://www.gy6central.com/",
-    "name": "GY6 Central — Engine Repair Hub",
+    "name": "GY6 Central \u2014 Engine Repair Hub",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -264,7 +264,7 @@
   },
   {
     "url": "https://www.49ccscoot.com/manuals/manuals.html",
-    "name": "49ccScoot — Service Manuals",
+    "name": "49ccScoot \u2014 Service Manuals",
     "type": "reference",
     "category": "repair-guides",
     "models": [
@@ -278,7 +278,7 @@
   },
   {
     "url": "https://www.scootertuning.eu/",
-    "name": "ScooterTuning.eu — Guides & Upgrades",
+    "name": "ScooterTuning.eu \u2014 Guides & Upgrades",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -311,7 +311,7 @@
   },
   {
     "url": "https://www.ifixit.com/Device/Scooter",
-    "name": "iFixit — Scooter Repair",
+    "name": "iFixit \u2014 Scooter Repair",
     "type": "reference",
     "category": "repair-guides",
     "models": [
@@ -341,7 +341,7 @@
   },
   {
     "url": "https://www.goscooter.org/",
-    "name": "GoScooter — Repair & Maintenance",
+    "name": "GoScooter \u2014 Repair & Maintenance",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -355,7 +355,7 @@
   },
   {
     "url": "https://fixgy6.com/",
-    "name": "FixGY6 — GY6 Scooter Repair Help & Mods",
+    "name": "FixGY6 \u2014 GY6 Scooter Repair Help & Mods",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -369,7 +369,7 @@
   },
   {
     "url": "http://www.fixmychinesescooter.com/",
-    "name": "Fix My Chinese Scooter — GY6 Maintenance Guides",
+    "name": "Fix My Chinese Scooter \u2014 GY6 Maintenance Guides",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -383,7 +383,7 @@
   },
   {
     "url": "https://www.buggydepot.com/tech-center/",
-    "name": "Buggy Depot Technical Center — GY6 Detailed Guides",
+    "name": "Buggy Depot Technical Center \u2014 GY6 Detailed Guides",
     "type": "reference",
     "category": "repair-guides",
     "models": [
@@ -398,7 +398,7 @@
   },
   {
     "url": "https://popscoot.com/gy6-motor/",
-    "name": "PopScoot — GY6 Motor Comprehensive Guide",
+    "name": "PopScoot \u2014 GY6 Motor Comprehensive Guide",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -412,7 +412,7 @@
   },
   {
     "url": "https://www.rollingwrenchdenver.com/blogs/news",
-    "name": "Rolling Wrench Denver Blog — GY6 Carburetor, EFI & Tuning",
+    "name": "Rolling Wrench Denver Blog \u2014 GY6 Carburetor, EFI & Tuning",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -426,7 +426,7 @@
   },
   {
     "url": "https://q9powersportsusa.com/blogs/technical-support-q9-powersports-usa/",
-    "name": "Q9 PowerSports Technical Support Blog — GY6 Maintenance Guides",
+    "name": "Q9 PowerSports Technical Support Blog \u2014 GY6 Maintenance Guides",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -440,7 +440,7 @@
   },
   {
     "url": "https://www.kemsoracing.com/blogs/news",
-    "name": "Kemso Racing Blog — GY6 Fuel Pump & EFI Guides",
+    "name": "Kemso Racing Blog \u2014 GY6 Fuel Pump & EFI Guides",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -454,7 +454,7 @@
   },
   {
     "url": "https://www.wemoto.com/info/",
-    "name": "Wemoto Info — Scooter CVT, Clutch & Variator Guides",
+    "name": "Wemoto Info \u2014 Scooter CVT, Clutch & Variator Guides",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -469,7 +469,7 @@
   },
   {
     "url": "https://scooter.fandom.com/wiki/",
-    "name": "Scooter Wiki (Fandom) — Carburetor Tuning & Technical Reference",
+    "name": "Scooter Wiki (Fandom) \u2014 Carburetor Tuning & Technical Reference",
     "type": "wiki",
     "category": "repair-guides",
     "models": [
@@ -484,7 +484,7 @@
   },
   {
     "url": "https://www.carlsalter.com/piaggio-vespa-service-manuals.asp",
-    "name": "Carl Salter — Free Piaggio & Vespa Workshop Manuals",
+    "name": "Carl Salter \u2014 Free Piaggio & Vespa Workshop Manuals",
     "type": "reference",
     "category": "repair-guides",
     "models": [
@@ -499,7 +499,7 @@
   },
   {
     "url": "https://www.motorcyclemanuals.info/motocycles-atvs/vespa/",
-    "name": "MotorcycleManuals.info — Vespa Service & Wiring Diagram PDFs",
+    "name": "MotorcycleManuals.info \u2014 Vespa Service & Wiring Diagram PDFs",
     "type": "reference",
     "category": "repair-guides",
     "models": [
@@ -515,7 +515,7 @@
   },
   {
     "url": "https://www.louis-moto.com/en-ww/magazin/",
-    "name": "Louis Moto Magazine — Variator, Clutch & Scooter Maintenance",
+    "name": "Louis Moto Magazine \u2014 Variator, Clutch & Scooter Maintenance",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -531,7 +531,7 @@
   },
   {
     "url": "http://www.chuckuslife.com/",
-    "name": "ChuckusLife — DIY Scooter Repair & Tuning Guides",
+    "name": "ChuckusLife \u2014 DIY Scooter Repair & Tuning Guides",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -545,7 +545,7 @@
   },
   {
     "url": "https://www.jetsrus.com/",
-    "name": "Jets R Us — Carburetor Jetting Expertise",
+    "name": "Jets R Us \u2014 Carburetor Jetting Expertise",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -560,7 +560,7 @@
   },
   {
     "url": "https://www.scootertherapy.com/",
-    "name": "Scooter Therapy — Carburetor & Engine Repair",
+    "name": "Scooter Therapy \u2014 Carburetor & Engine Repair",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -575,7 +575,7 @@
   },
   {
     "url": "http://www.jacksscootershop.com/",
-    "name": "Jack's Scooter Shop — CVT, Clutch & Transmission Tutorials",
+    "name": "Jack's Scooter Shop \u2014 CVT, Clutch & Transmission Tutorials",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -589,7 +589,7 @@
   },
   {
     "url": "https://ecotrons.com/",
-    "name": "Ecotrons — EFI Conversion Kits & Installation Documentation",
+    "name": "Ecotrons \u2014 EFI Conversion Kits & Installation Documentation",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -603,7 +603,7 @@
   },
   {
     "url": "https://scootersinsight.com/",
-    "name": "Scooters Insight — Engine Troubleshooting & Maintenance",
+    "name": "Scooters Insight \u2014 Engine Troubleshooting & Maintenance",
     "type": "blog",
     "category": "diagnostics",
     "models": [
@@ -634,7 +634,7 @@
   },
   {
     "url": "https://www.sip-scootershop.com/en/catalog/",
-    "name": "SIP Scootershop — Parts Catalog",
+    "name": "SIP Scootershop \u2014 Parts Catalog",
     "type": "other",
     "category": "parts",
     "models": [
@@ -647,7 +647,7 @@
   },
   {
     "url": "https://www.scooter-center.com/en/",
-    "name": "Scooter Center — Parts & Accessories",
+    "name": "Scooter Center \u2014 Parts & Accessories",
     "type": "other",
     "category": "parts",
     "models": [
@@ -680,7 +680,7 @@
   },
   {
     "url": "https://www.cmsnl.com/",
-    "name": "CMS — OEM Parts Finder (NL/EU)",
+    "name": "CMS \u2014 OEM Parts Finder (NL/EU)",
     "type": "other",
     "category": "parts",
     "models": [
@@ -697,7 +697,7 @@
   },
   {
     "url": "https://www.gy6parts.com/",
-    "name": "GY6Parts — Chinese Engine Parts",
+    "name": "GY6Parts \u2014 Chinese Engine Parts",
     "type": "other",
     "category": "parts",
     "models": [
@@ -711,7 +711,7 @@
   },
   {
     "url": "https://www.treatland.tv/",
-    "name": "Treatland — Moped & Scooter Parts",
+    "name": "Treatland \u2014 Moped & Scooter Parts",
     "type": "other",
     "category": "parts",
     "models": [
@@ -727,7 +727,7 @@
   },
   {
     "url": "https://www.partsfish.com/",
-    "name": "PartsFish — OEM Parts Diagrams",
+    "name": "PartsFish \u2014 OEM Parts Diagrams",
     "type": "other",
     "category": "parts",
     "models": [
@@ -742,7 +742,7 @@
   },
   {
     "url": "https://www.vmcchineseparts.com/",
-    "name": "VMC Chinese Parts — GY6 Variator, Clutch & Engine Parts",
+    "name": "VMC Chinese Parts \u2014 GY6 Variator, Clutch & Engine Parts",
     "type": "other",
     "category": "parts",
     "models": [
@@ -756,7 +756,7 @@
   },
   {
     "url": "https://en.chinascooteronderdelen.nl/",
-    "name": "China Scooter Parts NL — BTC Riva, La Souris, AGM Parts",
+    "name": "China Scooter Parts NL \u2014 BTC Riva, La Souris, AGM Parts",
     "type": "other",
     "category": "parts",
     "models": [
@@ -773,7 +773,7 @@
   },
   {
     "url": "https://www.retroscooteronderdelen.nl/",
-    "name": "Retroscooteronderdelen.nl — BTC, La Souris, Retro Scooter Parts",
+    "name": "Retroscooteronderdelen.nl \u2014 BTC, La Souris, Retro Scooter Parts",
     "type": "other",
     "category": "parts",
     "models": [
@@ -788,7 +788,7 @@
   },
   {
     "url": "https://www.scooterom.nl/",
-    "name": "ScooterOM.nl — Parts & Info",
+    "name": "ScooterOM.nl \u2014 Parts & Info",
     "type": "other",
     "category": "parts",
     "models": [
@@ -804,7 +804,7 @@
   },
   {
     "url": "https://www.scooterswap.nl/",
-    "name": "ScooterSwap.nl — Parts & Discussion",
+    "name": "ScooterSwap.nl \u2014 Parts & Discussion",
     "type": "other",
     "category": "parts",
     "models": [
@@ -817,7 +817,7 @@
   },
   {
     "url": "https://gy6racing.com/",
-    "name": "GY6 Racing — Performance Parts & Technical Info",
+    "name": "GY6 Racing \u2014 Performance Parts & Technical Info",
     "type": "other",
     "category": "parts",
     "models": [
@@ -832,7 +832,7 @@
   },
   {
     "url": "https://ncystore.com/blog/",
-    "name": "NCY Store Blog — GY6 Parts & Engine Diagrams",
+    "name": "NCY Store Blog \u2014 GY6 Parts & Engine Diagrams",
     "type": "blog",
     "category": "parts",
     "models": [
@@ -890,7 +890,7 @@
   },
   {
     "url": "https://www.scooterfocus.com/",
-    "name": "ScooterFocus — Petrol Scooter Troubleshooting & Guides",
+    "name": "ScooterFocus \u2014 Petrol Scooter Troubleshooting & Guides",
     "type": "blog",
     "category": "diagnostics",
     "models": [
@@ -905,7 +905,7 @@
   },
   {
     "url": "https://www.motorroller.de/en/fehlercodes-blinkcodes-4t50e4/",
-    "name": "Motorroller.de — Euro 4 Scooter Error & Blink Codes",
+    "name": "Motorroller.de \u2014 Euro 4 Scooter Error & Blink Codes",
     "type": "reference",
     "category": "diagnostics",
     "models": [
@@ -960,7 +960,7 @@
   },
   {
     "url": "https://www.honda.com/scooters",
-    "name": "Honda Scooters — Official",
+    "name": "Honda Scooters \u2014 Official",
     "type": "manufacturer",
     "category": "models",
     "models": [
@@ -976,7 +976,7 @@
   },
   {
     "url": "https://www.yamaha-motor.eu/en/products/scooters/",
-    "name": "Yamaha Scooters — European Site",
+    "name": "Yamaha Scooters \u2014 European Site",
     "type": "manufacturer",
     "category": "models",
     "models": [
@@ -1006,7 +1006,7 @@
   },
   {
     "url": "https://www.sym-euro.com/",
-    "name": "SYM Europe — Official",
+    "name": "SYM Europe \u2014 Official",
     "type": "manufacturer",
     "category": "models",
     "models": [
@@ -1021,7 +1021,7 @@
   },
   {
     "url": "https://www.peugeot-motocycles.com/en/",
-    "name": "Peugeot Motocycles — Official",
+    "name": "Peugeot Motocycles \u2014 Official",
     "type": "manufacturer",
     "category": "models",
     "models": [
@@ -1036,7 +1036,7 @@
   {
     "note": "=== YOUTUBE CHANNELS ===",
     "url": "https://www.youtube.com/@zandri",
-    "name": "Zandri — Scooter Repair & Maintenance Tutorials",
+    "name": "Zandri \u2014 Scooter Repair & Maintenance Tutorials",
     "type": "youtube-channel",
     "category": "videos",
     "models": [
@@ -1050,7 +1050,7 @@
   },
   {
     "url": "https://www.youtube.com/@its-that-easy",
-    "name": "It's That Easy — Scooter Repair & DIY Guides",
+    "name": "It's That Easy \u2014 Scooter Repair & DIY Guides",
     "type": "youtube-channel",
     "category": "videos",
     "models": [
@@ -1064,7 +1064,7 @@
   },
   {
     "url": "https://www.youtube.com/@FarmerBrownsGarage",
-    "name": "Farmer Brown's Garage — GY6 & Scooter Repairs",
+    "name": "Farmer Brown's Garage \u2014 GY6 & Scooter Repairs",
     "type": "youtube-channel",
     "category": "videos",
     "models": [
@@ -1078,7 +1078,7 @@
   },
   {
     "url": "https://www.youtube.com/@ScooterDynasty",
-    "name": "Scooter Dynasty — Repair & Restoration",
+    "name": "Scooter Dynasty \u2014 Repair & Restoration",
     "type": "youtube-channel",
     "category": "videos",
     "models": [
@@ -1092,7 +1092,7 @@
   },
   {
     "url": "https://www.youtube.com/@vespaNation",
-    "name": "Vespa Nation — Vespa Repairs & Restoration",
+    "name": "Vespa Nation \u2014 Vespa Repairs & Restoration",
     "type": "youtube-channel",
     "category": "videos",
     "models": [
@@ -1122,7 +1122,7 @@
   },
   {
     "url": "https://www.youtube.com/@GY6-SCOOTERS",
-    "name": "GY6-Scooters — YouTube Vlog & Maintenance Channel",
+    "name": "GY6-Scooters \u2014 YouTube Vlog & Maintenance Channel",
     "type": "youtube-channel",
     "category": "videos",
     "models": [
@@ -1138,7 +1138,7 @@
   {
     "note": "=== DUTCH / BELGIAN SOURCES (bromfiets / snorfiets) ===",
     "url": "https://www.tweedehands.be/scooters",
-    "name": "2dehands.be — Belgian Scooter Community",
+    "name": "2dehands.be \u2014 Belgian Scooter Community",
     "type": "other",
     "category": "community",
     "models": [
@@ -1150,9 +1150,9 @@
     "active": true
   },
   {
-    "note": "=== NEW SOURCES — DISCOVERED 2026-05-10 ===",
+    "note": "=== NEW SOURCES \u2014 DISCOVERED 2026-05-10 ===",
     "url": "https://www.bmsmotor.com/",
-    "name": "BMS Motor — Scooter Manufacturer & Carburetor Service Guides",
+    "name": "BMS Motor \u2014 Scooter Manufacturer & Carburetor Service Guides",
     "type": "manufacturer",
     "category": "repair-guides",
     "models": [
@@ -1165,7 +1165,7 @@
   },
   {
     "url": "https://monsterscooterparts.com/",
-    "name": "Monster Scooter Parts — Carburetor & Engine Repair Kits",
+    "name": "Monster Scooter Parts \u2014 Carburetor & Engine Repair Kits",
     "type": "other",
     "category": "parts",
     "models": [
@@ -1179,7 +1179,7 @@
   },
   {
     "url": "https://www.smallfastthings.com/",
-    "name": "Small Fast Things — GY6 Engine Guides & Technical Articles",
+    "name": "Small Fast Things \u2014 GY6 Engine Guides & Technical Articles",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -1192,7 +1192,7 @@
   },
   {
     "url": "https://www.vaderparts.com/",
-    "name": "Vader Parts — GY6 Service Manuals & Technical Guides",
+    "name": "Vader Parts \u2014 GY6 Service Manuals & Technical Guides",
     "type": "reference",
     "category": "repair-guides",
     "models": [
@@ -1205,7 +1205,7 @@
   },
   {
     "url": "https://www.emanualonline.com/",
-    "name": "eManual Online — Scooter Service & Repair Manual Repository",
+    "name": "eManual Online \u2014 Scooter Service & Repair Manual Repository",
     "type": "reference",
     "category": "repair-guides",
     "models": [
@@ -1219,7 +1219,7 @@
   },
   {
     "url": "https://gokartsusa.biz/",
-    "name": "GoKarts USA — GY6 Scooter Parts & Compatibility",
+    "name": "GoKarts USA \u2014 GY6 Scooter Parts & Compatibility",
     "type": "other",
     "category": "parts",
     "models": [
@@ -1232,7 +1232,7 @@
   },
   {
     "url": "https://get2itparts.com/",
-    "name": "Get 2 It Sales LLC — GY6 Parts & Compatibility",
+    "name": "Get 2 It Sales LLC \u2014 GY6 Parts & Compatibility",
     "type": "other",
     "category": "parts",
     "models": [
@@ -1246,7 +1246,7 @@
   },
   {
     "url": "https://www.manualslib.com/",
-    "name": "ManualsLib — Scooter Service & Owner's Manuals",
+    "name": "ManualsLib \u2014 Scooter Service & Owner's Manuals",
     "type": "reference",
     "category": "repair-guides",
     "models": [
@@ -1260,7 +1260,7 @@
   },
   {
     "url": "https://www.manualzz.com/",
-    "name": "ManualZz — Vespa & Piaggio Scooter Manuals",
+    "name": "ManualZz \u2014 Vespa & Piaggio Scooter Manuals",
     "type": "reference",
     "category": "repair-guides",
     "models": [
@@ -1273,7 +1273,7 @@
   },
   {
     "url": "https://www.itstillruns.com/",
-    "name": "It Still Runs — Common Mechanical Problems & Troubleshooting",
+    "name": "It Still Runs \u2014 Common Mechanical Problems & Troubleshooting",
     "type": "blog",
     "category": "diagnostics",
     "models": [
@@ -1286,7 +1286,7 @@
   },
   {
     "url": "https://www.howtomotorcyclerepair.com/",
-    "name": "How to Motorcycle Repair — Carburetor & Mechanical Guides",
+    "name": "How to Motorcycle Repair \u2014 Carburetor & Mechanical Guides",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -1299,7 +1299,7 @@
   },
   {
     "url": "https://www.totalruckus2020.com/",
-    "name": "Total Ruckus — GY6 EFI & Scooter Modification Forum",
+    "name": "Total Ruckus \u2014 GY6 EFI & Scooter Modification Forum",
     "type": "forum",
     "category": "community",
     "models": [
@@ -1312,7 +1312,7 @@
   },
   {
     "url": "https://www.modernbuddy.com/",
-    "name": "Modern Buddy — Piaggio & Vespa Forum & Discussions",
+    "name": "Modern Buddy \u2014 Piaggio & Vespa Forum & Discussions",
     "type": "forum",
     "category": "community",
     "models": [
@@ -1325,7 +1325,7 @@
   },
   {
     "url": "https://bradsscooters.com/",
-    "name": "Brad's Scooters — GY6 Service Manuals & Parts",
+    "name": "Brad's Scooters \u2014 GY6 Service Manuals & Parts",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -1338,7 +1338,7 @@
   },
   {
     "url": "https://moowiring.com/",
-    "name": "Moo Wiring — GY6 CDI & Wiring Diagrams",
+    "name": "Moo Wiring \u2014 GY6 CDI & Wiring Diagrams",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -1351,7 +1351,7 @@
   },
   {
     "url": "https://www.repairloader.com/c.php/scooter",
-    "name": "RepairLoader — Scooter Service Manuals",
+    "name": "RepairLoader \u2014 Scooter Service Manuals",
     "type": "reference",
     "category": "repair-guides",
     "models": [
@@ -1365,7 +1365,7 @@
   },
   {
     "url": "https://www.easyparts.com/models/Piaggio-m420",
-    "name": "EasyParts — Genuine Piaggio Parts Catalog",
+    "name": "EasyParts \u2014 Genuine Piaggio Parts Catalog",
     "type": "other",
     "category": "parts",
     "models": [
@@ -1378,7 +1378,7 @@
   },
   {
     "url": "https://www.partsforscooters.com/",
-    "name": "Parts for Scooters — GY6 & Piaggio Parts",
+    "name": "Parts for Scooters \u2014 GY6 & Piaggio Parts",
     "type": "other",
     "category": "parts",
     "models": [
@@ -1392,7 +1392,7 @@
   },
   {
     "url": "https://www.vespamaintenance.com/",
-    "name": "Vespa Maintenance — Fuel & Carburetor Tuning Guides",
+    "name": "Vespa Maintenance \u2014 Fuel & Carburetor Tuning Guides",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -1406,7 +1406,7 @@
   },
   {
     "url": "https://www.vespamag.com/",
-    "name": "Vespa Magazine — Carburetor & Technical Guides",
+    "name": "Vespa Magazine \u2014 Carburetor & Technical Guides",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -1420,7 +1420,7 @@
   },
   {
     "url": "https://www.roller-aus-blech.de/",
-    "name": "RAB Scootershop (Roller-Aus-Blech) — Vespa & Piaggio Parts & Guides",
+    "name": "RAB Scootershop (Roller-Aus-Blech) \u2014 Vespa & Piaggio Parts & Guides",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -1435,7 +1435,7 @@
   },
   {
     "url": "https://www.scooterhelp.com/",
-    "name": "ScooterHelp — Comprehensive Scooter Maintenance & Repair Database",
+    "name": "ScooterHelp \u2014 Comprehensive Scooter Maintenance & Repair Database",
     "type": "reference",
     "category": "repair-guides",
     "models": [
@@ -1450,9 +1450,9 @@
     "note": "Comprehensive collection of scooter maintenance, tuning, and repair guides covering fuel, brakes, electrics, transmission"
   },
   {
-    "note": "Authorized Aprilia/Vespa/Piaggio dealer — sells OEM factory workshop PDF manuals",
+    "note": "Authorized Aprilia/Vespa/Piaggio dealer \u2014 sells OEM factory workshop PDF manuals",
     "url": "https://www.af1racing.com/Vespa-Piaggio-Service-Manual-Downloads",
-    "name": "AF1 Racing — Official Vespa & Piaggio Service Manual Downloads",
+    "name": "AF1 Racing \u2014 Official Vespa & Piaggio Service Manual Downloads",
     "type": "manufacturer",
     "category": "repair-guides",
     "models": [
@@ -1469,7 +1469,7 @@
   },
   {
     "url": "https://vespavirgin.com/",
-    "name": "Vespa Virgin — Vespa DIY Maintenance & Ownership Guide",
+    "name": "Vespa Virgin \u2014 Vespa DIY Maintenance & Ownership Guide",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -1485,7 +1485,7 @@
   },
   {
     "url": "https://www.rrd-preparation.com/en/",
-    "name": "RRD Preparation — Piaggio/Gilera 50cc Carburetor Settings & Parts",
+    "name": "RRD Preparation \u2014 Piaggio/Gilera 50cc Carburetor Settings & Parts",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -1502,7 +1502,7 @@
   },
   {
     "url": "https://www.motor-x.com/blog/",
-    "name": "Motor-X Blog — GY6 Cylinder & Piston Technical Guides",
+    "name": "Motor-X Blog \u2014 GY6 Cylinder & Piston Technical Guides",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -1517,7 +1517,7 @@
   },
   {
     "url": "https://bartmotoco.com/blogs/build-resources/",
-    "name": "Bart Moto Co — Carburetor Tuning & Build Resources",
+    "name": "Bart Moto Co \u2014 Carburetor Tuning & Build Resources",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -1532,7 +1532,7 @@
   },
   {
     "url": "https://www.scooterswapshop.com/blogs/scooter-performance-videos-tutorials",
-    "name": "ScooterSwapShop — Performance Tutorial Blog",
+    "name": "ScooterSwapShop \u2014 Performance Tutorial Blog",
     "type": "blog",
     "category": "repair-guides",
     "models": [
@@ -1545,7 +1545,7 @@
   },
   {
     "url": "https://www.scooterswapshop.com/pages/gy6",
-    "name": "ScooterSwapShop — GY6 Resource Hub",
+    "name": "ScooterSwapShop \u2014 GY6 Resource Hub",
     "type": "reference",
     "category": "parts",
     "models": [
@@ -1553,6 +1553,69 @@
     ],
     "addedAt": "2026-05-13T08:01:00Z",
     "lastChecked": "2026-05-13T08:01:00Z",
+    "active": true
+  },
+  {
+    "url": "https://repair.view.edu.pl",
+    "name": "Repair Made Simple \u2014 GY6 Engine Guides",
+    "type": "blog",
+    "category": "repair-guides",
+    "addedAt": "2026-05-14T00:00:00Z",
+    "lastChecked": "2026-05-14T00:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://gotscoots.com",
+    "name": "Got Scooters \u2014 GY6 Engine 101 & Guides",
+    "type": "blog",
+    "category": "repair-guides",
+    "addedAt": "2026-05-14T00:00:00Z",
+    "lastChecked": "2026-05-14T00:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://infocenter.buggypartsnw.com",
+    "name": "Buggy Parts NW Info Center \u2014 GY6 Tech Guides",
+    "type": "other",
+    "category": "repair-guides",
+    "addedAt": "2026-05-14T00:00:00Z",
+    "lastChecked": "2026-05-14T00:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.vespasidecar.com/blog",
+    "name": "Vespa Sidecar \u2014 DIY Maintenance Blog",
+    "type": "blog",
+    "category": "repair-guides",
+    "addedAt": "2026-05-14T00:00:00Z",
+    "lastChecked": "2026-05-14T00:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.thejunkmanadv.com",
+    "name": "The Junkman ADV \u2014 GY6 Big Bore & Rebuild Guides",
+    "type": "blog",
+    "category": "repair-guides",
+    "addedAt": "2026-05-14T00:00:00Z",
+    "lastChecked": "2026-05-14T00:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://scootermutter.com/repairs/",
+    "name": "Scooter Mutter Inc \u2014 Repair and Diagnostics",
+    "type": "blog",
+    "category": "repair-guides",
+    "addedAt": "2026-05-14T00:00:00Z",
+    "lastChecked": "2026-05-14T00:00:00Z",
+    "active": true
+  },
+  {
+    "url": "https://www.bartmotoco.com/blogs/build-resources/",
+    "name": "Bart Moto Co \u2014 Build Resources & Carb Tuning",
+    "type": "blog",
+    "category": "repair-guides",
+    "addedAt": "2026-05-14T00:00:00Z",
+    "lastChecked": "2026-05-14T00:00:00Z",
     "active": true
   }
 ]

@@ -189,10 +189,36 @@
   select:focus,
   textarea:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+    box-shadow: var(--shadow);
   }
 
   
+  
+    /* Button component — design system */
+    .btn, button {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-md, 8px);
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .btn-primary, button[type="submit"] {
+      background: var(--primary);
+      color: var(--text-primary);
+    }
+    .btn-primary:hover, button[type="submit"]:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: var(--surface-2);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
   </style>
   <script type="application/ld+json">
 {
@@ -256,10 +282,10 @@
       <a href="https://scooterforum.net/threads/logboek-van-een-la-souris-euro-5-snorscooter.218946/" target="_blank" rel="noopener">La Souris Euro 5 owner log</a>
       &nbsp;|&nbsp;
       <div class="guide-tags">
-        <span class="guide-tag">models</span>
-        <span class="guide-tag">La Souris</span>
-        <span class="guide-tag">GY6</span>
-        <span class="guide-tag">50cc</span>
+        <span class="guide-guide-tag">models</span>
+        <span class="guide-guide-tag">La Souris</span>
+        <span class="guide-guide-tag">GY6</span>
+        <span class="guide-guide-tag">50cc</span>
       </div>
     </div>
 

@@ -64,12 +64,12 @@
     .video-embed { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin: 1.5rem 0; }
     .video-embed-title { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; }
     .video-thumb-link { display: block; text-decoration: none; }
-    .video-thumb-wrap { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 0.75rem; }
+    .video-thumb-wrap { position: relative; width: 100%; aspect-ratio: 16/9; background: var(--bg-dark); border-radius: var(--radius-md); overflow: hidden; margin-bottom: 0.75rem; }
     .video-thumb-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.2s; }
     .video-thumb-link:hover .video-thumb-img { opacity: 0.75; }
     .video-play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
     .video-play-icon { width: 68px; height: 48px; background: rgba(200,0,0,0.9); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.4rem; transition: background 0.2s, transform 0.15s; }
-    .video-thumb-link:hover .video-play-icon { background: #f00; transform: scale(1.06); }
+    .video-thumb-link:hover .video-play-icon { background: var(--danger); transform: scale(1.06); }
     .video-source { font-size: 0.85rem; color: var(--text-tertiary); }
     .video-source a { color: var(--accent); }
     .related-videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 1rem; }
@@ -86,12 +86,38 @@
   select:focus,
   textarea:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+    box-shadow: var(--shadow);
   }
   @media (max-width: 480px) {
     body { font-size: 15px; }
   }
-</style>
+
+    /* Button component — design system */
+    .btn, button {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-md, 8px);
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .btn-primary, button[type="submit"] {
+      background: var(--primary);
+      color: var(--text-primary);
+    }
+    .btn-primary:hover, button[type="submit"]:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: var(--surface-2);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+  </style>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -238,11 +264,11 @@
         </span>
       </div>
       <div class="guide-tags">
-        <span class="guide-tag">repair-guides</span>
-        <span class="guide-tag">GY6</span>
-        <span class="guide-tag">electrical</span>
-        <span class="guide-tag">ignition</span>
-        <span class="guide-tag">no-spark</span>
+        <span class="guide-guide-tag">repair-guides</span>
+        <span class="guide-guide-tag">GY6</span>
+        <span class="guide-guide-tag">electrical</span>
+        <span class="guide-guide-tag">ignition</span>
+        <span class="guide-guide-tag">no-spark</span>
       </div>
       <div class="applies-to">
         📌 <strong>Applies to:</strong> GY6 50cc <code>139QMB</code>, GY6 125/150cc <code>157QMJ</code>.

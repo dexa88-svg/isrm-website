@@ -209,6 +209,32 @@
     }
 
   
+  
+    /* Button component — design system */
+    .btn, button {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-md, 8px);
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .btn-primary, button[type="submit"] {
+      background: var(--primary);
+      color: var(--text-primary);
+    }
+    .btn-primary:hover, button[type="submit"]:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: var(--surface-2);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
   </style>
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -243,7 +269,7 @@
       <p>Step-by-step maintenance and repair procedures for GY6-platform and Piaggio/Vespa petrol scooters. Every guide is sourced, verified, and written for DIY owners.</p>
       <div class="page-hero-stats">
         <div class="hero-stat">
-          <span class="hero-stat-number">21</span>
+          <span class="hero-stat-number">25</span>
           <span class="hero-stat-label">Guides</span>
         </div>
         <div class="hero-stat">
@@ -278,251 +304,295 @@
   <!-- Guides Grid -->
   <section class="guides-section">
     <div class="guides-section-inner">
-      <p class="guides-count"><strong id="visibleCount">21</strong> guides</p>
+      <p class="guides-count"><strong id="visibleCount">25</strong> guides</p>
 
       <div class="guides-grid" id="guidesGrid">
 
         <article class="guide-card" data-category="maintenance">
-          <div class="card-tag">GY6</div>
+          <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-oil-change-guide.html">Engine Oil Change</a></h3>
           <p>Oil drain, correct specification, capacity, and refill procedure for GY6 139QMB and 157QMJ engines.</p>
           <div class="card-meta">
-            <span class="tag">Maintenance</span>
+            <span class="guide-guide-tag">Maintenance</span>
             <span class="time">15 min</span>
           </div>
           <a href="gy6-oil-change-guide.html" class="read-more">Read Guide</a>
         </article>
 
         <article class="guide-card" data-category="maintenance">
-          <div class="card-tag">GY6</div>
+          <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-spark-plug-guide.html">Spark Plug Inspection &amp; Replacement</a></h3>
           <p>Reading plug condition, correct gap setting, and replacement intervals for GY6 50cc–150cc engines.</p>
           <div class="card-meta">
-            <span class="tag">Maintenance</span>
+            <span class="guide-guide-tag">Maintenance</span>
             <span class="time">10 min</span>
           </div>
           <a href="gy6-spark-plug-guide.html" class="read-more">Read Guide</a>
         </article>
 
         <article class="guide-card" data-category="maintenance">
-          <div class="card-tag">GY6</div>
+          <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-air-filter-guide.html">Air Filter Cleaning &amp; Replacement</a></h3>
           <p>Foam filter wash and re-oiling for GY6 clones; paper element replacement for Vespa-type models.</p>
           <div class="card-meta">
-            <span class="tag">Maintenance</span>
+            <span class="guide-guide-tag">Maintenance</span>
             <span class="time">15 min</span>
           </div>
           <a href="gy6-air-filter-guide.html" class="read-more">Read Guide</a>
         </article>
 
         <article class="guide-card" data-category="maintenance">
-          <div class="card-tag">GY6</div>
+          <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-carburetor-adjustment-guide.html">Carburetor Adjustment &amp; Tuning</a></h3>
           <p>Idle speed, mixture screw, and needle position adjustment for smooth running on GY6 carbureted scooters.</p>
           <div class="card-meta">
-            <span class="tag">Carburetor</span>
+            <span class="guide-guide-tag">Carburetor</span>
             <span class="time">15 min</span>
           </div>
           <a href="gy6-carburetor-adjustment-guide.html" class="read-more">Read Guide</a>
         </article>
 
         <article class="guide-card" data-category="maintenance">
-          <div class="card-tag">GY6</div>
+          <div class="card-guide-tag">GY6</div>
           <h3><a href="carburetor-adjustment-tuning-guide.html">Carburetor Adjustment &amp; Tuning Fundamentals</a></h3>
           <p>Comprehensive tuning guide covering idle speed adjustment, mixture screw settings, and optimization techniques for GY6 engines.</p>
           <div class="card-meta">
-            <span class="tag">Carburetor</span>
+            <span class="guide-guide-tag">Carburetor</span>
             <span class="time">20 min</span>
           </div>
           <a href="carburetor-adjustment-tuning-guide.html" class="read-more">Read Guide</a>
         </article>
 
         <article class="guide-card" data-category="maintenance">
-          <div class="card-tag">GY6</div>
+          <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-carburetor-cleaning-guide.html">Carburetor Deep-Cleaning</a></h3>
           <p>Full disassembly and deep-cleaning of GY6 PD18J/PD24J/CVK carburetors: float, jets, needle, mixture screw, and reassembly.</p>
           <div class="card-meta">
-            <span class="tag">Carburetor</span>
+            <span class="guide-guide-tag">Carburetor</span>
             <span class="time">30 min</span>
           </div>
           <a href="gy6-carburetor-cleaning-guide.html" class="read-more">Read Guide</a>
         </article>
 
         <article class="guide-card" data-category="safety">
-          <div class="card-tag">GY6 · Vespa</div>
+          <div class="card-guide-tag">GY6 · Vespa</div>
           <h3><a href="gy6-brake-pads-guide.html">Brake Pads Replacement</a></h3>
           <p>Step-by-step front and rear brake pad replacement — caliper piston retraction, spring reinstall, and bed-in procedure.</p>
           <div class="card-meta">
-            <span class="tag">Safety</span>
+            <span class="guide-guide-tag">Safety</span>
             <span class="time">30 min</span>
           </div>
           <a href="gy6-brake-pads-guide.html" class="read-more">Read Guide</a>
         </article>
 
         <article class="guide-card" data-category="safety">
-          <div class="card-tag">GY6 · Vespa</div>
+          <div class="card-guide-tag">GY6 · Vespa</div>
           <h3><a href="gy6-brake-fluid-guide.html">Brake Fluid Change &amp; Bleed</a></h3>
           <p>Why DOT 4 degrades over time — and how to flush and bleed hydraulic brake circuits safely.</p>
           <div class="card-meta">
-            <span class="tag">Safety</span>
+            <span class="guide-guide-tag">Safety</span>
             <span class="time">25 min</span>
           </div>
           <a href="gy6-brake-fluid-guide.html" class="read-more">Read Guide</a>
         </article>
 
         <article class="guide-card" data-category="electrical">
-          <div class="card-tag">GY6</div>
+          <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-ignition-coil-guide.html">Ignition Coil Testing &amp; Replacement</a></h3>
           <p>No-spark diagnosis checklist — isolate CDI vs coil vs stator, then replace the coil step by step with a multimeter.</p>
           <div class="card-meta">
-            <span class="tag">Electrical</span>
+            <span class="guide-guide-tag">Electrical</span>
             <span class="time">25 min</span>
           </div>
           <a href="gy6-ignition-coil-guide.html" class="read-more">Read Guide</a>
         </article>
 
         <article class="guide-card" data-category="transmission">
-          <div class="card-tag">GY6</div>
+          <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-cvt-variator-belt-replacement.html">CVT Variator &amp; Drive Belt Replacement</a></h3>
           <p>Complete variator disassembly, drive belt inspection, and belt replacement procedure for GY6 scooters.</p>
           <div class="card-meta">
-            <span class="tag">Transmission</span>
+            <span class="guide-guide-tag">Transmission</span>
             <span class="time">25 min</span>
           </div>
           <a href="gy6-cvt-variator-belt-replacement.html" class="read-more">Read Guide</a>
         </article>
 
         <article class="guide-card" data-category="transmission">
-          <div class="card-tag">GY6 · Vespa · Piaggio</div>
+          <div class="card-guide-tag">GY6 · Vespa · Piaggio</div>
           <h3><a href="scooter-cvt-clutch-variator-guide.html">CVT Clutch &amp; Variator Rollers</a></h3>
           <p>How the CVT works, wear symptoms, roller weight specs for GY6 and Piaggio, and step-by-step roller replacement.</p>
           <div class="card-meta">
-            <span class="tag">Transmission</span>
+            <span class="guide-guide-tag">Transmission</span>
             <span class="time">35 min</span>
           </div>
           <a href="scooter-cvt-clutch-variator-guide.html" class="read-more">Read Guide</a>
         </article>
 
         <article class="guide-card" data-category="advanced">
-          <div class="card-tag">GY6</div>
+          <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-carburetor-jetting-guide.html">Carburetor Jetting &amp; Rejetting</a></h3>
           <p>Selecting and changing main jet and pilot jet sizes; jetting tables for altitude corrections and aftermarket modifications.</p>
           <div class="card-meta">
-            <span class="tag">Advanced</span>
+            <span class="guide-guide-tag">Advanced</span>
             <span class="time">20 min</span>
           </div>
           <a href="gy6-carburetor-jetting-guide.html" class="read-more">Read Guide</a>
         </article>
 
         <article class="guide-card" data-category="advanced">
-          <div class="card-tag">GY6</div>
+          <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-valve-adjustment-guide.html">Valve Clearance Adjustment</a></h3>
           <p>How to check and set valve clearances on 139QMB and 157QMJ engines — tools needed, TDC location, and feeler gauge procedure.</p>
           <div class="card-meta">
-            <span class="tag">Engine</span>
+            <span class="guide-guide-tag">Engine</span>
             <span class="time">20 min</span>
           </div>
           <a href="gy6-valve-adjustment-guide.html" class="read-more">Read Guide</a>
         </article>
 
         <article class="guide-card" data-category="electrical">
-          <div class="card-tag">GY6</div>
+          <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-cdi-no-spark-diagnosis.html">CDI No-Spark Diagnosis &amp; Replacement</a></h3>
           <p>Step-by-step electrical diagnosis of the GY6 ignition circuit — pick-up coil, ignition coil, and CDI tests with a multimeter, plus replacement guide.</p>
           <div class="card-meta">
-            <span class="tag">Electrical</span>
+            <span class="guide-guide-tag">Electrical</span>
             <span class="time">30 min</span>
           </div>
           <a href="gy6-cdi-no-spark-diagnosis.html" class="read-more">Read Guide</a>
         </article>
 
         <article class="guide-card" data-category="maintenance">
-          <div class="card-tag">Vespa</div>
+          <div class="card-guide-tag">Vespa</div>
           <h3><a href="vespa-primavera-sprint-oil-change.html">Vespa Primavera &amp; Sprint Oil Change</a></h3>
           <p>Full oil change procedure for the Piaggio iGet engine (Primavera 125/150, Sprint 125/150) — correct spec, torque values, dipstick check, and service light reset.</p>
           <div class="card-meta">
-            <span class="tag">Maintenance</span>
+            <span class="guide-guide-tag">Maintenance</span>
             <span class="time">25 min</span>
           </div>
           <a href="vespa-primavera-sprint-oil-change.html" class="read-more">Read Guide</a>
         </article>
 
         <article class="guide-card" data-category="maintenance">
-          <div class="card-tag">GY6</div>
+          <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-fuel-pump-maintenance.html">GY6 Fuel Pump: Maintenance &amp; Troubleshooting</a></h3>
           <p>Covers both vacuum-diaphragm pumps (carburetted) and electric pumps (EFI) — diagnosis, pressure testing, and step-by-step replacement.</p>
           <div class="card-meta">
-            <span class="tag">Fuel System</span>
+            <span class="guide-guide-tag">Fuel System</span>
             <span class="time">30 min</span>
           </div>
           <a href="gy6-fuel-pump-maintenance.html" class="read-more">Read Guide</a>
         </article>
 
         <article class="guide-card" data-category="fuel-system">
-          <div class="card-tag">GY6 EFI</div>
+          <div class="card-guide-tag">GY6 EFI</div>
           <h3><a href="gy6-efi-hard-start-intake-flooding.html">GY6 EFI Hard Start: Intake Flooding</a></h3>
           <p>GY6 EFI hard starting caused by intake flooding — cracked intake insulator gasket or leaking fuel injector. Diagnosis and repair guide with real photos and video.</p>
           <div class="card-meta">
-            <span class="tag">EFI / Fuel System</span>
+            <span class="guide-guide-tag">EFI / Fuel System</span>
             <span class="time">45 min</span>
           </div>
           <a href="gy6-efi-hard-start-intake-flooding.html" class="read-more">Read Guide</a>
         </article>
 
         <article class="guide-card" data-category="fuel-system">
-          <div class="card-tag">GY6</div>
+          <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-hard-start-intake-flooding.html">GY6 Hard Start: Intake Flooding</a></h3>
           <p>GY6 hard starting caused by intake flooding — cracked intake insulator gasket or leaking carburetor needle valve. Diagnosis and repair guide with real photos.</p>
           <div class="card-meta">
-            <span class="tag">Carburetor / Fuel System</span>
+            <span class="guide-guide-tag">Carburetor / Fuel System</span>
             <span class="time">30 min</span>
           </div>
           <a href="gy6-hard-start-intake-flooding.html" class="read-more">Read Guide</a>
         </article>
 
         <article class="guide-card" data-category="maintenance">
-          <div class="card-tag">GY6 · 139QMB</div>
+          <div class="card-guide-tag">GY6 · 139QMB</div>
           <h3><a href="gy6-speedometer-cable-replacement.html">Speedometer Cable — Diagnosis &amp; Replacement</a></h3>
           <p>Dead or erratic speedometer on your GY6 50cc? Diagnose a broken mechanical drive cable and replace it — covers La Souris, Santini Capri, BTC Riva 50, and other clones.</p>
           <div class="card-meta">
-            <span class="tag">Instruments</span>
+            <span class="guide-guide-tag">Instruments</span>
             <span class="time">30–45 min</span>
           </div>
           <a href="gy6-speedometer-cable-replacement.html" class="read-more">Read Guide</a>
         </article>
 
         <article class="guide-card" data-category="advanced">
-          <div class="card-tag">GY6</div>
+          <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-top-end-rebuild-piston-rings.html">Top End Rebuild &amp; Piston Ring Replacement</a></h3>
           <p>Complete GY6 top end rebuild — cylinder removal, piston ring inspection and installation, ring clocking, head torque specs, and post-rebuild run-in procedure for 139QMB and 157QMJ engines.</p>
           <div class="card-meta">
-            <span class="tag">Advanced</span>
+            <span class="guide-guide-tag">Advanced</span>
             <span class="time">2–3 hours</span>
           </div>
           <a href="gy6-top-end-rebuild-piston-rings.html" class="read-more">Read Guide</a>
         </article>
 
         <article class="guide-card" data-category="electrical">
-          <div class="card-tag">GY6</div>
+          <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-electrical-wiring-troubleshooting.html">Electrical System &amp; Wiring Troubleshooting</a></h3>
           <p>Systematic diagnosis of GY6 electrical faults — stator, CDI, pickup coil, regulator/rectifier, charging system, and lighting — with multimeter test values and wire colour guide.</p>
           <div class="card-meta">
-            <span class="tag">Electrical</span>
+            <span class="guide-guide-tag">Electrical</span>
             <span class="time">45 min</span>
           </div>
           <a href="gy6-electrical-wiring-troubleshooting.html" class="read-more">Read Guide</a>
         </article>
 
         <article class="guide-card" data-category="maintenance">
-          <div class="card-tag">Vespa</div>
+          <div class="card-guide-tag">Vespa</div>
           <h3><a href="vespa-primavera-dent-bodywork-repair.html">Vespa Primavera — Dent Repair &amp; Bodywork Restoration</a></h3>
           <p>Step-by-step guide to dent removal, body filler, primer, and colour-matched repainting on the Vespa Primavera steel monocoque body — including paint code identification.</p>
           <div class="card-meta">
-            <span class="tag">Bodywork</span>
-            <span class="tag">Paint</span>
+            <span class="guide-guide-tag">Bodywork</span>
+            <span class="guide-guide-tag">Paint</span>
             <span class="time">3–6 hrs</span>
           </div>
           <a href="vespa-primavera-dent-bodywork-repair.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card" data-category="advanced">
+          <div class="card-guide-tag">GY6</div>
+          <h3><a href="gy6-big-bore-kit-guide.html">GY6 Big Bore Kit — Everything You Need to Know</a></h3>
+          <p>Choose, install, and tune a big bore kit — 150cc to 171cc upgrade without case machining, ring-gap checking, re-jetting, and break-in procedure.</p>
+          <div class="card-meta">
+            <span class="guide-guide-tag">Performance</span>
+            <span class="time">3–6 hours</span>
+          </div>
+          <a href="gy6-big-bore-kit-guide.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card" data-category="advanced">
+          <div class="card-guide-tag">GY6</div>
+          <h3><a href="gy6-performance-upgrades-guide.html">GY6 Engine Performance Upgrades — Complete Guide</a></h3>
+          <p>Stage-by-stage upgrade path — CDI, variator rollers, exhaust, big bore, carburetor, EFI conversion, and brake upgrades for GY6 50cc–150cc scooters.</p>
+          <div class="card-meta">
+            <span class="guide-guide-tag">Performance</span>
+            <span class="time">Reference</span>
+          </div>
+          <a href="gy6-performance-upgrades-guide.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card" data-category="maintenance">
+          <div class="card-guide-tag">GY6</div>
+          <h3><a href="gy6-4stroke-maintenance-schedule.html">GY6 4-Stroke Maintenance Schedule</a></h3>
+          <p>Complete interval-based service schedule for GY6 50cc–150cc engines — oil, air filter, spark plug, valves, belt, variator, brakes, battery, and seasonal storage.</p>
+          <div class="card-meta">
+            <span class="guide-guide-tag">Maintenance</span>
+            <span class="time">Reference</span>
+          </div>
+          <a href="gy6-4stroke-maintenance-schedule.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card" data-category="maintenance">
+          <div class="card-guide-tag">Vespa · Piaggio</div>
+          <h3><a href="vespa-diy-maintenance-tips.html">Vespa DIY Maintenance — Tips to Save Costs</a></h3>
+          <p>Owner-accessible maintenance tasks for Vespa Primavera, Sprint, Zip, and GTS — oil change, air filter, spark plug, tyres, brakes, and drive belt inspection.</p>
+          <div class="card-meta">
+            <span class="guide-guide-tag">Maintenance</span>
+            <span class="time">Reference</span>
+          </div>
+          <a href="vespa-diy-maintenance-tips.html" class="read-more">Read Guide</a>
         </article>
 
         <div class="no-results" id="noResults">No guides in this category yet.</div>

@@ -192,10 +192,36 @@
   select:focus,
   textarea:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+    box-shadow: var(--shadow);
   }
 
   
+  
+    /* Button component — design system */
+    .btn, button {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-md, 8px);
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .btn-primary, button[type="submit"] {
+      background: var(--primary);
+      color: var(--text-primary);
+    }
+    .btn-primary:hover, button[type="submit"]:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: var(--surface-2);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
   </style>
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -267,9 +293,9 @@
         <div class="news-content">
           <p class="news-excerpt">New firmware update available for Vespa Primavera and ZIP models. Includes fuel injection improvements and cold-start fixes.</p>
           <div class="news-meta">
-            <span class="meta-tag">Vespa</span>
-            <span class="meta-tag">Injector</span>
-            <span class="meta-tag">ECU</span>
+            <span class="meta-guide-tag">Vespa</span>
+            <span class="meta-guide-tag">Injector</span>
+            <span class="meta-guide-tag">ECU</span>
           </div>
           <a href="#" class="read-more">Download Update →</a>
         </div>
@@ -286,9 +312,9 @@
         <div class="news-content">
           <p class="news-excerpt">Comprehensive spring maintenance checklist for GY6 scooters. Learn what to inspect and service before the riding season begins.</p>
           <div class="news-meta">
-            <span class="meta-tag">GY6</span>
-            <span class="meta-tag">Maintenance</span>
-            <span class="meta-tag">Seasonal</span>
+            <span class="meta-guide-tag">GY6</span>
+            <span class="meta-guide-tag">Maintenance</span>
+            <span class="meta-guide-tag">Seasonal</span>
           </div>
           <a href="../repair-guides/index.html" class="read-more">Read Guide →</a>
         </div>
@@ -305,9 +331,9 @@
         <div class="news-content">
           <p class="news-excerpt">Important safety notice: BTC Riva models 2024-2025 may have defective fuel lines. Check your vehicle serial number and contact dealer for free replacement.</p>
           <div class="news-meta">
-            <span class="meta-tag">BTC</span>
-            <span class="meta-tag">Safety</span>
-            <span class="meta-tag">Riva</span>
+            <span class="meta-guide-tag">BTC</span>
+            <span class="meta-guide-tag">Safety</span>
+            <span class="meta-guide-tag">Riva</span>
           </div>
           <a href="#" class="read-more">Check Serial Number →</a>
         </div>
@@ -325,9 +351,9 @@
         <div class="news-content">
           <p class="news-excerpt">Major update to our carburetor jetting guide with new diagrams, tools recommendations, and altitude adjustment tables for different regions.</p>
           <div class="news-meta">
-            <span class="meta-tag">GY6</span>
-            <span class="meta-tag">Carburetor</span>
-            <span class="meta-tag">Advanced</span>
+            <span class="meta-guide-tag">GY6</span>
+            <span class="meta-guide-tag">Carburetor</span>
+            <span class="meta-guide-tag">Advanced</span>
           </div>
           <a href="../repair-guides/index.html" class="read-more">Read Updated Guide →</a>
         </div>
@@ -344,9 +370,9 @@
         <div class="news-content">
           <p class="news-excerpt">New interactive diagnostic tool helps troubleshoot catalytic converter, EGR, and oxygen sensor issues on Vespa Primavera and ZIP models.</p>
           <div class="news-meta">
-            <span class="meta-tag">Vespa</span>
-            <span class="meta-tag">Diagnostics</span>
-            <span class="meta-tag">Emissions</span>
+            <span class="meta-guide-tag">Vespa</span>
+            <span class="meta-guide-tag">Diagnostics</span>
+            <span class="meta-guide-tag">Emissions</span>
           </div>
           <a href="../diagnostics/index.html" class="read-more">Use Diagnostic Tool →</a>
         </div>

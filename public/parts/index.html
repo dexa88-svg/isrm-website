@@ -275,6 +275,32 @@
     h3 { font-size: 1rem; }
   }
 
+  
+    /* Button component — design system */
+    .btn, button {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-md, 8px);
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .btn-primary, button[type="submit"] {
+      background: var(--primary);
+      color: var(--text-primary);
+    }
+    .btn-primary:hover, button[type="submit"]:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: var(--surface-2);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
   </style>
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -941,6 +967,11 @@
         <h3>Fluids &amp; Consumables</h3>
         <p>Oils, brake fluid, lubricants</p>
       </a>
+      <a class="cat-card" href="gy6-engine-codes-parts-compatibility.html">
+        <div class="cat-card-icon">🔍</div>
+        <h3>GY6 Engine Codes &amp; Compatibility</h3>
+        <p>Decode engine codes, A-Block vs B-Block, cross-reference parts between 139QMB, 152QMI, and 157QMJ</p>
+      </a>
     </div>
 
   </main>
@@ -972,7 +1003,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>Content licensed CC BY-SA 4.0 — Last updated: 2026-05-09</p>
+        <p>Content licensed CC BY-SA 4.0 — Last updated: 2026-05-14</p>
       </div>
     </div>
   </footer>

@@ -168,8 +168,8 @@
     }
     .video-embed { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin: 1.5rem 0; }
     .video-embed-title { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; }
-    .video-wrap { position: relative; width: 100%; aspect-ratio: 9/16; max-width: 400px; margin: 0 auto; background: #000; border-radius: var(--radius-md); overflow: hidden; }
-    .video-wrap-16x9 { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 0.75rem; }
+    .video-wrap { position: relative; width: 100%; aspect-ratio: 9/16; max-width: 400px; margin: 0 auto; background: var(--bg-dark); border-radius: var(--radius-md); overflow: hidden; }
+    .video-wrap-16x9 { position: relative; width: 100%; aspect-ratio: 16/9; background: var(--bg-dark); border-radius: var(--radius-md); overflow: hidden; margin-bottom: 0.75rem; }
     .video-wrap iframe, .video-wrap-16x9 iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
     .video-source { font-size: 0.85rem; color: var(--text-tertiary); margin-top: 0.75rem; }
     .video-source a { color: var(--accent); }
@@ -204,7 +204,7 @@
   select:focus,
   textarea:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+    box-shadow: var(--shadow);
   }
 
   /* Responsive Design - Tablet */
@@ -298,11 +298,11 @@
         <span>Cost: <strong>~€5–15</strong></span>
       </div>
       <div class="guide-tags">
-        <span class="guide-tag">GY6 50cc</span>
-        <span class="guide-tag">139QMB</span>
-        <span class="guide-tag">Maintenance</span>
-        <span class="guide-tag">Instruments</span>
-        <span class="guide-tag">Speedometer</span>
+        <span class="guide-guide-tag">GY6 50cc</span>
+        <span class="guide-guide-tag">139QMB</span>
+        <span class="guide-guide-tag">Maintenance</span>
+        <span class="guide-guide-tag">Instruments</span>
+        <span class="guide-guide-tag">Speedometer</span>
       </div>
       <div class="applies-to">
         📌 <strong>Applies to:</strong> La Souris Sourini, La Souris City, Santini Capri, BTC Riva 50, and all GY6 50cc scooters (engine code 139QMB) with a <strong>mechanical</strong> speedometer drive cable. Not applicable to scooters with electronic (hall-sensor) speedometers.

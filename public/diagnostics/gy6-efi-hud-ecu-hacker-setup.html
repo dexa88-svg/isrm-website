@@ -165,7 +165,7 @@
     .step-number {
       display: inline-flex; align-items: center; justify-content: center;
       width: 2rem; height: 2rem;
-      background: var(--primary); color: #fff;
+      background: var(--primary); color: var(--text-primary);
       border-radius: 50%; font-weight: 700; font-size: 0.9rem;
       margin-bottom: 0.75rem;
     }
@@ -248,7 +248,7 @@
 
     button:focus, a:focus, input:focus, select:focus, textarea:focus {
       outline: none;
-      box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+      box-shadow: var(--shadow);
     }
   @media (max-width: 480px) {
     body { font-size: 15px; }
@@ -371,13 +371,13 @@
         <a href="https://www.gy6-injectie-centrum.nl/ecu-software/hud-ecu-hacker-windows/ecu-verbinden" target="_blank" rel="noopener">GY6 Injectie Centrum</a>
       </div>
       <div class="guide-tags">
-        <span class="guide-tag">diagnostics</span>
-        <span class="guide-tag">GY6 EFI</span>
-        <span class="guide-tag">HUD ECU Hacker</span>
-        <span class="guide-tag">OBD2 KKL</span>
-        <span class="guide-tag">Delphi MT05</span>
-        <span class="guide-tag">fault codes</span>
-        <span class="guide-tag">Windows</span>
+        <span class="guide-guide-tag">diagnostics</span>
+        <span class="guide-guide-tag">GY6 EFI</span>
+        <span class="guide-guide-tag">HUD ECU Hacker</span>
+        <span class="guide-guide-tag">OBD2 KKL</span>
+        <span class="guide-guide-tag">Delphi MT05</span>
+        <span class="guide-guide-tag">fault codes</span>
+        <span class="guide-guide-tag">Windows</span>
       </div>
     </div>
   </section>
@@ -950,6 +950,13 @@
         <a href="https://github.com/ismr-online/ismr/issues" target="_blank" rel="noopener">Submit feedback on GitHub</a>
       </em>
     </p>
+
+  
+  <footer class="guide-footer">
+    <p>Content sourced from HUD ECU Hacker documentation and community guides. For educational purposes only.</p>
+    <p style="margin-top: 0.5rem;">Always verify procedures against your scooter's workshop manual before performing repairs.</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISMR Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Diagnostics</a></p>
+  </footer>
 
   </main>
 
