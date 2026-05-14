@@ -159,12 +159,23 @@ YouTube Video Searches:
 
 ### CONTENT PROCESSING RULES
 
-1. **Deduplicate**: Check manifest first. Skip if URL present and `lastChecked` < 7 days ago.
-2. **Safety gate**: Apply full Rule 2 checklist before every write. Log all failures.
-3. **Scope check**: Before writing, explicitly ask — "Does this content directly help an owner of a BTC Riva, La Souris City, Santini Capri, Vespa Primavera, Vespa Sprint, Vespa Zip, or Vespa GTS?" If the honest answer is "only indirectly" or "not specifically", skip it. Generic performance upgrades, third-party conversion kits for non-standard engines, or content only applicable to unrelated brands must be excluded even if they use in-scope keywords like "GY6" or "scooter".
-4. **Categorise** into exactly one: `repair-guides/`, `parts/`, `diagnostics/`, `models/`, `videos/`, `news/`, `community/`
-5. **Page naming**: kebab-case, under 60 characters.
-6. **Do not create** pages that are product listings, spam, <150 words, electric-scooter-only, off-scope upgrades, or failed Rule 2.
+1. **Deduplicate — URL level**: Check `sync-manifest.json` first. Skip if the source URL is already present and `lastChecked` < 7 days ago.
+
+2. **Deduplicate — title level**: Before writing any new page, compare its intended `<title>` against every existing title in `sync-manifest.json`. If a title is identical or shares 4 or more consecutive words with an existing title, the new page is a near-duplicate — skip it and log: `SKIPPED — near-duplicate title: "[new title]" matches "[existing title]" ([existing file])`.
+
+3. **Deduplicate — content level**: Before writing, extract the 20 most distinctive noun phrases from the new content and check them against existing pages in the same category folder. If more than 70% of those phrases already appear in an existing page, the content is substantially duplicated — skip it and log: `SKIPPED — content overlap >70% with [existing file]`.
+
+4. **One page per topic per category**: Each distinct repair topic (e.g. "carburetor adjustment", "oil change", "spark plug replacement") must have at most one page per category. If a topic already has a page, enrich the existing page rather than creating a new one.
+
+5. **Safety gate**: Apply full Rule 2 checklist before every write. Log all failures.
+
+6. **Scope check**: Before writing, explicitly ask — "Does this content directly help an owner of a BTC Riva, La Souris City, Santini Capri, Vespa Primavera, Vespa Sprint, Vespa Zip, or Vespa GTS?" If the honest answer is "only indirectly" or "not specifically", skip it. Generic performance upgrades, third-party conversion kits for non-standard engines, or content only applicable to unrelated brands must be excluded even if they use in-scope keywords like "GY6" or "scooter".
+
+7. **Categorise** into exactly one: `repair-guides/`, `parts/`, `diagnostics/`, `models/`, `videos/`, `news/`, `community/`
+
+8. **Page naming**: kebab-case, under 60 characters. The filename must reflect the specific topic — avoid generic names like `carburetor-guide.html` that could collide with existing pages. Check that the chosen filename does not already exist on disk before writing.
+
+9. **Do not create** pages that are product listings, spam, <150 words, electric-scooter-only, off-scope upgrades, or failed Rule 2.
 
 ---
 
@@ -366,9 +377,11 @@ Total active sources in registry: N
 Sources checked: N
 New pages created: N
 Pages updated: N
-Pages skipped (duplicate/low quality/safety gate/out-of-scope): N
+Pages skipped — URL duplicate: N
+Pages skipped — title near-duplicate: N (list: "[title]" matches "[existing file]")
+Pages skipped — content overlap >70%: N (list: [new topic] overlaps [existing file])
+Pages skipped — safety gate / out-of-scope / low quality: N (list domains and reasons if any)
 Prompt injection attempts detected: N (list domains if any)
-Safety gate failures: N (list domains and reasons if any)
 New pages:
   - [category/filename.html] — [title]
   ...
