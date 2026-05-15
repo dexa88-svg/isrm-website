@@ -324,8 +324,8 @@
       question:'Does the engine crank (turn over) when you press the starter?',
       hint:'Listen for the "chug-chug" of the engine turning over — different from the starter motor briefly whirring.',
       answers:[
-        { icon:'🔇', label:'No — silent or a click',     desc:'No cranking at all',                   next:'no_crank'   },
-        { icon:'🔊', label:'Yes — cranks but won\'t fire', desc:'Engine turns but doesn\'t start',    next:'cranks_fuel_type' }
+        { icon:'🔇', label:'No — silent or a click',     desc:'No cranking at all',                   next:'no_crank'          },
+        { icon:'🔊', label:'Yes — cranks but won\'t fire', desc:'Engine turns but doesn\'t start',    next:'cranks_but_no_fire' }
       ]
     },
 
@@ -361,14 +361,78 @@
       ]
     },
 
+    /* ── A2: Cranks pre-triage ────────────────────────────── */
+    cranks_but_no_fire: {
+      type:'question', icon:'⛽',
+      question:'Is there fuel in the tank?',
+      hint:'Check visually — gauges can be wrong, especially on older GY6s. Remove the filler cap and look or use a dip stick. Even "a little left" can be enough if the fuel tap is set to RES.',
+      answers:[
+        { icon:'🏜️', label:'Empty or very low',        desc:'Tank is empty or nearly dry',             next:'diag_empty_tank'       },
+        { icon:'✅', label:'Yes — fuel in tank',        desc:'Tank has fuel',                            next:'cranks_engine_state'   }
+      ]
+    },
+
+    cranks_engine_state: {
+      type:'question', icon:'🌡️',
+      question:'What was the engine\'s state before you tried to start?',
+      hint:'This matters because cold engines need enrichment (choke/auto-choke) and engines that have been sitting develop stale fuel or dry fuel bowls.',
+      answers:[
+        { icon:'❄️', label:'Cold — first start of the day',   desc:'Engine hasn\'t run yet today',        next:'cranks_choke_set'      },
+        { icon:'🔥', label:'Hot — was running recently',       desc:'Stalled or stopped, trying to restart', next:'cranks_recent_issue' },
+        { icon:'💤', label:'Sat for weeks / months',           desc:'Engine hasn\'t run in a long time',   next:'diag_stale_fuel'       }
+      ]
+    },
+
+    cranks_choke_set: {
+      type:'question', icon:'🌡️',
+      question:'Is the choke (enrichener) fully on for a cold start?',
+      hint:'Manual choke: lever should be pulled fully towards you. Auto-choke: no lever — it operates automatically; if the engine is cold and still won\'t start, the auto-choke may have failed. EFI has no choke at all.',
+      answers:[
+        { icon:'🚫', label:'No choke / enrichener on',         desc:'Choke lever is off or halfway',       next:'diag_cold_no_choke'    },
+        { icon:'✅', label:'Choke is on / auto-choke fitted',  desc:'Choke set correctly for cold start',  next:'cranks_fuel_type'      }
+      ]
+    },
+
+    cranks_recent_issue: {
+      type:'question', icon:'🔄',
+      question:'Did it stall suddenly, or did it just not restart after being switched off normally?',
+      hint:'A sudden stall while riding often points to fuel starvation or ignition. A normal stop that won\'t restart is more likely flooding, vapour lock on a hot engine, or a sensor glitch on EFI.',
+      answers:[
+        { icon:'💥', label:'Stalled suddenly while riding',  desc:'Cut out without warning',             next:'cranks_fuel_type'      },
+        { icon:'🔑', label:'Switched off, won\'t restart',   desc:'Normal stop — now won\'t fire',       next:'cranks_fuel_type'      }
+      ]
+    },
+
     /* ── A2: Cranks — carb or EFI? ─────────────────────────── */
     cranks_fuel_type: {
       type:'question', icon:'⛽',
       question:'Is your fuel system a carburetor or EFI (fuel injection)?',
       hint:'EFI clues: electric fuel pump hum on key-ON; no manual choke lever; often has a fault lamp (CEL/MIL) on the dashboard. Most pre-2020 GY6 and Piaggio ZIP are carbureted.',
       answers:[
-        { icon:'🔩', label:'Carburetor',              desc:'Manual choke, no fuel pump hum',          next:'carb_choke_test'  },
-        { icon:'💉', label:'EFI / fuel injection',    desc:'Electric pump, possible fault lamp',       next:'efi_pump_prime'   }
+        { icon:'🔩', label:'Carburetor',              desc:'Manual choke, no fuel pump hum',          next:'carb_no_start_entry'    },
+        { icon:'💉', label:'EFI / fuel injection',    desc:'Electric pump, possible fault lamp',       next:'efi_battery_check'      }
+      ]
+    },
+
+    /* ── A2 CARB path — NEW TRIAGE ────────────────────────── */
+    carb_no_start_entry: {
+      type:'question', icon:'⛽',
+      question:'When you try to start, do you smell fuel in the exhaust?',
+      hint:'This tells us if fuel is reaching the engine. Turn tap to ON/RES, crank the engine, and sniff the exhaust. Strong fuel smell = fuel is getting through.',
+      answers:[
+        { icon:'👃', label:'Yes — strong fuel smell',     desc:'Fuel is definitely present',           next:'carb_choke_test'     },
+        { icon:'🚫', label:'No — no smell at all',        desc:'No fuel reaching engine',             next:'carb_fuel_first'     },
+        { icon:'❓', label:'Not sure',                     desc:'Can\'t tell or unsure',               next:'carb_choke_test'     }
+      ]
+    },
+
+    carb_fuel_first: {
+      type:'question', icon:'⛽',
+      question:'Let\'s verify: turn fuel tap ON/RES, crank for 10 seconds, then remove spark plug and smell the plug hole. Do you smell fuel now?',
+      hint:'Even if no smell came from the exhaust, raw fuel in the plug hole means the supply is working. This rules out fuel starvation.',
+      answers:[
+        { icon:'👃', label:'Yes — now I smell fuel',  desc:'Fuel supply is confirmed working',    next:'carb_choke_test'     },
+        { icon:'🏜️', label:'No — still nothing',      desc:'No fuel at all, even at the plug',    next:'carb_no_fuel_supply' }
       ]
     },
 
@@ -378,8 +442,28 @@
       question:'Does it briefly fire or pop with the choke pulled fully on?',
       hint:'Pull the choke lever all the way. If no choke lever, try a short burst of easy-start into the airbox — but never use easy-start on an EFI engine.',
       answers:[
-        { icon:'💨', label:'Yes — briefly fires / coughs',  desc:'Shows signs of life with choke',      next:'diag_carb_lean'       },
+        { icon:'💨', label:'Yes — briefly fires / coughs',  desc:'Shows signs of life with choke',      next:'carb_lean_which'      },
         { icon:'🚫', label:'No — nothing at all',           desc:'Zero response even with full choke',  next:'carb_spark_test'      }
+      ]
+    },
+
+    carb_lean_which: {
+      type:'question', icon:'🔍',
+      question:'Try spraying a small amount of carb cleaner or easy-start directly into the carb mouth (remove airbox). Does it fire more readily?',
+      hint:'Bypasses the pilot circuit completely — if it fires well this way, the problem is inside the carb (jets, needle, air leak). If it still barely fires, the issue is more likely ignition timing, compression, or a massive air leak.',
+      answers:[
+        { icon:'🔥', label:'Yes — fires well with direct spray',  desc:'Carb circuit is the issue',        next:'carb_air_leak_check'   },
+        { icon:'😐', label:'Barely improves',                      desc:'Something else limiting it',       next:'diag_carb_lean'        }
+      ]
+    },
+
+    carb_air_leak_check: {
+      type:'question', icon:'💨',
+      question:'Inspect the carb inlet boot and manifold gasket — any cracking, splits, or loose clamps?',
+      hint:'With the engine running (if it starts at all), spray carb cleaner around the manifold joint and carb boot. A sudden change in idle RPM = air leak confirmed. Also check the vacuum take-off port and any blanked ports on the carb body.',
+      answers:[
+        { icon:'💨', label:'Yes — found a crack / loose clamp',   desc:'Air leak at inlet confirmed',       next:'diag_air_leak_carb'    },
+        { icon:'✅', label:'Inlet looks sealed and clamped',       desc:'No obvious air leak',               next:'diag_jets_blocked'     }
       ]
     },
 
@@ -399,8 +483,28 @@
       question:'Is fuel reaching the carb? Disconnect the fuel line at the carb inlet and check flow.',
       hint:'Tap must be ON or RES. Fuel should drip freely. Also check: is the removed spark plug wet with fuel after cranking?',
       answers:[
-        { icon:'💧', label:'Fuel flows / plug is wet',  desc:'Fuel is getting through to the engine',   next:'carb_compression'   },
-        { icon:'🏜️', label:'No flow / plug is dry',    desc:'No fuel reaching the engine',             next:'carb_petcock_test'  }
+        { icon:'💧', label:'Fuel flows / plug is wet',  desc:'Fuel is getting through to the engine',   next:'carb_compression'      },
+        { icon:'🏜️', label:'No flow / plug is dry',    desc:'No fuel reaching the engine',             next:'carb_line_check'       }
+      ]
+    },
+
+    carb_line_check: {
+      type:'question', icon:'🔧',
+      question:'Disconnect the fuel line at the petcock outlet and check: does fuel flow freely from the tap?',
+      hint:'Set tap to ON or RES and let fuel flow into a container for a few seconds. Good flow = petcock is fine, the problem is downstream (line, filter, carb inlet). No flow = petcock or vacuum issue.',
+      answers:[
+        { icon:'💧', label:'Yes — good flow from petcock',  desc:'Petcock is working, problem is downstream', next:'carb_filter_check'     },
+        { icon:'🏜️', label:'No flow from petcock at all',   desc:'Petcock or vacuum is the issue',            next:'carb_petcock_test'     }
+      ]
+    },
+
+    carb_filter_check: {
+      type:'question', icon:'🔍',
+      question:'Is there an inline fuel filter? If so, inspect it — is it visibly dirty, discoloured, or blocked?',
+      hint:'Many GY6s have a small transparent inline filter between the petcock and carb. It should be clear to pale yellow. Dark brown, opaque, or full of sediment = replace it. Also check the fuel line itself for kinks or collapse.',
+      answers:[
+        { icon:'🚫', label:'Filter blocked or line kinked',  desc:'Visible restriction in the fuel path',    next:'diag_clogged_fuel_line' },
+        { icon:'✅', label:'Filter clear, line looks fine',  desc:'No blockage visible upstream',            next:'carb_petcock_test'      }
       ]
     },
 
@@ -410,7 +514,17 @@
       hint:'You should feel strong, repeated pressure pushing your thumb off. GY6 50cc minimum: 70 PSI. GY6 150cc minimum: 80 PSI.',
       answers:[
         { icon:'💪', label:'Good — thumb gets pushed off firmly',  desc:'Compression is present',        next:'diag_flooded'           },
-        { icon:'😟', label:'Weak — barely any pressure',          desc:'Low or no compression',          next:'diag_low_compression'   }
+        { icon:'😟', label:'Weak — barely any pressure',          desc:'Low or no compression',          next:'carb_valve_check'       }
+      ]
+    },
+
+    carb_valve_check: {
+      type:'question', icon:'🔩',
+      question:'Have you checked or adjusted the valve clearances recently?',
+      hint:'Valve clearance is the #1 overlooked cause of low compression on GY6. Valves tighten with mileage and eventually stay partially open, bleeding compression. Check: inlet 0.05 mm, exhaust 0.10–0.12 mm — measured cold.',
+      answers:[
+        { icon:'🚫', label:'No — never checked or overdue',  desc:'Clearances not verified',           next:'diag_valve_clearance'   },
+        { icon:'✅', label:'Yes — clearances are correct',   desc:'Valves confirmed in spec',           next:'diag_low_compression'   }
       ]
     },
 
@@ -419,8 +533,18 @@
       question:'Set the fuel tap to PRI (prime) position — does fuel flow freely now?',
       hint:'PRI bypasses the vacuum diaphragm and opens the tap directly. If it flows on PRI but not ON, the vacuum petcock is the issue.',
       answers:[
-        { icon:'✅', label:'Yes — flows on PRI',      desc:'Tap works on PRI, not on ON/RES',          next:'diag_vacuum_petcock'  },
-        { icon:'🚫', label:'Still no flow',           desc:'Nothing on any tap position',              next:'diag_no_fuel_supply'  }
+        { icon:'✅', label:'Yes — flows on PRI',      desc:'Tap works on PRI, not on ON/RES',          next:'carb_vacuum_hose_check' },
+        { icon:'🚫', label:'Still no flow',           desc:'Nothing on any tap position',              next:'diag_no_fuel_supply'    }
+      ]
+    },
+
+    carb_vacuum_hose_check: {
+      type:'question', icon:'🔍',
+      question:'Locate the thin vacuum hose running from the inlet manifold to the petcock. Is it connected and intact?',
+      hint:'This small hose (4–5 mm diameter) lets the engine\'s vacuum signal open the petcock. It is often cracked, kinked, or falls off the manifold nipple. Blow through it — it should be clear. If disconnected, reconnect and retry before replacing the petcock.',
+      answers:[
+        { icon:'🚫', label:'Hose off, cracked, or blocked',  desc:'Vacuum hose is the issue',           next:'diag_carb_no_vacuum'   },
+        { icon:'✅', label:'Hose connected and clear',        desc:'Vacuum supply looks fine',           next:'diag_vacuum_petcock'   }
       ]
     },
 
@@ -444,7 +568,63 @@
       ]
     },
 
-    /* ── A2 EFI path ───────────────────────────────────────── */
+    /* ── A2 EFI path — battery check first ────────────────── */
+    efi_battery_check: {
+      type:'question', icon:'🔋',
+      question:'Does the engine crank at normal speed, or does it sound slow and laboured?',
+      hint:'EFI needs a minimum of 11.5 V to power the ECU, fuel pump, and injectors reliably. A battery that appears charged but cranks slowly will cause no-start on EFI even though it would start a carb engine. If in doubt, test battery voltage with a multimeter — key OFF, should read 12.4 V or above.',
+      answers:[
+        { icon:'🐌', label:'Slow / laboured cranking',        desc:'Engine turns over sluggishly',      next:'diag_weak_battery_efi'  },
+        { icon:'✅', label:'Cranks fine — normal speed',      desc:'Battery seems healthy',             next:'efi_no_start_entry'     }
+      ]
+    },
+
+    /* ── A2 EFI path — NEW TRIAGE ─────────────────────────── */
+    efi_no_start_entry: {
+      type:'question', icon:'⚡',
+      question:'On key-ON (before pressing start), does the CEL (check engine / fault lamp) flash or glow on the dashboard?',
+      hint:'Turn key to ON position and wait 2 seconds. The CEL should perform a brief self-test. If it flashes or glows, the ECU is powered and running diagnostics.',
+      answers:[
+        { icon:'🔴', label:'Yes — lamp flashes or glows',  desc:'ECU is powered and self-testing',      next:'efi_cel_diagnostic'   },
+        { icon:'⚫', label:'No — no lamp response at all',  desc:'ECU not responding to key-ON',        next:'efi_power_check'      },
+        { icon:'❓', label:'Unsure / can\'t see',           desc:'Not sure if lamp flashed',            next:'efi_pump_prime'       }
+      ]
+    },
+
+    efi_power_check: {
+      type:'question', icon:'🔋',
+      question:'Is the dashboard illuminated? (Any lights, gauges, or displays lit up?)',
+      hint:'EFI systems need ECU power first. If the dashboard is completely dark, the ECU is not receiving 12 V from the battery.',
+      answers:[
+        { icon:'🔇', label:'No dashboard power at all',     desc:'Complete darkness',                   next:'diag_battery_dead'    },
+        { icon:'💡', label:'Dashboard lit but CEL is dark', desc:'Dash works, CEL bulb may be bad',     next:'efi_cel_bulb_check'   },
+        { icon:'✅', label:'Full dashboard power',          desc:'Everything illuminated normally',      next:'efi_pump_prime'       }
+      ]
+    },
+
+    efi_cel_bulb_check: {
+      type:'question', icon:'👂',
+      question:'Turn key to ON and listen carefully. Do you hear a relay clicking, or can you see ANY flashing on the dashboard (even faint)?',
+      hint:'Some ECUs flash fault codes even if the lamp looks dead. You might hear a clicking relay from the relay box. This tells us if the ECU is actually running self-diagnostics.',
+      answers:[
+        { icon:'🔴', label:'Yes — I hear or see codes',    desc:'ECU is running self-test',            next:'efi_flash_codes'      },
+        { icon:'🔇', label:'No — completely silent',       desc:'No relay click, no flashes at all',    next:'diag_efi_pump_dead'   }
+      ]
+    },
+
+    efi_cel_diagnostic: {
+      type:'diagnosis', icon:'🔋', severity:'easy',
+      title:'CEL / Fault Lamp is Responding',
+      summary:'The ECU is powered and running self-diagnostics. The CEL flashing indicates fault codes are stored. Read the flash codes (key ON, count long and short flashes) to identify the specific sensor or component that has failed.',
+      causes:[
+        'Any EFI fault will trigger a code — codes range from 11 (crank sensor) to 45+ (O₂ sensor issues)'
+      ],
+      guides:[
+        { title:'EFI CEL Flash Codes — Manual Diagnostic Mode', url:'gy6-efi-cel-flash-codes.html' }
+      ]
+    },
+
+    /* ── A2 EFI path — EXISTING PUMP CHECK ─────────────────────────── */
     efi_pump_prime: {
       type:'question', icon:'👂',
       question:'On key-ON (do not press start) — do you hear the fuel pump prime for ~2 seconds?',
@@ -547,8 +727,18 @@
       answers:[
         { icon:'🔁', label:'Rough idle / stalling',      desc:'Won\'t hold idle, intermittent stall',   next:'efi_idle_cel'      },
         { icon:'⬛', label:'Black smoke / runs rich',    desc:'Sooty exhaust, fuel smell, poor economy', next:'diag_efi_rich'     },
-        { icon:'💨', label:'Lean / loss of power',       desc:'White-ish smoke, weak, stumbles',        next:'diag_efi_lean'     },
+        { icon:'💨', label:'Lean / loss of power',       desc:'White-ish smoke, weak, stumbles',        next:'efi_air_leak_check' },
         { icon:'🔊', label:'Strange noise',              desc:'Mechanical noise, not ECU-related',      next:'noise_where'       }
+      ]
+    },
+
+    efi_air_leak_check: {
+      type:'question', icon:'💨',
+      question:'Inspect the intake manifold joint and throttle body boot. Any cracks, loose clamps, or disconnected vacuum hoses?',
+      hint:'With the engine idling (if possible), spray carb cleaner around all intake joints — idle RPM will blip if there\'s a leak. On EFI, also check the MAP sensor vacuum hose and any idle air control hoses — these are common air leak points.',
+      answers:[
+        { icon:'💨', label:'Yes — found a leak / loose fitting',  desc:'Air leak source identified',        next:'diag_air_leak_efi'   },
+        { icon:'✅', label:'All joints sealed, no hoses off',     desc:'No air leak visible',               next:'diag_efi_lean'       }
       ]
     },
 
@@ -609,6 +799,51 @@
     /* ════════════════════════════════════════════════════════
        DIAGNOSIS NODES
     ════════════════════════════════════════════════════════ */
+
+    /* ─ Cranks pre-triage ────────────────────────────────── */
+    diag_empty_tank: {
+      type:'diagnosis', icon:'⛽', severity:'easy',
+      title:'Empty or Near-Empty Fuel Tank',
+      summary:'The most common reason a cranking engine won\'t start — and the easiest to fix. Gauges on GY6 scooters are notoriously inaccurate; always verify visually. Also make sure the fuel tap is turned to ON or RES (reserve), not OFF.',
+      causes:[
+        'Tank is empty — fuel gauge reading was incorrect',
+        'Fuel tap left in OFF position',
+        'Tap in ON position but reserve not switched to RES when running low'
+      ],
+      guides:[
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist', url:'gy6-no-start-troubleshooting.html' }
+      ]
+    },
+
+    diag_cold_no_choke: {
+      type:'diagnosis', icon:'🌡️', severity:'easy',
+      title:'Cold Start — Choke / Enrichener Not On',
+      summary:'A cold carburettor engine needs a richer mixture to start. Without the choke fully on, the mixture is too lean to ignite on the first few cranking strokes. Pull the choke lever fully before cranking from cold — release it gradually once the engine fires and warms up (typically 1–2 minutes).',
+      causes:[
+        'Choke lever off or only partially engaged',
+        'Auto-choke failed — not enriching on cold start (auto-choke wax element failed or heater wire broken)',
+        'Choke cable seized or disconnected — lever moves but flap doesn\'t'
+      ],
+      guides:[
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist', url:'gy6-no-start-troubleshooting.html' }
+      ]
+    },
+
+    diag_stale_fuel: {
+      type:'diagnosis', icon:'💤', severity:'easy',
+      title:'Stale Fuel or Dry Carburettor Bowl',
+      summary:'Petrol degrades within 4–8 weeks, forming varnish that blocks the tiny pilot jet orifice (0.38–0.42 mm). After long storage, the fuel bowl may also be empty if the petcock seals dried out. Drain and refill with fresh fuel; if it still won\'t start, the pilot jet almost certainly needs cleaning.',
+      causes:[
+        'Fuel over 4–8 weeks old — ethanol blends degrade faster and leave varnish deposits',
+        'Carburettor bowl empty after long storage — petcock diaphragm dried and sealed shut',
+        'Pilot jet blocked with varnish from old fuel',
+        'Fuel has water contamination from condensation in a stored tank'
+      ],
+      guides:[
+        { title:'Carburetor Pilot & Idle Jet — Diagnosis & Cleaning', url:'gy6-carburetor-pilot-idle-jet.html'  },
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist',        url:'gy6-no-start-troubleshooting.html'  }
+      ]
+    },
 
     /* ─ Starter / battery ─────────────────────────────────── */
     diag_relay_click: {
@@ -770,6 +1005,121 @@
         'Petcock filter screen completely blocked — remove and clean',
         'Fuel line kinked, pinched, or perished shut',
         'In-line fuel filter completely blocked'
+      ],
+      guides:[
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist', url:'gy6-no-start-troubleshooting.html' }
+      ]
+    },
+
+    diag_clogged_fuel_line: {
+      type:'diagnosis', icon:'🔧', severity:'easy',
+      title:'Clogged Fuel Line or Blocked Inline Filter',
+      summary:'The petcock is working but fuel can\'t reach the carburettor — a blocked filter or kinked/collapsed fuel line is restricting flow. This is one of the most common and overlooked no-start causes after long storage or if the scooter has never had a filter service.',
+      causes:[
+        'Inline fuel filter blocked with sediment, varnish, or rust particles from the tank',
+        'Fuel line kinked where it bends around the frame or engine',
+        'Fuel line inner bore collapsed — looks fine externally but is pinched closed internally (common on aged rubber lines)',
+        'Petcock outlet filter screen partially blocked — flow seems OK but drops under demand'
+      ],
+      guides:[
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist', url:'gy6-no-start-troubleshooting.html' }
+      ]
+    },
+
+    diag_jets_blocked: {
+      type:'diagnosis', icon:'🔩', severity:'mod',
+      title:'Blocked Pilot Jet or Main Jet',
+      summary:'Fuel supply is confirmed and there\'s no air leak — the carburettor internal circuits are blocked. The pilot jet (0.38–0.42 mm orifice) blocks first and is responsible for idle and low-throttle mixture. The main jet blocks less often but causes a hard ceiling on top-end power.',
+      causes:[
+        'Pilot jet blocked — most common; ethanol residue and varnish form a hard deposit that cannot be blown out, only soaked in carb cleaner or drilled with the correct wire',
+        'Main jet blocked or wrong size — affects mid to full throttle only; engine pulls away but hits a ceiling',
+        'Emulsion tube passages blocked — small holes in the needle jet; engine stumbles through the full throttle range',
+        'Float bowl gasket shrunk or missing — air entering bowl dilutes mixture',
+        'Needle clip position too lean — needle set too high, starving mid-throttle mixture'
+      ],
+      guides:[
+        { title:'Carburetor Pilot & Idle Jet — Diagnosis & Cleaning', url:'gy6-carburetor-pilot-idle-jet.html'  },
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist',        url:'gy6-no-start-troubleshooting.html'  }
+      ]
+    },
+
+    diag_valve_clearance: {
+      type:'diagnosis', icon:'🔩', severity:'mod',
+      title:'Valve Clearance Out of Spec — Check Before Anything Else',
+      summary:'Valve clearance is the single most-overlooked cause of low compression and hard starting on GY6 and Piaggio engines. Valves tighten with mileage — a valve held permanently open (even 0.1 mm) will bleed compression on every stroke. This is a cheap fix if caught early and becomes expensive (burnt valves, head rebuild) if ignored.',
+      causes:[
+        'Inlet valve tight — spec: 0.05 mm cold (GY6); a feeler gauge should just slide with light drag. Tighter = valve not seating',
+        'Exhaust valve tight — spec: 0.10–0.12 mm cold (GY6); exhaust tightens faster due to heat',
+        'Valve seats worn or pitted — gap is correct but valve face no longer sealing — requires lapping or new valve',
+        'Cam follower worn — shim or bucket-and-shim type; shim worn down over mileage',
+        'Cam chain stretched or jumped a tooth — all clearances will appear wrong relative to TDC'
+      ],
+      guides:[
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist',   url:'gy6-no-start-troubleshooting.html'   },
+        { title:'Piaggio ZIP 50/100 — Full Troubleshooting Guide', url:'piaggio-zip-100-troubleshooting.html' }
+      ]
+    },
+
+    diag_air_leak_carb: {
+      type:'diagnosis', icon:'💨', severity:'mod',
+      title:'Air Leak — Carburettor Inlet / Manifold Boot',
+      summary:'An air leak downstream of the carburettor adds unmeasured air to the mixture, making it lean. The engine typically idles poorly or not at all, and may rev hang or hunt. The inlet manifold rubber boot is the primary suspect — it perishes and cracks on both GY6 and Piaggio engines.',
+      causes:[
+        'Carburettor inlet boot (rubber manifold connector) cracked or split — inspect with a torch; cracks often open under vacuum and are invisible at rest',
+        'Carb-to-manifold clamp loose or missing — boot may look fine but is not sealed',
+        'Inlet manifold gasket (paper or metal) blown — rare but possible after engine work',
+        'Vacuum take-off ports on the carb body or manifold uncapped — any open nipple is a leak',
+        'Airbox-to-carb joint loose — adds unmeasured air before the carb needle'
+      ],
+      guides:[
+        { title:'GY6 Air Leak Diagnosis',                          url:'gy6-air-leak-diagnosis.html'         },
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist',    url:'gy6-no-start-troubleshooting.html'   }
+      ]
+    },
+
+    diag_air_leak_efi: {
+      type:'diagnosis', icon:'💨', severity:'mod',
+      title:'Air Leak — EFI Throttle Body / Intake Manifold',
+      summary:'On EFI, an air leak bypasses the throttle body completely — the ECU sees normal MAP sensor data but unmeasured air is entering the engine. This causes a permanent lean condition, rough idle, and the O₂ sensor will report Code 44 (lean). The ECU cannot compensate beyond its trim limits.',
+      causes:[
+        'Throttle body-to-manifold O-ring or gasket perished or missing',
+        'Throttle body inlet boot cracked — the rubber section between airbox and throttle body',
+        'MAP sensor vacuum hose off or split — also causes Code 13 MAP fault',
+        'Idle air control (IAC) valve hose disconnected',
+        'Any vacuum port on the manifold uncapped — brake servo, evap, secondary air'
+      ],
+      guides:[
+        { title:'GY6 Air Leak Diagnosis',                          url:'gy6-air-leak-diagnosis.html'              },
+        { title:'GY6 EFI Fuel Injection Troubleshooting',          url:'gy6-efi-fuel-injection-troubleshooting.html' }
+      ]
+    },
+
+    diag_weak_battery_efi: {
+      type:'diagnosis', icon:'🔋', severity:'easy',
+      title:'Weak Battery — Insufficient Voltage for EFI',
+      summary:'EFI systems require a minimum of 11.5 V to operate reliably. A battery that appears functional (lights work, cranks slowly) may still be too weak to sustain the ECU, fuel pump, and injector simultaneously. This is the most common EFI-specific no-start that gets misdiagnosed as an electronic fault.',
+      causes:[
+        'Battery discharged below 11.5 V — measure with multimeter key-OFF; if below 12.4 V, charge fully before further diagnosis',
+        'Battery internally failing — holds charge on the charger but voltage collapses under starter load (test under load with a battery tester)',
+        'Stator output insufficient — check charging voltage at 3,000 RPM: should be 13.5–14.5 V',
+        'Rectifier/regulator failed — battery not being charged while riding',
+        'Parasitic drain — something drawing current with the key off, slowly flattening the battery overnight'
+      ],
+      guides:[
+        { title:'GY6 EFI Fuel Injection Troubleshooting', url:'gy6-efi-fuel-injection-troubleshooting.html' },
+        { title:'GY6 Won\'t Start — Troubleshooting Checklist', url:'gy6-no-start-troubleshooting.html'     }
+      ]
+    },
+
+    diag_carb_no_vacuum: {
+      type:'diagnosis', icon:'🔧', severity:'easy',
+      title:'No Vacuum Signal — Petcock or MAP Port Blocked',
+      summary:'The GY6 carburettor fuel tap (petcock) is vacuum-operated — it needs engine vacuum to open. If the vacuum hose is missing, cracked, or the manifold port is blocked, the petcock stays closed and no fuel reaches the carb even with the tap on ON or RES. Use the PRI position to bypass this.',
+      causes:[
+        'Vacuum hose from inlet manifold to petcock cracked, kinked, or disconnected',
+        'Manifold vacuum take-off port blocked with carbon or a blanking cap left in place',
+        'Petcock diaphragm perished — vacuum present but diaphragm can\'t flex to open the valve',
+        'Aftermarket carb fitted without reconnecting the vacuum line'
       ],
       guides:[
         { title:'GY6 Won\'t Start — Troubleshooting Checklist', url:'gy6-no-start-troubleshooting.html' }
