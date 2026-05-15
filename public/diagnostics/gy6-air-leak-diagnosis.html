@@ -172,44 +172,6 @@
       .nav-menu { display: none; }
       .nav-toggle { display: block; }
     }
-  /* Accessibility: Focus states */
-  button:focus,
-  a:focus,
-  input:focus,
-  select:focus,
-  textarea:focus {
-    outline: none;
-    box-shadow: var(--shadow);
-  }
-  @media (max-width: 480px) {
-    body { font-size: 15px; }
-  }
-
-    /* Button component — design system */
-    .btn, button {
-      display: inline-block;
-      padding: 0.5rem 1.25rem;
-      border-radius: var(--radius-md);
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    .btn-primary, button[type="submit"] {
-      background: var(--primary);
-      color: var(--text-primary);
-    }
-    .btn-primary:hover, button[type="submit"]:hover {
-      opacity: 0.9;
-      transform: translateY(-1px);
-    }
-    .btn-secondary {
-      background: var(--surface-2);
-      color: var(--text-primary);
-      border: 1px solid var(--border);
-    }
   </style>
   <script type="application/ld+json">
 {
@@ -272,16 +234,15 @@
     </div>
   </nav>
 
-  <div class="breadcrumb">
+<section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
     <a href="../index.html">ISMR Home</a>
     <span>›</span>
     <a href="index.html">Diagnostics</a>
     <span>›</span>
     Air Leak Diagnosis
   </div>
-
-  <section class="page-hero">
-    <div class="page-hero-inner">
       <h1>Diagnosing Air Leaks and Vacuum Sucking — GY6 Scooter</h1>
       <div class="guide-meta">
         <span>Carburetor &amp; EFI</span>
@@ -291,11 +252,11 @@
         <span>Carb cleaner or WD-40 required</span>
       </div>
       <div class="guide-tags">
-        <span class="guide-guide-tag">GY6</span>
-        <span class="guide-guide-tag">Carburetor</span>
-        <span class="guide-guide-tag">Air Leak</span>
-        <span class="guide-guide-tag">Vacuum Leak</span>
-        <span class="guide-guide-tag">Idle Problems</span>
+        <span class="guide-tag">GY6</span>
+        <span class="guide-tag">Carburetor</span>
+        <span class="guide-tag">Air Leak</span>
+        <span class="guide-tag">Vacuum Leak</span>
+        <span class="guide-tag">Idle Problems</span>
       </div>
       <div class="applies-to">
         <strong>Applies to:</strong> All GY6 carbureted scooters (BTC Riva, La Souris Sourini/City, Santini Capri) and EFI variants. Also applicable to Piaggio/Vespa carbureted models (Zip 2T, Zip 4T older variants). Air leaks are one of the most common and frequently overlooked causes of erratic idle, hard starting, and lean-running symptoms.

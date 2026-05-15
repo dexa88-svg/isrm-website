@@ -65,6 +65,39 @@
   
     /* Transitions */
     a, button, .btn, .card { transition: var(--transition); }
+    .callout { padding: 1rem 1.25rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 1.5rem 0; font-size: 0.95rem; color: var(--text-secondary); }
+    .callout strong { color: var(--text-primary); }
+    .callout-warn { background: rgba(245,166,35,0.08); border: 1px solid rgba(245,166,35,0.25); border-left: 4px solid var(--warning); }
+    .callout-danger { background: rgba(214,48,49,0.08); border: 1px solid rgba(214,48,49,0.25); border-left: 4px solid var(--danger); }
+    .callout-tip { background: rgba(6,167,125,0.08); border: 1px solid rgba(6,167,125,0.25); border-left: 4px solid var(--success); }
+    .guide-content { max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .guide-content h2 {
+      font-size: 1.55rem; color: var(--text-primary);
+      margin-top: 2.5rem; margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+    }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.6rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.7; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol { padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary); }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content code {
+      background: var(--surface-2); border: 1px solid var(--border); color: var(--accent-light);
+      padding: 0.15rem 0.45rem; border-radius: var(--radius-sm);
+      font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace; font-size: 0.87em;
+    }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th {
+      background: var(--surface-2); color: var(--primary); font-weight: 600; padding: 0.7rem 1rem;
+      text-align: left; border: 1px solid var(--border); text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26,35,50,0.6); }
+    @media (max-width: 768px) { .guide-content { padding: 1.5rem 1rem 3rem; } }
+    @media (max-width: 480px) { .guide-content h2 { font-size: 1.2rem; } }
   </style>
   <script type="application/ld+json">
 {
@@ -147,21 +180,11 @@
       <h1>GY6 Carburetor Jetting & Rejetting Guide</h1>
     </div>
   </section>
-
-  
-
-
-  <div class="breadcrumb">
-    <a href="../index.html">ISMR Home</a><span>›</span>
-    <a href="index.html">Repair Guides</a><span>›</span>
-    GY6 carburetor Jetting &amp; Rejetting Guide
-  </div>
-
   <main class="guide-content">
   
   <div class="meta">
     Added: 2026-05-08 &nbsp;|&nbsp; Sources: <a href="https://www.scooterworks.com/blogs/news/carburetor-jetting-101" target="_blank" rel="noopener">scooterworks.com</a>, <a href="https://www.rollingwrenchdenver.com/blogs/news/carburetor-help-jetting-and-tuning-help" target="_blank" rel="noopener">rollingwrenchdenver.com</a>, <a href="https://www.jetsrus.com/FAQs/FAQ_rejetting_101_how_to_rejet.htm" target="_blank" rel="noopener">jetsrus.com</a>
-    &nbsp;|&nbsp; <span class="guide-guide-tag">GY6</span> <span class="guide-guide-tag">Carburetor</span> <span class="guide-guide-tag">139QMB</span> <span class="guide-guide-tag">157QMJ</span>
+    &nbsp;|&nbsp; <span class="guide-tag">GY6</span> <span class="guide-tag">Carburetor</span> <span class="guide-tag">139QMB</span> <span class="guide-tag">157QMJ</span>
   </div>
 
   <div class="source-box">
@@ -229,11 +252,11 @@
     <li>Adjust one jet size at a time until the plug color is correct.</li>
   </ol>
 
-  <div class="warn">
+  <div class="callout callout-warn">
     ⚠️ Always clean the carburetor thoroughly before rejetting. A partially blocked jet will give false lean symptoms regardless of jet size. See the <a href="gy6-carburetor-cleaning-guide.html">Deep-Cleaning Guide</a> first.
   </div>
 
-  <div class="tip">
+  <div class="callout callout-tip">
     💡 <strong>Tip:</strong> Jets are typically sized in increments of 2–3 (e.g., #95, #98, #100, #102, #105). Buy a jet kit covering a range of ±15 from your stock size so you can tune without repeated ordering.
   </div>
 
@@ -247,5 +270,6 @@
     <p style="margin-top: 0.5rem;">Always verify with the original source and your scooter's workshop manual before performing repairs.</p>
     <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISMR Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Repair Guides</a></p>
   </footer>
+  <script src="../script.js"></script>
 </body>
 </html>

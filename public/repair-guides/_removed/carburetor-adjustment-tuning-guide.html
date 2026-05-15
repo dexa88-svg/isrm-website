@@ -497,7 +497,7 @@
         <div class="video-embed-title">🎬 Video Guide — Full Walkthrough</div>
         <div class="video-container">
           <iframe
-            src="https://www.youtube.com/embed/D9UnD1ibIIw"
+            src="https://www.youtube-nocookie.com/embed/D9UnD1ibIIw"
             title="GY6 Carburetor Inspection, Problems, Removal, & Adjustment"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
@@ -590,7 +590,7 @@
           <div class="video-embed-title">🎬 Float Adjustment Technique</div>
           <div class="video-container">
             <iframe
-              src="https://www.youtube.com/embed/wsXblMyMpD0"
+              src="https://www.youtube-nocookie.com/embed/wsXblMyMpD0"
               title="How to Adjust a Float on a Carburetor - Simple Trick"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen>
@@ -976,36 +976,7 @@
     <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISMR Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Repair Guides</a></p>
   </footer>
 
-  <script>
-    // Model selector tabs
-    const modelTabs = document.querySelectorAll('.model-tab');
-    const modelSections = document.querySelectorAll('.model-section');
-
-    modelTabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const modelId = tab.dataset.model;
-
-        // Remove active from all tabs and sections
-        modelTabs.forEach(t => t.classList.remove('active'));
-        modelSections.forEach(s => s.classList.remove('active'));
-
-        // Add active to clicked tab and corresponding section
-        tab.classList.add('active');
-        document.getElementById(modelId).classList.add('active');
-
-        // Scroll to top of content
-        document.querySelector('.guide-content').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    });
-
-    // Navigation toggle
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
-    if (navToggle) {
-      navToggle.addEventListener('click', () => {
-        navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
-      });
-    }
-  </script>
+  
+  <script src="../script.js"></script>
 </body>
 </html>

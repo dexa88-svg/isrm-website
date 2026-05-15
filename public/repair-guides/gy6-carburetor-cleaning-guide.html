@@ -167,6 +167,11 @@
     body { font-size: 15px; padding: 0.75rem 1rem; }
     h1 { font-size: 1.4rem; }
   }
+    .callout { padding: 1rem 1.25rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 1.5rem 0; font-size: 0.95rem; color: var(--text-secondary); }
+    .callout strong { color: var(--text-primary); }
+    .callout-warn { background: rgba(245,166,35,0.08); border: 1px solid rgba(245,166,35,0.25); border-left: 4px solid var(--warning); }
+    .callout-danger { background: rgba(214,48,49,0.08); border: 1px solid rgba(214,48,49,0.25); border-left: 4px solid var(--danger); }
+    .callout-tip { background: rgba(6,167,125,0.08); border: 1px solid rgba(6,167,125,0.25); border-left: 4px solid var(--success); }
   </style>
   <script type="application/ld+json">
 {
@@ -297,7 +302,7 @@
       <li>Nitrile gloves and eye protection</li>
     </ul>
 
-    <div class="warn">
+    <div class="callout callout-warn">
       ⚠️ <strong>Fire hazard:</strong> Work in a well-ventilated area away from ignition sources. Petrol and carburetor cleaner are highly flammable. Disconnect the fuel tap (petcock) before removing the float bowl.
     </div>
 
@@ -348,7 +353,7 @@
       <li><strong>Air/fuel mixture screw:</strong> Count and record how many turns out it is currently set before removing. Remove it carefully (it may have a small O-ring, washer, and spring). Clean the passage with cleaner and air. Reinstall to the recorded position.</li>
     </ol>
 
-    <div class="tip">
+    <div class="callout callout-tip">
       💡 <strong>Tip:</strong> If the carburetor body shows brown or black varnish inside the float bowl or emulsion passages, soak it for 30 minutes in a commercial carburetor dip (or a solution of acetone and water). This dissolves hardened gum deposits that aerosol cleaner cannot shift.
     </div>
 
@@ -379,7 +384,7 @@
       <li>Snap the throttle open and release it — the engine should rev cleanly without hesitation or hanging.</li>
     </ol>
 
-    <div class="tip">
+    <div class="callout callout-tip">
       💡 <strong>Related guides:</strong>
       <a href="gy6-carburetor-adjustment-guide.html">GY6 Carburetor Adjustment &amp; Tuning</a> |
       <a href="gy6-carburetor-jetting-guide.html">GY6 Carburetor Jetting Guide</a> |

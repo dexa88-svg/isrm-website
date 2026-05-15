@@ -218,118 +218,75 @@ Strictly follow this template. No `<script>` tags, no forms, no inline event han
   }
   </script>
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      background: var(--bg-dark);
-      color: var(--text-primary);
-      max-width: 820px;
-      margin: 2rem auto;
-      padding: 1rem 2rem;
-      line-height: 1.7;
+    /*
+     * ⚠️ DO NOT add body/h1/h2 global overrides here — they break the navbar.
+     * styles.css (loaded above) handles base styles, navbar, and .page-hero h1.
+     * Only add page-specific component classes below.
+     */
+    .guide-content { max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .guide-content h2 {
+      font-size: 1.55rem; color: var(--text-primary);
+      margin-top: 2.5rem; margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
     }
-    h1 { color: var(--warning); border-bottom: 2px solid var(--warning); padding-bottom: 0.4rem; }
-    h2 { color: var(--warning); margin-top: 2rem; }
-    h3 { color: var(--text-secondary); margin-top: 1.4rem; }
-    a { color: var(--accent); transition: var(--transition); }
-    a:hover { opacity: 0.85; }
-    .meta { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1.5rem; }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.6rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.7; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol { padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary); }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content code {
+      background: var(--surface-2); border: 1px solid var(--border); color: var(--accent-light);
+      padding: 0.15rem 0.45rem; border-radius: var(--radius-sm);
+      font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace; font-size: 0.87em;
+    }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th {
+      background: var(--surface-2); color: var(--primary); font-weight: 600; padding: 0.7rem 1rem;
+      text-align: left; border: 1px solid var(--border); text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26,35,50,0.6); }
+    .callout { padding: 1rem 1.25rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 1.5rem 0; font-size: 0.95rem; color: var(--text-secondary); }
+    .callout strong { color: var(--text-primary); }
+    .callout-warn { background: rgba(245,166,35,0.08); border: 1px solid rgba(245,166,35,0.25); border-left: 4px solid var(--warning); }
+    .callout-danger { background: rgba(214,48,49,0.08); border: 1px solid rgba(214,48,49,0.25); border-left: 4px solid var(--danger); }
+    .callout-tip { background: rgba(6,167,125,0.08); border: 1px solid rgba(6,167,125,0.25); border-left: 4px solid var(--success); }
     .source-box {
-      background: rgba(255,107,53,0.07);
-      border: 1px solid rgba(255,107,53,0.2);
-      border-left: 4px solid var(--primary);
-      padding: 0.8rem 1.2rem;
-      margin: 1.5rem 0;
-      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      background: rgba(255,107,53,0.07); border: 1px solid rgba(255,107,53,0.2);
+      border-left: 4px solid var(--primary); border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.95rem; color: var(--text-secondary);
     }
+    .source-box strong { color: var(--text-primary); }
+    .source-box a { color: var(--accent); }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
     .guide-tag {
-      display: inline-block;
-      background: rgba(0,168,204,0.1);
-      color: var(--accent);
-      border: 1px solid var(--accent);
-      border-radius: var(--radius-lg);
-      padding: 2px 10px;
-      font-size: 0.78rem;
-      margin-right: 6px;
+      background: rgba(0,168,204,0.1); color: var(--accent); border: 1px solid rgba(0,168,204,0.3);
+      padding: 0.25rem 0.7rem; border-radius: var(--radius-pill); font-size: 0.78rem; font-weight: 500;
     }
-    nav { margin-bottom: 2rem; font-size: 0.9rem; }
-    nav a { margin-right: 1rem; }
-    footer {
-      margin-top: 3rem;
-      border-top: 1px solid var(--border);
-      padding-top: 1rem;
-      color: var(--text-secondary);
-      font-size: 0.8rem;
+    .applies-to {
+      background: rgba(255,107,53,0.07); border: 1px solid rgba(255,107,53,0.2);
+      border-left: 4px solid var(--primary); border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem; margin-top: 1.5rem; font-size: 0.95rem; color: var(--text-secondary);
     }
-    table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; }
-    th {
-      background: var(--surface-2);
-      color: var(--primary);
-      text-align: left;
-      padding: 0.6rem 0.8rem;
-      border: 1px solid var(--border);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    td { padding: 0.5rem 0.8rem; border: 1px solid var(--border); vertical-align: top; }
-    tr:nth-child(even) td { background: var(--surface); }
-    code {
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 1px 5px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.9em;
-      color: var(--accent);
-    }
-    .warning-box {
-      background: rgba(214,48,49,0.07);
-      border-left: 4px solid var(--danger);
-      padding: 0.8rem 1.2rem;
-      margin: 1.5rem 0;
-      border-radius: 0 var(--radius-md) var(--radius-md) 0;
-    }
-    .tip-box {
-      background: rgba(6,167,125,0.07);
-      border-left: 4px solid var(--success);
-      padding: 0.8rem 1.2rem;
-      margin: 1.5rem 0;
-      border-radius: 0 var(--radius-md) var(--radius-md) 0;
-    }
-    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 1.5rem 0; }
-    .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-    ol li, ul li { margin-bottom: 0.4rem; }
-    /* Buttons */
-    .btn, button {
-      display: inline-block;
-      padding: 0.5rem 1.25rem;
-      border-radius: var(--radius-md);
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    .btn-primary { background: var(--primary); color: var(--text-primary); }
-    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
-    /* Focus — accessibility */
-    a:focus, button:focus, input:focus, [tabindex]:focus {
-      outline: 2px solid var(--accent);
-      outline-offset: 2px;
-    }
-    /* Responsive — tablet */
-    @media (max-width: 768px) {
-      body { padding: 1rem; margin: 1rem auto; }
-      table { font-size: 0.85rem; }
-      th, td { padding: 0.4rem 0.6rem; }
-    }
-    /* Responsive — mobile */
-    @media (max-width: 480px) {
-      body { padding: 0.75rem; font-size: 0.95rem; }
-      h1 { font-size: 1.4rem; }
-      h2 { font-size: 1.15rem; }
-      table { display: block; overflow-x: auto; }
-    }
+    .applies-to strong { color: var(--text-primary); }
+    .video-embed { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin: 1.5rem 0; }
+    .video-embed-title { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; }
+    .video-container { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 0.75rem; }
+    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .video-source { font-size: 0.85rem; color: var(--text-tertiary); }
+    .video-source a { color: var(--accent); }
+    .related-videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 1rem; }
+    .video-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; transition: var(--transition); }
+    .video-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow-sm); }
+    .video-card h4 { color: var(--text-primary); margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600; }
+    .video-card p { font-size: 0.875rem; margin-bottom: 0.75rem; color: var(--text-secondary); }
+    .video-card a { color: var(--primary); font-weight: 600; font-size: 0.9rem; }
+    .guide-footer { background: var(--surface); border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.825rem; color: var(--text-tertiary); }
+    @media (max-width: 768px) { .guide-content { padding: 1.5rem 1rem 3rem; } }
+    @media (max-width: 480px) { .guide-content h2 { font-size: 1.2rem; } }
   </style>
 </head>
 <body>
@@ -353,18 +310,17 @@ Strictly follow this template. No `<script>` tags, no forms, no inline event han
   </nav>
   <!-- Add class="nav-link active" to the link matching the current section. -->
 
-  <!-- ═══ BREADCRUMB ═══ -->
-  <div class="breadcrumb">
-    <a href="../index.html">ISMR Home</a>
-    <span>›</span>
-    <a href="index.html">[Category Name]</a>
-    <span>›</span>
-    [Short Page Title]
-  </div>
-
-  <!-- ═══ PAGE HERO — title, tags, applies-to ═══ -->
+  <!-- ═══ PAGE HERO (breadcrumb inside hero-inner) ═══ -->
   <section class="page-hero">
     <div class="page-hero-inner">
+      <!-- Breadcrumb MUST be inside page-hero-inner so it sits on the dark gradient -->
+      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
+        <a href="../index.html">ISMR Home</a>
+        <span>›</span>
+        <a href="index.html">[Category Name]</a>
+        <span>›</span>
+        [Short Page Title]
+      </div>
       <h1>[Page Title]</h1>
       <div class="guide-meta">
         <span>[Difficulty: Beginner / Intermediate / Advanced]</span>

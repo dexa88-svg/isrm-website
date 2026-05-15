@@ -185,44 +185,6 @@
       .guide-content { padding: 1.5rem 1rem 3rem; }
       .breadcrumb { padding: 0.9rem 1rem; }
     }
-  /* Accessibility: Focus states */
-  button:focus,
-  a:focus,
-  input:focus,
-  select:focus,
-  textarea:focus {
-    outline: none;
-    box-shadow: var(--shadow);
-  }
-  @media (max-width: 480px) {
-    body { font-size: 15px; }
-  }
-
-    /* Button component — design system */
-    .btn, button {
-      display: inline-block;
-      padding: 0.5rem 1.25rem;
-      border-radius: var(--radius-md);
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    .btn-primary, button[type="submit"] {
-      background: var(--primary);
-      color: var(--text-primary);
-    }
-    .btn-primary:hover, button[type="submit"]:hover {
-      opacity: 0.9;
-      transform: translateY(-1px);
-    }
-    .btn-secondary {
-      background: var(--surface-2);
-      color: var(--text-primary);
-      border: 1px solid var(--border);
-    }
   </style>
   <script type="application/ld+json">
 {
@@ -331,18 +293,6 @@
       <h1>GY6 Brake Pads & Drum Shoes Replacement Guide</h1>
     </div>
   </section>
-
-  
-
-
-  <div class="breadcrumb">
-    <a href="../index.html">ISMR Home</a>
-    <span>›</span>
-    <a href="index.html">Repair Guides</a>
-    <span>›</span>
-    Brake Pads &amp; Drum Shoes
-  </div>
-
   <header class="guide-header">
     <div class="guide-header-inner">
       
@@ -357,11 +307,11 @@
       </div>
 
       <div class="guide-tags">
-        <span class="guide-guide-tag">repair-guides</span>
-        <span class="guide-guide-tag">GY6</span>
-        <span class="guide-guide-tag">Vespa</span>
-        <span class="guide-guide-tag">brakes</span>
-        <span class="guide-guide-tag">safety</span>
+        <span class="guide-tag">repair-guides</span>
+        <span class="guide-tag">GY6</span>
+        <span class="guide-tag">Vespa</span>
+        <span class="guide-tag">brakes</span>
+        <span class="guide-tag">safety</span>
       </div>
 
       <div class="applies-to">
@@ -479,15 +429,6 @@
     <p style="margin-top: 0.5rem;">Brakes are safety-critical. Always verify procedures against your scooter's official workshop manual before attempting repair.</p>
     <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISMR Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Repair Guides</a></p>
   </footer>
-
-  <script>
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
-    if (navToggle) {
-      navToggle.addEventListener('click', () => {
-        navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
-      });
-    }
-  </script>
+  <script src="../script.js"></script>
 </body>
 </html>

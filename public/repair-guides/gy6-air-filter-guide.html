@@ -79,44 +79,6 @@
     .video-card p { font-size: 0.875rem; margin-bottom: 0.75rem; color: var(--text-secondary); }
     .video-card a { color: var(--primary); font-weight: 600; font-size: 0.9rem; }
     @media (max-width: 768px) { .guide-header h1 { font-size: 1.7rem; } .guide-content { padding: 1.5rem 1rem 3rem; } .breadcrumb { padding: 0.9rem 1rem; } }
-  /* Accessibility: Focus states */
-  button:focus,
-  a:focus,
-  input:focus,
-  select:focus,
-  textarea:focus {
-    outline: none;
-    box-shadow: var(--shadow);
-  }
-  @media (max-width: 480px) {
-    body { font-size: 15px; }
-  }
-
-    /* Button component — design system */
-    .btn, button {
-      display: inline-block;
-      padding: 0.5rem 1.25rem;
-      border-radius: var(--radius-md);
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    .btn-primary, button[type="submit"] {
-      background: var(--primary);
-      color: var(--text-primary);
-    }
-    .btn-primary:hover, button[type="submit"]:hover {
-      opacity: 0.9;
-      transform: translateY(-1px);
-    }
-    .btn-secondary {
-      background: var(--surface-2);
-      color: var(--text-primary);
-      border: 1px solid var(--border);
-    }
   </style>
   <script type="application/ld+json">
 {
@@ -218,16 +180,6 @@
       <h1>GY6 Air Filter — Clean or Replace Guide</h1>
     </div>
   </section>
-
-  
-
-
-  <div class="breadcrumb">
-    <a href="../index.html">ISMR Home</a><span>›</span>
-    <a href="index.html">Repair Guides</a><span>›</span>
-    Air Filter — Clean or Replace
-  </div>
-
   <header class="guide-header">
     <div class="guide-header-inner">
       
@@ -240,11 +192,11 @@
         </span>
       </div>
       <div class="guide-tags">
-        <span class="guide-guide-tag">repair-guides</span>
-        <span class="guide-guide-tag">GY6</span>
-        <span class="guide-guide-tag">Vespa</span>
-        <span class="guide-guide-tag">maintenance</span>
-        <span class="guide-guide-tag">fuel-system</span>
+        <span class="guide-tag">repair-guides</span>
+        <span class="guide-tag">GY6</span>
+        <span class="guide-tag">Vespa</span>
+        <span class="guide-tag">maintenance</span>
+        <span class="guide-tag">fuel-system</span>
       </div>
       <div class="applies-to">
         📌 <strong>Applies to:</strong> GY6 50/125/150cc (foam element airbox), Vespa Primavera / Sprint / ZIP (paper element).
@@ -291,7 +243,7 @@
     <div class="video-embed">
       <div class="video-embed-title">🎬 Video Guide — GY6 Air Filter Maintenance: Clean or Replace</div>
       <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/dklHU1KW2bQ"
+        <iframe src="https://www.youtube-nocookie.com/embed/dklHU1KW2bQ"
           title="GY6 Air Filter Maintenance — Clean or Replace"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
@@ -364,11 +316,6 @@
     <p style="margin-top: 0.5rem;">Always verify filter part numbers and service intervals against your scooter's official workshop manual.</p>
     <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISMR Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Repair Guides</a></p>
   </footer>
-
-  <script>
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
-    if (navToggle) { navToggle.addEventListener('click', () => { navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex'; }); }
-  </script>
+  <script src="../script.js"></script>
 </body>
 </html>

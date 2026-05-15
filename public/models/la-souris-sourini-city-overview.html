@@ -182,43 +182,11 @@
     @media (max-width: 480px) {
       .page-hero h1 { font-size: 1.4rem; }
     }
-  /* Accessibility: Focus states */
-  button:focus,
-  a:focus,
-  input:focus,
-  select:focus,
-  textarea:focus {
-    outline: none;
-    box-shadow: var(--shadow);
-  }
-
-  
-  
-    /* Button component — design system */
-    .btn, button {
-      display: inline-block;
-      padding: 0.5rem 1.25rem;
-      border-radius: var(--radius-md);
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    .btn-primary, button[type="submit"] {
-      background: var(--primary);
-      color: var(--text-primary);
-    }
-    .btn-primary:hover, button[type="submit"]:hover {
-      opacity: 0.9;
-      transform: translateY(-1px);
-    }
-    .btn-secondary {
-      background: var(--surface-2);
-      color: var(--text-primary);
-      border: 1px solid var(--border);
-    }
+    .callout { padding: 1rem 1.25rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 1.5rem 0; font-size: 0.95rem; color: var(--text-secondary); }
+    .callout strong { color: var(--text-primary); }
+    .callout-warn { background: rgba(245,166,35,0.08); border: 1px solid rgba(245,166,35,0.25); border-left: 4px solid var(--warning); }
+    .callout-danger { background: rgba(214,48,49,0.08); border: 1px solid rgba(214,48,49,0.25); border-left: 4px solid var(--danger); }
+    .callout-tip { background: rgba(6,167,125,0.08); border: 1px solid rgba(6,167,125,0.25); border-left: 4px solid var(--success); }
   </style>
   <script type="application/ld+json">
 {
@@ -282,10 +250,10 @@
       <a href="https://scooterforum.net/threads/logboek-van-een-la-souris-euro-5-snorscooter.218946/" target="_blank" rel="noopener">La Souris Euro 5 owner log</a>
       &nbsp;|&nbsp;
       <div class="guide-tags">
-        <span class="guide-guide-tag">models</span>
-        <span class="guide-guide-tag">La Souris</span>
-        <span class="guide-guide-tag">GY6</span>
-        <span class="guide-guide-tag">50cc</span>
+        <span class="guide-tag">models</span>
+        <span class="guide-tag">La Souris</span>
+        <span class="guide-tag">GY6</span>
+        <span class="guide-tag">50cc</span>
       </div>
     </div>
 
@@ -301,7 +269,7 @@
       <tr><td>La Souris (Euro 5)</td><td>Euro 5</td><td>GY6 50cc EFI (fuel injection, no carb)</td><td>2021–present</td></tr>
     </table>
 
-    <div class="warn">
+    <div class="callout callout-warn">
       ⚠️ <strong>Important:</strong> Euro 5 models (from 2021 onwards) use electronic fuel injection (EFI) and do NOT have a carburetor. Carburetor adjustment guides do not apply to these models. Fuel injection faults typically require a diagnostic tool (OBD reader) to read ECU fault codes.
     </div>
 
@@ -351,7 +319,7 @@
     </ul>
     <p>Body panels, headlamp units, mirrors, and instruments are <strong>not</strong> interchangeable between these brands — each has its own styling. Engine internals (pistons, camshafts, valves, bearings, seals), CVT components (rollers, belt, variator), and electrical components (CDI, rectifier, ignition coil) are largely interchangeable as they all derive from the same GY6 platform.</p>
 
-    <div class="tip">
+    <div class="callout callout-tip">
       💡 <strong>Parts sourcing tip:</strong> In the Netherlands and Belgium, <a href="https://en.chinascooteronderdelen.nl/product-category/scooter-parts/parts-btc-agm-iva-senzo-la-souris/" target="_blank" rel="noopener">chinascooteronderdelen.nl</a> specifically stocks parts for La Souris, BTC Riva, AGM, and Senzo models. For generic GY6 engine parts, any supplier stocking <code>139QMB</code> parts will work.
     </div>
 

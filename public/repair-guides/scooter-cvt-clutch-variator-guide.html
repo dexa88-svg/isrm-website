@@ -452,44 +452,11 @@
     color: var(--text-secondary);
     font-size: 11px;
   }
-
-  /* Accessibility: Focus states */
-  button:focus,
-  a:focus,
-  input:focus,
-  select:focus,
-  textarea:focus {
-    outline: none;
-    box-shadow: var(--shadow);
-  }
-
-  
-  
-    /* Button component — design system */
-    .btn, button {
-      display: inline-block;
-      padding: 0.5rem 1.25rem;
-      border-radius: var(--radius-md);
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    .btn-primary, button[type="submit"] {
-      background: var(--primary);
-      color: var(--text-primary);
-    }
-    .btn-primary:hover, button[type="submit"]:hover {
-      opacity: 0.9;
-      transform: translateY(-1px);
-    }
-    .btn-secondary {
-      background: var(--surface-2);
-      color: var(--text-primary);
-      border: 1px solid var(--border);
-    }
+    .callout { padding: 1rem 1.25rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 1.5rem 0; font-size: 0.95rem; color: var(--text-secondary); }
+    .callout strong { color: var(--text-primary); }
+    .callout-warn { background: rgba(245,166,35,0.08); border: 1px solid rgba(245,166,35,0.25); border-left: 4px solid var(--warning); }
+    .callout-danger { background: rgba(214,48,49,0.08); border: 1px solid rgba(214,48,49,0.25); border-left: 4px solid var(--danger); }
+    .callout-tip { background: rgba(6,167,125,0.08); border: 1px solid rgba(6,167,125,0.25); border-left: 4px solid var(--success); }
   </style>
   <script type="application/ld+json">
 {
@@ -598,7 +565,7 @@
 
     <div class="meta">
       Added: 2026-05-08 &nbsp;|&nbsp; Updated: 2026-05-08 &nbsp;|&nbsp; Sources: <a href="https://www.wemoto.com/info/guide-to-scooter-clutches-variators-and-rollers" target="_blank" rel="noopener">wemoto.com</a>, <a href="https://www.louis-moto.com/en-ww/magazin/rund-ums-bike/schraubertipps/variomatik-und-kupplung" target="_blank" rel="noopener">louis-moto.com</a>
-      <br><span class="guide-guide-tag">GY6</span> <span class="guide-guide-tag">Piaggio</span> <span class="guide-guide-tag">Vespa</span> <span class="guide-guide-tag">CVT</span>
+      <br><span class="guide-tag">GY6</span> <span class="guide-tag">Piaggio</span> <span class="guide-tag">Vespa</span> <span class="guide-tag">CVT</span>
     </div>
 
     <div class="source-box">
@@ -636,7 +603,7 @@
       <strong>Cost:</strong> $40–$120 (parts only)
     </div>
 
-    <div class="warn">
+    <div class="callout callout-warn">
       ⚠️ <strong>Safety Warning:</strong> The variator can spin freely when disassembled. Always wear eye protection when working with springs and roller weights, as they can fly out under tension. Do not lose the small roller weights—they're easily misplaced and difficult to source individually.
     </div>
 
@@ -693,7 +660,7 @@
       </tr>
     </table>
 
-    <div class="tip">
+    <div class="callout callout-tip">
       💡 <strong>Pro Tip:</strong> Roller weights are often sold by weight (grams), not as a standard set. Stock weights suit most riders; lighter weights (5–8g) improve acceleration but increase engine wear; heavier weights (11–15g) improve fuel economy and reduce peak revs. Always replace all six rollers together—mixing weights causes vibration and reduces CVT lifespan.
     </div>
 
@@ -931,11 +898,11 @@
     <tr><td>Piaggio iGet 125 (Primavera / Sprint)</td><td>20 × 15 mm</td><td>14–16 g (Piaggio OEM)</td></tr>
     <tr><td>Piaggio Zip 50 (4-stroke iGet)</td><td>19 × 15.5 mm</td><td>6.1 g (Malossi/OEM)</td></tr>
   </table>
-  <div class="warn">
+  <div class="callout callout-warn">
     ⚠️ <strong>Critical correction:</strong> GY6 50cc (139QMB) uses <strong>16×13mm</strong> rollers, NOT 15×12mm. GY6 125cc (152QMI) uses <strong>18×14mm</strong>, NOT 16×13mm. Incorrect roller sizes will cause CVT failure and reduced performance. Always verify against your engine's workshop manual.
   </div>
 
-  <div class="warn">
+  <div class="callout callout-warn">
     ⚠️ <strong>Replace rollers as a complete set of six.</strong> If even one roller has a flat spot, the whole set is unbalanced. Mixing old and new rollers will not restore smooth operation.
   </div>
 
@@ -978,7 +945,7 @@
       </div>
     </div>
 
-    <div class="tip">
+    <div class="callout callout-tip">
       💡 <strong>Related ISMR Guides:</strong>
       <a href="gy6-cvt-variator-belt-replacement.html">GY6 CVT Variator and Drive Belt Replacement</a> |
       <a href="gy6-spark-plug-guide.html">GY6 Spark Plug Replacement</a> |
@@ -992,5 +959,6 @@
     <p style="margin-top: 0.8rem;"><em>Always verify with your scooter's official service manual and the original sources before performing repairs. This guide is for educational purposes only.</em></p>
     <p style="margin-top: 1rem;"><a href="../index.html">⚙️ ISMR Home</a> &nbsp;·&nbsp; <a href="index.html">All Repair Guides</a> &nbsp;·&nbsp; <a href="https://github.com/dexa88-svg/isrm-website/issues">Report Issues</a></p>
   </footer>
+  <script src="../script.js"></script>
 </body>
 </html>

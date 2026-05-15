@@ -32,7 +32,7 @@
     .guide-content { max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
     .guide-content h2 { font-size: 1.55rem; color: var(--text-primary); margin-top: 2.5rem; margin-bottom: 0.9rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
     .guide-content h2:first-child { margin-top: 0; }
-    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 0; margin-bottom: 0.75rem; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.75rem; }
     .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; }
     .guide-content a { color: var(--accent); }
     .guide-content a:hover { color: var(--primary); }
@@ -40,7 +40,7 @@
     .guide-content li { margin-bottom: 0.5rem; }
     .guide-content li strong { color: var(--text-primary); }
     .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
-    .guide-content th { background: var(--surface-2); color: var(--text-primary); font-weight: 600; padding: 0.7rem 1rem; text-align: left; border: 1px solid var(--border); }
+    .guide-content th { background: var(--surface-2); color: var(--primary); font-weight: 600; padding: 0.7rem 1rem; text-align: left; border: 1px solid var(--border); text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.88rem; }
     .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
     .guide-content tr:nth-child(even) td { background: rgba(26, 35, 50, 0.6); }
     .callout { padding: 1rem 1.25rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 1.5rem 0; font-size: 0.95rem; color: var(--text-secondary); }
@@ -56,8 +56,9 @@
     .page-hero::before { content: "🔧"; position: absolute; right: 6%; top: 50%; transform: translateY(-50%); font-size: 9rem; opacity: 0.07; pointer-events: none; line-height: 1; }
     .page-hero-inner { max-width: 900px; margin: 0 auto; }
     .page-hero h1 { font-size: 2rem; line-height: 1.2; background: linear-gradient(135deg, var(--text-primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1.2rem; }
-    .breadcrumb { padding: 0.9rem 2rem; max-width: 900px; margin: 0 auto; font-size: 0.85rem; color: var(--text-tertiary); }
+    .breadcrumb { padding: 0 0 1rem; margin: 0; font-size: 0.85rem; color: var(--text-tertiary); }
     .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
     .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
     .guide-meta { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; font-size: 0.875rem; color: var(--text-tertiary); margin-bottom: 1rem; }
     .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
@@ -71,37 +72,17 @@
     .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
     .video-caption { font-size: 0.82rem; color: var(--text-tertiary); margin-top: 0.4rem; text-align: center; }
     .guide-footer { background: var(--surface); border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.825rem; color: var(--text-tertiary); }
-    @media (max-width: 700px) {
-      .video-grid, .video-grid-3 { grid-template-columns: 1fr; }
+    @media (max-width: 768px) {
       .guide-content { padding: 1.5rem 1rem 3rem; }
-      .breadcrumb { padding: 0.9rem 1rem; }
-      .nav-menu { display: none; }
-      .nav-toggle { display: block; }
+      .page-hero { padding: 2rem 1rem 1.5rem; }
+      .video-grid, .video-grid-3 { grid-template-columns: 1fr; }
     }
-  /* Accessibility: Focus states */
-  button:focus,
-  a:focus,
-  input:focus,
-  select:focus,
-  textarea:focus {
-    outline: none;
-    box-shadow: var(--shadow);
-  }
-
-  /* Responsive Design - Tablet */
-  @media (max-width: 768px) {
-    body { font-size: 15px; }
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.5rem; }
-    h3 { font-size: 1.2rem; }
-  }
-
-  /* Responsive Design - Mobile */
-  @media (max-width: 480px) {
-    body { font-size: 14px; }
-    h1 { font-size: 1.5rem; }
-    h2 { font-size: 1.2rem; }
-    h3 { font-size: 1rem; }
+    @media (max-width: 480px) {
+      .guide-content { padding: 1rem 0.75rem 2rem; }
+    }
+  button:focus, a:focus, input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
   }
 
   </style>
@@ -163,16 +144,13 @@
     </div>
   </nav>
 
-  <div class="breadcrumb">
-    <a href="../index.html">ISMR Home</a>
-    <span>›</span>
-    <a href="index.html">Diagnostics</a>
-    <span>›</span>
-    Pilot &amp; Idle Jet Diagnosis
-  </div>
-
   <section class="page-hero">
     <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <a href="../index.html">ISMR Home</a><span>›</span>
+        <a href="index.html">Diagnostics</a><span>›</span>
+        Pilot &amp; Idle Jet Diagnosis
+      </div>
       <h1>GY6 Carburetor Pilot &amp; Idle Jet — Diagnosis and Cleaning</h1>
       <div class="guide-meta">
         <span>Carburetor</span>
@@ -182,12 +160,12 @@
         <span>Carb cleaner, jet screwdrivers, compressed air</span>
       </div>
       <div class="guide-tags">
-        <span class="guide-guide-tag">GY6</span>
-        <span class="guide-guide-tag">Carburetor</span>
-        <span class="guide-guide-tag">Pilot Jet</span>
-        <span class="guide-guide-tag">Idle Jet</span>
-        <span class="guide-guide-tag">Idle Problems</span>
-        <span class="guide-guide-tag">Won't Start</span>
+        <span class="guide-tag">GY6</span>
+        <span class="guide-tag">Carburetor</span>
+        <span class="guide-tag">Pilot Jet</span>
+        <span class="guide-tag">Idle Jet</span>
+        <span class="guide-tag">Idle Problems</span>
+        <span class="guide-tag">Won't Start</span>
       </div>
       <div class="applies-to">
         <strong>Applies to:</strong> All GY6 carbureted scooters (BTC Riva, La Souris Sourini/City, Santini Capri) with standard CV carburetor (PZ19, PZ20, or equivalent). The pilot jet (also called slow jet or idle jet on some sources) controls fuel delivery at idle and low throttle openings — it is the single most common cause of idle and low-speed running problems on GY6 scooters.
@@ -384,17 +362,15 @@
       <li><a href="gy6-no-start-troubleshooting.html">GY6 Won't Start — Full Troubleshooting Checklist</a></li>
     </ul>
 
-    <p style="margin-top:2rem; font-size:0.82rem; color:var(--text-tertiary);">
-      Sources: GY6 carburetor service documentation; treatland.tv/blogs/news; scootdawg.com community repair threads; video references: YouTube Shorts by @its-that-easy and @zandri. Licensed CC BY-SA 4.0.
-    </p>
-
   </main>
 
   <script src="../script.js"></script>
 
   <footer class="guide-footer">
-    <p>ISMR — Interactive Scooter Manuals for Repair. Content for educational purposes. CC BY-SA 4.0.</p>
-    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISMR Home</a> · <a href="index.html" style="color: var(--accent);">← All Diagnostics</a></p>
+    <p><strong>Sources:</strong> GY6 carburetor service documentation · treatland.tv/blogs/news · scootdawg.com community repair threads · Video references: YouTube/@its-that-easy, YouTube/@zandri</p>
+    <p style="margin-top: 0.5rem;">Content reproduced for educational and repair reference purposes. Verify all specifications against your vehicle's workshop manual before performing any work.</p>
+    <p style="margin-top: 0.5rem;"><strong>Last Updated:</strong> 2026-05-15 &nbsp;|&nbsp; <strong>License:</strong> CC BY-SA 4.0</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISMR Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Diagnostics</a> &nbsp;·&nbsp; <a href="gy6-no-start-troubleshooting.html" style="color: var(--accent);">GY6 Won't Start →</a></p>
   </footer>
 
 </body>

@@ -274,33 +274,11 @@
     h2 { font-size: 1.2rem; }
     h3 { font-size: 1rem; }
   }
-
-  
-    /* Button component — design system */
-    .btn, button {
-      display: inline-block;
-      padding: 0.5rem 1.25rem;
-      border-radius: var(--radius-md);
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    .btn-primary, button[type="submit"] {
-      background: var(--primary);
-      color: var(--text-primary);
-    }
-    .btn-primary:hover, button[type="submit"]:hover {
-      opacity: 0.9;
-      transform: translateY(-1px);
-    }
-    .btn-secondary {
-      background: var(--surface-2);
-      color: var(--text-primary);
-      border: 1px solid var(--border);
-    }
+    .callout { padding: 1rem 1.25rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 1.5rem 0; font-size: 0.95rem; color: var(--text-secondary); }
+    .callout strong { color: var(--text-primary); }
+    .callout-warn { background: rgba(245,166,35,0.08); border: 1px solid rgba(245,166,35,0.25); border-left: 4px solid var(--warning); }
+    .callout-danger { background: rgba(214,48,49,0.08); border: 1px solid rgba(214,48,49,0.25); border-left: 4px solid var(--danger); }
+    .callout-tip { background: rgba(6,167,125,0.08); border: 1px solid rgba(6,167,125,0.25); border-left: 4px solid var(--success); }
   </style>
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -420,7 +398,7 @@
       <h2>Engine Parts</h2>
     </div>
 
-    <div class="tip"><strong>Column guide:</strong> Part numbers shown are OEM or widely-accepted aftermarket references. Always verify against your engine code stamped on the case.</div>
+    <div class="callout callout-tip"><strong>Column guide:</strong> Part numbers shown are OEM or widely-accepted aftermarket references. Always verify against your engine code stamped on the case.</div>
 
     <table class="parts-table" data-section="engine">
       <thead>
@@ -665,7 +643,7 @@
       <h2>Tyres &amp; Wheels</h2>
     </div>
 
-    <div class="tip"><strong>Reading tyre sizes:</strong> A tyre marked <strong>110/70-11</strong> means 110 mm wide, 70% aspect ratio, 11-inch rim. A tyre marked <strong>3.00-10</strong> is an older diagonal-ply format (≈80 mm width, 10-inch rim).</div>
+    <div class="callout callout-tip"><strong>Reading tyre sizes:</strong> A tyre marked <strong>110/70-11</strong> means 110 mm wide, 70% aspect ratio, 11-inch rim. A tyre marked <strong>3.00-10</strong> is an older diagonal-ply format (≈80 mm width, 10-inch rim).</div>
 
     <table class="parts-table" data-section="tyres">
       <thead>

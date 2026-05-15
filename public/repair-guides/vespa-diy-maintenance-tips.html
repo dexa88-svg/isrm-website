@@ -108,6 +108,39 @@
       box-shadow: var(--shadow-sm);
     }
     .guide-tag:hover, nav a:hover { box-shadow: var(--shadow-sm); }
+    .callout { padding: 1rem 1.25rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 1.5rem 0; font-size: 0.95rem; color: var(--text-secondary); }
+    .callout strong { color: var(--text-primary); }
+    .callout-warn { background: rgba(245,166,35,0.08); border: 1px solid rgba(245,166,35,0.25); border-left: 4px solid var(--warning); }
+    .callout-danger { background: rgba(214,48,49,0.08); border: 1px solid rgba(214,48,49,0.25); border-left: 4px solid var(--danger); }
+    .callout-tip { background: rgba(6,167,125,0.08); border: 1px solid rgba(6,167,125,0.25); border-left: 4px solid var(--success); }
+    .guide-content { max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .guide-content h2 {
+      font-size: 1.55rem; color: var(--text-primary);
+      margin-top: 2.5rem; margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+    }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.6rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.7; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol { padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary); }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content code {
+      background: var(--surface-2); border: 1px solid var(--border); color: var(--accent-light);
+      padding: 0.15rem 0.45rem; border-radius: var(--radius-sm);
+      font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace; font-size: 0.87em;
+    }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th {
+      background: var(--surface-2); color: var(--primary); font-weight: 600; padding: 0.7rem 1rem;
+      text-align: left; border: 1px solid var(--border); text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26,35,50,0.6); }
+    @media (max-width: 768px) { .guide-content { padding: 1.5rem 1rem 3rem; } }
+    @media (max-width: 480px) { .guide-content h2 { font-size: 1.2rem; } }
   </style>
 
   <script type="application/ld+json">
@@ -140,16 +173,15 @@
     </div>
   </nav>
 
-  <div class="breadcrumb">
+<section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
     <a href="../index.html">ISMR Home</a>
     <span>›</span>
     <a href="index.html">Repair Guides</a>
     <span>›</span>
     Vespa DIY Maintenance — Tips to…
   </div>
-
-  <section class="page-hero">
-    <div class="page-hero-inner">
       <h1>Vespa DIY Maintenance — Tips to Save Costs</h1>
       <div class="guide-tags">
       </div>
@@ -184,7 +216,7 @@
     <li>Multimeter (for electrical diagnostics)</li>
   </ul>
 
-  <div class="tip-box">
+  <div class="callout callout-tip">
     <strong>💡 JIS vs Phillips:</strong> Japanese-standard JIS screws are common on Piaggio fasteners. They look similar to Phillips but have a different tip angle — using a Phillips driver risks rounding the head. JIS screwdrivers are inexpensive and well worth buying before starting any disassembly.
   </div>
 
@@ -329,7 +361,7 @@
   <h3>Brake Fluid</h3>
   <p>Check the front brake reservoir (on the handlebars) and rear reservoir (under the floorboard on most models) monthly. The fluid level should be between the MIN and MAX marks. If the level is low without obvious cause, suspect pad wear (pads wear down and fluid fills the caliper gap) or a leak. Flush and replace brake fluid with fresh DOT 4 every two years.</p>
 
-  <div class="warning-box">
+  <div class="callout callout-warn">
     <strong>⚠️ Never Mix DOT 4 and DOT 5:</strong> DOT 5 is silicone-based and incompatible with DOT 4 systems. Most Piaggio/Vespa hydraulic systems use DOT 4. Using the wrong fluid will cause seal degradation and brake failure.
   </div>
 

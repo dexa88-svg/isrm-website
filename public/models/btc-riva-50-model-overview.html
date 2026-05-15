@@ -51,6 +51,39 @@
   
     /* Transitions */
     a, button, .btn, .card { transition: var(--transition); }
+    .callout { padding: 1rem 1.25rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 1.5rem 0; font-size: 0.95rem; color: var(--text-secondary); }
+    .callout strong { color: var(--text-primary); }
+    .callout-warn { background: rgba(245,166,35,0.08); border: 1px solid rgba(245,166,35,0.25); border-left: 4px solid var(--warning); }
+    .callout-danger { background: rgba(214,48,49,0.08); border: 1px solid rgba(214,48,49,0.25); border-left: 4px solid var(--danger); }
+    .callout-tip { background: rgba(6,167,125,0.08); border: 1px solid rgba(6,167,125,0.25); border-left: 4px solid var(--success); }
+    .guide-content { max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .guide-content h2 {
+      font-size: 1.55rem; color: var(--text-primary);
+      margin-top: 2.5rem; margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+    }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.6rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.7; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol { padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary); }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content code {
+      background: var(--surface-2); border: 1px solid var(--border); color: var(--accent-light);
+      padding: 0.15rem 0.45rem; border-radius: var(--radius-sm);
+      font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace; font-size: 0.87em;
+    }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th {
+      background: var(--surface-2); color: var(--primary); font-weight: 600; padding: 0.7rem 1rem;
+      text-align: left; border: 1px solid var(--border); text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26,35,50,0.6); }
+    @media (max-width: 768px) { .guide-content { padding: 1.5rem 1rem 3rem; } }
+    @media (max-width: 480px) { .guide-content h2 { font-size: 1.2rem; } }
   </style>
   <script type="application/ld+json">
 {
@@ -96,16 +129,15 @@
     </div>
   </nav>
 
-  <div class="breadcrumb">
+<section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
     <a href="../index.html">ISMR Home</a>
     <span>›</span>
     <a href="index.html">Models</a>
     <span>›</span>
     BTC Riva 50 — Model Overview…
   </div>
-
-  <section class="page-hero">
-    <div class="page-hero-inner">
       <h1>BTC Riva 50 — Model Overview &amp; Technical Guide</h1>
       <div class="guide-tags">
       </div>
@@ -178,7 +210,7 @@
     <li><strong>Air/fuel mixture screw (pre-set):</strong> 2.0 turns out from gently seated</li>
   </ul>
 
-  <div class="tip">
+  <div class="callout callout-tip">
     💡 <strong>Jetting note:</strong> The Riva 50 is a restricted moped. Some owners fit a 35 mm exhaust restrictor insert and a small air-box restrictor at factory. These reduce power and can cause rich running at idle. If you are experiencing black smoke, remove and inspect the exhaust baffle/restrictor before re-jetting the carburettor.
   </div>
 
@@ -226,7 +258,7 @@
   <h2>Parts Compatibility Notes</h2>
   <p>The BTC Riva 50 uses the standard GY6 139QMB engine architecture. Parts from virtually all Chinese 50 cc GY6 scooters are interchangeable, including those from the Lexmoto range, Pulse Aura, Sinnis Apache, Keeway Matrix, and equivalent Belgian/French market models (Kymco Agility clones, etc.). When ordering parts, search for <strong>GY6 139QMB 50cc</strong> to ensure compatibility. Always compare the physical shape and dimensions of the part, as Chinese manufacturer part numbers are not standardised.</p>
 
-  <div class="tip">
+  <div class="callout callout-tip">
     💡 <strong>Registration note (UK):</strong> The BTC Riva 50 is type-approved as an AM category moped in the UK and EU, limited to 45 km/h. It can be ridden from age 16 with a valid AM licence (or a CBT certificate in the UK). De-restricting the exhaust or air-box may affect the vehicle's type approval status.
   </div>
   </main>
