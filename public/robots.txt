@@ -2,4 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://ismr.online/sitemap.xml
-Sitemap: https://www.bing.com/ping?sitemap=https://ismr.online/sitemap.xml

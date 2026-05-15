@@ -1,3 +1,24 @@
 RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Security headers — improves Microsoft SmartScreen / SafeLinks reputation
+<IfModule mod_headers.c>
+    # Prevent clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Prevent MIME-type sniffing
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Force HTTPS for 1 year (HSTS)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+    # Control referrer information
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Permissions policy — disable unused browser features
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+    # Content Security Policy — allow GA, YouTube embeds, Google Fonts
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://www.youtube-nocookie.com https://www.youtube.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com; object-src 'none'; base-uri 'self';"
+</IfModule>

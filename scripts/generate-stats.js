@@ -54,8 +54,16 @@ function generateStats({ guidesDir, videosDir, outputDir, publicDir } = {}) {
  * and wizard.html (not a content page).
  */
 function generateSitemap(publicDir) {
-  const today = new Date().toISOString().split('T')[0];
   const SITE = 'https://ismr.online';
+
+  /** Return the file's last-modified date as YYYY-MM-DD, or today as fallback. */
+  function fileMtime(filePath) {
+    try {
+      return fs.statSync(filePath).mtime.toISOString().split('T')[0];
+    } catch (_) {
+      return new Date().toISOString().split('T')[0];
+    }
+  }
 
   // Sections that get listed as directory entries (no trailing index.html in sitemap)
   const dirSections = ['repair-guides', 'diagnostics', 'parts', 'models', 'videos', 'news'];
@@ -82,7 +90,8 @@ function generateSitemap(publicDir) {
   const entries = [];
 
   // Root
-  entries.push({ url: `${SITE}/`, priority: '1.0', changefreq: 'weekly', lastmod: today });
+  const rootIndex = path.join(publicDir, 'index.html');
+  entries.push({ url: `${SITE}/`, priority: '1.0', changefreq: 'weekly', lastmod: fileMtime(rootIndex) });
 
   // Section index pages
   for (const section of dirSections) {
@@ -92,7 +101,7 @@ function generateSitemap(publicDir) {
         url: `${SITE}/${section}/`,
         priority: dirPriority[section] || '0.7',
         changefreq: ['repair-guides', 'diagnostics', 'news'].includes(section) ? 'weekly' : 'monthly',
-        lastmod: today,
+        lastmod: fileMtime(indexPath),
       });
     }
   }
@@ -108,11 +117,12 @@ function generateSitemap(publicDir) {
     for (const file of files) {
       // Skip _removed subdirectory files (shouldn't appear at root level but guard anyway)
       if (file.startsWith('_')) continue;
+      const filePath = path.join(sectionDir, file);
       entries.push({
         url: `${SITE}/${section}/${file}`,
         priority: priority[section] || '0.7',
         changefreq: 'monthly',
-        lastmod: today,
+        lastmod: fileMtime(filePath),
       });
     }
   }
