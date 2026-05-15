@@ -55,24 +55,6 @@
       color: var(--text-tertiary);
       font-size: 0.8rem;
     }
-    .warning-box {
-      background: rgba(255,107,53,0.07);
-      border-left: 4px solid var(--primary);
-      padding: 0.8rem 1.2rem;
-      margin: 1.5rem 0;
-      border-radius: 0 var(--radius-md) var(--radius-md) 0;
-      color: var(--text-secondary);
-      box-shadow: var(--shadow-sm);
-    }
-    .info-box {
-      background: rgba(0,168,204,0.07);
-      border-left: 4px solid var(--accent);
-      padding: 0.8rem 1.2rem;
-      margin: 1.5rem 0;
-      border-radius: 0 var(--radius-md) var(--radius-md) 0;
-      color: var(--text-secondary);
-      box-shadow: var(--shadow-sm);
-    }
     .step-list { counter-reset: step-counter; list-style: none; padding: 0; }
     .step-list li {
       counter-increment: step-counter;
@@ -100,9 +82,6 @@
     ol li { padding: 0.4rem 0; color: var(--text-secondary); }
     ul { padding-left: 1.5rem; }
     ul li { padding: 0.3rem 0; color: var(--text-secondary); }
-    .checklist { list-style: none; padding-left: 0; }
-    .checklist li { padding: 0.4rem 0.5rem; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
-    .checklist li::before { content: "±0  "; color: var(--warning); font-size: 1.1em; }
     table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.9rem; }
     th {
       background: var(--surface-2); color: var(--primary);
@@ -118,13 +97,11 @@
     }
     @media (max-width: 768px) {
       body { padding: 0.75rem 1rem; }
-      h1 { font-size: 1.6rem; }
       .nav-menu { display: none; }
       .nav-toggle { display: block; }
     }
     @media (max-width: 480px) {
       body { font-size: 15px; padding: 0.5rem 0.75rem; }
-      h1 { font-size: 1.3rem; }
     }
     button:focus, a:focus, input:focus, select:focus, textarea:focus {
       outline: 2px solid var(--accent);
@@ -232,7 +209,7 @@
     <li>Permanent marker</li>
   </ul>
 
-  <div class="info-box">
+  <div class="callout callout-tip">
     💡 <strong>Note on GY6 timing marks:</strong> GY6 engines have timing marks on the flywheel/magneto rotor and a reference mark on the engine casing. Common marks are <code>T</code> (Top Dead Centre) and a further mark (often a line or triangle) indicating standard ignition timing advance — typically <strong>15–20° BTDC</strong> at idle. Consult your service manual for the precise figure.
   </div>
 
