@@ -79,13 +79,123 @@
   <meta name="theme-color" content="#ff6b35">
 </head>
 <body>
-  <nav><a href="../index.html">🔧 ISRM Home</a> › <a href="index.html">Models</a></nav>
-  <h1>BTC Riva 50 — Model Overview &amp; Technical Guide</h1>
-  <div class="meta">
-    Added: 2026-05-11 &nbsp;|&nbsp; Sources: <a href="https://www.btcbikes.com/" target="_blank" rel="noopener">btcbikes.com</a>, <a href="https://www.49ccscoot.com/" target="_blank" rel="noopener">49ccscoot.com</a>, ISRM community data
-    &nbsp;|&nbsp; <span class="guide-guide-tag">GY6</span> <span class="guide-guide-tag">BTC</span> <span class="guide-guide-tag">50cc</span> <span class="guide-guide-tag">Carburettor</span>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-icon">⚙️</span>
+        <span class="brand-text">ISMR</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link active">Models</a></li>
+        <li><a href="../index.html#about" class="nav-link">About</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="../index.html">ISMR Home</a>
+    <span>›</span>
+    <a href="index.html">Models</a>
+    <span>›</span>
+    BTC Riva 50 — Model Overview…
   </div>
-  <div class="source-box">
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <h1>BTC Riva 50 — Model Overview &amp; Technical Guide</h1>
+      <div class="guide-tags">
+      </div>
+    </div>
+  </section>
+
+  <main class="guide-content">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://ismr.online/models/btc-riva-50-model-overview.html">
+  <link rel="stylesheet" href="../styles.css">
+  <title>BTC Riva 50 — Model Overview & Technical Guide — ISMR</title>
+  <style>
+
+
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; background: var(--bg-dark); color: var(--text-primary); max-width: 820px; margin: 2rem auto; padding: 1rem 2rem; line-height: 1.7; }
+    h1 { color: var(--warning); border-bottom: 2px solid var(--warning); padding-bottom: 0.4rem; }
+    h2 { color: var(--warning); margin-top: 2rem; }
+    a { color: var(--accent); }
+    .meta { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1.5rem; }
+    .source-box { background: var(--surface); border-left: 4px solid var(--warning); padding: 0.8rem 1.2rem; margin: 1.5rem 0; border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+    .guide-tag { display: inline-block; background: var(--surface-2); color: var(--warning); border: 1px solid var(--warning); border-radius: var(--radius-lg); padding: 2px 10px; font-size: 0.78rem; margin-right: 6px; }
+    nav { margin-bottom: 2rem; font-size: 0.9rem; } nav a { margin-right: 1rem; }
+    footer { margin-top: 3rem; border-top: 1px solid var(--surface-2); padding-top: 1rem; color: var(--text-tertiary); font-size: 0.8rem; }
+    .warning { background: var(--surface-2); border-left: 4px solid var(--warning); padding: 0.8rem 1.2rem; margin: 1rem 0; border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+    .tip { background: var(--surface); border-left: 4px solid var(--accent); padding: 0.8rem 1.2rem; margin: 1rem 0; border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th { background: var(--surface); color: var(--warning); text-align: left; padding: 0.5rem 0.8rem; }
+    td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
+    code { background: var(--surface); padding: 2px 6px; border-radius: var(--radius-sm); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; color: var(--accent); }
+    .spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  /* Accessibility: Focus states */
+  button:focus,
+  a:focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    box-shadow: var(--shadow);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    body { font-size: 15px; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+  }
+
+  @media (max-width: 480px) {
+    body { font-size: 14px; }
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.2rem; }
+  }
+
+  
+  
+    /* Transitions */
+    a, button, .btn, .card { transition: var(--transition); }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "name": "BTC Riva 50 — Model Overview & Technical Guide",
+  "description": "",
+  "url": "https://ismr.online/models/btc-riva-50-model-overview.html",
+  "author": {
+    "@type": "Organization",
+    "name": "ISMR"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ISMR",
+    "url": "https://ismr.online"
+  }
+}
+  </script>
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#ff6b35">
+</head>
+<div class="source-box">
     📌 <strong>Primary sources:</strong>
     <a href="https://www.btcbikes.com/" target="_blank" rel="noopener">BTC Bikes — official brand site</a> and
     <a href="https://www.49ccscoot.com/" target="_blank" rel="noopener">49ccScoot.com — GY6 community reference</a>
@@ -202,8 +312,15 @@
     💡 <strong>Registration note (UK):</strong> The BTC Riva 50 is type-approved as an AM category moped in the UK and EU, limited to 45 km/h. It can be ridden from age 16 with a valid AM licence (or a CBT certificate in the UK). De-restricting the exhaust or air-box may affect the vehicle's type approval status.
   </div>
 
-  <footer>
-    Page auto-generated by ISRM Content Sync on 2026-05-11. Content summarised from external sources for educational purposes. Always verify with the original source before performing repairs.
+  
+
+  </main>
+
+  <footer class="guide-footer">
+    <p>ISMR — Interactive Scooter Manuals for Repair. Content for educational purposes. CC BY-SA 4.0.</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISMR Home</a> · <a href="index.html" style="color: var(--accent);">← All Models</a></p>
   </footer>
+
+  <script src="../script.js"></script>
 </body>
 </html>

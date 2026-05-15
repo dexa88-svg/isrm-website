@@ -196,10 +196,39 @@ Check:
 
 ---
 
-### CHECK 10 — Security Structure Scan
+### CHECK 10 — HTML Body Structure
+
+Every content page (non-index, non-wizard) must have the full site layout structure. Compare each page against the gold-standard template.
+
+**Required elements (in order):**
+
+1. `<nav class="navbar" id="navbar">` — site navigation bar with `.nav-brand`, `.nav-menu`, `.nav-toggle`
+2. `<div class="breadcrumb">` — breadcrumb navigation (immediately after `</nav>`, outside `<main>`)
+3. `<section class="page-hero">` — hero section containing `<div class="page-hero-inner">` with the single `<h1>` and `.guide-meta`
+4. `<main class="guide-content">` — main page content
+5. `<footer class="guide-footer">` — page footer
+6. `<script src="../script.js"></script>` — navbar toggle script before `</body>`
+
+**Checks:**
+- `class="navbar"` present in page → ✓ navbar present
+- bare `<nav>` without `class=` present → ✗ legacy bare nav (must be replaced)
+- `class="page-hero"` present → ✓ hero section present
+- `class="guide-content"` present → ✓ main content wrapper present
+- `class="guide-footer"` present → ✓ footer present
+- `script.js` referenced before `</body>` → ✓ navbar toggle wired
+
+**Pages exempt from this check:** `index.html`, `repair-guides/index.html`, `diagnostics/index.html`, `models/index.html`, `parts/index.html`, `news/index.html`, `videos/index.html`, `community/index.html`, `diagnostics/wizard.html`
+
+**Severity:** CRITICAL — pages without this structure render without navbar/hero and look completely broken.
+
+**Action:** Document in report. **Auto-fix in Phase 2** using FIX 10 below.
+
+---
+
+### CHECK 11 — Security Structure Scan
 
 For each audited page, confirm:
-- No `<script>` tags present (inline or external)
+- No `<script>` tags present (inline or external) other than the allowed `script.js`
 - No `<form>` elements present
 - No inline event handlers (`onclick=`, `onload=`, `onerror=`, `onmouseover=`, etc.)
 - No `<meta http-equiv="refresh">` tags
@@ -212,7 +241,7 @@ For each audited page, confirm:
 
 ---
 
-### CHECK 11 — Schema Markup & H1 Uniqueness (AUTO-FIX)
+### CHECK 12 — Schema Markup & H1 Uniqueness (AUTO-FIX)
 
 #### 11a — Structured Data (schema.org JSON-LD)
 
@@ -289,6 +318,7 @@ Transitions:                X/N compliant
 Shadow Usage:               X/N compliant
 Component Patterns:         X/N compliant
 Accessibility:              X/N compliant
+HTML Body Structure:        X/N compliant  [auto-fixed N broken]
 Security Structure:         X/N compliant
 Schema Markup:              X/N compliant  [auto-fixed N missing]
 H1 Uniqueness:              X/N compliant  [auto-fixed N duplicates]
@@ -304,6 +334,11 @@ Status: ✓ COMPLIANT / ⚠️ MINOR / ✗ MAJOR / ✗✗ CRITICAL
 Issues Found:
 1. [Issue type] — [specific problem] → [CSS variable to use]
 ...
+
+Structure:
+- ✓ navbar ✓ hero ✓ guide-content ✓ footer ✓ script.js  OR
+- 🔧 [auto-fixed] Rebuilt body structure (was: bare nav, missing hero/guide-content)  OR
+- ✗ CRITICAL: Missing structural elements — [list which: navbar/hero/guide-content/footer]
 
 Security:
 - ✓ No script/form/handler anomalies  OR
@@ -324,9 +359,9 @@ Recommended Actions:
 
 ### Section 4: ISSUES SUMMARY TABLE
 
-| Page | Stylesheet | Colors | Fonts | Radius | Responsive | Transitions | Shadows | Components | A11y | Security | Schema | H1 | Total |
-|------|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| index.html | ✓ | ... | ... | ... | ... | ... | ... | ... | ... | ✓ | n/a | ✓ | N |
+| Page | Stylesheet | Colors | Fonts | Radius | Responsive | Transitions | Shadows | Components | A11y | Structure | Security | Schema | H1 | Total |
+|------|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| index.html | ✓ | ... | ... | ... | ... | ... | ... | ... | ... | n/a | ✓ | n/a | ✓ | N |
 
 ### Section 5: FIX RECOMMENDATIONS
 
@@ -454,14 +489,146 @@ If `:focus` is missing from the style block, insert before `</style>`:
   }
 ```
 
-### FIX 11a — Missing schema (same as before)
+### FIX 10 — Missing HTML body structure (CRITICAL)
+
+Pages that fail CHECK 10 (missing navbar/hero/guide-content) must be rebuilt with the correct structure. This is the most complex fix — apply it carefully.
+
+**Detection:**
+```python
+import re
+
+def check_structure(content):
+    has_navbar = bool(re.search(r'class=["\'][^"\']*navbar', content))
+    has_bare_nav = bool(re.search(r'<nav(?!\s+class)', content))
+    has_hero = bool(re.search(r'class=["\'][^"\']*page-hero', content))
+    has_guide_content = bool(re.search(r'class=["\'][^"\']*guide-content', content))
+    has_footer = bool(re.search(r'class=["\'][^"\']*guide-footer', content))
+    has_script = bool(re.search(r'script\.js', content))
+    ok = has_navbar and not has_bare_nav and has_hero and has_guide_content
+    return ok, {
+        'navbar': has_navbar, 'bare_nav': has_bare_nav,
+        'hero': has_hero, 'guide_content': has_guide_content,
+        'footer': has_footer, 'script': has_script
+    }
+```
+
+**Auto-fix procedure (Python):**
+```python
+import re, os
+
+# Gold-standard navbar block (use for ALL content pages — path depth: ../):
+NAVBAR_HTML = '''<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-brand">🔧 ISMR</a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+      <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+      <li><a href="../models/index.html" class="nav-link">Models</a></li>
+      <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+      <li><a href="../videos/index.html" class="nav-link">Videos</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+  </div>
+</nav>'''
+
+def fix_structure(content, filepath):
+    """Rebuild the body structure of a page that is missing navbar/hero/guide-content."""
+    
+    # 1. Remove any legacy bare <nav> block (the old breadcrumb-style nav)
+    content = re.sub(r'<nav>.*?</nav>\s*', '', content, flags=re.DOTALL)
+    
+    # 2. Extract page title from <h1> (first occurrence)
+    h1_match = re.search(r'<h1[^>]*>(.*?)</h1>', content, re.DOTALL)
+    page_title = h1_match.group(1).strip() if h1_match else 'Guide'
+    
+    # 3. Determine breadcrumb category from filepath
+    rel = os.path.relpath(filepath, PUBLIC_DIR)
+    parts = rel.split(os.sep)
+    category_dir = parts[0] if len(parts) > 1 else ''
+    category_labels = {
+        'repair-guides': 'Repair Guides',
+        'diagnostics': 'Diagnostics',
+        'models': 'Models',
+        'parts': 'Parts',
+        'videos': 'Videos',
+    }
+    category_label = category_labels.get(category_dir, category_dir.replace('-', ' ').title())
+    
+    # 4. Extract existing body content (everything between <body> and </body>, minus the bare nav)
+    body_match = re.search(r'<body[^>]*>(.*?)</body>', content, re.DOTALL)
+    if not body_match:
+        return content  # can't fix without a body tag
+    body_inner = body_match.group(1).strip()
+    
+    # 5. Strip the old <h1> from body content (it will live in the hero section)
+    body_inner = re.sub(r'<h1[^>]*>.*?</h1>\s*', '', body_inner, count=1, flags=re.DOTALL)
+    
+    # 6. Strip duplicate script.js references, add one canonical one
+    body_inner = re.sub(r'\s*<script\s+src=["\']\.\.\/script\.js["\']></script>', '', body_inner)
+    
+    # 7. Determine active nav link class
+    active_map = {
+        'repair-guides': 'Guides',
+        'diagnostics': 'Diagnostics',
+        'models': 'Models',
+        'parts': 'Parts',
+        'videos': 'Videos',
+    }
+    active_label = active_map.get(category_dir, '')
+    navbar = NAVBAR_HTML
+    if active_label:
+        navbar = navbar.replace(
+            f'class="nav-link">{active_label}</a>',
+            f'class="nav-link active">{active_label}</a>'
+        )
+    
+    # 8. Build the hero section
+    hero_html = f'''<div class="breadcrumb">
+  <a href="../index.html">Home</a> ›
+  <a href="../{category_dir}/index.html">{category_label}</a> ›
+  {page_title}
+</div>
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <h1>{page_title}</h1>
+  </div>
+</section>'''
+    
+    # 9. Wrap body content in guide-content if not already wrapped
+    if 'class="guide-content"' not in body_inner and 'class=\'guide-content\'' not in body_inner:
+        # Check if there's already a guide-footer to separate out
+        footer_match = re.search(r'(<footer[^>]*>.*?</footer>)', body_inner, re.DOTALL)
+        if footer_match:
+            footer_html = footer_match.group(1)
+            body_inner = body_inner[:footer_match.start()].strip()
+        else:
+            footer_html = '<footer class="guide-footer"><p>© ISMR — CC BY-SA 4.0</p></footer>'
+        main_html = f'<main class="guide-content">\n{body_inner}\n</main>\n{footer_html}'
+    else:
+        main_html = body_inner
+        if '<footer' not in main_html:
+            main_html += '\n<footer class="guide-footer"><p>© ISMR — CC BY-SA 4.0</p></footer>'
+    
+    # 10. Reassemble full body
+    new_body = f'''{navbar}
+{hero_html}
+{main_html}
+<script src="../script.js"></script>'''
+    
+    content = re.sub(r'<body[^>]*>.*?</body>', f'<body>\n{new_body}\n</body>', content, flags=re.DOTALL)
+    return content
+```
+
+**Important:** After FIX 10, re-check CHECK 11 (security) — the new navbar contains no inline handlers and no external links, so it should pass. Re-run `check_structure()` to confirm the page is now valid before writing.
+
+### FIX 12a — Missing schema (same as before)
 Auto-generate and insert JSON-LD block derived from page title, meta description, and h2 headings.
 
-### FIX 11b — Duplicate H1
+### FIX 12b — Duplicate H1
 Keep first `<h1>`, remove all subsequent ones.
 
 ### POST-FIX VERIFICATION
-After applying all fixes, re-run the 9 compliance checks. Log the final score in the report as:
+After applying all fixes, re-run all compliance checks (1–10, plus schema/H1). Log the final score in the report as:
 ```
 Phase 2 fixes applied: N files modified
 Post-fix compliance: X/N pages (Y%)
