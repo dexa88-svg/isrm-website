@@ -163,6 +163,7 @@ tabButtons.forEach(button => {
 });
 
 // Intersection Observer for Scroll Animations
+// Only animate sections that start below the fold — never hide already-visible content.
 const observerOptions = {
   threshold: 0.1,
   rootMargin: '0px 0px -50px 0px'
@@ -171,18 +172,19 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
+      entry.target.classList.add('js-visible');
+      observer.unobserve(entry.target);
     }
   });
 }, observerOptions);
 
-// Observe all sections for animation
 document.querySelectorAll('section').forEach(section => {
-  section.style.opacity = '0';
-  section.style.transform = 'translateY(20px)';
-  section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-  observer.observe(section);
+  const rect = section.getBoundingClientRect();
+  // Skip sections already in the viewport at load time — no animation, no flash.
+  if (rect.top >= window.innerHeight) {
+    section.classList.add('js-animate');
+    observer.observe(section);
+  }
 });
 
 // Smooth Scroll Enhancement

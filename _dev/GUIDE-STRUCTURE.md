@@ -211,6 +211,7 @@ After the main content, add a "Related Videos" section linking to supplementary 
 5. **Use `class="guide-tag"` (teal)** — not `class="tag"` (yellow, wrong colour)
 6. **YouTube embeds** → always use `youtube-nocookie.com`, never `youtube.com`
 7. **`<script src="../script.js"></script>`** at end of body handles the hamburger nav toggle — don't inline it
+8. **Local preview** → always use `python3 -m http.server 8080 --directory public` then open `http://localhost:8080/...` — **never open `file://` URLs directly**, as fetch() calls fail silently and scroll animations behave differently
 
 ```html
 <!DOCTYPE html>
@@ -223,18 +224,24 @@ After the main content, add a "Related Videos" section linking to supplementary 
   <meta property="og:description" content="[Same as meta description]">
   <meta property="og:url" content="https://ismr.online/[SECTION]/[SLUG].html">
   <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ismr.online/og-image.jpg">
+  <meta property="og:site_name" content="ISMR — Interactive Scooter Manuals for Repair">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="[Page Title] — ISMR">
+  <meta name="twitter:description" content="[Same as meta description]">
+  <meta name="twitter:image" content="https://ismr.online/og-image.jpg">
   <link rel="canonical" href="https://ismr.online/[SECTION]/[SLUG].html">
   <link rel="icon" href="../favicon.ico">
   <title>[Scooter Model] [Repair Type] Guide — ISMR</title>
   <!-- TITLE: keep under 60 characters total including " — ISMR" -->
 
   <!-- Google Analytics 4 — copy exactly, do not modify -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-53LY3KPDYM"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
+    gtag('config', 'G-53LY3KPDYM');
   </script>
 
   <!--

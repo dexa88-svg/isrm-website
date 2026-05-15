@@ -13,7 +13,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-# Run tests
+# Run tests (includes page validation + jest)
 npm test
 
 # Run tests with coverage
@@ -22,10 +22,15 @@ npm run test:coverage
 # Regenerate public/data/stats.json (must run before deploy if guide counts changed)
 npm run generate-stats
 
-# Run site locally
+# Run site locally — ALWAYS use this, never open file:// URLs directly
 python3 -m http.server 8080 --directory public
 # or: npx serve public
+# Then open: http://localhost:8080/repair-guides/...
 ```
+
+> ⚠️ **Never preview pages by opening `file://` URLs in a browser.**
+> On `file://`, JavaScript `fetch()` calls (used by `load-stats.js`) fail silently due to CORS restrictions,
+> and scroll-reveal animations may behave differently. Always use the HTTP server above.
 
 There is **no build step, no bundler, no lint command.** The site is static HTML/CSS/JS — what's in `public/` is what gets served.
 

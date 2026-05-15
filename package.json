@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Interactive Scooter Manuals for Repair",
   "scripts": {
-    "test": "jest",
-    "test:coverage": "jest --coverage",
+    "test": "node scripts/validate-pages.js && jest",
+    "test:coverage": "node scripts/validate-pages.js && jest --coverage",
     "generate-stats": "node scripts/generate-stats.js"
   },
   "devDependencies": {
