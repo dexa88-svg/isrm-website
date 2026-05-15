@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Diagnose and fix starter motor faults on Piaggio and Gilera scooters. Covers no-crank, slow cranking, relay clicks, brush wear, and solenoid testing with step-by-step fault-finding procedures.">
+  <title>Piaggio & Gilera Starter Motor Fault Finding — ISMR</title>
+  <style>
+    body { font-family: Georgia, serif; background: #0f0f0f; color: #e8e8e8; max-width: 820px; margin: 2rem auto; padding: 1rem 2rem; line-height: 1.7; }
+    h1 { color: #f5a623; border-bottom: 2px solid #f5a623; padding-bottom: 0.4rem; }
+    h2 { color: #f5a623; margin-top: 2rem; }
+    h3 { color: #e8b84b; margin-top: 1.5rem; }
+    a { color: #7ec8e3; }
+    .meta { color: #888; font-size: 0.85rem; margin-bottom: 1.5rem; }
+    .source-box { background: #1a1a1a; border-left: 4px solid #f5a623; padding: 0.8rem 1.2rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; }
+    .tag { display: inline-block; background: #222; color: #f5a623; border: 1px solid #f5a623; border-radius: 12px; padding: 2px 10px; font-size: 0.78rem; margin-right: 6px; }
+    nav { margin-bottom: 2rem; font-size: 0.9rem; } nav a { margin-right: 1rem; }
+    footer { margin-top: 3rem; border-top: 1px solid #333; padding-top: 1rem; color: #555; font-size: 0.8rem; }
+    .warning-box { background: #1f1000; border-left: 4px solid #ff6b35; padding: 0.8rem 1.2rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; }
+    .info-box { background: #0d1a2a; border-left: 4px solid #00a8cc; padding: 0.8rem 1.2rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; }
+    ol { padding-left: 1.5rem; }
+    ol li { padding: 0.4rem 0; }
+    table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.9rem; }
+    th { background: #1a2332; color: #f5a623; text-align: left; padding: 0.5rem 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    td { padding: 0.5rem 0.8rem; border-bottom: 1px solid #2a3548; }
+    code { background: #1a2332; border: 1px solid #2a3548; padding: 2px 6px; border-radius: 3px; font-family: 'JetBrains Mono', monospace, monospace; font-size: 0.88em; }
+    .section-label { display: inline-block; background: #f5a623; color: #000; font-weight: bold; padding: 2px 10px; border-radius: 4px; font-family: sans-serif; font-size: 0.85rem; margin-bottom: 0.5rem; }
+  </style>
+</head>
+<body>
+  <nav><a href="../index.html">🔧 ISMR Home</a> › <a href="index.html">Diagnostics</a></nav>
+  <h1>Piaggio &amp; Gilera Starter Motor Fault Finding</h1>
+  <div class="meta">
+    Added: 2026-05-15 &nbsp;|&nbsp; Source: <a href="https://www.pedparts.co.uk/blog/piaggio-gilera-starter-motor-step-by-step-fault-finding" target="_blank" rel="noopener">pedparts.co.uk</a>
+    &nbsp;|&nbsp; <span class="tag">Piaggio</span> <span class="tag">Gilera</span> <span class="tag">2-Stroke</span> <span class="tag">Starter Motor</span>
+  </div>
+
+  <div class="source-box">
+    📌 <strong>Original source:</strong> <a href="https://www.pedparts.co.uk/blog/piaggio-gilera-starter-motor-step-by-step-fault-finding" target="_blank" rel="noopener">Piaggio/Gilera Starter Motor Step by Step Fault Finding — PedParts UK Blog</a>
+  </div>
+
+  <p>This guide covers step-by-step electrical fault-finding for the starter motor circuit on all Piaggio and Gilera 50cc 2-stroke scooters. The approach can largely be adapted to other 50cc mopeds, though note that the <strong>low-current relay trigger circuit differs by manufacturer</strong>: Piaggio/Gilera switch the positive supply to the relay; Yamaha switches both the negative (starter button) and the positive (brake light switches).</p>
+
+  <div class="warning-box">
+    ⚠️ <strong>Safety first:</strong> The high-current circuit is <em>not fused</em> and carries approximately 50 A when the starter operates. Join the thick red wires deliberately and firmly. Do not allow them to contact the scooter frame. Read through this entire guide before starting.
+  </div>
+
+  <h2>How the Starter Circuit Works</h2>
+  <p>The starter motor circuit splits into two separate sub-circuits:</p>
+
+  <h3>1 — High-current circuit</h3>
+  <p>Thick wires run directly from the battery to the starter motor. A <strong>relay</strong> (the electrically operated switch) joins the two heavy red wires when 12 V is applied to it. The relay is necessary because the starter motor draws approximately 50 A — too much to route through a handlebar switch. The high-current path is kept as short as possible for efficiency and safety.</p>
+
+  <h3>2 — Low-current circuit</h3>
+  <p>This circuit decides whether 12 V is sent to the relay. On Piaggio/Gilera 2-strokes, the relay only fires when <strong>all three</strong> of the following are satisfied simultaneously:</p>
+  <ul>
+    <li>Ignition key is ON</li>
+    <li>At least one brake lever is pulled (brake light on)</li>
+    <li>Starter button is pressed</li>
+  </ul>
+
+  <div class="info-box">
+    💡 <strong>Tip:</strong> Before starting fault-finding, confirm the brake light illuminates when you pull a brake lever. If the brake lights do not work, the starter circuit will never activate — fix the brakes first.
+  </div>
+
+  <h2>Section 1 — High-Current Circuit Testing</h2>
+  <p>Complete this section fully before moving to Section 2.</p>
+
+  <ol>
+    <li>
+      <strong>Locate the starter relay.</strong> Trace the thick red wire from the battery — it leads directly to the relay. On a Gilera Stalker it is behind the left-hand rear panel; location varies by model.
+    </li>
+    <li>
+      <strong>Bypass the relay.</strong> Unplug the two thick red wires from the relay and bridge them together with spade connectors or a short length of thick wire. Do not let them contact the frame. If the starter motor turns over normally, the high-current circuit is fine — skip straight to Section 2. If not, continue.
+    </li>
+    <li>
+      <strong>Test or replace the battery.</strong> Ideally substitute a known-good fully charged battery. Alternatively jump-start from a car battery (connect +ve to +ve, −ve to −ve; do <em>not</em> run the car engine — elevated voltage from a running alternator can damage the moped's voltage regulator). Retest step 2. If the starter now works, replace the battery.
+    </li>
+    <li>
+      <strong>Test the battery earth cable.</strong> Connect a jump lead directly from the battery negative terminal to the starter motor body. Retest step 2. If it now works, the thick black earth cable from battery negative to engine casing is the fault — clean, tighten, or replace it.
+    </li>
+    <li>
+      <strong>Test the starter motor directly.</strong> Remove the starter motor from the engine. Connect battery negative to the motor body and battery positive to the motor's spade terminal using jump leads. Secure the motor in a vice — it will try to jump when it fires. If it still does not operate, the starter motor is faulty and must be replaced (they are not economically repairable). If it fires, refit the motor and return to step 2.
+    </li>
+  </ol>
+
+  <h2>Section 2 — Low-Current Circuit Testing</h2>
+  <p>Only proceed here once the starter motor turns over correctly when the relay is bypassed (step 2 above).</p>
+
+  <ol start="6">
+    <li>
+      <strong>Confirm brake lights function</strong> with ignition on and a brake lever pulled. If not, fix the brake light circuit first.
+    </li>
+    <li>
+      <strong>Check for a relay click.</strong> If the starter motor clicks but does not turn when you press the button — and the motor works when bypassed — the relay internal contacts are burned. Replace the starter relay.
+    </li>
+    <li>
+      <strong>Test the relay earth (thin black wire).</strong> Disconnect the thin black wire from the relay. Connect one side of a test bulb to it and the other to battery positive. The bulb must light regardless of key position. If it does not, the black wire is not earthed — run a new wire directly to earth or the bare frame.
+    </li>
+    <li>
+      <strong>Test the relay trigger wire (green/black wire).</strong> With the black wire still connected, disconnect the thin green/black wire from the relay and connect the other bulb terminal to it. Switch ignition on, pull a brake lever, and press the starter button. If the bulb glows, the low-current circuit is working and the relay is faulty — replace it. If the bulb does not glow, continue.
+    </li>
+    <li>
+      <strong>Confirm the circuit works when powered directly.</strong> Reconnect the black wire to the relay. Run a wire from battery positive directly to the relay's green/black terminal. The starter motor should now operate. This confirms the fault is in the green/black signal wire, not the motor or high-current circuit.
+    </li>
+    <li>
+      <strong>Trace the starter button.</strong> Remove the handlebar cover to expose the starter button. Test the white/black wire (the +12 V feed from the brake light switches) with a bulb to battery negative — it should light every time the brake light operates. Then test across the starter button itself: with a brake lever pulled and the button pressed, voltage should pass through the button and continue along the green/black wire to the relay. If the button does not pass voltage when pressed, replace the starter button. If it does, there is a break in the green/black wire between the handlebar and the relay — inspect the loom for damage.
+    </li>
+  </ol>
+
+  <h2>Quick Fault Diagnosis Table</h2>
+  <table>
+    <tr><th>Symptom</th><th>Most likely cause</th></tr>
+    <tr><td>Nothing happens when button pressed</td><td>Dead battery, blown fuse, or broken wiring</td></tr>
+    <tr><td>Relay clicks but motor does not crank</td><td>Burned relay contacts — replace relay</td></tr>
+    <tr><td>Starter works when relay bypassed, not normally</td><td>Low-current circuit fault (brake switch, starter button, relay)</td></tr>
+    <tr><td>Starter slow or weak, gets hot</td><td>Low battery voltage or failing starter motor brushes</td></tr>
+    <tr><td>Starter works without brake lever</td><td>Brake light switch stuck closed or wiring fault</td></tr>
+    <tr><td>Starter works from cold, not when warm</td><td>Failing starter motor (thermal breakdown of brushes/commutator)</td></tr>
+  </table>
+
+  <footer>
+    Page auto-generated by ISMR Content Sync on 2026-05-15. Content summarised from external sources for educational purposes. Always verify with the original source before performing repairs. Source: <a href="https://www.pedparts.co.uk/blog/piaggio-gilera-starter-motor-step-by-step-fault-finding" target="_blank" rel="noopener">PedParts UK</a>.
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

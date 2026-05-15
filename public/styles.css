@@ -801,6 +801,57 @@ a { text-decoration: none; color: inherit; }
   font-size: 0.95rem;
 }
 
+/* "How It's Built" card */
+.about-card--built {
+  border-color: var(--primary);
+}
+
+.built-stats {
+  display: flex;
+  gap: 1.25rem;
+  margin: 1.25rem 0 1rem;
+  flex-wrap: wrap;
+}
+
+.built-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.built-stat__value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.built-stat__unit {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.built-stat__label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.built-link {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.built-link:hover {
+  border-color: var(--accent);
+}
+
 /* CTA Section */
 .cta {
   padding: 4rem 2rem;

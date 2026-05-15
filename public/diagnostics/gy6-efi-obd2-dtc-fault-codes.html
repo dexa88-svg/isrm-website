@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-53LY3KPDYM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-53LY3KPDYM');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Complete OBD-2 DTC fault code reference for GY6 EFI scooters with Rongmao, Delphi, and Motion injection systems. Includes step-by-step diagnostic procedures for every P-code.">
+  <link rel="canonical" href="https://ismr.online/diagnostics/gy6-efi-obd2-dtc-fault-codes.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ismr.online/diagnostics/gy6-efi-obd2-dtc-fault-codes.html">
+  <meta property="og:title" content="GY6 EFI OBD-2 DTC Fault Codes — Rongmao / Delphi / Motion — ISMR">
+  <meta property="og:description" content="Complete OBD-2 DTC fault code reference for GY6 EFI scooters with Rongmao, Delphi, and Motion injection systems. Step-by-step diagnostic procedures for every P-code.">
+  <meta property="og:site_name" content="ISMR — Interactive Scooter Manuals for Repair">
+  <meta property="og:image" content="https://ismr.online/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GY6 EFI OBD-2 DTC Fault Codes — Rongmao / Delphi / Motion — ISMR">
+  <meta name="twitter:description" content="Complete OBD-2 DTC fault code reference for GY6 EFI scooters with Rongmao, Delphi, and Motion injection systems.">
+  <meta name="twitter:image" content="https://ismr.online/og-image.jpg">
+  <title>GY6 EFI OBD-2 DTC Fault Codes — Rongmao / Delphi / Motion — ISMR</title>
+  <link rel="stylesheet" href="../styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "name": "GY6 EFI OBD-2 DTC Fault Codes — Rongmao / Delphi / Motion",
+    "description": "Complete OBD-2 DTC fault code reference for GY6 EFI scooters with Rongmao, Delphi, and Motion injection systems. Includes step-by-step diagnostic procedures for every P-code.",
+    "url": "https://ismr.online/diagnostics/gy6-efi-obd2-dtc-fault-codes.html",
+    "dateModified": "2026-05-14",
+    "author": { "@type": "Organization", "name": "ISMR", "url": "https://ismr.online" },
+    "publisher": { "@type": "Organization", "name": "ISMR", "url": "https://ismr.online" }
+  }
+  </script>
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#ff6b35">
+
+  <style>
+    a, button, .btn, [class*="card"] { transition: var(--transition); }
+
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 3rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "🔌";
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem;
+      opacity: 0.07;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .page-hero-inner { max-width: 960px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+
+    .breadcrumb {
+      padding: 0.9rem 2rem;
+      max-width: 960px;
+      margin: 0 auto;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+
+    .guide-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+      margin-bottom: 1rem;
+    }
+    .guide-meta-sep { opacity: 0.4; }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+    .guide-tag {
+      background: rgba(0, 168, 204, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(0, 168, 204, 0.3);
+      padding: 0.25rem 0.7rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+
+    .applies-to {
+      background: rgba(255, 107, 53, 0.07);
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem;
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .applies-to strong { color: var(--text-primary); }
+
+    .guide-content {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 4rem;
+    }
+    .guide-content h2 {
+      font-size: 1.55rem;
+      color: var(--text-primary);
+      margin-top: 2.5rem;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.75rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+
+    /* Main DTC reference table */
+    .guide-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.25rem 0;
+      font-size: 0.875rem;
+    }
+    .guide-content th {
+      background: var(--surface-2);
+      color: var(--primary);
+      font-weight: 600;
+      padding: 0.7rem 1rem;
+      text-align: left;
+      border: 1px solid var(--border);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: 0.78rem;
+    }
+    .guide-content td {
+      padding: 0.65rem 1rem;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+    .guide-content tr:nth-child(even) td { background: rgba(26, 35, 50, 0.5); }
+
+    .dtc-code {
+      font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+      font-weight: 700;
+      color: var(--warning);
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    /* Callouts */
+    .callout {
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .callout strong { color: var(--text-primary); }
+    .callout-tip {
+      background: rgba(6, 167, 125, 0.08);
+      border: 1px solid rgba(6, 167, 125, 0.25);
+      border-left: 4px solid var(--success);
+    }
+    .callout-warn {
+      background: rgba(245, 166, 35, 0.08);
+      border: 1px solid rgba(245, 166, 35, 0.3);
+      border-left: 4px solid var(--warning);
+    }
+    .callout-info {
+      background: rgba(0, 168, 204, 0.06);
+      border: 1px solid rgba(0, 168, 204, 0.2);
+      border-left: 4px solid var(--accent);
+    }
+
+    /* Procedure cards */
+    .procedure-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      margin: 1.5rem 0;
+      overflow: hidden;
+    }
+    .procedure-card:hover { border-color: rgba(0, 168, 204, 0.35); }
+    .procedure-card-header {
+      background: var(--surface-2);
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .procedure-card-header .dtc-code { font-size: 1.05rem; }
+    .procedure-card-header .dtc-desc {
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .procedure-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.855rem;
+    }
+    .procedure-table th {
+      background: transparent;
+      color: var(--text-tertiary);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid var(--border);
+      font-weight: 600;
+    }
+    .procedure-table td {
+      padding: 0.55rem 1rem;
+      border-bottom: 1px solid rgba(42, 53, 72, 0.5);
+      color: var(--text-secondary);
+      vertical-align: middle;
+    }
+    .procedure-table tr:last-child td { border-bottom: none; }
+    .procedure-table .step-num {
+      color: var(--accent);
+      font-weight: 700;
+      text-align: center;
+      width: 42px;
+    }
+    .procedure-table .result-yes { color: var(--success); font-weight: 600; }
+    .procedure-table .result-no  { color: var(--warning); font-weight: 600; }
+    .procedure-table .nextstep   { color: var(--text-primary); font-size: 0.82rem; }
+    .procedure-table tr:nth-child(even) td { background: rgba(26,35,50,0.4); }
+
+    /* Symptom section */
+    .symptom-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .symptom-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .symptom-card:hover { border-color: rgba(255,107,53,0.35); }
+    .symptom-card-header {
+      background: rgba(255,107,53,0.07);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 0.95rem;
+    }
+    .symptom-card-body {
+      padding: 0.85rem 1.1rem;
+    }
+    .symptom-card-body ol {
+      margin: 0;
+      padding-left: 1.25rem;
+      font-size: 0.855rem;
+    }
+    .symptom-card-body li { margin-bottom: 0.35rem; }
+
+    /* Video */
+    .video-hero {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border-left: 4px solid var(--warning);
+    }
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+    .video-source {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+
+    .source-box {
+      background: rgba(255, 107, 53, 0.07);
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    .source-box a { color: var(--accent); }
+
+    .severity-high { color: var(--danger, var(--danger)); font-weight: 600; }
+    .severity-med  { color: var(--warning); font-weight: 600; }
+    .severity-low  { color: var(--success, var(--success)); font-weight: 600; }
+
+    code {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+      font-size: 0.875em;
+      padding: 0.1em 0.4em;
+      border-radius: var(--radius-sm);
+      color: var(--accent);
+    }
+
+    .guide-footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.825rem;
+      color: var(--text-tertiary);
+    }
+
+    /* Accessibility */
+    button:focus, a:focus, input:focus, select:focus, textarea:focus {
+      outline: none;
+      box-shadow: var(--shadow);
+    }
+
+    @media (max-width: 768px) {
+      .page-hero h1 { font-size: 1.6rem; }
+      .guide-content { padding: 1.5rem 1rem 3rem; }
+      .breadcrumb { padding: 0.9rem 1rem; }
+      .nav-menu { display: none; }
+      .nav-toggle { display: block; }
+      .symptom-grid { grid-template-columns: 1fr; }
+      .procedure-card-header { flex-direction: column; gap: 0.25rem; }
+    }
+    @media (max-width: 480px) {
+      body { font-size: 15px; }
+      .guide-content table { font-size: 0.8rem; }
+      .procedure-table td, .procedure-table th { padding: 0.45rem 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-icon">⚙️</span>
+        <span class="brand-text">ISMR</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link active">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../index.html#about" class="nav-link">About</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="../index.html">ISMR Home</a>
+    <span>›</span>
+    <a href="index.html">Diagnostics</a>
+    <span>›</span>
+    GY6 EFI OBD-2 DTC Fault Codes
+  </div>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <h1>GY6 EFI — OBD-2 DTC Fault Codes &amp; Diagnostic Procedures</h1>
+      <div class="guide-meta">
+        <span>EFI / Fuel Injection</span>
+        <span class="guide-meta-sep">·</span>
+        <span>Rongmao · Delphi · Motion</span>
+        <span class="guide-meta-sep">·</span>
+        <span>OBD-2 scanner required</span>
+        <span class="guide-meta-sep">·</span>
+        <span>Last updated: 2026-05-14</span>
+      </div>
+      <div class="guide-tags">
+        <span class="guide-tag">GY6 EFI</span>
+        <span class="guide-tag">OBD-2 / DTC</span>
+        <span class="guide-tag">Rongmao</span>
+        <span class="guide-tag">Delphi</span>
+        <span class="guide-tag">Motion EFI</span>
+        <span class="guide-tag">Fault Codes</span>
+        <span class="guide-tag">Diagnostics</span>
+      </div>
+      <div class="applies-to">
+        <strong>Applies to:</strong> GY6 EFI scooters equipped with <strong>Rongmao</strong>, <strong>Delphi</strong>, or <strong>Motion</strong> injection systems — typically Euro 4 / Euro 5 models from approx. 2017 onwards (BTC Riva EFI, La Souris Sourini/City EFI, Santini Capri EFI, and equivalent Chinese 125/150cc 4-stroke scooters). These systems use standard OBD-2 P-codes readable via an OBD-2 scanner or apps such as Car Scanner or HUD ECU Hacker. <em>If your scooter predates Euro 4 or uses a KEIHIN/clone ECU without OBD-2, see the <a href="gy6-efi-cel-flash-codes.html">CEL flash code guide</a> instead.</em>
+      </div>
+    </div>
+  </section>
+
+  <main class="guide-content">
+
+    <div class="callout callout-info">
+      <strong>ℹ️ This page vs the flash code page:</strong> Older GY6 EFI ECUs (KEIHIN PGM-FI clones) communicate faults as <em>blink sequences</em> — no scanner needed. Modern Rongmao, Delphi, and Motion ECUs speak standard <strong>OBD-2 DTCs</strong> (P0xxx codes) and require an OBD-2 reader. This page covers the OBD-2 / DTC system only.
+    </div>
+
+    <h2>What You Need</h2>
+    <p>To read and clear fault codes on a Rongmao / Delphi / Motion EFI system you need an OBD-2 reader. The ECU communicates over the K-line (ISO 9141-2) or CAN bus depending on the variant. The following tools are confirmed to work:</p>
+    <ul>
+      <li><strong>Car Scanner</strong> (Android / iOS) — free app, works with a generic ELM327 Bluetooth or Wi-Fi adapter</li>
+      <li><strong>HUD ECU Hacker</strong> (Windows PC) — purpose-built for Rongmao/Delphi GY6 ECUs; allows reading, clearing, and remapping</li>
+      <li>Any generic OBD-2 scanner that supports ISO 9141-2 / KWP2000</li>
+    </ul>
+
+    <div class="callout callout-warn">
+      <strong>⚠️ Before reading codes:</strong> Check the MIL (malfunction indicator lamp) is working correctly by verifying it illuminates on key-on. Clear any history codes first, then repeat the fault condition and re-read. A code that appears only in history but not as a current fault may have been a one-off transient event.
+    </div>
+
+    <h2>Video Guide — Reading OBD-2 Codes with Car Scanner</h2>
+    <div class="video-hero">
+      <h3 style="margin-top:0; color: var(--text-primary);">Video Guide</h3>
+      <div class="video-container">
+        <iframe
+          width="100%"
+          height="480"
+          src="https://www.youtube-nocookie.com/embed/0VFDdNRv_HI"
+          title="How to Read OBD2 Fault Codes on a Scooter with Car Scanner App"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="video-source">
+        <strong>Video:</strong> "Reading OBD2 Fault Codes on a Scooter" — general OBD-2 scanner walkthrough
+        <a href="https://www.youtube.com/watch?v=0VFDdNRv_HI" target="_blank" rel="noopener">↗ Watch on YouTube</a>
+      </p>
+    </div>
+
+    <h2>Precautions (from Rongmao EFI Owner Manual)</h2>
+    <ul>
+      <li>Ensure battery positive and negative terminals are reliable and cannot be interchanged. When the engine is running, the battery cannot be disassembled.</li>
+      <li>If the fuel gauge alarm sounds, refuel as soon as possible — the fuel pump cannot operate in air or media other than fuel.</li>
+      <li>Do not arbitrarily disassemble vehicle parts, especially the fuel system (pipeline pressure approx. 250 kPa). Disassembly must be carried out by professional maintenance personnel to prevent fire risk.</li>
+      <li>Do not arbitrarily adjust the throttle valve door plate limit screw. Idle speed on EFI scooters is controlled automatically by the ECU via the IACV.</li>
+      <li>Vehicles may only use the same type of parts specified by the manufacturer. Turn off the ignition switch before disassembly or replacement of any electrical parts.</li>
+      <li>Never pierce the wiring harness to measure signals — use back-probing tools or proper breakout connectors.</li>
+      <li>Ensure the ECU temperature remains below 80 °C.</li>
+    </ul>
+
+    <h2>DTC Reference Table — All Codes</h2>
+    <p>The following OBD-2 P-codes apply to GY6 EFI scooters using Rongmao, Delphi, and Motion injection systems. This table is aligned with the <a href="https://www.gy6-injectie-centrum.nl/gy6-injectie/foutcodes" target="_blank" rel="noopener">GY6 Injectie Centrum fault code reference</a> and the Rongmao EFI Owner Manual. Detailed step-by-step diagnostic procedures for each code follow below.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>DTC Code</th>
+          <th>Component</th>
+          <th>Fault Description</th>
+          <th>Severity</th>
+          <th>Typical Symptom</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="dtc-code">P0107</td>
+          <td>MAP sensor</td>
+          <td>Manifold Absolute Pressure — low voltage or open circuit</td>
+          <td><span class="severity-high">High</span></td>
+          <td>Rough idle, stalling, poor performance</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0108</td>
+          <td>MAP sensor</td>
+          <td>Manifold Absolute Pressure — high voltage</td>
+          <td><span class="severity-high">High</span></td>
+          <td>Rich running, black exhaust smoke, poor power</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0112</td>
+          <td>IAT sensor</td>
+          <td>Inlet Air Temperature — low voltage or open circuit</td>
+          <td><span class="severity-low">Low</span></td>
+          <td>Slightly degraded fuel mapping, rarely noticeable</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0113</td>
+          <td>IAT sensor</td>
+          <td>Inlet Air Temperature — high voltage</td>
+          <td><span class="severity-low">Low</span></td>
+          <td>Slightly degraded fuel mapping, rarely noticeable</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0117</td>
+          <td>ECT / CTS sensor</td>
+          <td>Engine Coolant/Oil Temperature — low voltage or open circuit</td>
+          <td><span class="severity-med">Medium</span></td>
+          <td>Poor cold start enrichment, rough warm-up</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0118</td>
+          <td>ECT / CTS sensor</td>
+          <td>Engine Coolant/Oil Temperature — high voltage or open circuit</td>
+          <td><span class="severity-med">Medium</span></td>
+          <td>Engine may over-enrich on warm engine</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0122</td>
+          <td>TPS sensor</td>
+          <td>Throttle Position Sensor — low voltage or open circuit</td>
+          <td><span class="severity-high">High</span></td>
+          <td>Surging, hesitation, possible stalling on acceleration</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0123</td>
+          <td>TPS sensor</td>
+          <td>Throttle Position Sensor — high voltage</td>
+          <td><span class="severity-high">High</span></td>
+          <td>Surging, incorrect fuelling across throttle range</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0131</td>
+          <td>Lambda sensor 1 (O₂S1)</td>
+          <td>Upstream O₂ sensor — low voltage or open circuit</td>
+          <td><span class="severity-med">Medium</span></td>
+          <td>Lean running, closed-loop fuelling disabled</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0132</td>
+          <td>Lambda sensor 1 (O₂S1)</td>
+          <td>Upstream O₂ sensor — high voltage</td>
+          <td><span class="severity-med">Medium</span></td>
+          <td>Rich running, closed-loop fuelling disabled</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0031</td>
+          <td>Lambda sensor 1 heater</td>
+          <td>O₂S1 heater element — low voltage or open circuit</td>
+          <td><span class="severity-med">Medium</span></td>
+          <td>Slow O₂ sensor warm-up, open-loop fuelling longer at cold start</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0032</td>
+          <td>Lambda sensor 1 heater</td>
+          <td>O₂S1 heater element — high voltage</td>
+          <td><span class="severity-med">Medium</span></td>
+          <td>Short circuit in heater circuit</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0137</td>
+          <td>Lambda sensor 2 (O₂S2)</td>
+          <td>Downstream O₂ sensor — low voltage or open circuit</td>
+          <td><span class="severity-low">Low</span></td>
+          <td>MIL on; emissions monitoring affected</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0138</td>
+          <td>Lambda sensor 2 (O₂S2)</td>
+          <td>Downstream O₂ sensor — high voltage</td>
+          <td><span class="severity-low">Low</span></td>
+          <td>MIL on; emissions monitoring affected</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0037</td>
+          <td>Lambda sensor 2 heater</td>
+          <td>O₂S2 heater element — low voltage or open circuit</td>
+          <td><span class="severity-low">Low</span></td>
+          <td>MIL on; heater circuit fault</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0038</td>
+          <td>Lambda sensor 2 heater</td>
+          <td>O₂S2 heater element — high voltage</td>
+          <td><span class="severity-low">Low</span></td>
+          <td>MIL on; short circuit in heater circuit</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0201</td>
+          <td>Fuel injector</td>
+          <td>Injector cylinder 1 — circuit malfunction</td>
+          <td><span class="severity-high">High</span></td>
+          <td>Engine will not start or runs very poorly; misfire</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0202</td>
+          <td>Fuel injector</td>
+          <td>Injector cylinder 2 — circuit malfunction</td>
+          <td><span class="severity-high">High</span></td>
+          <td>As P0201 (single-cylinder GY6 scooters only have cylinder 1)</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0230</td>
+          <td>Fuel pump relay (FPR)</td>
+          <td>Fuel pump relay coil — low voltage or open circuit</td>
+          <td><span class="severity-high">High</span></td>
+          <td>No fuel pump prime on key-on; engine will not start</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0232</td>
+          <td>Fuel pump relay (FPR)</td>
+          <td>Fuel pump relay coil — high voltage</td>
+          <td><span class="severity-high">High</span></td>
+          <td>Short circuit in relay coil circuit</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0351</td>
+          <td>Ignition coil</td>
+          <td>Cylinder 1 ignition coil — circuit malfunction</td>
+          <td><span class="severity-high">High</span></td>
+          <td>No spark; engine will not start</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0352</td>
+          <td>Ignition coil</td>
+          <td>Cylinder 2 ignition coil — circuit malfunction</td>
+          <td><span class="severity-high">High</span></td>
+          <td>As P0351 (not applicable on single-cylinder GY6)</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0444</td>
+          <td>PCV / Purge Control Valve</td>
+          <td>Evaporative emission purge control valve — low voltage or open circuit</td>
+          <td><span class="severity-low">Low</span></td>
+          <td>MIL on; emissions system affected; drivability usually normal</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0445</td>
+          <td>PCV / Purge Control Valve</td>
+          <td>Evaporative emission purge control valve — high voltage</td>
+          <td><span class="severity-low">Low</span></td>
+          <td>MIL on; short circuit in PCV circuit</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0500</td>
+          <td>VSS (Vehicle Speed Sensor)</td>
+          <td>No speed signal detected</td>
+          <td><span class="severity-med">Medium</span></td>
+          <td>Speedometer inoperative; speed-dependent fuelling maps may be affected</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0505</td>
+          <td>IACV (Idle Air Control Valve)</td>
+          <td>Idle Speed Control — system error</td>
+          <td><span class="severity-med">Medium</span></td>
+          <td>Idle too high, too low, or hunting; stalling at traffic lights</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0562</td>
+          <td>System voltage</td>
+          <td>Battery / charging system voltage — too low</td>
+          <td><span class="severity-med">Medium</span></td>
+          <td>Multiple secondary sensor faults may appear; difficult starting</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0563</td>
+          <td>System voltage / regulator</td>
+          <td>Battery / charging system voltage — too high</td>
+          <td><span class="severity-high">High</span></td>
+          <td>Overcharging; risk of ECU and battery damage — address immediately</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0650</td>
+          <td>MIL lamp</td>
+          <td>Malfunction Indicator Lamp — circuit fault</td>
+          <td><span class="severity-low">Low</span></td>
+          <td>MIL lamp itself is defective or its circuit is open/shorted</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P0850</td>
+          <td>Neutral switch</td>
+          <td>Neutral position sensor — circuit fault</td>
+          <td><span class="severity-low">Low</span></td>
+          <td>Incorrect neutral detection; may affect idle speed in gear</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P1693</td>
+          <td>Tachometer</td>
+          <td>Tachometer signal — low voltage or open circuit</td>
+          <td><span class="severity-low">Low</span></td>
+          <td>Rev counter inoperative</td>
+        </tr>
+        <tr>
+          <td class="dtc-code">P1695</td>
+          <td>Tachometer</td>
+          <td>Tachometer signal — high voltage</td>
+          <td><span class="severity-low">Low</span></td>
+          <td>Rev counter erratic or pegged</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-tip">
+      <strong>Fault code legend:</strong> "Low voltage or open circuit" means the signal at the ECU pin is unexpectedly low — caused by a short to ground, broken wire, or disconnected sensor. "High voltage" means the signal is unexpectedly high — caused by a short to battery, open circuit in the return/ground path, or a failed sensor. Always check connectors and wiring before replacing sensors.
+    </div>
+
+    <h2>Step-by-Step Diagnostic Procedures</h2>
+    <p>The following procedures are derived from the Rongmao EFI Owner Manual. For each code, follow the numbered steps in order. Connect your OBD-2 diagnostic tool first (Step 1 in every procedure).</p>
+
+    <!-- P0107 -->
+    <div class="procedure-card">
+      <div class="procedure-card-header">
+        <span class="dtc-code">P0107</span>
+        <span class="dtc-desc">MAP Sensor — Low Voltage or Open Circuit</span>
+      </div>
+      <table class="procedure-table">
+        <thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead>
+        <tbody>
+          <tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr>
+          <tr><td class="step-num">2</td><td>Check the BARO data — confirm it reads approx. 100 kPa (adjust for altitude).</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">3</td><td>Disconnect the MAP sensor connector. Use a multimeter to check voltage between pin 4 and pin 3 of the connector — should be approx. 5 V.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">4</td><td>Check whether pins j2-11, j2-10, j2-16 of the ECU and pins 5, 3, 4 of the connector are shorted to ground.</td><td class="result-yes nextstep">Check the harness</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">5</td><td>Start engine and let it idle. Check that MAP reads 30–50 kPa at idle; then open throttle fully (WOT) and confirm MAP rises to approx. 90 kPa.</td><td class="result-yes nextstep">Diagnostic help needed</td><td class="result-no nextstep">Change the MAP sensor</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- P0108 -->
+    <div class="procedure-card">
+      <div class="procedure-card-header">
+        <span class="dtc-code">P0108</span>
+        <span class="dtc-desc">MAP Sensor — High Voltage</span>
+      </div>
+      <table class="procedure-table">
+        <thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead>
+        <tbody>
+          <tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr>
+          <tr><td class="step-num">2</td><td>Check BARO data — confirm approx. 100 kPa.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">3</td><td>Disconnect sensor connector. Check voltage between pin 4 and pin 3 — should be approx. 5 V.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">4</td><td>Check whether pins j2-11, j2-10, j2-16 of the ECU and pins 5, 3, 4 of the connector are shorted to ground.</td><td class="result-yes nextstep">Check the harness</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">5</td><td>Start engine at idle. Verify MAP reads 30–50 kPa; at WOT, MAP should reach approx. 90 kPa.</td><td class="result-yes nextstep">Diagnostic help needed</td><td class="result-no nextstep">Change the MAP sensor</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- P0112 -->
+    <div class="procedure-card">
+      <div class="procedure-card-header">
+        <span class="dtc-code">P0112</span>
+        <span class="dtc-desc">IAT Sensor — Low Voltage or Open Circuit</span>
+      </div>
+      <table class="procedure-table">
+        <thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead>
+        <tbody>
+          <tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr>
+          <tr><td class="step-num">2</td><td>Check "intake air temperature" data — confirm it equals the actual ambient temperature.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">3</td><td>Disconnect sensor connector. Use multimeter to check resistance between pin 1 and pin 3 — should be reasonable for the current temperature (see sensor spec table).</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">4</td><td>Check voltage between pin 3 and pin 4 of the connector — should be approx. 5 V.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">Check harness</td></tr>
+          <tr><td class="step-num">5</td><td>Check whether pins j2-8, j2-10 of the ECU and pins 1 and 3 of the connector are shorted to battery.</td><td class="result-yes nextstep">Check the harness</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">6</td><td>Start engine and stay at idle. Check that "intake air temperature" rises as the engine warms up.</td><td class="result-yes nextstep">Help needed</td><td class="result-no nextstep">Change the sensor</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- P0113 -->
+    <div class="procedure-card">
+      <div class="procedure-card-header">
+        <span class="dtc-code">P0113</span>
+        <span class="dtc-desc">IAT Sensor — High Voltage</span>
+      </div>
+      <table class="procedure-table">
+        <thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead>
+        <tbody>
+          <tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr>
+          <tr><td class="step-num">2</td><td>Check "intake air temperature" data — confirm it matches actual ambient temperature.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">3</td><td>Disconnect connector. Check resistance between pin 1 and pin 3 matches temperature expectations.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">4</td><td>Check voltage between pin 3 and pin 4 — should be approx. 5 V.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">Check harness</td></tr>
+          <tr><td class="step-num">5</td><td>Check whether pins j2-8, j2-10 of the ECU and pins 1 and 3 are shorted to battery.</td><td class="result-yes nextstep">Check the harness</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">6</td><td>Start engine and idle. Verify "intake air temperature" rises when engine warms up.</td><td class="result-yes nextstep">Help needed</td><td class="result-no nextstep">Change the sensor</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- P0117 -->
+    <div class="procedure-card">
+      <div class="procedure-card-header">
+        <span class="dtc-code">P0117</span>
+        <span class="dtc-desc">ECT / CTS Sensor — Low Voltage or Open Circuit</span>
+      </div>
+      <table class="procedure-table">
+        <thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead>
+        <tbody>
+          <tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr>
+          <tr><td class="step-num">2</td><td>Check "engine temperature" data — confirm it matches actual engine temperature.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">3</td><td>Disconnect sensor connector. Check resistance between pin 1 and pin 2 — should match temperature (e.g. approx. 2.5 kΩ at 20 °C, approx. 300 Ω at 80 °C).</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">4</td><td>Check whether pins j2-10, j2-14 of the ECU and pins C and D of the sensor connector are shorted to ground or open.</td><td class="result-yes nextstep">Harness issue</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">5</td><td>Start engine and idle. Verify "engine temperature" rises as engine gets warm.</td><td class="result-yes nextstep">Help needed</td><td class="result-no nextstep">Change the sensor</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- P0118 -->
+    <div class="procedure-card">
+      <div class="procedure-card-header">
+        <span class="dtc-code">P0118</span>
+        <span class="dtc-desc">ECT / CTS Sensor — High Voltage or Open Circuit</span>
+      </div>
+      <table class="procedure-table">
+        <thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead>
+        <tbody>
+          <tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr>
+          <tr><td class="step-num">2</td><td>Check "engine temperature" data — confirm it matches actual temperature.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">3</td><td>Disconnect connector. Check resistance between pin 1 and pin 2 of the sensor.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">4</td><td>Check whether pins j2-10, j2-14 of the ECU and pins 1 and 2 of the sensor are shorted to ground or open.</td><td class="result-yes nextstep">Harness issue</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">5</td><td>Start engine and idle. Verify "engine temperature" rises when engine gets warm.</td><td class="result-yes nextstep">Help needed</td><td class="result-no nextstep">Change the sensor</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- P0122 -->
+    <div class="procedure-card">
+      <div class="procedure-card-header">
+        <span class="dtc-code">P0122</span>
+        <span class="dtc-desc">TPS — Low Voltage or Open Circuit</span>
+      </div>
+      <table class="procedure-table">
+        <thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead>
+        <tbody>
+          <tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr>
+          <tr><td class="step-num">2</td><td>Check "Throttle opening" data — confirm it reads 0%–1% at closed throttle.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">3</td><td>Open throttle slowly to 100%. Verify "throttle opening" goes from 0% to 90%–100%.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">4</td><td>Repeat step 3. Check whether the data jumps or skips when opening throttle slowly.</td><td class="result-yes nextstep">Change the sensor</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">5</td><td>Disconnect connector. Check whether the following pins are shorted to ground or open: j2-12, j2-16 of the ECU and pins 2 and 4 of the sensor.</td><td class="result-yes nextstep">Harness issue</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">6</td><td>Use multimeter to check voltage between pin 4 and pin 3 of the sensor connector — should be approx. 5 V.</td><td class="result-yes nextstep">Help needed</td><td class="result-no nextstep">Step 5</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- P0123 -->
+    <div class="procedure-card">
+      <div class="procedure-card-header">
+        <span class="dtc-code">P0123</span>
+        <span class="dtc-desc">TPS — High Voltage</span>
+      </div>
+      <table class="procedure-table">
+        <thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead>
+        <tbody>
+          <tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr>
+          <tr><td class="step-num">2</td><td>Check "Throttle opening" data — should read 0%–1% at closed throttle.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">3</td><td>Open throttle slowly to 100%. Verify data climbs smoothly to 90%–100%.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">4</td><td>Repeat step 3 and check for data jumps when opening throttle.</td><td class="result-yes nextstep">Change the sensor</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">5</td><td>Disconnect connector. Check whether pins j2-12, j2-16 of the ECU and pins 2 and 4 of the sensor are shorted to ground or open.</td><td class="result-yes nextstep">Harness issue</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">6</td><td>Check voltage between pin 4 and pin 3 of the sensor — should be approx. 5 V.</td><td class="result-yes nextstep">Help needed</td><td class="result-no nextstep">Step 5</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- P0131 / P0132 -->
+    <div class="procedure-card">
+      <div class="procedure-card-header">
+        <span class="dtc-code">P0131 / P0132</span>
+        <span class="dtc-desc">O₂ Sensor 1 — Low / High Voltage</span>
+      </div>
+      <table class="procedure-table">
+        <thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead>
+        <tbody>
+          <tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr>
+          <tr><td class="step-num">2</td><td>Use a multimeter to check the connection between pin B of the oxygen sensor and pin j1-17 of the ECU — is it open? Check whether pin B of the sensor is shorted to pin A.</td><td class="result-yes nextstep">Harness issue</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">3</td><td>Start engine and warm up. Use multimeter to check whether voltage between pins A and B keeps jumping between 100–900 mV (normal closed-loop switching).</td><td class="result-yes nextstep">Help needed</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">4</td><td>Check for: A) emission pipe block/leakage; B) injector leakage; C) fuel pressure too high or too low; D) valve clearance too small.</td><td class="result-yes nextstep">Engine maintenance required</td><td class="result-no nextstep">Change the sensor</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- P0201 -->
+    <div class="procedure-card">
+      <div class="procedure-card-header">
+        <span class="dtc-code">P0201</span>
+        <span class="dtc-desc">Injector 1 — Circuit Malfunction</span>
+      </div>
+      <table class="procedure-table">
+        <thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead>
+        <tbody>
+          <tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr>
+          <tr><td class="step-num">2</td><td>Disconnect the injector connector. Use multimeter to check whether the voltage of pin A is approx. 12 V.</td><td class="result-yes nextstep">Step 4</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">3</td><td>Check whether the connection between pin A and the main power relay is open or shorted to ground.</td><td class="result-yes nextstep">Harness issue</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">4</td><td>Use multimeter to measure resistance between pin A and pin B of the injector — should be approx. 10–14 Ω at 20 °C.</td><td class="result-yes nextstep">Change the injector</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">5</td><td>Use multimeter to check whether the voltage of pin B is approx. 12 V.</td><td class="result-yes nextstep">Help needed</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">6</td><td>Check whether the connection between pin B of the injector and j2-05 of the ECU is open or shorted to battery/ground.</td><td class="result-yes nextstep">Harness issue</td><td class="result-no nextstep">Help needed</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- P0230 / P0232 -->
+    <div class="procedure-card">
+      <div class="procedure-card-header">
+        <span class="dtc-code">P0230 / P0232</span>
+        <span class="dtc-desc">Fuel Pump Relay — Low / High Voltage or Open Circuit</span>
+      </div>
+      <table class="procedure-table">
+        <thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead>
+        <tbody>
+          <tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr>
+          <tr><td class="step-num">2</td><td>Wait 30 s. Remove the fuel pump relay. Turn ignition on. Check whether the voltage of the relay feeder ear is approx. 12 V.</td><td class="result-yes nextstep">Change the pump</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">3</td><td>Check whether the feeder ear is shorted to ground or open.</td><td class="result-yes nextstep">Harness issue</td><td class="result-no nextstep">Help needed</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- P0351 -->
+    <div class="procedure-card">
+      <div class="procedure-card-header">
+        <span class="dtc-code">P0351</span>
+        <span class="dtc-desc">Ignition Coil — Cylinder 1 Circuit Malfunction</span>
+      </div>
+      <table class="procedure-table">
+        <thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead>
+        <tbody>
+          <tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr>
+          <tr><td class="step-num">2</td><td>Disconnect the coil connector. Check whether the voltage of pin (+) is approx. 12 V.</td><td class="result-yes nextstep">Step 4</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">3</td><td>Check whether the connection between pin (+) and the main power relay is open or shorted to ground.</td><td class="result-yes nextstep">Harness issue</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">4</td><td>Use multimeter to check whether the resistance of the two coil pins is 0.5–0.65 Ω at 20 °C.</td><td class="result-yes nextstep">Change the coil</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">5</td><td>Use multimeter to check whether voltage of pin B is approx. 12 V.</td><td class="result-yes nextstep">Help needed</td><td class="result-no nextstep">Next</td></tr>
+          <tr><td class="step-num">6</td><td>Check whether the connection between pin 2 of the coil and j2-01 of the ECU is open or shorted to battery/ground.</td><td class="result-yes nextstep">Harness issue</td><td class="result-no nextstep">Help needed</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- P0505 -->
+    <div class="procedure-card">
+      <div class="procedure-card-header">
+        <span class="dtc-code">P0505</span>
+        <span class="dtc-desc">IACV — Idle Speed Control Error</span>
+      </div>
+      <table class="procedure-table">
+        <thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead>
+        <tbody>
+          <tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr>
+          <tr><td class="step-num">2</td><td>Remove the IACV connector. Use multimeter to check resistance between pin A and pin D, and between pin B and pin C — should be approx. 53 ± 5.3 Ω each.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">Change the stepper motor (IACV)</td></tr>
+          <tr><td class="step-num">3</td><td>Check whether all 4 wires of the IACV are shorted to battery/ground or open.</td><td class="result-yes nextstep">Harness issue</td><td class="result-no nextstep">Help needed</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Symptom-Based Diagnostic Flows</h2>
+    <p>If you cannot read a fault code, or want to verify the code is the root cause, use these symptom-driven checklists directly from the Rongmao EFI Owner Manual.</p>
+
+    <div class="symptom-grid">
+
+      <div class="symptom-card">
+        <div class="symptom-card-header">🚫 Engine Cannot Start</div>
+        <div class="symptom-card-body">
+          <ol>
+            <li>Check battery voltage — should be 8–12 V</li>
+            <li>Crank engine; check cranking voltage remains above 8 V</li>
+            <li>Check starter motor operation</li>
+            <li>In winter: check oil and gearbox oil viscosity</li>
+            <li>Check engine rotation resistance is not excessive</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="symptom-card">
+        <div class="symptom-card-header">⚡ Hard / Difficult to Start</div>
+        <div class="symptom-card-body">
+          <ol>
+            <li>Check fuel pump pressure — approx. 250 kPa at idle</li>
+            <li>Remove spark plug; check spark is normal</li>
+            <li>Check engine temperature sensor connector and signal</li>
+            <li>With slightly more throttle, check if engine starts — clean throttle body and bypass channel if yes</li>
+            <li>Pull injector; crank engine — check injector spray pattern</li>
+            <li>Check if spark plug is wet (flooding) — dry plug and combustion chamber</li>
+            <li>Check cylinder compression pressure</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="symptom-card">
+        <div class="symptom-card-header">〰️ Unstable Idle</div>
+        <div class="symptom-card-body">
+          <ol>
+            <li>Check air filter and intake pipe for leaks or blockage</li>
+            <li>Check throttle body for carbon deposits in bypass channel</li>
+            <li>Check IACV operation</li>
+            <li>Check fuel pressure — approx. 250 kPa</li>
+            <li>Check injector for blockage</li>
+            <li>Verify correct spark plug type and condition</li>
+            <li>Check cylinder compression pressure</li>
+            <li>Check engine temperature sensor signal</li>
+            <li>Check TPS signal with throttle at idle</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="symptom-card">
+        <div class="symptom-card-header">⬆️ High Idle</div>
+        <div class="symptom-card-body">
+          <ol>
+            <li>Check throttle cable for sticking or incorrect adjustment</li>
+            <li>Check idle pintle adjustment of throttle body</li>
+            <li>Check intake pipe for air leaks</li>
+            <li>Check IACV operation</li>
+            <li>Remove engine temperature sensor; check if engine runs well — change sensor if yes</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="symptom-card">
+        <div class="symptom-card-header">📉 Poor Acceleration</div>
+        <div class="symptom-card-body">
+          <ol>
+            <li>Check air filter and intake pipe for blockage or leaks</li>
+            <li>Check fuel pressure — approx. 250 kPa</li>
+            <li>Remove spark plug — check if wet or dry</li>
+            <li>Check T-MAP sensor, TPS, and all connectors</li>
+            <li>Check injector for blockage</li>
+            <li>Check spark plug type and electrode gap</li>
+            <li>Check cylinder compression pressure</li>
+            <li>Check exhaust pipe for blockage</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="symptom-card">
+        <div class="symptom-card-header">💥 Backfire</div>
+        <div class="symptom-card-body">
+          <ol>
+            <li>Remove spark plug; check spark is normal</li>
+            <li>Check ignition timing is correct</li>
+            <li>Check valve clearance for leakage</li>
+            <li>Check injector for blockage or leaking</li>
+            <li>Check oxygen sensor operation</li>
+          </ol>
+        </div>
+      </div>
+
+    </div>
+
+    <h2>Before Starting Fault Analysis — Checklist</h2>
+    <p>From the Rongmao EFI Owner Manual — complete this checklist before beginning any fault code diagnosis:</p>
+    <ol>
+      <li>Confirm the MIL lamp works correctly (illuminates on key-on self-check).</li>
+      <li>Clear history fault codes, then repeat the fault condition and re-read.</li>
+      <li>When a new fault code appears, note the exact conditions (hot/cold, idle/acceleration, etc.).</li>
+      <li>Visually inspect: check for fuel pipe leakage; check for blockage or damage to the intake pipe; check ground connections are secure; check all connectors are properly seated.</li>
+      <li>If any visual defect is found, repair it first before proceeding with fault code diagnosis.</li>
+      <li>If no cause is found after completing all steps: do not ignore maintenance items (cylinder pressure, mechanical timing, fuel quality). As a last resort, swap the ECU to test — if the fault disappears, the ECU was the root cause.</li>
+    </ol>
+
+    <h2>Clearing DTCs</h2>
+    <p>On Rongmao / Delphi / Motion systems, codes must be cleared with an OBD-2 scanner — the battery-disconnect method is not guaranteed to clear stored codes on these ECUs (it will reset live data but not always non-volatile fault memory). Use Car Scanner or HUD ECU Hacker to send the "Clear fault codes" command after completing your repair.</p>
+
+    <div class="callout callout-warn">
+      <strong>⚠️ Always repair the root cause first.</strong> Clearing a code without fixing the underlying fault will cause it to return within minutes of running the engine.
+    </div>
+
+    <h2>Related Guides &amp; Resources</h2>
+    <ul>
+      <li><a href="gy6-efi-cel-flash-codes.html">GY6 EFI CEL Flash Codes — older KEIHIN/clone ECUs without OBD-2</a></li>
+      <li><a href="gy6-efi-fuel-injection-troubleshooting.html">GY6 EFI Fuel Injection Full Troubleshooting Guide</a></li>
+      <li><a href="gy6-efi-hud-ecu-hacker-setup.html">HUD ECU Hacker Setup Guide</a></li>
+      <li><a href="gy6-no-start-troubleshooting.html">GY6 Won't Start — Full Troubleshooting Checklist</a></li>
+      <li><a href="gy6-air-leak-diagnosis.html">Diagnosing Air Leaks and Vacuum Leaks</a></li>
+      <li><a href="../repair-guides/gy6-ignition-coil-guide.html">Ignition Coil Replacement Guide</a></li>
+    </ul>
+
+    <div class="source-box">
+      <strong>Sources &amp; Attribution:</strong>
+      <a href="https://www.gy6-injectie-centrum.nl/gy6-injectie/foutcodes" target="_blank" rel="noopener">GY6 Injectie Centrum — Foutcodes</a> (Rongmao / Delphi / Motion DTC table);
+      RongMao EFI System Owner's Manual (step-by-step diagnostic procedures, symptom flows, precautions).
+      Licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>.
+      Last updated: 2026-05-14.
+    </div>
+
+  </main>
+
+  <script src="../script.js"></script>
+
+  <footer class="guide-footer">
+    <p>ISMR — Interactive Scooter Manuals for Repair. Content for educational purposes. CC BY-SA 4.0.</p>
+    <p style="margin-top: 1rem;">
+      <a href="../index.html" style="color: var(--accent);">⚙️ ISMR Home</a> ·
+      <a href="index.html" style="color: var(--accent);">← All Diagnostics</a> ·
+      <a href="gy6-efi-cel-flash-codes.html" style="color: var(--accent);">CEL Flash Codes (older ECUs) →</a>
+    </p>
+  </footer>
+
+</body>
+</html>

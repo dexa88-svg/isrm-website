@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
   <link rel="canonical" href="https://ismr.online/parts/gy6-engine-codes-parts-compatibility.html">
   <title>GY6 Engine Codes & Parts Compatibility Guide — ISMR</title>
   <style>
@@ -29,14 +30,14 @@
       border-left: 4px solid var(--primary);
       padding: 0.8rem 1.2rem;
       margin: 1.5rem 0;
-      border-radius: 0 var(--radius-md, 8px) var(--radius-md, 8px) 0;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
     }
     .guide-tag {
       display: inline-block;
       background: rgba(0,168,204,0.1);
       color: var(--accent);
       border: 1px solid var(--accent);
-      border-radius: var(--radius-lg, 12px);
+      border-radius: var(--radius-lg);
       padding: 2px 10px;
       font-size: 0.78rem;
       margin-right: 6px;
@@ -65,9 +66,9 @@
     code {
       background: var(--surface-2);
       border: 1px solid var(--border);
-      border-radius: var(--radius-sm, 4px);
+      border-radius: var(--radius-sm);
       padding: 1px 5px;
-      font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
       font-size: 0.9em;
       color: var(--accent);
     }
@@ -76,14 +77,14 @@
       border-left: 4px solid var(--danger);
       padding: 0.8rem 1.2rem;
       margin: 1.5rem 0;
-      border-radius: 0 var(--radius-md, 8px) var(--radius-md, 8px) 0;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
     }
     .tip-box {
       background: rgba(6,167,125,0.07);
       border-left: 4px solid var(--success, var(--success));
       padding: 0.8rem 1.2rem;
       margin: 1.5rem 0;
-      border-radius: 0 var(--radius-md, 8px) var(--radius-md, 8px) 0;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
     }
     ol li, ul li { margin-bottom: 0.4rem; }
     /* Transitions */
@@ -106,6 +107,12 @@
       h2 { font-size: 1.15rem; }
       table { display: block; overflow-x: auto; }
     }
+  
+    /* Design system: elevation */
+    .source-box, .warning-box, .info-box, .callout, .check-section, .guide-card {
+      box-shadow: var(--shadow-sm);
+    }
+    .guide-tag:hover, nav a:hover { box-shadow: var(--shadow-sm); }
   </style>
 
   <script type="application/ld+json">

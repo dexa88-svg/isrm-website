@@ -1617,5 +1617,50 @@
     "addedAt": "2026-05-14T00:00:00Z",
     "lastChecked": "2026-05-14T00:00:00Z",
     "active": true
+  },
+  {
+    "url": "https://www.retrospectivescooters.com/news-and-guides/",
+    "name": "Retrospective Scooters \u2014 Repair & Restoration Guides",
+    "type": "blog",
+    "category": "repair-guides",
+    "addedAt": "2026-05-15",
+    "lastChecked": "2026-05-15",
+    "active": true
+  },
+  {
+    "url": "https://www.pedparts.co.uk/blog",
+    "name": "PedParts UK \u2014 Moped Repair & Tuning Blog",
+    "type": "blog",
+    "category": "repair-guides",
+    "addedAt": "2026-05-15",
+    "lastChecked": "2026-05-15",
+    "active": true
+  },
+  {
+    "url": "https://www.diygokarts.com/community/",
+    "name": "DIY GoKarts Community Forum (GY6 threads)",
+    "type": "forum",
+    "category": "repair-guides",
+    "addedAt": "2026-05-15",
+    "lastChecked": "2026-05-15",
+    "active": true
+  },
+  {
+    "url": "https://www.zandri.uk/",
+    "name": "Zandri Scooter Parts UK",
+    "type": "other",
+    "category": "parts",
+    "addedAt": "2026-05-15",
+    "lastChecked": "2026-05-15",
+    "active": true
+  },
+  {
+    "url": "https://maxiscoot.com/en/",
+    "name": "Maxiscoot \u2014 Scooter Parts & Maintenance Kits",
+    "type": "other",
+    "category": "parts",
+    "addedAt": "2026-05-15",
+    "lastChecked": "2026-05-15",
+    "active": true
   }
 ]

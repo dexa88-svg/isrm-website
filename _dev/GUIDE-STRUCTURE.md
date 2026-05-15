@@ -204,8 +204,10 @@ After the main content, add a "Related Videos" section linking to supplementary 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="[150–160 character summary of page content for search engines — REQUIRED for SEO]">
   <link rel="canonical" href="https://ismr.online/[SECTION]/[SLUG].html">
   <title>[Scooter Model] [Repair Type] Guide — ISMR</title>
+  <!-- TITLE: keep under 60 characters total including " — ISMR" suffix -->
   <!--
     JSON-LD Structured Data — REQUIRED on every page.
     • repair-guides  → use @type "HowTo"

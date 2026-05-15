@@ -96,9 +96,11 @@ CSS custom properties (canonical reference: `_dev/documentation/design-system/st
 
 Every repair guide must include: minimum 1 embedded video (use `youtube-nocookie.com`, not `youtube.com`), step-by-step instructions, tools/parts list, difficulty + time estimate, safety warnings, source attribution, and a **"Last Updated" date** (policy in `_dev/PAGE-UPDATE-TRACKING.md`).
 
-**SEO checklist — every new HTML page must have all three before publishing:**
+**SEO checklist — every new HTML page must have all four before publishing:**
 
-- [ ] **Canonical tag** — `<link rel="canonical" href="https://ismr.online/[section]/[slug].html">` immediately after the viewport meta in `<head>`
+- [ ] **Meta description** — `<meta name="description" content="[150–160 char summary]">` immediately after the viewport meta. **Required** — pages without it will fail site scans.
+- [ ] **Title length** — `<title>` must be **60 characters or fewer** (including " — ISMR" suffix).
+- [ ] **Canonical tag** — `<link rel="canonical" href="https://ismr.online/[section]/[slug].html">` in `<head>`
 - [ ] **JSON-LD structured data** — a `<script type="application/ld+json">` block in `<head>` using the schema matching the section:
   - `repair-guides/` → `"@type": "HowTo"`
   - `diagnostics/` → `"@type": "Article"`

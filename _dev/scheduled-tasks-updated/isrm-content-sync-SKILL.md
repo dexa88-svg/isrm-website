@@ -203,8 +203,9 @@ Strictly follow this template. No `<script>` tags, no forms, no inline event han
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="[150–160 character summary of page content for search engines]">
   <link rel="canonical" href="https://ismr.online/[SECTION]/[SLUG].html">
-  <title>[Page Title] — ISMR</title>
+  <title>[Page Title — max 60 chars] — ISMR</title>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
