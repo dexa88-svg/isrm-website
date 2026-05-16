@@ -101,11 +101,18 @@ CSS custom properties (canonical reference: `_dev/documentation/design-system/st
 
 Every repair guide must include: minimum 1 embedded video (use `youtube-nocookie.com`, not `youtube.com`), step-by-step instructions, tools/parts list, difficulty + time estimate, safety warnings, source attribution, and a **"Last Updated" date** (policy in `_dev/PAGE-UPDATE-TRACKING.md`).
 
-**SEO checklist — every new HTML page must have all four before publishing:**
+**SEO checklist — every new HTML page must have all five before publishing:**
 
 - [ ] **Meta description** — `<meta name="description" content="[150–160 char summary]">` immediately after the viewport meta. **Required** — pages without it will fail site scans.
 - [ ] **Title length** — `<title>` must be **60 characters or fewer** (including " — ISMR" suffix).
 - [ ] **Canonical tag** — `<link rel="canonical" href="https://ismr.online/[section]/[slug].html">` in `<head>`
+- [ ] **Favicons — all three lines, using absolute paths (no `../`):**
+  ```html
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  ```
+  Place immediately after the canonical tag. Missing or incomplete favicon tags cause the tab/browser icon to be blank.
 - [ ] **JSON-LD structured data** — a `<script type="application/ld+json">` block in `<head>` using the schema matching the section:
   - `repair-guides/` → `"@type": "HowTo"`
   - `diagnostics/` → `"@type": "Article"`

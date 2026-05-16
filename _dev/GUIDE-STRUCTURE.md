@@ -231,7 +231,10 @@ After the main content, add a "Related Videos" section linking to supplementary 
   <meta name="twitter:description" content="[Same as meta description]">
   <meta name="twitter:image" content="https://ismr.online/og-image.jpg">
   <link rel="canonical" href="https://ismr.online/[SECTION]/[SLUG].html">
-  <link rel="icon" href="../favicon.ico">
+  <!-- Favicons — all three lines required on every page -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <title>[Scooter Model] [Repair Type] Guide — ISMR</title>
   <!-- TITLE: keep under 60 characters total including " — ISMR" -->
 
