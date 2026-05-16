@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Diagnose carburetor needle height problems on GY6 and Piaggio scooters. Identify rich or lean mid-throttle symptoms with this step-by-step flowchart.">
+  <meta property="og:title" content="Carburetor Needle Height Diagnostics — ISMR">
+  <meta property="og:description" content="Diagnose carburetor needle height problems on GY6 and Piaggio scooters. Identify rich or lean mid-throttle symptoms with this step-by-step flowchart.">
+  <meta property="og:url" content="https://ismr.online/diagnostics/carburetor-needle-height-diagnostics.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ismr.online/og-image.jpg">
+  <meta property="og:site_name" content="ISMR — Interactive Scooter Manuals for Repair">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Carburetor Needle Height Diagnostics — ISMR">
+  <meta name="twitter:description" content="Diagnose carburetor needle height problems on GY6 and Piaggio scooters. Identify rich or lean mid-throttle symptoms with this step-by-step flowchart.">
+  <meta name="twitter:image" content="https://ismr.online/og-image.jpg">
+  <link rel="canonical" href="https://ismr.online/diagnostics/carburetor-needle-height-diagnostics.html">
+  <link rel="icon" href="../favicon.ico">
+  <title>Carburetor Needle Height Diagnostics — ISMR</title>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-53LY3KPDYM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-53LY3KPDYM');
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "name": "Carburetor Needle Height Diagnostics",
+    "description": "How to diagnose whether a rich or lean needle position is causing mid-throttle problems on carbureted GY6 and Piaggio scooters.",
+    "author": { "@type": "Organization", "name": "ISMR", "url": "https://ismr.online" },
+    "dateModified": "2026-05-16",
+    "publisher": { "@type": "Organization", "name": "ISMR", "url": "https://ismr.online" }
+  }
+  </script>
+
+  <link rel="stylesheet" href="../styles.css">
+
+  <style>
+    .guide-content { max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .guide-content h2 {
+      font-size: 1.55rem; color: var(--text-primary);
+      margin-top: 2.5rem; margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+    }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.6rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.7; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol { padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary); }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content code {
+      background: var(--surface-2); border: 1px solid var(--border); color: var(--accent-light);
+      padding: 0.15rem 0.45rem; border-radius: var(--radius-sm);
+      font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace; font-size: 0.87em;
+    }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th {
+      background: var(--surface-2); color: var(--primary); font-weight: 600; padding: 0.7rem 1rem;
+      text-align: left; border: 1px solid var(--border); text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26,35,50,0.6); }
+    .callout { padding: 1rem 1.25rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 1.5rem 0; font-size: 0.95rem; color: var(--text-secondary); }
+    .callout strong { color: var(--text-primary); }
+    .callout-warn { background: rgba(245,166,35,0.08); border: 1px solid rgba(245,166,35,0.25); border-left: 4px solid var(--warning); }
+    .callout-danger { background: rgba(214,48,49,0.08); border: 1px solid rgba(214,48,49,0.25); border-left: 4px solid var(--danger); }
+    .callout-tip { background: rgba(6,167,125,0.08); border: 1px solid rgba(6,167,125,0.25); border-left: 4px solid var(--success); }
+    .source-box {
+      background: rgba(255,107,53,0.07); border: 1px solid rgba(255,107,53,0.2);
+      border-left: 4px solid var(--primary); border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.95rem; color: var(--text-secondary);
+    }
+    .source-box strong { color: var(--text-primary); }
+    .source-box a { color: var(--accent); }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+    .guide-tag {
+      background: rgba(0,168,204,0.1); color: var(--accent); border: 1px solid rgba(0,168,204,0.3);
+      padding: 0.25rem 0.7rem; border-radius: var(--radius-pill); font-size: 0.78rem; font-weight: 500;
+    }
+    .applies-to {
+      background: rgba(255,107,53,0.07); border: 1px solid rgba(255,107,53,0.2);
+      border-left: 4px solid var(--primary); border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem; margin-top: 1.5rem; font-size: 0.95rem; color: var(--text-secondary);
+    }
+    .applies-to strong { color: var(--text-primary); }
+    .video-embed { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin: 1.5rem 0; }
+    .video-embed-title { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; }
+    .video-container { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 0.75rem; }
+    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .video-source { font-size: 0.85rem; color: var(--text-tertiary); }
+    .video-source a { color: var(--accent); }
+    .related-videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 1rem; }
+    .video-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; transition: var(--transition); }
+    .video-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow-sm); }
+    .video-card h4 { color: var(--text-primary); margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600; }
+    .video-card p { font-size: 0.875rem; margin-bottom: 0.75rem; color: var(--text-secondary); }
+    .video-card a { color: var(--primary); font-weight: 600; font-size: 0.9rem; }
+
+    /* Symptom cards */
+    .symptom-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin: 1.5rem 0; }
+    .symptom-card { border-radius: var(--radius-lg); padding: 1.25rem; border: 1px solid; }
+    .symptom-card.rich { background: rgba(0,168,204,0.06); border-color: rgba(0,168,204,0.25); border-left: 4px solid var(--accent); }
+    .symptom-card.lean { background: rgba(255,107,53,0.06); border-color: rgba(255,107,53,0.25); border-left: 4px solid var(--primary); }
+    .symptom-card h4 { margin: 0 0 0.75rem; font-size: 1rem; }
+    .symptom-card.rich h4 { color: var(--accent); }
+    .symptom-card.lean h4 { color: var(--primary); }
+    .symptom-card ul { margin: 0; padding-left: 1.2rem; }
+    .symptom-card li { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.4rem; }
+
+    /* Diagnostic flowchart */
+    .flowchart { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin: 1.5rem 0; }
+    .flowchart svg { display: block; margin: 0 auto; }
+
+    /* Check items */
+    .check-list { list-style: none; padding: 0; margin: 1rem 0; }
+    .check-list li { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.6rem 0; border-bottom: 1px solid var(--border); color: var(--text-secondary); font-size: 0.95rem; }
+    .check-list li:last-child { border-bottom: none; }
+    .check-list .check-num { background: var(--surface-2); color: var(--accent); border: 1px solid rgba(0,168,204,0.3); border-radius: 50%; width: 24px; height: 24px; min-width: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 700; margin-top: 0.1rem; }
+    .check-list .check-label strong { color: var(--text-primary); display: block; margin-bottom: 0.2rem; }
+
+    /* Plug colour reference */
+    .plug-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin: 1.25rem 0; }
+    .plug-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; text-align: center; }
+    .plug-swatch { width: 48px; height: 48px; border-radius: 50%; margin: 0 auto 0.75rem; border: 2px solid var(--border); }
+    .plug-card h5 { color: var(--text-primary); font-size: 0.9rem; margin: 0 0 0.35rem; }
+    .plug-card p { font-size: 0.82rem; color: var(--text-secondary); margin: 0; }
+
+    .guide-footer { background: var(--surface); border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.825rem; color: var(--text-tertiary); }
+    @media (max-width: 768px) { .guide-content { padding: 1.5rem 1rem 3rem; } }
+    @media (max-width: 480px) { .guide-content h2 { font-size: 1.2rem; } }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <span class="nav-logo">🔧</span>
+        <span class="nav-title">ISMR</span>
+        <span class="nav-subtitle">Interactive Scooter Manuals</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-menu">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="../repair-guides/index.html" class="nav-link">Repair Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link active">Diagnostics</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
+        <a href="../index.html">ISMR Home</a>
+        <span>›</span>
+        <a href="index.html">Diagnostics</a>
+        <span>›</span>
+        Needle Height Diagnostics
+      </div>
+      <h1>Carburetor Needle Height Diagnostics</h1>
+      <div class="guide-meta">
+        <span>Beginner</span>
+        <span>·</span>
+        <span>~20 min to diagnose</span>
+        <span>·</span>
+        <span>Updated: 2026-05-16</span>
+      </div>
+      <div class="guide-tags">
+        <span class="guide-tag">diagnostics</span>
+        <span class="guide-tag">carburetor</span>
+        <span class="guide-tag">GY6</span>
+        <span class="guide-tag">Piaggio</span>
+        <span class="guide-tag">fuel system</span>
+        <span class="guide-tag">mid-throttle</span>
+      </div>
+      <div class="applies-to">
+        <strong>Applies to:</strong> All slide-type carbureted scooters — GY6 50cc &amp; 125cc/150cc, Piaggio Zip 50 2T &amp; 4T, Vespa Primavera 50, BTC Riva, La Souris Sourini/City, Santini Capri, and any 50–150cc petrol scooter with a slide carburetor. Does <strong>not</strong> apply to fuel-injected (EFI) models.
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="guide-content">
+
+    <div class="source-box">
+      <strong>📚 Sources:</strong>
+      GY6 139QMB Factory Service Manual,
+      Piaggio Zip 50 4T Workshop Manual,
+      <a href="https://www.vespaforum.com" target="_blank" rel="noopener">VespaForum.com</a>,
+      <a href="https://www.chinesescootercommunity.com" target="_blank" rel="noopener">Chinese Scooter Community</a>
+    </div>
+
+    <p>Before adjusting your carburetor needle, it is important to confirm that the needle is actually the cause of your problem. The carburetor has three main circuits — the <strong>idle circuit</strong> (0–25% throttle), the <strong>needle circuit</strong> (25%–75% throttle), and the <strong>main jet circuit</strong> (75%–100% throttle). Symptoms in different throttle ranges point to different circuits. This guide walks you through a systematic checklist to determine whether your mid-throttle symptoms are needle-related, and whether the needle is running too rich or too lean.</p>
+
+    <!-- LEAD VIDEO -->
+    <div class="video-embed">
+      <div class="video-embed-title">🎬 How to Diagnose a Carbureted Scooter — Rich vs Lean</div>
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/pTKZrV5MHHA"
+          title="How to Diagnose Rich vs Lean Carburetor on a Scooter"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="video-source">
+        "Rich vs Lean — How to Diagnose Your Carburetor" by MC Garage
+        — <a href="https://www.youtube.com/watch?v=pTKZrV5MHHA" target="_blank" rel="noopener">↗ Watch on YouTube</a>
+      </p>
+    </div>
+
+    <!-- STEP 1: CONFIRM MID-THROTTLE RANGE -->
+    <h2>Step 1 — Confirm the Problem is in the Mid-Throttle Range</h2>
+
+    <p>The carburetor needle only has a meaningful effect between approximately <strong>25% and 75% throttle</strong>. To check whether your problem falls in this range, do the following test on a safe, quiet road:</p>
+
+    <ol>
+      <li>Start the engine and let it warm up fully (at least 5 minutes of riding).</li>
+      <li>Hold the throttle at roughly <strong>1/4 open</strong> (just off idle). Note whether the engine feels smooth or whether it hesitates, surges, or pops.</li>
+      <li>Open to roughly <strong>1/2 throttle</strong> — a gentle cruising speed. This is the range most affected by needle position. Note any flat spots, stumbles, black smoke, or surging.</li>
+      <li>Open to <strong>3/4 and full throttle</strong>. Note whether top-end power feels strong or if performance drops off.</li>
+    </ol>
+
+    <div class="callout callout-tip">
+      💡 <strong>Throttle range test rule of thumb:</strong> If the symptom only happens at idle or just off idle → <strong>idle circuit</strong>. If it happens mainly in the cruise/mid range → <strong>needle</strong>. If it mainly affects wide-open power → <strong>main jet</strong>. Many problems span more than one range, so look for where the symptom is <em>worst</em>.
+    </div>
+
+    <!-- THROTTLE RANGE MAP -->
+    <div class="flowchart">
+      <svg viewBox="0 0 700 120" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif" font-size="13">
+        <!-- Track -->
+        <rect x="40" y="50" width="620" height="20" rx="10" fill="#1a2332" stroke="#2a3548" stroke-width="1.5"/>
+
+        <!-- Idle zone -->
+        <rect x="40" y="50" width="155" height="20" rx="10" fill="rgba(245,166,35,0.25)" stroke="rgba(245,166,35,0.5)" stroke-width="1"/>
+        <text x="117" y="42" text-anchor="middle" fill="#f5a623" font-size="12" font-weight="600">IDLE CIRCUIT</text>
+        <text x="117" y="86" text-anchor="middle" fill="#a0a0a0" font-size="11">0–25% throttle</text>
+
+        <!-- Needle zone -->
+        <rect x="195" y="50" width="310" height="20" fill="rgba(0,168,204,0.25)" stroke="rgba(0,168,204,0.5)" stroke-width="1"/>
+        <text x="350" y="42" text-anchor="middle" fill="#00a8cc" font-size="12" font-weight="600">NEEDLE CIRCUIT ◀ this guide</text>
+        <text x="350" y="86" text-anchor="middle" fill="#a0a0a0" font-size="11">25–75% throttle</text>
+
+        <!-- Main jet zone -->
+        <rect x="505" y="50" width="155" height="20" rx="10" fill="rgba(255,107,53,0.25)" stroke="rgba(255,107,53,0.5)" stroke-width="1"/>
+        <text x="582" y="42" text-anchor="middle" fill="#ff6b35" font-size="12" font-weight="600">MAIN JET</text>
+        <text x="582" y="86" text-anchor="middle" fill="#a0a0a0" font-size="11">75–100% throttle</text>
+
+        <!-- Labels -->
+        <text x="40"  y="110" text-anchor="middle" fill="#a0a0a0" font-size="11">Closed</text>
+        <text x="660" y="110" text-anchor="middle" fill="#a0a0a0" font-size="11">Full open</text>
+      </svg>
+    </div>
+
+    <p>If your problem is clearly in the mid-throttle range, continue to Step 2 to determine whether it is rich or lean.</p>
+
+    <!-- STEP 2: RULE OUT OTHER CAUSES -->
+    <h2>Step 2 — Rule Out Other Common Causes First</h2>
+
+    <p>Before blaming the needle, work through this quick exclusion checklist. Each of these issues can mimic a needle problem and should be checked first because they are easier to inspect.</p>
+
+    <ul class="check-list">
+      <li>
+        <span class="check-num">1</span>
+        <span class="check-label">
+          <strong>Air filter — clean or replace</strong>
+          A clogged air filter restricts airflow and makes the mixture artificially rich at all throttle positions. Remove and inspect the filter. If it is grey or black with dirt, clean or replace it before making any fuel adjustments.
+        </span>
+      </li>
+      <li>
+        <span class="check-num">2</span>
+        <span class="check-label">
+          <strong>Air leaks — check intake manifold and carb gaskets</strong>
+          A vacuum leak between the carburetor and the engine introduces unmetered air, which leans the mixture. Spray a small amount of carb cleaner around the intake manifold joints while the engine idles — if the idle changes, you have found a leak. Fix this before adjusting the needle.
+        </span>
+      </li>
+      <li>
+        <span class="check-num">3</span>
+        <span class="check-label">
+          <strong>Fuel delivery — verify the float level is correct</strong>
+          A float set too high causes a persistently rich mixture across all throttle positions. If fuel is dripping from the overflow tube, the float is too high and should be adjusted before touching the needle.
+        </span>
+      </li>
+      <li>
+        <span class="check-num">4</span>
+        <span class="check-label">
+          <strong>Needle jet — check for wear or blockage</strong>
+          The needle jet is the small brass tube the needle slides through. If it is partially blocked with varnish or gum, it will restrict fuel delivery. If it is worn oval (common on high-mileage engines), the mixture will be permanently rich. Remove, inspect, and clean the jet with carb cleaner and a fine wire.
+        </span>
+      </li>
+      <li>
+        <span class="check-num">5</span>
+        <span class="check-label">
+          <strong>Choke — confirm it is fully open when warm</strong>
+          A choke that is stuck partially closed will make the engine run rich at all throttle openings. Confirm the choke plate or enrichment circuit is fully disengaged once the engine is warm.
+        </span>
+      </li>
+      <li>
+        <span class="check-num">6</span>
+        <span class="check-label">
+          <strong>Spark plug — read it for mixture confirmation</strong>
+          Remove the spark plug after a ride and read its colour (see Step 3 below). This is the most direct evidence of whether the mixture is rich or lean, and confirms the needle diagnosis before you make a physical change.
+        </span>
+      </li>
+    </ul>
+
+    <div class="callout callout-warn">
+      ⚠️ <strong>Don't skip the exclusion checklist:</strong> Adjusting the needle on top of an air leak or a partially blocked jet will not solve the problem and may make it harder to diagnose. Take 10 minutes to run through each check before opening the carburetor.
+    </div>
+
+    <!-- STEP 3: READ SPARK PLUG -->
+    <h2>Step 3 — Read the Spark Plug Colour</h2>
+
+    <p>The spark plug is a direct window into what is happening in the combustion chamber. Removing it after a warm ride tells you immediately whether the mixture is rich, lean, or correct. This is the most reliable single diagnostic step.</p>
+
+    <div class="callout callout-tip">
+      💡 <strong>How to get a clean reading:</strong> Do a warm ride at mid-throttle (not idle, not wide open) for 5–10 minutes, then pull over and stop the engine <em>without idling it down</em>. Remove the spark plug immediately. The colour you see now reflects your mid-throttle mixture.
+    </div>
+
+    <div class="plug-grid">
+      <div class="plug-card">
+        <div class="plug-swatch" style="background: #c8a96a;"></div>
+        <h5>Light tan / grey</h5>
+        <p>✅ Correct mixture. Needle is set well.</p>
+      </div>
+      <div class="plug-card">
+        <div class="plug-swatch" style="background: #2a1a0a;"></div>
+        <h5>Black / sooty</h5>
+        <p>🔵 Running <strong>rich</strong>. Move clip up (lean out).</p>
+      </div>
+      <div class="plug-card">
+        <div class="plug-swatch" style="background: #e8d0b0;"></div>
+        <h5>White / chalk</h5>
+        <p>🔴 Running <strong>lean</strong>. Move clip down (richen).</p>
+      </div>
+      <div class="plug-card">
+        <div class="plug-swatch" style="background: #8b4513;"></div>
+        <h5>Dark brown / oily</h5>
+        <p>⚠️ Possible oil burning — check engine compression and valve seals.</p>
+      </div>
+    </div>
+
+    <!-- STEP 4: SYMPTOM IDENTIFICATION -->
+    <h2>Step 4 — Identify Your Symptoms: Rich or Lean?</h2>
+
+    <p>Use the symptom cards below to match what your scooter is doing to a rich or lean needle condition. It is common to have several symptoms from the same column — they reinforce each other.</p>
+
+    <div class="symptom-grid">
+      <div class="symptom-card rich">
+        <h4>🔵 Needle Too High — RICH mid-throttle</h4>
+        <ul>
+          <li>Sluggish acceleration from 25%–75% throttle</li>
+          <li>Black or dark grey smoke from the exhaust, especially under load</li>
+          <li>Strong smell of unburnt petrol from the exhaust</li>
+          <li>Engine "blubbering" or four-stroking at cruise speed (burbling, irregular note)</li>
+          <li>Black sooty deposit on spark plug after a ride</li>
+          <li>Poor fuel economy</li>
+          <li>Engine feels flat and lazy in the mid-range but idles fine</li>
+          <li>Throttle response improves briefly with choke partially open (unusual)</li>
+        </ul>
+      </div>
+      <div class="symptom-card lean">
+        <h4>🔴 Needle Too Low — LEAN mid-throttle</h4>
+        <ul>
+          <li>Hesitation or stumble when opening the throttle to mid-range</li>
+          <li>Surging or hunting at a steady cruise speed</li>
+          <li>Engine pinging or pinking under load (lean knock)</li>
+          <li>Overheating — engine runs hotter than usual</li>
+          <li>White or chalky spark plug after a ride</li>
+          <li>Acceleration feels jerky rather than smooth</li>
+          <li>Top speed reached but mid-range feels strained</li>
+          <li>Symptoms worsen in hot weather or at lower altitudes</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- DIAGNOSTIC FLOWCHART -->
+    <h2>Step 5 — Diagnostic Flowchart</h2>
+
+    <p>Work through the flowchart below from top to bottom. It combines your throttle range test, spark plug reading, and symptoms to give you a clear action.</p>
+
+    <div class="flowchart">
+      <svg viewBox="0 0 680 560" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif" font-size="12.5">
+
+        <!-- START -->
+        <rect x="240" y="10" width="200" height="40" rx="20" fill="#004e89" stroke="#00a8cc" stroke-width="1.5"/>
+        <text x="340" y="35" text-anchor="middle" fill="#f5f5f5" font-weight="600">START: Scooter runs poorly</text>
+
+        <!-- Q1: mid-throttle? -->
+        <line x1="340" y1="50" x2="340" y2="80" stroke="#2a3548" stroke-width="1.5"/>
+        <polygon points="334,80 346,80 340,90" fill="#2a3548"/>
+        <rect x="200" y="90" width="280" height="50" rx="8" fill="#1a2332" stroke="#2a3548" stroke-width="1.5"/>
+        <text x="340" y="112" text-anchor="middle" fill="#a0a0a0">Is the problem mainly at</text>
+        <text x="340" y="128" text-anchor="middle" fill="#f5f5f5" font-weight="600">25%–75% throttle (cruising)?</text>
+
+        <!-- YES branch -->
+        <line x1="340" y1="140" x2="340" y2="170" stroke="#2a3548" stroke-width="1.5"/>
+        <polygon points="334,170 346,170 340,180" fill="#2a3548"/>
+        <text x="355" y="158" fill="#06a77d" font-size="11" font-weight="600">YES</text>
+
+        <!-- NO branch -->
+        <line x1="480" y1="115" x2="580" y2="115" stroke="#2a3548" stroke-width="1.5"/>
+        <text x="510" y="108" fill="#ff6b35" font-size="11" font-weight="600">NO</text>
+        <rect x="510" y="90" width="0" height="0"/>
+        <rect x="555" y="97" width="120" height="36" rx="6" fill="#1a2332" stroke="#ff6b35" stroke-width="1.2"/>
+        <text x="615" y="113" text-anchor="middle" fill="#ff6b35" font-size="11">Check idle circuit</text>
+        <text x="615" y="126" text-anchor="middle" fill="#ff6b35" font-size="11">or main jet</text>
+
+        <!-- Q2: exclusions done? -->
+        <rect x="190" y="180" width="300" height="50" rx="8" fill="#1a2332" stroke="#2a3548" stroke-width="1.5"/>
+        <text x="340" y="200" text-anchor="middle" fill="#a0a0a0">Have you checked air filter,</text>
+        <text x="340" y="216" text-anchor="middle" fill="#f5f5f5" font-weight="600">air leaks, choke &amp; fuel delivery?</text>
+
+        <!-- NO branch from Q2 -->
+        <line x1="190" y1="205" x2="100" y2="205" stroke="#2a3548" stroke-width="1.5"/>
+        <line x1="100" y1="205" x2="100" y2="270" stroke="#2a3548" stroke-width="1.5"/>
+        <text x="140" y="198" fill="#ff6b35" font-size="11" font-weight="600">NO</text>
+        <rect x="20" y="258" width="160" height="36" rx="6" fill="#1a2332" stroke="#ff6b35" stroke-width="1.2"/>
+        <text x="100" y="274" text-anchor="middle" fill="#ff6b35" font-size="11">Complete Step 2</text>
+        <text x="100" y="287" text-anchor="middle" fill="#ff6b35" font-size="11">exclusion checklist</text>
+
+        <!-- YES branch from Q2 -->
+        <line x1="340" y1="230" x2="340" y2="265" stroke="#2a3548" stroke-width="1.5"/>
+        <polygon points="334,265 346,265 340,275" fill="#2a3548"/>
+        <text x="355" y="250" fill="#06a77d" font-size="11" font-weight="600">YES</text>
+
+        <!-- Q3: plug colour -->
+        <rect x="190" y="275" width="300" height="50" rx="8" fill="#1a2332" stroke="#2a3548" stroke-width="1.5"/>
+        <text x="340" y="295" text-anchor="middle" fill="#a0a0a0">Read spark plug colour</text>
+        <text x="340" y="311" text-anchor="middle" fill="#f5f5f5" font-weight="600">after a mid-throttle ride</text>
+
+        <!-- Black plug -->
+        <line x1="260" y1="325" x2="170" y2="370" stroke="#2a3548" stroke-width="1.5"/>
+        <text x="192" y="348" fill="#00a8cc" font-size="11" font-weight="600">Black/sooty</text>
+        <rect x="80" y="370" width="180" height="50" rx="8" fill="rgba(0,168,204,0.08)" stroke="rgba(0,168,204,0.4)" stroke-width="1.5"/>
+        <text x="170" y="390" text-anchor="middle" fill="#00a8cc" font-weight="600">RICH mixture</text>
+        <text x="170" y="408" text-anchor="middle" fill="#a0a0a0">Move circlip UP</text>
+        <text x="170" y="421" text-anchor="middle" fill="#a0a0a0">(lower groove #)</text>
+
+        <!-- White plug -->
+        <line x1="420" y1="325" x2="510" y2="370" stroke="#2a3548" stroke-width="1.5"/>
+        <text x="484" y="348" fill="#ff6b35" font-size="11" font-weight="600">White/chalk</text>
+        <rect x="420" y="370" width="180" height="50" rx="8" fill="rgba(255,107,53,0.08)" stroke="rgba(255,107,53,0.4)" stroke-width="1.5"/>
+        <text x="510" y="390" text-anchor="middle" fill="#ff6b35" font-weight="600">LEAN mixture</text>
+        <text x="510" y="408" text-anchor="middle" fill="#a0a0a0">Move circlip DOWN</text>
+        <text x="510" y="421" text-anchor="middle" fill="#a0a0a0">(higher groove #)</text>
+
+        <!-- Tan plug -->
+        <line x1="340" y1="325" x2="340" y2="370" stroke="#2a3548" stroke-width="1.5"/>
+        <polygon points="334,370 346,370 340,380" fill="#2a3548"/>
+        <text x="355" y="348" fill="#06a77d" font-size="11" font-weight="600">Tan/grey</text>
+        <rect x="240" y="380" width="200" height="50" rx="8" fill="rgba(6,167,125,0.08)" stroke="rgba(6,167,125,0.4)" stroke-width="1.5"/>
+        <text x="340" y="400" text-anchor="middle" fill="#06a77d" font-weight="600">Mixture is CORRECT</text>
+        <text x="340" y="418" text-anchor="middle" fill="#a0a0a0">Problem is elsewhere</text>
+
+        <!-- Action box -->
+        <line x1="170" y1="420" x2="170" y2="490" stroke="#2a3548" stroke-width="1.5"/>
+        <line x1="510" y1="420" x2="510" y2="490" stroke="#2a3548" stroke-width="1.5"/>
+        <line x1="170" y1="490" x2="510" y2="490" stroke="#2a3548" stroke-width="1.5"/>
+        <line x1="340" y1="490" x2="340" y2="510" stroke="#2a3548" stroke-width="1.5"/>
+        <polygon points="334,510 346,510 340,520" fill="#2a3548"/>
+        <rect x="190" y="520" width="300" height="34" rx="8" fill="#004e89" stroke="#00a8cc" stroke-width="1.5"/>
+        <text x="340" y="542" text-anchor="middle" fill="#f5f5f5" font-weight="600">→ Follow the Repair Guide to adjust</text>
+      </svg>
+    </div>
+
+    <!-- STEP 6: CONFIRM AFTER ADJUSTMENT -->
+    <h2>Step 6 — Confirm the Diagnosis After Adjustment</h2>
+
+    <p>After moving the clip one groove and reassembling the carburetor, carry out another road test and another plug reading. This is how you confirm the diagnosis and know whether further adjustment is needed.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Result After Adjustment</th>
+          <th>What It Means</th>
+          <th>Next Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Symptoms clearly improved, plug now tan</td>
+          <td>Needle was the problem; adjustment correct</td>
+          <td>Done — no further change needed</td>
+        </tr>
+        <tr>
+          <td>Symptoms partially improved</td>
+          <td>Moving in the right direction</td>
+          <td>Move clip one more groove in the same direction; test again</td>
+        </tr>
+        <tr>
+          <td>Symptoms unchanged</td>
+          <td>Needle is not the primary cause</td>
+          <td>Return clip to original groove; check idle circuit, main jet, or air leak</td>
+        </tr>
+        <tr>
+          <td>Symptoms got worse</td>
+          <td>Clip moved in wrong direction</td>
+          <td>Return clip to original groove; re-read symptom card and move the other way</td>
+        </tr>
+        <tr>
+          <td>Plug still black after moving clip up</td>
+          <td>Rich condition persists — may be float level, main jet too large, or air filter blocked</td>
+          <td>Check float height; inspect and possibly downsize main jet</td>
+        </tr>
+        <tr>
+          <td>Plug still white after moving clip down</td>
+          <td>Lean condition persists — may be air leak, main jet too small, or fuel restriction</td>
+          <td>Spray-check intake manifold for leaks; check fuel flow and main jet size</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-tip">
+      💡 <strong>Always return to baseline first:</strong> If you are unsure which direction you came from, or if you have made several changes in a row without clear improvement, reset the circlip to the middle groove (groove 3 on a 5-groove needle, groove 2 on a 3-groove needle) and start the diagnosis fresh with a clean spark plug reading.
+    </div>
+
+    <!-- VIDEO LEAD 2 -->
+    <div class="video-embed">
+      <div class="video-embed-title">🎬 Spark Plug Reading — Rich vs Lean Diagnosis</div>
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/8bLiErHiXEw"
+          title="How to Read a Spark Plug — Rich vs Lean Diagnosis"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="video-source">
+        "How to Read Spark Plugs — Rich or Lean?" by Delicious Moto
+        — <a href="https://www.youtube.com/watch?v=8bLiErHiXEw" target="_blank" rel="noopener">↗ Watch on YouTube</a>
+      </p>
+    </div>
+
+    <!-- WHEN TO SUSPECT SOMETHING ELSE -->
+    <h2>When to Suspect Something Other Than the Needle</h2>
+
+    <p>Not every mid-throttle problem is a needle problem. The following conditions can produce very similar symptoms but require different fixes:</p>
+
+    <ul>
+      <li><strong>Partially blocked needle jet:</strong> Causes lean running at mid-throttle that does not fully respond to moving the clip down. Solution — remove, clean, and inspect the needle jet.</li>
+      <li><strong>Worn needle or needle jet:</strong> An oval or scored needle jet causes an inconsistently rich condition regardless of clip position. Solution — replace both the needle and jet as a matched pair.</li>
+      <li><strong>Intake manifold crack or loose clamp:</strong> Causes lean running that is difficult to tune out, because the unmetered air is outside the carburetor's control. Solution — replace the manifold or tighten clamps; seal cracks with intake manifold gasket sealant.</li>
+      <li><strong>Incorrect main jet size:</strong> A jet that is far too small will make the scooter feel lean from about 50% throttle upward — overlapping with the needle range. Solution — check jet size against spec and replace if incorrect.</li>
+      <li><strong>Dirty pilot/idle jet:</strong> A blocked idle jet causes problems at low throttle that can "feel" like a mid-range issue because the transition from idle to mid is rough. Solution — remove and clean the pilot jet.</li>
+    </ul>
+
+    <!-- RELATED VIDEOS -->
+    <h2>Related Videos &amp; Resources</h2>
+    <div class="related-videos">
+      <div class="video-card">
+        <h4>Carburetor Needle Adjustment — Step-by-Step Repair</h4>
+        <p>Once you've confirmed the needle is the issue, follow our full repair guide to make the adjustment safely.</p>
+        <a href="../repair-guides/carburetor-needle-height-adjustment.html">Read the Repair Guide →</a>
+      </div>
+      <div class="video-card">
+        <h4>Carburetor Idle Screw Adjustment</h4>
+        <p>If your problem is at very low throttle (idle or just off idle), the idle mixture screw is the correct adjustment.</p>
+        <a href="https://www.youtube.com/results?search_query=scooter+carburetor+idle+mixture+screw+adjustment" target="_blank" rel="noopener">Search on YouTube →</a>
+      </div>
+      <div class="video-card">
+        <h4>Main Jet Size Selection</h4>
+        <p>If the problem is mainly at wide-open throttle, the main jet size is the variable to check.</p>
+        <a href="https://www.youtube.com/results?search_query=gy6+main+jet+size+selection" target="_blank" rel="noopener">Search on YouTube →</a>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>My scooter has both idle problems and mid-range problems. Where do I start?</summary>
+      <p>Fix the idle circuit first. Idle problems often persist into the mid-range because the transition from idle to needle circuit is not clean. Set the idle mixture screw correctly, confirm idle is smooth, then re-test the mid-range before touching the needle.</p>
+    </details>
+
+    <details>
+      <summary>Can I use the choke to test whether the mixture is rich or lean?</summary>
+      <p>Yes, with care. Engaging the choke enriches the mixture. If your symptoms <em>improve</em> slightly with the choke on (when warm — not at startup), the engine was running lean. If symptoms <em>worsen</em>, it was already running rich. This is a quick rough test, not a substitute for a spark plug reading.</p>
+    </details>
+
+    <details>
+      <summary>How do altitude and temperature affect needle position?</summary>
+      <p>At higher altitude, air is thinner. This means the mixture becomes richer for the same throttle position. If you move from sea level to high altitude (above ~1000 m), you may need to move the clip one groove up to lean the mixture. Similarly, cold dense air can make the mixture slightly lean — moving the clip one groove down can help in very cold climates.</p>
+    </details>
+
+    <details>
+      <summary>The plug is tan but the scooter still runs poorly. What next?</summary>
+      <p>A tan plug confirms the mixture at mid-throttle is correct. Look for mechanical causes: worn piston rings (causing low compression), a slipping CVT belt or variator, blocked exhaust, or valve timing issues. A compression test is a good next step.</p>
+    </details>
+
+  </main>
+
+  <footer class="guide-footer">
+    <p>
+      <strong>Sources:</strong>
+      GY6 139QMB Factory Service Manual,
+      Piaggio Zip 50 4T Workshop Manual,
+      <a href="https://www.vespaforum.com" target="_blank" rel="noopener">VespaForum.com</a>,
+      <a href="https://www.chinesescootercommunity.com" target="_blank" rel="noopener">Chinese Scooter Community</a>
+    </p>
+    <p>
+      <strong>Last Updated:</strong> 2026-05-16
+      &nbsp;·&nbsp;
+      <strong>License:</strong> CC BY-SA 4.0
+      &nbsp;·&nbsp;
+      <a href="../index.html">← Back to ISMR</a>
+    </p>
+    <p>
+      <em>Something wrong or missing? <a href="https://github.com/ismr-online/ismr/issues" target="_blank" rel="noopener">Submit feedback on GitHub</a></em>
+    </p>
+  </footer>
+
+  <script src="../script.js"></script>
+
+</body>
+</html>

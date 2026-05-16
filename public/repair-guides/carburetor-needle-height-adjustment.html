@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Step-by-step beginner guide to adjusting carburetor needle height on GY6 and Piaggio scooters. Fix rich/lean running and flat spots.">
+  <meta property="og:title" content="Carburetor Needle Height Adjustment — ISMR">
+  <meta property="og:description" content="Step-by-step beginner guide to adjusting carburetor needle height on GY6 and Piaggio scooters. Fix rich/lean running and flat spots.">
+  <meta property="og:url" content="https://ismr.online/repair-guides/carburetor-needle-height-adjustment.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ismr.online/og-image.jpg">
+  <meta property="og:site_name" content="ISMR — Interactive Scooter Manuals for Repair">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Carburetor Needle Height Adjustment — ISMR">
+  <meta name="twitter:description" content="Step-by-step beginner guide to adjusting carburetor needle height on GY6 and Piaggio scooters. Fix rich/lean running and flat spots.">
+  <meta name="twitter:image" content="https://ismr.online/og-image.jpg">
+  <link rel="canonical" href="https://ismr.online/repair-guides/carburetor-needle-height-adjustment.html">
+  <link rel="icon" href="../favicon.ico">
+  <title>Carburetor Needle Height Adjustment — ISMR</title>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-53LY3KPDYM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-53LY3KPDYM');
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Carburetor Needle Height Adjustment Guide",
+    "description": "How to adjust the carburetor needle clip position on GY6 and Piaggio scooters to fix rich or lean running at mid-throttle.",
+    "image": "https://ismr.online/images/carburetor-needle-height-thumb.jpg",
+    "totalTime": "PT45M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "EUR",
+      "value": "0"
+    },
+    "tool": [
+      { "@type": "HowToTool", "name": "Phillips screwdriver" },
+      { "@type": "HowToTool", "name": "Flat-head screwdriver" },
+      { "@type": "HowToTool", "name": "Needle-nose pliers" },
+      { "@type": "HowToTool", "name": "Small pick or circlip tool" }
+    ],
+    "supply": [
+      { "@type": "HowToSupply", "name": "Clean cloth or paper towels" },
+      { "@type": "HowToSupply", "name": "Carburetor cleaner spray (optional)" }
+    ],
+    "step": [
+      { "@type": "HowToStep", "name": "Safety preparation", "text": "Allow the engine to cool completely before working on the carburetor." },
+      { "@type": "HowToStep", "name": "Remove the carburetor top cap", "text": "Unscrew the top cap of the carburetor to access the slide assembly." },
+      { "@type": "HowToStep", "name": "Remove the slide and needle", "text": "Pull out the throttle slide and extract the needle from the centre of the slide." },
+      { "@type": "HowToStep", "name": "Reposition the circlip", "text": "Move the circlip to the correct groove to raise or lower the needle." },
+      { "@type": "HowToStep", "name": "Reassemble and test", "text": "Reinstall the needle, slide, and top cap, then road-test the scooter." }
+    ],
+    "author": { "@type": "Organization", "name": "ISMR", "url": "https://ismr.online" },
+    "dateModified": "2026-05-16",
+    "publisher": { "@type": "Organization", "name": "ISMR", "url": "https://ismr.online" }
+  }
+  </script>
+
+  <link rel="stylesheet" href="../styles.css">
+
+  <style>
+    .guide-content { max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .guide-content h2 {
+      font-size: 1.55rem; color: var(--text-primary);
+      margin-top: 2.5rem; margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+    }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.6rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.7; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol { padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary); }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content code {
+      background: var(--surface-2); border: 1px solid var(--border); color: var(--accent-light);
+      padding: 0.15rem 0.45rem; border-radius: var(--radius-sm);
+      font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace; font-size: 0.87em;
+    }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th {
+      background: var(--surface-2); color: var(--primary); font-weight: 600; padding: 0.7rem 1rem;
+      text-align: left; border: 1px solid var(--border); text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26,35,50,0.6); }
+    .callout { padding: 1rem 1.25rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 1.5rem 0; font-size: 0.95rem; color: var(--text-secondary); }
+    .callout strong { color: var(--text-primary); }
+    .callout-warn { background: rgba(245,166,35,0.08); border: 1px solid rgba(245,166,35,0.25); border-left: 4px solid var(--warning); }
+    .callout-danger { background: rgba(214,48,49,0.08); border: 1px solid rgba(214,48,49,0.25); border-left: 4px solid var(--danger); }
+    .callout-tip { background: rgba(6,167,125,0.08); border: 1px solid rgba(6,167,125,0.25); border-left: 4px solid var(--success); }
+    .source-box {
+      background: rgba(255,107,53,0.07); border: 1px solid rgba(255,107,53,0.2);
+      border-left: 4px solid var(--primary); border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.95rem; color: var(--text-secondary);
+    }
+    .source-box strong { color: var(--text-primary); }
+    .source-box a { color: var(--accent); }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+    .guide-tag {
+      background: rgba(0,168,204,0.1); color: var(--accent); border: 1px solid rgba(0,168,204,0.3);
+      padding: 0.25rem 0.7rem; border-radius: var(--radius-pill); font-size: 0.78rem; font-weight: 500;
+    }
+    .applies-to {
+      background: rgba(255,107,53,0.07); border: 1px solid rgba(255,107,53,0.2);
+      border-left: 4px solid var(--primary); border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem; margin-top: 1.5rem; font-size: 0.95rem; color: var(--text-secondary);
+    }
+    .applies-to strong { color: var(--text-primary); }
+    .video-embed { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin: 1.5rem 0; }
+    .video-embed-title { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; }
+    .video-container { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 0.75rem; }
+    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .video-source { font-size: 0.85rem; color: var(--text-tertiary); }
+    .video-source a { color: var(--accent); }
+    .related-videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 1rem; }
+    .video-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; transition: var(--transition); }
+    .video-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow-sm); }
+    .video-card h4 { color: var(--text-primary); margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600; }
+    .video-card p { font-size: 0.875rem; margin-bottom: 0.75rem; color: var(--text-secondary); }
+    .video-card a { color: var(--primary); font-weight: 600; font-size: 0.9rem; }
+    /* Two-video grid */
+    .video-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.5rem 0; }
+    @media (max-width: 640px) { .video-pair { grid-template-columns: 1fr; } }
+
+    /* Needle diagram + real photo side-by-side */
+    .needle-diagram { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin: 1.5rem 0; }
+    .needle-diagram-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+    @media (max-width: 640px) { .needle-diagram-inner { grid-template-columns: 1fr; } }
+    .needle-diagram svg { max-width: 100%; height: auto; display: block; }
+    .needle-photo { display: flex; flex-direction: column; gap: 0.6rem; }
+    .needle-photo-link { display: block; position: relative; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border); text-decoration: none; }
+    .needle-photo-link img { width: 100%; display: block; }
+    .needle-photo-link::after { content: "▶  Watch on YouTube"; position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.65); color: #fff; font-size: 0.82rem; font-weight: 600; text-align: center; padding: 0.45rem; letter-spacing: 0.03em; }
+    .needle-photo-link:hover::after { background: rgba(255,107,53,0.85); }
+    .needle-photo-caption { font-size: 0.82rem; color: var(--text-secondary); text-align: center; }
+    .clip-position-table td:first-child { font-weight: 600; color: var(--text-primary); }
+    .guide-footer { background: var(--surface); border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.825rem; color: var(--text-tertiary); }
+    @media (max-width: 768px) { .guide-content { padding: 1.5rem 1rem 3rem; } }
+    @media (max-width: 480px) { .guide-content h2 { font-size: 1.2rem; } }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <span class="nav-logo">🔧</span>
+        <span class="nav-title">ISMR</span>
+        <span class="nav-subtitle">Interactive Scooter Manuals</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-menu">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="../repair-guides/index.html" class="nav-link active">Repair Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
+        <a href="../index.html">ISMR Home</a>
+        <span>›</span>
+        <a href="index.html">Repair Guides</a>
+        <span>›</span>
+        Carburetor Needle Height
+      </div>
+      <h1>Carburetor Needle Height Adjustment Guide</h1>
+      <div class="guide-meta">
+        <span>Beginner</span>
+        <span>·</span>
+        <span>~30–45 min</span>
+        <span>·</span>
+        <span>Updated: 2026-05-16</span>
+      </div>
+      <div class="guide-tags">
+        <span class="guide-tag">repair</span>
+        <span class="guide-tag">carburetor</span>
+        <span class="guide-tag">GY6</span>
+        <span class="guide-tag">Piaggio</span>
+        <span class="guide-tag">fuel system</span>
+        <span class="guide-tag">tuning</span>
+      </div>
+      <div class="applies-to">
+        <strong>Applies to:</strong> All slide-type carburetors with a needle and circlip — GY6 50cc &amp; 125cc/150cc (139QMB, 152QMI, 157QMJ), Piaggio Zip 50 2T &amp; 4T, Vespa Primavera 50, Vespa ET2/ET4, BTC Riva, La Souris Sourini/City, Santini Capri, and most Chinese 50–150cc scooters with a slide carburetor.
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="guide-content">
+
+    <div class="source-box">
+      <strong>📚 Sources:</strong>
+      <a href="https://www.vespaforum.com" target="_blank" rel="noopener">VespaForum.com</a>,
+      <a href="https://www.scootertuning.co.uk" target="_blank" rel="noopener">ScooterTuning.co.uk</a>,
+      <a href="https://www.chinesescootercommunity.com" target="_blank" rel="noopener">Chinese Scooter Community</a>,
+      GY6 Factory Service Manual (139QMB), Piaggio Zip 50 4T Workshop Manual
+    </div>
+
+    <p>The carburetor needle controls how much fuel mixes with air during the <strong>mid-throttle range</strong> (roughly 25%–75% open). When it is set too high, the mixture becomes too rich and the engine runs sluggishly, smokes black, and smells of unburnt fuel. When it is set too low, the mixture becomes too lean and the engine hesitates, surges, or overheats. Adjusting the needle is free, takes under an hour, and requires no special tools — making it one of the most rewarding first tuning jobs for any beginner.</p>
+
+    <div class="callout callout-danger">
+      ⚠️ <strong>Fire safety — read before you start:</strong> Petrol is highly flammable. Work in a well-ventilated space away from open flames, sparks, and hot surfaces. Keep a dry-powder fire extinguisher nearby. Do not smoke. Allow the engine to cool for at least 30 minutes before starting work — the exhaust pipe and engine cases hold heat long after the engine stops.
+    </div>
+
+    <!-- LEAD VIDEOS — two side-by-side -->
+    <div class="video-pair">
+      <div class="video-embed" style="margin:0;">
+        <div class="video-embed-title">🎬 Needle Clip Position Explained</div>
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/qP7omWBEgUg"
+            title="Carburetor Needle Clip Position Explained — How To Adjust Needle Height"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="video-source">
+          "Carburetor Needle Clip Position" by Bikes and Beards
+          — <a href="https://www.youtube.com/watch?v=qP7omWBEgUg" target="_blank" rel="noopener">↗ YouTube</a>
+        </p>
+      </div>
+      <div class="video-embed" style="margin:0;">
+        <div class="video-embed-title">🎬 Needle Height on a Real Scooter Carb</div>
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/KXxxJrA5hNY"
+            title="Carburetor Needle Adjustment on a Scooter — Practical Walkthrough"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="video-source">
+          Practical scooter carburetor needle walkthrough
+          — <a href="https://www.youtube.com/watch?v=KXxxJrA5hNY" target="_blank" rel="noopener">↗ YouTube</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <h2>How the Needle and Circlip Work</h2>
+
+    <p>A slide carburetor uses a cylindrical <strong>throttle slide</strong> that rises and falls as you twist the throttle. A tapered metal <strong>needle</strong> hangs down through the centre of the slide and sits inside the <strong>needle jet</strong> — a small brass tube in the carburetor body. As the slide rises, the needle also rises, and its taper progressively opens the gap between the needle and the jet, allowing more fuel to flow.</p>
+
+    <p>The needle has a series of <strong>grooves</strong> machined into it near the top — usually 3, 4, or 5 grooves. A small spring clip (the <strong>circlip</strong>) sits in one of these grooves and rests on the top of the slide, holding the needle at a fixed height. Moving the circlip changes which groove it sits in, which raises or lowers the needle inside the jet:</p>
+
+    <!-- Needle diagram (SVG) + real-world photo side by side -->
+    <div class="needle-diagram">
+      <div class="needle-diagram-inner">
+
+        <!-- Left: schematic SVG -->
+        <div>
+          <svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif" font-size="13">
+            <!-- Slide body -->
+            <rect x="200" y="20" width="160" height="100" rx="6" fill="#1a2332" stroke="#2a3548" stroke-width="2"/>
+            <text x="280" y="65" text-anchor="middle" fill="#a0a0a0">Throttle Slide</text>
+
+            <!-- Needle -->
+            <rect x="268" y="20" width="24" height="220" rx="3" fill="#00a8cc" opacity="0.85"/>
+            <!-- Taper -->
+            <polygon points="268,200 292,200 284,270 276,270" fill="#00a8cc" opacity="0.85"/>
+
+            <!-- Grooves on needle (5 grooves) -->
+            <line x1="264" y1="50"  x2="296" y2="50"  stroke="#0f1419" stroke-width="2.5"/>
+            <line x1="264" y1="65"  x2="296" y2="65"  stroke="#0f1419" stroke-width="2.5"/>
+            <line x1="264" y1="80"  x2="296" y2="80"  stroke="#0f1419" stroke-width="2.5"/>
+            <line x1="264" y1="95"  x2="296" y2="95"  stroke="#0f1419" stroke-width="2.5"/>
+            <line x1="264" y1="110" x2="296" y2="110" stroke="#0f1419" stroke-width="2.5"/>
+
+            <!-- Circlip — shown in groove 3 (middle/default) -->
+            <ellipse cx="280" cy="80" rx="20" ry="5" fill="none" stroke="#ff6b35" stroke-width="3"/>
+            <text x="310" y="83" fill="#ff6b35" font-weight="600">◀ Circlip (groove 3 — default)</text>
+
+            <!-- Groove labels left -->
+            <text x="195" y="53"  text-anchor="end" fill="#a0a0a0">Groove 1 → lean</text>
+            <text x="195" y="68"  text-anchor="end" fill="#a0a0a0">Groove 2</text>
+            <text x="195" y="83"  text-anchor="end" fill="#f5f5f5" font-weight="600">Groove 3 (std)</text>
+            <text x="195" y="98"  text-anchor="end" fill="#a0a0a0">Groove 4</text>
+            <text x="195" y="113" text-anchor="end" fill="#a0a0a0">Groove 5 → rich</text>
+
+            <!-- Needle jet -->
+            <rect x="272" y="270" width="16" height="40" rx="2" fill="#242f3e" stroke="#2a3548" stroke-width="1.5"/>
+            <text x="280" y="326" text-anchor="middle" fill="#a0a0a0">Needle Jet</text>
+
+            <!-- Arrow: clip up = lean -->
+            <text x="60" y="145" text-anchor="middle" fill="#f5a623" font-size="12" font-weight="600">CLIP UP</text>
+            <text x="60" y="160" text-anchor="middle" fill="#f5a623" font-size="11">(lower groove #)</text>
+            <text x="60" y="175" text-anchor="middle" fill="#f5a623" font-size="11">= Needle LOWERS</text>
+            <text x="60" y="190" text-anchor="middle" fill="#f5a623" font-size="11">= LEANER mix</text>
+            <line x1="100" y1="155" x2="260" y2="80" stroke="#f5a623" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+            <!-- Arrow: clip down = rich -->
+            <text x="470" y="145" text-anchor="middle" fill="#00a8cc" font-size="12" font-weight="600">CLIP DOWN</text>
+            <text x="470" y="160" text-anchor="middle" fill="#00a8cc" font-size="11">(higher groove #)</text>
+            <text x="470" y="175" text-anchor="middle" fill="#00a8cc" font-size="11">= Needle RISES</text>
+            <text x="470" y="190" text-anchor="middle" fill="#00a8cc" font-size="11">= RICHER mix</text>
+            <line x1="430" y1="155" x2="305" y2="95" stroke="#00a8cc" stroke-width="1.5" stroke-dasharray="4,3"/>
+          </svg>
+          <p style="font-size:0.82rem; color:var(--text-secondary); margin-top:0.5rem; text-align:center;">
+            Schematic — clip up = needle down = leaner; clip down = needle up = richer
+          </p>
+        </div>
+
+        <!-- Right: real-world thumbnail from the user's video -->
+        <div class="needle-photo">
+          <a class="needle-photo-link"
+             href="https://www.youtube.com/watch?v=KXxxJrA5hNY"
+             target="_blank" rel="noopener"
+             aria-label="Watch carburetor needle adjustment on a real scooter on YouTube">
+            <img
+              src="https://img.youtube.com/vi/KXxxJrA5hNY/hqdefault.jpg"
+              alt="Real carburetor needle and circlip on a scooter — YouTube video thumbnail"
+              loading="lazy"
+              width="480" height="360">
+          </a>
+          <p class="needle-photo-caption">
+            Real-world view: needle, grooves, and circlip on an actual scooter carburetor.<br>
+            <a href="https://www.youtube.com/watch?v=KXxxJrA5hNY" target="_blank" rel="noopener">↗ Watch the full walkthrough on YouTube</a>
+          </p>
+        </div>
+
+      </div><!-- /.needle-diagram-inner -->
+    </div><!-- /.needle-diagram -->
+
+    <div class="callout callout-tip">
+      💡 <strong>Counterintuitive but important:</strong> Moving the circlip <em>up</em> on the needle makes the mixture <em>leaner</em>, and moving it <em>down</em> makes it <em>richer</em>. This is because moving the clip up pushes the needle body downward inside the jet, reducing fuel flow. Take a moment to picture this before you start.
+    </div>
+
+    <!-- CLIP POSITION REFERENCE TABLE -->
+    <h2>Clip Position Quick Reference</h2>
+    <table class="clip-position-table">
+      <thead>
+        <tr>
+          <th>Clip Position</th>
+          <th>Needle Position</th>
+          <th>Mixture Effect</th>
+          <th>When to Use</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Groove 1 (top)</td>
+          <td>Needle lowest</td>
+          <td>Leanest</td>
+          <td>High altitude (&gt;1500 m) or persistent rich fouling</td>
+        </tr>
+        <tr>
+          <td>Groove 2</td>
+          <td>Needle low</td>
+          <td>Slightly lean</td>
+          <td>Mild rich symptoms, warm climate</td>
+        </tr>
+        <tr>
+          <td>Groove 3 (middle)</td>
+          <td>Needle centred</td>
+          <td><strong>Standard / stock</strong></td>
+          <td>Default — start here</td>
+        </tr>
+        <tr>
+          <td>Groove 4</td>
+          <td>Needle high</td>
+          <td>Slightly rich</td>
+          <td>Mild lean symptoms, cold climate</td>
+        </tr>
+        <tr>
+          <td>Groove 5 (bottom)</td>
+          <td>Needle highest</td>
+          <td>Richest</td>
+          <td>Cold start problems or oversized air filter</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- TOOLS -->
+    <h2>Tools Required</h2>
+    <ul>
+      <li><strong>Phillips screwdriver (No. 2)</strong> — for the carburetor top cap screws on most GY6 units</li>
+      <li><strong>Flat-head screwdriver</strong> — useful for the top cap on some Piaggio/Dellorto carbs, and for gently prying parts</li>
+      <li><strong>Needle-nose pliers</strong> — to grip and remove the small circlip without losing it</li>
+      <li><strong>Small pick, dental pick, or circlip tool</strong> — to lever the circlip out of its groove without scratching the needle</li>
+      <li><strong>Clean cloth or paper towels</strong> — to catch any petrol drips and keep parts clean during reassembly</li>
+    </ul>
+
+    <div class="callout callout-warn">
+      ⚠️ <strong>Don't lose the circlip:</strong> The circlip is tiny — around 2–3 mm in diameter — and will immediately disappear into the floor if dropped. Work over a clean tray or cloth. Some mechanics place a magnet nearby to catch it. Always have a spare circlip on hand; they cost pennies.
+    </div>
+
+    <!-- PARTS -->
+    <h2>Parts &amp; Materials</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Part</th>
+          <th>Notes</th>
+          <th>Approx. Cost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Replacement circlip (optional)</td>
+          <td>Buy a pack of assorted sizes as insurance</td>
+          <td>€1–3 per pack</td>
+        </tr>
+        <tr>
+          <td>Carburetor needle (optional)</td>
+          <td>Only if the existing needle is visibly worn or scored</td>
+          <td>€3–8 (GY6), €8–20 (Dellorto/Mikuni)</td>
+        </tr>
+        <tr>
+          <td>Carb top-cap O-ring (optional)</td>
+          <td>Replace if the cap seal is cracked or leaking air</td>
+          <td>€1–3</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- STEP BY STEP -->
+    <h2>Step-by-Step Instructions</h2>
+
+    <h3>Step 1 — Safety Preparation</h3>
+    <p>Before touching anything, make sure the engine is safe to work on.</p>
+    <ol>
+      <li>Turn the fuel tap (petcock) to the <strong>OFF</strong> position. On GY6 scooters this is typically under the seat or near the frame rail. On Piaggio models it is usually below the left panel.</li>
+      <li>Allow the engine to cool for at least <strong>30 minutes</strong> — touch the cylinder head; it should feel no warmer than room temperature.</li>
+      <li>Place the scooter on its centre stand on firm, level ground.</li>
+      <li>Lay a clean cloth or tray under the carburetor to catch any petrol residue.</li>
+    </ol>
+    <div class="callout callout-tip">
+      💡 <strong>Note your starting position:</strong> Before making any change, note which groove the circlip is in. If the adjustment makes things worse, you can always return to where you started.
+    </div>
+
+    <h3>Step 2 — Access the Carburetor</h3>
+    <p>The carburetor is usually accessed by removing a side panel or the seat. The exact location varies by model.</p>
+    <ol>
+      <li><strong>GY6 scooters:</strong> Remove the left or right body panel (usually 2–4 Phillips screws). The carburetor sits on the right side of the engine, between the air filter box and the engine intake manifold.</li>
+      <li><strong>Piaggio Zip / Vespa models:</strong> Open the underseat storage. The carburetor and air filter assembly are accessible from the right side of the frame after removing the plastic side cowl (3–5 screws).</li>
+      <li>Once the carburetor is visible, identify the <strong>top cap</strong> — the round or rectangular cover on top of the carb body. This is where the throttle cable enters.</li>
+    </ol>
+    <div class="callout callout-tip">
+      💡 <strong>Take a photo first:</strong> Before disassembling anything, photograph the carburetor, the throttle cable routing, and the throttle slide orientation. Referring to your own photos during reassembly is much easier than trying to remember.
+    </div>
+
+    <h3>Step 3 — Remove the Carburetor Top Cap</h3>
+    <p>The top cap holds the throttle slide inside the carburetor body. Removing it gives you access to the slide and needle.</p>
+    <ol>
+      <li>Locate the two to four screws around the top cap perimeter and remove them. On GY6 carbs (PD-type, CVK-type) these are Phillips screws. On Dellorto PHBG (Piaggio Zip 2T) there is a single large cap screw or a lock-ring.</li>
+      <li>Gently lift the top cap upward. The throttle cable and slide will come with it — <strong>do not pull hard</strong>. If the slide feels stuck, wiggle it gently; it may be a vacuum-type slide (CV carburetor) seated by engine vacuum.</li>
+      <li>Lift the slide out of the carburetor bore and let it hang from the throttle cable. Do not disconnect the cable unless necessary.</li>
+    </ol>
+
+    <!-- Inline video for this step -->
+    <div class="video-embed">
+      <div class="video-embed-title">🎬 Removing the Slide &amp; Needle — GY6 CV Carburetor</div>
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/DcSSMw9hGLI"
+          title="GY6 Carburetor Slide and Needle Removal"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="video-source">
+        "GY6 Carburetor Teardown and Needle Clip Adjustment" by ScooterDynasty
+        — <a href="https://www.youtube.com/watch?v=DcSSMw9hGLI" target="_blank" rel="noopener">↗ Watch on YouTube</a>
+      </p>
+    </div>
+
+    <h3>Step 4 — Remove the Needle from the Slide</h3>
+    <p>The needle passes through a hole in the centre of the throttle slide and is held in place by the circlip sitting in a groove.</p>
+    <ol>
+      <li>Hold the slide in one hand over your tray. Look through the centre hole — you will see the top of the needle protruding slightly, with the circlip sitting in one of the grooves.</li>
+      <li>Using your pick or a small flat-head screwdriver, carefully lever the circlip out of its groove. Work slowly — the clip is under slight spring tension and can ping away.</li>
+      <li>Once the circlip is free, slide the needle downward and out through the bottom of the slide. Set the needle and circlip aside on your cloth — do not place them near an edge.</li>
+      <li>Count the grooves on the needle and note which groove the circlip was sitting in (1 = top groove, highest number = bottom groove).</li>
+    </ol>
+    <div class="callout callout-warn">
+      ⚠️ <strong>Inspect the needle while you have it out:</strong> Run your fingernail along the needle's surface. It should be smooth with no scoring, flat spots, or visible taper wear. A worn needle will cause an inconsistent mixture no matter what groove the clip is in — replace it if in doubt (cost: €3–8).
+    </div>
+
+    <h3>Step 5 — Reposition the Circlip</h3>
+    <p>This is the actual adjustment. Move the circlip by one groove at a time and test before moving further.</p>
+    <ol>
+      <li>Decide which direction to move the clip based on your symptoms. Refer to the <a href="../diagnostics/carburetor-needle-height-diagnostics.html">Carburetor Needle Height Diagnostics guide</a> if you are unsure of your symptoms.</li>
+      <li><strong>Rich mixture (black smoke, poor top speed, strong fuel smell):</strong> Move the clip one groove <em>up</em> toward the top of the needle (lower groove number). This lowers the needle and leans the mixture.</li>
+      <li><strong>Lean mixture (hesitation, surging, overheating):</strong> Move the clip one groove <em>down</em> toward the bottom of the needle (higher groove number). This raises the needle and richens the mixture.</li>
+      <li>To move the clip: use needle-nose pliers to grip the clip, then compress it slightly and push it into the new groove. The clip should snap in with a small click and feel secure — it should not spin freely.</li>
+    </ol>
+    <div class="callout callout-tip">
+      💡 <strong>One groove at a time:</strong> The difference between one groove and the next is significant. Always make a single-groove change, reassemble, road-test, and then decide if a further adjustment is needed. Jumping two grooves at once makes it harder to identify the correct setting.
+    </div>
+
+    <h3>Step 6 — Reinstall the Needle and Slide</h3>
+    <ol>
+      <li>Insert the needle back up through the centre hole of the slide, pointed (tapered) end first, so the circlip end protrudes from the top.</li>
+      <li>The needle may have a small key or flat side that must align with a corresponding slot in the slide — check your photo from Step 2. Rotate the needle until it drops fully into position.</li>
+      <li>Confirm the circlip is fully seated in its groove and the needle cannot move up or down by hand.</li>
+      <li>Slide the throttle slide back into the carburetor body. Make sure the slide's anti-rotation pin (a small peg on the slide's side) lines up with the corresponding slot in the carburetor bore — the slide will not fit if rotated incorrectly.</li>
+      <li>Refit the top cap and tighten the screws evenly — do not over-tighten.</li>
+    </ol>
+
+    <h3>Step 7 — Road Test and Fine-Tune</h3>
+    <ol>
+      <li>Turn the fuel tap back to the <strong>ON</strong> position.</li>
+      <li>Start the engine and let it warm up for 2–3 minutes without riding.</li>
+      <li>Take the scooter for a test ride on a quiet road. Focus on how it pulls from 25%–75% throttle — this is the mid-range where the needle has the most effect.</li>
+      <li>If the symptom has improved but is not fully resolved, repeat the adjustment (Steps 3–6) moving the clip by one more groove in the same direction.</li>
+      <li>Once mid-range feels crisp and responsive, the needle is correctly set. If idle or full-throttle behaviour is still off, those are adjusted separately with the idle screw and main jet respectively — see the related guides below.</li>
+    </ol>
+
+    <!-- TROUBLESHOOTING TABLE -->
+    <h2>Troubleshooting</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Problem After Adjustment</th>
+          <th>Likely Cause</th>
+          <th>Fix</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>No improvement at all</td>
+          <td>Symptoms are not needle-related; may be idle circuit, main jet, or air leak</td>
+          <td>Check idle mixture screw and main jet size; inspect intake manifold for air leaks</td>
+        </tr>
+        <tr>
+          <td>Slide sticks or throttle feels heavy</td>
+          <td>Needle not fully seated in slide; anti-rotation pin misaligned</td>
+          <td>Remove slide and re-seat needle; ensure pin is in groove before refitting cap</td>
+        </tr>
+        <tr>
+          <td>Fuel smell from carburetor area after reassembly</td>
+          <td>Top-cap O-ring damaged or not seated; float bowl disturbed</td>
+          <td>Inspect O-ring and replace if cracked; check float bowl bolt is tight</td>
+        </tr>
+        <tr>
+          <td>Engine runs worse than before adjustment</td>
+          <td>Clip moved in wrong direction</td>
+          <td>Return clip to original groove; reassess symptoms using the diagnostics guide</td>
+        </tr>
+        <tr>
+          <td>Circlip falls out during reassembly</td>
+          <td>Wrong size circlip or clip not fully seated in groove</td>
+          <td>Use correct-diameter clip; snap it fully into groove before installing needle</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- RELATED VIDEOS -->
+    <h2>Related Videos &amp; Resources</h2>
+    <div class="related-videos">
+      <div class="video-card">
+        <h4>Needle Height on a Real Scooter Carb</h4>
+        <p>Practical hands-on walkthrough showing the needle, grooves, and circlip on an actual scooter carburetor.</p>
+        <a href="https://www.youtube.com/watch?v=KXxxJrA5hNY" target="_blank" rel="noopener">Watch on YouTube →</a>
+      </div>
+      <div class="video-card">
+        <h4>GY6 Carburetor Full Tune-Up</h4>
+        <p>Complete idle, needle, and main jet adjustment walkthrough for GY6 engines.</p>
+        <a href="https://www.youtube.com/results?search_query=gy6+carburetor+needle+adjustment" target="_blank" rel="noopener">Search on YouTube →</a>
+      </div>
+      <div class="video-card">
+        <h4>Piaggio Dellorto PHBG Needle Adjustment</h4>
+        <p>Specific guide for the PHBG carburetor fitted to Piaggio Zip 50 2T and similar models.</p>
+        <a href="https://www.youtube.com/results?search_query=dellorto+phbg+needle+clip+adjustment+scooter" target="_blank" rel="noopener">Search on YouTube →</a>
+      </div>
+      <div class="video-card">
+        <h4>How to Read a Spark Plug</h4>
+        <p>Reading your spark plug's colour and condition is the most reliable way to confirm your mixture is correct after tuning.</p>
+        <a href="https://www.youtube.com/results?search_query=how+to+read+spark+plug+color+scooter" target="_blank" rel="noopener">Search on YouTube →</a>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>How do I know if my problem is the needle and not the main jet or idle screw?</summary>
+      <p>The needle primarily affects the <strong>mid-throttle range (25%–75%)</strong>. If the problem appears or disappears only when you are at very low throttle (idle circuit) or wide-open throttle (main jet), the needle is probably not the issue. See the <a href="../diagnostics/carburetor-needle-height-diagnostics.html">Diagnostics Guide</a> for a full symptom flowchart.</p>
+    </details>
+
+    <details>
+      <summary>My carburetor only has 3 grooves. Which is the standard position?</summary>
+      <p>On a 3-groove needle, the standard (stock) position is <strong>groove 2</strong> — the middle groove. On a 5-groove needle it is groove 3. If you are unsure, start in the middle groove and adjust from there.</p>
+    </details>
+
+    <details>
+      <summary>Can I adjust the needle without removing the carburetor from the scooter?</summary>
+      <p>Yes — on most scooters the top cap is accessible without fully removing the carburetor. You only need to remove the carburetor body if the top cap is obstructed by frame members or bodywork. Many GY6 scooters allow full access with just the side panel removed.</p>
+    </details>
+
+    <details>
+      <summary>After moving the clip, the engine is now worse. What should I do?</summary>
+      <p>Return the circlip to the groove it was in before your adjustment. If you noted your starting position in Step 1, this is straightforward. Then re-read the symptoms carefully and consider whether the issue might be in a different circuit — idle, choke, main jet — or whether there is a vacuum leak or blocked jet.</p>
+    </details>
+
+    <details>
+      <summary>Does this apply to injected (EFI) scooters?</summary>
+      <p>No. Fuel-injected scooters do not have a carburetor needle. The fuel delivery on EFI models is controlled by the ECU and cannot be adjusted with hand tools. This guide applies only to <strong>carbureted</strong> scooters.</p>
+    </details>
+
+  </main>
+
+  <footer class="guide-footer">
+    <p>
+      <strong>Sources:</strong>
+      GY6 139QMB Factory Service Manual,
+      Piaggio Zip 50 4T Workshop Manual,
+      <a href="https://www.vespaforum.com" target="_blank" rel="noopener">VespaForum.com</a>,
+      <a href="https://www.chinesescootercommunity.com" target="_blank" rel="noopener">Chinese Scooter Community</a>
+    </p>
+    <p>
+      <strong>Last Updated:</strong> 2026-05-16
+      &nbsp;·&nbsp;
+      <strong>License:</strong> CC BY-SA 4.0
+      &nbsp;·&nbsp;
+      <a href="../index.html">← Back to ISMR</a>
+    </p>
+    <p>
+      <em>Something wrong or missing? <a href="https://github.com/ismr-online/ismr/issues" target="_blank" rel="noopener">Submit feedback on GitHub</a></em>
+    </p>
+  </footer>
+
+  <script src="../script.js"></script>
+
+</body>
+</html>

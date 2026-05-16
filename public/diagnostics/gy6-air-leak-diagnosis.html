@@ -166,11 +166,53 @@
     }
     .location-list li:hover { border-left-color: var(--accent); }
     .location-list li strong { color: var(--text-primary); display: block; }
+    .video-section {
+      margin: 2rem 0;
+    }
+    .video-section h2 { margin-top: 0; }
+    .video-short-wrap {
+      display: flex;
+      justify-content: center;
+      margin: 1rem 0;
+    }
+    .video-short-wrap iframe {
+      width: 100%;
+      max-width: 340px;
+      aspect-ratio: 9 / 16;
+      border: 0;
+      border-radius: var(--radius-lg);
+    }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.25rem 0;
+    }
+    .photo-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .photo-card:hover { border-color: rgba(0, 168, 204, 0.4); }
+    .photo-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .photo-card figcaption {
+      padding: 0.6rem 0.9rem;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+    }
     @media (max-width: 768px) {
       .guide-content { padding: 1.5rem 1rem 3rem; }
       .breadcrumb { padding: 0.9rem 1rem; }
       .nav-menu { display: none; }
       .nav-toggle { display: block; }
+      .photo-grid { grid-template-columns: 1fr; }
     }
   </style>
   <script type="application/ld+json">
@@ -266,6 +308,19 @@
 
   <main class="guide-content">
 
+    <div class="video-section">
+      <h2>Video Guide</h2>
+      <div class="video-short-wrap">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/OxPTTEL1iA4"
+          title="GY6 Air Leak Diagnosis — Video Guide"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
     <h2>What Is an Air Leak?</h2>
     <p>An <strong>air leak</strong> (also called a <strong>vacuum leak</strong> or <strong>false air</strong>) is an unintended gap or crack somewhere in the intake path — between the air filter and the combustion chamber — through which unmetered air enters the engine. Because a carburetor or EFI injector measures only the air passing through its own throat, any air that bypasses this measurement causes the engine to run lean.</p>
     <p>On a carbureted engine, the effect is particularly pronounced because the carburetor relies on intake vacuum to draw fuel. Extra air reduces vacuum signal, weakens fuel delivery, and upsets the carefully calibrated air-fuel mixture.</p>
@@ -319,6 +374,16 @@
         A minor head gasket leak between intake port and the combustion chamber is rare but possible. Usually accompanied by other symptoms (overheating, white smoke, coolant loss on LC engines).
       </li>
     </ul>
+
+    <h2>Photo Reference</h2>
+    <div class="photo-grid">
+      <figure class="photo-card">
+        <img src="../images/diagnostics/gy6-air-leak-diagnosis-1.png"
+             alt="Cracked and worn GY6 intake manifold rubber boot — a common air leak source"
+             loading="lazy">
+        <figcaption>Cracked GY6 intake manifold rubber boot. Note the split around the port opening — this is a classic source of vacuum leaks causing erratic idle.</figcaption>
+      </figure>
+    </div>
 
     <h2>Diagnostic Methods</h2>
 

@@ -1,5 +1,33 @@
 [
   {
+    "url": "/repair-guides/carburetor-needle-height-adjustment.html",
+    "title": "Carburetor Needle Height Adjustment Guide",
+    "category": "repair-guides",
+    "file": "repair-guides/carburetor-needle-height-adjustment.html",
+    "sources": [
+      "GY6 139QMB Factory Service Manual",
+      "Piaggio Zip 50 4T Workshop Manual",
+      "vespaforum.com",
+      "chinesescootercommunity.com"
+    ],
+    "addedAt": "2026-05-16T00:00:00Z",
+    "lastChecked": "2026-05-16T00:00:00Z"
+  },
+  {
+    "url": "/diagnostics/carburetor-needle-height-diagnostics.html",
+    "title": "Carburetor Needle Height Diagnostics",
+    "category": "diagnostics",
+    "file": "diagnostics/carburetor-needle-height-diagnostics.html",
+    "sources": [
+      "GY6 139QMB Factory Service Manual",
+      "Piaggio Zip 50 4T Workshop Manual",
+      "vespaforum.com",
+      "chinesescootercommunity.com"
+    ],
+    "addedAt": "2026-05-16T00:00:00Z",
+    "lastChecked": "2026-05-16T00:00:00Z"
+  },
+  {
     "url": "/diagnostics/gy6-efi-obd2-dtc-fault-codes.html",
     "title": "GY6 EFI OBD-2 DTC Fault Codes \u2014 Rongmao / Delphi / Motion",
     "category": "diagnostics",
