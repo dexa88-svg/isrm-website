@@ -1,6 +1,12 @@
 RewriteEngine On
+
+# Redirect HTTP to HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirect www to non-www (canonical domain)
+RewriteCond %{HTTP_HOST} ^www\.ismr\.online [NC]
+RewriteRule ^ https://ismr.online%{REQUEST_URI} [L,R=301]
 
 # Security headers — improves Microsoft SmartScreen / SafeLinks reputation
 <IfModule mod_headers.c>

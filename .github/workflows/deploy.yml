@@ -49,7 +49,7 @@ jobs:
           # --ftp-create-dirs works for both FTP and SFTP in curl — it instructs
           # the server to create any missing intermediate directories before upload.
           # This replaced --create-dirs which only creates local dirs, not remote ones.
-          find . -type f | sed 's/^\.\///' | while read file; do
+          find . -type f ! -path './_removed/*' ! -path '*/_removed/*' | sed 's/^\.\///' | while read file; do
             curl -k --ftp-create-dirs -u "$FTP_USERNAME:$FTP_PASSWORD" \
               -T "$file" "sftp://$FTP_SERVER:22/$file"
           done
