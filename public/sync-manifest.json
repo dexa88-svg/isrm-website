@@ -1,5 +1,23 @@
 [
   {
+    "url": "/legal/privacy.html",
+    "title": "Privacy Policy",
+    "category": "legal",
+    "file": "legal/privacy.html",
+    "sources": ["ISMR"],
+    "addedAt": "2026-05-19T00:00:00Z",
+    "lastChecked": "2026-05-19T00:00:00Z"
+  },
+  {
+    "url": "/legal/terms.html",
+    "title": "Terms of Service",
+    "category": "legal",
+    "file": "legal/terms.html",
+    "sources": ["ISMR"],
+    "addedAt": "2026-05-19T00:00:00Z",
+    "lastChecked": "2026-05-19T00:00:00Z"
+  },
+  {
     "url": "/repair-guides/gy6-scooter-storage-revival-guide.html",
     "title": "GY6 / CVT Scooter Storage Revival Guide",
     "category": "repair-guides",
