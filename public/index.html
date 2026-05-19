@@ -25,6 +25,7 @@
   <meta name="twitter:image" content="https://ismr.online/og-image.jpg">
   <title>ISMR - Interactive Scooter Manuals for Repair</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/pagefind/pagefind-ui.css">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -59,11 +60,62 @@
   
   /* Design system: elevation */
   .card, .feature-card, .stat-card, section { box-shadow: var(--shadow-sm); }
+
+  /* Pagefind inline results */
+  #search-results {
+    position: absolute;
+    top: calc(100% + 0.4rem);
+    left: 0; right: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    z-index: 200;
+    max-height: 420px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  #search-results:empty { display: none; }
+  .search-result-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.85rem 1.1rem;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    transition: var(--transition);
+  }
+  .search-result-item:last-child { border-bottom: none; }
+  .search-result-item:hover { background: var(--surface-2); }
+  .search-result-title {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .search-result-excerpt {
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+  .search-result-excerpt mark {
+    background: rgba(255,107,53,0.2);
+    color: var(--primary);
+    border-radius: 2px;
+    padding: 0 2px;
+  }
+  .search-no-results {
+    padding: 1rem 1.1rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  .hero-search { position: relative; }
   </style>
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar" id="navbar">
+  <nav class="navbar" data-pagefind-ignore id="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-brand">
         <span class="brand-icon">⚙️</span>
@@ -80,16 +132,17 @@
     </div>
   </nav>
 
-  <main role="main">
+  <main data-pagefind-body role="main">
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
       <h1 class="hero-title">Master Your Scooter Repair</h1>
       <p class="hero-subtitle">Interactive guides, diagnostics for GY6 and Piaggio scooters</p>
       <div class="hero-search">
-        <input type="text" id="searchInput" class="search-input" placeholder="Search guides, parts, diagnostics..." />
-        <button class="search-btn">🔍</button>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search guides, parts, diagnostics..." autocomplete="off" />
+        <button class="search-btn" aria-label="Search">🔍</button>
       </div>
+      <div id="search-results" aria-live="polite"></div>
       <div class="hero-features">
         <span class="feature-badge">— Guides</span>
         <span class="feature-badge">Updated Daily</span>
@@ -401,7 +454,7 @@
   <!-- Footer -->
   </main>
 
-  <footer class="footer">
+  <footer data-pagefind-ignore class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
@@ -440,6 +493,57 @@
 
   <script src="script.js"></script>
   <script src="load-stats.js"></script>
+
+  <!-- Pagefind search -->
+  <script type="module">
+    const input = document.getElementById('searchInput');
+    const resultsEl = document.getElementById('search-results');
+    let pagefind = null;
+
+    async function initPagefind() {
+      if (!pagefind) {
+        const pf = await import('/pagefind/pagefind.js');
+        await pf.init();
+        pagefind = pf;
+      }
+    }
+
+    async function runSearch(query) {
+      if (!query.trim()) { resultsEl.innerHTML = ''; return; }
+      await initPagefind();
+      const search = await pagefind.search(query);
+      const results = await Promise.all(search.results.slice(0, 8).map(r => r.data()));
+      if (results.length === 0) {
+        resultsEl.innerHTML = '<p class="search-no-results">No results found — try different keywords.</p>';
+        return;
+      }
+      resultsEl.innerHTML = results.map(r => `
+        <a href="${r.url}" class="search-result-item">
+          <span class="search-result-title">${r.meta.title || 'Untitled'}</span>
+          <span class="search-result-excerpt">${r.excerpt}</span>
+        </a>
+      `).join('');
+    }
+
+    let debounce;
+    input.addEventListener('input', () => {
+      clearTimeout(debounce);
+      debounce = setTimeout(() => runSearch(input.value), 220);
+    });
+
+    document.querySelector('.search-btn').addEventListener('click', () => runSearch(input.value));
+
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Escape') { resultsEl.innerHTML = ''; input.value = ''; }
+    });
+
+    // Close results when clicking outside
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.hero-search') && !e.target.closest('#search-results')) {
+        resultsEl.innerHTML = '';
+      }
+    });
+  </script>
 </body>
 </html>
 <!-- Updated -->

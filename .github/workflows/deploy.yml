@@ -33,11 +33,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4.2.2
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4.4.0
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
       - name: Generate stats
         run: node scripts/generate-stats.js
 
       - name: Verify stats file
         run: ls -la public/data/stats.json
+
+      - name: Build Pagefind search index
+        run: npx pagefind --site public --output-path public/pagefind
 
       - name: Deploy via SFTP
         env:

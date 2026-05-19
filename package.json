@@ -5,11 +5,14 @@
   "scripts": {
     "test": "node scripts/validate-pages.js && jest",
     "test:coverage": "node scripts/validate-pages.js && jest --coverage",
-    "generate-stats": "node scripts/generate-stats.js"
+    "generate-stats": "node scripts/generate-stats.js",
+    "search-index": "pagefind --site public --output-path public/pagefind",
+    "build": "node scripts/generate-stats.js && pagefind --site public --output-path public/pagefind"
   },
   "devDependencies": {
     "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0"
+    "jest-environment-jsdom": "^29.7.0",
+    "pagefind": "^1.5.2"
   },
   "jest": {
     "testEnvironment": "node",
