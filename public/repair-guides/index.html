@@ -101,12 +101,25 @@
       max-width: 1100px;
       margin: 0 auto;
       display: flex;
-      gap: 0.25rem;
-      overflow-x: auto;
-      scrollbar-width: none;
-      padding: 0.75rem 0;
+      flex-direction: column;
+      gap: 0.4rem;
+      padding: 0.65rem 0;
     }
-    .filters-inner::-webkit-scrollbar { display: none; }
+    .filter-row {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      flex-wrap: wrap;
+    }
+    .filter-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-right: 0.1rem;
+      white-space: nowrap;
+    }
     .filter-btn {
       background: transparent;
       border: 1px solid var(--border);
@@ -182,6 +195,17 @@
     .filters-search::placeholder { color: var(--text-muted); }
     .filters-search:focus { border-color: var(--accent); box-shadow: var(--shadow-sm); }
 
+    /* Filter group divider */
+    .filter-divider {
+      display: inline-block;
+      width: 1px;
+      height: 1.2rem;
+      background: var(--border);
+      align-self: center;
+      margin: 0 0.25rem;
+      flex-shrink: 0;
+    }
+
     /* No results state */
     .no-results {
       grid-column: 1 / -1;
@@ -199,13 +223,16 @@
       .guides-section { padding: 2rem 1rem 3rem; }
       .nav-menu { display: none; }
       .nav-toggle { display: block; }
+      .filter-btn { padding: 0.35rem 0.7rem; font-size: 0.78rem; }
+      .filter-label { font-size: 0.7rem; }
+      .filters-search { min-width: 130px; }
     }
     @media (max-width: 480px) {
       .page-hero h1 { font-size: 1.4rem; }
       .page-hero { padding: 2rem 1rem 1.5rem; }
       .hero-stat-number { font-size: 1.2rem; }
-      .filters-inner { gap: 0.15rem; }
-      .filter-btn { padding: 0.35rem 0.75rem; font-size: 0.78rem; }
+      .filter-btn { padding: 0.3rem 0.6rem; font-size: 0.75rem; }
+      .filters-search { min-width: 100px; font-size: 0.78rem; }
     }
   </style>
   <script type="application/ld+json">
@@ -273,13 +300,26 @@
   <!-- Category Filter Bar -->
   <div class="filters-bar">
     <div class="filters-inner">
-      <button class="filter-btn active" data-filter="all">All guides</button>
-      <button class="filter-btn" data-filter="maintenance">🔩 Maintenance</button>
-      <button class="filter-btn" data-filter="safety">🛑 Safety</button>
-      <button class="filter-btn" data-filter="electrical">⚡ Electrical</button>
-      <button class="filter-btn" data-filter="transmission">⚙️ Transmission</button>
-      <button class="filter-btn" data-filter="advanced">🔬 Advanced</button>
-      <input type="search" class="filters-search" id="guidesSearch" placeholder="Search guides…" aria-label="Search repair guides">
+      <!-- Row 1: category + search -->
+      <div class="filter-row">
+        <button class="filter-btn active" data-filter-type="category" data-filter="all">All</button>
+        <button class="filter-btn" data-filter-type="category" data-filter="maintenance">🔩 Maintenance</button>
+        <button class="filter-btn" data-filter-type="category" data-filter="safety">🛑 Safety</button>
+        <button class="filter-btn" data-filter-type="category" data-filter="electrical">⚡ Electrical</button>
+        <button class="filter-btn" data-filter-type="category" data-filter="transmission">⚙️ Transmission</button>
+        <button class="filter-btn" data-filter-type="category" data-filter="advanced">🔬 Advanced</button>
+        <input type="search" class="filters-search" id="guidesSearch" placeholder="Search guides…" aria-label="Search repair guides">
+      </div>
+      <!-- Row 2: engine + fuel -->
+      <div class="filter-row">
+        <span class="filter-label">Engine:</span>
+        <button class="filter-btn" data-filter-type="engine" data-filter="gy6">GY6</button>
+        <button class="filter-btn" data-filter-type="engine" data-filter="piaggio">Piaggio / Vespa</button>
+        <span class="filter-divider" aria-hidden="true"></span>
+        <span class="filter-label">Fuel:</span>
+        <button class="filter-btn" data-filter-type="fuel" data-filter="carb">Carb</button>
+        <button class="filter-btn" data-filter-type="fuel" data-filter="efi">EFI</button>
+      </div>
     </div>
   </div>
 
@@ -290,7 +330,7 @@
 
       <div class="guides-grid" id="guidesGrid">
 
-        <article class="guide-card" data-category="maintenance">
+        <article class="guide-card" data-category="maintenance" data-engine="gy6" data-fuel="both">
           <div class="card-guide-tag">GY6 · CVT · Storage</div>
           <h3><a href="gy6-scooter-storage-revival-guide.html">Scooter Storage Revival Guide</a></h3>
           <p>Five-phase guide to bringing a GY6 or CVT scooter back from 1+ years of storage — safety, fluids, fuel system, CVT drivetrain, and first-start checklist.</p>
@@ -302,7 +342,7 @@
           <a href="gy6-scooter-storage-revival-guide.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="maintenance">
+        <article class="guide-card" data-category="maintenance" data-engine="gy6" data-fuel="both">
           <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-oil-change-guide.html">Engine Oil Change</a></h3>
           <p>Oil drain, correct specification, capacity, and refill procedure for GY6 139QMB and 157QMJ engines.</p>
@@ -313,7 +353,7 @@
           <a href="gy6-oil-change-guide.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="maintenance">
+        <article class="guide-card" data-category="maintenance" data-engine="gy6" data-fuel="both">
           <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-spark-plug-guide.html">Spark Plug Inspection &amp; Replacement</a></h3>
           <p>Reading plug condition, correct gap setting, and replacement intervals for GY6 50cc–150cc engines.</p>
@@ -324,7 +364,7 @@
           <a href="gy6-spark-plug-guide.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="maintenance">
+        <article class="guide-card" data-category="maintenance" data-engine="gy6" data-fuel="both">
           <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-air-filter-guide.html">Air Filter Cleaning &amp; Replacement</a></h3>
           <p>Foam filter wash and re-oiling for GY6 clones; paper element replacement for Vespa-type models.</p>
@@ -335,7 +375,7 @@
           <a href="gy6-air-filter-guide.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="maintenance">
+        <article class="guide-card" data-category="maintenance" data-engine="gy6" data-fuel="carb">
           <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-carburetor-adjustment-guide.html">Carburetor Adjustment &amp; Tuning</a></h3>
           <p>Idle speed, mixture screw, and needle position adjustment for smooth running on GY6 carbureted scooters.</p>
@@ -346,7 +386,7 @@
           <a href="gy6-carburetor-adjustment-guide.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="maintenance">
+        <article class="guide-card" data-category="maintenance" data-engine="both" data-fuel="carb">
           <div class="card-guide-tag">GY6 · Piaggio</div>
           <h3><a href="carburetor-needle-height-adjustment.html">Carburetor Needle Height Adjustment</a></h3>
           <p>How to move the circlip on the carburetor needle to fix rich or lean running in the mid-throttle range. Universal guide for all slide carbs.</p>
@@ -358,7 +398,7 @@
         </article>
 
 
-        <article class="guide-card" data-category="maintenance">
+        <article class="guide-card" data-category="maintenance" data-engine="gy6" data-fuel="carb">
           <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-carburetor-cleaning-guide.html">Carburetor Deep-Cleaning</a></h3>
           <p>Full disassembly and deep-cleaning of GY6 PD18J/PD24J/CVK carburetors: float, jets, needle, mixture screw, and reassembly.</p>
@@ -369,7 +409,7 @@
           <a href="gy6-carburetor-cleaning-guide.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="safety">
+        <article class="guide-card" data-category="safety" data-engine="both" data-fuel="both">
           <div class="card-guide-tag">GY6 · Vespa</div>
           <h3><a href="gy6-brake-pads-guide.html">Brake Pads Replacement</a></h3>
           <p>Step-by-step front and rear brake pad replacement — caliper piston retraction, spring reinstall, and bed-in procedure.</p>
@@ -380,7 +420,7 @@
           <a href="gy6-brake-pads-guide.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="safety">
+        <article class="guide-card" data-category="safety" data-engine="both" data-fuel="both">
           <div class="card-guide-tag">GY6 · Vespa</div>
           <h3><a href="gy6-brake-fluid-guide.html">Brake Fluid Change &amp; Bleed</a></h3>
           <p>Why DOT 4 degrades over time — and how to flush and bleed hydraulic brake circuits safely.</p>
@@ -391,7 +431,7 @@
           <a href="gy6-brake-fluid-guide.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="electrical">
+        <article class="guide-card" data-category="electrical" data-engine="gy6" data-fuel="both">
           <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-ignition-coil-guide.html">Ignition Coil Testing &amp; Replacement</a></h3>
           <p>No-spark diagnosis checklist — isolate CDI vs coil vs stator, then replace the coil step by step with a multimeter.</p>
@@ -402,7 +442,7 @@
           <a href="gy6-ignition-coil-guide.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="transmission">
+        <article class="guide-card" data-category="transmission" data-engine="gy6" data-fuel="both">
           <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-cvt-variator-belt-replacement.html">CVT Variator &amp; Drive Belt Replacement</a></h3>
           <p>Complete variator disassembly, drive belt inspection, and belt replacement procedure for GY6 scooters.</p>
@@ -413,7 +453,7 @@
           <a href="gy6-cvt-variator-belt-replacement.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="transmission">
+        <article class="guide-card" data-category="transmission" data-engine="both" data-fuel="both">
           <div class="card-guide-tag">GY6 · Vespa · Piaggio</div>
           <h3><a href="scooter-cvt-clutch-variator-guide.html">CVT Clutch &amp; Variator Rollers</a></h3>
           <p>How the CVT works, wear symptoms, roller weight specs for GY6 and Piaggio, and step-by-step roller replacement.</p>
@@ -424,7 +464,7 @@
           <a href="scooter-cvt-clutch-variator-guide.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="advanced">
+        <article class="guide-card" data-category="advanced" data-engine="gy6" data-fuel="carb">
           <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-carburetor-jetting-guide.html">Carburetor Jetting &amp; Rejetting</a></h3>
           <p>Selecting and changing main jet and pilot jet sizes; jetting tables for altitude corrections and aftermarket modifications.</p>
@@ -435,7 +475,7 @@
           <a href="gy6-carburetor-jetting-guide.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="advanced">
+        <article class="guide-card" data-category="advanced" data-engine="gy6" data-fuel="both">
           <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-valve-adjustment-guide.html">Valve Clearance Adjustment</a></h3>
           <p>How to check and set valve clearances on 139QMB and 157QMJ engines — tools needed, TDC location, and feeler gauge procedure.</p>
@@ -446,7 +486,7 @@
           <a href="gy6-valve-adjustment-guide.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="electrical">
+        <article class="guide-card" data-category="electrical" data-engine="gy6" data-fuel="both">
           <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-cdi-no-spark-diagnosis.html">CDI No-Spark Diagnosis &amp; Replacement</a></h3>
           <p>Step-by-step electrical diagnosis of the GY6 ignition circuit — pick-up coil, ignition coil, and CDI tests with a multimeter, plus replacement guide.</p>
@@ -457,7 +497,7 @@
           <a href="gy6-cdi-no-spark-diagnosis.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="maintenance">
+        <article class="guide-card" data-category="maintenance" data-engine="piaggio" data-fuel="both">
           <div class="card-guide-tag">Vespa</div>
           <h3><a href="vespa-primavera-sprint-oil-change.html">Vespa Primavera &amp; Sprint Oil Change</a></h3>
           <p>Full oil change procedure for the Piaggio iGet engine (Primavera 125/150, Sprint 125/150) — correct spec, torque values, dipstick check, and service light reset.</p>
@@ -468,7 +508,7 @@
           <a href="vespa-primavera-sprint-oil-change.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="maintenance">
+        <article class="guide-card" data-category="maintenance" data-engine="gy6" data-fuel="both">
           <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-fuel-pump-maintenance.html">GY6 Fuel Pump: Maintenance &amp; Troubleshooting</a></h3>
           <p>Covers both vacuum-diaphragm pumps (carburetted) and electric pumps (EFI) — diagnosis, pressure testing, and step-by-step replacement.</p>
@@ -479,7 +519,7 @@
           <a href="gy6-fuel-pump-maintenance.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="fuel-system">
+        <article class="guide-card" data-category="fuel-system" data-engine="gy6" data-fuel="efi">
           <div class="card-guide-tag">GY6 EFI</div>
           <h3><a href="gy6-efi-hard-start-intake-flooding.html">GY6 EFI Hard Start: Intake Flooding</a></h3>
           <p>GY6 EFI hard starting caused by intake flooding — cracked intake insulator gasket or leaking fuel injector. Diagnosis and repair guide with real photos and video.</p>
@@ -490,7 +530,7 @@
           <a href="gy6-efi-hard-start-intake-flooding.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="fuel-system">
+        <article class="guide-card" data-category="fuel-system" data-engine="gy6" data-fuel="carb">
           <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-hard-start-intake-flooding.html">GY6 Hard Start: Intake Flooding</a></h3>
           <p>GY6 hard starting caused by intake flooding — cracked intake insulator gasket or leaking carburetor needle valve. Diagnosis and repair guide with real photos.</p>
@@ -501,7 +541,7 @@
           <a href="gy6-hard-start-intake-flooding.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="maintenance">
+        <article class="guide-card" data-category="maintenance" data-engine="gy6" data-fuel="both">
           <div class="card-guide-tag">GY6 · 139QMB</div>
           <h3><a href="gy6-speedometer-cable-replacement.html">Speedometer Cable — Diagnosis &amp; Replacement</a></h3>
           <p>Dead or erratic speedometer on your GY6 50cc? Diagnose a broken mechanical drive cable and replace it — covers La Souris, Santini Capri, BTC Riva 50, and other clones.</p>
@@ -512,7 +552,7 @@
           <a href="gy6-speedometer-cable-replacement.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="advanced">
+        <article class="guide-card" data-category="advanced" data-engine="gy6" data-fuel="both">
           <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-top-end-rebuild-piston-rings.html">Top End Rebuild &amp; Piston Ring Replacement</a></h3>
           <p>Complete GY6 top end rebuild — cylinder removal, piston ring inspection and installation, ring clocking, head torque specs, and post-rebuild run-in procedure for 139QMB and 157QMJ engines.</p>
@@ -523,7 +563,7 @@
           <a href="gy6-top-end-rebuild-piston-rings.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="electrical">
+        <article class="guide-card" data-category="electrical" data-engine="gy6" data-fuel="both">
           <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-electrical-wiring-troubleshooting.html">Electrical System &amp; Wiring Troubleshooting</a></h3>
           <p>Systematic diagnosis of GY6 electrical faults — stator, CDI, pickup coil, regulator/rectifier, charging system, and lighting — with multimeter test values and wire colour guide.</p>
@@ -534,7 +574,7 @@
           <a href="gy6-electrical-wiring-troubleshooting.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="maintenance">
+        <article class="guide-card" data-category="maintenance" data-engine="piaggio" data-fuel="both">
           <div class="card-guide-tag">Vespa</div>
           <h3><a href="vespa-primavera-dent-bodywork-repair.html">Vespa Primavera — Dent Repair &amp; Bodywork Restoration</a></h3>
           <p>Step-by-step guide to dent removal, body filler, primer, and colour-matched repainting on the Vespa Primavera steel monocoque body — including paint code identification.</p>
@@ -546,7 +586,7 @@
           <a href="vespa-primavera-dent-bodywork-repair.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="advanced">
+        <article class="guide-card" data-category="advanced" data-engine="gy6" data-fuel="carb">
           <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-big-bore-kit-guide.html">GY6 Big Bore Kit — Everything You Need to Know</a></h3>
           <p>Choose, install, and tune a big bore kit — 150cc to 171cc upgrade without case machining, ring-gap checking, re-jetting, and break-in procedure.</p>
@@ -557,7 +597,7 @@
           <a href="gy6-big-bore-kit-guide.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="advanced">
+        <article class="guide-card" data-category="advanced" data-engine="gy6" data-fuel="both">
           <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-performance-upgrades-guide.html">GY6 Engine Performance Upgrades — Complete Guide</a></h3>
           <p>Stage-by-stage upgrade path — CDI, variator rollers, exhaust, big bore, carburetor, EFI conversion, and brake upgrades for GY6 50cc–150cc scooters.</p>
@@ -568,7 +608,7 @@
           <a href="gy6-performance-upgrades-guide.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="maintenance">
+        <article class="guide-card" data-category="maintenance" data-engine="gy6" data-fuel="both">
           <div class="card-guide-tag">GY6</div>
           <h3><a href="gy6-4stroke-maintenance-schedule.html">GY6 4-Stroke Maintenance Schedule</a></h3>
           <p>Complete interval-based service schedule for GY6 50cc–150cc engines — oil, air filter, spark plug, valves, belt, variator, brakes, battery, and seasonal storage.</p>
@@ -579,7 +619,7 @@
           <a href="gy6-4stroke-maintenance-schedule.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="maintenance">
+        <article class="guide-card" data-category="maintenance" data-engine="piaggio" data-fuel="both">
           <div class="card-guide-tag">Vespa · Piaggio</div>
           <h3><a href="vespa-diy-maintenance-tips.html">Vespa DIY Maintenance — Tips to Save Costs</a></h3>
           <p>Owner-accessible maintenance tasks for Vespa Primavera, Sprint, Zip, and GTS — oil change, air filter, spark plug, tyres, brakes, and drive belt inspection.</p>
@@ -590,7 +630,7 @@
           <a href="vespa-diy-maintenance-tips.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="engine">
+        <article class="guide-card" data-category="engine" data-engine="gy6" data-fuel="both">
           <div class="card-guide-tag">GY6 · Ignition</div>
           <h3><a href="gy6-ignition-timing-adjustment-guide.html">GY6 Ignition Timing Adjustment Guide</a></h3>
           <p>How to diagnose incorrect timing, read flywheel timing marks, and adjust the stator plate on GY6 50cc–150cc engines (139QMB, 152QMI, 157QMJ). Includes symptom table and typical specification values.</p>
@@ -602,7 +642,7 @@
           <a href="gy6-ignition-timing-adjustment-guide.html" class="read-more">Read Guide</a>
         </article>
 
-        <article class="guide-card" data-category="maintenance">
+        <article class="guide-card" data-category="maintenance" data-engine="piaggio" data-fuel="both">
           <div class="card-guide-tag">Vespa · Piaggio · Maintenance</div>
           <h3><a href="vespa-scooter-routine-service-checklist.html">Vespa Scooter Routine Service Checklist</a></h3>
           <p>Comprehensive service checklist for Vespa Primavera, Sprint, Piaggio Zip, Fly, and Liberty 4-stroke scooters covering oil, air filter, spark plug, CVT, brakes, tyres, electrics, and chassis — with service intervals.</p>
@@ -623,33 +663,38 @@
   <script src="../script.js"></script>
   <script>
     function initializeFilters() {
-      const filterBtns = document.querySelectorAll('.filter-btn');
       const cards = document.querySelectorAll('.guide-card');
       const countEl = document.getElementById('visibleCount');
       const noResults = document.getElementById('noResults');
       const searchInput = document.getElementById('guidesSearch');
 
-      let activeCategory = 'all';
+      // Independent active state per filter type
+      const active = { category: 'all', engine: 'all', fuel: 'all' };
 
       function applyFilters() {
         const term = searchInput.value.trim().toLowerCase();
         let visible = 0;
 
         cards.forEach(card => {
-          const categoryMatch = activeCategory === 'all' || card.getAttribute('data-category') === activeCategory;
+          const cat = card.getAttribute('data-category') || '';
+          const eng = card.getAttribute('data-engine') || 'both';
+          const fuel = card.getAttribute('data-fuel') || 'both';
+
+          const categoryMatch = active.category === 'all' || cat === active.category;
+          const engineMatch  = active.engine === 'all'  || eng === active.engine || eng === 'both';
+          const fuelMatch    = active.fuel === 'all'    || fuel === active.fuel   || fuel === 'both';
 
           let textMatch = true;
           if (term) {
             const haystack = [
               card.querySelector('h3')?.textContent,
               card.querySelector('p')?.textContent,
-              card.querySelector('.card-tag')?.textContent,
-              card.querySelector('.tag')?.textContent,
+              card.querySelector('.card-guide-tag')?.textContent,
             ].filter(Boolean).join(' ').toLowerCase();
             textMatch = haystack.includes(term);
           }
 
-          const show = categoryMatch && textMatch;
+          const show = categoryMatch && engineMatch && fuelMatch && textMatch;
           card.classList.toggle('hidden', !show);
           if (show) visible++;
         });
@@ -658,12 +703,24 @@
         noResults.classList.toggle('visible', visible === 0);
       }
 
-      filterBtns.forEach(btn => {
+      // Wire each button group independently
+      document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
           e.stopPropagation();
-          filterBtns.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          activeCategory = btn.getAttribute('data-filter');
+          const type = btn.getAttribute('data-filter-type'); // category | engine | fuel
+          const value = btn.getAttribute('data-filter');
+
+          if (active[type] === value) {
+            // Toggle off — return to 'all' for this dimension
+            active[type] = 'all';
+            btn.classList.remove('active');
+          } else {
+            // Deactivate sibling buttons of same type, activate this one
+            document.querySelectorAll(`.filter-btn[data-filter-type="${type}"]`).forEach(b => b.classList.remove('active'));
+            active[type] = value;
+            btn.classList.add('active');
+          }
+
           applyFilters();
         });
       });
