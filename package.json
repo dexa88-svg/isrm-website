@@ -10,7 +10,7 @@
     "test:coverage": "node scripts/validate-pages.js && jest --coverage",
     "generate-stats": "node scripts/generate-stats.js",
     "search-index": "pagefind --site public --output-path public/pagefind",
-    "build": "node scripts/generate-stats.js && pagefind --site public --output-path public/pagefind"
+    "build": "node scripts/generate-stats.js && astro build && pagefind --site dist --output-path dist/pagefind"
   },
   "devDependencies": {
     "jest": "^29.7.0",

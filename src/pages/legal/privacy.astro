@@ -1,145 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-53LY3KPDYM"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-53LY3KPDYM', { 'anonymize_ip': true });
-  </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ISMR Privacy Policy — how we collect, use, and protect your data. GDPR-compliant. No advertising. No selling of personal data.">
-  <link rel="canonical" href="https://ismr.online/legal/privacy.html">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ismr.online/legal/privacy.html">
-  <meta property="og:title" content="Privacy Policy — ISMR">
-  <meta property="og:description" content="ISMR Privacy Policy — how we collect, use, and protect your data. GDPR-compliant. No advertising. No selling of personal data.">
-  <meta property="og:site_name" content="ISMR — Interactive Scooter Manuals for Repair">
-  <meta property="og:image" content="https://ismr.online/og-image.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Privacy Policy — ISMR">
-  <meta name="twitter:description" content="ISMR Privacy Policy — GDPR-compliant. No advertising. No selling of personal data.">
-  <meta name="twitter:image" content="https://ismr.online/og-image.jpg">
-  <!-- Favicons -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#ff6b35">
-  <title>Privacy Policy — ISMR</title>
-  <link rel="stylesheet" href="../styles.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Privacy Policy — ISMR",
-    "url": "https://ismr.online/legal/privacy.html",
-    "description": "ISMR Privacy Policy — GDPR-compliant information on data collection and use."
-  }
-  </script>
-  <style>
+---
+import Base from '../../layouts/Base.astro';
+import Navbar from '../../components/Navbar.astro';
+
+const title = "Privacy Policy — ISMR";
+const description = "ISMR Privacy Policy — how we collect, use, and protect your data. GDPR-compliant. No advertising. No selling of personal data.";
+const canonical = "https://ismr.online/legal/privacy.html";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Privacy Policy — ISMR",
+  "url": canonical,
+  "description": "ISMR Privacy Policy — GDPR-compliant information on data collection and use."
+};
+---
+
+<Base title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
+  <style is:global>
     a, button, .btn, [class*="card"] { transition: var(--transition); }
     :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-
-    .page-hero {
-      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
-      padding: 3rem 2rem 2rem;
-      position: relative;
-      overflow: hidden;
-      border-bottom: 1px solid var(--border);
-    }
-    .page-hero::before {
-      content: "🔒";
-      position: absolute; right: 6%; top: 50%;
-      transform: translateY(-50%);
-      font-size: 9rem; opacity: 0.07; pointer-events: none; line-height: 1;
-    }
+    .page-hero { background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%); padding: 3rem 2rem 2rem; position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
+    .page-hero::before { content: "🔒"; position: absolute; right: 6%; top: 50%; transform: translateY(-50%); font-size: 9rem; opacity: 0.07; pointer-events: none; line-height: 1; }
     .page-hero-inner { max-width: 860px; margin: 0 auto; }
-    .page-hero h1 {
-      font-size: 2rem; line-height: 1.2;
-      background: linear-gradient(135deg, var(--text-primary), var(--accent));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-      margin-bottom: 1rem;
-    }
-    .breadcrumb {
-      padding: 0 0 1rem; margin: 0;
-      font-size: 0.85rem; color: var(--text-tertiary);
-    }
-    .breadcrumb a { color: var(--accent); }
-    .breadcrumb a:hover { color: var(--primary); }
-    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+    .page-hero h1 { font-size: 2rem; line-height: 1.2; background: linear-gradient(135deg, var(--text-primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1rem; }
     .meta { color: var(--text-tertiary); font-size: 0.85rem; }
-
-    .guide-content {
-      max-width: 860px; margin: 0 auto; padding: 2.5rem 2rem 5rem;
-    }
-    .guide-content h2 {
-      font-size: 1.4rem; color: var(--text-primary);
-      margin-top: 2.5rem; margin-bottom: 0.8rem;
-      padding-bottom: 0.45rem; border-bottom: 1px solid var(--border);
-    }
+    .guide-content { max-width: 860px; margin: 0 auto; padding: 2.5rem 2rem 5rem; }
+    .guide-content h2 { font-size: 1.4rem; color: var(--text-primary); margin-top: 2.5rem; margin-bottom: 0.8rem; padding-bottom: 0.45rem; border-bottom: 1px solid var(--border); }
     .guide-content h2:first-child { margin-top: 0; }
     .guide-content h3 { font-size: 1.05rem; color: var(--accent); margin-top: 1.4rem; margin-bottom: 0.5rem; }
     .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.75; }
     .guide-content a { color: var(--accent); }
     .guide-content a:hover { color: var(--primary); }
-    .guide-content ul, .guide-content ol {
-      padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary);
-    }
+    .guide-content ul, .guide-content ol { padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary); }
     .guide-content li { margin-bottom: 0.5rem; line-height: 1.65; }
     .guide-content li strong { color: var(--text-primary); }
-
-    .info-box {
-      background: rgba(0, 168, 204, 0.07);
-      border: 1px solid rgba(0, 168, 204, 0.2);
-      border-left: 4px solid var(--accent);
-      border-radius: 0 var(--radius-md) var(--radius-md) 0;
-      padding: 0.9rem 1.2rem; margin: 1.5rem 0;
-      color: var(--text-secondary); font-size: 0.95rem;
-    }
+    .info-box { background: rgba(0, 168, 204, 0.07); border: 1px solid rgba(0, 168, 204, 0.2); border-left: 4px solid var(--accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 0.9rem 1.2rem; margin: 1.5rem 0; color: var(--text-secondary); font-size: 0.95rem; }
     .info-box strong { color: var(--text-primary); }
-
-    .toc {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 1.2rem 1.5rem;
-      margin-bottom: 2.5rem;
-    }
+    .toc { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.2rem 1.5rem; margin-bottom: 2.5rem; }
     .toc p { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
     .toc ol { padding-left: 1.2rem; margin: 0; }
     .toc li { margin-bottom: 0.35rem; font-size: 0.9rem; }
     .toc a { color: var(--accent); text-decoration: none; }
     .toc a:hover { color: var(--primary); text-decoration: underline; }
-
-    @media (max-width: 768px) {
-      .guide-content { padding: 1.5rem 1rem 3rem; }
-      .page-hero { padding: 2rem 1rem 1.5rem; }
-      .page-hero h1 { font-size: 1.6rem; }
-    }
-    @media (max-width: 480px) {
-      .page-hero h1 { font-size: 1.4rem; }
-      .guide-content h2 { font-size: 1.2rem; }
-    }
+    @media (max-width: 768px) { .guide-content { padding: 1.5rem 1rem 3rem; } .page-hero { padding: 2rem 1rem 1.5rem; } .page-hero h1 { font-size: 1.6rem; } }
+    @media (max-width: 480px) { .page-hero h1 { font-size: 1.4rem; } .guide-content h2 { font-size: 1.2rem; } }
   </style>
-</head>
-<body>
-  <nav class="navbar" data-pagefind-ignore id="navbar">
-    <div class="nav-container">
-      <a href="../index.html" class="nav-brand"><span class="brand-icon">⚙️</span><span class="brand-text">ISMR</span></a>
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
-        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
-        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
-        <li><a href="../models/index.html" class="nav-link">Models</a></li>
-        <li><a href="../index.html#about" class="nav-link">About</a></li>
-      </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
-    </div>
-  </nav>
+
+  <Navbar />
 
   <header class="page-hero">
     <div class="page-hero-inner">
@@ -242,10 +148,7 @@
 
   <footer data-pagefind-ignore class="guide-footer">
     <p>Content licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> unless otherwise noted.</p>
-    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISMR Home</a> &nbsp;·&nbsp; <a href="../repair-guides/index.html" style="color: var(--accent);">Repair Guides</a> &nbsp;·&nbsp; <a href="../diagnostics/index.html" style="color: var(--accent);">Diagnostics</a> &nbsp;·&nbsp; <a href="../models/index.html" style="color: var(--accent);">Models</a></p>
-    <p style="margin-top: 0.75rem; font-size: 0.82rem; color: var(--text-secondary);"><a href="privacy.html" style="color: var(--accent);" aria-current="page">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html" style="color: var(--accent);">Terms of Service</a></p>
+    <p style="margin-top: 1rem;"><a href="/index.html" style="color: var(--accent);">⚙️ ISMR Home</a> &nbsp;·&nbsp; <a href="/repair-guides/index.html" style="color: var(--accent);">Repair Guides</a> &nbsp;·&nbsp; <a href="/diagnostics/index.html" style="color: var(--accent);">Diagnostics</a> &nbsp;·&nbsp; <a href="/models/index.html" style="color: var(--accent);">Models</a></p>
+    <p style="margin-top: 0.75rem; font-size: 0.82rem; color: var(--text-secondary);"><a href="/legal/privacy.html" style="color: var(--accent);" aria-current="page">Privacy Policy</a> &nbsp;·&nbsp; <a href="/legal/terms.html" style="color: var(--accent);">Terms of Service</a></p>
   </footer>
-
-  <script src="../script.js"></script>
-</body>
-</html>
+</Base>

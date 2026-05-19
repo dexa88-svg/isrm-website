@@ -9,7 +9,7 @@ export default defineConfig({
   integrations: [mdx()],
   output: 'static',
   trailingSlash: 'never',
-  build: { format: 'file' },
+  build: { format: 'preserve' },
   vite: {
     resolve: {
       alias: {
