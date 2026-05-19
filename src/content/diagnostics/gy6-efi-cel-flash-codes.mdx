@@ -1,0 +1,127 @@
+---
+title: "GY6 EFI CEL Flash Codes — Manual Diagnostic Mode"
+description: "GY6 EFI check engine light flash code reader. Decode CEL blink patterns for fuel injection fault codes on Chinese 125/150cc EFI scooters."
+publishDate: "2026-05-19"
+updatedDate: "2026-05-19"
+difficulty: "Beginner"
+timeEstimate: "~30 min"
+tags:
+  - "GY6 EFI"
+  - "Fault Codes"
+  - "CEL / MIL"
+  - "Diagnostics"
+  - "Piaggio"
+appliesTo: []
+videos: []
+sources: []
+canonical: "https://ismr.online/diagnostics/gy6-efi-cel-flash-codes.html"
+draft: false
+---
+
+import VideoEmbed from '@components/VideoEmbed.astro';
+import Callout from '@components/Callout.astro';
+
+## What Is the CEL / MIL?
+
+The **Check Engine Light (CEL)**, also called the **Malfunction Indicator Lamp (MIL)**, is the dashboard warning light — typically an engine outline icon or the words "CHECK" or "INJECTION." When the ECU detects a sensor reading outside its acceptable range, it stores a fault code and illuminates this light.
+
+Most GY6 EFI ECUs support a built-in **manual diagnostic mode** that flashes stored fault codes as a sequence of light pulses — no OBD scanner required. This guide explains how to enter that mode and how to read the resulting flash patterns.
+
+<Callout type="warn">
+  **⚠ Note on ECU variants:** Chinese GY6 EFI scooters may use any of several ECU types (KEIHIN PGM-FI clones, Delphi MT05 variants, proprietary clones). Flash code sequences and activation procedures are largely standardised across these, but minor differences exist. If in doubt, cross-reference your scooter's service manual.
+</Callout>
+
+**ℹ️ Wrong page?** This guide covers **CEL blink/flash codes** — the older diagnostic method used by KEIHIN PGM-FI clone ECUs that flash patterns without any scanner. **If your scooter has a Rongmao, Delphi, or Motion EFI system** (typically Euro 4 / Euro 5 models from approx. 2017+), it uses standard OBD-2 P-codes and does not support blink codes. See the [GY6 EFI OBD-2 DTC Fault Codes guide](gy6-efi-obd2-dtc-fault-codes.html) instead.
+
+## How to Enter Manual Diagnostic Mode
+
+### Standard Activation Procedure (most GY6 EFI and Chinese EFI scooters)
+
+1.  Park the scooter on its centre stand on level ground. Engine must be **off**.
+2.  Turn the ignition key to **ON** — do not start the engine.
+3.  Watch the CEL: it will illuminate for ~2 seconds (self-check), then go out. This is normal.
+4.  If no fault is stored, the CEL stays off and you are done — no codes present.
+5.  If one or more fault codes are stored, the CEL will begin **flashing sequences automatically** after the self-check (no further input needed on most units).
+
+On some ECUs (particularly older Piaggio D-Tronik / Wave ECU), the manual mode requires a specific sequence — see below.
+
+### Piaggio / Vespa Activation Procedure (D-Tronik ECU, pre-2015)
+
+1.  Turn ignition key to **OFF**.
+2.  Turn ignition key to **ON** (do not start).
+3.  Immediately turn back to **OFF**.
+4.  Turn to **ON** again within 5 seconds.
+5.  The CEL will flash stored codes. If the CEL flashes once then holds steady for 3 seconds, no codes are stored.
+
+### Activation with Diagnostic Toggle Wire (some Chinese ECUs)
+
+Some Chinese EFI scooters have a **diagnostic wire** — a short pigtail under the seat or near the ECU, usually **white or green**, with a connector plug or bare terminal. To enter diagnostic mode:
+
+1.  Turn ignition to **OFF**.
+2.  Connect the diagnostic wire to **ground** (any clean chassis bolt).
+3.  Turn ignition to **ON**.
+4.  The CEL will flash the stored codes.
+5.  Disconnect the wire from ground when done.
+
+## How to Read the Flash Codes
+
+Flash codes are expressed as two groups of pulses separated by a short pause. The **first group** (longer flashes) indicates the **tens digit**; the **second group** (shorter flashes) indicates the **units digit**. A longer pause separates one code from the next. If multiple codes are stored, the ECU cycles through all of them repeatedly.
+
+<Callout type="tip">
+  **Reading tip:** Count the number of long flashes first, then count the short flashes after the brief pause. Write each pair down — for example, 1 long + 2 short = Code **12**.
+</Callout>
+
+### Flash Pattern Examples
+
+<table><tbody><tr><th>What you see (CEL)</th><th>How to read it</th><th>Code</th></tr><tr><td><div class="flash-demo"><span class="flash-long"></span><span class="flash-gap"></span><span class="flash-short"></span><span class="flash-short"></span></div></td><td>1 long flash, pause, 2 short flashes</td><td><strong>12</strong></td></tr><tr><td><div class="flash-demo"><span class="flash-long"></span><span class="flash-long"></span><span class="flash-gap"></span><span class="flash-short"></span></div></td><td>2 long flashes, pause, 1 short flash</td><td><strong>21</strong></td></tr><tr><td><div class="flash-demo"><span class="flash-long"></span><span class="flash-long"></span><span class="flash-long"></span><span class="flash-gap"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span></div></td><td>3 long flashes, pause, 3 short flashes</td><td><strong>33</strong></td></tr></tbody></table>
+
+## GY6 EFI Flash Code Reference Table
+
+The following codes are used by GY6-compatible EFI ECUs (KEIHIN PGM-FI clones, MT05-type, and Piaggio D-Tronik variants). Severity indicates how urgently the fault should be addressed.
+
+<table class="code-table"><tbody><tr><th>Code</th><th>Fault Description</th><th>Affected Component</th><th>Severity</th><th>Typical Cause</th></tr><tr><td>01</td><td>No fault stored / System OK</td><td>—</td><td><span class="severity-low">None</span></td><td>Normal operation. CEL may have been triggered by a transient event.</td></tr><tr><td>07</td><td>Throttle Position Sensor (TPS) — signal out of range</td><td>TPS</td><td><span class="severity-high">High</span></td><td>Faulty TPS, wiring break, or loose connector. Engine may run rich/lean or surge.</td></tr><tr><td>08</td><td>Throttle Position Sensor (TPS) — low voltage</td><td>TPS</td><td><span class="severity-high">High</span></td><td>Short circuit in TPS signal wire or failed TPS. Check 5 V reference at ECU pin.</td></tr><tr><td>09</td><td>Throttle Position Sensor (TPS) — high voltage</td><td>TPS</td><td><span class="severity-high">High</span></td><td>Open circuit in TPS or wiring. Replace TPS if voltage &gt; 4.8 V at idle.</td></tr><tr><td>12</td><td>Coolant Temperature Sensor (CTS / ECT) — short to ground</td><td>CTS</td><td><span class="severity-med">Medium</span></td><td>Sensor or wiring shorted to ground. Cold start enrichment may be incorrect.</td></tr><tr><td>13</td><td>Coolant Temperature Sensor (CTS / ECT) — open circuit</td><td>CTS</td><td><span class="severity-med">Medium</span></td><td>Sensor unplugged or open circuit. ECU defaults to a fixed temperature; cold starts may be rough.</td></tr><tr><td>14</td><td>Inlet Air Temperature Sensor (IAT) — short to ground</td><td>IAT</td><td><span class="severity-low">Low</span></td><td>IAT sensor or wiring short. Engine runs but fuel mapping is degraded.</td></tr><tr><td>15</td><td>Inlet Air Temperature Sensor (IAT) — open circuit</td><td>IAT</td><td><span class="severity-low">Low</span></td><td>Sensor unplugged. Often found combined with MAP sensor in a single unit (T-MAP).</td></tr><tr><td>17</td><td>MAP / IAP Sensor — voltage out of range</td><td>MAP / IAP</td><td><span class="severity-high">High</span></td><td>Failed MAP sensor, split vacuum hose to sensor, or clogged intake. Engine may stall or idle roughly.</td></tr><tr><td>18</td><td>MAP / IAP Sensor — low voltage</td><td>MAP / IAP</td><td><span class="severity-high">High</span></td><td>Wiring short or failed sensor. Check vacuum hose integrity and sensor 5 V supply.</td></tr><tr><td>19</td><td>MAP / IAP Sensor — high voltage</td><td>MAP / IAP</td><td><span class="severity-high">High</span></td><td>Open circuit to MAP sensor. Replace sensor if supply voltage is correct but signal is high.</td></tr><tr><td>21</td><td>O₂ Sensor — lean mixture detected</td><td>Lambda / O₂ sensor</td><td><span class="severity-med">Medium</span></td><td>Air leak (vacuum leak), weak fuel pump, blocked injector, or failed O₂ sensor. See <a href="gy6-air-leak-diagnosis.html">air leak guide</a>.</td></tr><tr><td>22</td><td>O₂ Sensor — rich mixture detected</td><td>Lambda / O₂ sensor</td><td><span class="severity-med">Medium</span></td><td>Leaking injector (dripping at rest), failed O₂ sensor, or high fuel pressure.</td></tr><tr><td>23</td><td>O₂ Sensor — no response / heater fault</td><td>Lambda / O₂ sensor</td><td><span class="severity-med">Medium</span></td><td>Sensor heater failed or open circuit. Closed-loop fuelling disabled; fuel economy affected.</td></tr><tr><td>29</td><td>Idle Speed Control (ISC) valve — fault</td><td>ISC / IAC valve</td><td><span class="severity-med">Medium</span></td><td>ISC valve stuck, blocked, or wiring fault. Idle may be too high, too low, or unstable.</td></tr><tr><td>33</td><td>Crankshaft Position Sensor (CKP) — signal absent</td><td>CKP sensor</td><td><span class="severity-high">High</span></td><td>Broken or disconnected CKP sensor. Engine may not start at all. Check reluctor wheel gap (0.5–1.5 mm).</td></tr><tr><td>34</td><td>Crankshaft Position Sensor (CKP) — intermittent signal</td><td>CKP sensor</td><td><span class="severity-high">High</span></td><td>Damaged reluctor ring teeth, wiring intermittent, or air gap too large. Can cause stalling under load.</td></tr><tr><td>36</td><td>Camshaft Position Sensor (CMP) — no signal</td><td>CMP sensor</td><td><span class="severity-high">High</span></td><td>Failed cam sensor or wiring break. Engine may still run using CKP only (degraded mode).</td></tr><tr><td>41</td><td>Fuel injector — circuit fault</td><td>Injector</td><td><span class="severity-high">High</span></td><td>Open or short circuit in injector wiring, or failed injector solenoid. Engine will not start correctly.</td></tr><tr><td>46</td><td>Ignition coil — primary circuit fault</td><td>Ignition coil</td><td><span class="severity-high">High</span></td><td>Open or short in coil primary winding or wiring. No spark. See <a href="/repair-guides/gy6-ignition-coil-guide.html">ignition coil guide</a>.</td></tr><tr><td>54</td><td>Fuel pump relay — no response</td><td>Fuel pump / relay</td><td><span class="severity-high">High</span></td><td>Failed fuel pump relay, blown fuse, or open circuit. Fuel pump does not prime on key-on. Engine will not start.</td></tr><tr><td>56</td><td>Battery / system voltage — low</td><td>Battery / charging</td><td><span class="severity-med">Medium</span></td><td>Voltage below ~10.5 V. Charge or replace battery. Check rectifier/regulator output (should be 13.5–14.5 V at idle).</td></tr><tr><td>57</td><td>Battery / system voltage — high</td><td>Rectifier / regulator</td><td><span class="severity-high">High</span></td><td>Voltage above ~15 V. Failed rectifier/regulator — replace immediately to prevent ECU and battery damage.</td></tr><tr><td>63</td><td>ECU internal fault — RAM or ROM error</td><td>ECU</td><td><span class="severity-high">High</span></td><td>ECU self-test failed. Try disconnecting battery for 10 minutes to reset. If persistent, ECU replacement likely required.</td></tr></tbody></table>
+
+## Clearing Stored Fault Codes
+
+### Method 1 — Battery Disconnect (Universal)
+
+1.  Ensure the ignition is **OFF**.
+2.  Disconnect the **negative (–) terminal** from the battery.
+3.  Wait at least **10 minutes** for ECU capacitors to discharge fully.
+4.  Reconnect the battery. Start the engine and confirm the CEL is extinguished.
+
+<Callout type="warn">
+  **Important:** Clearing codes does not fix the underlying fault. If the root cause is not repaired, the code will return within a few minutes of running.
+</Callout>
+
+### Method 2 — Ignition Cycle Reset (some ECUs)
+
+Perform five full ignition ON → OFF cycles in quick succession. On some ECU types this triggers an adaptive memory reset. Codes may persist on other types — use Method 1 if codes return immediately.
+
+## Sensor Location Reference
+
+<table><tbody><tr><th>Sensor</th><th>Typical Location (GY6 125/150)</th><th>Connector Colour</th></tr><tr><td>MAP / IAP sensor</td><td>Intake manifold or air box, short vacuum hose</td><td>Black 3-pin</td></tr><tr><td>IAT sensor</td><td>Air filter box, or combined with MAP in T-MAP unit</td><td>Black 2-pin or 3-pin (T-MAP)</td></tr><tr><td>CTS sensor</td><td>Cylinder head coolant passage (liquid-cooled) or head fin (air-cooled simulacrum)</td><td>Black 2-pin</td></tr><tr><td>TPS</td><td>Side of throttle body, on throttle shaft</td><td>Black 3-pin</td></tr><tr><td>O₂ / Lambda</td><td>Exhaust header, 15–25 cm from cylinder head</td><td>Black 4-pin (heated)</td></tr><tr><td>CKP sensor</td><td>Left-side engine case, near flywheel/magneto</td><td>Black 3-pin</td></tr><tr><td>CMP sensor</td><td>Cylinder head cam cover, rear or side</td><td>Black 3-pin</td></tr><tr><td>ISC / IAC valve</td><td>Throttle body bypass circuit</td><td>Black 4-pin</td></tr></tbody></table>
+
+## Diagnostic Flow — CEL Is On
+
+1.  **Enter manual diagnostic mode** using the procedure above for your ECU type.
+2.  **Record all flash codes** — multiple codes may be stored. Write every code down before starting repairs.
+3.  **Cross-reference the code table** above to identify the affected component.
+4.  **Inspect wiring and connectors first** — the majority of faults on Chinese EFI scooters are due to corroded connectors or chafed wiring, not failed sensors.
+5.  **Test the sensor** with a multimeter (resistance, voltage, or signal as appropriate for the sensor type).
+6.  **Repair or replace** as required.
+7.  **Clear the code** (battery disconnect method) and retest.
+8.  If the same code returns immediately, recheck your repair. If a different code appears, continue through the code table.
+
+<Callout type="tip">
+  **Pro tip:** Always repair the highest-severity code first. A battery voltage fault (Code 56/57) can cause multiple secondary sensor codes to appear because sensor supply voltages are affected. Fixing the root voltage issue may clear several codes at once.
+</Callout>
+
+## Related Guides
+
+-   [GY6 EFI Fuel Injection Full Troubleshooting Guide](gy6-efi-fuel-injection-troubleshooting.html)
+-   [GY6 Scooter Won't Start — Troubleshooting Checklist](gy6-no-start-troubleshooting.html)
+-   [Diagnosing Air Leaks and Vacuum Sucking](gy6-air-leak-diagnosis.html)
+-   [Ignition Coil Replacement Guide](/repair-guides/gy6-ignition-coil-guide.html)
+
+Sources: GY6 EFI service manuals (KEIHIN PGM-FI, Delphi MT05); Piaggio D-Tronik ECU documentation; community-verified flash code data from scootdawg.com and modernvespa.com forums. Licensed CC BY-SA 4.0.

@@ -1,0 +1,100 @@
+---
+title: "GY6 Ignition Timing Adjustment Guide"
+description: "Step-by-step guide to adjusting ignition timing on GY6 50–150cc scooter engines. Covers timing marks, stator plate adjustment, tools needed, and common symptoms of incorrect timing."
+publishDate: "2026-05-19"
+updatedDate: "2026-05-19"
+difficulty: "Intermediate"
+timeEstimate: "~30 min"
+tags:
+  - "GY6"
+  - "Carburettor"
+  - "Ignition"
+appliesTo: []
+videos: []
+sources:
+  - name: "Scooter Timing Adjustment Complete Guide 2026 — Q9 PowerSports USA"
+    url: "https://q9powersportsusa.com/blogs/technical-support-q9-powersports-usa/adjust-timing-50cc-motor-scooter"
+canonical: "https://ismr.online/repair-guides/gy6-ignition-timing-adjustment-guide.html"
+draft: false
+---
+
+import VideoEmbed from '@components/VideoEmbed.astro';
+import Callout from '@components/Callout.astro';
+import SourceBox from '@components/SourceBox.astro';
+
+<SourceBox sources={[
+  { name: "Scooter Timing Adjustment Complete Guide 2026 — Q9 PowerSports USA", url: "https://q9powersportsusa.com/blogs/technical-support-q9-powersports-usa/adjust-timing-50cc-motor-scooter" }
+]} />
+
+
+Ignition timing determines exactly when the spark plug fires relative to piston position. On GY6 4-stroke engines (139QMB 50cc and 157QMJ 125cc/150cc, as found in scooters such as the BTC Riva 50, La Souris Sourini/City, and Santini Capri), the timing is controlled by the position of the stator plate inside the magneto cover. Correct timing is essential for starting, fuel economy, power delivery, and preventing engine damage from detonation (pinging).
+
+## Symptoms of Incorrect Timing
+
+<table><tbody><tr><th>Symptom</th><th>Likely timing condition</th></tr><tr><td>Hard starting, especially when hot</td><td>Timing too advanced or too retarded</td></tr><tr><td>Pinging or knocking under load</td><td>Timing too far advanced</td></tr><tr><td>Poor acceleration, low power</td><td>Timing too retarded</td></tr><tr><td>Overheating at normal speeds</td><td>Timing too advanced</td></tr><tr><td>High fuel consumption</td><td>Timing too retarded</td></tr><tr><td>Engine runs but won't idle cleanly</td><td>Possible timing fault among other causes</td></tr></tbody></table>
+
+## Tools and Parts Required
+
+-   Timing light (stroboscopic) — or a multimeter in AC voltage mode as an alternative
+-   10 mm socket and ratchet
+-   Screwdrivers (flat and Phillips)
+-   Feeler gauges (optional, for air gap check)
+-   Workshop manual or timing specification for your specific engine variant
+-   Permanent marker
+
+<Callout type="tip">
+  � **Note on GY6 timing marks:** GY6 engines have timing marks on the flywheel/magneto rotor and a reference mark on the engine casing. Common marks are `T` (Top Dead Centre) and a further mark (often a line or triangle) indicating standard ignition timing advance — typically **15–20° BTDC** at idle. Consult your service manual for the precise figure.
+</Callout>
+
+## Step-by-Step Procedure
+
+### Step 1 — Warm the Engine
+
+Run the engine for 5–10 minutes until it reaches normal operating temperature. Timing specifications are given for a warm engine.
+
+### Step 2 — Access the Magneto Timing Window
+
+1.  Locate the small rubber inspection plug on the left-side engine casing (magneto side). Remove it to expose the timing marks on the flywheel.
+2.  On some GY6 variants there is no inspection window and you must remove the left-side engine cover to access the stator plate directly. Remove the three or four bolts and ease the cover off, taking care not to damage the gasket.
+
+### Step 3 — Identify the Timing Marks
+
+1.  Slowly rotate the flywheel by hand (or bump the starter briefly) until you can see the marks through the inspection window.
+2.  The `T` mark indicates Top Dead Centre (TDC) — piston at the highest point of its travel.
+3.  The advance mark (a line, triangle, or `F` depending on the engine batch) indicates where the spark should fire at idle. This mark should align with the reference pointer on the casing.
+4.  Use a permanent marker to make the marks more visible if needed.
+
+### Step 4 — Check Timing with a Timing Light
+
+1.  Connect the timing light's inductive clamp to the HT lead (spark plug lead).
+2.  Connect the light's power leads to the battery.
+3.  Start the engine and let it idle at approximately 1,400–1,600 rpm.
+4.  Point the timing light at the inspection window. The strobe will "freeze" the rotating marks.
+5.  The advance/timing mark on the flywheel should align with the reference pointer on the casing. If it does not, the stator plate position needs adjustment.
+
+### Step 5 — Adjust the Stator Plate
+
+1.  Stop the engine. Remove the magneto cover if not already done.
+2.  Locate the two or three stator plate mounting bolts. They pass through slotted holes that allow the plate to be rotated slightly.
+3.  Loosen the bolts — do not fully remove them.
+4.  To **advance** timing (move the spark earlier): rotate the stator plate in the direction _opposite_ to flywheel rotation.
+5.  To **retard** timing (move the spark later): rotate the stator plate in the _same_ direction as flywheel rotation.
+6.  Make small adjustments (2–3 mm of plate movement at a time).
+7.  Re-tighten the bolts, refit the cover, and recheck with the timing light. Repeat until correct.
+
+<Callout type="warn">
+  ️ **Do not over-advance:** Too much advance causes detonation (pinging under load), overheating, and can burn a hole through the piston on a GY6. If in doubt, err on the side of slightly retarded timing.
+</Callout>
+
+### Step 6 — Verify and Road Test
+
+1.  Refit the inspection plug or magneto cover securely.
+2.  Start the engine and allow it to warm up.
+3.  Test ride with light and heavy throttle loads. The engine should accelerate cleanly without pinging, idle smoothly at 1,400–1,600 rpm, and start readily both cold and hot.
+4.  If pinging is present under load, retard timing slightly and retest.
+
+## Typical GY6 Timing Specifications
+
+<table><tbody><tr><th>Engine variant</th><th>Displacement</th><th>Timing (idle)</th></tr><tr><td>139QMB (long-case)</td><td>50cc (stock)</td><td>~15° BTDC</td></tr><tr><td>152QMI</td><td>125cc</td><td>~15–18° BTDC</td></tr><tr><td>157QMJ</td><td>150cc</td><td>~15–18° BTDC</td></tr></tbody></table>
+
+Always verify against the service manual for your specific engine batch, as values vary. After fitting a big-bore kit, the optimal timing may need re-optimisation.

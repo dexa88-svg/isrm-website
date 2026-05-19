@@ -1,0 +1,24 @@
+---
+import Base from './Base.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogImage?: string;
+}
+
+const { title, description, canonical, ogImage } = Astro.props;
+---
+
+<Base title={`${title} — ISMR`} description={description} canonical={canonical} ogImage={ogImage}>
+  <Navbar />
+
+  <main data-pagefind-body class="guide-content">
+    <slot />
+  </main>
+
+  <Footer />
+</Base>

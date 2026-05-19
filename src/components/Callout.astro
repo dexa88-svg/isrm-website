@@ -1,0 +1,11 @@
+---
+interface Props {
+  type: 'warn' | 'danger' | 'tip';
+}
+const { type } = Astro.props;
+const icon = type === 'warn' ? '⚠️' : type === 'danger' ? '🚨' : '💡';
+---
+
+<div class={`callout callout-${type}`}>
+  {icon} <slot />
+</div>

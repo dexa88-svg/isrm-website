@@ -1,0 +1,240 @@
+---
+title: "GY6 EFI Diagnostics — HUD ECU Hacker Setup Guide"
+description: "Step-by-step setup guide for HUD ECU Hacker on GY6 EFI scooters. Install FTDI drivers, connect OBD2 KKL adapter to the 6-pin diagnostic port, and read live data and fault codes."
+publishDate: "2026-05-19"
+updatedDate: "2026-05-19"
+difficulty: "Beginner"
+timeEstimate: "~30 min"
+tags:
+  - "diagnostics"
+  - "GY6 EFI"
+  - "HUD ECU Hacker"
+  - "OBD2 KKL"
+  - "Delphi MT05"
+  - "fault codes"
+  - "Windows"
+appliesTo: []
+videos:
+  - id: "cF_D_Exy86Y"
+    title: "HUD ECU HACKER!! A Must Have Diagnostic Software Tool for GY6 EFI Scooters"
+    creator: "YouTube"
+    position: "hero"
+  - id: "BI4WgTFN8mM"
+    title: "Testing HUD ECU Hacker on a Chinese scooter — Lexmoto Titan walkthrough"
+    creator: "YouTube"
+    position: "inline"
+sources: []
+canonical: "https://ismr.online/diagnostics/gy6-efi-hud-ecu-hacker-setup.html"
+draft: false
+---
+
+import VideoEmbed from '@components/VideoEmbed.astro';
+import Callout from '@components/Callout.astro';
+
+Most GY6 EFI scooters sold in Europe from 2016 onwards carry a **Delphi MT05 or MT05.2 ECU** that exposes a K-line diagnostic interface through a 6-pin connector hidden under the seat. With a €5–10 adapter and the free **HUD ECU Hacker** software you can read and clear fault codes, monitor every live sensor, and even back up or reflash the ECU — directly from any Windows laptop.
+
+This guide walks you through the complete setup: buying the right hardware, installing drivers, locating the scooter connector, and making your first live connection.
+
+Difficulty Beginner
+
+Time Required 30 – 45 min
+
+Software Cost Free
+
+Hardware Cost €5 – €15
+
+OS Windows 7 / 10 / 11
+
+## Video Guide
+
+<VideoEmbed videoId="cF_D_Exy86Y" title="HUD ECU HACKER!! A Must Have Diagnostic Software Tool for GY6 EFI Scooters" creator="YouTube" />
+
+**Video:** "HUD ECU HACKER!! A Must Have Diag Software Tool." (2026) [↗ Watch on YouTube](https://www.youtube.com/watch?v=cF_D_Exy86Y)
+
+## What You Need
+
+### Hardware
+
+The connection chain is simple: **scooter 6-pin connector → 6-pin-to-OBD2 adapter → OBD2 KKL USB cable → laptop**. You need exactly two pieces of hardware:
+
+<table><thead><tr><th>Item</th><th>Chip / Spec</th><th>Notes</th><th>Link</th></tr></thead><tbody><tr><td><strong>OBD2 KKL USB cable</strong> (VAG KKL 409.1)</td><td>FTDI FT232RL <em>(essential)</em></td><td>Blue cable, K-line support. Avoid CH340 chips — they cause timeouts on K-line.</td><td><a class="buy-link" href="https://nl.aliexpress.com/item/1005011569161432.html" target="_blank" rel="noopener sponsored">AliExpress →</a></td></tr><tr><td><strong>6-pin to OBD2 adapter</strong></td><td>GY6 Delphi 6-pin female ↔ OBD2 16-pin male</td><td>Small short cable. Plugs scooter diag port into the KKL cable.</td><td><a class="buy-link" href="https://nl.aliexpress.com/item/1005009348874599.html" target="_blank" rel="noopener sponsored">AliExpress →</a></td></tr></tbody></table>
+<Callout type="warn">
+  **⚠️ Chip matters:** Only buy the KKL cable with the **FTDI FT232RL** chip. Cheaper CH340-based cables often cause connection timeouts or are silently blocked by Windows 11 security policies. The Aliexpress listing linked above specifies FTDI FT232RL explicitly.
+</Callout>
+
+![VAG KKL OBD2 USB cable (blue) and 6-pin GY6 diagnostic adapter laid out on a table](/diagnostics/images/ecu-hacker/1cables.jpg) The two adapters you need: VAG KKL USB cable (blue) and the 6-pin scooter adapter
+
+![VAG KKL and 6-pin adapter connected together on grass, showing full cable chain](/diagnostics/images/ecu-hacker/4cables.jpg) The full cable chain connected: 6-pin adapter → OBD2 → KKL → USB to laptop
+
+![Close-up of the 6-pin GY6 diagnostic connector showing yellow internal contacts](/diagnostics/images/ecu-hacker/2cables.jpg) The 6-pin scooter diagnostic connector — white housing, yellow contacts
+
+![Close-up of the OBD2 16-pin male plug of the adapter cable](/diagnostics/images/ecu-hacker/3cables.jpg) OBD2 16-pin plug on the adapter — this mates with the KKL cable
+
+### Software (free)
+
+-   **HUD ECU Hacker** — free, Windows-only diagnostic suite for Delphi / Rongmao ECUs. [Download from netcult.ch →](https://www.netcult.ch/elmue/HUD%20ECU%20Hacker/)
+-   **FTDI VCP drivers** — required before plugging in the KKL cable. Usually provided on CD with the KKL cable supplier, or [download from ftdichip.com →](https://ftdichip.com/drivers/)
+
+## Setup Steps
+
+1
+
+### Install the FTDI FT232RL Drivers
+
+The KKL cable uses an FTDI FT232RL chip that appears to Windows as a virtual COM port (VCP). You must install the drivers _before_ plugging in the cable, otherwise Windows may assign a generic driver that does not expose a COM port to HUD ECU Hacker.
+
+1.  Download and install the **FTDI VCP drivers**. You have two options:
+    -   **From CD:** Many KKL cable suppliers include driver files on a CD or in a download link. Check the package or supplier documentation first.
+    -   **From ftdichip.com:** Go to [ftdichip.com/drivers](https://ftdichip.com/drivers/) and download the official **VCP Drivers** for your version of Windows (Windows 7 / 8.1 / 10 / 11).
+2.  Run the installer as Administrator and follow the prompts. Restart is usually not required.
+3.  Now plug the KKL USB cable into your laptop. Windows should show a notification: _"Device driver software installed successfully"_.
+4.  Open **Device Manager** (`Win + X → Device Manager`) and look under _Ports (COM & LPT)_. You should see **USB Serial Port (COMx)**. Note the COM number — you will need it in Step 5.
+
+<Callout type="tip">
+  **💡 Windows 11 tip:** If the device appears under _Other devices_ with a yellow exclamation mark, right-click it → _Update driver_ → _Browse my computer_ → point it to the folder where you extracted the FTDI zip. This manually forces the correct VCP driver.
+</Callout>
+
+2
+
+### Download and Install HUD ECU Hacker
+
+1.  Visit [netcult.ch/elmue/HUD ECU Hacker](https://www.netcult.ch/elmue/HUD%20ECU%20Hacker/) and scroll to the download section. The software is free with no registration required.
+2.  Download the latest installer (e.g. `HudEcuHackerSetup.exe`).
+3.  Run the installer. Windows Defender SmartScreen may warn that the publisher is unknown — click _"More info → Run anyway"_. The software has been widely used in the GY6 community since 2015.
+4.  Launch HUD ECU Hacker. **Do not connect the scooter yet** — configure the software first.
+
+<Callout type="warn">
+  **⚠️ Licence prompt:** When HUD ECU Hacker opens for the first time it may show a licence / disclaimer dialog. Read it carefully and tick the correct boxes. If you tick the _wrong_ boxes, the software locks itself — the only fix is to fully uninstall and reinstall it.
+</Callout>
+
+3
+
+### Locate the 6-Pin Diagnostic Connector on Your Scooter
+
+Open the scooter seat. On most GY6 EFI models the 6-pin diagnostic connector is located **near the battery**, in the under-seat compartment. It is a white or light-grey square connector, often capped with a rubber dust cover or small rubber plug.
+
+On some models (e.g. BTC Riva, La Souris) the connector hangs loose near the battery terminals; on others it is cable-tied to the wiring loom beside the ECU. The connector is usually left unconnected when no diagnostic tool is attached — this is normal.
+
+![Under-seat area of a GY6 scooter showing the 6-pin diagnostic connector near the battery](/diagnostics/images/ecu-hacker/6connector.jpg) Under-seat area — the 6-pin connector is the white plug near the battery
+
+![Hand holding the GY6 scooter 6-pin diagnostic plug showing orange internal contacts](/diagnostics/images/ecu-hacker/7connector.jpg) The 6-pin diagnostic plug — orange/yellow contacts, white housing
+
+**ℹ️ Can't find it?** On the Delphi EFI system the connector is almost always near the battery. On some models it may be taped to the wiring harness or tucked behind a side panel near the ECU box. Consult the wiring diagram for your specific model if needed.
+
+4
+
+### Connect the Adapter Chain
+
+1.  Plug the **6-pin end** of the adapter cable into the scooter's diagnostic connector. It fits in one orientation only — do not force it.
+2.  Connect the **OBD2 end** of the adapter to the OBD2 socket of the KKL cable.
+3.  Plug the **USB end** of the KKL cable into your laptop.
+4.  Turn the scooter ignition to **ON** (do not start the engine — key-on is sufficient).
+
+<Callout type="warn">
+  **⚠️ Ignition must be ON:** The ECU only powers its K-line interface when the ignition is on. Connecting with the ignition off will result in a "Timeout waiting for response" error in HUD ECU Hacker.
+</Callout>
+
+![VAG KKL cable connected to a Lenovo laptop, ready to connect to scooter](/diagnostics/images/ecu-hacker/5cables_laptop.jpg) Cable connected to the laptop — USB end in, ready to plug into the scooter
+
+![Full diagnostic setup: scooter open under seat, KKL cable running to laptop on the ground](/diagnostics/images/ecu-hacker/8setupconnected.jpg) Full setup in the field — laptop next to the scooter, cable connected to the 6-pin port
+
+5
+
+### Configure HUD ECU Hacker and Connect
+
+1.  Open HUD ECU Hacker. In the **Control** tab, click **ECU Model** and select the correct ECU for your scooter:
+    -   **Delphi MT05 / MT05.2** — most GY6 EFI scooters sold in Europe (BTC Riva, La Souris, Santini, etc.)
+    -   **Rongmao MT05** — some Chinese-market and grey-import models
+    -   **Motion SE08** — certain Euro 5 models (2021+), though compatibility varies — see Caveats belowNot sure which ECU your scooter has? Check the label on the ECU box under the seat.
+2.  From the **COM port** dropdown, select the port you noted in Step 1 (e.g. `COM3`). If you see multiple ports, try each one until the connection succeeds.
+3.  Click **Echo Test**, then click **Connect**. You will see a stream of raw data in the Trace tab. If no red "Timeout" errors appear, the Echo Test passed.
+4.  Click **Echo Test** again to toggle it off, then click **Connect** to establish a live session with the ECU.
+5.  The status bar should now show **Connected** and a session timer.
+
+![HUD ECU Hacker software main screen showing the Control tab with ECU model and COM port selection](/diagnostics/images/ecu-hacker/9appview.jpg) HUD ECU Hacker v5.8.8 — Control tab showing ECU model selector and Connect button
+
+<Callout type="warn">
+  **⚠️ "Timeout waiting for response" — this is normal.** K-line timing is highly sensitive. The connection may fail on the first 5–10 attempts. Simply go back to the Control tab and click Connect again. If it consistently fails after many attempts, try reducing the baud rate in the software's Troubleshooting settings (see the HUD ECU Hacker documentation on netcult.ch under "Trouble Shooting").
+</Callout>
+
+6
+
+### Read Live Data and Fault Codes
+
+Once connected you have access to all ECU data in real time. Key tabs:
+
+-   **Dashboard** — graphical overview of all sensor groups: engine, throttle, fuel, O2 sensors, temperatures.
+-   **Data Grid** — tabular view of every raw parameter: RPM, coolant temp, MAP pressure, IAT, throttle position, short/long term fuel trims, spark advance, vehicle speed, and more.
+-   **DTC (Fault Codes)** — read and clear stored Diagnostic Trouble Codes. On Euro 4 and later models, codes must be cleared with this tool — they do not auto-reset after the fault disappears.
+-   **Graph** — plot any parameter over time for intermittent fault diagnosis.
+-   **Tuning** — advanced: read/write ECU maps (only for experienced users).
+
+![HUD ECU Hacker Data Grid showing live sensor readings: coolant temp, MAP, throttle, fuel trims](/diagnostics/images/ecu-hacker/10livedata.jpg) Data Grid — all live sensor values including coolant temp, MAP pressure and fuel trims
+
+![HUD ECU Hacker Dashboard view showing comprehensive sensor panels across the full screen](/diagnostics/images/ecu-hacker/12livedata.jpg) Dashboard view — all sensor groups visible simultaneously when connected
+
+![HUD ECU Hacker Data Grid alternative view showing emission count DTC and O2 sensor data](/diagnostics/images/ecu-hacker/11livedata.jpg) Data Grid with emission DTC count visible — O2 sensor status and closed-loop operation
+
+<Callout type="tip">
+  **💡 Clearing fault codes:** Navigate to the DTC tab, confirm the codes, resolve the underlying fault, then click _Clear DTCs_. On Euro 4 scooters the MIL (engine warning light) will only go off after the ECU confirms the fault is no longer present — clearing the code alone does not guarantee the light stays off if the problem persists.
+</Callout>
+
+## Additional Reference Video
+
+<VideoEmbed videoId="BI4WgTFN8mM" title="Testing HUD ECU Hacker on a Chinese scooter — Lexmoto Titan walkthrough" creator="YouTube" />
+
+**Video:** "Testing HUD ECU Hacker — Lexmoto Titan" (2024) — real-world walkthrough on a Chinese EFI scooter with Delphi ECU. [↗ Watch on YouTube](https://www.youtube.com/watch?v=BI4WgTFN8mM)
+
+## Important Caveats
+
+Based on community experience and forum reports, be aware of the following before you start:
+
+-   🚫 **Generic OBD2 readers will not work.** Many users with standard Bluetooth ELM327 scanners or generic car-OBD apps receive a _"Vehicle not connected"_ error. This is because the GY6 ECU uses the K-line (ISO 9141-2 / KWP2000) protocol — not the CAN bus found in modern cars. Standard ELM327 dongles often lack K-line support or have incompatible timing. The OBD2 KKL cable with FTDI chip and HUD ECU Hacker together form a K-line-aware combination that actually works. Source: [ScooterForum.net](https://scooterforum.net/tags/la-souris/)
+-   ⚠️ **Euro 4 fault codes do not self-clear.** From Euro 4 onwards, stored DTCs remain in the ECU memory even after the underlying fault is repaired. The engine warning light will stay on until you actively clear the codes with a diagnostic tool like HUD ECU Hacker. Simply fixing the problem is not enough — you must connect and erase the codes. Source: [Gentlemen Riders](https://www.gentlemen-riders.com/lecteur-obdii-pour-code-defaut/9519-lecteur-obdii-pour-moto-euro4.html)
+-   🔴 **Motion EFI (Euro 5, some 2021+ models) may not connect.** Some newer scooters — particularly those with a **Motion SE08** ECU introduced for Euro 5 compliance — use a proprietary protocol that HUD ECU Hacker cannot fully support. If your scooter was registered after 2021 and HUD ECU Hacker consistently fails to connect despite correct hardware and settings, check the ECU label. If it reads "Motion" or "SE08 E5", you likely need a dedicated Motion diagnostic scanner instead.
+-   ⏳ **Connection attempts may take multiple tries.** K-line timing is extremely sensitive. It is normal for the first 5–15 connection attempts to time out. Simply return to the Control tab and click Connect again. If it never connects after 20+ attempts with the ignition on, try a different COM port or reduce the baud rate via the software's Troubleshooting settings.
+-   💾 **Never use the Tuning / Flash functions unless you know what you are doing.** HUD ECU Hacker can read and write ECU flash memory and fuel maps. Incorrect values can make the scooter unrideable or damage the ECU. The diagnostic and DTC functions covered in this guide are safe; the Tuning tab is for experienced users only.
+
+## Troubleshooting
+
+<table><thead><tr><th>Problem</th><th>Likely Cause</th><th>Solution</th></tr></thead><tbody><tr><td><strong>No COM port in Device Manager</strong></td><td>FTDI drivers not installed, or Windows assigned a generic driver</td><td>Install the FTDI VCP driver from ftdichip.com, then replug the cable</td></tr><tr><td><strong>HUD ECU Hacker doesn't show COM port</strong></td><td>Cable not plugged in when software opened</td><td>Plug in the cable first, then start HUD ECU Hacker</td></tr><tr><td><strong>"Timeout waiting for response"</strong></td><td>K-line timing mismatch, or ignition not on</td><td>Ensure ignition is ON; retry Connect 10–20 times; if persistent, reduce baud rate in Troubleshooting settings</td></tr><tr><td><strong>"Vehicle not connected"</strong></td><td>Wrong ECU model selected, or incompatible adapter</td><td>Verify ECU model on the ECU label; confirm you have a KKL cable (not ELM327)</td></tr><tr><td><strong>Connection drops after a few seconds</strong></td><td>Poor USB connection or power fluctuation</td><td>Try a different USB port; connect directly to laptop (avoid USB hubs); check cable for damage</td></tr><tr><td><strong>Software locks after licence dialog</strong></td><td>Wrong tick boxes selected in the disclaimer</td><td>Fully uninstall HUD ECU Hacker, delete any remaining config files, and reinstall</td></tr><tr><td><strong>Connects but no live data (all zeros)</strong></td><td>Engine not running (some parameters only populate at idle)</td><td>Start the engine; MAP, RPM and O2 sensors only show values with the engine running</td></tr><tr><td><strong>MIL (warning light) stays on after clearing codes</strong></td><td>Fault is still present / recurring</td><td>The ECU re-sets the code because the fault was not actually fixed — diagnose and repair the root cause first</td></tr></tbody></table>
+
+## Frequently Asked Questions
+
+Does this work on macOS or Linux?
+
+HUD ECU Hacker is Windows-only. It does not run natively on macOS or Linux. You can use a Windows virtual machine (VMware, Parallels, VirtualBox) and pass through the USB adapter — most users report this works well. Alternatively, keep an old cheap Windows laptop (like the Lenovo ThinkPad shown in the photos) dedicated to scooter diagnostics.
+
+Can I use this on a Piaggio Vespa (Primavera, Zip, Sprint)?
+
+No — Piaggio uses its own proprietary diagnostic interface (Piaggio Diagnostic Tool / PDT), not the Delphi K-line protocol used by GY6 clones. HUD ECU Hacker is specifically for Chinese GY6 EFI systems with Delphi or Rongmao ECUs.
+
+Is HUD ECU Hacker really free?
+
+Yes, HUD ECU Hacker is free for diagnostics (reading data, reading and clearing fault codes, monitoring sensors). Advanced features such as ECU flash and map editing are unlocked with a small paid licence. For the purposes of this guide — setting up, connecting, and reading/clearing codes — everything is free.
+
+What fault codes are available on the GY6 Delphi ECU?
+
+The Delphi MT05 reports standard OBD2 DTC codes plus some manufacturer-specific codes covering: oxygen sensor faults, coolant temperature sensor, throttle position sensor (TPS), MAP sensor, IAT sensor, injector circuit, IACV (idle air control), and ignition coil. Refer to our [GY6 EFI CEL Flash Codes guide](gy6-efi-cel-flash-codes.html) for a full list of codes and their meanings.
+
+The 6-pin connector on my scooter looks different — could it still work?
+
+There are a few variants of the GY6 diagnostic connector. The most common is the 6-pin white rectangular connector shown in this guide. Some models use a 4-pin connector or a different housing. If your connector doesn't match, check the ECU label to confirm it is a Delphi MT05 — if it is, the wiring pinout is the same and an adapter may still exist. Post on a GY6-specific forum with photos for community guidance.
+
+## Related Guides
+
+-   [GY6 EFI CEL Flash Codes — Manual Diagnostic Mode](gy6-efi-cel-flash-codes.html) — decode check-engine blink patterns without any tools
+-   [GY6 EFI Fuel Injection Troubleshooting](gy6-efi-fuel-injection-troubleshooting.html) — systematic guide to injection faults
+-   [All Repair Guides](/repair-guides/index.html)
+
+{/* SOURCE_BOX_PLACEHOLDER */}
+
+**Last Updated:** 2026-05-12  |  **License:** CC BY-SA 4.0  |  _Have corrections or improvements? [Submit feedback on GitHub](https://github.com/ismr-online/ismr/issues)_
+
+Content sourced from HUD ECU Hacker documentation and community guides. For educational purposes only.
+
+Always verify procedures against your scooter's workshop manual before performing repairs.
+
+[⚙️ ISMR Home](/index.html)  ·  [All Diagnostics](/repair-guides/index.html)
+
+[Privacy Policy](/legal/privacy.html)  ·  [Terms of Service](/legal/terms.html)

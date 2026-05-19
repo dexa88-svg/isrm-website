@@ -1,0 +1,36 @@
+---
+import Base from './Base.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogImage?: string;
+  jsonLd?: object;
+  breadcrumbLabel: string;
+  updatedDate?: string;
+}
+
+const { title, description, canonical, ogImage, jsonLd, breadcrumbLabel, updatedDate } = Astro.props;
+---
+
+<Base title={`${title} — ISMR`} description={description} canonical={canonical} ogImage={ogImage} jsonLd={jsonLd}>
+  <Navbar activePage="guides" />
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
+        <a href="/index.html">ISMR Home</a><span>›</span><a href="/repair-guides/index.html">Repair Guides</a><span>›</span>{breadcrumbLabel}
+      </div>
+      <h1>{title}</h1>
+    </div>
+  </section>
+
+  <main data-pagefind-body class="guide-content">
+    <slot />
+  </main>
+
+  <Footer updatedDate={updatedDate} />
+</Base>
