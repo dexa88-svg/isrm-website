@@ -8,7 +8,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   integrations: [mdx()],
   output: 'static',
-  trailingSlash: 'never',
+  trailingSlash: 'ignore',
   build: { format: 'preserve' },
   vite: {
     resolve: {
