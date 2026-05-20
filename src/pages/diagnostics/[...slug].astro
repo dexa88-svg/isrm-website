@@ -12,7 +12,24 @@ export async function getStaticPaths() {
 
 const { guide } = Astro.props;
 const { Content } = await render(guide);
-const { title, description, canonical, updatedDate } = guide.data;
+const { title, description, canonical, updatedDate, publishDate, tags, timeEstimate } = guide.data;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  description,
+  url: canonical,
+  dateModified: updatedDate.toISOString().slice(0, 10),
+  datePublished: publishDate.toISOString().slice(0, 10),
+  keywords: tags.join(', '),
+  totalTime: timeEstimate,
+  publisher: {
+    '@type': 'Organization',
+    name: 'ISMR — Interactive Scooter Manuals for Repair',
+    url: 'https://ismr.online',
+  },
+};
 ---
 
 <Diagnostic
@@ -21,6 +38,8 @@ const { title, description, canonical, updatedDate } = guide.data;
   canonical={canonical}
   breadcrumbLabel={title}
   updatedDate={updatedDate.toISOString().slice(0, 10)}
+  publishDate={publishDate.toISOString().slice(0, 10)}
+  jsonLd={jsonLd}
 >
   <Content />
 </Diagnostic>

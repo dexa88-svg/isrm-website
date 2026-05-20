@@ -8,21 +8,25 @@ interface Props {
   description: string;
   canonical: string;
   ogImage?: string;
+  ogType?: string;
   jsonLd?: object;
   breadcrumbLabel: string;
   updatedDate?: string;
+  publishDate?: string;
 }
 
-const { title, description, canonical, ogImage, jsonLd, breadcrumbLabel, updatedDate } = Astro.props;
+const { title, description, canonical, ogImage, ogType = 'article', jsonLd, breadcrumbLabel, updatedDate, publishDate } = Astro.props;
 ---
 
-<Base title={`${title} — ISMR`} description={description} canonical={canonical} ogImage={ogImage} jsonLd={jsonLd}>
+<Base title={`${title} — ISMR`} description={description} canonical={canonical} ogImage={ogImage} ogType={ogType} jsonLd={jsonLd}>
+  {updatedDate && <meta slot="head" property="article:modified_time" content={updatedDate} />}
+  {publishDate && <meta slot="head" property="article:published_time" content={publishDate} />}
   <Navbar activePage="guides" />
 
   <section class="page-hero">
     <div class="page-hero-inner">
       <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
-        <a href="/index.html">ISMR Home</a><span>›</span><a href="/repair-guides/index.html">Repair Guides</a><span>›</span>{breadcrumbLabel}
+        <a href="/">ISMR Home</a><span>›</span><a href="/repair-guides/">Repair Guides</a><span>›</span>{breadcrumbLabel}
       </div>
       <h1>{title}</h1>
     </div>

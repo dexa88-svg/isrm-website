@@ -12,9 +12,51 @@ export async function getStaticPaths() {
 
 const { page } = Astro.props;
 const { Content } = await render(page);
-const { title, description, canonical } = page.data;
+const { title, description, canonical, updatedDate, publishDate, tags, videos } = page.data;
+
+const primaryVideo = videos[0];
+const jsonLd = primaryVideo
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'VideoObject',
+      name: primaryVideo.title || title,
+      description,
+      url: canonical,
+      embedUrl: `https://www.youtube.com/embed/${primaryVideo.id}`,
+      thumbnailUrl: `https://img.youtube.com/vi/${primaryVideo.id}/maxresdefault.jpg`,
+      uploadDate: publishDate.toISOString().slice(0, 10),
+      dateModified: updatedDate.toISOString().slice(0, 10),
+      keywords: tags.join(', '),
+      publisher: {
+        '@type': 'Organization',
+        name: 'ISMR — Interactive Scooter Manuals for Repair',
+        url: 'https://ismr.online',
+      },
+    }
+  : {
+      '@context': 'https://schema.org',
+      '@type': 'TechArticle',
+      headline: title,
+      description,
+      url: canonical,
+      datePublished: publishDate.toISOString().slice(0, 10),
+      dateModified: updatedDate.toISOString().slice(0, 10),
+      keywords: tags.join(', '),
+      publisher: {
+        '@type': 'Organization',
+        name: 'ISMR — Interactive Scooter Manuals for Repair',
+        url: 'https://ismr.online',
+      },
+    };
 ---
 
-<Page title={title} description={description} canonical={canonical}>
+<Page
+  title={title}
+  description={description}
+  canonical={canonical}
+  updatedDate={updatedDate.toISOString().slice(0, 10)}
+  publishDate={publishDate.toISOString().slice(0, 10)}
+  jsonLd={jsonLd}
+>
   <Content />
 </Page>
