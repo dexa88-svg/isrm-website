@@ -1250,6 +1250,19 @@ a { text-decoration: none; color: inherit; }
 }
 .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
 .guide-content tr:nth-child(even) td { background: rgba(26, 35, 50, 0.6); }
+.guide-content td:first-child { color: var(--text-primary); font-weight: 500; white-space: nowrap; }
+/* Status badges */
+.val-ok   { color: #06a77d; font-weight: 600; }
+.val-warn { color: var(--warning); font-weight: 600; }
+.val-bad  { color: #d63031; font-weight: 600; }
+/* Screenshot gallery */
+.screenshot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.screenshot-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.screenshot-item img { width: 100%; height: auto; display: block; }
+.screenshot-caption { padding: 0.6rem 0.9rem; font-size: 0.82rem; color: var(--text-secondary); }
+/* Field group */
+.field-group { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.field-group-title { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); margin-bottom: 0.75rem; }
 
 /* Callouts */
 .callout {
@@ -1341,4 +1354,5 @@ a { text-decoration: none; color: inherit; }
 @media (max-width: 768px) {
   .guide-content { padding: 1.5rem 1rem 3rem; }
   .breadcrumb { padding: 0.9rem 1rem; }
+  .screenshot-grid { grid-template-columns: 1fr; }
 }
