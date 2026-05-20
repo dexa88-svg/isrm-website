@@ -4,28 +4,28 @@ const fs = require('fs');
 const path = require('path');
 
 /**
- * Generate site statistics by counting repair guide and video HTML files and
- * writing the result to a JSON file.
+ * Generate site statistics by counting MDX content files and writing the
+ * result to public/data/stats.json (Astro copies it to dist/ during build).
  *
  * @param {object} [options]
- * @param {string} [options.guidesDir]  Directory containing guide HTML files.
- * @param {string} [options.videosDir]  Directory containing video HTML files.
- * @param {string} [options.outputDir]  Directory where stats.json is written.
- * @param {string} [options.publicDir]  Root public directory (used for sitemap).
+ * @param {string} [options.contentDir]  src/content root (MDX source files).
+ * @param {string} [options.outputDir]   Directory where stats.json is written.
+ * @param {string} [options.publicDir]   Root public directory (fallback/sitemap).
  * @returns {{ guides: number, videos: number, lastUpdated: string }}
  */
-function generateStats({ guidesDir, videosDir, outputDir, publicDir } = {}) {
+function generateStats({ contentDir, outputDir, publicDir } = {}) {
   const resolvedPublicDir = publicDir || path.join(__dirname, '../public');
-  const resolvedGuidesDir = guidesDir || path.join(resolvedPublicDir, 'repair-guides');
-  const resolvedVideosDir = videosDir || path.join(resolvedPublicDir, 'videos');
+  const resolvedContentDir = contentDir || path.join(__dirname, '../src/content');
   const resolvedOutputDir = outputDir || path.join(resolvedPublicDir, 'data');
 
-  const countHtml = dir => fs.readdirSync(dir)
-    .filter(file => file.endsWith('.html') && file !== 'index.html').length;
+  const countMdx = dir => {
+    if (!fs.existsSync(dir)) return 0;
+    return fs.readdirSync(dir).filter(f => f.endsWith('.mdx')).length;
+  };
 
   const stats = {
-    guides: countHtml(resolvedGuidesDir),
-    videos: countHtml(resolvedVideosDir),
+    guides: countMdx(path.join(resolvedContentDir, 'repair-guides')),
+    videos: countMdx(path.join(resolvedContentDir, 'videos')),
     lastUpdated: new Date().toISOString()
   };
 
@@ -42,8 +42,9 @@ function generateStats({ guidesDir, videosDir, outputDir, publicDir } = {}) {
   console.log(`✓ Generated stats: ${stats.guides} guides, ${stats.videos} videos`);
   console.log(`✓ File written to: ${statsFile}`);
 
-  // Regenerate sitemap.xml
-  generateSitemap(resolvedPublicDir);
+  // Regenerate sitemap — scan dist/ if it exists (post-build), else public/
+  const distDir = path.join(__dirname, '../dist');
+  generateSitemap(fs.existsSync(distDir) ? distDir : resolvedPublicDir);
 
   return stats;
 }
@@ -133,8 +134,13 @@ function generateSitemap(publicDir) {
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n\n${urlEntries}\n\n</urlset>\n`;
 
+  // Write sitemap to the scanned directory; also mirror to public/ so Astro picks it up
   const sitemapFile = path.join(publicDir, 'sitemap.xml');
   fs.writeFileSync(sitemapFile, xml);
+  const publicSitemapFile = path.join(__dirname, '../public/sitemap.xml');
+  if (sitemapFile !== publicSitemapFile) {
+    fs.writeFileSync(publicSitemapFile, xml);
+  }
   console.log(`✓ Sitemap regenerated: ${entries.length} URLs → ${sitemapFile}`);
 }
 

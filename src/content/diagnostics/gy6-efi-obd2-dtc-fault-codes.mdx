@@ -1,0 +1,224 @@
+---
+title: "GY6 EFI OBD-2 DTC Fault Codes"
+description: "Complete OBD-2 DTC fault code reference for GY6 EFI scooters with Rongmao, Delphi, and Motion injection systems. Includes step-by-step diagnostic procedures…"
+publishDate: "2026-05-19"
+updatedDate: "2026-05-19"
+difficulty: "Beginner"
+timeEstimate: "~30 min"
+tags:
+  - "GY6 EFI"
+  - "OBD-2 / DTC"
+  - "Rongmao"
+  - "Delphi"
+  - "Motion EFI"
+  - "Fault Codes"
+  - "Diagnostics"
+appliesTo: []
+videos:
+  - id: "0VFDdNRv_HI"
+    title: "How to Read OBD2 Fault Codes on a Scooter with Car Scanner App"
+    creator: "YouTube"
+    position: "hero"
+sources:
+  - name: "GY6 Injectie Centrum — Foutcodes"
+    url: "https://www.gy6-injectie-centrum.nl/gy6-injectie/foutcodes"
+  - name: "CC BY-SA 4.0"
+    url: "https://creativecommons.org/licenses/by-sa/4.0/"
+canonical: "https://ismr.online/diagnostics/gy6-efi-obd2-dtc-fault-codes.html"
+draft: false
+---
+
+import VideoEmbed from '@components/VideoEmbed.astro';
+import Callout from '@components/Callout.astro';
+import SourceBox from '@components/SourceBox.astro';
+
+**ℹ️ This page vs the flash code page:** Older GY6 EFI ECUs (KEIHIN PGM-FI clones) communicate faults as _blink sequences_ — no scanner needed. Modern Rongmao, Delphi, and Motion ECUs speak standard **OBD-2 DTCs** (P0xxx codes) and require an OBD-2 reader. This page covers the OBD-2 / DTC system only.
+
+## What You Need
+
+To read and clear fault codes on a Rongmao / Delphi / Motion EFI system you need an OBD-2 reader. The ECU communicates over the K-line (ISO 9141-2) or CAN bus depending on the variant. The following tools are confirmed to work:
+
+-   **Car Scanner** (Android / iOS) — free app, works with a generic ELM327 Bluetooth or Wi-Fi adapter
+-   **HUD ECU Hacker** (Windows PC) — purpose-built for Rongmao/Delphi GY6 ECUs; allows reading, clearing, and remapping
+-   Any generic OBD-2 scanner that supports ISO 9141-2 / KWP2000
+
+<Callout type="warn">
+  **⚠️ Before reading codes:** Check the MIL (malfunction indicator lamp) is working correctly by verifying it illuminates on key-on. Clear any history codes first, then repeat the fault condition and re-read. A code that appears only in history but not as a current fault may have been a one-off transient event.
+</Callout>
+
+## Video Guide — Reading OBD-2 Codes with Car Scanner
+
+### Video Guide
+
+<VideoEmbed videoId="0VFDdNRv_HI" title="How to Read OBD2 Fault Codes on a Scooter with Car Scanner App" creator="YouTube" />
+
+**Video:** "Reading OBD2 Fault Codes on a Scooter" — general OBD-2 scanner walkthrough [↗ Watch on YouTube](https://www.youtube.com/watch?v=0VFDdNRv_HI)
+
+## Precautions (from Rongmao EFI Owner Manual)
+
+-   Ensure battery positive and negative terminals are reliable and cannot be interchanged. When the engine is running, the battery cannot be disassembled.
+-   If the fuel gauge alarm sounds, refuel as soon as possible — the fuel pump cannot operate in air or media other than fuel.
+-   Do not arbitrarily disassemble vehicle parts, especially the fuel system (pipeline pressure approx. 250 kPa). Disassembly must be carried out by professional maintenance personnel to prevent fire risk.
+-   Do not arbitrarily adjust the throttle valve door plate limit screw. Idle speed on EFI scooters is controlled automatically by the ECU via the IACV.
+-   Vehicles may only use the same type of parts specified by the manufacturer. Turn off the ignition switch before disassembly or replacement of any electrical parts.
+-   Never pierce the wiring harness to measure signals — use back-probing tools or proper breakout connectors.
+-   Ensure the ECU temperature remains below 80 °C.
+
+## DTC Reference Table — All Codes
+
+The following OBD-2 P-codes apply to GY6 EFI scooters using Rongmao, Delphi, and Motion injection systems. This table is aligned with the [GY6 Injectie Centrum fault code reference](https://www.gy6-injectie-centrum.nl/gy6-injectie/foutcodes) and the Rongmao EFI Owner Manual. Detailed step-by-step diagnostic procedures for each code follow below.
+
+<table><thead><tr><th>DTC Code</th><th>Component</th><th>Fault Description</th><th>Severity</th><th>Typical Symptom</th></tr></thead><tbody><tr><td class="dtc-code">P0107</td><td>MAP sensor</td><td>Manifold Absolute Pressure — low voltage or open circuit</td><td><span class="severity-high">High</span></td><td>Rough idle, stalling, poor performance</td></tr><tr><td class="dtc-code">P0108</td><td>MAP sensor</td><td>Manifold Absolute Pressure — high voltage</td><td><span class="severity-high">High</span></td><td>Rich running, black exhaust smoke, poor power</td></tr><tr><td class="dtc-code">P0112</td><td>IAT sensor</td><td>Inlet Air Temperature — low voltage or open circuit</td><td><span class="severity-low">Low</span></td><td>Slightly degraded fuel mapping, rarely noticeable</td></tr><tr><td class="dtc-code">P0113</td><td>IAT sensor</td><td>Inlet Air Temperature — high voltage</td><td><span class="severity-low">Low</span></td><td>Slightly degraded fuel mapping, rarely noticeable</td></tr><tr><td class="dtc-code">P0117</td><td>ECT / CTS sensor</td><td>Engine Coolant/Oil Temperature — low voltage or open circuit</td><td><span class="severity-med">Medium</span></td><td>Poor cold start enrichment, rough warm-up</td></tr><tr><td class="dtc-code">P0118</td><td>ECT / CTS sensor</td><td>Engine Coolant/Oil Temperature — high voltage or open circuit</td><td><span class="severity-med">Medium</span></td><td>Engine may over-enrich on warm engine</td></tr><tr><td class="dtc-code">P0122</td><td>TPS sensor</td><td>Throttle Position Sensor — low voltage or open circuit</td><td><span class="severity-high">High</span></td><td>Surging, hesitation, possible stalling on acceleration</td></tr><tr><td class="dtc-code">P0123</td><td>TPS sensor</td><td>Throttle Position Sensor — high voltage</td><td><span class="severity-high">High</span></td><td>Surging, incorrect fuelling across throttle range</td></tr><tr><td class="dtc-code">P0131</td><td>Lambda sensor 1 (O₂S1)</td><td>Upstream O₂ sensor — low voltage or open circuit</td><td><span class="severity-med">Medium</span></td><td>Lean running, closed-loop fuelling disabled</td></tr><tr><td class="dtc-code">P0132</td><td>Lambda sensor 1 (O₂S1)</td><td>Upstream O₂ sensor — high voltage</td><td><span class="severity-med">Medium</span></td><td>Rich running, closed-loop fuelling disabled</td></tr><tr><td class="dtc-code">P0031</td><td>Lambda sensor 1 heater</td><td>O₂S1 heater element — low voltage or open circuit</td><td><span class="severity-med">Medium</span></td><td>Slow O₂ sensor warm-up, open-loop fuelling longer at cold start</td></tr><tr><td class="dtc-code">P0032</td><td>Lambda sensor 1 heater</td><td>O₂S1 heater element — high voltage</td><td><span class="severity-med">Medium</span></td><td>Short circuit in heater circuit</td></tr><tr><td class="dtc-code">P0137</td><td>Lambda sensor 2 (O₂S2)</td><td>Downstream O₂ sensor — low voltage or open circuit</td><td><span class="severity-low">Low</span></td><td>MIL on; emissions monitoring affected</td></tr><tr><td class="dtc-code">P0138</td><td>Lambda sensor 2 (O₂S2)</td><td>Downstream O₂ sensor — high voltage</td><td><span class="severity-low">Low</span></td><td>MIL on; emissions monitoring affected</td></tr><tr><td class="dtc-code">P0037</td><td>Lambda sensor 2 heater</td><td>O₂S2 heater element — low voltage or open circuit</td><td><span class="severity-low">Low</span></td><td>MIL on; heater circuit fault</td></tr><tr><td class="dtc-code">P0038</td><td>Lambda sensor 2 heater</td><td>O₂S2 heater element — high voltage</td><td><span class="severity-low">Low</span></td><td>MIL on; short circuit in heater circuit</td></tr><tr><td class="dtc-code">P0201</td><td>Fuel injector</td><td>Injector cylinder 1 — circuit malfunction</td><td><span class="severity-high">High</span></td><td>Engine will not start or runs very poorly; misfire</td></tr><tr><td class="dtc-code">P0202</td><td>Fuel injector</td><td>Injector cylinder 2 — circuit malfunction</td><td><span class="severity-high">High</span></td><td>As P0201 (single-cylinder GY6 scooters only have cylinder 1)</td></tr><tr><td class="dtc-code">P0230</td><td>Fuel pump relay (FPR)</td><td>Fuel pump relay coil — low voltage or open circuit</td><td><span class="severity-high">High</span></td><td>No fuel pump prime on key-on; engine will not start</td></tr><tr><td class="dtc-code">P0232</td><td>Fuel pump relay (FPR)</td><td>Fuel pump relay coil — high voltage</td><td><span class="severity-high">High</span></td><td>Short circuit in relay coil circuit</td></tr><tr><td class="dtc-code">P0351</td><td>Ignition coil</td><td>Cylinder 1 ignition coil — circuit malfunction</td><td><span class="severity-high">High</span></td><td>No spark; engine will not start</td></tr><tr><td class="dtc-code">P0352</td><td>Ignition coil</td><td>Cylinder 2 ignition coil — circuit malfunction</td><td><span class="severity-high">High</span></td><td>As P0351 (not applicable on single-cylinder GY6)</td></tr><tr><td class="dtc-code">P0444</td><td>PCV / Purge Control Valve</td><td>Evaporative emission purge control valve — low voltage or open circuit</td><td><span class="severity-low">Low</span></td><td>MIL on; emissions system affected; drivability usually normal</td></tr><tr><td class="dtc-code">P0445</td><td>PCV / Purge Control Valve</td><td>Evaporative emission purge control valve — high voltage</td><td><span class="severity-low">Low</span></td><td>MIL on; short circuit in PCV circuit</td></tr><tr><td class="dtc-code">P0500</td><td>VSS (Vehicle Speed Sensor)</td><td>No speed signal detected</td><td><span class="severity-med">Medium</span></td><td>Speedometer inoperative; speed-dependent fuelling maps may be affected</td></tr><tr><td class="dtc-code">P0505</td><td>IACV (Idle Air Control Valve)</td><td>Idle Speed Control — system error</td><td><span class="severity-med">Medium</span></td><td>Idle too high, too low, or hunting; stalling at traffic lights</td></tr><tr><td class="dtc-code">P0562</td><td>System voltage</td><td>Battery / charging system voltage — too low</td><td><span class="severity-med">Medium</span></td><td>Multiple secondary sensor faults may appear; difficult starting</td></tr><tr><td class="dtc-code">P0563</td><td>System voltage / regulator</td><td>Battery / charging system voltage — too high</td><td><span class="severity-high">High</span></td><td>Overcharging; risk of ECU and battery damage — address immediately</td></tr><tr><td class="dtc-code">P0650</td><td>MIL lamp</td><td>Malfunction Indicator Lamp — circuit fault</td><td><span class="severity-low">Low</span></td><td>MIL lamp itself is defective or its circuit is open/shorted</td></tr><tr><td class="dtc-code">P0850</td><td>Neutral switch</td><td>Neutral position sensor — circuit fault</td><td><span class="severity-low">Low</span></td><td>Incorrect neutral detection; may affect idle speed in gear</td></tr><tr><td class="dtc-code">P1693</td><td>Tachometer</td><td>Tachometer signal — low voltage or open circuit</td><td><span class="severity-low">Low</span></td><td>Rev counter inoperative</td></tr><tr><td class="dtc-code">P1695</td><td>Tachometer</td><td>Tachometer signal — high voltage</td><td><span class="severity-low">Low</span></td><td>Rev counter erratic or pegged</td></tr></tbody></table>
+<Callout type="tip">
+  **Fault code legend:** "Low voltage or open circuit" means the signal at the ECU pin is unexpectedly low — caused by a short to ground, broken wire, or disconnected sensor. "High voltage" means the signal is unexpectedly high — caused by a short to battery, open circuit in the return/ground path, or a failed sensor. Always check connectors and wiring before replacing sensors.
+</Callout>
+
+## Step-by-Step Diagnostic Procedures
+
+The following procedures are derived from the Rongmao EFI Owner Manual. For each code, follow the numbered steps in order. Connect your OBD-2 diagnostic tool first (Step 1 in every procedure).
+
+P0107 MAP Sensor — Low Voltage or Open Circuit
+
+<table class="procedure-table"><thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead><tbody><tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr><tr><td class="step-num">2</td><td>Check the BARO data — confirm it reads approx. 100 kPa (adjust for altitude).</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">3</td><td>Disconnect the MAP sensor connector. Use a multimeter to check voltage between pin 4 and pin 3 of the connector — should be approx. 5 V.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">4</td><td>Check whether pins j2-11, j2-10, j2-16 of the ECU and pins 5, 3, 4 of the connector are shorted to ground.</td><td class="result-yes nextstep">Check the harness</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">5</td><td>Start engine and let it idle. Check that MAP reads 30–50 kPa at idle; then open throttle fully (WOT) and confirm MAP rises to approx. 90 kPa.</td><td class="result-yes nextstep">Diagnostic help needed</td><td class="result-no nextstep">Change the MAP sensor</td></tr></tbody></table>
+
+P0108 MAP Sensor — High Voltage
+
+<table class="procedure-table"><thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead><tbody><tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr><tr><td class="step-num">2</td><td>Check BARO data — confirm approx. 100 kPa.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">3</td><td>Disconnect sensor connector. Check voltage between pin 4 and pin 3 — should be approx. 5 V.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">4</td><td>Check whether pins j2-11, j2-10, j2-16 of the ECU and pins 5, 3, 4 of the connector are shorted to ground.</td><td class="result-yes nextstep">Check the harness</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">5</td><td>Start engine at idle. Verify MAP reads 30–50 kPa; at WOT, MAP should reach approx. 90 kPa.</td><td class="result-yes nextstep">Diagnostic help needed</td><td class="result-no nextstep">Change the MAP sensor</td></tr></tbody></table>
+
+P0112 IAT Sensor — Low Voltage or Open Circuit
+
+<table class="procedure-table"><thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead><tbody><tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr><tr><td class="step-num">2</td><td>Check "intake air temperature" data — confirm it equals the actual ambient temperature.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">3</td><td>Disconnect sensor connector. Use multimeter to check resistance between pin 1 and pin 3 — should be reasonable for the current temperature (see sensor spec table).</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">4</td><td>Check voltage between pin 3 and pin 4 of the connector — should be approx. 5 V.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">Check harness</td></tr><tr><td class="step-num">5</td><td>Check whether pins j2-8, j2-10 of the ECU and pins 1 and 3 of the connector are shorted to battery.</td><td class="result-yes nextstep">Check the harness</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">6</td><td>Start engine and stay at idle. Check that "intake air temperature" rises as the engine warms up.</td><td class="result-yes nextstep">Help needed</td><td class="result-no nextstep">Change the sensor</td></tr></tbody></table>
+
+P0113 IAT Sensor — High Voltage
+
+<table class="procedure-table"><thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead><tbody><tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr><tr><td class="step-num">2</td><td>Check "intake air temperature" data — confirm it matches actual ambient temperature.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">3</td><td>Disconnect connector. Check resistance between pin 1 and pin 3 matches temperature expectations.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">4</td><td>Check voltage between pin 3 and pin 4 — should be approx. 5 V.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">Check harness</td></tr><tr><td class="step-num">5</td><td>Check whether pins j2-8, j2-10 of the ECU and pins 1 and 3 are shorted to battery.</td><td class="result-yes nextstep">Check the harness</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">6</td><td>Start engine and idle. Verify "intake air temperature" rises when engine warms up.</td><td class="result-yes nextstep">Help needed</td><td class="result-no nextstep">Change the sensor</td></tr></tbody></table>
+
+P0117 ECT / CTS Sensor — Low Voltage or Open Circuit
+
+<table class="procedure-table"><thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead><tbody><tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr><tr><td class="step-num">2</td><td>Check "engine temperature" data — confirm it matches actual engine temperature.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">3</td><td>Disconnect sensor connector. Check resistance between pin 1 and pin 2 — should match temperature (e.g. approx. 2.5 kΩ at 20 °C, approx. 300 Ω at 80 °C).</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">4</td><td>Check whether pins j2-10, j2-14 of the ECU and pins C and D of the sensor connector are shorted to ground or open.</td><td class="result-yes nextstep">Harness issue</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">5</td><td>Start engine and idle. Verify "engine temperature" rises as engine gets warm.</td><td class="result-yes nextstep">Help needed</td><td class="result-no nextstep">Change the sensor</td></tr></tbody></table>
+
+P0118 ECT / CTS Sensor — High Voltage or Open Circuit
+
+<table class="procedure-table"><thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead><tbody><tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr><tr><td class="step-num">2</td><td>Check "engine temperature" data — confirm it matches actual temperature.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">3</td><td>Disconnect connector. Check resistance between pin 1 and pin 2 of the sensor.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">4</td><td>Check whether pins j2-10, j2-14 of the ECU and pins 1 and 2 of the sensor are shorted to ground or open.</td><td class="result-yes nextstep">Harness issue</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">5</td><td>Start engine and idle. Verify "engine temperature" rises when engine gets warm.</td><td class="result-yes nextstep">Help needed</td><td class="result-no nextstep">Change the sensor</td></tr></tbody></table>
+
+P0122 TPS — Low Voltage or Open Circuit
+
+<table class="procedure-table"><thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead><tbody><tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr><tr><td class="step-num">2</td><td>Check "Throttle opening" data — confirm it reads 0%–1% at closed throttle.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">3</td><td>Open throttle slowly to 100%. Verify "throttle opening" goes from 0% to 90%–100%.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">4</td><td>Repeat step 3. Check whether the data jumps or skips when opening throttle slowly.</td><td class="result-yes nextstep">Change the sensor</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">5</td><td>Disconnect connector. Check whether the following pins are shorted to ground or open: j2-12, j2-16 of the ECU and pins 2 and 4 of the sensor.</td><td class="result-yes nextstep">Harness issue</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">6</td><td>Use multimeter to check voltage between pin 4 and pin 3 of the sensor connector — should be approx. 5 V.</td><td class="result-yes nextstep">Help needed</td><td class="result-no nextstep">Step 5</td></tr></tbody></table>
+
+P0123 TPS — High Voltage
+
+<table class="procedure-table"><thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead><tbody><tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr><tr><td class="step-num">2</td><td>Check "Throttle opening" data — should read 0%–1% at closed throttle.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">3</td><td>Open throttle slowly to 100%. Verify data climbs smoothly to 90%–100%.</td><td class="result-yes nextstep">Step 5</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">4</td><td>Repeat step 3 and check for data jumps when opening throttle.</td><td class="result-yes nextstep">Change the sensor</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">5</td><td>Disconnect connector. Check whether pins j2-12, j2-16 of the ECU and pins 2 and 4 of the sensor are shorted to ground or open.</td><td class="result-yes nextstep">Harness issue</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">6</td><td>Check voltage between pin 4 and pin 3 of the sensor — should be approx. 5 V.</td><td class="result-yes nextstep">Help needed</td><td class="result-no nextstep">Step 5</td></tr></tbody></table>
+
+P0131 / P0132 O₂ Sensor 1 — Low / High Voltage
+
+<table class="procedure-table"><thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead><tbody><tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr><tr><td class="step-num">2</td><td>Use a multimeter to check the connection between pin B of the oxygen sensor and pin j1-17 of the ECU — is it open? Check whether pin B of the sensor is shorted to pin A.</td><td class="result-yes nextstep">Harness issue</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">3</td><td>Start engine and warm up. Use multimeter to check whether voltage between pins A and B keeps jumping between 100–900 mV (normal closed-loop switching).</td><td class="result-yes nextstep">Help needed</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">4</td><td>Check for: A) emission pipe block/leakage; B) injector leakage; C) fuel pressure too high or too low; D) valve clearance too small.</td><td class="result-yes nextstep">Engine maintenance required</td><td class="result-no nextstep">Change the sensor</td></tr></tbody></table>
+
+P0201 Injector 1 — Circuit Malfunction
+
+<table class="procedure-table"><thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead><tbody><tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr><tr><td class="step-num">2</td><td>Disconnect the injector connector. Use multimeter to check whether the voltage of pin A is approx. 12 V.</td><td class="result-yes nextstep">Step 4</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">3</td><td>Check whether the connection between pin A and the main power relay is open or shorted to ground.</td><td class="result-yes nextstep">Harness issue</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">4</td><td>Use multimeter to measure resistance between pin A and pin B of the injector — should be approx. 10–14 Ω at 20 °C.</td><td class="result-yes nextstep">Change the injector</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">5</td><td>Use multimeter to check whether the voltage of pin B is approx. 12 V.</td><td class="result-yes nextstep">Help needed</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">6</td><td>Check whether the connection between pin B of the injector and j2-05 of the ECU is open or shorted to battery/ground.</td><td class="result-yes nextstep">Harness issue</td><td class="result-no nextstep">Help needed</td></tr></tbody></table>
+
+P0230 / P0232 Fuel Pump Relay — Low / High Voltage or Open Circuit
+
+<table class="procedure-table"><thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead><tbody><tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr><tr><td class="step-num">2</td><td>Wait 30 s. Remove the fuel pump relay. Turn ignition on. Check whether the voltage of the relay feeder ear is approx. 12 V.</td><td class="result-yes nextstep">Change the pump</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">3</td><td>Check whether the feeder ear is shorted to ground or open.</td><td class="result-yes nextstep">Harness issue</td><td class="result-no nextstep">Help needed</td></tr></tbody></table>
+
+P0351 Ignition Coil — Cylinder 1 Circuit Malfunction
+
+<table class="procedure-table"><thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead><tbody><tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr><tr><td class="step-num">2</td><td>Disconnect the coil connector. Check whether the voltage of pin (+) is approx. 12 V.</td><td class="result-yes nextstep">Step 4</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">3</td><td>Check whether the connection between pin (+) and the main power relay is open or shorted to ground.</td><td class="result-yes nextstep">Harness issue</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">4</td><td>Use multimeter to check whether the resistance of the two coil pins is 0.5–0.65 Ω at 20 °C.</td><td class="result-yes nextstep">Change the coil</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">5</td><td>Use multimeter to check whether voltage of pin B is approx. 12 V.</td><td class="result-yes nextstep">Help needed</td><td class="result-no nextstep">Next</td></tr><tr><td class="step-num">6</td><td>Check whether the connection between pin 2 of the coil and j2-01 of the ECU is open or shorted to battery/ground.</td><td class="result-yes nextstep">Harness issue</td><td class="result-no nextstep">Help needed</td></tr></tbody></table>
+
+P0505 IACV — Idle Speed Control Error
+
+<table class="procedure-table"><thead><tr><th>#</th><th>Operation</th><th>Yes</th><th>No</th></tr></thead><tbody><tr><td class="step-num">1</td><td>Connect the diagnostic tool and turn ignition on.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">—</td></tr><tr><td class="step-num">2</td><td>Remove the IACV connector. Use multimeter to check resistance between pin A and pin D, and between pin B and pin C — should be approx. 53 ± 5.3 Ω each.</td><td class="result-yes nextstep">Next</td><td class="result-no nextstep">Change the stepper motor (IACV)</td></tr><tr><td class="step-num">3</td><td>Check whether all 4 wires of the IACV are shorted to battery/ground or open.</td><td class="result-yes nextstep">Harness issue</td><td class="result-no nextstep">Help needed</td></tr></tbody></table>
+
+## Symptom-Based Diagnostic Flows
+
+If you cannot read a fault code, or want to verify the code is the root cause, use these symptom-driven checklists directly from the Rongmao EFI Owner Manual.
+
+🚫 Engine Cannot Start
+
+1.  Check battery voltage — should be 8–12 V
+2.  Crank engine; check cranking voltage remains above 8 V
+3.  Check starter motor operation
+4.  In winter: check oil and gearbox oil viscosity
+5.  Check engine rotation resistance is not excessive
+
+⚡ Hard / Difficult to Start
+
+1.  Check fuel pump pressure — approx. 250 kPa at idle
+2.  Remove spark plug; check spark is normal
+3.  Check engine temperature sensor connector and signal
+4.  With slightly more throttle, check if engine starts — clean throttle body and bypass channel if yes
+5.  Pull injector; crank engine — check injector spray pattern
+6.  Check if spark plug is wet (flooding) — dry plug and combustion chamber
+7.  Check cylinder compression pressure
+
+〰️ Unstable Idle
+
+1.  Check air filter and intake pipe for leaks or blockage
+2.  Check throttle body for carbon deposits in bypass channel
+3.  Check IACV operation
+4.  Check fuel pressure — approx. 250 kPa
+5.  Check injector for blockage
+6.  Verify correct spark plug type and condition
+7.  Check cylinder compression pressure
+8.  Check engine temperature sensor signal
+9.  Check TPS signal with throttle at idle
+
+⬆️ High Idle
+
+1.  Check throttle cable for sticking or incorrect adjustment
+2.  Check idle pintle adjustment of throttle body
+3.  Check intake pipe for air leaks
+4.  Check IACV operation
+5.  Remove engine temperature sensor; check if engine runs well — change sensor if yes
+
+📉 Poor Acceleration
+
+1.  Check air filter and intake pipe for blockage or leaks
+2.  Check fuel pressure — approx. 250 kPa
+3.  Remove spark plug — check if wet or dry
+4.  Check T-MAP sensor, TPS, and all connectors
+5.  Check injector for blockage
+6.  Check spark plug type and electrode gap
+7.  Check cylinder compression pressure
+8.  Check exhaust pipe for blockage
+
+💥 Backfire
+
+1.  Remove spark plug; check spark is normal
+2.  Check ignition timing is correct
+3.  Check valve clearance for leakage
+4.  Check injector for blockage or leaking
+5.  Check oxygen sensor operation
+
+## Before Starting Fault Analysis — Checklist
+
+From the Rongmao EFI Owner Manual — complete this checklist before beginning any fault code diagnosis:
+
+1.  Confirm the MIL lamp works correctly (illuminates on key-on self-check).
+2.  Clear history fault codes, then repeat the fault condition and re-read.
+3.  When a new fault code appears, note the exact conditions (hot/cold, idle/acceleration, etc.).
+4.  Visually inspect: check for fuel pipe leakage; check for blockage or damage to the intake pipe; check ground connections are secure; check all connectors are properly seated.
+5.  If any visual defect is found, repair it first before proceeding with fault code diagnosis.
+6.  If no cause is found after completing all steps: do not ignore maintenance items (cylinder pressure, mechanical timing, fuel quality). As a last resort, swap the ECU to test — if the fault disappears, the ECU was the root cause.
+
+## Clearing DTCs
+
+On Rongmao / Delphi / Motion systems, codes must be cleared with an OBD-2 scanner — the battery-disconnect method is not guaranteed to clear stored codes on these ECUs (it will reset live data but not always non-volatile fault memory). Use Car Scanner or HUD ECU Hacker to send the "Clear fault codes" command after completing your repair.
+
+<Callout type="warn">
+  **⚠️ Always repair the root cause first.** Clearing a code without fixing the underlying fault will cause it to return within minutes of running the engine.
+</Callout>
+
+## Related Guides & Resources
+
+-   [GY6 EFI CEL Flash Codes — older KEIHIN/clone ECUs without OBD-2](gy6-efi-cel-flash-codes.html)
+-   [GY6 EFI Fuel Injection Full Troubleshooting Guide](gy6-efi-fuel-injection-troubleshooting.html)
+-   [HUD ECU Hacker Setup Guide](gy6-efi-hud-ecu-hacker-setup.html)
+-   [GY6 Won't Start — Full Troubleshooting Checklist](gy6-no-start-troubleshooting.html)
+-   [Diagnosing Air Leaks and Vacuum Leaks](gy6-air-leak-diagnosis.html)
+-   [Ignition Coil Replacement Guide](/repair-guides/gy6-ignition-coil-guide.html)
+
+<SourceBox sources={[
+  { name: "GY6 Injectie Centrum — Foutcodes", url: "https://www.gy6-injectie-centrum.nl/gy6-injectie/foutcodes" },
+  { name: "CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/" }
+]} />

@@ -1,0 +1,96 @@
+---
+title: "GY6 EFI Fuel Injection Troubleshooting Guide"
+description: "GY6 EFI fuel injection troubleshooting guide. Injector, TPS, MAP sensor, O2 sensor, and ECU fault diagnosis for Chinese EFI 125cc and 150cc scooter models."
+publishDate: "2026-05-08"
+updatedDate: "2026-05-08"
+difficulty: "Beginner"
+timeEstimate: "~30 min"
+tags:
+  - "GY6"
+  - "Fuel Injection"
+  - "EFI"
+  - "Diagnostics"
+appliesTo: []
+videos: []
+sources:
+  - name: "GY6 EFI Troubleshooting — Rolling Wrench Denver"
+    url: "https://www.rollingwrenchdenver.com/blogs/news/i-am-having-trouble-with-my-gy6-efi-system"
+  - name: "GY6 Fuel Pump Guide — Kemso Racing"
+    url: "https://www.kemsoracing.com/blogs/news/the-ultimate-guide-to-gy6-fuel-pump-maintenance-troubleshooting-replacement"
+canonical: "https://ismr.online/diagnostics/gy6-efi-fuel-injection-troubleshooting.html"
+draft: false
+---
+
+import VideoEmbed from '@components/VideoEmbed.astro';
+import Callout from '@components/Callout.astro';
+import SourceBox from '@components/SourceBox.astro';
+
+Added: 2026-05-08  |  Sources: [rollingwrenchdenver.com](https://www.rollingwrenchdenver.com/blogs/news/i-am-having-trouble-with-my-gy6-efi-system), [kemsoracing.com](https://www.kemsoracing.com/blogs/news/the-ultimate-guide-to-gy6-fuel-pump-maintenance-troubleshooting-replacement), [49ccscoot.proboards.com](https://49ccscoot.proboards.com/thread/32665/gy6-fuel-injection-build)
+
+GY6 Fuel Injection EFI Diagnostics
+
+<SourceBox sources={[
+  { name: "GY6 EFI Troubleshooting — Rolling Wrench Denver", url: "https://www.rollingwrenchdenver.com/blogs/news/i-am-having-trouble-with-my-gy6-efi-system" },
+  { name: "GY6 Fuel Pump Guide — Kemso Racing", url: "https://www.kemsoracing.com/blogs/news/the-ultimate-guide-to-gy6-fuel-pump-maintenance-troubleshooting-replacement" }
+]} />
+
+
+While the majority of GY6-engined scooters sold in Europe and the UK use a carburetor, a growing number of models — and all Euro 5-compliant variants — use electronic fuel injection (EFI). Some owners also retrofit aftermarket EFI systems (such as the Ecotrons or Rolling Wrench ProBld kit) to carbureted GY6 engines. This guide covers the most common EFI fault symptoms and how to diagnose them systematically.
+
+## GY6 EFI System Overview
+
+A typical GY6 EFI system consists of the following components working together:
+
+-   **ECU (Engine Control Unit):** The electronic brain; maps fuel injection quantity and ignition timing based on sensor inputs.
+-   **Electric fuel pump:** Mounted in or near the fuel tank; delivers fuel at 15–25 PSI (1.0–1.7 bar) to the injector.
+-   **Fuel injector:** A solenoid valve that sprays a metered amount of fuel into the intake port.
+-   **Throttle position sensor (TPS):** Reports throttle angle to the ECU.
+-   **Manifold absolute pressure sensor (MAP) or intake air temperature sensor (IAT):** Measures intake conditions for fuel map corrections.
+-   **Coolant temperature sensor (CTS):** Enables cold-start enrichment.
+-   **Crankshaft/camshaft position sensor:** Triggers injection timing.
+
+## First Steps: Before Any Diagnosis
+
+1.  Check the battery voltage with a multimeter. EFI systems need a minimum of approximately 11.5 V to operate correctly. A weak battery is a very common cause of erratic EFI behaviour.
+2.  Check the main fuse and any EFI-specific inline fuses in the wiring harness.
+3.  Inspect all EFI connector plugs for corrosion, pushed-back terminals, or water ingress. Clean with electrical contact cleaner and reseat firmly.
+4.  Verify the ground connections: the EFI system requires a clean, low-resistance earth. A dedicated earth wire from battery negative to a bare metal chassis point is essential. A poor earth is responsible for a significant proportion of EFI faults.
+
+<Callout type="warn">
+  ️ **EFI vs carburetor:** Do not apply aerosol starting fluid (ether) to a fuel-injected GY6 engine — it can damage the injector seal and the catalytic converter if fitted. Use the correct cold-start procedure instead.
+</Callout>
+
+## Symptom-Based Diagnostic Table
+
+<table><tbody><tr><th>Symptom</th><th>Most Likely Cause</th><th>Diagnostic Action</th></tr><tr><td>Engine cranks but will not fire</td><td>No fuel pressure; dead fuel pump; ECU not powered</td><td>Listen for pump prime (2-sec buzz on key-on); test fuel pressure at injector inlet (target: 15–25 PSI)</td></tr><tr><td>Hard cold start only</td><td>CTS fault; cold-start enrichment not working</td><td>Check CTS resistance (typically 2–3 kΩ at 20°C); inspect CTS wiring connector</td></tr><tr><td>Rough idle, intermittent stall</td><td>TPS out of range; air leak; dirty injector</td><td>Check TPS voltage (typically 0.4–0.8 V at idle); spray intake manifold joints with carb cleaner while running to detect air leaks</td></tr><tr><td>Black smoke, rich running</td><td>TPS stuck or miscalibrated; injector stuck open; MAP sensor fault</td><td>Check TPS signal sweep from idle to WOT (should read 0.4 V to ~4.5 V); test injector resistance (typically 11–16 Ω)</td></tr><tr><td>White smoke, lean running</td><td>Fuel pump weak; injector clogged; fuel filter blocked</td><td>Test fuel pressure under load; replace fuel filter; clean injector with ultrasonic cleaner or injector-cleaning kit</td></tr><tr><td>Loss of power above half throttle</td><td>Fuel pump not maintaining pressure at high demand; clogged fuel filter</td><td>Test pump pressure at full throttle simulation (should not drop below 15 PSI); replace filter</td></tr><tr><td>Engine misfires, popping on deceleration</td><td>Ignition coil; crankshaft position sensor; air leak</td><td>Check spark output; test crank position sensor resistance per manufacturer spec</td></tr><tr><td>Check-engine / fault lamp illuminated</td><td>Stored fault code(s)</td><td>Read fault codes (see below)</td></tr></tbody></table>
+
+## Reading EFI Fault Codes on GY6
+
+Factory EFI GY6 scooters and aftermarket EFI kits typically signal fault codes either through a malfunction indicator lamp (MIL) blink pattern or via a diagnostic connector that accepts a generic OBD-II style reader or the manufacturer's proprietary tool.
+
+## Blink-Code Method (No Scanner)
+
+1.  Switch the ignition on (do not start the engine).
+2.  Observe the warning lamp: it will flash a series of long and short pulses to indicate a fault code. The pattern is typically: long flashes = tens digit, short flashes = units digit. For example, two long flashes followed by three short flashes = fault code 23.
+3.  Count all flash sequences carefully and write them down.
+4.  Cross-reference against your ECU's fault code table (supplied with aftermarket kits; available in the manufacturer service manual for factory EFI models).
+
+## Common Ecotrons / ProBld EFI Fault Codes
+
+<table><tbody><tr><th>Code</th><th>Description</th><th>Typical Cause</th></tr><tr><td>11</td><td>Crankshaft position sensor signal absent</td><td>Sensor gap too large; wiring break; sensor failure</td></tr><tr><td>13</td><td>MAP/vacuum sensor out of range</td><td>Disconnected vacuum line; sensor failure</td></tr><tr><td>14</td><td>Intake air temperature sensor fault</td><td>Connector corrosion; sensor open circuit</td></tr><tr><td>21</td><td>Coolant temperature sensor fault</td><td>Open or short in CTS circuit; sensor failure</td></tr><tr><td>22</td><td>Throttle position sensor fault</td><td>TPS connector loose; incorrect idle voltage; sensor failure</td></tr><tr><td>44</td><td>O₂ / lambda sensor (lean)</td><td>Air leak; lean fuel map; O₂ sensor aging</td></tr><tr><td>45</td><td>O₂ / lambda sensor (rich)</td><td>Stuck injector; rich fuel map; O₂ sensor failure</td></tr></tbody></table>
+<Callout type="tip">
+  � **Tip:** For aftermarket EFI kits (Ecotrons SE-EFI, Rolling Wrench ProBld), the installation manual PDF contains full fault code tables and sensor resistance charts. Download it from the manufacturer's website and keep a copy with the scooter's documents.
+</Callout>
+
+## Fuel Pump Testing
+
+The electric fuel pump on an EFI GY6 typically operates at 15–25 PSI. Testing procedure:
+
+1.  Connect a fuel pressure gauge (T-fitting or Schrader port if available) between the fuel pump outlet and the injector inlet.
+2.  Switch the ignition on — the pump should run for approximately 2 seconds to prime, then stop. Pressure should rise to the operating range and hold.
+3.  If pressure does not rise, test voltage at the pump connector (should be battery voltage when the ECU activates the pump relay).
+4.  If voltage is present but pressure is absent or low, the pump is failing and should be replaced. Kemso Racing and VMC Chinese Parts both supply direct-replacement GY6 EFI pumps at affordable prices.
+
+<Callout type="tip">
+  � **Related guides:** [GY6 Won't Start — Troubleshooting Checklist](gy6-no-start-troubleshooting.html) | [GY6 carburetor Deep-Cleaning Guide](/repair-guides/gy6-carburetor-cleaning-guide.html)
+</Callout>

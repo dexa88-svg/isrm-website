@@ -42,14 +42,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Generate stats
+      - name: Build (stats → astro → pagefind)
+        run: npm run build
+
+      - name: Verify build output
+        run: ls -la dist/data/stats.json dist/pagefind/pagefind.js
+
+      - name: Regenerate sitemap from dist/
         run: node scripts/generate-stats.js
-
-      - name: Verify stats file
-        run: ls -la public/data/stats.json
-
-      - name: Build Pagefind search index
-        run: npx pagefind --site public --output-path public/pagefind
 
       - name: Deploy via SFTP
         env:
@@ -57,7 +57,7 @@ jobs:
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          cd ./public
+          cd ./dist
           # --ftp-create-dirs works for both FTP and SFTP in curl — it instructs
           # the server to create any missing intermediate directories before upload.
           # This replaced --create-dirs which only creates local dirs, not remote ones.
@@ -68,11 +68,14 @@ jobs:
 
       - name: Ping IndexNow (changed pages only)
         run: |
-          # Build list of URLs for HTML files changed in this push
-          CHANGED_URLS=$(git diff --name-only HEAD~1 HEAD -- 'public/**/*.html' \
+          # Build list of URLs for HTML/MDX files changed in this push
+          CHANGED_URLS=$(git diff --name-only HEAD~1 HEAD -- 'src/**/*.astro' 'src/**/*.mdx' 'public/**/*.html' \
             | grep -v '_removed' \
-            | sed 's|^public/|https://ismr.online/|' \
-            | sed 's|/index\.html$|/|' \
+            | sed 's|^src/content/||; s|^src/pages/||; s|^public/||' \
+            | sed 's|\.mdx$|.html|' \
+            | sed 's|/index\.html$|/|; s|/index\.astro$|/|' \
+            | sed 's|\.astro$|.html|' \
+            | sed "s|^|https://ismr.online/|" \
             | jq -R . | jq -s .)
 
           COUNT=$(echo "$CHANGED_URLS" | jq length)

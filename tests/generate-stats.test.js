@@ -4,19 +4,20 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 
-// generateStats is exported by the refactored script
 const { generateStats } = require('../scripts/generate-stats');
 
 describe('generateStats', () => {
   let tmpDir;
+  let contentDir;
   let guidesDir;
   let outputDir;
 
   beforeEach(() => {
     tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'isrm-test-'));
-    guidesDir = path.join(tmpDir, 'repair-guides');
+    contentDir = path.join(tmpDir, 'content');
+    guidesDir = path.join(contentDir, 'repair-guides');
     outputDir = path.join(tmpDir, 'data');
-    fs.mkdirSync(guidesDir);
+    fs.mkdirSync(guidesDir, { recursive: true });
     jest.spyOn(console, 'log').mockImplementation(() => {});
   });
 
@@ -27,43 +28,36 @@ describe('generateStats', () => {
 
   // ── File counting ──────────────────────────────────────────────────────────
 
-  it('counts HTML guide files and excludes index.html', () => {
-    fs.writeFileSync(path.join(guidesDir, 'guide-one.html'), '');
-    fs.writeFileSync(path.join(guidesDir, 'guide-two.html'), '');
-    fs.writeFileSync(path.join(guidesDir, 'index.html'), '');
+  it('counts MDX guide files', () => {
+    fs.writeFileSync(path.join(guidesDir, 'guide-one.mdx'), '');
+    fs.writeFileSync(path.join(guidesDir, 'guide-two.mdx'), '');
 
-    const stats = generateStats({ guidesDir, outputDir });
+    const stats = generateStats({ contentDir, outputDir });
 
     expect(stats.guides).toBe(2);
   });
 
-  it('returns zero when no HTML guide files exist', () => {
-    const stats = generateStats({ guidesDir, outputDir });
+  it('returns zero when no MDX guide files exist', () => {
+    const stats = generateStats({ contentDir, outputDir });
 
     expect(stats.guides).toBe(0);
   });
 
-  it('ignores non-HTML files in the guides directory', () => {
-    fs.writeFileSync(path.join(guidesDir, 'guide.html'), '');
+  it('ignores non-MDX files in the guides directory', () => {
+    fs.writeFileSync(path.join(guidesDir, 'guide.mdx'), '');
     fs.writeFileSync(path.join(guidesDir, 'README.md'), '');
     fs.writeFileSync(path.join(guidesDir, 'styles.css'), '');
-    fs.writeFileSync(path.join(guidesDir, 'script.js'), '');
 
-    const stats = generateStats({ guidesDir, outputDir });
+    const stats = generateStats({ contentDir, outputDir });
 
     expect(stats.guides).toBe(1);
   });
 
-  it('counts the actual number of guide files (regression: correct total)', () => {
-    const guideNames = [
-      'gy6-oil-change-guide.html',
-      'gy6-spark-plug-guide.html',
-      'gy6-carburetor-cleaning-guide.html',
-      'index.html',
-    ];
-    guideNames.forEach(name => fs.writeFileSync(path.join(guidesDir, name), ''));
+  it('counts the correct number of MDX guide files (regression)', () => {
+    ['gy6-oil-change-guide.mdx', 'gy6-spark-plug-guide.mdx', 'gy6-carburetor-cleaning-guide.mdx']
+      .forEach(name => fs.writeFileSync(path.join(guidesDir, name), ''));
 
-    const stats = generateStats({ guidesDir, outputDir });
+    const stats = generateStats({ contentDir, outputDir });
 
     expect(stats.guides).toBe(3);
   });
@@ -73,7 +67,7 @@ describe('generateStats', () => {
   it('creates the output directory when it does not exist', () => {
     expect(fs.existsSync(outputDir)).toBe(false);
 
-    generateStats({ guidesDir, outputDir });
+    generateStats({ contentDir, outputDir });
 
     expect(fs.existsSync(outputDir)).toBe(true);
   });
@@ -81,13 +75,13 @@ describe('generateStats', () => {
   it('does not throw when the output directory already exists', () => {
     fs.mkdirSync(outputDir);
 
-    expect(() => generateStats({ guidesDir, outputDir })).not.toThrow();
+    expect(() => generateStats({ contentDir, outputDir })).not.toThrow();
   });
 
   it('creates nested output directories with recursive mkdirSync', () => {
     const nestedOutput = path.join(outputDir, 'nested', 'deep');
 
-    generateStats({ guidesDir, outputDir: nestedOutput });
+    generateStats({ contentDir, outputDir: nestedOutput });
 
     expect(fs.existsSync(nestedOutput)).toBe(true);
   });
@@ -95,30 +89,30 @@ describe('generateStats', () => {
   // ── stats.json content ─────────────────────────────────────────────────────
 
   it('writes stats.json to the output directory', () => {
-    generateStats({ guidesDir, outputDir });
+    generateStats({ contentDir, outputDir });
 
     expect(fs.existsSync(path.join(outputDir, 'stats.json'))).toBe(true);
   });
 
   it('writes valid JSON to stats.json', () => {
-    generateStats({ guidesDir, outputDir });
+    generateStats({ contentDir, outputDir });
 
     const raw = fs.readFileSync(path.join(outputDir, 'stats.json'), 'utf8');
     expect(() => JSON.parse(raw)).not.toThrow();
   });
 
   it('includes the correct guides count in stats.json', () => {
-    fs.writeFileSync(path.join(guidesDir, 'guide1.html'), '');
-    fs.writeFileSync(path.join(guidesDir, 'guide2.html'), '');
+    fs.writeFileSync(path.join(guidesDir, 'guide1.mdx'), '');
+    fs.writeFileSync(path.join(guidesDir, 'guide2.mdx'), '');
 
-    generateStats({ guidesDir, outputDir });
+    generateStats({ contentDir, outputDir });
 
     const stats = JSON.parse(fs.readFileSync(path.join(outputDir, 'stats.json'), 'utf8'));
     expect(stats.guides).toBe(2);
   });
 
   it('includes a lastUpdated ISO 8601 timestamp in stats.json', () => {
-    generateStats({ guidesDir, outputDir });
+    generateStats({ contentDir, outputDir });
 
     const stats = JSON.parse(fs.readFileSync(path.join(outputDir, 'stats.json'), 'utf8'));
     expect(stats.lastUpdated).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/);
@@ -128,8 +122,8 @@ describe('generateStats', () => {
     fs.mkdirSync(outputDir);
     fs.writeFileSync(path.join(outputDir, 'stats.json'), JSON.stringify({ guides: 999 }));
 
-    fs.writeFileSync(path.join(guidesDir, 'guide1.html'), '');
-    generateStats({ guidesDir, outputDir });
+    fs.writeFileSync(path.join(guidesDir, 'guide1.mdx'), '');
+    generateStats({ contentDir, outputDir });
 
     const stats = JSON.parse(fs.readFileSync(path.join(outputDir, 'stats.json'), 'utf8'));
     expect(stats.guides).toBe(1);
@@ -138,19 +132,19 @@ describe('generateStats', () => {
   // ── Return value ───────────────────────────────────────────────────────────
 
   it('returns a stats object with guides and lastUpdated properties', () => {
-    fs.writeFileSync(path.join(guidesDir, 'guide1.html'), '');
+    fs.writeFileSync(path.join(guidesDir, 'guide1.mdx'), '');
 
-    const result = generateStats({ guidesDir, outputDir });
+    const result = generateStats({ contentDir, outputDir });
 
     expect(result).toHaveProperty('guides', 1);
     expect(result).toHaveProperty('lastUpdated');
   });
 
-  // ── Error handling ─────────────────────────────────────────────────────────
+  // ── Missing directory ──────────────────────────────────────────────────────
 
-  it('throws when the guides directory does not exist', () => {
-    const missing = path.join(tmpDir, 'nonexistent-dir');
+  it('returns zero guides when content directory does not exist', () => {
+    const result = generateStats({ contentDir: path.join(tmpDir, 'nonexistent'), outputDir });
 
-    expect(() => generateStats({ guidesDir: missing, outputDir })).toThrow();
+    expect(result.guides).toBe(0);
   });
 });

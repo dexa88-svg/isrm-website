@@ -1,0 +1,30 @@
+---
+import Base from './Base.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogImage?: string;
+  ogType?: string;
+  jsonLd?: object;
+  updatedDate?: string;
+  publishDate?: string;
+}
+
+const { title, description, canonical, ogImage, ogType = 'article', jsonLd, updatedDate, publishDate } = Astro.props;
+---
+
+<Base title={`${title} — ISMR`} description={description} canonical={canonical} ogImage={ogImage} ogType={ogType} jsonLd={jsonLd}>
+  {updatedDate && <meta slot="head" property="article:modified_time" content={updatedDate} />}
+  {publishDate && <meta slot="head" property="article:published_time" content={publishDate} />}
+  <Navbar />
+
+  <main data-pagefind-body class="guide-content">
+    <slot />
+  </main>
+
+  <Footer />
+</Base>

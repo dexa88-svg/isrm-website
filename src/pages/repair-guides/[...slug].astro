@@ -1,0 +1,46 @@
+---
+import { getCollection, render } from 'astro:content';
+import Guide from '../../layouts/Guide.astro';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('repair-guides', ({ data }) => !data.draft);
+  return guides.map(guide => ({
+    params: { slug: guide.id },
+    props: { guide },
+  }));
+}
+
+const { guide } = Astro.props;
+const { Content } = await render(guide);
+const { title, description, canonical, updatedDate, publishDate, difficulty, timeEstimate, tags } = guide.data;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  description,
+  url: canonical,
+  dateModified: updatedDate.toISOString().slice(0, 10),
+  datePublished: publishDate.toISOString().slice(0, 10),
+  keywords: tags.join(', '),
+  estimatedCost: { '@type': 'MonetaryAmount', currency: 'EUR', value: '0' },
+  totalTime: timeEstimate,
+  publisher: {
+    '@type': 'Organization',
+    name: 'ISMR — Interactive Scooter Manuals for Repair',
+    url: 'https://ismr.online',
+  },
+};
+---
+
+<Guide
+  title={title}
+  description={description}
+  canonical={canonical}
+  breadcrumbLabel={title}
+  updatedDate={updatedDate.toISOString().slice(0, 10)}
+  publishDate={publishDate.toISOString().slice(0, 10)}
+  jsonLd={jsonLd}
+>
+  <Content />
+</Guide>

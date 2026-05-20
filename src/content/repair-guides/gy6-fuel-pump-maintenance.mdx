@@ -1,0 +1,111 @@
+---
+title: "GY6 Fuel Pump: Maintenance & Replacement"
+description: "GY6 fuel pump maintenance, testing, and replacement guide. Diagnose vacuum-operated fuel pump faults, rebuild or replace on GY6 50–150cc scooters and mopeds."
+publishDate: "2026-05-19"
+updatedDate: "2026-05-19"
+difficulty: "Beginner"
+timeEstimate: "~30 min"
+tags: []
+appliesTo: []
+videos: []
+sources:
+  - name: "The Ultimate Guide to GY6 Fuel Pump: Maintenance, Troubleshooting & Replacement — Kemso Racing"
+    url: "https://www.kemsoracing.com/blogs/news/the-ultimate-guide-to-gy6-fuel-pump-maintenance-troubleshooting-replacement"
+canonical: "https://ismr.online/repair-guides/gy6-fuel-pump-maintenance.html"
+draft: false
+---
+
+import VideoEmbed from '@components/VideoEmbed.astro';
+import Callout from '@components/Callout.astro';
+import SourceBox from '@components/SourceBox.astro';
+
+<SourceBox sources={[
+  { name: "The Ultimate Guide to GY6 Fuel Pump: Maintenance, Troubleshooting & Replacement — Kemso Racing", url: "https://www.kemsoracing.com/blogs/news/the-ultimate-guide-to-gy6-fuel-pump-maintenance-troubleshooting-replacement" }
+]} />
+
+
+The fuel pump on a GY6-engine scooter is a small but critical component. A failing pump is responsible for a surprisingly wide range of symptoms: hard starting, stalling at speed, power loss on hills, and erratic idling. This guide covers both the **vacuum-operated diaphragm pump** found on carburetted GY6 scooters and the **electric fuel pump** used on EFI (fuel-injected) variants.
+
+**Applies to:** GY6 50 cc (139QMB), GY6 125/150 cc (157QMJ / QMI152), and GY6 180 cc — carburetor and fuel-injection variants. Typical scooter models include BTC Riva, La Souris Sourini/City, Santini Capri, and similar Chinese/Taiwanese GY6-platform scooters.
+
+## Types of Fuel Pump Used on GY6 Engines
+
+## Vacuum-Diaphragm Pump (Carburettor Models)
+
+Most carburetted GY6 scooters use a simple vacuum-operated diaphragm pump. Engine vacuum from the intake manifold flexes an internal rubber diaphragm back and forth, drawing fuel from the tank and pushing it to the carburettor float chamber. Operating pressure is low: typically **2–4 PSI (0.14–0.28 bar)**.
+
+The pump has three connections: a vacuum port (thin hose to intake manifold or carburettor), a fuel inlet (from the tank petcock), and a fuel outlet (to the carburettor). On many 50 cc models the pump is mounted to the carburettor body; on 125/150 cc models it is usually a separate unit on the frame.
+
+## Electric Fuel Pump (EFI Models)
+
+Fuel-injected GY6 scooters use a 12 V electric pump, typically submerged inside or mounted directly on the fuel tank. Electric pumps operate at significantly higher pressure: **15–25 PSI (1.0–1.7 bar)**. They are controlled by the ECU and run for a 2–3 second prime cycle when the ignition is first switched on, then run continuously when the engine is cranking or running.
+
+## Symptoms of a Failing Fuel Pump
+
+<table><tbody><tr><th>Symptom</th><th>Carb Pump</th><th>EFI Pump</th></tr><tr><td>Hard to start, especially cold</td><td>✓</td><td>✓</td></tr><tr><td>Stalls when throttle is opened quickly</td><td>✓</td><td>✓</td></tr><tr><td>Power loss at sustained high speed</td><td>✓</td><td>✓</td></tr><tr><td>Engine starts OK but cuts out after 5–10 minutes</td><td>✓ (diaphragm heat-cracking)</td><td>✗</td></tr><tr><td>No start; no fuel at carburettor inlet when primer bulb pressed</td><td>✓</td><td>—</td></tr><tr><td>No start; no whirring sound at key-on</td><td>—</td><td>✓ (pump or fuse)</td></tr><tr><td>EFI fault codes P0087 / P0230</td><td>—</td><td>✓</td></tr></tbody></table>
+
+## Diagnosing the Vacuum-Diaphragm Pump (Carburettor Models)
+
+## External Fuel Source Test
+
+1.  Disconnect the fuel outlet hose from the carburettor. Place the open hose end in a clean container.
+2.  Crank the engine for 5 seconds. Fuel should pulse out of the hose rhythmically with each engine stroke.
+3.  If no fuel or only a weak dribble: the pump diaphragm has perforated, or the vacuum hose to the intake is blocked/split.
+4.  If fuel flow is good but the engine still runs poorly: the fault is in the carburettor, not the pump.
+
+## Vacuum Line Check
+
+1.  Trace the thin vacuum hose from the pump to its port on the intake manifold or carburettor body.
+2.  Inspect for cracks, kinks, or disconnection. A split vacuum line delivers no operating signal to the diaphragm.
+3.  Blow through the line with your mouth — it should not leak at any joint.
+
+## Pump Disassembly (Carb Models — Serviceable Pump)
+
+Some OEM vacuum pumps can be rebuilt by replacing the internal rubber diaphragm and check valves. However, replacement pumps cost so little (€5–15) that replacement is usually faster and more reliable than rebuilding.
+
+1.  Remove the four small Phillips screws holding the pump halves together.
+2.  Carefully separate the halves — a spring, diaphragm, and two small ball-valve check valves are inside.
+3.  Inspect the rubber diaphragm for holes, tears, or hardening. Any crack means replace the pump.
+4.  Clean all passages with carburettor cleaner. Reassemble with a new diaphragm if available.
+
+## Diagnosing the Electric Pump (EFI Models)
+
+## Listen at Key-On
+
+1.  Sit close to the rear of the scooter and switch on the ignition (do not crank).
+2.  Listen for a brief 2–3 second whirring or buzzing from the pump. If you can hear this, the pump is receiving power and running.
+3.  No sound at all: check the fuel pump fuse (usually a 10 A or 15 A inline fuse near the battery) and the ECU relay. A blown fuse that blows again immediately on replacement suggests a pump winding short — replace the pump.
+
+## Fuel Pressure Test
+
+1.  Obtain an inline fuel pressure test gauge kit (available for under €20 at auto parts retailers).
+2.  Disconnect the fuel rail inlet hose. Fit the T-gauge adapter between the pump outlet and the fuel rail.
+3.  Switch on the ignition (pump prime cycle). Pressure should read **15–25 PSI**. Below 10 PSI confirms a weak pump.
+4.  Shut the ignition off. Pressure should hold (drop off slowly over 30–60 seconds). Rapid drop to zero with the ignition off indicates a leaking injector or leaking fuel rail check valve — not a pump fault.
+
+⚠️ **Important for EFI pump installation:** The fuel pump draws, not pushes — it cannot suck fuel uphill against gravity. Always ensure the inlet fuel line from the tank runs downward to the pump. If the pump inlet is located above the bottom of the tank, it will not prime correctly and will suffer premature wear.
+
+## Replacing the Vacuum-Diaphragm Pump
+
+1.  Close the fuel petcock or clamp the inlet hose to prevent spillage.
+2.  Remove the vacuum hose, inlet hose, and outlet hose — note which is which (mark with tape if needed).
+3.  Undo the 2 mounting bolts or hose clamp holding the pump to the frame or carburettor.
+4.  Fit the new pump. Reconnect the three hoses in the same positions. Tighten hose clamps securely.
+5.  Open the petcock and check for leaks before starting.
+
+## Replacing the Electric Pump (EFI)
+
+1.  Disconnect the battery negative terminal.
+2.  Drain or remove the fuel tank to access the pump (varies by model — refer to the model-specific service manual).
+3.  Disconnect the pump electrical connector and the fuel outlet hose.
+4.  Unscrew the pump retaining ring (counter-clockwise, often requires a strap wrench) and lift the pump assembly out of the tank.
+5.  Transfer the fuel level sender to the new pump if the new pump does not include one.
+6.  Fit new pump, torque retaining ring to spec (usually 25–35 Nm), reconnect hose and electrical connector.
+7.  Reconnect battery, switch on ignition, and listen for prime. Check all connections for fuel leaks before first start.
+
+## Maintenance Tips
+
+-   Always use fresh, clean petrol — old or contaminated fuel deposits varnish residue inside pump check valves, causing premature failure.
+-   On carburetor models, inspect the vacuum hose annually. The thin hose deteriorates with heat exposure and splits invisibly from the inside.
+-   On EFI models, the in-tank filter sock (strainer) on the pump inlet should be replaced with every pump or every 30,000 km. A blocked strainer starves the pump and causes overheating.
+-   Never run the fuel tank to empty repeatedly — on EFI scooters the pump relies on fuel for both lubrication and cooling. Running dry shortens pump life significantly.

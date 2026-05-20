@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "Interactive Scooter Manuals for Repair",
   "scripts": {
+    "dev": "astro dev",
+    "build:astro": "astro build",
+    "preview": "astro preview",
     "test": "node scripts/validate-pages.js && jest",
     "test:coverage": "node scripts/validate-pages.js && jest --coverage",
     "generate-stats": "node scripts/generate-stats.js",
     "search-index": "pagefind --site public --output-path public/pagefind",
-    "build": "node scripts/generate-stats.js && pagefind --site public --output-path public/pagefind"
+    "build": "node scripts/generate-stats.js && astro build && pagefind --site dist --output-path dist/pagefind"
   },
   "devDependencies": {
     "jest": "^29.7.0",
@@ -25,5 +28,11 @@
       "public/**/*.js",
       "!public/data/**"
     ]
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^5.0.6",
+    "astro": "^6.3.5",
+    "node-html-parser": "^7.1.0",
+    "turndown": "^7.2.4"
   }
 }

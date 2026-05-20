@@ -1,0 +1,101 @@
+---
+title: "Piaggio & Gilera 2T CDI Ignition Fault Finding"
+description: "Fault-finding guide for 2-stroke CDI ignition systems on Piaggio and Gilera scooters. Diagnose no-spark, weak spark, and CDI failures with multimeter tests…"
+publishDate: "2026-05-19"
+updatedDate: "2026-05-19"
+difficulty: "Beginner"
+timeEstimate: "~30 min"
+tags:
+  - "Piaggio"
+  - "Gilera"
+  - "2-Stroke"
+  - "Ignition"
+appliesTo: []
+videos: []
+sources:
+  - name: "Piaggio No Spark — CDI Testing — PedParts UK Blog"
+    url: "https://www.pedparts.co.uk/blog/piaggio-ignition-fault-finding"
+canonical: "https://ismr.online/diagnostics/piaggio-gilera-2stroke-cdi-ignition-fault-finding.html"
+draft: false
+---
+
+import VideoEmbed from '@components/VideoEmbed.astro';
+import Callout from '@components/Callout.astro';
+import SourceBox from '@components/SourceBox.astro';
+
+<SourceBox sources={[
+  { name: "Piaggio No Spark — CDI Testing — PedParts UK Blog", url: "https://www.pedparts.co.uk/blog/piaggio-ignition-fault-finding" }
+]} />
+
+
+This guide covers systematic ignition fault-finding for all 50cc Piaggio and Gilera 2-stroke scooters (plus some geared 50cc engines such as Derbi which share the same ignition architecture). You will need a multimeter. The Piaggio/Gilera ignition system is completely independent from the rest of the bike's electrics — it is unaffected by battery condition, charging system faults, or other electrical problems — which makes it straightforward to test methodically.
+
+<Callout type="warn">
+  ️ **Important — spark strength matters:** Seeing a spark out of the engine is not enough. A weak spark may jump a 1 mm gap in open air but fail to fire the compressed mixture in the cylinder. The spark must be able to jump **at least 7 mm in open air**, which corresponds to over 15,000 V. Use a dedicated spark tester with an adjustable gap, or improvise with two screws in a wooden block set 7–10 mm apart.
+</Callout>
+
+## Component Overview
+
+The Piaggio 2-stroke ignition circuit has four main parts:
+
+<table><tbody><tr><th>Component</th><th>Wire colour</th><th>Function</th></tr><tr><td>Pickup coil</td><td>Red → CDI</td><td>Generates a voltage pulse each time a lobe on the flywheel passes, triggering the CDI to fire</td></tr><tr><td>CDI earth</td><td>White → CDI</td><td>Must be solidly earthed (0 Ω) at all times</td></tr><tr><td>Stator power coil</td><td>Green → CDI</td><td>Generates ~80 V AC to power the CDI; independent of the charging coils</td></tr><tr><td>CDI unit</td><td>All wires</td><td>Processes the pickup signal and controls the HT coil to produce spark</td></tr></tbody></table>
+
+## Step 1 — Verify the Spark Quality
+
+Remove the spark plug and connect a known-good plug (or a new one) to the HT lead. Rest the threaded portion against a clean engine-earth point, or secure it with a jump lead. Turn the engine over on the starter or kick it with the ignition on. If using a spark tester, increase the gap until the spark stops jumping; **7 mm minimum** is required for reliable ignition.
+
+If spark is absent or weak, proceed to Step 2.
+
+## Step 2 — Test the Pickup Coil (Red Wire)
+
+Disconnect the CDI multi-connector (so a faulty CDI cannot skew readings).
+
+1.  Set your multimeter to resistance (Ω).
+2.  Measure between the **red wire** at the CDI connector and a good engine earth point.
+3.  Expected reading: **80–140 Ω** (Piaggio spec is 80–90 Ω, but healthy units typically read 120–130 Ω).
+4.  Also check the air gap between the pickup and flywheel lobe: it should be approximately **0.8 mm**. Anything over 1 mm, loosen the two mounting screws and reposition the pickup.
+
+If the reading is outside range, disconnect the flywheel block connector and retest the red wire from there. If it reads correctly there but not at the CDI connector, the fault is in the wiring between the flywheel connector and the CDI (often a corroded or damaged block connector). If the reading is still out of spec from the flywheel connector, the pickup/stator assembly needs replacement.
+
+## Step 3 — Test the CDI Earth (White Wire)
+
+With the flywheel block connector reconnected and the CDI block connector still disconnected:
+
+1.  Measure resistance between the **white wire** at the CDI connector and battery negative (or a solid earth point).
+2.  Expected reading: **0 Ω** — the white wire must be a direct earth.
+
+If not 0 Ω, disconnect the flywheel connector and retest. A good reading there confirms a broken or corroded earth between the flywheel connector and the CDI. Rectify the wiring before proceeding.
+
+## Step 4 — Test the Stator Power Coil (Green Wire)
+
+The green wire carries approximately 80 V AC from the stator to the CDI when the engine is cranked. The ignition key must be in the **ON** position.
+
+### Quick voltage test
+
+With both block connectors reconnected, measure AC voltage between the **green wire** at the CDI connector and earth while cranking. If you read **50 V AC or more**, the stator coil output is sufficient — skip to Step 5.
+
+### Resistance test (static)
+
+1.  Disconnect the CDI block connector (leave flywheel block connected).
+2.  Set multimeter to Ω, measure between green wire and earth.
+3.  Expected: **600–1,000 Ω**. Open circuit (∞) or short (0 Ω) indicates a definite fault.
+
+### Ignition switch test
+
+With both block connectors disconnected, measure resistance between the green wire at the CDI connector and earth:
+
+<table><tbody><tr><th>Key position</th><th>Expected reading</th></tr><tr><td>OFF</td><td>0 Ω (switch grounds the coil to kill ignition)</td></tr><tr><td>ON</td><td>&gt;20 MΩ (open circuit — coil is free to generate voltage)</td></tr></tbody></table>
+
+Any intermediate value indicates a faulty ignition switch or tacho wiring.
+
+### Load test
+
+Reconnect both block connectors and measure green-wire AC voltage again while cranking. It should still be **≥50 V AC** under load. If it drops below this, the stator fails under load and the stator/pickup assembly must be replaced.
+
+## Step 5 — If All Tests Pass: Replace the CDI
+
+If Steps 2–4 all return correct readings, every component except the CDI has been verified. The CDI unit itself is faulty and should be replaced. The standard Piaggio/Gilera CDI is restricted to approximately **10,500–11,000 rpm**. If higher revs are needed (e.g., after fitting a 70cc cylinder kit), consider an unrestricted aftermarket CDI such as an Athena de-restricted unit.
+
+## Quick-Reference Fault Table
+
+<table><tbody><tr><th>Symptom</th><th>Likely cause</th></tr><tr><td>No spark at all</td><td>Faulty CDI, broken pickup, open-circuit stator coil, or wiring fault</td></tr><tr><td>Weak spark (fails 7 mm gap test)</td><td>Failing HT coil or CDI nearing end of life</td></tr><tr><td>Pickup resistance out of range</td><td>Faulty pickup coil or damaged flywheel-block connector</td></tr><tr><td>Stator reads 0 Ω or ∞ Ω (green wire)</td><td>Stator coil shorted or open-circuited — replace stator/pickup assembly</td></tr><tr><td>White wire not 0 Ω</td><td>Broken or corroded earth connection — check flywheel block connector</td></tr><tr><td>Green wire reads mid-range in OFF position</td><td>Faulty ignition switch or tacho short-circuit</td></tr></tbody></table>

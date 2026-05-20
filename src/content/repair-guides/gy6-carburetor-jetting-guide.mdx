@@ -1,0 +1,89 @@
+---
+title: "GY6 Carburetor Jetting & Rejetting Guide"
+description: "GY6 carburetor jetting guide with main jet size charts by altitude, air filter, and exhaust. Tune your 50/125/150cc scooter carb for optimal performance."
+publishDate: "2026-05-08"
+updatedDate: "2026-05-08"
+difficulty: "Beginner"
+timeEstimate: "~30 min"
+tags:
+  - "GY6"
+  - "Carburetor"
+  - "139QMB"
+  - "157QMJ"
+appliesTo: []
+videos: []
+sources:
+  - name: "Carburetor Jetting 101 — Scooterworks USA"
+    url: "https://www.scooterworks.com/blogs/news/carburetor-jetting-101"
+  - name: "Carburetor Jetting Help — Rolling Wrench Denver"
+    url: "https://www.rollingwrenchdenver.com/blogs/news/carburetor-help-jetting-and-tuning-help"
+canonical: "https://ismr.online/repair-guides/gy6-carburetor-jetting-guide.html"
+draft: false
+---
+
+import VideoEmbed from '@components/VideoEmbed.astro';
+import Callout from '@components/Callout.astro';
+import SourceBox from '@components/SourceBox.astro';
+
+Added: 2026-05-08  |  Sources: [scooterworks.com](https://www.scooterworks.com/blogs/news/carburetor-jetting-101), [rollingwrenchdenver.com](https://www.rollingwrenchdenver.com/blogs/news/carburetor-help-jetting-and-tuning-help), [jetsrus.com](https://www.jetsrus.com/FAQs/FAQ_rejetting_101_how_to_rejet.htm)  |  GY6 Carburetor 139QMB 157QMJ
+
+<SourceBox sources={[
+  { name: "Carburetor Jetting 101 — Scooterworks USA", url: "https://www.scooterworks.com/blogs/news/carburetor-jetting-101" },
+  { name: "Carburetor Jetting Help — Rolling Wrench Denver", url: "https://www.rollingwrenchdenver.com/blogs/news/carburetor-help-jetting-and-tuning-help" }
+]} />
+
+
+Jetting refers to selecting the correct size of the brass main jet and pilot jet inside the carburetor to achieve the right air-to-fuel ratio for your engine's conditions. A stock GY6 scooter is jetted conservatively from the factory — usually slightly lean — which can cause hesitation, flat spots, or overheating. If you have added an aftermarket exhaust, performance air filter, or high-compression piston, rejetting is essential.
+
+## Understanding the Throttle Zones
+
+The GY6 slide-type carburetor (PD-series or CVK) controls the mixture across the throttle range via different circuits. Knowing which circuit governs each zone tells you which component to adjust:
+
+-   **0–¼ throttle (idle and off-idle):** Governed by the pilot jet and the air/fuel mixture screw. Symptoms of a lean pilot: stumbling, stalling at idle, engine hunts.
+-   **¼–¾ throttle (mid-range):** Governed by the needle position and its clip groove. A needle that is too lean causes hesitation when rolling on from partial throttle.
+-   **¾–full throttle (wide-open):** Governed by the main jet size. A lean main jet causes flat top-end power and possible overheating at sustained full throttle.
+
+## Diagnosing Rich vs Lean
+
+<table><tbody><tr><th>Symptom</th><th>Likely Cause</th><th>Correction</th></tr><tr><td>Black sooty spark plug, dark smoke</td><td>Rich mixture (too large a jet)</td><td>Go down 2–5 jet sizes</td></tr><tr><td>White/grey spark plug, overheating</td><td>Lean mixture (too small a jet)</td><td>Go up 2–5 jet sizes</td></tr><tr><td>Stumbling at idle, stalls when warm</td><td>Lean pilot circuit</td><td>Richen mixture screw or upsize pilot jet</td></tr><tr><td>Hesitation at ¼–½ throttle roll-on</td><td>Lean needle position</td><td>Raise needle clip (lower the clip groove number)</td></tr><tr><td>Bog at full throttle</td><td>Lean main jet or clogged main jet</td><td>Upsize main jet by 3–5 sizes; clean jet first</td></tr><tr><td>Rich surge, black plug at full throttle</td><td>Rich main jet</td><td>Downsize main jet by 3–5 sizes</td></tr></tbody></table>
+
+## Stock Jetting Reference (Sea Level, Standard Air Filter)
+
+<table><tbody><tr><th>Engine Code</th><th>Displacement</th><th>Carb</th><th>Main Jet</th><th>Pilot Jet</th><th>Needle Clip</th></tr><tr><td>139QMB</td><td>50cc (49cc)</td><td>PD18J</td><td>#75</td><td>#35</td><td>3rd groove (middle)</td></tr><tr><td>152QMI</td><td>125cc</td><td>PD22J</td><td>#95</td><td>#38</td><td>3rd groove</td></tr><tr><td>157QMJ</td><td>150cc</td><td>PD24J / CVK24</td><td>#98–#102</td><td>#40</td><td>3rd groove</td></tr></tbody></table>
+
+## Jetting for Modifications
+
+## Performance Air Filter
+
+A high-flow air filter (K&N style pod filter or similar) allows more air through the carburetor. This leans the mixture and requires a main jet increase. A typical starting point is to increase the main jet by **5–8 sizes** (e.g., from #98 to #105 on a 150cc engine) and adjust from there using the spark plug color method.
+
+## Performance Exhaust
+
+An aftermarket exhaust that reduces back-pressure also leans the mixture, especially in the mid-to-high throttle range. Increase the main jet by **3–5 sizes** as a starting point, and raise the needle one clip position (move the clip from the 3rd to the 2nd groove from the top).
+
+## Altitude Correction
+
+At higher altitudes, air is thinner, so the stock jetting becomes progressively richer as altitude increases. A rough rule of thumb is to decrease the main jet by **3 sizes per 1,000 m** of altitude above sea level.
+
+<table><tbody><tr><th>Altitude</th><th>Approx. Main Jet Correction (GY6 150cc baseline #98)</th></tr><tr><td>0–500 m</td><td>Stock (#98–#102)</td></tr><tr><td>500–1,000 m</td><td>#95–#98</td></tr><tr><td>1,000–1,500 m</td><td>#92–#95</td></tr><tr><td>1,500–2,000 m</td><td>#88–#92</td></tr></tbody></table>
+
+## How to Change a Main Jet
+
+1.  Ensure the engine is cold. Turn the fuel tap off.
+2.  Remove the float bowl (see the [Deep-Cleaning Guide](gy6-carburetor-cleaning-guide.html) for step-by-step bowl removal).
+3.  Unscrew the main jet with a flat-blade screwdriver. Note the existing size stamped on the jet body.
+4.  Thread in the new jet finger-tight, then snug with the screwdriver. Do not overtighten.
+5.  Refit the float bowl, turn the fuel on, and start the engine.
+6.  After a warm-up run, remove the spark plug and read its color. A correct mixture gives a tan to light brown plug tip. Black = too rich; white/grey = too lean.
+7.  Adjust one jet size at a time until the plug color is correct.
+
+<Callout type="warn">
+  ️ Always clean the carburetor thoroughly before rejetting. A partially blocked jet will give false lean symptoms regardless of jet size. See the [Deep-Cleaning Guide](gy6-carburetor-cleaning-guide.html) first.
+</Callout>
+<Callout type="tip">
+  � **Tip:** Jets are typically sized in increments of 2–3 (e.g., #95, #98, #100, #102, #105). Buy a jet kit covering a range of ±15 from your stock size so you can tune without repeated ordering.
+</Callout>
+
+## Where to Buy GY6 Jets
+
+Replacement GY6 jets (both main and pilot) are widely available from vendors including [VMC Chinese Parts](https://www.vmcchineseparts.com/), [Rolling Wrench Denver](https://www.rollingwrenchdenver.com/), and [Scooterworks USA](https://www.scooterworks.com/collections/gy6). When ordering, confirm the carburetor model (PD18J, PD22J, PD24J, or CVK) to ensure thread pitch compatibility.
