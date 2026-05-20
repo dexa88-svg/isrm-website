@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="ISMR scooter wheel logo">
+  <title>ISMR</title>
+
+  <!-- Dark rounded background -->
+  <rect width="32" height="32" rx="6.5" fill="#1a2332"/>
+
+  <!-- Outer tyre ring -->
+  <circle cx="16" cy="16" r="12.2" fill="none" stroke="#ff6b35" stroke-width="2.4"/>
+
+  <!-- Inner rim ring -->
+  <circle cx="16" cy="16" r="9.4" fill="none" stroke="#ff6b35" stroke-width="0.55"/>
+
+  <!-- 5 spokes – hub at r≈3.4, rim at r≈9.4, angles: -90°, -18°, 54°, 126°, 198° -->
+  <g stroke="#ff6b35" stroke-width="1.0" stroke-linecap="round">
+    <!-- spoke 0: -90° (top) -->
+    <line x1="16"     y1="12.6"  x2="16"     y2="6.6"/>
+    <!-- spoke 1: -18° -->
+    <line x1="18.23"  y1="15.05" x2="24.93"  y2="13.09"/>
+    <!-- spoke 2: 54° -->
+    <line x1="17.00"  y1="18.75" x2="21.54"  y2="23.60"/>
+    <!-- spoke 3: 126° -->
+    <line x1="13.00"  y1="18.75" x2="10.46"  y2="23.60"/>
+    <!-- spoke 4: 198° -->
+    <line x1="13.77"  y1="15.05" x2="7.07"   y2="13.09"/>
+  </g>
+
+  <!-- Hub – teal filled -->
+  <circle cx="16" cy="16" r="3.4" fill="#00a8cc"/>
+
+  <!-- Centre bolt -->
+  <circle cx="16" cy="16" r="1.2" fill="#1a2332"/>
+</svg>

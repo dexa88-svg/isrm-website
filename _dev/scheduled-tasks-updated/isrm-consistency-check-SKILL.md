@@ -63,7 +63,7 @@ Out of scope (remove or flag):
 ## WORKSPACE
 
 Content MDX files live under:
-`/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISMR/src/content/`
+`/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISRM/src/content/`
 
 Category folders: `repair-guides/`, `parts/`, `diagnostics/`, `models/`, `videos/`
 
@@ -182,7 +182,7 @@ After writing `sync-manifest.json`, run:
 npm run build
 ```
 
-from the project root (`/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISMR/`).
+from the project root (`/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISRM/`).
 
 This runs: `node scripts/generate-stats.js` (counts `.mdx` files from `src/content/`, writes `public/data/stats.json` and `public/sitemap.xml`) → `astro build` (compiles all MDX to `dist/`) → `pagefind` (generates search index in `dist/pagefind/`).
 

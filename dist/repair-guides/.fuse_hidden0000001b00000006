@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GY6 Valve Clearance Adjustment Guide — ISRM</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .guide-header {
+      background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem 2rem;
+    }
+    .guide-header-inner { max-width: 900px; margin: 0 auto; }
+    .guide-header h1 {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0.9rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+    .guide-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+      margin-bottom: 1rem;
+    }
+    .guide-meta a { color: var(--accent); }
+    .guide-meta a:hover { color: var(--primary); }
+    .guide-meta-sep { opacity: 0.4; }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+    .guide-tag {
+      background: rgba(0, 168, 204, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(0, 168, 204, 0.3);
+      padding: 0.25rem 0.7rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+    .applies-to {
+      background: rgba(255, 107, 53, 0.07);
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem;
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .applies-to strong { color: var(--text-primary); }
+    .guide-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 4rem;
+    }
+    .guide-content h2 {
+      font-size: 1.55rem;
+      color: var(--text-primary);
+      margin-top: 2.5rem;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.6rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content code {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--accent-light);
+      padding: 0.15rem 0.45rem;
+      border-radius: var(--radius-sm);
+      font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+      font-size: 0.87em;
+    }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th {
+      background: var(--surface-2);
+      color: var(--text-primary);
+      font-weight: 600;
+      padding: 0.7rem 1rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26, 35, 50, 0.6); }
+    .callout {
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .callout strong { color: var(--text-primary); }
+    .callout-warn {
+      background: rgba(245, 166, 35, 0.08);
+      border: 1px solid rgba(245, 166, 35, 0.25);
+      border-left: 4px solid var(--warning);
+    }
+    .callout-tip {
+      background: rgba(6, 167, 125, 0.08);
+      border: 1px solid rgba(6, 167, 125, 0.25);
+      border-left: 4px solid var(--success);
+    }
+    .step-heading {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .step-number {
+      background: var(--primary);
+      color: white;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .guide-footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.825rem;
+      color: var(--text-tertiary);
+    }
+    .video-embed { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin: 1.5rem 0; }
+    .video-embed-title { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; }
+    .video-thumb-link { display: block; text-decoration: none; }
+    .video-thumb-wrap { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 0.75rem; }
+    .video-thumb-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.2s; }
+    .video-thumb-link:hover .video-thumb-img { opacity: 0.75; }
+    .video-play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .video-play-icon { width: 68px; height: 48px; background: rgba(200,0,0,0.9); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.4rem; transition: background 0.2s, transform 0.15s; }
+    .video-thumb-link:hover .video-play-icon { background: #f00; transform: scale(1.06); }
+    .video-source { font-size: 0.85rem; color: var(--text-tertiary); }
+    .video-source a { color: var(--accent); }
+    .related-videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 1rem; }
+    .video-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; transition: var(--transition); }
+    .video-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow); }
+    .video-card h4 { color: var(--text-primary); margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600; }
+    .video-card p { font-size: 0.875rem; margin-bottom: 0.75rem; color: var(--text-secondary); }
+    .video-card a { color: var(--primary); font-weight: 600; font-size: 0.9rem; }
+    @media (max-width: 768px) {
+      .guide-header h1 { font-size: 1.7rem; }
+      .guide-content { padding: 1.5rem 1rem 3rem; }
+      .breadcrumb { padding: 0.9rem 1rem; }
+      .nav-menu { display: none; }
+      .nav-toggle { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-icon">⚙️</span>
+        <span class="brand-text">ISRM</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../community/index.html" class="nav-link">Community</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="../index.html">ISRM Home</a>
+    <span>›</span>
+    <a href="index.html">Repair Guides</a>
+    <span>›</span>
+    GY6 Valve Clearance Adjustment
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
+        <a href="../index.html">ISRM Home</a><span>›</span><a href="index.html">Repair Guides</a><span>›</span>GY6 Valve Clearance Adjustment Guide
+      </div>
+      <h1>GY6 Valve Clearance Adjustment Guide</h1>
+    </div>
+  </section>
+
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 3rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "🔧";
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem;
+      opacity: 0.07;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0 0 1rem;
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+  </style>
+
+
+  <!-- Guide Content -->
+  <main class="guide-content">
+
+    <p>Valve clearance (also called valve lash) is the small gap between the rocker arm and the top of the valve stem. Too little clearance causes valves to stay slightly open — leading to burnt valves, overheating, and compression loss. Too much clearance produces a characteristic ticking noise and reduced power. On GY6 engines, the valves are the single most commonly neglected maintenance item.</p>
+
+    <h2>Valve Clearance Specifications</h2>
+    <table>
+      <tr><th>Engine</th><th>Intake Valve</th><th>Exhaust Valve</th><th>Condition</th></tr>
+      <tr><td>GY6 50cc (139QMB)</td><td>0.10 mm (0.004 in)</td><td>0.10 mm (0.004 in)</td><td>Cold engine</td></tr>
+      <tr><td>GY6 150cc (157QMJ)</td><td>0.10–0.12 mm</td><td>0.10–0.12 mm</td><td>Cold engine</td></tr>
+    </table>
+    <p>Always measure and adjust valve clearance on a <strong>cold engine</strong> (not run for at least 2 hours). Hot metal expands — measuring hot gives an incorrect reading.</p>
+
+    <h2>Tools Required</h2>
+    <ul>
+      <li>Feeler gauge set (metric) — must include 0.10 mm and 0.12 mm blades</li>
+      <li>10 mm spanner or socket (for valve cover bolts)</li>
+      <li>8 mm spanner (for rocker arm lock nuts, on some variants)</li>
+      <li>Flat-head screwdriver</li>
+      <li>17 mm socket (for crankshaft rotation via CVT or flywheel bolt)</li>
+      <li>Timing mark inspection torch</li>
+    </ul>
+
+    <div class="callout callout-warn">
+      ⚠️ <strong>Do not attempt valve adjustment on a warm engine.</strong> Thermal expansion will cause you to set the clearance incorrectly, which can lead to immediate valve damage when the engine reaches operating temperature.
+    </div>
+
+    <div class="video-embed">
+      <div class="video-embed-title">🎬 Video Guide — Highly Detailed GY6 Valve Adjustment Step By Step</div>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/5vl1mrTVCQ0"
+          title="Highly Detailed GY6 Valve Adjustment Step By Step"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <p class="video-source"><strong>Video:</strong> "Highly Detailed GY6 Valve Adjustment Step By Step" | YouTube &nbsp;
+        <a href="https://www.youtube.com/watch?v=5vl1mrTVCQ0" target="_blank" rel="noopener">↗ Watch on YouTube</a>
+      </p>
+    </div>
+
+    <h2>Step-by-Step Procedure</h2>
+
+    <div>
+      <div class="step-heading">
+        <div class="step-number">1</div>
+        Access the Valve Cover
+      </div>
+      <ol>
+        <li>Remove the seat and any panels necessary to access the top of the engine cylinder head. On most GY6 scooters the head is under the floor panel or accessible from under the seat.</li>
+        <li>Disconnect the breather hose from the valve cover (small rubber hose, usually routing to the air box).</li>
+        <li>Remove the valve cover bolts — typically two bolts, 10 mm. Remove the cover and set the gasket aside carefully (reuse it if it is not torn or compressed flat).</li>
+        <li>You will see two rocker arms — the <strong>intake rocker</strong> (connected to the intake valve, facing toward the carburettor side) and the <strong>exhaust rocker</strong> (facing toward the exhaust pipe).</li>
+      </ol>
+    </div>
+
+    <div>
+      <div class="step-heading">
+        <div class="step-number">2</div>
+        Find Top Dead Centre (TDC)
+      </div>
+      <p style="color: var(--text-secondary); margin-bottom: 0.75rem;">Valve clearance must be measured when the piston is at Top Dead Centre (TDC) on the compression stroke — the moment when both valves are closed and the cam lobe is pointing away from both rocker arms.</p>
+      <ol>
+        <li>Locate the inspection window on the left side of the engine casing (round rubber or metal plug). Remove it to see the flywheel timing marks.</li>
+        <li>Also remove the small plug on the top of the cylinder head — this is the manual decompressor or TDC inspection port on some models.</li>
+        <li>Rotate the engine slowly by hand using the rear wheel (in gear) or by turning the flywheel bolt clockwise (when viewed from the flywheel side). Do not use the electric starter for this.</li>
+        <li>Watch the timing mark through the inspection window. When the line marked <strong>"T"</strong> (or "上" on some Chinese engines) aligns with the pointer, the piston is at TDC.</li>
+        <li>Confirm you are on the <strong>compression stroke</strong> (not the exhaust stroke, which also puts the piston at TDC): at compression TDC, both rocker arms should be loose — you should be able to wiggle them slightly by hand. If one rocker is pressing down on a valve, rotate the engine one full turn and realign the T mark.</li>
+      </ol>
+    </div>
+
+    <div>
+      <div class="step-heading">
+        <div class="step-number">3</div>
+        Measure Valve Clearance
+      </div>
+      <ol>
+        <li>Slide the 0.10 mm feeler gauge blade between the rocker arm and the top of the valve stem (or the cam follower surface, depending on configuration).</li>
+        <li>The gauge should slide through with light, uniform drag — not tight, not loose. If it slides freely with no resistance, the clearance is too large. If it does not fit at all, the clearance is too small.</li>
+        <li>Repeat for both intake and exhaust rockers.</li>
+        <li>Record the current clearance: too tight (gauge does not fit), correct (slight drag), or too loose (gauge falls through).</li>
+      </ol>
+    </div>
+
+    <div>
+      <div class="step-heading">
+        <div class="step-number">4</div>
+        Adjust if Required
+      </div>
+      <ol>
+        <li>Locate the adjustment screw on the rocker arm — it is a slotted screw with a lock nut.</li>
+        <li>Hold the adjustment screw with a flat-head screwdriver to prevent it rotating, and loosen the lock nut with an 8 mm spanner (counter-clockwise).</li>
+        <li>With the feeler gauge in place, turn the adjustment screw:
+          <ul>
+            <li>Clockwise → decreases gap (tightens clearance)</li>
+            <li>Counter-clockwise → increases gap (widens clearance)</li>
+          </ul>
+        </li>
+        <li>Adjust until the feeler gauge moves with a slight, consistent drag.</li>
+        <li>Hold the adjustment screw firmly in position and tighten the lock nut. The act of tightening the lock nut often rotates the adjustment screw slightly — recheck clearance after the nut is tight.</li>
+        <li>Repeat for the other valve.</li>
+        <li>Recheck both valves one final time after all lock nuts are tightened.</li>
+      </ol>
+    </div>
+
+    <div class="callout callout-tip">
+      💡 <strong>Tip:</strong> If your engine has been difficult to start, runs roughly at idle, or you hear a persistent ticking from the cylinder head area, check valves before replacing the spark plug or cleaning the carburettor. Tight valves are frequently misdiagnosed as carburettor problems.
+    </div>
+
+    <div>
+      <div class="step-heading">
+        <div class="step-number">5</div>
+        Reassemble
+      </div>
+      <ol>
+        <li>Clean the valve cover mating surface on the cylinder head with a clean rag.</li>
+        <li>Refit the valve cover gasket. If the gasket is compressed or cracked, replace it — a leaking valve cover allows oil to contaminate the air filter via the breather.</li>
+        <li>Refit the valve cover and tighten the two bolts to approximately <strong>10 Nm</strong>. Do not overtighten — the cylinder head is aluminium and strips easily.</li>
+        <li>Reconnect the breather hose.</li>
+        <li>Reinstall the timing inspection plug and any engine covers removed.</li>
+        <li>Start the engine. A slight increase in idle smoothness and a reduction in valve noise confirm a successful adjustment.</li>
+      </ol>
+    </div>
+
+    <h2>Symptoms of Incorrect Valve Clearance</h2>
+    <table>
+      <tr><th>Symptom</th><th>Likely Cause</th></tr>
+      <tr><td>Ticking/clattering from engine top at idle</td><td>Valve clearance too large (excessive lash)</td></tr>
+      <tr><td>Hard starting, especially when cold</td><td>Valve clearance too small (insufficient lash — valves may not seat fully)</td></tr>
+      <tr><td>Loss of compression / low power</td><td>Intake or exhaust valve stuck open from zero clearance</td></tr>
+      <tr><td>Engine backfires on deceleration</td><td>Exhaust valve not seating fully — check exhaust valve clearance</td></tr>
+      <tr><td>Oil in air filter / blue smoke</td><td>Valve cover gasket leaking (secondary issue from valve access)</td></tr>
+    </table>
+
+    <h2>Related Videos</h2>
+    <div class="related-videos">
+      <div class="video-card">
+        <h4>QMB139 &amp; GY6 Valve Adjustment — The Easy Way</h4>
+        <p>Clear demonstration of finding TDC and setting valve clearance on both 50cc (139QMB) and 125/150cc (157QMJ) engines with a feeler gauge.</p>
+        <a href="https://www.youtube.com/watch?v=Y8R28-v5mz0" target="_blank" rel="noopener">Watch on YouTube →</a>
+      </div>
+      <div class="video-card">
+        <h4>GY6 Valve Adjustment — Step by Step (Bintelli)</h4>
+        <p>Concise walkthrough from rocker cover removal through feeler gauge measurement and lock-nut tightening on a typical GY6 clone scooter.</p>
+        <a href="https://www.youtube.com/watch?v=v335dScngi8" target="_blank" rel="noopener">Watch on YouTube →</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="guide-footer">
+    <p>Page auto-generated by ISRM Content Sync on 2026-05-07. Content summarised from external technical sources for educational purposes.</p>
+    <p style="margin-top: 0.5rem;">Always verify specifications against your scooter's workshop manual before performing repairs.</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISRM Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Repair Guides</a></p>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scooter Brake Fluid Change & Bleed Guide — ISRM</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .guide-header {
+      background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem 2rem;
+    }
+    .guide-header-inner { max-width: 900px; margin: 0 auto; }
+    .guide-header h1 {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0.9rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+    .guide-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+      margin-bottom: 1rem;
+    }
+    .guide-meta a { color: var(--accent); }
+    .guide-meta-sep { opacity: 0.4; }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+    .guide-tag {
+      background: rgba(0, 168, 204, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(0, 168, 204, 0.3);
+      padding: 0.25rem 0.7rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+    .applies-to {
+      background: rgba(255, 107, 53, 0.07);
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem;
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .applies-to strong { color: var(--text-primary); }
+    .guide-content { max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+    .guide-content h2 { font-size: 1.55rem; color: var(--text-primary); margin-top: 2.5rem; margin-bottom: 0.9rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.6rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; }
+    .guide-content a { color: var(--accent); }
+    .guide-content ul, .guide-content ol { padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary); }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content code { background: var(--surface-2); border: 1px solid var(--border); color: var(--accent-light); padding: 0.15rem 0.45rem; border-radius: var(--radius-sm); font-family: monospace; font-size: 0.87em; }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th { background: var(--surface-2); color: var(--text-primary); font-weight: 600; padding: 0.7rem 1rem; text-align: left; border: 1px solid var(--border); }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26, 35, 50, 0.6); }
+    .callout { padding: 1rem 1.25rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 1.5rem 0; font-size: 0.95rem; color: var(--text-secondary); }
+    .callout strong { color: var(--text-primary); }
+    .callout-warn { background: rgba(245, 166, 35, 0.08); border: 1px solid rgba(245, 166, 35, 0.25); border-left: 4px solid var(--warning); }
+    .callout-danger { background: rgba(214, 48, 49, 0.08); border: 1px solid rgba(214, 48, 49, 0.25); border-left: 4px solid var(--danger); }
+    .callout-tip { background: rgba(6, 167, 125, 0.08); border: 1px solid rgba(6, 167, 125, 0.25); border-left: 4px solid var(--success); }
+    .guide-footer { background: var(--surface); border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.825rem; color: var(--text-tertiary); }
+    .video-embed { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin: 1.5rem 0; }
+    .video-embed-title { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; }
+    .video-thumb-link { display: block; text-decoration: none; }
+    .video-thumb-wrap { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 0.75rem; }
+    .video-thumb-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.2s; }
+    .video-thumb-link:hover .video-thumb-img { opacity: 0.75; }
+    .video-play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .video-play-icon { width: 68px; height: 48px; background: rgba(200,0,0,0.9); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.4rem; transition: background 0.2s, transform 0.15s; }
+    .video-thumb-link:hover .video-play-icon { background: #f00; transform: scale(1.06); }
+    .video-source { font-size: 0.85rem; color: var(--text-tertiary); }
+    .video-source a { color: var(--accent); }
+    .related-videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 1rem; }
+    .video-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; transition: var(--transition); }
+    .video-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow); }
+    .video-card h4 { color: var(--text-primary); margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600; }
+    .video-card p { font-size: 0.875rem; margin-bottom: 0.75rem; color: var(--text-secondary); }
+    .video-card a { color: var(--primary); font-weight: 600; font-size: 0.9rem; }
+    @media (max-width: 768px) { .guide-header h1 { font-size: 1.7rem; } .guide-content { padding: 1.5rem 1rem 3rem; } .breadcrumb { padding: 0.9rem 1rem; } }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand"><span class="brand-icon">⚙️</span><span class="brand-text">ISRM</span></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../community/index.html" class="nav-link">Community</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
+        <a href="../index.html">ISRM Home</a><span>›</span><a href="index.html">Repair Guides</a><span>›</span>Scooter Brake Fluid Change & Bleed Guide
+      </div>
+      <h1>Scooter Brake Fluid Change & Bleed Guide</h1>
+    </div>
+  </section>
+
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 3rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "🔧";
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem;
+      opacity: 0.07;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0 0 1rem;
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+  </style>
+
+
+  <div class="breadcrumb">
+    <a href="../index.html">ISRM Home</a><span>›</span>
+    <a href="index.html">Repair Guides</a><span>›</span>
+    Brake Fluid Change &amp; Bleed
+  </div>
+
+  <header class="guide-header">
+    <div class="guide-header-inner">
+      <h1>Brake Fluid Change &amp; Hydraulic Brake Bleed</h1>
+      <div class="guide-meta">
+        <span>Added: 2026-05-07</span>
+        <span class="guide-meta-sep">|</span>
+        <span>Sources:
+          <a href="https://www.scooterfocus.com/scooter_brake_flush.html" target="_blank" rel="noopener">ScooterFocus</a>,
+          <a href="https://www.youtube.com/watch?v=nhfPUISx-FU" target="_blank" rel="noopener">YouTube — GY6 Brake Bleed</a>
+        </span>
+      </div>
+      <div class="guide-tags">
+        <span class="guide-tag">repair-guides</span>
+        <span class="guide-tag">GY6</span>
+        <span class="guide-tag">Vespa</span>
+        <span class="guide-tag">brakes</span>
+        <span class="guide-tag">hydraulics</span>
+        <span class="guide-tag">safety</span>
+      </div>
+      <div class="applies-to">
+        📌 <strong>Applies to:</strong> All scooters with hydraulic disc brakes — GY6 125/150cc (front disc), Vespa Primavera / Sprint / GTS (front &amp; rear disc).
+        Recommended interval: every <strong>2 years</strong> regardless of mileage.
+      </div>
+    </div>
+  </header>
+
+  <main class="guide-content">
+
+    <p>DOT brake fluid is hygroscopic — it absorbs moisture from the atmosphere through the reservoir vent and brake line walls. As water content builds up over time, the fluid's boiling point drops. Under hard or prolonged braking the fluid can boil, creating vapour bubbles in the line. Vapour compresses (liquid does not), so the lever becomes spongy and braking force is lost — this is called <em>vapour lock</em>. Fresh fluid prevents this and also reduces internal corrosion in the master cylinder and caliper pistons.</p>
+
+    <div class="callout callout-danger">
+      🔴 <strong>Hazard:</strong> Brake fluid strips paint and damages plastic within seconds. Protect all painted and plastic surfaces with rags before starting. Wear nitrile gloves. If skin contact occurs, wash immediately with soap and water. Dispose of old brake fluid at a recycling centre — never pour it down the drain.
+    </div>
+
+    <h2>Fluid Specification</h2>
+    <table>
+      <tr><th>Model</th><th>Fluid type</th><th>Notes</th></tr>
+      <tr><td>GY6 125/150 (most clones)</td><td><strong>DOT 4</strong></td><td>Check reservoir cap — it is stamped with the correct grade</td></tr>
+      <tr><td>Vespa Primavera / Sprint</td><td><strong>DOT 4</strong></td><td>Piaggio recommends DOT 4 for all modern hydraulic systems</td></tr>
+      <tr><td>Vespa GTS 250/300</td><td><strong>DOT 4</strong></td><td>Both front and rear circuits</td></tr>
+    </table>
+
+    <div class="callout callout-danger">
+      🔴 <strong>Never mix fluid grades or brands.</strong> DOT 3, 4, and 5.1 are glycol-based and miscible with each other — but mixing grades lowers the effective boiling point of the blend. DOT 5 (silicone-based) is <strong>completely incompatible</strong> with DOT 3/4/5.1 systems and must never be used unless the entire system has been flushed and rebuilt.
+    </div>
+
+    <h2>Tools &amp; Materials Required</h2>
+    <ul>
+      <li>8 mm ring spanner (bleed nipple)</li>
+      <li>Phillips screwdriver (master cylinder reservoir cap screws)</li>
+      <li>Fresh, sealed DOT 4 brake fluid (100–200 ml is sufficient for one circuit)</li>
+      <li>Clear vinyl bleed tube (~30 cm, 4–5 mm inner diameter)</li>
+      <li>Small glass jar or container for old fluid</li>
+      <li>Syringe or turkey baster (for reservoir management)</li>
+      <li>Rags and newspaper to protect painted surfaces</li>
+      <li>Nitrile gloves</li>
+    </ul>
+
+    <div class="video-embed">
+      <div class="video-embed-title">🎬 Video Guide — Bleeding the Front Brake on a 150cc GY6 Scooter</div>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/nhfPUISx-FU"
+          title="Bleeding the Front Brake on a 150cc GY6 Scooter"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <p class="video-source"><strong>Video:</strong> "Bleeding the Front Brake on a 150cc GY6 Scooter" | YouTube &nbsp;
+        <a href="https://www.youtube.com/watch?v=nhfPUISx-FU" target="_blank" rel="noopener">↗ Watch on YouTube</a>
+      </p>
+    </div>
+
+    <h2>Step-by-Step Brake Bleed Procedure</h2>
+
+    <h3>Preparation</h3>
+    <ol>
+      <li><strong>Protect surrounding surfaces</strong> — lay rags over the scooter's painted panels, plastics, and the fuel tank around the handlebar area. Brake fluid contact causes immediate paint damage.</li>
+      <li><strong>Locate the brake caliper bleed nipple</strong> — a small valve on the caliper body with a rubber dust cap. Remove the dust cap.</li>
+      <li><strong>Attach the bleed tube</strong> over the nipple. Place the other end into the collection jar. Loop the tube upward above the caliper height — this prevents air from being drawn back into the system between pumps.</li>
+    </ol>
+
+    <h3>Draining &amp; Filling</h3>
+    <ol start="4">
+      <li><strong>Open the master cylinder reservoir</strong> on the handlebar — remove the two Phillips screws, lift off the cap, and remove the rubber diaphragm. Keep the reservoir level at all times to prevent air entry.</li>
+      <li><strong>Note the fluid colour</strong> — fresh DOT 4 is clear/pale yellow. Old fluid is amber to dark brown. Heavily contaminated fluid may be almost black.</li>
+      <li><strong>Top up the reservoir</strong> with fresh fluid to the MAX line before opening the bleed nipple. This prevents the reservoir from running dry and drawing air into the system.</li>
+    </ol>
+
+    <h3>Bleeding (Two-Person or One-Person Method)</h3>
+    <ol start="7">
+      <li><strong>Open the bleed nipple</strong> ½ turn counter-clockwise. Old fluid will begin to flow by gravity.</li>
+      <li><strong>Pump-bleed cycle</strong> — squeeze the brake lever <em>slowly</em> to the handlebar. With the lever held in, open the nipple ½ turn and allow fluid to flow out. Close the nipple before releasing the lever. Repeat this cycle 8–10 times. This pushes old fluid out faster and purges air bubbles.</li>
+      <li><strong>Watch the reservoir constantly</strong> — top up with fresh fluid every 3–4 pump cycles. If the reservoir runs empty, air enters the system and you must start over.</li>
+      <li><strong>Continue until</strong> the fluid flowing out of the bleed tube is clear and pale yellow (matching the fresh fluid in the bottle), with no air bubbles visible in the tube.</li>
+      <li><strong>Final close:</strong> with the brake lever squeezed to the handlebar, close the bleed nipple firmly (5–8 Nm — snug, not over-tight). Release the lever.</li>
+    </ol>
+
+    <h3>Finishing</h3>
+    <ol start="12">
+      <li><strong>Top up the reservoir</strong> to the MAX line with fresh fluid. Refit the rubber diaphragm (ensure it seats without folds) and reinstall the cap and screws.</li>
+      <li><strong>Pump the lever</strong> several times — it should feel firm throughout its travel with no sponginess. If still spongy, air remains in the system and the bleed procedure must be repeated.</li>
+      <li><strong>Refit the bleed nipple dust cap.</strong></li>
+      <li><strong>Wipe down all surfaces</strong> that may have been contaminated with fluid. Check carefully around the reservoir cap and bleed nipple.</li>
+      <li><strong>Test ride carefully</strong> at low speed before normal use.</li>
+    </ol>
+
+    <div class="callout callout-tip">
+      💡 <strong>One-person bleeding tip:</strong> A cheap vacuum bleeder kit (syringe + tube with one-way valve, ~€10 online) makes solo bleeding much easier and faster. You can also use the gravity-bleed method — open the nipple ½ turn and let fluid drip out by gravity while keeping the reservoir topped up, no lever pumping needed. Gravity bleed is slower but foolproof for removing old fluid.
+    </div>
+
+    <h2>Service Intervals</h2>
+    <table>
+      <tr><th>Situation</th><th>Action</th></tr>
+      <tr><td>Every 2 years (regardless of km)</td><td>Full fluid change — drain and refill both circuits</td></tr>
+      <tr><td>Spongy lever feel at any time</td><td>Check for leaks, then bleed to remove air</td></tr>
+      <tr><td>After any brake line or caliper work</td><td>Full bleed required to remove introduced air</td></tr>
+      <tr><td>After new brake pads fitted</td><td>Top up reservoir, pump lever to re-seat pistons</td></tr>
+    </table>
+
+    <h2>Related Videos</h2>
+    <div class="related-videos">
+      <div class="video-card">
+        <h4>How to Bleed GY6 Scooter Brakes</h4>
+        <p>Step-by-step pump-bleed method on a GY6 Chinese scooter — shows reservoir top-up technique, bleed nipple procedure, and checking for a firm lever feel.</p>
+        <a href="https://www.youtube.com/watch?v=Bjt2mEA_lGs" target="_blank" rel="noopener">Watch on YouTube →</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="guide-footer">
+    <p>Page generated by ISRM Content Sync on 2026-05-07. Content summarised from external technical sources for educational purposes.</p>
+    <p style="margin-top: 0.5rem;">Brakes are safety-critical. Always verify fluid specification and procedure against your scooter's official workshop manual.</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISRM Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Repair Guides</a></p>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (navToggle) { navToggle.addEventListener('click', () => { navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex'; }); }
+  </script>
+</body>
+</html>

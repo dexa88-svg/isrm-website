@@ -66,7 +66,7 @@ MDX body content must contain no raw `<script>` tags, no `<form>` elements, no i
 ### Sources registry file
 
 Load (or create if missing):
-`/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISMR/public/sources-registry.json`
+`/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISRM/public/sources-registry.json`
 
 Structure:
 ```json
@@ -123,7 +123,7 @@ Track new sources in memory. Do NOT yet save to JSON (see Rule 4).
 ### WORKSPACE
 
 Content MDX files live under:
-`/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISMR/src/content/`
+`/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISRM/src/content/`
 
 Category folders: `repair-guides/`, `parts/`, `diagnostics/`, `models/`, `videos/`
 
@@ -293,7 +293,7 @@ The Astro index pages (`src/pages/repair-guides/index.astro`, etc.) are static â
 
 **Always run a build after writing new files:**
 ```bash
-cd "/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISMR"
+cd "/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISRM"
 npm run build
 ```
 

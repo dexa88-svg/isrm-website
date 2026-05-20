@@ -1,124 +1,204 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance when working with code in this repository.
 
 ---
 
 **Project:** ISMR — Interactive Scooter Manuals for Repair  
 **Owner:** Den (Dzianis) — dexa88@gmail.com | **Domain:** ismr.online  
-**Phase:** 1 largely complete — deploy pipeline active, GA4 live, design system 100% compliant, Jest suite added
+**Phase:** 2 active — Astro + MDX, content collections live, deploy pipeline active, GA4 live, Pagefind search integrated
 
 ---
 
 ## Commands
 
 ```bash
-# Run tests (includes page validation + jest)
+# Run dev server (hot-reload, http://localhost:4321)
+npm run dev
+
+# Full production build → output goes to dist/
+npm run build
+
+# Preview the production build locally
+npm run preview
+
+# Run tests
 npm test
 
 # Run tests with coverage
 npm run test:coverage
 
-# Regenerate public/data/stats.json (must run before deploy if guide counts changed)
+# Generate stats JSON (also runs automatically as part of npm run build)
 npm run generate-stats
 
-# Run site locally — ALWAYS use this, never open file:// URLs directly
-python3 -m http.server 8080 --directory public
-# or: npx serve public
-# Then open: http://localhost:8080/repair-guides/...
+# Build search index (also runs automatically as part of npm run build)
+npm run search-index
 ```
 
-> ⚠️ **Never preview pages by opening `file://` URLs in a browser.**
-> On `file://`, JavaScript `fetch()` calls (used by `load-stats.js`) fail silently due to CORS restrictions,
-> and scroll-reveal animations may behave differently. Always use the HTTP server above.
-
-There is **no build step, no bundler, no lint command.** The site is static HTML/CSS/JS — what's in `public/` is what gets served.
+> ⚠️ **Never preview pages by opening `file://` URLs.** Always use `npm run dev` or `npm run preview`.
+> The Astro dev server handles routing, component imports, and content collections correctly; file:// does not.
 
 ---
 
 ## Architecture
 
-### Two-area split
-- **`public/`** — everything deployed to Hetzner (HTML pages, `styles.css`, `script.js`, JSON data). Never put dev tooling here.
-- **`_dev/`** — documentation, templates, scheduled-task prompts, Python utilities. Never deployed.
+### Directory layout
 
-### Static-only, no framework (Phase 1)
-No transpilation, no bundler. One global stylesheet (`styles.css`), one JS file (`script.js`), and one stats loader (`load-stats.js`). All content is pre-written HTML.
+```
+/
+├── src/
+│   ├── content/          # All content — MDX files per section
+│   │   ├── repair-guides/
+│   │   ├── diagnostics/
+│   │   ├── models/
+│   │   ├── parts/
+│   │   └── videos/
+│   ├── content.config.ts # Collection schemas (Zod) — source of truth for frontmatter
+│   ├── layouts/          # Astro layout components
+│   │   ├── Base.astro    # <head>, navbar, footer wrapper
+│   │   ├── Guide.astro   # Repair guide page layout
+│   │   ├── Diagnostic.astro
+│   │   ├── ModelPage.astro
+│   │   └── Page.astro
+│   ├── components/       # Reusable Astro components
+│   │   ├── Navbar.astro
+│   │   ├── Footer.astro
+│   │   ├── VideoEmbed.astro
+│   │   ├── Callout.astro
+│   │   └── SourceBox.astro
+│   ├── pages/            # Route pages (index pages, dynamic [slug].astro routes)
+│   └── styles/
+│       └── global.css    # CSS variables + base styles — canonical design system
+├── public/               # Static assets only (favicons, images, data JSONs, manifests)
+│   ├── data/stats.json
+│   ├── sync-manifest.json
+│   ├── sources-registry.json
+│   └── images/
+├── dist/                 # Build output — generated, never committed, what gets deployed
+├── _dev/                 # Docs, templates, scheduled-task prompts — never deployed
+├── scripts/              # Node utility scripts (generate-stats, validate-pages, etc.)
+├── astro.config.mjs
+├── src/content.config.ts
+└── package.json
+```
 
-### Content page structure
-Pages live under `public/repair-guides/`, `public/diagnostics/`, `public/models/`, `public/videos/`. Every category has an `index.html` listing page. When adding a new guide, follow the template in `_dev/GUIDE-STRUCTURE.md`.
+### Content workflow (Astro + MDX)
 
-**Model page style rules** (gold-standard template: `public/models/piaggio-zip-100-technical-overview.html`):
-- All `<style>` blocks must be in `<head>` — never in `<body>`
-- Single H1 per page, inside `.page-hero-inner` only
-- Single breadcrumb, inside `.page-hero-inner` only — no additional breadcrumbs in `<main>`
-- Use `.guide-tag` (teal: `rgba(0,168,204,0.1)` bg, `var(--accent)` text) — not `.tag` (yellow `var(--warning)`)
-- Table `<th>`: `var(--primary)` text, `var(--surface-2)` bg, `text-transform: uppercase`, `letter-spacing: 0.04em`
-- `.source-box`: `rgba(255,107,53,0.07)` bg, `rgba(255,107,53,0.2)` border, `4px solid var(--primary)` left border
-- `code`: `var(--surface-2)` bg, `1px solid var(--border)` border, JetBrains Mono font stack
-- Add `<script src="../script.js"></script>` before `</body>` for navbar toggle
-- Add `class="nav-link active"` to the matching nav link for the current section
+Content pages are `.mdx` files in `src/content/`. Astro builds them to `dist/` at compile time. **Never write raw HTML files to `public/[section]/`** — those were the old Phase 1 approach and have been removed.
 
-### Stats pipeline
-`scripts/generate-stats.js` counts HTML files in `public/repair-guides/` and `public/diagnostics/` (excluding `index.html`), then writes `public/data/stats.json`. `public/load-stats.js` fetches that JSON on DOMContentLoaded and updates `.feature-badge` and `.stat-number` DOM elements. The deploy workflow runs this script before uploading.
+To add a new guide:
+1. Create `src/content/[section]/your-slug.mdx` with valid frontmatter (see schema below and `_dev/GUIDE-STRUCTURE.md`).
+2. Run `npm run build` — Astro compiles everything to `dist/`.
+3. The guide appears automatically on the section index page (no code changes needed).
+4. Push to `main` — CI/CD deploys `dist/` to the server.
 
 ### Deploy pipeline
-Push to `main` → GitHub Actions runs `npm test` → if passing, runs `generate-stats` → uploads all of `public/` to Hetzner via SFTP curl loop. Live within ~30s. Documented in `_dev/documentation/FTP-AUTO-DEPLOY-PROCESS.md`.
+
+Push to `main` → GitHub Actions runs `npm test` → runs `npm run build` (which includes `generate-stats` + Pagefind index) → uploads `dist/` to Hetzner via SFTP. Live within ~60s.
+
+### Stats & search
+
+- `scripts/generate-stats.js` counts MDX files in `src/content/repair-guides/` and `src/content/diagnostics/` and writes `public/data/stats.json`. Runs automatically as part of `npm run build`.
+- Pagefind indexes `dist/` after the Astro build and writes to `dist/pagefind/`. Also runs automatically in `npm run build`.
+- `public/sitemap.xml` is **generated by Astro at build time** — do not edit manually.
 
 ### Tracking files (keep in sync)
+
 - `public/sync-manifest.json` — one entry per generated page (URL, title, category, sources, addedAt)
-- `public/sources-registry.json` — 91 known content sources with type, model, lastChecked, active flag
-- `public/sitemap.xml` — **auto-regenerated by `npm run generate-stats`** (which also runs on every deploy). Do not edit manually.
+- `public/sources-registry.json` — known content sources with type, model, lastChecked, active flag
 
 ### Scheduled automation
+
 Three Claude scheduled tasks run against this repo (prompts live in `_dev/scheduled-tasks-updated/`):
-- **`isrm-content-sync`** (daily 8:00 AM) — discover + generate new HTML guide pages
-- **`isrm-design-compliance`** (daily 8:30 AM) — audit all pages; write compliance report to `_dev/documentation/design-system/WEEKLY_COMPLIANCE_REPORT_[DATE].md`
-- **`isrm-consistency-check`** (daily 9:00 AM) — fix broken links, enforce scope, sync manifest
+- **`isrm-content-sync`** (daily 8:00 AM) — discover new content, write `.mdx` files to `src/content/`, run `npm run build`
+- **`isrm-design-compliance`** (daily 8:30 AM) — audit `src/layouts/`, `src/components/`, `src/styles/global.css`; write report to `_dev/documentation/design-system/WEEKLY_COMPLIANCE_REPORT_[DATE].md`
+- **`isrm-consistency-check`** (daily 9:00 AM) — audit MDX frontmatter, fix scope violations, sync `public/sync-manifest.json`
+
+---
+
+## Content Schema (frontmatter)
+
+Defined in `src/content.config.ts`. All fields are validated by Zod at build time — a missing required field is a build error.
+
+### repair-guides
+
+```yaml
+---
+title: "string — page title"
+description: "string — 150–160 chars for SEO"
+publishDate: "YYYY-MM-DD"
+updatedDate: "YYYY-MM-DD"           # update every time you edit
+difficulty: "Beginner | Intermediate | Advanced"
+timeEstimate: "~30 min"
+tags: ["gy6", "carburetor", "repair"]
+appliesTo: ["GY6 139QMB", "BTC Riva", "La Souris Sourini"]
+videos:
+  - id: "YOUTUBE_VIDEO_ID"
+    title: "Video title"
+    creator: "Creator name"
+    position: "hero | inline | related"
+tools: ["flat-head screwdriver", "tachometer"]   # optional
+sources:
+  - name: "Source Name"
+    url: "https://example.com"
+canonical: "https://ismr.online/repair-guides/your-slug.html"
+draft: false                         # true = excluded from build
+---
+```
+
+### diagnostics (all repair-guide fields plus)
+
+```yaml
+category: "starting | fuel | transmission | electrical"
+engine: "gy6 | piaggio | both"
+fuel: "carb | efi | both"
+section: "string — display group on index page"
+cardTag: "optional short tag shown on index card"
+```
+
+### models / parts / videos
+
+Simpler schemas — `title`, `description`, `publishDate`, `updatedDate`, `tags`, `videos`, `sources`, `canonical`, `draft`.
 
 ---
 
 ## Design System
 
-CSS custom properties (canonical reference: `_dev/documentation/design-system/styles-reference.css`):
+Canonical CSS variables — defined in `src/styles/global.css`, referenced in `_dev/documentation/design-system/styles-reference.css`:
 
 ```css
---primary: #ff6b35       /* orange-red — buttons, accents */
+--primary: #ff6b35       /* orange-red — buttons, CTAs */
 --secondary: #004e89     /* navy */
---accent: #00a8cc        /* cyan */
+--accent: #00a8cc        /* cyan — tags, links */
 --bg-dark: #0f1419       /* page background */
 --surface: #1a2332       /* card background */
 --surface-2: #242f3e     /* elevated surface */
 --text-primary: #f5f5f5
 --text-secondary: #a0a0a0
 --border: #2a3548
---warning: #f5a623       /* amber — NOT the primary colour */
+--warning: #f5a623       /* amber — callout-warn only, NOT the primary colour */
 ```
+
+**Component rules (enforced in layouts/components — not in MDX files):**
+- Use `<VideoEmbed>` component for all YouTube embeds — always `youtube-nocookie.com`
+- Use `<Callout type="warn|danger|tip">` for callouts
+- Use `<SourceBox>` for source attribution blocks
+- Guide tags: `.guide-tag` (teal) — never `.tag` (yellow)
+- Table `<th>`: `var(--primary)` text, `var(--surface-2)` bg, uppercase, `letter-spacing: 0.04em`
 
 ---
 
 ## Content Standards
 
-Every repair guide must include: minimum 1 embedded video (use `youtube-nocookie.com`, not `youtube.com`), step-by-step instructions, tools/parts list, difficulty + time estimate, safety warnings, source attribution, and a **"Last Updated" date** (policy in `_dev/PAGE-UPDATE-TRACKING.md`).
+Every repair guide must have: minimum 1 video (via `<VideoEmbed>`), step-by-step instructions, tools list, difficulty + time estimate, safety callouts, source attribution, and an up-to-date `updatedDate` in frontmatter.
 
-**SEO checklist — every new HTML page must have all five before publishing:**
-
-- [ ] **Meta description** — `<meta name="description" content="[150–160 char summary]">` immediately after the viewport meta. **Required** — pages without it will fail site scans.
-- [ ] **Title length** — `<title>` must be **60 characters or fewer** (including " — ISMR" suffix).
-- [ ] **Canonical tag** — `<link rel="canonical" href="https://ismr.online/[section]/[slug].html">` in `<head>`
-- [ ] **Favicons — all three lines, using absolute paths (no `../`):**
-  ```html
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  ```
-  Place immediately after the canonical tag. Missing or incomplete favicon tags cause the tab/browser icon to be blank.
-- [ ] **JSON-LD structured data** — a `<script type="application/ld+json">` block in `<head>` using the schema matching the section:
-  - `repair-guides/` → `"@type": "HowTo"`
-  - `diagnostics/` → `"@type": "Article"`
-  - `models/` → `"@type": "TechArticle"`
-  - See `_dev/GUIDE-STRUCTURE.md` section 2 for the full placeholder template.
-- [ ] **Run `npm run generate-stats` after adding the page** — this regenerates both `public/data/stats.json` and `public/sitemap.xml` automatically. Do **not** edit `sitemap.xml` manually.
+**SEO — all handled by layouts automatically when frontmatter is correct:**
+- Meta description → from `description` frontmatter (keep 150–160 chars)
+- Title → from `title` frontmatter (keep under ~53 chars so " — ISMR" stays under 60 total)
+- Canonical → from `canonical` frontmatter
+- Favicons → injected by `Base.astro` — no per-page action needed
+- JSON-LD structured data → injected by the section layout (`Guide.astro` → `HowTo`, `Diagnostic.astro` → `Article`, `ModelPage.astro` → `TechArticle`)
+- Sitemap → generated by Astro at build time from all non-draft pages
 
 **In-scope:** GY6 engines (50–150cc), Piaggio/Vespa (Primavera, Sprint, Zip). Petrol-only — no electric scooters until Phase 3.
 
@@ -130,19 +210,22 @@ Every repair guide must include: minimum 1 embedded video (use `youtube-nocookie
 
 | File | Purpose |
 |------|---------|
-| `_dev/GUIDE-STRUCTURE.md` | HTML template for all new guides |
+| `src/content.config.ts` | Collection schemas — ground truth for all frontmatter fields |
+| `src/styles/global.css` | CSS variables + base styles — design system source |
+| `_dev/GUIDE-STRUCTURE.md` | MDX template + frontmatter reference for new guides |
 | `_dev/PROJECT-SCOPE.md` | Canonical scope + mandated content sources |
 | `_dev/ROADMAP.md` | 13-phase build plan |
-| `_dev/documentation/design-system/styles-reference.css` | CSS variables source of truth |
-| `_dev/documentation/SCHEDULED_TASKS.md` | Scheduled tasks in full detail |
+| `_dev/documentation/design-system/styles-reference.css` | CSS variable definitions (mirror of global.css) |
+| `_dev/scheduled-tasks-updated/` | The three scheduled task skill prompts |
 | `public/sync-manifest.json` | All generated pages |
-| `public/sources-registry.json` | All 91 content sources |
+| `public/sources-registry.json` | All known content sources |
 | `documents/` | Reference PDFs: GY6, Zip 50 4T, Zip 100 4T service manuals |
 
 ---
 
-## Phase 2 Plans (not yet started)
+## Open Decisions (Phase 2+)
 
-Framework: **Astro** (chosen). Content: Markdown/MDX via Astro Content Collections. Hosting: possibly Cloudflare Pages. CMS: Sanity or Contentlayer (TBD). Search: Pagefind.
-
-Open decisions: Markdown-in-Git vs database at scale; GitHub-PR-as-CMS (Decap/Sveltia) vs custom editor; first hero model for 3D treatment.
+- CMS: GitHub-PR-as-CMS (Decap/Sveltia) vs custom editor — not yet decided
+- Hosting migration: Hetzner → Cloudflare Pages (under evaluation)
+- First hero model for 3D treatment — not started
+- Community contributions / wiki-style editing — Phase 4

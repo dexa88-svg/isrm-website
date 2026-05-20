@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnostics — ISRM</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .page-hero { background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%); padding: 4rem 2rem 3rem; position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
+    .page-hero::before { content: "🔍"; position: absolute; right: 6%; top: 50%; transform: translateY(-50%); font-size: 9rem; opacity: 0.07; pointer-events: none; line-height: 1; }
+    .page-hero-inner { max-width: 1100px; margin: 0 auto; }
+    .page-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); background: linear-gradient(135deg, var(--text-primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.75rem; }
+    .page-hero p { color: var(--text-secondary); font-size: 1.05rem; max-width: 620px; margin-bottom: 1.5rem; }
+    .page-hero-stats { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .hero-stat { display: flex; flex-direction: column; gap: 0.15rem; }
+    .hero-stat-number { font-size: 1.6rem; font-weight: 700; color: var(--primary); line-height: 1; }
+    .hero-stat-label { font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .guides-section { padding: 3rem 2rem 5rem; }
+    .guides-section-inner { max-width: 1100px; margin: 0 auto; }
+    .guides-count { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem; }
+    .guides-count strong { color: var(--text-primary); }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand"><span class="brand-icon">⚙️</span><span class="brand-text">ISRM</span></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link active">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../community/index.html" class="nav-link">Community</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
+        <a href="../index.html">ISRM Home</a><span>›</span>Diagnostics
+      </div>
+      <h1>Diagnostics</h1>
+      <p>Fault codes, error symptoms, and troubleshooting trees for carburetted and EFI petrol scooters. Start with a symptom, end with a fix.</p>
+      <div class="page-hero-stats">
+        <div class="hero-stat"><span class="hero-stat-number">2</span><span class="hero-stat-label">Guides</span></div>
+        <div class="hero-stat"><span class="hero-stat-number">Carb + EFI</span><span class="hero-stat-label">Coverage</span></div>
+        <div class="hero-stat"><span class="hero-stat-number">Free</span><span class="hero-stat-label">Always</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="guides-section">
+    <div class="guides-section-inner">
+      <p class="guides-count"><strong>2</strong> diagnostic guides</p>
+      <div class="guides-grid">
+
+        <article class="guide-card">
+          <div class="card-tag">GY6</div>
+          <h3>Scooter Won't Start — Troubleshooting Checklist</h3>
+          <p>Systematic checklist for diagnosing a GY6 scooter that cranks but won't fire: spark, fuel, compression, and electrics.</p>
+          <div class="card-meta">
+            <span class="tag">Carburettor</span>
+            <span class="tag">Ignition</span>
+            <span class="time">20 min</span>
+          </div>
+          <a href="gy6-no-start-troubleshooting.html" class="read-more">Read Guide</a>
+        </article>
+
+        <article class="guide-card">
+          <div class="card-tag">GY6 · EFI</div>
+          <h3>EFI Fuel Injection Troubleshooting</h3>
+          <p>Systematic fault diagnosis for GY6 EFI systems: fuel pump, injector, TPS, MAP, CTS, ECU fault blink codes, and ground wiring.</p>
+          <div class="card-meta">
+            <span class="tag">Fuel Injection</span>
+            <span class="tag">EFI</span>
+            <span class="time">30 min</span>
+          </div>
+          <a href="gy6-efi-fuel-injection-troubleshooting.html" class="read-more">Read Guide</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="../script.js"></script>
+
+  <footer class="guide-footer">
+    <p>ISRM — Interactive Scooter Repair Manuals. Content for educational purposes. CC BY-SA 4.0.</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISRM Home</a></p>
+  </footer>
+</body>
+</html>

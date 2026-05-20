@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GY6 Brake Pads & Drum Shoes Replacement Guide — ISRM</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .guide-header {
+      background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem 2rem;
+    }
+    .guide-header-inner { max-width: 900px; margin: 0 auto; }
+    .guide-header h1 {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0.9rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+    .guide-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+      margin-bottom: 1rem;
+    }
+    .guide-meta a { color: var(--accent); }
+    .guide-meta a:hover { color: var(--primary); }
+    .guide-meta-sep { opacity: 0.4; }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+    .guide-tag {
+      background: rgba(0, 168, 204, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(0, 168, 204, 0.3);
+      padding: 0.25rem 0.7rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+    .applies-to {
+      background: rgba(255, 107, 53, 0.07);
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem;
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .applies-to strong { color: var(--text-primary); }
+    .guide-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 4rem;
+    }
+    .guide-content h2 {
+      font-size: 1.55rem;
+      color: var(--text-primary);
+      margin-top: 2.5rem;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.6rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content code {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--accent-light);
+      padding: 0.15rem 0.45rem;
+      border-radius: var(--radius-sm);
+      font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+      font-size: 0.87em;
+    }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th {
+      background: var(--surface-2);
+      color: var(--text-primary);
+      font-weight: 600;
+      padding: 0.7rem 1rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26, 35, 50, 0.6); }
+    .callout {
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .callout strong { color: var(--text-primary); }
+    .callout-warn {
+      background: rgba(245, 166, 35, 0.08);
+      border: 1px solid rgba(245, 166, 35, 0.25);
+      border-left: 4px solid var(--warning);
+    }
+    .callout-danger {
+      background: rgba(214, 48, 49, 0.08);
+      border: 1px solid rgba(214, 48, 49, 0.25);
+      border-left: 4px solid var(--danger);
+    }
+    .callout-tip {
+      background: rgba(6, 167, 125, 0.08);
+      border: 1px solid rgba(6, 167, 125, 0.25);
+      border-left: 4px solid var(--success);
+    }
+    .guide-footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.825rem;
+      color: var(--text-tertiary);
+    }
+    .video-embed { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin: 1.5rem 0; }
+    .video-embed-title { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; }
+    .video-thumb-link { display: block; text-decoration: none; }
+    .video-thumb-wrap { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 0.75rem; }
+    .video-thumb-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.2s; }
+    .video-thumb-link:hover .video-thumb-img { opacity: 0.75; }
+    .video-play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .video-play-icon { width: 68px; height: 48px; background: rgba(200,0,0,0.9); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.4rem; transition: background 0.2s, transform 0.15s; }
+    .video-thumb-link:hover .video-play-icon { background: #f00; transform: scale(1.06); }
+    .video-source { font-size: 0.85rem; color: var(--text-tertiary); }
+    .video-source a { color: var(--accent); }
+    .related-videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 1rem; }
+    .video-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; transition: var(--transition); }
+    .video-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow); }
+    .video-card h4 { color: var(--text-primary); margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600; }
+    .video-card p { font-size: 0.875rem; margin-bottom: 0.75rem; color: var(--text-secondary); }
+    .video-card a { color: var(--primary); font-weight: 600; font-size: 0.9rem; }
+    @media (max-width: 768px) {
+      .guide-header h1 { font-size: 1.7rem; }
+      .guide-content { padding: 1.5rem 1rem 3rem; }
+      .breadcrumb { padding: 0.9rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-icon">⚙️</span>
+        <span class="brand-text">ISRM</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../community/index.html" class="nav-link">Community</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
+        <a href="../index.html">ISRM Home</a><span>›</span><a href="index.html">Repair Guides</a><span>›</span>GY6 Brake Pads & Drum Shoes Replacement Guide
+      </div>
+      <h1>GY6 Brake Pads & Drum Shoes Replacement Guide</h1>
+    </div>
+  </section>
+
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 3rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "🔧";
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem;
+      opacity: 0.07;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0 0 1rem;
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+  </style>
+
+
+  <div class="breadcrumb">
+    <a href="../index.html">ISRM Home</a>
+    <span>›</span>
+    <a href="index.html">Repair Guides</a>
+    <span>›</span>
+    Brake Pads &amp; Drum Shoes
+  </div>
+
+  <header class="guide-header">
+    <div class="guide-header-inner">
+      <h1>Brake Pads &amp; Drum Shoes Replacement</h1>
+
+      <div class="guide-meta">
+        <span>Added: 2026-05-07</span>
+        <span class="guide-meta-sep">|</span>
+        <span>Sources:
+          <a href="https://www.youtube.com/watch?v=nat0lVKkuSk" target="_blank" rel="noopener">YouTube — Scooter Brake How-To</a>,
+          <a href="https://www.extrememotorsales.com/Parts/150cc-scooter-parts/brakes/" target="_blank" rel="noopener">Extreme Motor Sales</a>
+        </span>
+      </div>
+
+      <div class="guide-tags">
+        <span class="guide-tag">repair-guides</span>
+        <span class="guide-tag">GY6</span>
+        <span class="guide-tag">Vespa</span>
+        <span class="guide-tag">brakes</span>
+        <span class="guide-tag">safety</span>
+      </div>
+
+      <div class="applies-to">
+        📌 <strong>Applies to:</strong> GY6 125/150cc scooters (front disc + rear drum), Vespa Primavera / Sprint (front &amp; rear disc).
+        Inspect every <strong>3,000 km</strong>. Replace when friction material is ≤ 2 mm thick or when any wear symptoms appear.
+      </div>
+    </div>
+  </header>
+
+  <main class="guide-content">
+
+    <p>Brakes are the single most safety-critical system on your scooter. On most GY6 clones the front uses a hydraulic disc brake with pads, and the rear uses a mechanical drum brake with shoes. Vespa Primavera and Sprint models use disc brakes on both wheels. This guide covers both types.</p>
+
+    <div class="callout callout-danger">
+      🔴 <strong>Safety:</strong> Never ride with brakes worn to the metal backing plate. Stopping distance increases dramatically and rotor or drum damage will occur. Wear nitrile gloves when handling brake components — brake dust may contain asbestos fibres in older pads.
+    </div>
+
+    <h2>When to Replace</h2>
+    <ul>
+      <li><strong>Squealing or grinding noise</strong> when braking — wear indicators contacting the rotor</li>
+      <li><strong>Increased lever/pedal travel</strong> — lever reaching the handlebar before full braking force</li>
+      <li><strong>Pulsing or vibration</strong> through the lever — warped rotor or uneven pad wear</li>
+      <li><strong>Friction material ≤ 2 mm</strong> on visual inspection through the caliper inspection slot</li>
+      <li><strong>One pad much more worn than the other</strong> — indicates a seized caliper piston or slide pin</li>
+    </ul>
+
+    <h2>Tools &amp; Materials Required</h2>
+    <ul>
+      <li>10 mm socket (caliper mounting bolts on most GY6)</li>
+      <li>Flat-head screwdriver or piston retraction tool</li>
+      <li>12 mm open-end spanner (rear drum adjuster nut)</li>
+      <li>Brake cleaner spray</li>
+      <li>Copper grease / anti-seize (for pad backs and slide pins — <em>not</em> friction surfaces)</li>
+      <li>New front brake pads (GY6 generic disc pads)</li>
+      <li>New rear drum brake shoes (GY6 generic drum shoe set)</li>
+      <li>Nitrile gloves</li>
+    </ul>
+
+    <div class="video-embed">
+      <div class="video-embed-title">🎬 Video Guide — Replace Scooter Front Brakes &amp; Adjust Rear Drum</div>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/nat0lVKkuSk"
+          title="Replace Scooter Front Brakes and Adjust Rear Drum"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <p class="video-source"><strong>Video:</strong> "Replace Scooter Front Brakes &amp; Adjust Rear Drum" | YouTube &nbsp;
+        <a href="https://www.youtube.com/watch?v=nat0lVKkuSk" target="_blank" rel="noopener">↗ Watch on YouTube</a>
+      </p>
+    </div>
+
+    <h2>Part A — Front Disc Brake Pad Replacement</h2>
+
+    <div class="callout callout-warn">
+      ⚠️ When pushing the caliper piston back in, brake fluid is displaced upward into the master cylinder reservoir. Check the reservoir level before you start and remove a small amount with a syringe if it is at MAX — otherwise it will overflow when the piston is retracted.
+    </div>
+
+    <ol>
+      <li><strong>Support the scooter</strong> on its centre stand on a flat, stable surface.</li>
+      <li><strong>Remove the two caliper mounting bolts</strong> (usually 10 mm) and slide the caliper off the rotor. Support the caliper with a wire or bungee cord — do not let it hang by the brake line.</li>
+      <li><strong>Remove the pad retaining pin</strong> (a bolt or cotter pin depending on caliper type) and slide the old pads out of the caliper.</li>
+      <li><strong>Inspect the brake rotor</strong> for deep grooves, scoring, or cracks. Minimum thickness is typically stamped on the rotor. A heavily grooved rotor reduces new pad effectiveness and should be replaced.</li>
+      <li><strong>Retract the caliper piston:</strong> place the old pad against the piston face and press it back into the caliper body using a large flat-head screwdriver or C-clamp. Push slowly and evenly. The piston must be fully retracted to accommodate the thickness of new pads.</li>
+      <li><strong>Clean the caliper carrier</strong> with brake cleaner — remove all dust, rust, and debris from the pad slide channels.</li>
+      <li><strong>Apply a thin film of copper grease</strong> to the back face of each new pad and to the caliper slide pins. Do not get any grease on the friction surface or the rotor.</li>
+      <li><strong>Insert the new pads</strong> into the caliper and refit the retaining pin. Reinstall the caliper and torque the mounting bolts to <strong>25–30 Nm</strong>.</li>
+      <li><strong>Pump the brake lever</strong> 10–15 times until the lever feels firm — this pushes the pistons out to contact the new pads. Check the brake fluid reservoir level and top up to MAX if needed.</li>
+      <li><strong>Bed in the pads:</strong> perform 5–6 firm stops from 30 km/h before normal riding. This transfers a thin even layer of pad material onto the rotor surface for optimal friction.</li>
+    </ol>
+
+    <h2>Part B — Rear Drum Brake Shoe Replacement (GY6)</h2>
+    <ol>
+      <li><strong>Remove the rear wheel:</strong> loosen the axle nut, disconnect the rear brake cable or rod, and slide the wheel off. Place the scooter on a paddock stand or support it securely.</li>
+      <li><strong>Expose the brake shoes:</strong> the drum is integral to the wheel hub. The shoes are mounted on a brake plate (backing plate) attached to the swingarm. With the wheel removed, the shoes are visible.</li>
+      <li><strong>Photograph the spring arrangement</strong> before removing anything — reassembly requires knowing exactly where each return spring attaches.</li>
+      <li><strong>Remove the return springs</strong> using brake spring pliers or needle-nose pliers. Slide the old shoes off the pivot pins and cam.</li>
+      <li><strong>Inspect the drum surface</strong> (inside the wheel hub) for scoring. Light scores are normal; deep grooves require drum skimming or replacement.</li>
+      <li><strong>Clean the backing plate</strong> with brake cleaner. Apply a small amount of high-temperature grease to the shoe contact points on the backing plate — the raised pads where the shoe metal slides. Do not apply any grease near the friction surface.</li>
+      <li><strong>Fit the new shoes</strong> onto the pivot pins and cam. Reattach the return springs — the springs should pull the shoes back toward each other (away from the drum).</li>
+      <li><strong>Reinstall the wheel</strong> and tighten the axle nut to the specified torque (typically 50–60 Nm).</li>
+      <li><strong>Adjust the brake cable or rod</strong> so the rear brake has approximately 10–15 mm of free play at the lever/pedal tip before resistance begins. Too little free play causes the brake to drag; too much increases stopping distance.</li>
+      <li><strong>Test</strong> by walking the scooter and applying the rear brake firmly several times before riding.</li>
+    </ol>
+
+    <h2>GY6 Brake Pad &amp; Shoe Reference</h2>
+    <table>
+      <tr><th>Component</th><th>Type</th><th>Minimum thickness</th><th>Notes</th></tr>
+      <tr><td>Front disc pads (GY6 125/150)</td><td>Sintered or organic</td><td>2 mm (friction material)</td><td>Generic GY6 pads fit most clones</td></tr>
+      <tr><td>Rear drum shoes (GY6)</td><td>Bonded lining</td><td>1 mm above rivet heads</td><td>Replace both shoes together</td></tr>
+      <tr><td>Vespa front/rear disc pads</td><td>OEM sintered</td><td>2 mm</td><td>Use Piaggio OEM or equivalent quality</td></tr>
+    </table>
+
+    <div class="callout callout-tip">
+      💡 <strong>Tip:</strong> If one front pad is significantly more worn than the other, the caliper slide pins are likely seized with corrosion. Remove, clean, and lubricate them with silicone grease. Failing to do this will cause the new pads to wear unevenly again within 1,000 km.
+    </div>
+
+    <h2>Applicable Models</h2>
+    <p>Front disc procedure applies to all GY6 125/150cc scooters with hydraulic front disc brakes including <strong>BTC Riva 125</strong>, <strong>La Souris Sourini</strong>, <strong>Santini Capri</strong>, and most Chinese 125cc clones. Rear drum procedure applies to GY6 models with drum rear brakes. For Vespa Primavera, Sprint, and ZIP models, the front and rear caliper designs differ — consult the Piaggio workshop manual for caliper bolt torques.</p>
+
+    <h2>Related Videos</h2>
+    <div class="related-videos">
+      <div class="video-card">
+        <h4>Replacing Scooter Disc Brake Pads</h4>
+        <p>Professional step-by-step disc pad replacement on a generic scooter caliper — covers piston retraction, slide pin lubrication and pad bedding-in procedure.</p>
+        <a href="https://www.youtube.com/watch?v=9liExSECt2Y" target="_blank" rel="noopener">Watch on YouTube →</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="guide-footer">
+    <p>Page generated by ISRM Content Sync on 2026-05-07. Content summarised from external technical sources for educational purposes.</p>
+    <p style="margin-top: 0.5rem;">Brakes are safety-critical. Always verify procedures against your scooter's official workshop manual before attempting repair.</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISRM Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Repair Guides</a></p>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+      });
+    }
+  </script>
+</body>
+</html>

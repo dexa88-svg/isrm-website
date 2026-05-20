@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GY6 EFI Fuel Injection Troubleshooting Guide — ISRM</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .meta { color: #888; font-size: 0.85rem; margin-bottom: 1.5rem; }
+    .source-box { background: #1a1a1a; border-left: 4px solid #f5a623; padding: 0.8rem 1.2rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; }
+    .tag { display: inline-block; background: #222; color: #f5a623; border: 1px solid #f5a623; border-radius: 12px; padding: 2px 10px; font-size: 0.78rem; margin-right: 6px; }
+    ol li, ul li { margin-bottom: 0.5rem; }
+    .warn { background: #2a1a00; border-left: 4px solid #f5a623; padding: 0.7rem 1.2rem; margin: 1rem 0; border-radius: 0 4px 4px 0; }
+    .tip { background: #0a1f0a; border-left: 4px solid #4caf50; padding: 0.7rem 1.2rem; margin: 1rem 0; border-radius: 0 4px 4px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th { background: #1a1a1a; color: #f5a623; padding: 0.5rem 0.8rem; text-align: left; border: 1px solid #333; }
+    td { padding: 0.5rem 0.8rem; border: 1px solid #333; }
+    tr:nth-child(even) { background: #141414; }
+    .step-box { background: #111; border: 1px solid #333; border-radius: 6px; padding: 0.8rem 1.2rem; margin: 0.8rem 0; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand"><span class="brand-icon">⚙️</span><span class="brand-text">ISRM</span></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../community/index.html" class="nav-link">Community</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
+        <a href="../index.html">ISRM Home</a><span>›</span><a href="index.html">Diagnostics</a><span>›</span>GY6 EFI Fuel Injection Troubleshooting Guide
+      </div>
+      <h1>GY6 EFI Fuel Injection Troubleshooting Guide</h1>
+    </div>
+  </section>
+
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 3rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "🔍";
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem;
+      opacity: 0.07;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0 0 1rem;
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+  </style>
+
+
+  <div class="breadcrumb">
+    <a href="../index.html">ISRM Home</a><span>›</span>
+    <a href="index.html">Diagnostics</a><span>›</span>
+    GY6 EFI Fuel Injection Troubleshooting
+  </div>
+
+  <main class="guide-content">
+  <h1>GY6 EFI Fuel-Injection Troubleshooting Guide</h1>
+  <div class="meta">
+    Added: 2026-05-08 &nbsp;|&nbsp; Sources: <a href="https://www.rollingwrenchdenver.com/blogs/news/i-am-having-trouble-with-my-gy6-efi-system" target="_blank" rel="noopener">rollingwrenchdenver.com</a>, <a href="https://www.kemsoracing.com/blogs/news/the-ultimate-guide-to-gy6-fuel-pump-maintenance-troubleshooting-replacement" target="_blank" rel="noopener">kemsoracing.com</a>, <a href="https://49ccscoot.proboards.com/thread/32665/gy6-fuel-injection-build" target="_blank" rel="noopener">49ccscoot.proboards.com</a>
+    &nbsp;|&nbsp; <span class="tag">GY6</span> <span class="tag">Fuel Injection</span> <span class="tag">EFI</span> <span class="tag">Diagnostics</span>
+  </div>
+
+  <div class="source-box">
+    📌 <strong>Based on:</strong>
+    <a href="https://www.rollingwrenchdenver.com/blogs/news/i-am-having-trouble-with-my-gy6-efi-system" target="_blank" rel="noopener">GY6 EFI Troubleshooting — Rolling Wrench Denver</a> and
+    <a href="https://www.kemsoracing.com/blogs/news/the-ultimate-guide-to-gy6-fuel-pump-maintenance-troubleshooting-replacement" target="_blank" rel="noopener">GY6 Fuel Pump Guide — Kemso Racing</a>.
+    GY6 EFI conversion and factory EFI units vary by manufacturer; always refer to your specific ECU/EFI documentation.
+  </div>
+
+  <p>While the majority of GY6-engined scooters sold in Europe and the UK use a carburettor, a growing number of models — and all Euro 5-compliant variants — use electronic fuel injection (EFI). Some owners also retrofit aftermarket EFI systems (such as the Ecotrons or Rolling Wrench ProBld kit) to carburetted GY6 engines. This guide covers the most common EFI fault symptoms and how to diagnose them systematically.</p>
+
+  <h2>GY6 EFI System Overview</h2>
+  <p>A typical GY6 EFI system consists of the following components working together:</p>
+  <ul>
+    <li><strong>ECU (Engine Control Unit):</strong> The electronic brain; maps fuel injection quantity and ignition timing based on sensor inputs.</li>
+    <li><strong>Electric fuel pump:</strong> Mounted in or near the fuel tank; delivers fuel at 15–25 PSI (1.0–1.7 bar) to the injector.</li>
+    <li><strong>Fuel injector:</strong> A solenoid valve that sprays a metered amount of fuel into the intake port.</li>
+    <li><strong>Throttle position sensor (TPS):</strong> Reports throttle angle to the ECU.</li>
+    <li><strong>Manifold absolute pressure sensor (MAP) or intake air temperature sensor (IAT):</strong> Measures intake conditions for fuel map corrections.</li>
+    <li><strong>Coolant temperature sensor (CTS):</strong> Enables cold-start enrichment.</li>
+    <li><strong>Crankshaft/camshaft position sensor:</strong> Triggers injection timing.</li>
+  </ul>
+
+  <h2>First Steps: Before Any Diagnosis</h2>
+  <ol>
+    <li>Check the battery voltage with a multimeter. EFI systems need a minimum of approximately 11.5 V to operate correctly. A weak battery is a very common cause of erratic EFI behaviour.</li>
+    <li>Check the main fuse and any EFI-specific inline fuses in the wiring harness.</li>
+    <li>Inspect all EFI connector plugs for corrosion, pushed-back terminals, or water ingress. Clean with electrical contact cleaner and reseat firmly.</li>
+    <li>Verify the ground connections: the EFI system requires a clean, low-resistance earth. A dedicated earth wire from battery negative to a bare metal chassis point is essential. A poor earth is responsible for a significant proportion of EFI faults.</li>
+  </ol>
+
+  <div class="warn">
+    ⚠️ <strong>EFI vs Carburettor:</strong> Do not apply aerosol starting fluid (ether) to a fuel-injected GY6 engine — it can damage the injector seal and the catalytic converter if fitted. Use the correct cold-start procedure instead.
+  </div>
+
+  <h2>Symptom-Based Diagnostic Table</h2>
+  <table>
+    <tr><th>Symptom</th><th>Most Likely Cause</th><th>Diagnostic Action</th></tr>
+    <tr><td>Engine cranks but will not fire</td><td>No fuel pressure; dead fuel pump; ECU not powered</td><td>Listen for pump prime (2-sec buzz on key-on); test fuel pressure at injector inlet (target: 15–25 PSI)</td></tr>
+    <tr><td>Hard cold start only</td><td>CTS fault; cold-start enrichment not working</td><td>Check CTS resistance (typically 2–3 kΩ at 20°C); inspect CTS wiring connector</td></tr>
+    <tr><td>Rough idle, intermittent stall</td><td>TPS out of range; air leak; dirty injector</td><td>Check TPS voltage (typically 0.4–0.8 V at idle); spray intake manifold joints with carb cleaner while running to detect air leaks</td></tr>
+    <tr><td>Black smoke, rich running</td><td>TPS stuck or miscalibrated; injector stuck open; MAP sensor fault</td><td>Check TPS signal sweep from idle to WOT (should read 0.4 V to ~4.5 V); test injector resistance (typically 11–16 Ω)</td></tr>
+    <tr><td>White smoke, lean running</td><td>Fuel pump weak; injector clogged; fuel filter blocked</td><td>Test fuel pressure under load; replace fuel filter; clean injector with ultrasonic cleaner or injector-cleaning kit</td></tr>
+    <tr><td>Loss of power above half throttle</td><td>Fuel pump not maintaining pressure at high demand; clogged fuel filter</td><td>Test pump pressure at full throttle simulation (should not drop below 15 PSI); replace filter</td></tr>
+    <tr><td>Engine misfires, popping on deceleration</td><td>Ignition coil; crankshaft position sensor; air leak</td><td>Check spark output; test crank position sensor resistance per manufacturer spec</td></tr>
+    <tr><td>Check-engine / fault lamp illuminated</td><td>Stored fault code(s)</td><td>Read fault codes (see below)</td></tr>
+  </table>
+
+  <h2>Reading EFI Fault Codes on GY6</h2>
+  <p>Factory EFI GY6 scooters and aftermarket EFI kits typically signal fault codes either through a malfunction indicator lamp (MIL) blink pattern or via a diagnostic connector that accepts a generic OBD-II style reader or the manufacturer's proprietary tool.</p>
+
+  <h2>Blink-Code Method (No Scanner)</h2>
+  <ol>
+    <li>Switch the ignition on (do not start the engine).</li>
+    <li>Observe the warning lamp: it will flash a series of long and short pulses to indicate a fault code. The pattern is typically: long flashes = tens digit, short flashes = units digit. For example, two long flashes followed by three short flashes = fault code 23.</li>
+    <li>Count all flash sequences carefully and write them down.</li>
+    <li>Cross-reference against your ECU's fault code table (supplied with aftermarket kits; available in the manufacturer service manual for factory EFI models).</li>
+  </ol>
+
+  <h2>Common Ecotrons / ProBld EFI Fault Codes</h2>
+  <table>
+    <tr><th>Code</th><th>Description</th><th>Typical Cause</th></tr>
+    <tr><td>11</td><td>Crankshaft position sensor signal absent</td><td>Sensor gap too large; wiring break; sensor failure</td></tr>
+    <tr><td>13</td><td>MAP/vacuum sensor out of range</td><td>Disconnected vacuum line; sensor failure</td></tr>
+    <tr><td>14</td><td>Intake air temperature sensor fault</td><td>Connector corrosion; sensor open circuit</td></tr>
+    <tr><td>21</td><td>Coolant temperature sensor fault</td><td>Open or short in CTS circuit; sensor failure</td></tr>
+    <tr><td>22</td><td>Throttle position sensor fault</td><td>TPS connector loose; incorrect idle voltage; sensor failure</td></tr>
+    <tr><td>44</td><td>O₂ / lambda sensor (lean)</td><td>Air leak; lean fuel map; O₂ sensor aging</td></tr>
+    <tr><td>45</td><td>O₂ / lambda sensor (rich)</td><td>Stuck injector; rich fuel map; O₂ sensor failure</td></tr>
+  </table>
+
+  <div class="tip">
+    💡 <strong>Tip:</strong> For aftermarket EFI kits (Ecotrons SE-EFI, Rolling Wrench ProBld), the installation manual PDF contains full fault code tables and sensor resistance charts. Download it from the manufacturer's website and keep a copy with the scooter's documents.
+  </div>
+
+  <h2>Fuel Pump Testing</h2>
+  <p>The electric fuel pump on an EFI GY6 typically operates at 15–25 PSI. Testing procedure:</p>
+  <ol>
+    <li>Connect a fuel pressure gauge (T-fitting or Schrader port if available) between the fuel pump outlet and the injector inlet.</li>
+    <li>Switch the ignition on — the pump should run for approximately 2 seconds to prime, then stop. Pressure should rise to the operating range and hold.</li>
+    <li>If pressure does not rise, test voltage at the pump connector (should be battery voltage when the ECU activates the pump relay).</li>
+    <li>If voltage is present but pressure is absent or low, the pump is failing and should be replaced. Kemso Racing and VMC Chinese Parts both supply direct-replacement GY6 EFI pumps at affordable prices.</li>
+  </ol>
+
+  <div class="tip">
+    💡 <strong>Related guides:</strong>
+    <a href="gy6-no-start-troubleshooting.html">GY6 Won't Start — Troubleshooting Checklist</a> |
+    <a href="../repair-guides/gy6-carburetor-cleaning-guide.html">GY6 Carburettor Deep-Cleaning Guide</a>
+  </div>
+  </main>
+
+
+  <footer class="guide-footer">
+    <p>Page auto-generated by ISRM Content Sync on 2026-05-08. Content summarised from multiple technical sources for educational purposes.</p>
+    <p style="margin-top: 0.5rem;">Always verify with the original source and your scooter's workshop manual before performing repairs.</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISRM Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Diagnostics</a></p>
+  </footer>
+</body>
+</html>

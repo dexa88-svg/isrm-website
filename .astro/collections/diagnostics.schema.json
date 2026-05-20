@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "publishDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "Beginner",
+        "Intermediate",
+        "Advanced"
+      ]
+    },
+    "timeEstimate": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "appliesTo": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "videos": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "creator": {
+            "type": "string"
+          },
+          "position": {
+            "default": "hero",
+            "type": "string",
+            "enum": [
+              "hero",
+              "inline",
+              "related"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "title"
+        ]
+      }
+    },
+    "sources": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "name",
+          "url"
+        ]
+      }
+    },
+    "canonical": {
+      "type": "string",
+      "format": "uri"
+    },
+    "draft": {
+      "default": false,
+      "type": "boolean"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "starting",
+        "fuel",
+        "transmission",
+        "electrical"
+      ]
+    },
+    "engine": {
+      "type": "string",
+      "enum": [
+        "gy6",
+        "piaggio",
+        "both"
+      ]
+    },
+    "fuel": {
+      "type": "string",
+      "enum": [
+        "carb",
+        "efi",
+        "both"
+      ]
+    },
+    "section": {
+      "type": "string"
+    },
+    "cardTag": {
+      "type": "string"
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "publishDate",
+    "updatedDate",
+    "difficulty",
+    "tags",
+    "appliesTo",
+    "canonical",
+    "category",
+    "engine",
+    "fuel",
+    "section"
+  ]
+}

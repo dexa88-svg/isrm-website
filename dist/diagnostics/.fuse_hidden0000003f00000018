@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GY6 Scooter Won't Start — Troubleshooting Checklist — ISRM</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .guide-header {
+      background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem 2rem;
+    }
+    .guide-header-inner { max-width: 900px; margin: 0 auto; }
+    .guide-header h1 {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0.9rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+    .guide-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+      margin-bottom: 1rem;
+    }
+    .guide-meta a { color: var(--accent); }
+    .guide-meta a:hover { color: var(--primary); }
+    .guide-meta-sep { opacity: 0.4; }
+    .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+    .guide-tag {
+      background: rgba(0, 168, 204, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(0, 168, 204, 0.3);
+      padding: 0.25rem 0.7rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+    .applies-to {
+      background: rgba(255, 107, 53, 0.07);
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem;
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .applies-to strong { color: var(--text-primary); }
+    .guide-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 4rem;
+    }
+    .guide-content h2 {
+      font-size: 1.55rem;
+      color: var(--text-primary);
+      margin-top: 2.5rem;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .guide-content h2:first-child { margin-top: 0; }
+    .guide-content h3 { font-size: 1.1rem; color: var(--accent); margin-top: 0; margin-bottom: 0.75rem; }
+    .guide-content p { color: var(--text-secondary); margin-bottom: 1rem; }
+    .guide-content a { color: var(--accent); }
+    .guide-content a:hover { color: var(--primary); }
+    .guide-content ul, .guide-content ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+    .guide-content li { margin-bottom: 0.5rem; }
+    .guide-content li strong { color: var(--text-primary); }
+    .guide-content code {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--accent-light);
+      padding: 0.15rem 0.45rem;
+      border-radius: var(--radius-sm);
+      font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+      font-size: 0.87em;
+    }
+    .guide-content table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .guide-content th {
+      background: var(--surface-2);
+      color: var(--text-primary);
+      font-weight: 600;
+      padding: 0.7rem 1rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    .guide-content td { padding: 0.65rem 1rem; border: 1px solid var(--border); color: var(--text-secondary); }
+    .guide-content tr:nth-child(even) td { background: rgba(26, 35, 50, 0.6); }
+
+    /* Callouts */
+    .callout {
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .callout strong { color: var(--text-primary); }
+    .callout-tip {
+      background: rgba(6, 167, 125, 0.08);
+      border: 1px solid rgba(6, 167, 125, 0.25);
+      border-left: 4px solid var(--success);
+    }
+
+    /* Check sections */
+    .check-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+    .check-section:hover { border-color: rgba(0, 168, 204, 0.4); }
+
+    .pass { color: var(--success); font-weight: 700; }
+    .fail { color: var(--danger); font-weight: 700; }
+
+    /* Footer */
+    .guide-footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.825rem;
+      color: var(--text-tertiary);
+    }
+
+    @media (max-width: 768px) {
+      .guide-header h1 { font-size: 1.7rem; }
+      .guide-content { padding: 1.5rem 1rem 3rem; }
+      .breadcrumb { padding: 0.9rem 1rem; }
+      .nav-menu { display: none; }
+      .nav-toggle { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-icon">⚙️</span>
+        <span class="brand-text">ISRM</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../repair-guides/index.html" class="nav-link">Guides</a></li>
+        <li><a href="../diagnostics/index.html" class="nav-link">Diagnostics</a></li>
+        <li><a href="../parts/index.html" class="nav-link">Parts</a></li>
+        <li><a href="../models/index.html" class="nav-link">Models</a></li>
+        <li><a href="../community/index.html" class="nav-link">Community</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="../index.html">ISRM Home</a>
+    <span>›</span>
+    <a href="index.html">Diagnostics</a>
+    <span>›</span>
+    GY6 Won't Start — Troubleshooting
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb" style="padding: 0 0 1rem; margin: 0;">
+        <a href="../index.html">ISRM Home</a><span>›</span><a href="index.html">Diagnostics</a><span>›</span>GY6 Scooter Won't Start — Troubleshooting Checklist
+      </div>
+      <h1>GY6 Scooter Won't Start — Troubleshooting Checklist</h1>
+    </div>
+  </section>
+
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface) 60%, var(--bg-dark) 100%);
+      padding: 3rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero::before {
+      content: "🔍";
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 9rem;
+      opacity: 0.07;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .breadcrumb {
+      padding: 0 0 1rem;
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+  </style>
+
+
+  <!-- Guide Content -->
+  <main class="guide-content">
+
+    <p>A GY6 engine requires three things to start: <strong>spark</strong>, <strong>fuel</strong>, and <strong>compression</strong>. Work through this checklist in order — most no-start problems can be diagnosed and fixed in under an hour using only basic hand tools.</p>
+
+    <h2>Quick Symptom Guide (Start Here)</h2>
+    <table>
+      <tr><th>Symptom</th><th>Most Likely Cause</th><th>Jump to Section</th></tr>
+      <tr><td>Engine cranks but won't fire</td><td>No spark, no fuel, or low compression</td><td>Sections 1, 2, 3</td></tr>
+      <tr><td>Engine won't even crank (starter spins but engine doesn't)</td><td>Low battery, faulty starter relay, or compression release stuck open</td><td>Section 4</td></tr>
+      <tr><td>Fires briefly then dies</td><td>Fuel starvation (blocked jet or closed petcock)</td><td>Section 2</td></tr>
+      <tr><td>Starts with choke but dies without it</td><td>Pilot jet blocked, mixture too lean</td><td>Section 2B</td></tr>
+      <tr><td>Starts cold but not hot (or hot but not cold)</td><td>Auto-choke malfunction</td><td>Section 2C</td></tr>
+      <tr><td>Kick-start works but electric starter doesn't</td><td>Battery, starter motor, or relay fault</td><td>Section 4</td></tr>
+    </table>
+
+    <h2>Section 1 — Spark</h2>
+
+    <div class="check-section">
+      <h3>1A — Basic Spark Test</h3>
+      <ol>
+        <li>Remove the spark plug lead from the spark plug.</li>
+        <li>Remove the spark plug using a spark plug socket (usually 16 mm or 18 mm).</li>
+        <li>Reconnect the spark plug lead to the plug and rest the threaded body of the plug against a bare metal part of the engine (ground contact is essential).</li>
+        <li>Have an assistant crank the engine while you observe the electrode gap.</li>
+        <li><span class="pass">PASS:</span> A fat blue-white spark jumps across the gap — spark system is good, proceed to Section 2.</li>
+        <li><span class="fail">FAIL:</span> No spark, weak orange spark, or intermittent spark — proceed to 1B.</li>
+      </ol>
+    </div>
+
+    <div class="check-section">
+      <h3>1B — Spark Plug Condition</h3>
+      <p>Inspect the removed spark plug tip:</p>
+      <table>
+        <tr><th>Plug Appearance</th><th>Diagnosis</th></tr>
+        <tr><td>Light tan/grey — dry</td><td>Normal. Plug is probably fine. Check ignition system.</td></tr>
+        <tr><td>Black, sooty, dry</td><td>Running rich or plug too cold. Clean or replace plug.</td></tr>
+        <tr><td>Black, oily</td><td>Oil getting past rings — compression issue, possible engine wear.</td></tr>
+        <tr><td>White/light grey, eroded electrode</td><td>Running lean or plug too hot. Check fuel system.</td></tr>
+        <tr><td>Wet with fuel</td><td>Engine is flooded. Remove plug, crank 5× with throttle fully open to clear.</td></tr>
+      </table>
+      <p>Replace the spark plug if in doubt — they cost very little and eliminate the plug as a variable. Standard plug for GY6 50cc: <code>A7TC</code> or <code>A6TC</code>. For 125–150cc: <code>A7RTC</code> or equivalent.</p>
+    </div>
+
+    <div class="check-section">
+      <h3>1C — Ignition System Check</h3>
+      <p>If a new plug still shows no spark:</p>
+      <ol>
+        <li><strong>Check the kill switch</strong> — flip it to the RUN position. Test with it disconnected entirely (short the wires).</li>
+        <li><strong>Check the main fuse</strong> — usually a 10A or 15A blade fuse in the wiring loom near the battery or under the seat. A blown fuse means no power to the CDI unit.</li>
+        <li><strong>Inspect the CDI unit</strong> — the small black box connected to several wires, typically under the seat or behind the panels. Check the connector for corrosion or pushed-out pins. A faulty CDI is a common cause of total no-spark on GY6 engines.</li>
+        <li><strong>Check the ignition coil</strong> — disconnect and test resistance: primary winding should read <strong>0.4–0.6 Ω</strong>; secondary (to plug cap) should read <strong>4–6 kΩ</strong>.</li>
+        <li><strong>Check the stator pick-up coil</strong> (pulse generator coil) — resistance typically <strong>80–120 Ω</strong>. Located inside the left engine cover behind the flywheel.</li>
+      </ol>
+    </div>
+
+    <h2>Section 2 — Fuel</h2>
+
+    <div class="check-section">
+      <h3>2A — Basic Fuel Flow Check</h3>
+      <ol>
+        <li>Ensure there is fuel in the tank (check visually — fuel gauges on Chinese scooters are notoriously inaccurate).</li>
+        <li>Locate the fuel petcock (tap) on the underside of the tank. Ensure it is in the <strong>ON</strong> or <strong>RES</strong> position.</li>
+        <li>Disconnect the fuel line from the carburettor inlet. Place a container below and briefly open the petcock — fuel should flow freely. If it trickles or doesn't flow, the petcock filter is blocked. Remove and clean the petcock screen.</li>
+      </ol>
+    </div>
+
+    <div class="check-section">
+      <h3>2B — Carburettor Check</h3>
+      <ol>
+        <li>Remove the float bowl (one screw at the bottom of the carburettor). Check for fuel presence — if empty, fuel is not reaching the carb (check petcock and fuel line). If full, fuel delivery is OK.</li>
+        <li>Inspect the main jet and pilot jet for blockage. Even a partially blocked pilot jet causes lean stumble and no-start when cold. Clean with carburettor cleaner and compressed air — never use wire through the jet orifice.</li>
+        <li>Check the float needle valve: a stuck or worn needle valve floods the engine. If the plug was found wet, this is likely the cause.</li>
+        <li>Check the emulsion tube passages are clear (the brass tube with holes inside the carburettor body).</li>
+      </ol>
+    </div>
+
+    <div class="check-section">
+      <h3>2C — Auto-Choke (Thermostatic Enricher) Check</h3>
+      <p>Most GY6 50cc scooters use an automatic choke (enricher valve) instead of a manual choke lever. It is a wax-element or bimetal device that opens when cold (rich mixture) and closes when warm.</p>
+      <ol>
+        <li>Locate the auto-choke on the side of the carburettor — a small cylindrical device with a wire or hose attached.</li>
+        <li><strong>Cold test:</strong> Disconnect the choke from the carburettor. When cold, the choke plunger should be extended (pushed out). If it is retracted when cold, the choke is stuck open — the engine will run lean and refuse to start cold.</li>
+        <li><strong>Warm test:</strong> After warming the choke with a heat gun or hot water for 1 minute, the plunger should retract. If it stays extended, it is stuck — the engine will run rich when warm and flood after warm-up.</li>
+        <li>If the auto-choke is malfunctioning, replace it (inexpensive and widely available for GY6) or temporarily disconnect and use a manually operated enrichment procedure (crack throttle open slightly when starting cold).</li>
+      </ol>
+    </div>
+
+    <h2>Section 3 — Compression</h2>
+
+    <div class="check-section">
+      <h3>3A — Basic Compression Check</h3>
+      <ol>
+        <li>Remove the spark plug.</li>
+        <li>Cover the spark plug hole with your thumb and crank the engine (kick or electric).</li>
+        <li><span class="pass">PASS:</span> Your thumb is pushed off firmly — there is compression. Proceed to Sections 1 and 2 for the no-start cause.</li>
+        <li><span class="fail">FAIL:</span> Little or no resistance felt — low or zero compression. Proceed to 3B.</li>
+      </ol>
+    </div>
+
+    <div class="check-section">
+      <h3>3B — Compression Test (with gauge)</h3>
+      <p>A proper compression gauge gives a reading. Specifications for GY6:</p>
+      <table>
+        <tr><th>Engine</th><th>Minimum Acceptable</th><th>Healthy Range</th></tr>
+        <tr><td>GY6 50cc (139QMB)</td><td>70 PSI (4.8 bar)</td><td>90–120 PSI (6.2–8.3 bar)</td></tr>
+        <tr><td>GY6 150cc (157QMJ)</td><td>80 PSI (5.5 bar)</td><td>100–130 PSI (6.9–9.0 bar)</td></tr>
+      </table>
+      <p>Low compression causes: worn or stuck piston rings, burned valves, blown head gasket, worn cylinder bore, or valves with zero clearance (not seating properly). Check valve clearance first (see the <a href="../repair-guides/gy6-valve-adjustment-guide.html">valve adjustment guide</a>) before condemning rings or bore.</p>
+    </div>
+
+    <h2>Section 4 — Starter System &amp; Battery</h2>
+
+    <div class="check-section">
+      <h3>4A — Battery Check</h3>
+      <ol>
+        <li>Check battery voltage with a multimeter: <strong>12.6 V or above</strong> = fully charged; <strong>below 12.0 V</strong> = discharged or failing.</li>
+        <li>If the starter sounds slow or clicks but doesn't crank, the battery is likely the cause. Charge for 4 hours and retest.</li>
+        <li>GY6 scooter batteries (typically YTX5L-BS or YTX7A-BS) have a short lifespan — 2–3 years is typical. If the battery is over 2 years old, replacement is the most reliable fix.</li>
+      </ol>
+    </div>
+
+    <div class="check-section">
+      <h3>4B — Starter Relay (Solenoid)</h3>
+      <ol>
+        <li>When pressing the electric starter, you should hear a click from the starter relay (located near the battery). No click = relay or wiring fault.</li>
+        <li>Bypass test: use a jumper wire directly between the starter motor terminal and the battery positive. If the engine cranks, the starter relay or its wiring is faulty.</li>
+        <li>The relay can be tested with a multimeter or simply replaced — they cost very little and are standard across all GY6 scooters.</li>
+      </ol>
+    </div>
+
+    <h2>Checklist Summary</h2>
+    <table>
+      <tr><th>#</th><th>Check</th><th>Tool Needed</th></tr>
+      <tr><td>1</td><td>Spark plug — condition and spark test</td><td>Plug socket, assistant</td></tr>
+      <tr><td>2</td><td>Kill switch and fuse</td><td>Visual / multimeter</td></tr>
+      <tr><td>3</td><td>CDI unit connector — clean contacts</td><td>Contact spray</td></tr>
+      <tr><td>4</td><td>Fuel in tank — visually confirm</td><td>None</td></tr>
+      <tr><td>5</td><td>Fuel petcock — open and flowing freely</td><td>Container</td></tr>
+      <tr><td>6</td><td>Float bowl — fuel present and jets clear</td><td>Flat-head screwdriver</td></tr>
+      <tr><td>7</td><td>Auto-choke — functioning correctly</td><td>Visual / heat source</td></tr>
+      <tr><td>8</td><td>Compression — thumb test or gauge</td><td>Compression gauge</td></tr>
+      <tr><td>9</td><td>Valve clearance — set to spec</td><td>Feeler gauge</td></tr>
+      <tr><td>10</td><td>Battery voltage ≥ 12.6 V</td><td>Multimeter</td></tr>
+      <tr><td>11</td><td>Starter relay — clicking when operated</td><td>Multimeter / jumper wire</td></tr>
+    </table>
+
+    <div class="callout callout-tip">
+      💡 <strong>Pro tip:</strong> When a GY6 starts with easy starting fluid or carb cleaner sprayed into the intake but won't start on its own, you have confirmed spark and compression are good — the problem is always in the fuel system (petcock, jet, auto-choke, or fuel line).
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="guide-footer">
+    <p>Page auto-generated by ISRM Content Sync on 2026-05-07. Content summarised from external technical sources for educational purposes.</p>
+    <p style="margin-top: 0.5rem;">Always verify procedures against your scooter's workshop manual before performing repairs.</p>
+    <p style="margin-top: 1rem;"><a href="../index.html" style="color: var(--accent);">⚙️ ISRM Home</a> &nbsp;·&nbsp; <a href="index.html" style="color: var(--accent);">All Diagnostics</a></p>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+      });
+    }
+  </script>
+</body>
+</html>
