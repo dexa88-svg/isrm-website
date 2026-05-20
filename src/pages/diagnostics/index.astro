@@ -175,7 +175,7 @@ const total = allGuides.length;
               {guides.map((guide) => {
                 const { title, description, tags, timeEstimate, difficulty, category, engine, fuel } = guide.data;
                 const slug = guide.id;
-                const href = `/diagnostics/${slug}`;
+                const href = `/diagnostics/${slug}.html`;
                 const cardTag = getCardTag(guide.data);
                 const displayTags = tags.filter(t => !['diagnostics', 'Diagnostics'].includes(t)).slice(0, 2);
                 return (
