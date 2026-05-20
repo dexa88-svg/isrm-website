@@ -1350,6 +1350,24 @@ a { text-decoration: none; color: inherit; }
 .source-box li { margin-bottom: 0.3rem; }
 .source-box a { color: var(--accent); }
 
+/* CEL flash pattern demo */
+.flash-demo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 4px;
+}
+.flash-demo span {
+  display: inline-block;
+  height: 14px;
+  border-radius: 3px;
+  background: #f59e0b;
+  box-shadow: 0 0 6px 1px rgba(245, 158, 11, 0.6);
+}
+.flash-long  { width: 28px; }
+.flash-short { width: 12px; }
+.flash-gap   { width: 10px; background: transparent !important; box-shadow: none !important; }
+
 /* Responsive guide */
 @media (max-width: 768px) {
   .guide-content { padding: 1.5rem 1rem 3rem; }

@@ -47,6 +47,12 @@ const diagnostics = defineCollection({
     sources: z.array(sourceSchema).default([]),
     canonical: z.string().url(),
     draft: z.boolean().default(false),
+    // Index page fields
+    category: z.enum(['starting', 'fuel', 'transmission', 'electrical']),
+    engine: z.enum(['gy6', 'piaggio', 'both']),
+    fuel: z.enum(['carb', 'efi', 'both']),
+    section: z.string(),
+    cardTag: z.string().optional(),
   }),
 });
 
