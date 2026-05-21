@@ -1,0 +1,147 @@
+---
+title: "GY6 EFI TPS Sensor Diagnosis & Replacement"
+description: "Diagnose and replace the Throttle Position Sensor (TPS) on GY6 EFI scooters — Euro 4/5 Delphi and Motion ECU systems. Includes fault codes, voltage tests, and replacement procedure."
+publishDate: "2026-05-21"
+updatedDate: "2026-05-21"
+difficulty: "Intermediate"
+timeEstimate: "~45 min"
+tags: ["gy6", "efi", "tps", "throttle", "fuel-injection", "euro4", "diagnostics"]
+appliesTo:
+  - "GY6 139QMB Euro 4/5 EFI (50cc)"
+  - "GY6 157QMJ EFI (150cc)"
+  - "BTC Riva EFI"
+  - "La Souris Sourini / City EFI"
+  - "AGM VX50 EFI"
+videos: []
+tools:
+  - "Multimeter (DC voltage range)"
+  - "OBD2 KKL cable (optional — for fault code reading)"
+  - "HUD ECU Hacker software (optional — see EFI diagnostics guide)"
+  - "Phillips screwdriver"
+  - "8 mm spanner"
+sources:
+  - name: "Motorroller.de — Euro 4 Scooter Error & Blink Codes (4T50E4)"
+    url: "https://www.motorroller.de/en/fehlercodes-blinkcodes-4t50e4/"
+  - name: "China Scooter Onderdelen — TPS/MAP Sensor GY6 Euro 4/5"
+    url: "https://en.chinascooteronderdelen.nl/product/tps-map-sensor-gy6-euro-4-5-delphi-motion-efi/"
+  - name: "ScootDawg Forum — Throttle Position Sensor"
+    url: "https://scootdawg.proboards.com/thread/51358/throttle-position-sensor"
+  - name: "49ccScoot Forum — GY6 TPS and Oxygen Sensor"
+    url: "https://49ccscoot.proboards.com/thread/29582/gy6-tps-oxygen-sensor"
+canonical: "https://ismr.online/diagnostics/gy6-efi-tps-sensor-diagnosis.html"
+category: "fuel"
+engine: "gy6"
+fuel: "efi"
+section: "Fuel Injection (EFI)"
+cardTag: "TPS"
+draft: false
+---
+
+import Callout from '@components/Callout.astro';
+import SourceBox from '@components/SourceBox.astro';
+
+The Throttle Position Sensor (TPS) is a variable resistor mounted on the throttle body of GY6 EFI scooters. As you open the throttle, a sliding contact inside the TPS changes resistance, sending a voltage signal to the ECU that represents throttle opening angle. The ECU uses this data — alongside the MAP sensor and O2 sensor — to calculate the correct fuel injection duration and ignition timing.
+
+On Euro 4 and Euro 5 GY6 50cc scooters (2017 onwards), the TPS is part of the throttle body assembly used by the Delphi MT05 or Motion EFI systems. A faulty TPS causes erratic fuelling, stuttering, poor idle, or a complete no-start with a CEL (Check Engine Light) flashing.
+
+## Fault Codes for TPS Faults
+
+Most GY6 EFI systems flash a code sequence via the CEL/MIL light. On Delphi MT05-based systems:
+
+<table><tbody>
+<tr><th>DTC Code</th><th>Meaning</th><th>CEL Blink Pattern</th></tr>
+<tr><td>P0121</td><td>TPS signal out of range — intermittent</td><td>1 long, 2 short</td></tr>
+<tr><td>P0122</td><td>TPS circuit low (below 0.2 V)</td><td>1 long, 2 short (variant)</td></tr>
+<tr><td>P0123</td><td>TPS circuit high (above 4.8 V)</td><td>1 long, 2 short (variant)</td></tr>
+<tr><td>—</td><td>TPS not connected or contact problem</td><td>CEL permanent on</td></tr>
+</tbody></table>
+
+<Callout type="tip">
+For GY6 EFI scooters sold in Belgium and the Netherlands (BTC Riva, La Souris Sourini/City, AGM VX50), the fault code list published by motorroller.de covers the 4T50E4 ECU blink code protocol used on many Chinese Euro 4 50cc scooters. See the [GY6 EFI OBD-2 DTC Fault Codes guide](/diagnostics/gy6-efi-obd2-dtc-fault-codes.html) for the complete list.
+</Callout>
+
+## Symptoms of a Failing TPS
+
+- Engine stutters or hesitates when opening throttle from idle
+- Erratic idle speed — surging up and down
+- Poor fuel economy or black exhaust smoke (ECU over-fuelling due to incorrect TPS signal)
+- CEL/MIL illuminated — flashing P0121, P0122, or P0123
+- Engine runs fine at idle but cuts out under load
+- Hard starting (ECU applies incorrect starting enrichment)
+
+## Step 1 — Visual Inspection
+
+Before testing with a multimeter, inspect the TPS physically:
+
+1. Locate the throttle body on the intake side of the engine. The TPS is a small sensor plugged into the side of the throttle body with a 3-wire connector.
+2. Unplug the connector and inspect both the sensor pins and the harness connector for:
+   - Corrosion (green or white residue on the pins)
+   - Bent or pushed-back pins
+   - Cracked or chafed wiring near the connector
+3. Reconnect and wiggle the connector while the engine idles. If this changes idle behaviour, the connection is intermittent — clean and re-pin before replacing the sensor.
+
+## Step 2 — Voltage Test (Live Signal)
+
+This test checks whether the TPS is producing a correct, smooth voltage output as the throttle is opened.
+
+**Setup:**
+1. With the ignition ON and engine off (or running), back-probe the TPS connector with a multimeter set to DC Voltage.
+2. Identify the three wires:
+   - **5 V reference (Vref)** — from ECU, typically green or white wire
+   - **Ground** — black wire
+   - **Signal output** — yellow, orange, or blue wire (goes back to ECU)
+
+3. Measure between the Signal wire and Ground wire.
+
+**Expected readings:**
+
+<table><tbody>
+<tr><th>Throttle Position</th><th>Expected Voltage</th></tr>
+<tr><td>Fully closed (idle)</td><td>0.4–0.7 V</td></tr>
+<tr><td>Half throttle (~45°)</td><td>~2.0–2.5 V</td></tr>
+<tr><td>Wide open throttle (WOT)</td><td>4.0–4.8 V</td></tr>
+</tbody></table>
+
+<Callout type="warn">
+**Key test:** Slowly open and close the throttle while watching the multimeter. The voltage must change **smoothly and continuously** — no sudden jumps, flat spots, or drop-outs. Any discontinuity in the sweep means the sliding contact inside the TPS is worn or damaged and the sensor must be replaced.
+</Callout>
+
+If the voltage is stuck at 0 V or 5 V regardless of throttle position, check the 5 V reference supply and ground first. If those are correct, the TPS itself is faulty.
+
+## Step 3 — Reference Voltage Check
+
+1. Unplug the TPS connector.
+2. With ignition ON, measure between the Vref pin in the harness connector and the Ground pin.
+3. Expected: **4.8–5.2 V DC**.
+4. If you read 0 V or battery voltage: the ECU or wiring harness has a fault — not the TPS.
+
+## Step 4 — Replacing the TPS
+
+On most GY6 EFI throttle bodies, the TPS is a bolt-on sensor on the throttle body:
+
+1. Unplug the 3-wire TPS connector.
+2. Remove the 2 Phillips screws securing the TPS to the throttle body.
+3. Slide the old TPS off the throttle shaft.
+4. Fit the new TPS — align the slot on the sensor's drive with the throttle shaft flat.
+5. Reinstall and tighten the screws finger-tight. **Do not fully tighten yet** — the TPS may need adjustment.
+
+**TPS Adjustment (Closed Throttle Voltage):**
+
+1. With the ignition ON, measure the TPS signal voltage with the throttle fully closed.
+2. Rotate the TPS body slightly while watching the voltage until it reads **0.50–0.55 V** (fully closed position per Delphi MT05 spec).
+3. Once set, tighten the mounting screws firmly.
+4. Recheck: open the throttle to WOT and confirm voltage reaches approximately 4.5 V, then returns to 0.5 V when released.
+
+<Callout type="tip">
+**Clear fault codes after replacement.** If you have an OBD2 KKL cable and HUD ECU Hacker, clear any stored P0121–P0123 codes after fitting the new sensor. Without a scanner, disconnect the battery for 5 minutes to reset the ECU — the CEL will extinguish if the fault is resolved.
+</Callout>
+
+## Replacement TPS Part Notes
+
+Euro 4/5 GY6 50cc scooters (BTC Riva, La Souris, AGM etc.) use a TPS integrated into the throttle body for the Delphi MT05 or Motion EFI system. The TPS and MAP sensor are often combined into a single unit on these platforms. When ordering a replacement, specify:
+
+- **ECU type:** Delphi MT05 or Motion (check the ECU label under the seat panel)
+- **Engine code:** 139QMB (50cc) or 157QMJ (150cc)
+- **Euro standard:** Euro 4 or Euro 5
+
+<SourceBox sources={frontmatter.sources} />

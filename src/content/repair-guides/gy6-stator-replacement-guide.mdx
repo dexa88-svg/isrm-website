@@ -1,0 +1,148 @@
+---
+title: "GY6 Stator Replacement Guide"
+description: "Step-by-step GY6 stator removal and installation. Covers flywheel puller use, coil wiring, magneto reassembly, and post-install charging system tests for 139QMB and 157QMJ."
+publishDate: "2026-05-21"
+updatedDate: "2026-05-21"
+difficulty: "Intermediate"
+timeEstimate: "~1.5 hours"
+tags: ["gy6", "stator", "electrical", "alternator", "charging"]
+appliesTo:
+  - "GY6 139QMB (50cc)"
+  - "GY6 152QMI (125cc)"
+  - "GY6 157QMJ (150cc)"
+  - "BTC Riva"
+  - "La Souris Sourini / City"
+  - "Santini Capri"
+videos:
+  - id: "2Wfi9pSoHbA"
+    title: "GY6 Stator and Rectifier Replacement"
+    creator: "YouTube"
+    position: "hero"
+tools:
+  - "GY6 flywheel puller (M28×1.0 RH or M27×1.0 depending on variant — do NOT substitute a 3-jaw puller)"
+  - "19 mm socket and torque wrench"
+  - "8 mm socket"
+  - "Multimeter"
+  - "Wire connector crimps or soldering iron"
+  - "Threadlock (medium-strength)"
+sources:
+  - name: "Buggy Depot Tech Center — GY6 150cc Stator Installation Guide"
+    url: "https://www.buggydepot.com/tech-center/gy6-150cc-stator-installation-guide/"
+  - name: "Rolling Wrench — Understanding Stators"
+    url: "https://www.rollingwrenchdenver.com/blogs/news/understanding-stators-a-comprehensive-guide"
+canonical: "https://ismr.online/repair-guides/gy6-stator-replacement-guide.html"
+draft: false
+---
+
+import VideoEmbed from '@components/VideoEmbed.astro';
+import Callout from '@components/Callout.astro';
+import SourceBox from '@components/SourceBox.astro';
+
+The stator is the fixed generating coil assembly inside the magneto (flywheel magneto alternator) on the left side of the GY6 engine. As the flywheel's permanent magnets spin around it, the stator produces AC power which is then rectified to DC by the regulator/rectifier to charge the battery and power the electrical system. A failed stator typically causes a flat battery that will not hold charge, dim or dead lighting, or — if the CDI pickup coil is also on the stator — total ignition failure.
+
+<VideoEmbed videoId="2Wfi9pSoHbA" title="GY6 Stator and Rectifier Replacement" creator="YouTube" />
+
+## Diagnosing a Faulty Stator Before Replacing
+
+Before pulling the flywheel, confirm the stator is the fault. Most stator failures show up as charging problems, not ignition failures — the pickup coil is a separate winding and can fail independently.
+
+**Charging test (battery voltage method):**
+
+1. Start the engine and bring it to normal operating temperature.
+2. Set a multimeter to DC voltage and probe the battery terminals.
+3. At idle (~1,800 rpm): expect **12.5–13.5 V**.
+4. At ~4,000 rpm: expect **13.5–14.5 V**.
+5. If voltage barely rises above 12 V at any rpm, the stator, regulator/rectifier, or wiring harness is at fault.
+
+**Stator AC output test (with engine off, by resistance):**
+
+1. Disconnect the stator connector (usually a 3-wire yellow AC output plus a separate 2-wire pickup coil connector).
+2. Measure resistance between each yellow wire pair with the multimeter on Ω:
+   - A healthy 8-coil GY6 stator typically reads **0.4–0.8 Ω** between each pair of yellow leads.
+   - Open circuit (infinite/OL) = broken coil winding → replace stator.
+   - Very low resistance near 0 Ω = shorted winding → replace stator.
+3. Check pickup coil (trigger coil) resistance between its two leads: typically **100–400 Ω** on GY6 engines.
+
+<Callout type="warn">
+**Do NOT use a 3-jaw puller to remove the GY6 flywheel.** The flywheel is tapered onto the crankshaft with no key — a 3-jaw puller will distort and destroy the stator coils before the flywheel breaks free. You must use a dedicated GY6 flywheel puller that threads into the flywheel centre boss.
+</Callout>
+
+## Tools & Parts
+
+The flywheel puller thread size varies between GY6 variants:
+- **Most 50cc (139QMB):** M27×1.0 left-hand thread or M28×1.0 right-hand thread — check your flywheel
+- **Most 125/150cc (157QMJ):** M28×1.0 right-hand thread
+
+Confirm before ordering a puller. Replacement stators are available in 5-coil (AC-only) and 8-coil (DC) configurations — match the winding count to your original. The 8-coil DC stator is standard on modern Euro 4/5 GY6 scooters.
+
+## Step-by-Step Procedure
+
+### 1 — Prepare and Disconnect Battery
+
+1. Park the scooter on its centre stand on a level surface.
+2. Remove the seat and access panels to reach the left side of the engine.
+3. Disconnect the **negative (−) terminal** of the battery first. This prevents accidental shorts through the electrical system while working.
+
+### 2 — Remove the Left Engine Cover
+
+1. Locate the black plastic cooling fan shroud on the left side of the engine.
+2. Remove the shroud bolts (usually 4–5 mm hex or 8 mm head bolts).
+3. Lift the shroud away to expose the white plastic cooling fan and the flywheel behind it.
+4. Remove the cooling fan: four 8 mm bolts secure it to the flywheel face. Note the fan orientation (it is directional).
+
+### 3 — Remove the Flywheel
+
+1. Prevent the flywheel from rotating: use a flywheel holding tool, or place the transmission in gear and apply the rear brake firmly.
+2. Loosen and remove the large central flywheel nut (19 mm). Note the thread direction — on GY6 engines this is a **standard right-hand thread** (counter-clockwise to loosen).
+3. Thread the flywheel puller clockwise into the central boss of the flywheel until fully engaged (at least 5–6 full turns).
+4. Hold the puller body still and turn the central bolt clockwise. As the puller pushes against the crankshaft end, the flywheel will pop free with a sharp crack — this is normal.
+5. Carefully slide the flywheel off the tapered crankshaft.
+
+<Callout type="warn">
+**Check woodruff key:** As the flywheel comes off, a small semicircular woodruff key should be visible on the crankshaft taper. Do not lose it — it aligns the flywheel timing. If the key is damaged (sheared), replace it before reassembly.
+</Callout>
+
+### 4 — Remove the Old Stator
+
+1. The stator is secured to the left engine casing by 2–3 bolts (Phillips or 8 mm hex).
+2. Trace the stator wiring loom through the engine casing grommet. Disconnect the main stator connector and the pickup coil connector from the main wiring harness.
+3. Unroute the wiring and remove the stator.
+
+### 5 — Install the New Stator
+
+1. Position the new stator in the casing, aligning the mounting holes.
+2. Route the wiring loom back through the casing grommet. Ensure the grommet seals properly to prevent oil leaks.
+3. Apply a small drop of medium-strength threadlock to the stator bolts and torque to approximately **8–10 Nm**. Do not overtighten — the casing is aluminium.
+4. Reconnect the stator and pickup coil connectors to the main harness.
+
+<Callout type="tip">
+**Wire routing matters:** Before refitting the flywheel, check that no wires are routed anywhere near the flywheel path. Any wire that contacts the spinning flywheel will be severed within minutes of riding. Tuck all wiring clear of the flywheel sweep area.
+</Callout>
+
+### 6 — Refit the Flywheel
+
+1. Clean the crankshaft taper and the inside of the flywheel boss with a clean rag — no oil or grease on these surfaces.
+2. Reinstall the woodruff key into its groove on the crankshaft.
+3. Align the flywheel keyway with the woodruff key and slide the flywheel onto the taper. The flywheel magnets will pull it snugly into position.
+4. Refit the flywheel nut and torque to **30–40 Nm** (or the specification in your service manual). Under-torquing allows the flywheel to work loose; over-torquing can damage the crankshaft thread.
+5. Refit the cooling fan in the correct orientation, then reinstall the cooling shroud.
+
+### 7 — Post-Install Test
+
+1. Reconnect the battery negative terminal.
+2. Start the engine and perform the charging voltage test described above.
+3. At ~4,000 rpm the voltage should read 13.5–14.5 V DC at the battery. If it does not, suspect the regulator/rectifier before concluding the new stator is faulty.
+
+## Stator Output Specifications (typical GY6)
+
+<table><tbody>
+<tr><th>Parameter</th><th>Value</th></tr>
+<tr><td>Charging coil resistance (yellow leads, each pair)</td><td>0.4–0.8 Ω</td></tr>
+<tr><td>Pickup coil resistance</td><td>100–400 Ω</td></tr>
+<tr><td>AC output at 5,000 rpm (before rectifier)</td><td>40–80 V AC</td></tr>
+<tr><td>DC charging voltage at battery (at 4,000 rpm)</td><td>13.5–14.5 V</td></tr>
+<tr><td>Flywheel nut torque</td><td>30–40 Nm</td></tr>
+<tr><td>Stator bolt torque</td><td>8–10 Nm</td></tr>
+</tbody></table>
+
+<SourceBox sources={frontmatter.sources} />

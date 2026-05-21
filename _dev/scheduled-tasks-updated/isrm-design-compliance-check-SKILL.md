@@ -42,7 +42,7 @@ Only write to files within `src/` and the compliance report Markdown. Do not wri
 ## CONTEXT
 
 The ISMR design system is documented at:
-`/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISRM/documentation/design-system/`
+`/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISRM/_dev/documentation/design-system/`
 
 Key files:
 - `ISMR_StyleGuide.docx` — Design specifications
@@ -359,7 +359,7 @@ Correct relative import paths to `../../../components/[Component].astro`.
 ## REPORT DELIVERY
 
 Save compliance report as:
-`/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISRM/documentation/design-system/WEEKLY_COMPLIANCE_REPORT_[DATE].md`
+`/Users/Dzianis_Paulavets/Documents/Claude/Projects/interactive scooter repair manuals - ISRM/_dev/documentation/design-system/WEEKLY_COMPLIANCE_REPORT_[DATE].md`
 
 Print the executive summary to console: compliance % before and after fixes, files modified, any issues requiring manual review.
 
