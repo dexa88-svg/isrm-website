@@ -2,7 +2,7 @@
 title: "GY6 Stator Replacement Guide"
 description: "Step-by-step GY6 stator removal and installation. Covers flywheel puller use, coil wiring, magneto reassembly, and post-install charging system tests for 139QMB and 157QMJ."
 publishDate: "2026-05-21"
-updatedDate: "2026-05-21"
+updatedDate: "2026-05-21" # corrected right-side magneto location, added magneto cover removal step
 difficulty: "Intermediate"
 timeEstimate: "~1.5 hours"
 tags: ["gy6", "stator", "electrical", "alternator", "charging"]
@@ -38,7 +38,7 @@ import VideoEmbed from '@components/VideoEmbed.astro';
 import Callout from '@components/Callout.astro';
 import SourceBox from '@components/SourceBox.astro';
 
-The stator is the fixed generating coil assembly inside the magneto (flywheel magneto alternator) on the left side of the GY6 engine. As the flywheel's permanent magnets spin around it, the stator produces AC power which is then rectified to DC by the regulator/rectifier to charge the battery and power the electrical system. A failed stator typically causes a flat battery that will not hold charge, dim or dead lighting, or — if the CDI pickup coil is also on the stator — total ignition failure.
+The stator is the fixed generating coil assembly inside the magneto (flywheel magneto alternator) on the **right side** of the GY6 engine (the non-drive side — the left side houses the CVT/variator). As the flywheel's permanent magnets spin around it, the stator produces AC power which is then rectified to DC by the regulator/rectifier to charge the battery and power the electrical system. A failed stator typically causes a flat battery that will not hold charge, dim or dead lighting, or — if the CDI pickup coil is also on the stator — total ignition failure.
 
 <VideoEmbed videoId="2Wfi9pSoHbA" title="GY6 Stator and Rectifier Replacement" creator="YouTube" />
 
@@ -83,18 +83,24 @@ Confirm before ordering a puller. Replacement stators are available in 5-coil (A
 2. Remove the seat and access panels to reach the left side of the engine.
 3. Disconnect the **negative (−) terminal** of the battery first. This prevents accidental shorts through the electrical system while working.
 
-### 2 — Remove the Left Engine Cover
+### 2 — Remove the Right-Side Cooling Shroud and Fan
 
-1. Locate the black plastic cooling fan shroud on the left side of the engine.
-2. Remove the shroud bolts (usually 4–5 mm hex or 8 mm head bolts).
+1. Locate the black plastic cooling fan shroud on the **right side** of the engine.
+2. Remove the shroud bolts (typically four 6 mm hex-head bolts, 8 mm spanner).
 3. Lift the shroud away to expose the white plastic cooling fan and the flywheel behind it.
 4. Remove the cooling fan: four 8 mm bolts secure it to the flywheel face. Note the fan orientation (it is directional).
+
+### 2b — Remove the Magneto Cover
+
+1. With the fan removed, the cast alloy magneto cover is now accessible. Remove its bolts (typically five or six 8 mm hex-head bolts around the perimeter).
+2. Carefully pry the cover free — it may be sealed with a gasket or RTV sealant. Note the condition of the gasket; replace it if torn or compressed.
+3. The flywheel is now fully exposed inside the engine casing.
 
 ### 3 — Remove the Flywheel
 
 1. Prevent the flywheel from rotating: use a flywheel holding tool, or place the transmission in gear and apply the rear brake firmly.
 2. Loosen and remove the large central flywheel nut (19 mm). Note the thread direction — on GY6 engines this is a **standard right-hand thread** (counter-clockwise to loosen).
-3. Thread the flywheel puller clockwise into the central boss of the flywheel until fully engaged (at least 5–6 full turns).
+3. Thread the flywheel puller into the central boss of the flywheel until fully engaged (at least 5–6 full turns). **Check your puller's thread direction** — most GY6 pullers are right-hand thread (turn clockwise to engage), but some 50cc variants use a left-hand thread boss; confirm before forcing.
 4. Hold the puller body still and turn the central bolt clockwise. As the puller pushes against the crankshaft end, the flywheel will pop free with a sharp crack — this is normal.
 5. Carefully slide the flywheel off the tapered crankshaft.
 
@@ -104,7 +110,7 @@ Confirm before ordering a puller. Replacement stators are available in 5-coil (A
 
 ### 4 — Remove the Old Stator
 
-1. The stator is secured to the left engine casing by 2–3 bolts (Phillips or 8 mm hex).
+1. The stator is secured to the right engine casing (inside the magneto cover) by 2–3 bolts (Phillips or 8 mm hex).
 2. Trace the stator wiring loom through the engine casing grommet. Disconnect the main stator connector and the pickup coil connector from the main wiring harness.
 3. Unroute the wiring and remove the stator.
 
@@ -125,7 +131,8 @@ Confirm before ordering a puller. Replacement stators are available in 5-coil (A
 2. Reinstall the woodruff key into its groove on the crankshaft.
 3. Align the flywheel keyway with the woodruff key and slide the flywheel onto the taper. The flywheel magnets will pull it snugly into position.
 4. Refit the flywheel nut and torque to **30–40 Nm** (or the specification in your service manual). Under-torquing allows the flywheel to work loose; over-torquing can damage the crankshaft thread.
-5. Refit the cooling fan in the correct orientation, then reinstall the cooling shroud.
+5. Refit the magneto cover with a new gasket (or fresh RTV sealant if no gasket was used). Torque the cover bolts evenly in a cross pattern to approximately **8–10 Nm**.
+6. Refit the cooling fan in the correct orientation, then reinstall the cooling shroud.
 
 ### 7 — Post-Install Test
 
