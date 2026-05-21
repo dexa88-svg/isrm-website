@@ -1364,9 +1364,11 @@ a { text-decoration: none; color: inherit; }
   background: #f59e0b;
   box-shadow: 0 0 6px 1px rgba(245, 158, 11, 0.6);
 }
-.flash-long  { width: 28px; }
-.flash-short { width: 12px; }
-.flash-gap   { width: 10px; background: transparent !important; box-shadow: none !important; }
+.flash-long       { width: 28px; }
+.flash-short      { width: 12px; }
+.flash-gap        { width: 10px;  background: transparent !important; box-shadow: none !important; }
+.flash-long-pause { width: 28px;  background: transparent !important; box-shadow: none !important; }
+.flash-loop-pause { width: 52px;  background: transparent !important; box-shadow: none !important; border-left: 2px dashed rgba(245,158,11,0.35); margin-left: 4px; }
 
 /* Responsive guide */
 @media (max-width: 768px) {

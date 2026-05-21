@@ -2,7 +2,7 @@
 title: "GY6 EFI CEL Flash Codes — Manual Diagnostic Mode"
 description: "GY6 EFI check engine light flash code reader. Decode CEL blink patterns for fuel injection fault codes on Chinese 125/150cc EFI scooters — Rongmao and Delphi…"
 publishDate: "2026-05-19"
-updatedDate: "2026-05-19"
+updatedDate: "2026-05-21"
 difficulty: "Beginner"
 timeEstimate: "~30 min"
 tags:
@@ -12,7 +12,11 @@ tags:
   - "Diagnostics"
   - "Piaggio"
 appliesTo: []
-videos: []
+videos:
+  - id: "_Jkr_L9xxg8"
+    title: "How to Activate CEL Diagnostic Mode on GY6 EFI Scooters"
+    creator: ""
+    position: "hero"
 sources: []
 canonical: "https://ismr.online/diagnostics/gy6-efi-cel-flash-codes.html"
 draft: false
@@ -67,17 +71,118 @@ Some Chinese EFI scooters have a **diagnostic wire** — a short pigtail under t
 4.  The CEL will flash the stored codes.
 5.  Disconnect the wire from ground when done.
 
+<VideoEmbed videoId="_Jkr_L9xxg8" title="How to Activate CEL Diagnostic Mode on GY6 EFI Scooters" />
+
 ## How to Read the Flash Codes
 
-Flash codes are expressed as two groups of pulses separated by a short pause. The **first group** (longer flashes) indicates the **tens digit**; the **second group** (shorter flashes) indicates the **units digit**. A longer pause separates one code from the next. If multiple codes are stored, the ECU cycles through all of them repeatedly.
+GY6 EFI ECUs use one of two flash code patterns depending on the ECU generation. Identify which pattern your scooter uses before trying to decode any codes.
+
+---
+
+### Pattern 1 — Long + Short Flashes (KEIHIN PGM-FI clones, older Chinese ECUs)
+
+Codes are expressed as **two groups of pulses** separated by a brief pause. The **first group uses longer flashes** to encode the tens digit; the **second group uses shorter flashes** for the units digit. A longer pause separates one code from the next, and the ECU loops through all stored codes continuously.
 
 <Callout type="tip">
-  **Reading tip:** Count the number of long flashes first, then count the short flashes after the brief pause. Write each pair down — for example, 1 long + 2 short = Code **12**.
+  **Reading tip:** Count the long flashes first, then the short flashes after the pause. Write the pair as a two-digit number — for example, 1 long + 2 short = Code **12**.
 </Callout>
 
-### Flash Pattern Examples
+<table>
+  <tbody>
+    <tr><th>What you see (CEL)</th><th>How to read it</th><th>Code</th></tr>
+    <tr>
+      <td><div class="flash-demo"><span class="flash-long"></span><span class="flash-gap"></span><span class="flash-short"></span><span class="flash-short"></span></div></td>
+      <td>1 long flash · pause · 2 short flashes</td>
+      <td><strong>12</strong></td>
+    </tr>
+    <tr>
+      <td><div class="flash-demo"><span class="flash-long"></span><span class="flash-long"></span><span class="flash-gap"></span><span class="flash-short"></span></div></td>
+      <td>2 long flashes · pause · 1 short flash</td>
+      <td><strong>21</strong></td>
+    </tr>
+    <tr>
+      <td><div class="flash-demo"><span class="flash-long"></span><span class="flash-long"></span><span class="flash-long"></span><span class="flash-gap"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span></div></td>
+      <td>3 long flashes · pause · 3 short flashes</td>
+      <td><strong>33</strong></td>
+    </tr>
+    <tr>
+      <td>
+        <div class="flash-demo">
+          <span class="flash-long"></span><span class="flash-gap"></span><span class="flash-short"></span><span class="flash-short"></span>
+          <span class="flash-long-pause"></span>
+          <span class="flash-long"></span><span class="flash-long"></span><span class="flash-gap"></span><span class="flash-short"></span>
+          <span class="flash-loop-pause"></span>
+          <span class="flash-long"></span><span class="flash-gap"></span><span class="flash-short"></span><span class="flash-short"></span>
+        </div>
+      </td>
+      <td>Two codes stored: Code 12, then Code 21 — then loop restarts</td>
+      <td><strong>12 + 21</strong></td>
+    </tr>
+  </tbody>
+</table>
 
-<table><tbody><tr><th>What you see (CEL)</th><th>How to read it</th><th>Code</th></tr><tr><td><div class="flash-demo"><span class="flash-long"></span><span class="flash-gap"></span><span class="flash-short"></span><span class="flash-short"></span></div></td><td>1 long flash, pause, 2 short flashes</td><td><strong>12</strong></td></tr><tr><td><div class="flash-demo"><span class="flash-long"></span><span class="flash-long"></span><span class="flash-gap"></span><span class="flash-short"></span></div></td><td>2 long flashes, pause, 1 short flash</td><td><strong>21</strong></td></tr><tr><td><div class="flash-demo"><span class="flash-long"></span><span class="flash-long"></span><span class="flash-long"></span><span class="flash-gap"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span></div></td><td>3 long flashes, pause, 3 short flashes</td><td><strong>33</strong></td></tr></tbody></table>
+---
+
+### Pattern 2 — All Short Flashes, Tens as 10 Pulses (some Chinese / Taiwanese EFI ECUs)
+
+Some ECU variants use **only short flashes of equal length** — there are no long flashes at all. The tens digit is encoded by counting out exactly **10 individual short pulses**, followed by a **short pause (~1 s)**. The units digit then follows as additional short pulses, then a **longer pause (~2 s)** before the next code. If multiple codes are stored, they play back-to-back; when the full sequence ends, the ECU waits with a **triple-length pause (~4–5 s)** before looping.
+
+**Examples:**
+
+- Code **13** → 10 short flashes · short pause (~1 s) · 3 short flashes · longer pause (~2 s) · loop
+- Code **08** → 8 short flashes · longer pause (~2 s) · loop *(single-digit codes: no tens group, just the units count)*
+- Codes **13 + 08** in sequence → 10 flashes · short pause · 3 flashes · longer pause · 8 flashes · triple-long pause (~4 s) · repeat
+
+<Callout type="tip">
+  **Reading tip:** Count every flash group carefully. If a group has exactly 10 pulses followed by a short gap, those 10 are the tens digit — wait for the units group after the pause. If a group has fewer than 10 pulses and is followed by a longer pause, that group is the entire code (a single-digit code, e.g. 8 flashes = Code 08).
+</Callout>
+
+<table>
+  <tbody>
+    <tr><th>What you see (CEL)</th><th>How to read it</th><th>Code</th></tr>
+    <tr>
+      <td>
+        <div class="flash-demo">
+          <span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span>
+        </div>
+      </td>
+      <td>8 short flashes · longer pause (~2 s) · loop</td>
+      <td><strong>08</strong></td>
+    </tr>
+    <tr>
+      <td>
+        <div class="flash-demo">
+          <span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span>
+          <span class="flash-gap"></span>
+          <span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span>
+        </div>
+      </td>
+      <td>10 short flashes · short pause (~1 s) · 3 short flashes · longer pause (~2 s) · loop</td>
+      <td><strong>13</strong></td>
+    </tr>
+    <tr>
+      <td>
+        <div style="font-size:0.72em;color:var(--text-secondary);margin-bottom:2px;">Code 13:</div>
+        <div class="flash-demo">
+          <span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span>
+          <span class="flash-gap"></span>
+          <span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span>
+        </div>
+        <div style="font-size:0.72em;color:var(--text-secondary);margin:4px 0 2px;">Code 08:</div>
+        <div class="flash-demo">
+          <span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span><span class="flash-short"></span>
+        </div>
+        <div style="font-size:0.72em;color:var(--text-secondary);margin-top:4px;">↩ triple-long pause → repeats from Code 13</div>
+      </td>
+      <td>Code 13: 10 flashes · short pause (~1 s) · 3 flashes · longer pause (~2 s)<br/>Code 08: 8 flashes · longer pause (~2 s)<br/>Then triple-long pause (~4–5 s) before loop restarts</td>
+      <td><strong>13 + 08</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<Callout type="warn">
+  **Which pattern does my scooter use?** Watch the first flash group carefully. If you see two clearly different flash lengths (some obviously longer than others), you have Pattern 1. If every flash looks identical in length and only the gaps between groups differ, you have Pattern 2. When counting Pattern 2, a group of exactly 10 identical flashes is always the tens digit — stop counting and wait for the short pause, then count the next group for the units digit.
+</Callout>
 
 ## GY6 EFI Flash Code Reference Table
 
