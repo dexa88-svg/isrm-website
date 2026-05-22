@@ -1,0 +1,307 @@
+---
+title: "GY6 EFI Stalls at Idle — TPS & IAC Fix"
+description: "EFI scooter stalls at red lights or when stopping? Learn how a misaligned TPS prevents IAC activation, causing a rich stall — and how to fix it in minutes."
+publishDate: "2026-05-22"
+updatedDate: "2026-05-22"
+difficulty: "Beginner"
+timeEstimate: "~20 min"
+tags: ["gy6", "efi", "tps", "iac", "idle", "stalling", "fuel-injection", "diagnostics"]
+appliesTo:
+  - "GY6 139QMB Euro 4/5 EFI (50cc)"
+  - "GY6 157QMJ EFI (150cc)"
+  - "BTC Riva EFI"
+  - "La Souris Sourini / City EFI"
+  - "Santini Capri EFI"
+  - "AGM VX50 EFI"
+videos:
+  - id: "Wl9sqXGmijc"
+    title: "GY6 EFI Scooter Stalls at Idle — TPS and IAC Fix"
+    creator: "ISRM Community"
+    position: "hero"
+tools:
+  - "Phillips screwdriver"
+  - "Small flat-head screwdriver (for throttle cable adjuster)"
+  - "Multimeter (optional — for TPS voltage verification)"
+sources:
+  - name: "ScootDawg Forum — EFI Idle and TPS Issues"
+    url: "https://scootdawg.proboards.com/thread/51358/throttle-position-sensor"
+  - name: "49ccScoot Forum — GY6 TPS and Idle Stalling"
+    url: "https://49ccscoot.proboards.com/thread/29582/gy6-tps-oxygen-sensor"
+  - name: "Motorroller.de — Euro 4 Scooter EFI Diagnostics"
+    url: "https://www.motorroller.de/en/fehlercodes-blinkcodes-4t50e4/"
+canonical: "https://ismr.online/diagnostics/gy6-efi-stalling-at-idle-tps-iac.html"
+draft: false
+category: "fuel"
+engine: "gy6"
+fuel: "efi"
+section: "Fuel Injection (EFI)"
+cardTag: "IAC/TPS"
+---
+
+import VideoEmbed from '@components/VideoEmbed.astro';
+import Callout from '@components/Callout.astro';
+import SourceBox from '@components/SourceBox.astro';
+
+Your EFI scooter runs fine at speed but dies the moment you come to a stop at a red light — unless you blip the throttle to keep it alive. This is one of the most common and easily fixed EFI idle faults on GY6 50cc and 150cc scooters. The root cause is almost always a Throttle Position Sensor (TPS) that is not fully registering "closed throttle," which prevents the ECU from activating the Idle Air Control (IAC) valve — the component responsible for maintaining idle speed.
+
+## Applies To
+
+- GY6 139QMB Euro 4/5 EFI (50cc) — BTC Riva, La Souris Sourini/City, Santini Capri, AGM VX50
+- GY6 157QMJ EFI (150cc) variants with Delphi MT05 or Motion ECU
+
+<SourceBox sources={frontmatter.sources} />
+
+---
+
+<Callout type="danger">
+  ⚠️ **Safety first:** Work on a cold or fully cooled engine only. Keep naked flames and smoking materials away from the fuel system at all times. Do not run the engine in an enclosed space.
+</Callout>
+
+## Video Guide
+
+<VideoEmbed
+  videoId="Wl9sqXGmijc"
+  title="GY6 EFI Scooter Stalls at Idle — TPS and IAC Fix"
+  creator="ISRM Community"
+  position="hero"
+/>
+
+---
+
+## Background: Why the ECU Needs to Know Throttle Is Fully Closed
+
+On a carbureted scooter, idle is maintained mechanically by the pilot jet and the idle air/fuel screw. On an EFI scooter, that job belongs to the **Idle Air Control (IAC) valve** — a motorised valve that the ECU opens slightly to let in extra air and keep the engine running at a stable idle speed when the throttle is fully closed.
+
+The ECU decides to engage the IAC based on the signal from the **Throttle Position Sensor (TPS)**. When the TPS output voltage drops to its fully-closed threshold (typically around 0.50–0.55 V on Delphi MT05 systems), the ECU recognises idle condition and activates IAC control.
+
+The problem arises when the **throttle cable has too much tension** — or the TPS is slightly rotated out of its optimal position — so that even with the throttle grip fully released, the throttle butterfly inside the body is not 100% closed. The TPS voltage stays slightly above the closed-throttle threshold. The ECU interprets this as "partial throttle open" and therefore:
+
+1. Does **not** activate the IAC valve
+2. Does **not** apply idle enrichment
+3. Applies a slightly **lean** fuelling map (as if you are gently rolling on)
+
+The result: at a stop, with the butterfly valve essentially closed but the ECU unaware of it, air supply collapses and the mixture goes rich — the engine stumbles and stalls. Giving it a small blip of throttle temporarily restores airflow and keeps it running, which is the tell-tale symptom.
+
+---
+
+## Symptoms
+
+- Engine stalls when coming to a complete stop (traffic lights, junctions)
+- Keeping a small amount of throttle prevents the stall
+- Idle is unstable or hunts (surges up and down) when warm
+- No fault codes stored — the TPS voltage is in range, just slightly off the closed-throttle threshold
+- Scooter runs normally at all other throttle positions
+
+<Callout type="tip">
+  💡 **No CEL?** This fault usually does not trigger a Check Engine Light because the TPS voltage is technically within the valid operating range — it is just not low enough to signal "fully closed." That is why it is easy to overlook.
+</Callout>
+
+---
+
+## Fix 1 — Relax the Throttle Cable
+
+The quickest fix is to reduce cable tension so the throttle butterfly can fully close.
+
+### Step 1 — Locate the throttle cable adjuster
+
+1. At the handlebar, pull back the rubber boot on the throttle housing to expose the cable adjuster (a barrel nut threaded into the housing).
+2. Loosen the lock nut (turn anti-clockwise) if present.
+
+### Step 2 — Add cable slack
+
+1. Turn the barrel adjuster **clockwise** (thread it inward) to add slack to the cable — typically 1–2 full turns.
+2. Check that the throttle grip returns fully and snaps back freely when released. There should be 2–3 mm of free play at the grip before the throttle begins to open.
+3. Re-tighten the lock nut.
+
+<Callout type="warn">
+  ⚠️ **Do not add excessive slack.** The throttle must still open fully at wide open throttle (WOT). Check that the grip twists all the way to its stop and that the throttle snaps back crisply. A sluggish return is a safety risk.
+</Callout>
+
+### Step 3 — Test ride
+
+Start the engine, warm it up for 2–3 minutes, then test at idle with the scooter stationary. If the stall is gone, you are done. If the idle is still unstable, proceed to Fix 2.
+
+---
+
+## Fix 2 — Rotate the TPS Body
+
+If relaxing the cable alone does not resolve the stall, the TPS itself may be sitting slightly off its optimal closed-throttle position. Rotating it a small amount lowers the closed-throttle voltage to the point where the ECU correctly engages the IAC.
+
+<Callout type="tip">
+  💡 This procedure does not require any special tools. You are physically rotating the TPS housing — the same adjustment described in the TPS replacement guide — without removing the sensor.
+</Callout>
+
+### Step 1 — Locate the TPS on the throttle body
+
+The TPS is the small sensor clipped onto the side of the throttle body, connected by a 3-wire plug. It sits on the end of the throttle shaft — the same shaft the butterfly valve and the throttle cable drum are connected to.
+
+### Step 2 — Loosen the TPS mounting screws
+
+1. Using a Phillips screwdriver, loosen (do not remove) the two screws that hold the TPS body to the throttle body. Turn each screw anti-clockwise by about half a turn — just enough to allow the TPS to rotate.
+
+### Step 3 — Rotate the TPS and test
+
+1. With the ignition ON and the engine off (or running at idle), grasp the TPS body and rotate it slowly toward the **closed throttle direction** — this is usually a small rotation in the direction that lowers the signal voltage.
+2. Rotate by the smallest amount you can feel — typically 1–2 mm of arc at the outer edge of the sensor housing.
+3. Restart the engine and check whether idle is stable and the stall at stop is gone.
+4. If not, rotate a fraction further and retest. Do this iteratively in small steps.
+
+<Callout type="warn">
+  ⚠️ **Do not over-rotate.** If you rotate too far, the ECU will think the throttle is permanently in a sub-idle state and idle quality will worsen. The target is the smallest rotation that eliminates the stall.
+</Callout>
+
+### Step 4 — Lock the TPS in position
+
+Once the idle is stable and the scooter no longer stalls at a stop:
+
+1. Hold the TPS in position and tighten both mounting screws firmly — but do not over-torque them; the TPS housing is plastic.
+2. Perform a final check: open the throttle to wide open and release it. Confirm the engine returns to a stable idle immediately.
+
+---
+
+## Setting the TPS With a Multimeter (No Scanner Needed)
+
+A basic multimeter set to DC voltage is all you need to adjust the TPS precisely — no OBD2 scanner or laptop required. This gives you a definitive target to hit instead of adjusting by feel.
+
+### Step 1 — Identify the three TPS pins
+
+The TPS connector has three wires. On virtually all GY6 EFI throttle bodies (Delphi MT05 and Motion ECU systems) the pin functions are:
+
+<table><tbody>
+<tr><th>Wire colour</th><th>Function</th><th>What to connect your meter to</th></tr>
+<tr><td>Green or white</td><td>5 V reference from ECU</td><td>Do not probe this for the adjustment</td></tr>
+<tr><td>Black</td><td>Ground (0 V)</td><td>Negative (COM) probe — black lead</td></tr>
+<tr><td>Yellow, orange, or blue</td><td>Signal output to ECU</td><td>Positive probe — red lead</td></tr>
+</tbody></table>
+
+<Callout type="tip">
+  💡 **Not sure which wire is which?** With the ignition ON, probe between any wire and a known chassis ground. The wire that reads a steady 4.8–5.2 V is the reference; the wire that reads 0 V is ground; the remaining wire is the signal.
+</Callout>
+
+### Step 2 — Back-probe the connector
+
+Do **not** unplug the TPS connector — the ECU must be powered and the circuit must be complete for the reading to be valid.
+
+Instead, insert the multimeter probes from the **rear** of the connector alongside the existing wires (back-probing). A sewing pin or thin paperclip pushed gently into the back of the connector socket works if your probes are too thick to reach the terminals directly.
+
+1. Set your multimeter to **DC Voltage**, range **0–20 V** (or auto-range).
+2. Connect the black (COM) lead to the **black ground wire** terminal.
+3. Connect the red lead to the **signal wire** terminal (yellow/orange/blue).
+4. Turn the ignition ON. The meter should display a reading immediately.
+
+### Step 3 — Read the closed-throttle voltage
+
+With the throttle grip fully released (no tension at all on the cable):
+
+- **Target:** 0.48–0.55 V
+- If you read **above 0.55 V**: the TPS is registering slightly open — this is the cause of your stall. Proceed to Step 4.
+- If you already read 0.48–0.55 V but the scooter still stalls, the issue may be the IAC valve rather than TPS calibration — see the FAQ below.
+
+### Step 4 — Adjust while watching the meter
+
+With the TPS mounting screws loosened half a turn (as described in Fix 2 above):
+
+1. With the ignition ON and the multimeter connected, watch the live voltage reading on the display.
+2. **Slowly rotate the TPS body** in small increments — the direction that causes the displayed voltage to drop toward the target range.
+3. Stop when the reading stabilises between **0.50 and 0.55 V** with the throttle fully released.
+4. Hold the TPS firmly in position and tighten the mounting screws without letting it move.
+
+### Step 5 — Verify the full sweep
+
+Once locked in position, perform the full sweep check:
+
+1. Throttle fully closed → reading should be **0.50–0.55 V**
+2. Slowly open to half throttle → voltage should rise smoothly and continuously to approximately **2.0–2.5 V**
+3. Wide open throttle (WOT) → reading should reach approximately **4.3–4.8 V**
+4. Release → voltage should return cleanly to **0.50–0.55 V** with no hesitation or jump
+
+<Callout type="warn">
+  ⚠️ **Any flat spot, sudden jump, or drop-out during the sweep** (where the voltage sticks at one value then skips) indicates a worn TPS sliding contact. In that case the sensor needs replacement — see the [GY6 EFI TPS Sensor Diagnosis guide](/diagnostics/gy6-efi-tps-sensor-diagnosis.html).
+</Callout>
+
+A smooth sweep from 0.5 V to 4.5 V and back is your confirmation that the TPS is both correctly set and in good health.
+
+---
+
+## Troubleshooting
+
+<table><tbody>
+<tr><th>Symptom after fix</th><th>Likely cause</th><th>Action</th></tr>
+<tr><td>Still stalls at stop</td><td>TPS not rotated far enough, or IAC valve faulty</td><td>Rotate TPS a fraction further; if still no improvement, check IAC valve operation and wiring</td></tr>
+<tr><td>Idle too high after fix</td><td>TPS rotated too far or cable over-slackened</td><td>Return TPS to previous position; re-adjust cable to restore correct free play</td></tr>
+<tr><td>Throttle stiff or slow to return</td><td>Cable slack excessive or cable kinked</td><td>Reduce slack at adjuster; inspect cable routing for tight bends</td></tr>
+<tr><td>CEL lit after adjustment</td><td>TPS voltage outside valid range (too low)</td><td>Rotate TPS back slightly; target 0.50–0.55 V at closed throttle</td></tr>
+</tbody></table>
+
+---
+
+## Frequently Asked Questions
+
+<details style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:0;margin-bottom:0.5rem;">
+  <summary style="cursor:pointer;padding:0.9rem 1.1rem;font-weight:600;color:var(--text-primary);list-style:none;display:flex;justify-content:space-between;align-items:center;">
+    Could this be an IAC valve fault rather than a TPS issue?
+    <span aria-hidden="true" style="font-size:1.1rem;color:var(--accent);">＋</span>
+  </summary>
+  <div style="padding:0 1.1rem 0.9rem;color:var(--text-secondary);border-top:1px solid var(--border);">
+    It is possible, but TPS calibration is the far more common cause and should always be checked first because it costs nothing to fix. A failed IAC valve usually causes a much more severe idle problem — the engine will barely idle at all, even when warm and in motion. If relaxing the cable and rotating the TPS does not help, test the IAC valve resistance (typically 20–30 Ω across its terminals) and confirm it is receiving a PWM signal from the ECU.
+  </div>
+</details>
+
+<details style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:0;margin-bottom:0.5rem;">
+  <summary style="cursor:pointer;padding:0.9rem 1.1rem;font-weight:600;color:var(--text-primary);list-style:none;display:flex;justify-content:space-between;align-items:center;">
+    Will this fault ever throw a fault code?
+    <span aria-hidden="true" style="font-size:1.1rem;color:var(--accent);">＋</span>
+  </summary>
+  <div style="padding:0 1.1rem 0.9rem;color:var(--text-secondary);border-top:1px solid var(--border);">
+    Rarely. Because the TPS voltage is within its valid operating range (just slightly above the closed-throttle threshold rather than completely out of range), most ECUs will not store a DTC. If a P0121 or similar code is present, follow the <a href="/diagnostics/gy6-efi-tps-sensor-diagnosis.html">GY6 EFI TPS Sensor Diagnosis guide</a> to rule out a defective sensor first.
+  </div>
+</details>
+
+<details style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:0;margin-bottom:0.5rem;">
+  <summary style="cursor:pointer;padding:0.9rem 1.1rem;font-weight:600;color:var(--text-primary);list-style:none;display:flex;justify-content:space-between;align-items:center;">
+    Does this apply to carbureted GY6 models?
+    <span aria-hidden="true" style="font-size:1.1rem;color:var(--accent);">＋</span>
+  </summary>
+  <div style="padding:0 1.1rem 0.9rem;color:var(--text-secondary);border-top:1px solid var(--border);">
+    No. Carbureted engines do not have a TPS or IAC valve. If a carbureted scooter stalls at idle, the cause is almost always a blocked pilot jet or incorrect idle mixture screw setting — see the <a href="/diagnostics/gy6-carburetor-pilot-idle-jet.html">GY6 Carburetor Pilot Jet guide</a>.
+  </div>
+</details>
+
+<details style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:0;margin-bottom:0.5rem;">
+  <summary style="cursor:pointer;padding:0.9rem 1.1rem;font-weight:600;color:var(--text-primary);list-style:none;display:flex;justify-content:space-between;align-items:center;">
+    My scooter has been fine for years — why has this only started happening?
+    <span aria-hidden="true" style="font-size:1.1rem;color:var(--accent);">＋</span>
+  </summary>
+  <div style="padding:0 1.1rem 0.9rem;color:var(--text-secondary);border-top:1px solid var(--border);">
+    Throttle cables stretch slightly over time, and the plastic TPS housing can shift very gradually from vibration. A small amount of cable stretch alone is often enough to push the closed-throttle TPS voltage just above the IAC activation threshold after many thousands of kilometres.
+  </div>
+</details>
+
+<details style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:0;margin-bottom:0.5rem;">
+  <summary style="cursor:pointer;padding:0.9rem 1.1rem;font-weight:600;color:var(--text-primary);list-style:none;display:flex;justify-content:space-between;align-items:center;">
+    Do I need an expensive multimeter for the voltage check?
+    <span aria-hidden="true" style="font-size:1.1rem;color:var(--accent);">＋</span>
+  </summary>
+  <div style="padding:0 1.1rem 0.9rem;color:var(--text-secondary);border-top:1px solid var(--border);">
+    No. Any basic digital multimeter with a DC Voltage setting will work — even a €10 unit from a hardware store. You are measuring a stable DC signal between 0.5 V and 4.5 V, which is well within the range of the cheapest meters. An auto-ranging meter is slightly more convenient but not required.
+  </div>
+</details>
+
+<details style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:0;margin-bottom:0.5rem;">
+  <summary style="cursor:pointer;padding:0.9rem 1.1rem;font-weight:600;color:var(--text-primary);list-style:none;display:flex;justify-content:space-between;align-items:center;">
+    What if I cannot reach 0.5 V no matter how far I rotate the TPS?
+    <span aria-hidden="true" style="font-size:1.1rem;color:var(--accent);">＋</span>
+  </summary>
+  <div style="padding:0 1.1rem 0.9rem;color:var(--text-secondary);border-top:1px solid var(--border);">
+    If you have already relaxed the throttle cable fully and rotated the TPS to its mechanical limit in the correct direction but the voltage still reads above 0.55 V at closed throttle, the throttle body butterfly is likely not seating fully closed due to carbon build-up on the butterfly valve edges or a stuck/binding throttle shaft. Clean the throttle body bore and butterfly plate with throttle body cleaner, then repeat the adjustment.
+  </div>
+</details>
+
+---
+
+## Related Guides
+
+- [GY6 EFI TPS Sensor Diagnosis & Replacement](/diagnostics/gy6-efi-tps-sensor-diagnosis.html)
+- [GY6 EFI OBD-2 DTC Fault Codes](/diagnostics/gy6-efi-obd2-dtc-fault-codes.html)
+- [GY6 Carburetor Pilot Jet Diagnostics](/diagnostics/gy6-carburetor-pilot-idle-jet.html)
+- [GY6 EFI Fuel Injection Troubleshooting](/diagnostics/gy6-efi-fuel-injection-troubleshooting.html)
