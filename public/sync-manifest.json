@@ -682,5 +682,17 @@
     ],
     "addedAt": "2026-05-20T12:33:09Z",
     "lastChecked": "2026-05-21T09:00:00Z"
+  },
+  {
+    "url": "/repair-guides/fuel-valve-pipe-connections.html",
+    "title": "Fuel Valve Pipe Connections — Carburettor Engine",
+    "category": "repair-guides",
+    "file": "src/content/repair-guides/fuel-valve-pipe-connections.mdx",
+    "sources": [
+      "GY6 Service Manual",
+      "Piaggio Zip 50 4T Workshop Manual"
+    ],
+    "addedAt": "2026-05-22T00:00:00Z",
+    "lastChecked": "2026-05-22T00:00:00Z"
   }
 ]

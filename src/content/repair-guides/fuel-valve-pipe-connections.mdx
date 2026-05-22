@@ -1,0 +1,220 @@
+---
+title: "Fuel Valve Pipe Connections — Carburettor Engine"
+description: "How to identify and correctly connect the two hoses on a vacuum-operated fuel valve (petcock): fuel hose to carburettor inlet, vacuum hose to intake manifold. GY6 & Piaggio."
+publishDate: 2026-05-22
+updatedDate: 2026-05-22
+difficulty: Beginner
+timeEstimate: "~15 min"
+tags: ["GY6", "Piaggio", "Vespa", "fuel valve", "petcock", "vacuum", "carburetor", "hoses", "fuel system"]
+appliesTo:
+  - "GY6 50cc (139QMB)"
+  - "GY6 125cc (152QMI)"
+  - "GY6 150cc (157QMJ)"
+  - "BTC Riva"
+  - "La Souris Sourini / City"
+  - "Santini Capri"
+  - "Piaggio Zip 50 4T"
+  - "Piaggio Zip 100 4T"
+  - "Vespa Primavera 50"
+  - "Vespa Sprint 50"
+videos:
+  - id: "kQReNSk64Nc"
+    title: "Vacuum petcock fuel valve hose connections on a scooter"
+    creator: "YouTube"
+    position: hero
+tools:
+  - "Small flat-blade screwdriver (for hose clamps, if fitted)"
+  - "Hose-clamp pliers or narrow-nose pliers"
+  - "Short length of spare hose (for the suck-test)"
+  - "Rag or paper towels"
+  - "Fuel-safe container (small cup or bowl)"
+sources:
+  - name: "GY6 Service Manual — Loncin / Jonway (community scan)"
+    url: "https://github.com/ismr-online/reference-docs"
+  - name: "Piaggio Zip 50 4T Official Workshop Manual"
+    url: "https://github.com/ismr-online/reference-docs"
+  - name: "ScrewsAndNuts Scooter Forum — Petcock Hose FAQ"
+    url: "https://www.screwsandnuts.co.uk"
+canonical: "https://ismr.online/repair-guides/fuel-valve-pipe-connections.html"
+draft: false
+---
+
+import VideoEmbed from '@components/VideoEmbed.astro';
+import Callout from '@components/Callout.astro';
+import SourceBox from '@components/SourceBox.astro';
+
+<SourceBox sources={[
+  { name: "GY6 Service Manual — Loncin / Jonway (community scan)", url: "https://github.com/ismr-online/reference-docs" },
+  { name: "Piaggio Zip 50 4T Official Workshop Manual", url: "https://github.com/ismr-online/reference-docs" },
+  { name: "ScrewsAndNuts Scooter Forum — Petcock Hose FAQ", url: "https://www.screwsandnuts.co.uk" }
+]} />
+
+The fuel valve (petcock) on carburettor-equipped scooters is **vacuum-operated** — it stays closed when the engine is off, and opens automatically when the engine runs. It has exactly two barbed hose fittings. Getting them mixed up means the engine gets no fuel, or creates a fuel leak. This guide explains how it works, how to identify which hose is which in under two minutes, and how to connect everything correctly.
+
+<VideoEmbed videoId="kQReNSk64Nc" title="Vacuum petcock fuel valve hose connections on a scooter" creator="YouTube" />
+
+---
+
+## How the Vacuum Petcock Works
+
+Inside the fuel valve is a rubber diaphragm. Atmospheric pressure holds it closed when there is no vacuum. As soon as the engine cranks, the piston creates a **negative pressure (vacuum)** on the intake stroke. This vacuum is piped from the intake manifold to the diaphragm, pulling it open and allowing fuel to flow.
+
+The result: fuel only flows when the engine is running (or cranking). If a fuel line cracks and falls off while the scooter is parked, the tank does not drain — a useful safety feature.
+
+**Two ports on the valve body:**
+
+| Port | Connects to | Position (typical) | Hose size |
+|------|-------------|-------------------|-----------|
+| **FUEL OUT** | Carburettor fuel inlet (bottom of float bowl / side nipple) | Upper barb (or marked with arrow) | ~6 mm ID |
+| **VACUUM** | Intake manifold vacuum nipple | Lower barb | ~4–5 mm ID |
+
+<Callout type="tip">
+On most GY6 valves the two barbs are **different diameters** — the fuel barb is slightly larger (~6 mm) and the vacuum barb is slightly smaller (~4 mm). If you have two different-sized hoses, that alone tells you which goes where before you do any test.
+</Callout>
+
+<Callout type="tip">
+On Piaggio Zip 50/100 4T the petcock is mounted on the left side of the tank and the ports are usually labelled with moulded arrows or the letters **F** (fuel) and **VAC** (vacuum). Check for markings before reaching for the hose.
+</Callout>
+
+---
+
+## Before You Start — Safety
+
+<Callout type="warn">
+Work in a well-ventilated area away from open flames or sparks. Fuel vapour is heavier than air and pools at floor level. Keep a rag handy to mop up any spills immediately.
+</Callout>
+
+<Callout type="warn">
+If you are reconnecting hoses after removing the tank, make sure the fuel tap is in the **OFF** position (if your valve has a manual override lever) before disconnecting anything.
+</Callout>
+
+---
+
+## Step 1 — Identify the Two Ports Without Any Tools
+
+Look at the fuel valve where it is mounted on the tank.
+
+**a. Check for markings first.** Many valves have moulded or stamped text: `FUEL`, `OUT`, `VAC`, `PRI`, or small arrows. If markings are present, you are done — skip to Step 3.
+
+**b. Check hose diameters.** If you have the original hoses still attached (or removed but labelled), compare their inner diameter. The fuel hose is typically 6 mm ID (slightly thicker wall). The vacuum hose is 4–5 mm ID (thinner). Different diameters → the valve body barbs are also different diameters, which makes it physically much harder to swap them accidentally.
+
+**c. Check port position.** As a general rule on GY6 and Piaggio:
+- **Top or rear barb** → fuel outlet
+- **Bottom or front barb** → vacuum inlet
+
+This is a guideline, not a guarantee — always confirm with the suck-test below if you are unsure.
+
+---
+
+## Step 2 — The "Suck Test" (Positive Identification in 60 Seconds)
+
+Use this test any time you are unsure which port is which, or when fitting a replacement valve with no markings.
+
+**What you need:** a short (~20 cm) scrap of hose that fits over each barb, a small container, and someone to hold the scooter (or a centre-stand).
+
+1. Make sure the tank has **a small amount of fuel** — at least 100–200 ml. Tilt the scooter slightly so fuel sits near the valve.
+2. Place your container on the floor under the valve.
+3. Fit the scrap hose over **one barb** (no fuel should flow by itself — the valve is closed with no vacuum).
+4. **Suck firmly on the scrap hose** with your mouth for 1–2 seconds, then release.
+
+**Interpret the result:**
+
+| What happens | What it means |
+|---|---|
+| Fuel flows out of the **other** barb (into your container) | The barb you sucked on is the **VACUUM port** — connect it to the intake manifold. The other barb is **FUEL OUT** — connect it to the carburettor. |
+| Nothing happens from the other barb | You sucked on the **FUEL OUT** port — swap your scrap hose to the other barb and repeat. |
+| Fuel comes into your mouth | You accidentally sucked on the FUEL OUT port with a non-vacuum-operated valve or a faulty diaphragm. Spit, rinse, check the valve. |
+
+<Callout type="tip">
+You are applying a small suction to mimic what the engine intake does. The valve diaphragm opens and fuel flows out the other port. As soon as you release suction, flow stops. If the flow does **not** stop when you release, the diaphragm is torn — replace the valve before riding.
+</Callout>
+
+
+---
+
+## Step 3 — Connect the Hoses
+
+### Fuel hose (FUEL OUT → carburettor)
+
+1. Route the **fuel hose** from the FUEL OUT barb on the valve down to the **carburettor fuel inlet** — the small barbed nipple on the side of the float bowl or on the bottom of the carb body. On GY6 carbs (PD18/PZ19/PD24/CVK) it is typically on the **left side** of the carb body, pointing downward at a slight angle.
+2. Push the hose firmly over the barb until it bottoms out — you should feel a definite stop.
+3. Fit a hose clamp (spring-type or screw-type) at least 5 mm back from the end of the barb. On GY6 50cc engines the fuel hose is often a push-fit without a clamp from the factory, but a small spring clamp is good practice, especially if the hose is old.
+
+### Vacuum hose (VACUUM → intake manifold)
+
+1. Route the **vacuum hose** from the VACUUM barb on the valve to the **small nipple on the intake manifold** (the rubber or aluminium tube between the carburettor and the cylinder head). On GY6 engines this nipple is usually on the **underside** of the manifold, pointing downward — it is smaller in diameter than the main carb inlet and sometimes has a blanking cap if it has never been used.
+2. On **Piaggio Zip / Vespa** engines the vacuum nipple is on the intake manifold near the carburettor flange, also on the underside.
+3. Push the hose fully onto the nipple. No clamp is needed on the vacuum side (low pressure), but a cable tie is fine if the hose feels loose.
+
+<Callout type="warn">
+Do **not** leave the intake manifold vacuum nipple open (uncapped) even temporarily — a vacuum leak here causes the engine to idle very fast or not idle at all, and can lean out the mixture enough to cause engine damage at speed.
+</Callout>
+
+---
+
+## Step 4 — Verify the Connections
+
+Before starting the engine, do a quick visual and function check:
+
+1. **Visually trace both hoses** — no kinks, no sharp bends, no contact with hot surfaces (exhaust pipe), no contact with moving parts (drive belt cover, variator).
+2. **Check hose ends are fully seated** on both barbs — you should not be able to pull them off with light finger pressure.
+3. **Start the engine.** Within a few seconds of cranking, fuel should be flowing through the system and the engine should start and idle normally.
+4. **After starting, inspect both hose connections** for drips or seeping fuel. Any wet spot at a hose join means the hose is not fully seated or the clamp is too loose.
+
+<Callout type="tip">
+If the engine cranks but does not start, turn the fuel tap to **PRI** (prime) if fitted — this bypasses the vacuum diaphragm and opens the valve mechanically. If fuel then flows and the engine starts, the diaphragm is intact but there may be an air leak in the vacuum hose circuit preventing the valve from opening on its own.
+</Callout>
+
+---
+
+## Common Mistakes
+
+**Swapping the two hoses** — the most common error. The vacuum barb connected to the carburettor will deliver no fuel (the carb fuel inlet expects liquid, not vacuum). The engine will crank but not start, or start briefly on residual fuel then die. Run the suck-test in Step 2 to confirm which is which.
+
+**Using a fuel hose for the vacuum line** — thick-walled fuel hose will fit the vacuum barb but collapses slightly under suction, restricting or blocking the vacuum signal. Always use a vacuum-rated hose (thinner wall, slightly stiffer) on the vacuum side.
+
+**Leaving the vacuum nipple on the intake manifold uncapped** — if you remove the vacuum hose for any reason and do not immediately reconnect it, cap the manifold nipple with a short bolt, a golf tee, or a purpose-made vacuum cap. Even a minute of running with an open vacuum port will cause a severe lean condition.
+
+**Hose routing too close to the exhaust** — fuel hose routed near the exhaust header will soften, crack, and eventually leak. Route hoses on the cold side of the engine and secure them with a cable tie to prevent vibration wear.
+
+---
+
+## GY6 — Specific Routing Reference
+
+```
+[Fuel Tank]
+    |
+[Fuel Valve / Petcock]
+    |                \
+ FUEL OUT           VACUUM
+    |                    \
+[Carb fuel inlet]     [Intake manifold vacuum nipple]
+(side of carb body)   (underside of manifold, near carb flange)
+```
+
+On the GY6 139QMB (50cc), the intake manifold vacuum nipple points **straight down** and is approximately 4 mm OD. The carburettor fuel inlet is a 6 mm OD barb on the left side of the PD18J/PD22J body.
+
+---
+
+## Piaggio Zip / Vespa — Specific Routing Reference
+
+```
+[Fuel Tank — left side of scooter]
+    |
+[Fuel Valve — mounted on tank underside or left frame rail]
+    |                \
+ FUEL OUT (upper)   VACUUM (lower)
+    |                    \
+[Carb fuel inlet]     [Intake manifold vacuum nipple]
+(left side of PHVA carb)   (underside of manifold stub)
+```
+
+On the Piaggio Zip 50 4T and Vespa Primavera 50, the carburettor is a **Dellorto PHVA 12** or **PHVA 17.5**. The fuel inlet is a single 6 mm barb on the left of the body. The vacuum nipple on the manifold is 4 mm and points downward — it may have a factory cap if the bike came without vacuum-operated accessories.
+
+---
+
+## Related Guides
+
+- [GY6 Carburetor Cleaning Guide](/repair-guides/gy6-carburetor-cleaning-guide)
+- [GY6 Hard Start / Intake Flooding](/repair-guides/gy6-hard-start-intake-flooding)
+- [GY6 Carburetor Adjustment Guide](/repair-guides/gy6-carburetor-adjustment-guide)
