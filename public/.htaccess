@@ -8,6 +8,11 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} ^www\.ismr\.online [NC]
 RewriteRule ^ https://ismr.online%{REQUEST_URI} [L,R=301]
 
+# 301 redirects: trailing-slash legal pages → canonical .html URLs
+# Prevents Google from seeing duplicate "alternative page with proper canonical" entries
+RewriteRule ^legal/privacy/?$ /legal/privacy.html [L,R=301]
+RewriteRule ^legal/terms/?$ /legal/terms.html [L,R=301]
+
 # Security headers — improves Microsoft SmartScreen / SafeLinks reputation
 <IfModule mod_headers.c>
     # Prevent clickjacking

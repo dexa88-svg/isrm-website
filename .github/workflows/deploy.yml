@@ -51,6 +51,25 @@ jobs:
       - name: Regenerate sitemap from dist/
         run: node scripts/generate-stats.js
 
+      - name: Remove stale server files (no longer in dist)
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          # Delete files that were previously deployed but no longer exist in dist/.
+          # These caused "Alternative page with proper canonical tag" in GSC because
+          # the duplicate pages were never cleaned from the server after source removal.
+          STALE_FILES=(
+            "legal/privacy/index.html"
+            "legal/terms/index.html"
+          )
+          for file in "${STALE_FILES[@]}"; do
+            echo "Deleting stale file from server: $file"
+            curl -k -u "$FTP_USERNAME:$FTP_PASSWORD" \
+              -Q "RM $file" "sftp://$FTP_SERVER:22/" || echo "Warning: could not delete $file (may already be gone)"
+          done
+
       - name: Deploy via SFTP
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
