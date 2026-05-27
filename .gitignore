@@ -3,3 +3,6 @@ coverage/
 npm-debug.log*
 .DS_Store
 public/pagefind/
+
+# Personal reference photos for the 3D exploded views project — not for publication.
+_dev/3d-exploded-views/reference/

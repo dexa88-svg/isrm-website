@@ -1252,9 +1252,9 @@ a { text-decoration: none; color: inherit; }
 .guide-content tr:nth-child(even) td { background: rgba(26, 35, 50, 0.6); }
 .guide-content td:first-child { color: var(--text-primary); font-weight: 500; white-space: nowrap; }
 /* Status badges */
-.val-ok   { color: #06a77d; font-weight: 600; }
+.val-ok   { color: var(--success); font-weight: 600; }
 .val-warn { color: var(--warning); font-weight: 600; }
-.val-bad  { color: #d63031; font-weight: 600; }
+.val-bad  { color: var(--danger); font-weight: 600; }
 /* Screenshot gallery */
 .screenshot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
 .screenshot-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
@@ -1360,9 +1360,9 @@ a { text-decoration: none; color: inherit; }
 .flash-demo span {
   display: inline-block;
   height: 14px;
-  border-radius: 3px;
-  background: #f59e0b;
-  box-shadow: 0 0 6px 1px rgba(245, 158, 11, 0.6);
+  border-radius: var(--radius-sm);
+  background: var(--warning);
+  box-shadow: 0 0 6px 1px rgba(245, 166, 35, 0.6);
 }
 .flash-long       { width: 28px; }
 .flash-short      { width: 12px; }

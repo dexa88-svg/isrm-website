@@ -659,7 +659,7 @@
   },
   {
     "url": "/videos/scooter-cvt-transmission-full-service.html",
-    "title": "Video: Scooter CVT Transmission Full Service Inspection",
+    "title": "Video: Scooter CVT Transmission Full Service",
     "category": "videos",
     "file": "src/content/videos/scooter-cvt-transmission-full-service.mdx",
     "sources": [
@@ -694,5 +694,47 @@
     ],
     "addedAt": "2026-05-22T00:00:00Z",
     "lastChecked": "2026-05-22T00:00:00Z"
+  },
+  {
+    "url": "/repair-guides/vespa-primavera-sprint-battery-replacement.html",
+    "title": "Vespa Primavera & Sprint Battery Replacement",
+    "category": "repair-guides",
+    "file": "src/content/repair-guides/vespa-primavera-sprint-battery-replacement.mdx",
+    "sources": [
+      "youtube.com/watch?v=DQ_Xk-52bfs",
+      "youtube.com/watch?v=j2vG7Ec8yu8",
+      "scooterwest.com",
+      "scooterworks.com"
+    ],
+    "summary": "Step-by-step guide to replacing the 12V YTX7L-BS battery on Vespa Primavera and Sprint 50/125/150 (2013–present). Covers location, terminal disconnect order, spec table, and post-install ECU adaptation notes.",
+    "addedAt": "2026-05-27T08:00:00Z",
+    "lastChecked": "2026-05-27T08:00:00Z"
+  },
+  {
+    "url": "/repair-guides/gy6-rear-wheel-removal-tire-change.html",
+    "title": "GY6 Rear Wheel Removal & Tire Change",
+    "category": "repair-guides",
+    "file": "src/content/repair-guides/gy6-rear-wheel-removal-tire-change.mdx",
+    "sources": [
+      "youtube.com/watch?v=AQHCy-k2P1A",
+      "youtube.com/watch?v=XakWj8YM_P4"
+    ],
+    "summary": "Full procedure for removing the rear wheel and changing the tyre or inner tube on GY6 50cc–150cc scooters. Covers axle nut removal, drum brake slack, tube patching, tyre bead seating, inflation pressures, and torque specs.",
+    "addedAt": "2026-05-27T08:00:00Z",
+    "lastChecked": "2026-05-27T08:00:00Z"
+  },
+  {
+    "url": "/repair-guides/gy6-drive-belt-inspection-replacement.html",
+    "title": "GY6 Drive Belt Inspection & Replacement",
+    "category": "repair-guides",
+    "file": "src/content/repair-guides/gy6-drive-belt-inspection-replacement.mdx",
+    "sources": [
+      "youtube.com/watch?v=XakWj8YM_P4",
+      "q9powersportsusa.com/blogs/technical-support-q9-powersports-usa/change-drive-belt-motor-scooter",
+      "scooterworks.com"
+    ],
+    "summary": "Quick-change drive belt replacement for GY6 CVT scooters without removing the variator assembly. Includes belt sizing table (743/835 × 20 × 30 mm), wear indicators, pulley inspection checklist, and break-in procedure.",
+    "addedAt": "2026-05-27T08:00:00Z",
+    "lastChecked": "2026-05-27T08:00:00Z"
   }
 ]

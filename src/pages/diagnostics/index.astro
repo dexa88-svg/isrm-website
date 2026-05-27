@@ -85,6 +85,8 @@ const total = allGuides.length;
     .guide-card.hidden { display: none; }
     .no-results { grid-column: 1 / -1; text-align: center; padding: 4rem 2rem; color: var(--text-muted); display: none; }
     .no-results.visible { display: block; }
+    .wizard-banner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; background: linear-gradient(135deg, rgba(255,107,53,0.12), rgba(0,168,204,0.1)); border: 1px solid rgba(255,107,53,0.35); border-radius: var(--radius-lg); padding: 1.2rem 1.6rem; text-decoration: none; transition: var(--transition); }
+    .wizard-banner:hover { border-color: rgba(255,107,53,0.7); transform: translateY(-1px); }
     @media (max-width: 768px) {
       .filters-bar { padding: 0 1rem; top: 56px; }
       .filter-btn { padding: 0.35rem 0.7rem; font-size: 0.78rem; }
@@ -142,16 +144,7 @@ const total = allGuides.length;
 
     <section style="padding: 1.5rem 2rem 0;">
       <div style="max-width: 1100px; margin: 0 auto;">
-        <a href="/diagnostics/wizard.html" style="
-          display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-          background: linear-gradient(135deg, rgba(255,107,53,0.12), rgba(0,168,204,0.1));
-          border: 1px solid rgba(255,107,53,0.35);
-          border-radius: 12px;
-          padding: 1.2rem 1.6rem;
-          text-decoration: none;
-          transition: all 0.3s ease;
-        " onmouseover="this.style.borderColor='rgba(255,107,53,0.7)'; this.style.transform='translateY(-1px)';"
-           onmouseout="this.style.borderColor='rgba(255,107,53,0.35)'; this.style.transform='';">
+        <a href="/diagnostics/wizard.html" class="wizard-banner">
           <div style="display:flex; align-items:center; gap:1rem;">
             <span style="font-size:2rem; line-height:1;">🔍</span>
             <div>
