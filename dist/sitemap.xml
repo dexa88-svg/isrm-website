@@ -50,6 +50,12 @@
     <lastmod>2026-05-26</lastmod>
   </url>
   <url>
+    <loc>https://ismr.online/repair-guides/fuel-valve-pipe-connections.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-26</lastmod>
+  </url>
+  <url>
     <loc>https://ismr.online/repair-guides/gy6-4stroke-maintenance-schedule.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -176,6 +182,12 @@
     <lastmod>2026-05-26</lastmod>
   </url>
   <url>
+    <loc>https://ismr.online/repair-guides/gy6-stator-replacement-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-26</lastmod>
+  </url>
+  <url>
     <loc>https://ismr.online/repair-guides/gy6-top-end-rebuild-piston-rings.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -278,6 +290,18 @@
     <lastmod>2026-05-26</lastmod>
   </url>
   <url>
+    <loc>https://ismr.online/diagnostics/gy6-efi-stalling-at-idle-tps-iac.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-26</lastmod>
+  </url>
+  <url>
+    <loc>https://ismr.online/diagnostics/gy6-efi-tps-sensor-diagnosis.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-26</lastmod>
+  </url>
+  <url>
     <loc>https://ismr.online/diagnostics/gy6-no-start-troubleshooting.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -345,6 +369,12 @@
   </url>
   <url>
     <loc>https://ismr.online/videos/gy6-carburetor-intake-change-tutorial.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-05-26</lastmod>
+  </url>
+  <url>
+    <loc>https://ismr.online/videos/scooter-cvt-transmission-full-service.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <lastmod>2026-05-26</lastmod>

@@ -3,7 +3,7 @@
     "url": "/legal/privacy.html",
     "title": "Privacy Policy",
     "category": "legal",
-    "file": "src/pages/legal/privacy/index.astro",
+    "file": "src/pages/legal/privacy.astro",
     "sources": [
       "ISMR"
     ],
@@ -14,7 +14,7 @@
     "url": "/legal/terms.html",
     "title": "Terms of Service",
     "category": "legal",
-    "file": "src/pages/legal/terms/index.astro",
+    "file": "src/pages/legal/terms.astro",
     "sources": [
       "ISMR"
     ],
