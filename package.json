@@ -6,11 +6,13 @@
     "dev": "astro dev",
     "build:astro": "astro build",
     "preview": "astro preview",
-    "test": "node scripts/validate-pages.js && jest",
-    "test:coverage": "node scripts/validate-pages.js && jest --coverage",
+    "test": "node scripts/validate-content.js && jest",
+    "test:coverage": "node scripts/validate-content.js && jest --coverage",
+    "validate": "node scripts/validate-content.js",
     "generate-stats": "node scripts/generate-stats.js",
     "search-index": "pagefind --site public --output-path public/pagefind",
-    "build": "node scripts/generate-stats.js && astro build && pagefind --site dist --output-path dist/pagefind"
+    "postinstall": "node --input-type=module --eval \"import './scripts/patch-prerender-dir.mjs'\"",
+    "build": "node scripts/validate-content.js && node scripts/generate-stats.js && node --input-type=module --eval \"import './scripts/patch-prerender-dir.mjs'\" && astro build && pagefind --site dist --output-path dist/pagefind"
   },
   "devDependencies": {
     "jest": "^29.7.0",

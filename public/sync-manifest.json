@@ -65,7 +65,7 @@
   },
   {
     "url": "/diagnostics/gy6-efi-obd2-dtc-fault-codes.html",
-    "title": "GY6 EFI OBD-2 DTC Fault Codes — Rongmao / Delphi / Motion",
+    "title": "GY6 EFI OBD-2 DTC Fault Codes \u2014 Rongmao / Delphi / Motion",
     "category": "diagnostics",
     "file": "src/content/diagnostics/gy6-efi-obd2-dtc-fault-codes.mdx",
     "sources": [
@@ -129,7 +129,7 @@
   },
   {
     "url": "/diagnostics/gy6-no-start-troubleshooting.html",
-    "title": "GY6 Scooter Won't Start — Troubleshooting Checklist",
+    "title": "GY6 Scooter Won't Start \u2014 Troubleshooting Checklist",
     "category": "diagnostics",
     "file": "src/content/diagnostics/gy6-no-start-troubleshooting.mdx",
     "sources": [
@@ -142,7 +142,7 @@
   },
   {
     "url": "/models/la-souris-sourini-city-overview.html",
-    "title": "La Souris Sourini / City S — Model Overview & Technical Guide",
+    "title": "La Souris Sourini / City S \u2014 Model Overview & Technical Guide",
     "category": "models",
     "file": "src/content/models/la-souris-sourini-city-overview.mdx",
     "sources": [
@@ -166,7 +166,7 @@
   },
   {
     "url": "/repair-guides/gy6-air-filter-guide.html",
-    "title": "GY6 Air Filter — Clean or Replace Guide",
+    "title": "GY6 Air Filter \u2014 Clean or Replace Guide",
     "category": "repair-guides",
     "file": "src/content/repair-guides/gy6-air-filter-guide.mdx",
     "sources": [
@@ -210,7 +210,7 @@
   },
   {
     "url": "/diagnostics/gy6-air-leak-diagnosis.html",
-    "title": "Diagnosing Air Leaks and Vacuum Sucking — GY6 Scooter",
+    "title": "Diagnosing Air Leaks and Vacuum Sucking \u2014 GY6 Scooter",
     "category": "diagnostics",
     "file": "src/content/diagnostics/gy6-air-leak-diagnosis.mdx",
     "sources": [
@@ -232,7 +232,7 @@
   },
   {
     "url": "/diagnostics/gy6-cvt-roller-noise-diagnosis.html",
-    "title": "Metallic Noise from Engine — CVT Roller Diagnosis — GY6 Scooter",
+    "title": "Metallic Noise from Engine \u2014 CVT Roller Diagnosis \u2014 GY6 Scooter",
     "category": "diagnostics",
     "file": "src/content/diagnostics/gy6-cvt-roller-noise-diagnosis.mdx",
     "sources": [
@@ -243,7 +243,7 @@
   },
   {
     "url": "/diagnostics/gy6-dirty-buttons-no-start.html",
-    "title": "Dirty Handlebar Buttons Causing No-Start — GY6 Scooter",
+    "title": "Dirty Handlebar Buttons Causing No-Start \u2014 GY6 Scooter",
     "category": "diagnostics",
     "file": "src/content/diagnostics/gy6-dirty-buttons-no-start.mdx",
     "sources": [
@@ -254,7 +254,7 @@
   },
   {
     "url": "/diagnostics/gy6-efi-cel-flash-codes.html",
-    "title": "GY6 EFI CEL Flash Codes — Manual Diagnostic Mode",
+    "title": "GY6 EFI CEL Flash Codes \u2014 Manual Diagnostic Mode",
     "category": "diagnostics",
     "file": "src/content/diagnostics/gy6-efi-cel-flash-codes.mdx",
     "sources": [
@@ -265,7 +265,7 @@
   },
   {
     "url": "/diagnostics/gy6-side-stand-kill-switch.html",
-    "title": "Side Stand Kill Switch — Scooter Won't Start Diagnosis",
+    "title": "Side Stand Kill Switch \u2014 Scooter Won't Start Diagnosis",
     "category": "diagnostics",
     "file": "src/content/diagnostics/gy6-side-stand-kill-switch.mdx",
     "sources": [
@@ -276,7 +276,7 @@
   },
   {
     "url": "/repair-guides/gy6-efi-hard-start-intake-flooding.html",
-    "title": "GY6 EFI Hard Start: Intake Flooding — Cracked Insulator & Leaking Injector",
+    "title": "GY6 EFI Hard Start: Intake Flooding \u2014 Cracked Insulator & Leaking Injector",
     "category": "repair-guides",
     "file": "src/content/repair-guides/gy6-efi-hard-start-intake-flooding.mdx",
     "sources": [
@@ -289,7 +289,7 @@
   },
   {
     "url": "/repair-guides/gy6-hard-start-intake-flooding.html",
-    "title": "GY6 Hard Start: Intake Flooding — Cracked Insulator & Carburetor Overflow",
+    "title": "GY6 Hard Start: Intake Flooding \u2014 Cracked Insulator & Carburetor Overflow",
     "category": "repair-guides",
     "file": "src/content/repair-guides/gy6-hard-start-intake-flooding.mdx",
     "sources": [
@@ -337,7 +337,7 @@
   },
   {
     "url": "/models/btc-riva-50-model-overview.html",
-    "title": "BTC Riva 50 — Model Overview & Technical Guide",
+    "title": "BTC Riva 50 \u2014 Model Overview & Technical Guide",
     "category": "models",
     "file": "src/content/models/btc-riva-50-model-overview.mdx",
     "sources": [
@@ -350,7 +350,7 @@
   },
   {
     "url": "/videos/vespa-primavera-oil-change-video.html",
-    "title": "Video: DIY Vespa Oil Change — Primavera / GTS / Sprint",
+    "title": "Video: DIY Vespa Oil Change \u2014 Primavera / GTS / Sprint",
     "category": "videos",
     "file": "src/content/videos/vespa-primavera-oil-change-video.mdx",
     "sources": [
@@ -362,7 +362,7 @@
   },
   {
     "url": "/diagnostics/piaggio-zip-100-troubleshooting.html",
-    "title": "Piaggio ZIP 50/100 4T — Troubleshooting Guide",
+    "title": "Piaggio ZIP 50/100 4T \u2014 Troubleshooting Guide",
     "category": "diagnostics",
     "file": "src/content/diagnostics/piaggio-zip-100-troubleshooting.mdx",
     "sources": [
@@ -373,7 +373,7 @@
   },
   {
     "url": "/models/piaggio-zip-100-technical-overview.html",
-    "title": "Piaggio ZIP 50/100 4T — Technical Overview",
+    "title": "Piaggio ZIP 50/100 4T \u2014 Technical Overview",
     "category": "models",
     "file": "src/content/models/piaggio-zip-100-technical-overview.mdx",
     "sources": [
@@ -384,7 +384,7 @@
   },
   {
     "url": "/repair-guides/gy6-speedometer-cable-replacement.html",
-    "title": "GY6 Speedometer Cable — Diagnosis & Replacement",
+    "title": "GY6 Speedometer Cable \u2014 Diagnosis & Replacement",
     "category": "repair-guides",
     "file": "src/content/repair-guides/gy6-speedometer-cable-replacement.mdx",
     "sources": [
@@ -418,13 +418,13 @@
       "moowiring.com/",
       "scootdawg.proboards.com/"
     ],
-    "summary": "Systematic diagnosis of GY6 electrical faults: stator, CDI, pickup coil, regulator/rectifier, charging system, and lighting — with multimeter test specifications.",
+    "summary": "Systematic diagnosis of GY6 electrical faults: stator, CDI, pickup coil, regulator/rectifier, charging system, and lighting \u2014 with multimeter test specifications.",
     "addedAt": "2026-05-12T08:01:00Z",
     "lastChecked": "2026-05-21T09:00:00Z"
   },
   {
     "url": "/models/vespa-zip-50-4t-technical-overview.html",
-    "title": "Vespa / Piaggio ZIP 50 4T — Technical Overview & Maintenance Guide",
+    "title": "Vespa / Piaggio ZIP 50 4T \u2014 Technical Overview & Maintenance Guide",
     "category": "models",
     "file": "src/content/models/vespa-zip-50-4t-technical-overview.mdx",
     "sources": [
@@ -432,13 +432,13 @@
       "haynes.com/en-gb/piaggio/zip-4t-50/2001-2008",
       "modernvespa.com/forum/"
     ],
-    "summary": "Full technical specs, maintenance schedule, carburetor settings, common faults and model history for the Piaggio ZIP 50 4T (2001–present, carbureted variants).",
+    "summary": "Full technical specs, maintenance schedule, carburetor settings, common faults and model history for the Piaggio ZIP 50 4T (2001\u2013present, carbureted variants).",
     "addedAt": "2026-05-12T08:01:00Z",
     "lastChecked": "2026-05-21T09:00:00Z"
   },
   {
     "url": "/diagnostics/gy6-efi-hud-ecu-hacker-setup.html",
-    "title": "GY6 EFI Diagnostics — HUD ECU Hacker Setup Guide",
+    "title": "GY6 EFI Diagnostics \u2014 HUD ECU Hacker Setup Guide",
     "category": "diagnostics",
     "file": "src/content/diagnostics/gy6-efi-hud-ecu-hacker-setup.mdx",
     "sources": [
@@ -653,7 +653,7 @@
       "motorroller.de/en/fehlercodes-blinkcodes-4t50e4/",
       "en.chinascooteronderdelen.nl/product/tps-map-sensor-gy6-euro-4-5-delphi-motion-efi/"
     ],
-    "summary": "Diagnose and replace the Throttle Position Sensor on GY6 Euro 4/5 EFI scooters — DTC fault codes P0121/P0122/P0123, live voltage tests, and TPS adjustment procedure.",
+    "summary": "Diagnose and replace the Throttle Position Sensor on GY6 Euro 4/5 EFI scooters \u2014 DTC fault codes P0121/P0122/P0123, live voltage tests, and TPS adjustment procedure.",
     "addedAt": "2026-05-21T08:00:00Z",
     "lastChecked": "2026-05-21T09:00:00Z"
   },
@@ -685,7 +685,7 @@
   },
   {
     "url": "/repair-guides/fuel-valve-pipe-connections.html",
-    "title": "Fuel Valve Pipe Connections — Carburettor Engine",
+    "title": "Fuel Valve Pipe Connections \u2014 Carburettor Engine",
     "category": "repair-guides",
     "file": "src/content/repair-guides/fuel-valve-pipe-connections.mdx",
     "sources": [
@@ -706,7 +706,7 @@
       "scooterwest.com",
       "scooterworks.com"
     ],
-    "summary": "Step-by-step guide to replacing the 12V YTX7L-BS battery on Vespa Primavera and Sprint 50/125/150 (2013–present). Covers location, terminal disconnect order, spec table, and post-install ECU adaptation notes.",
+    "summary": "Step-by-step guide to replacing the 12V YTX7L-BS battery on Vespa Primavera and Sprint 50/125/150 (2013\u2013present). Covers location, terminal disconnect order, spec table, and post-install ECU adaptation notes.",
     "addedAt": "2026-05-27T08:00:00Z",
     "lastChecked": "2026-05-27T08:00:00Z"
   },
@@ -719,9 +719,40 @@
       "youtube.com/watch?v=AQHCy-k2P1A",
       "youtube.com/watch?v=XakWj8YM_P4"
     ],
-    "summary": "Full procedure for removing the rear wheel and changing the tyre or inner tube on GY6 50cc–150cc scooters. Covers axle nut removal, drum brake slack, tube patching, tyre bead seating, inflation pressures, and torque specs.",
+    "summary": "Full procedure for removing the rear wheel and changing the tyre or inner tube on GY6 50cc\u2013150cc scooters. Covers axle nut removal, drum brake slack, tube patching, tyre bead seating, inflation pressures, and torque specs.",
     "addedAt": "2026-05-27T08:00:00Z",
     "lastChecked": "2026-05-27T08:00:00Z"
+  },
+  {
+    "url": "/repair-guides/vespa-piaggio-coolant-system-maintenance.html",
+    "title": "Vespa & Piaggio Coolant System Maintenance",
+    "category": "repair-guides",
+    "file": "src/content/repair-guides/vespa-piaggio-coolant-system-maintenance.mdx",
+    "sources": [
+      "vespamag.com/en/3487/well-cooled-is-half-the-ride-the-cooling-system",
+      "modernvespa.com/forum/topic85356",
+      "scegliauto.com/en/video/piaggio/moto_tutorial/36589/",
+      "youtube.com/watch?v=D2yBHjVkJv4",
+      "youtube.com/watch?v=Qn8bBPdEJKg"
+    ],
+    "summary": "Complete coolant maintenance guide for liquid-cooled Vespa and Piaggio scooters (GTS, Primavera, Sprint, Zip 4T): coolant level check, hose inspection, full flush and refill procedure, system bleeding, and specification table.",
+    "addedAt": "2026-05-28T06:44:00Z",
+    "lastChecked": "2026-05-28T06:44:00Z"
+  },
+  {
+    "url": "/repair-guides/gy6-timing-chain-tensioner-guide.html",
+    "title": "GY6 Timing Chain Tensioner \u2014 Diagnosis & Replacement",
+    "category": "repair-guides",
+    "file": "src/content/repair-guides/gy6-timing-chain-tensioner-guide.mdx",
+    "sources": [
+      "youtube.com/watch?v=xbssLUxGzq8",
+      "youtube.com/watch?v=JdGSLfmK_-M",
+      "brandxmotoparts.com/products/timing-chain-tensioner-guide-for-gy6-150cc",
+      "ncystore.com/g-cam-chain-tensioner-guide-kit-gy6"
+    ],
+    "summary": "Diagnosis and step-by-step replacement of the GY6 timing chain tensioner on 50cc\u2013150cc Chinese scooters (139QMB, 152QMI, 157QMJ). Covers cold-start rattle symptoms, tensioner operation, plunger retraction, installation torque specs, and guide blade inspection.",
+    "addedAt": "2026-05-28T06:44:00Z",
+    "lastChecked": "2026-05-28T06:44:00Z"
   },
   {
     "url": "/repair-guides/gy6-drive-belt-inspection-replacement.html",
@@ -733,8 +764,47 @@
       "q9powersportsusa.com/blogs/technical-support-q9-powersports-usa/change-drive-belt-motor-scooter",
       "scooterworks.com"
     ],
-    "summary": "Quick-change drive belt replacement for GY6 CVT scooters without removing the variator assembly. Includes belt sizing table (743/835 × 20 × 30 mm), wear indicators, pulley inspection checklist, and break-in procedure.",
+    "summary": "Quick-change drive belt replacement for GY6 CVT scooters without removing the variator assembly. Includes belt sizing table (743/835 \u00d7 20 \u00d7 30 mm), wear indicators, pulley inspection checklist, and break-in procedure.",
     "addedAt": "2026-05-27T08:00:00Z",
     "lastChecked": "2026-05-27T08:00:00Z"
+  },
+  {
+    "url": "/diagnostics/gy6-efi-stalling-at-idle-tps-iac.html",
+    "title": "GY6 EFI Stalls at Idle \u2014 TPS & IAC Fix",
+    "category": "diagnostics",
+    "file": "src/content/diagnostics/gy6-efi-stalling-at-idle-tps-iac.mdx",
+    "sources": [
+      "ScootDawg Forum",
+      "49ccScoot Forum",
+      "Motorroller.de"
+    ],
+    "addedAt": "2026-05-27T12:40:52Z",
+    "lastChecked": "2026-05-28T07:05:52Z"
+  },
+  {
+    "url": "/diagnostics/gy6-efi-system-troubleshooting-checklist.html",
+    "title": "GY6 EFI System Troubleshooting Checklist",
+    "category": "diagnostics",
+    "file": "src/content/diagnostics/gy6-efi-system-troubleshooting-checklist.mdx",
+    "sources": [
+      "rollingwrenchdenver.com/blogs/news/i-am-having-trouble-with-my-gy6-efi-system"
+    ],
+    "summary": "12-step diagnostic checklist for GY6 EFI faults covering grounding (< 0.2 Ω), fuel pressure (42 PSI target), air leak detection with carb cleaner, TPS reset procedure, woodruff key inspection, idle air/fuel screw adjustment, and fuel pump regulator check.",
+    "addedAt": "2026-05-29T06:38:00Z",
+    "lastChecked": "2026-05-29T06:38:00Z"
+  },
+  {
+    "url": "/repair-guides/vespa-primavera-sprint-brake-pad-replacement.html",
+    "title": "Vespa Primavera & Sprint Brake Pad Replacement",
+    "category": "repair-guides",
+    "file": "src/content/repair-guides/vespa-primavera-sprint-brake-pad-replacement.mdx",
+    "sources": [
+      "youtube.com/watch?v=VcUVomy5HsU",
+      "youtube.com/watch?v=GEYb1If12-I",
+      "scooterwest.com/modern-vespa/maintenance-tune-up/brakes.html"
+    ],
+    "summary": "Step-by-step front disc brake pad replacement for Vespa Primavera and Sprint 50/125/150 (2013–present). Covers pad thickness inspection, caliper removal, piston retraction, OEM part number, torque specs (25–28 Nm), bedding-in procedure, and squeal elimination.",
+    "addedAt": "2026-05-29T06:38:00Z",
+    "lastChecked": "2026-05-29T06:38:00Z"
   }
 ]

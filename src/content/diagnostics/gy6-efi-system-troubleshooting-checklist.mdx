@@ -1,0 +1,194 @@
+---
+title: "GY6 EFI System Troubleshooting Checklist"
+description: "Step-by-step checklist for diagnosing GY6 EFI faults: grounding, fuel pressure (42 PSI), air leaks, TPS reset, woodruff key, and fuel pump regulator check."
+publishDate: 2026-05-29
+updatedDate: 2026-05-29
+difficulty: "Intermediate"
+timeEstimate: "60 min"
+tags:
+  - "GY6"
+  - "EFI"
+  - "Fuel Injection"
+  - "Diagnostics"
+  - "Troubleshooting"
+appliesTo:
+  - "GY6 150cc (157QMJ)"
+  - "GY6 125cc (152QMI)"
+  - "BTC Riva (EFI)"
+  - "La Souris Sourini (EFI)"
+videos: []
+tools:
+  - "Multimeter"
+  - "Fuel pressure gauge (0–70 PSI)"
+  - "OBD2 / KKL diagnostic cable"
+  - "Carburetor cleaner (for air leak detection)"
+  - "8-gauge ground wire"
+sources:
+  - name: "Rolling Wrench — Having trouble with your GY6 EFI System?"
+    url: "https://www.rollingwrenchdenver.com/blogs/news/i-am-having-trouble-with-my-gy6-efi-system"
+canonical: "https://ismr.online/diagnostics/gy6-efi-system-troubleshooting-checklist.html"
+draft: false
+category: "fuel"
+engine: "gy6"
+fuel: "efi"
+section: "EFI / Fuel Injection"
+---
+
+import Callout from '@components/Callout.astro';
+import VideoEmbed from '@components/VideoEmbed.astro';
+import SourceBox from '@components/SourceBox.astro';
+
+<SourceBox sources={frontmatter.sources} />
+
+## Introduction
+
+If your GY6 EFI scooter won't start, idles roughly, or stalls, work through this checklist in order before replacing parts. Most EFI faults on GY6 scooters come down to a handful of root causes: poor grounding, insufficient fuel pressure, air leaks, or a TPS that needs resetting. This guide applies to BTC Riva, La Souris Sourini, Santini Capri, and other GY6-platform scooters fitted with Rongmao, Delphi, or Rolling Wrench ProBld EFI systems.
+
+<Callout type="warn">
+  Always confirm ignition is off and the fuel system is depressurised before disconnecting fuel lines. Fuel sprayed onto a hot engine is a fire hazard.
+</Callout>
+
+## Tools & Parts Needed
+
+- Multimeter (DC voltage and resistance)
+- Fuel pressure gauge rated to at least 70 PSI (5 bar)
+- OBD2 / KKL 6-pin diagnostic cable (for fault code reading)
+- Carburetor cleaner spray (air leak detection — do NOT use near flame)
+- 8-gauge ground wire and ring terminals
+
+---
+
+## Step-by-Step Diagnostic Checklist
+
+### Step 1 — Verify Ground Connection
+
+A weak ground is the single most common cause of EFI faults on GY6 scooters.
+
+1. Locate the EFI system's ground wire (usually black, from the ECU harness).
+2. Run a dedicated 8-gauge wire from the **negative battery terminal directly to the starter motor mounting bolt**.
+3. Connect the EFI system's ground wire to that same bolt, sharing the earthing point.
+4. Check with a multimeter: resistance between battery negative and ECU ground should be < 0.2 Ω.
+
+<Callout type="tip">
+  Do not rely on chassis grounds through frame bolts painted or corroded with oxidation — always use a direct battery-to-starter dedicated ground.
+</Callout>
+
+### Step 2 — Check Fuel Supply to Tank
+
+An air bubble at the inlet can prevent the pump from priming.
+
+1. Confirm the fuel tank is at least one-quarter full.
+2. Trace the fuel inlet line from the pump to the tank. **No part of the inlet line should run above the bottom of the fuel tank** — any high loop creates an air bubble the pump cannot overcome.
+3. Disconnect the inlet line at the pump and allow fuel to flow briefly onto a rag to purge any air pocket, then reconnect.
+
+### Step 3 — Measure Fuel Pressure at Injector
+
+1. Connect a fuel pressure gauge between the fuel pump outlet and the injector supply line using a T-fitting.
+2. Key on (engine not started) — the pump should prime and hold pressure within 5 seconds.
+3. **Target pressure: 42 PSI (2.9 bar).** Low pressure indicates a failing pump or clogged filter; high pressure indicates a faulty regulator.
+
+| Pressure | Likely Cause |
+|----------|--------------|
+| < 35 PSI | Weak pump, clogged inline filter, or air in inlet |
+| 42 PSI ± 3 | Normal |
+| > 50 PSI | Faulty fuel pressure regulator |
+
+### Step 4 — Check for Air Leaks at Intake
+
+Air leaks cause the ECU to run lean, leading to rough idle, hesitation, or stalling.
+
+<Callout type="warn">
+  Use carburetor cleaner for leak detection only with the engine cold or idling at low RPM. Keep a fire extinguisher nearby and do not use near ignition sources.
+</Callout>
+
+1. Confirm the plastic intake manifold spacer is **removed** — EFI systems tuned for a specific throttle body bore do not use this spacer.
+2. Start the engine and allow it to idle.
+3. Spray short bursts of carburetor cleaner around the intake manifold joint, throttle body clocking flange, and any vacuum ports.
+4. If engine RPM changes (rises then drops) when sprayed, that location is sucking air — reseal with fresh clamps or RTV sealant and re-test.
+
+### Step 5 — Read Fault Codes (OBD2)
+
+1. With the ignition off, plug the KKL OBD2 cable into the 6-pin diagnostic connector (typically under the seat or near the battery).
+2. Open HUD ECU Hacker or a compatible OBD2 app and key on.
+3. Navigate to **Fault Codes / DTC** — note all stored codes.
+4. Clear codes and re-test after completing other steps. Codes that reappear after clearing indicate active faults.
+
+Common codes and their meanings are documented in the [GY6 EFI OBD-2 DTC Fault Codes guide](/diagnostics/gy6-efi-obd2-dtc-fault-codes.html).
+
+### Step 6 — Reset the Throttle Position Sensor (TPS)
+
+A TPS out of calibration causes idle instability, stalling on deceleration, and hesitation off idle.
+
+1. Key on, engine off.
+2. Follow the TPS reset procedure for your ECU variant — typically: key on → slowly open throttle from fully closed to fully open 3 times → key off → wait 10 seconds → key on.
+3. Alternatively, connect the OBD2 cable and use the ECU software's **TPS Reset / Throttle Adaptation** function.
+4. After reset, start the engine and verify idle stabilises within 30 seconds of warm-up.
+
+For a detailed TPS diagnosis and replacement guide, see [GY6 EFI TPS Sensor Diagnosis & Replacement](/diagnostics/gy6-efi-tps-sensor-diagnosis.html).
+
+### Step 7 — Adjust the Idle Air/Fuel Screw
+
+The finger screw (mixture screw) on the throttle body is a manual trim for the idle zone (below approximately 2,800 RPM). The ECU does not auto-tune at idle.
+
+1. With the engine warm and at idle, turn the screw in (clockwise) by ¼-turn increments and wait 10 seconds after each.
+2. Turn back out if idle drops or engine hunts.
+3. Find the position where idle RPM is **highest and most stable** — this is the correct setting.
+4. If the engine stalls when coming to a stop from road speed, this screw is the adjustment to make.
+
+### Step 8 — Verify Woodruff Key and Magneto Timing
+
+If none of the above resolves a no-start:
+
+1. Remove the left engine cover and inspect the magneto rotor.
+2. Confirm the **woodruff key slot on the magneto rotor is fully seated over the woodruff key on the crankshaft**. A displaced woodruff key throws ignition timing off completely and causes no-start with no spark fault code.
+3. Remove the rotor with a flywheel puller if needed, inspect the key and slot for damage, and reinstall with the key seated.
+
+<Callout type="danger">
+  Never attempt to hammer the rotor onto the crankshaft — this damages the key slot and crankshaft taper. Always use a flywheel puller for removal and hand-tighten plus torque spec for installation (typically 35–40 Nm).
+</Callout>
+
+### Step 9 — Confirm Correct EFI Kit for Engine Size
+
+If the scooter was recently converted to EFI or the ECU was replaced:
+
+- A **150cc kit (157QMJ)** uses different injector sizing, fuel maps, and throttle body bore than a **125cc kit (152QMI)**.
+- Using the wrong kit results in chronic rich or lean running that no amount of adjustment will correct — the ECU must match the engine displacement.
+
+### Step 10 — Check the Fuel Pump Regulator
+
+A failing pressure regulator allows pressure to bleed off after the pump stops, causing hard hot-start and lean surging.
+
+1. Run the pump until pressure is at 42 PSI.
+2. Key off — note pressure on the gauge.
+3. If pressure drops below 30 PSI within 2 minutes, the check valve in the pump or the pressure regulator is leaking.
+4. Replace the integrated pump/regulator assembly.
+
+---
+
+## Specifications Summary
+
+| Parameter | Specification |
+|-----------|--------------|
+| Fuel pressure (static) | 42 PSI (2.9 bar) |
+| Ground resistance (battery neg to ECU) | < 0.2 Ω |
+| Idle RPM (warm, GY6 150cc EFI) | 1,400–1,800 RPM |
+| TPS voltage at idle (closed throttle) | ~0.5 V |
+| TPS voltage at WOT (wide open throttle) | ~4.5 V |
+
+---
+
+## Next Steps if Fault Persists
+
+If all 10 steps pass but the fault remains:
+
+1. Verify the fuel injector is spraying — disconnect the return line and observe injector spray pattern.
+2. Swap the ECU for a known-good unit to rule out ECU failure.
+3. Contact the EFI manufacturer for an ECU re-flash with updated fuel maps.
+
+{frontmatter.videos.length > 0 && (
+  <VideoEmbed
+    videoId={frontmatter.videos[0].id}
+    title={frontmatter.videos[0].title}
+    creator={frontmatter.videos[0].creator}
+  />
+)}

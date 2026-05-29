@@ -1,0 +1,8 @@
+async function getMod() {
+						return import('./gy6-dirty-buttons-no-start_CZi-tavY.mjs');
+					}
+					const collectedLinks = [];
+					const collectedStyles = [];
+					const defaultMod = { __astroPropagation: true, getMod, collectedLinks, collectedStyles, collectedScripts: [] };
+
+export { defaultMod as default };

@@ -16,14 +16,13 @@ const { title, description, canonical, updatedDate, publishDate, tags, timeEstim
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'HowTo',
+  '@type': 'Article',
   name: title,
   description,
   url: canonical,
   dateModified: updatedDate.toISOString().slice(0, 10),
   datePublished: publishDate.toISOString().slice(0, 10),
   keywords: tags.join(', '),
-  totalTime: timeEstimate,
   publisher: {
     '@type': 'Organization',
     name: 'ISMR — Interactive Scooter Manuals for Repair',
