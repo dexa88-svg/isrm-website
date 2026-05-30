@@ -6,7 +6,7 @@
     "isDynamicEntry": true
   },
   ".astro/content-modules.mjs": {
-    "file": "chunks/content-modules_KUzmyoCV.mjs",
+    "file": "chunks/content-modules_BSl9Uk9b.mjs",
     "name": "content-modules",
     "src": ".astro/content-modules.mjs",
     "isDynamicEntry": true,
@@ -60,6 +60,7 @@
       "src/content/repair-guides/gy6-scooter-storage-revival-guide.mdx?astroPropagatedAssets",
       "src/content/repair-guides/gy6-spark-plug-guide.mdx?astroPropagatedAssets",
       "src/content/repair-guides/gy6-speedometer-cable-replacement.mdx?astroPropagatedAssets",
+      "src/content/repair-guides/gy6-starter-motor-replacement.mdx?astroPropagatedAssets",
       "src/content/repair-guides/gy6-stator-replacement-guide.mdx?astroPropagatedAssets",
       "src/content/repair-guides/gy6-timing-chain-tensioner-guide.mdx?astroPropagatedAssets",
       "src/content/repair-guides/gy6-top-end-rebuild-piston-rings.mdx?astroPropagatedAssets",
@@ -71,6 +72,7 @@
       "src/content/repair-guides/vespa-primavera-sprint-battery-replacement.mdx?astroPropagatedAssets",
       "src/content/repair-guides/vespa-primavera-sprint-brake-pad-replacement.mdx?astroPropagatedAssets",
       "src/content/repair-guides/vespa-primavera-sprint-oil-change.mdx?astroPropagatedAssets",
+      "src/content/repair-guides/vespa-primavera-sprint-spark-plug-guide.mdx?astroPropagatedAssets",
       "src/content/repair-guides/vespa-scooter-routine-service-checklist.mdx?astroPropagatedAssets",
       "src/content/videos/gy6-carburetor-intake-change-tutorial.mdx?astroPropagatedAssets",
       "src/content/videos/scooter-cvt-transmission-full-service.mdx?astroPropagatedAssets",
@@ -80,90 +82,90 @@
       "src/content/videos/vespa-primavera-oil-change-video.mdx?astroPropagatedAssets"
     ]
   },
-  "_Callout_xSNqD3f4.mjs": {
-    "file": "chunks/Callout_xSNqD3f4.mjs",
+  "_Callout_B8cmn1zd.mjs": {
+    "file": "chunks/Callout_B8cmn1zd.mjs",
     "name": "Callout",
     "imports": [
-      "_Navbar_DblAD1G-.mjs",
-      "_prerender_Csyy2u02.mjs"
+      "_Navbar_Dxk6_s8X.mjs",
+      "_prerender_DxUxf521.mjs"
     ]
   },
-  "_Footer_CL1le4sY.mjs": {
-    "file": "chunks/Footer_CL1le4sY.mjs",
+  "_Footer_BqKx14Cl.mjs": {
+    "file": "chunks/Footer_BqKx14Cl.mjs",
     "name": "Footer",
     "imports": [
-      "_Navbar_DblAD1G-.mjs",
-      "_prerender_Csyy2u02.mjs"
+      "_Navbar_Dxk6_s8X.mjs",
+      "_prerender_DxUxf521.mjs"
     ]
   },
-  "_Navbar.FvI-OJ_n.css": {
-    "file": "_astro/Navbar.FvI-OJ_n.css",
-    "src": "_Navbar.FvI-OJ_n.css"
+  "_Navbar.D7Z8FNro.css": {
+    "file": "_astro/Navbar.D7Z8FNro.css",
+    "src": "_Navbar.D7Z8FNro.css"
   },
-  "_Navbar_DblAD1G-.mjs": {
-    "file": "chunks/Navbar_DblAD1G-.mjs",
+  "_Navbar_Dxk6_s8X.mjs": {
+    "file": "chunks/Navbar_Dxk6_s8X.mjs",
     "name": "Navbar",
     "imports": [
-      "_prerender_Csyy2u02.mjs"
+      "_prerender_DxUxf521.mjs"
     ],
     "css": [
-      "_astro/Navbar.FvI-OJ_n.css"
+      "_astro/Navbar.D7Z8FNro.css"
     ]
   },
-  "_Page_CTZlKI5a.mjs": {
-    "file": "chunks/Page_CTZlKI5a.mjs",
+  "_Page_AVL0W6HH.mjs": {
+    "file": "chunks/Page_AVL0W6HH.mjs",
     "name": "Page",
     "imports": [
-      "_Navbar_DblAD1G-.mjs",
-      "_prerender_Csyy2u02.mjs",
-      "_Footer_CL1le4sY.mjs"
+      "_Navbar_Dxk6_s8X.mjs",
+      "_prerender_DxUxf521.mjs",
+      "_Footer_BqKx14Cl.mjs"
     ]
   },
-  "_SourceBox_BRfTi5yL.mjs": {
-    "file": "chunks/SourceBox_BRfTi5yL.mjs",
+  "_SourceBox_CzqaLc6A.mjs": {
+    "file": "chunks/SourceBox_CzqaLc6A.mjs",
     "name": "SourceBox",
     "imports": [
-      "_Navbar_DblAD1G-.mjs",
-      "_prerender_Csyy2u02.mjs"
+      "_Navbar_Dxk6_s8X.mjs",
+      "_prerender_DxUxf521.mjs"
     ]
   },
-  "_VideoEmbed_BrrohuIG.mjs": {
-    "file": "chunks/VideoEmbed_BrrohuIG.mjs",
+  "_VideoEmbed_U3NluMvj.mjs": {
+    "file": "chunks/VideoEmbed_U3NluMvj.mjs",
     "name": "VideoEmbed",
     "imports": [
-      "_Navbar_DblAD1G-.mjs",
-      "_prerender_Csyy2u02.mjs"
+      "_Navbar_Dxk6_s8X.mjs",
+      "_prerender_DxUxf521.mjs"
     ]
   },
-  "__astro_content_BtWaKtl8.mjs": {
-    "file": "chunks/_astro_content_BtWaKtl8.mjs",
+  "__astro_content_BTFJLL1Z.mjs": {
+    "file": "chunks/_astro_content_BTFJLL1Z.mjs",
     "name": "_astro_content",
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_Navbar_DblAD1G-.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_Navbar_Dxk6_s8X.mjs"
     ],
     "dynamicImports": [
       "astro:data-layer-content",
       ".astro/content-assets.mjs",
       ".astro/content-assets.mjs",
-      "__virtual_astro_get-image_z3OCH_cj.mjs",
+      "__virtual_astro_get-image_BdZaHoyb.mjs",
       ".astro/content-modules.mjs"
     ]
   },
-  "__virtual_astro_get-image_z3OCH_cj.mjs": {
-    "file": "chunks/_virtual_astro_get-image_z3OCH_cj.mjs",
+  "__virtual_astro_get-image_BdZaHoyb.mjs": {
+    "file": "chunks/_virtual_astro_get-image_BdZaHoyb.mjs",
     "name": "_virtual_astro_get-image",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "__astro_content_BtWaKtl8.mjs"
+      "_prerender_DxUxf521.mjs",
+      "__astro_content_BTFJLL1Z.mjs"
     ],
     "dynamicImports": [
       "node_modules/astro/dist/assets/services/sharp.js"
     ]
   },
-  "_prerender_Csyy2u02.mjs": {
-    "file": "chunks/prerender_Csyy2u02.mjs",
+  "_prerender_DxUxf521.mjs": {
+    "file": "chunks/prerender_DxUxf521.mjs",
     "name": "prerender",
     "dynamicImports": [
       "virtual:astro:page:src/pages/diagnostics/index@_@astro",
@@ -187,28 +189,28 @@
     ]
   },
   "astro:data-layer-content": {
-    "file": "chunks/_astro_data-layer-content_BTpLzPMp.mjs",
+    "file": "chunks/_astro_data-layer-content_BUqmf9Q4.mjs",
     "name": "_astro_data-layer-content",
     "src": "astro:data-layer-content",
     "isDynamicEntry": true
   },
   "node_modules/astro/dist/assets/services/sharp.js": {
-    "file": "chunks/sharp_DM8Nodaj.mjs",
+    "file": "chunks/sharp_1VNP2TSi.mjs",
     "name": "sharp",
     "src": "node_modules/astro/dist/assets/services/sharp.js",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "__virtual_astro_get-image_z3OCH_cj.mjs"
+      "_prerender_DxUxf521.mjs",
+      "__virtual_astro_get-image_BdZaHoyb.mjs"
     ]
   },
   "node_modules/astro/dist/entrypoints/prerender.js": {
-    "file": "prerender-entry.CudNEj0D.mjs",
+    "file": "prerender-entry.D9FQQs9M.mjs",
     "name": "prerender",
     "src": "node_modules/astro/dist/entrypoints/prerender.js",
     "isEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs"
+      "_prerender_DxUxf521.mjs"
     ]
   },
   "noop-middleware": {
@@ -218,19 +220,19 @@
     "isDynamicEntry": true
   },
   "src/content/diagnostics/carburetor-needle-height-diagnostics.mdx": {
-    "file": "chunks/carburetor-needle-height-diagnostics_DXpr_VDF.mjs",
+    "file": "chunks/carburetor-needle-height-diagnostics_DNSCaCsC.mjs",
     "name": "carburetor-needle-height-diagnostics",
     "src": "src/content/diagnostics/carburetor-needle-height-diagnostics.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/diagnostics/carburetor-needle-height-diagnostics.mdx?astroPropagatedAssets": {
-    "file": "chunks/carburetor-needle-height-diagnostics_Ym1byGlI.mjs",
+    "file": "chunks/carburetor-needle-height-diagnostics_D3Du37d-.mjs",
     "name": "carburetor-needle-height-diagnostics",
     "src": "src/content/diagnostics/carburetor-needle-height-diagnostics.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -239,18 +241,18 @@
     ]
   },
   "src/content/diagnostics/ecu-hud-hacker-live-data-guide.mdx": {
-    "file": "chunks/ecu-hud-hacker-live-data-guide_RXNgwFQh.mjs",
+    "file": "chunks/ecu-hud-hacker-live-data-guide_DVyWEs40.mjs",
     "name": "ecu-hud-hacker-live-data-guide",
     "src": "src/content/diagnostics/ecu-hud-hacker-live-data-guide.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/diagnostics/ecu-hud-hacker-live-data-guide.mdx?astroPropagatedAssets": {
-    "file": "chunks/ecu-hud-hacker-live-data-guide_DKyLKqGX.mjs",
+    "file": "chunks/ecu-hud-hacker-live-data-guide_B7lW_i7T.mjs",
     "name": "ecu-hud-hacker-live-data-guide",
     "src": "src/content/diagnostics/ecu-hud-hacker-live-data-guide.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -259,18 +261,18 @@
     ]
   },
   "src/content/diagnostics/gy6-air-leak-diagnosis.mdx": {
-    "file": "chunks/gy6-air-leak-diagnosis_iVpiYusR.mjs",
+    "file": "chunks/gy6-air-leak-diagnosis_lBn1U9LF.mjs",
     "name": "gy6-air-leak-diagnosis",
     "src": "src/content/diagnostics/gy6-air-leak-diagnosis.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/diagnostics/gy6-air-leak-diagnosis.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-air-leak-diagnosis_5jY56PGA.mjs",
+    "file": "chunks/gy6-air-leak-diagnosis_BLuLOmc9.mjs",
     "name": "gy6-air-leak-diagnosis",
     "src": "src/content/diagnostics/gy6-air-leak-diagnosis.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -279,18 +281,18 @@
     ]
   },
   "src/content/diagnostics/gy6-carburetor-pilot-idle-jet.mdx": {
-    "file": "chunks/gy6-carburetor-pilot-idle-jet_KA0HjVV4.mjs",
+    "file": "chunks/gy6-carburetor-pilot-idle-jet_Cc2TAr--.mjs",
     "name": "gy6-carburetor-pilot-idle-jet",
     "src": "src/content/diagnostics/gy6-carburetor-pilot-idle-jet.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/diagnostics/gy6-carburetor-pilot-idle-jet.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-carburetor-pilot-idle-jet_BLjcIo_R.mjs",
+    "file": "chunks/gy6-carburetor-pilot-idle-jet_CfvDINWD.mjs",
     "name": "gy6-carburetor-pilot-idle-jet",
     "src": "src/content/diagnostics/gy6-carburetor-pilot-idle-jet.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -299,18 +301,18 @@
     ]
   },
   "src/content/diagnostics/gy6-cvt-roller-noise-diagnosis.mdx": {
-    "file": "chunks/gy6-cvt-roller-noise-diagnosis_DVY0Bxbt.mjs",
+    "file": "chunks/gy6-cvt-roller-noise-diagnosis_Bwmw_2Sr.mjs",
     "name": "gy6-cvt-roller-noise-diagnosis",
     "src": "src/content/diagnostics/gy6-cvt-roller-noise-diagnosis.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/diagnostics/gy6-cvt-roller-noise-diagnosis.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-cvt-roller-noise-diagnosis_C5KOrjaq.mjs",
+    "file": "chunks/gy6-cvt-roller-noise-diagnosis_Boj1eBtl.mjs",
     "name": "gy6-cvt-roller-noise-diagnosis",
     "src": "src/content/diagnostics/gy6-cvt-roller-noise-diagnosis.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -319,18 +321,18 @@
     ]
   },
   "src/content/diagnostics/gy6-dirty-buttons-no-start.mdx": {
-    "file": "chunks/gy6-dirty-buttons-no-start_liQoSn7y.mjs",
+    "file": "chunks/gy6-dirty-buttons-no-start_ykIVWEft.mjs",
     "name": "gy6-dirty-buttons-no-start",
     "src": "src/content/diagnostics/gy6-dirty-buttons-no-start.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/diagnostics/gy6-dirty-buttons-no-start.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-dirty-buttons-no-start__zEKnrfk.mjs",
+    "file": "chunks/gy6-dirty-buttons-no-start_BuPPZTza.mjs",
     "name": "gy6-dirty-buttons-no-start",
     "src": "src/content/diagnostics/gy6-dirty-buttons-no-start.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -339,18 +341,18 @@
     ]
   },
   "src/content/diagnostics/gy6-efi-cel-flash-codes.mdx": {
-    "file": "chunks/gy6-efi-cel-flash-codes_BrqRchwQ.mjs",
+    "file": "chunks/gy6-efi-cel-flash-codes_BQC5_pPS.mjs",
     "name": "gy6-efi-cel-flash-codes",
     "src": "src/content/diagnostics/gy6-efi-cel-flash-codes.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/diagnostics/gy6-efi-cel-flash-codes.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-efi-cel-flash-codes_D9QYbzvn.mjs",
+    "file": "chunks/gy6-efi-cel-flash-codes_DprEt9Rm.mjs",
     "name": "gy6-efi-cel-flash-codes",
     "src": "src/content/diagnostics/gy6-efi-cel-flash-codes.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -359,19 +361,19 @@
     ]
   },
   "src/content/diagnostics/gy6-efi-fuel-injection-troubleshooting.mdx": {
-    "file": "chunks/gy6-efi-fuel-injection-troubleshooting_Bji866NL.mjs",
+    "file": "chunks/gy6-efi-fuel-injection-troubleshooting_D2oSc2iQ.mjs",
     "name": "gy6-efi-fuel-injection-troubleshooting",
     "src": "src/content/diagnostics/gy6-efi-fuel-injection-troubleshooting.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/diagnostics/gy6-efi-fuel-injection-troubleshooting.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-efi-fuel-injection-troubleshooting_Du8Y8hzy.mjs",
+    "file": "chunks/gy6-efi-fuel-injection-troubleshooting_3CEEhI3Z.mjs",
     "name": "gy6-efi-fuel-injection-troubleshooting",
     "src": "src/content/diagnostics/gy6-efi-fuel-injection-troubleshooting.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -380,18 +382,18 @@
     ]
   },
   "src/content/diagnostics/gy6-efi-hud-ecu-hacker-setup.mdx": {
-    "file": "chunks/gy6-efi-hud-ecu-hacker-setup_G5L_QTS7.mjs",
+    "file": "chunks/gy6-efi-hud-ecu-hacker-setup_Nnmc-0aV.mjs",
     "name": "gy6-efi-hud-ecu-hacker-setup",
     "src": "src/content/diagnostics/gy6-efi-hud-ecu-hacker-setup.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/diagnostics/gy6-efi-hud-ecu-hacker-setup.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-efi-hud-ecu-hacker-setup_DD-JCdRq.mjs",
+    "file": "chunks/gy6-efi-hud-ecu-hacker-setup_B1mDGjrJ.mjs",
     "name": "gy6-efi-hud-ecu-hacker-setup",
     "src": "src/content/diagnostics/gy6-efi-hud-ecu-hacker-setup.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -400,18 +402,18 @@
     ]
   },
   "src/content/diagnostics/gy6-efi-obd2-dtc-fault-codes.mdx": {
-    "file": "chunks/gy6-efi-obd2-dtc-fault-codes_Bv5M2iOW.mjs",
+    "file": "chunks/gy6-efi-obd2-dtc-fault-codes_ClV1NoKz.mjs",
     "name": "gy6-efi-obd2-dtc-fault-codes",
     "src": "src/content/diagnostics/gy6-efi-obd2-dtc-fault-codes.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/diagnostics/gy6-efi-obd2-dtc-fault-codes.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-efi-obd2-dtc-fault-codes_gHI-stf1.mjs",
+    "file": "chunks/gy6-efi-obd2-dtc-fault-codes_CHDq8abT.mjs",
     "name": "gy6-efi-obd2-dtc-fault-codes",
     "src": "src/content/diagnostics/gy6-efi-obd2-dtc-fault-codes.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -420,19 +422,19 @@
     ]
   },
   "src/content/diagnostics/gy6-efi-stalling-at-idle-tps-iac.mdx": {
-    "file": "chunks/gy6-efi-stalling-at-idle-tps-iac_LpeNW7YN.mjs",
+    "file": "chunks/gy6-efi-stalling-at-idle-tps-iac_VLyAmZ3I.mjs",
     "name": "gy6-efi-stalling-at-idle-tps-iac",
     "src": "src/content/diagnostics/gy6-efi-stalling-at-idle-tps-iac.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/diagnostics/gy6-efi-stalling-at-idle-tps-iac.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-efi-stalling-at-idle-tps-iac_D-PefI1-.mjs",
+    "file": "chunks/gy6-efi-stalling-at-idle-tps-iac_BmubVrl6.mjs",
     "name": "gy6-efi-stalling-at-idle-tps-iac",
     "src": "src/content/diagnostics/gy6-efi-stalling-at-idle-tps-iac.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -441,19 +443,19 @@
     ]
   },
   "src/content/diagnostics/gy6-efi-system-troubleshooting-checklist.mdx": {
-    "file": "chunks/gy6-efi-system-troubleshooting-checklist_qCnNScL6.mjs",
+    "file": "chunks/gy6-efi-system-troubleshooting-checklist_D0G7mikU.mjs",
     "name": "gy6-efi-system-troubleshooting-checklist",
     "src": "src/content/diagnostics/gy6-efi-system-troubleshooting-checklist.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/diagnostics/gy6-efi-system-troubleshooting-checklist.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-efi-system-troubleshooting-checklist_z-zRbtud.mjs",
+    "file": "chunks/gy6-efi-system-troubleshooting-checklist_C8x67cL_.mjs",
     "name": "gy6-efi-system-troubleshooting-checklist",
     "src": "src/content/diagnostics/gy6-efi-system-troubleshooting-checklist.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -462,18 +464,18 @@
     ]
   },
   "src/content/diagnostics/gy6-efi-tps-sensor-diagnosis.mdx": {
-    "file": "chunks/gy6-efi-tps-sensor-diagnosis_BKjfgnAR.mjs",
+    "file": "chunks/gy6-efi-tps-sensor-diagnosis_DbJ6PuS1.mjs",
     "name": "gy6-efi-tps-sensor-diagnosis",
     "src": "src/content/diagnostics/gy6-efi-tps-sensor-diagnosis.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/diagnostics/gy6-efi-tps-sensor-diagnosis.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-efi-tps-sensor-diagnosis_B7zPAc_E.mjs",
+    "file": "chunks/gy6-efi-tps-sensor-diagnosis_CFgwXelF.mjs",
     "name": "gy6-efi-tps-sensor-diagnosis",
     "src": "src/content/diagnostics/gy6-efi-tps-sensor-diagnosis.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -482,18 +484,18 @@
     ]
   },
   "src/content/diagnostics/gy6-no-start-troubleshooting.mdx": {
-    "file": "chunks/gy6-no-start-troubleshooting_BX0FSIFd.mjs",
+    "file": "chunks/gy6-no-start-troubleshooting_DPfU2P_g.mjs",
     "name": "gy6-no-start-troubleshooting",
     "src": "src/content/diagnostics/gy6-no-start-troubleshooting.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/diagnostics/gy6-no-start-troubleshooting.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-no-start-troubleshooting_RD8sL_fs.mjs",
+    "file": "chunks/gy6-no-start-troubleshooting_Dzk7Awts.mjs",
     "name": "gy6-no-start-troubleshooting",
     "src": "src/content/diagnostics/gy6-no-start-troubleshooting.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -502,18 +504,18 @@
     ]
   },
   "src/content/diagnostics/gy6-side-stand-kill-switch.mdx": {
-    "file": "chunks/gy6-side-stand-kill-switch_DRwvk7OV.mjs",
+    "file": "chunks/gy6-side-stand-kill-switch_CXyHQj7m.mjs",
     "name": "gy6-side-stand-kill-switch",
     "src": "src/content/diagnostics/gy6-side-stand-kill-switch.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/diagnostics/gy6-side-stand-kill-switch.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-side-stand-kill-switch_Ba7i4xi4.mjs",
+    "file": "chunks/gy6-side-stand-kill-switch_C7AD9a0l.mjs",
     "name": "gy6-side-stand-kill-switch",
     "src": "src/content/diagnostics/gy6-side-stand-kill-switch.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -522,19 +524,19 @@
     ]
   },
   "src/content/diagnostics/piaggio-gilera-2stroke-cdi-ignition-fault-finding.mdx": {
-    "file": "chunks/piaggio-gilera-2stroke-cdi-ignition-fault-finding_Bbs80K1K.mjs",
+    "file": "chunks/piaggio-gilera-2stroke-cdi-ignition-fault-finding_D-ued6Ga.mjs",
     "name": "piaggio-gilera-2stroke-cdi-ignition-fault-finding",
     "src": "src/content/diagnostics/piaggio-gilera-2stroke-cdi-ignition-fault-finding.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/diagnostics/piaggio-gilera-2stroke-cdi-ignition-fault-finding.mdx?astroPropagatedAssets": {
-    "file": "chunks/piaggio-gilera-2stroke-cdi-ignition-fault-finding_D6yW3PZ4.mjs",
+    "file": "chunks/piaggio-gilera-2stroke-cdi-ignition-fault-finding_6_sGcwVH.mjs",
     "name": "piaggio-gilera-2stroke-cdi-ignition-fault-finding",
     "src": "src/content/diagnostics/piaggio-gilera-2stroke-cdi-ignition-fault-finding.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -543,19 +545,19 @@
     ]
   },
   "src/content/diagnostics/piaggio-gilera-starter-motor-fault-finding.mdx": {
-    "file": "chunks/piaggio-gilera-starter-motor-fault-finding_BMq-j09x.mjs",
+    "file": "chunks/piaggio-gilera-starter-motor-fault-finding_CiiCsrmh.mjs",
     "name": "piaggio-gilera-starter-motor-fault-finding",
     "src": "src/content/diagnostics/piaggio-gilera-starter-motor-fault-finding.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/diagnostics/piaggio-gilera-starter-motor-fault-finding.mdx?astroPropagatedAssets": {
-    "file": "chunks/piaggio-gilera-starter-motor-fault-finding_CDWUcpS1.mjs",
+    "file": "chunks/piaggio-gilera-starter-motor-fault-finding_Dj_S9OfF.mjs",
     "name": "piaggio-gilera-starter-motor-fault-finding",
     "src": "src/content/diagnostics/piaggio-gilera-starter-motor-fault-finding.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -564,18 +566,18 @@
     ]
   },
   "src/content/diagnostics/piaggio-zip-100-troubleshooting.mdx": {
-    "file": "chunks/piaggio-zip-100-troubleshooting_D4K764Gs.mjs",
+    "file": "chunks/piaggio-zip-100-troubleshooting_C6ZOM4r7.mjs",
     "name": "piaggio-zip-100-troubleshooting",
     "src": "src/content/diagnostics/piaggio-zip-100-troubleshooting.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/diagnostics/piaggio-zip-100-troubleshooting.mdx?astroPropagatedAssets": {
-    "file": "chunks/piaggio-zip-100-troubleshooting_DN6DMUzQ.mjs",
+    "file": "chunks/piaggio-zip-100-troubleshooting_vrnOYMhJ.mjs",
     "name": "piaggio-zip-100-troubleshooting",
     "src": "src/content/diagnostics/piaggio-zip-100-troubleshooting.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -584,19 +586,19 @@
     ]
   },
   "src/content/models/btc-riva-50-model-overview.mdx": {
-    "file": "chunks/btc-riva-50-model-overview_BqcKtdMt.mjs",
+    "file": "chunks/btc-riva-50-model-overview_BCW9T9bZ.mjs",
     "name": "btc-riva-50-model-overview",
     "src": "src/content/models/btc-riva-50-model-overview.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/models/btc-riva-50-model-overview.mdx?astroPropagatedAssets": {
-    "file": "chunks/btc-riva-50-model-overview_Csivcib2.mjs",
+    "file": "chunks/btc-riva-50-model-overview_Dkab7I7O.mjs",
     "name": "btc-riva-50-model-overview",
     "src": "src/content/models/btc-riva-50-model-overview.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -605,18 +607,18 @@
     ]
   },
   "src/content/models/la-souris-sourini-city-overview.mdx": {
-    "file": "chunks/la-souris-sourini-city-overview_CcSdqFC1.mjs",
+    "file": "chunks/la-souris-sourini-city-overview_Bc5wLkvu.mjs",
     "name": "la-souris-sourini-city-overview",
     "src": "src/content/models/la-souris-sourini-city-overview.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/models/la-souris-sourini-city-overview.mdx?astroPropagatedAssets": {
-    "file": "chunks/la-souris-sourini-city-overview_F0Kua94S.mjs",
+    "file": "chunks/la-souris-sourini-city-overview_DqEzrQuO.mjs",
     "name": "la-souris-sourini-city-overview",
     "src": "src/content/models/la-souris-sourini-city-overview.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -625,18 +627,18 @@
     ]
   },
   "src/content/models/piaggio-zip-100-technical-overview.mdx": {
-    "file": "chunks/piaggio-zip-100-technical-overview_DQyBZ5qs.mjs",
+    "file": "chunks/piaggio-zip-100-technical-overview_C0oHNHRM.mjs",
     "name": "piaggio-zip-100-technical-overview",
     "src": "src/content/models/piaggio-zip-100-technical-overview.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/models/piaggio-zip-100-technical-overview.mdx?astroPropagatedAssets": {
-    "file": "chunks/piaggio-zip-100-technical-overview_DNQRLOIx.mjs",
+    "file": "chunks/piaggio-zip-100-technical-overview_CabPb70G.mjs",
     "name": "piaggio-zip-100-technical-overview",
     "src": "src/content/models/piaggio-zip-100-technical-overview.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -645,19 +647,19 @@
     ]
   },
   "src/content/models/vespa-primavera-125-technical-overview.mdx": {
-    "file": "chunks/vespa-primavera-125-technical-overview_Byf08P6W.mjs",
+    "file": "chunks/vespa-primavera-125-technical-overview_hPJDL-p6.mjs",
     "name": "vespa-primavera-125-technical-overview",
     "src": "src/content/models/vespa-primavera-125-technical-overview.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/models/vespa-primavera-125-technical-overview.mdx?astroPropagatedAssets": {
-    "file": "chunks/vespa-primavera-125-technical-overview_WgspOvee.mjs",
+    "file": "chunks/vespa-primavera-125-technical-overview_wLjL9yrm.mjs",
     "name": "vespa-primavera-125-technical-overview",
     "src": "src/content/models/vespa-primavera-125-technical-overview.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -666,19 +668,19 @@
     ]
   },
   "src/content/models/vespa-zip-50-4t-technical-overview.mdx": {
-    "file": "chunks/vespa-zip-50-4t-technical-overview_BbNO5ucD.mjs",
+    "file": "chunks/vespa-zip-50-4t-technical-overview_CSQgwW7a.mjs",
     "name": "vespa-zip-50-4t-technical-overview",
     "src": "src/content/models/vespa-zip-50-4t-technical-overview.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/models/vespa-zip-50-4t-technical-overview.mdx?astroPropagatedAssets": {
-    "file": "chunks/vespa-zip-50-4t-technical-overview_Br9I1lxw.mjs",
+    "file": "chunks/vespa-zip-50-4t-technical-overview_D4WrLx7L.mjs",
     "name": "vespa-zip-50-4t-technical-overview",
     "src": "src/content/models/vespa-zip-50-4t-technical-overview.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -687,19 +689,19 @@
     ]
   },
   "src/content/parts/gy6-engine-codes-parts-compatibility.mdx": {
-    "file": "chunks/gy6-engine-codes-parts-compatibility_BvOfdEjv.mjs",
+    "file": "chunks/gy6-engine-codes-parts-compatibility_DVk9nBAM.mjs",
     "name": "gy6-engine-codes-parts-compatibility",
     "src": "src/content/parts/gy6-engine-codes-parts-compatibility.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/parts/gy6-engine-codes-parts-compatibility.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-engine-codes-parts-compatibility_thUb_UBK.mjs",
+    "file": "chunks/gy6-engine-codes-parts-compatibility_Nwrgy7KM.mjs",
     "name": "gy6-engine-codes-parts-compatibility",
     "src": "src/content/parts/gy6-engine-codes-parts-compatibility.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -708,19 +710,19 @@
     ]
   },
   "src/content/repair-guides/carburetor-needle-height-adjustment.mdx": {
-    "file": "chunks/carburetor-needle-height-adjustment_D_u42uDz.mjs",
+    "file": "chunks/carburetor-needle-height-adjustment_BeJOVp5m.mjs",
     "name": "carburetor-needle-height-adjustment",
     "src": "src/content/repair-guides/carburetor-needle-height-adjustment.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/repair-guides/carburetor-needle-height-adjustment.mdx?astroPropagatedAssets": {
-    "file": "chunks/carburetor-needle-height-adjustment_ZFM-OxXO.mjs",
+    "file": "chunks/carburetor-needle-height-adjustment_KLOeorgY.mjs",
     "name": "carburetor-needle-height-adjustment",
     "src": "src/content/repair-guides/carburetor-needle-height-adjustment.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -729,19 +731,19 @@
     ]
   },
   "src/content/repair-guides/fuel-valve-pipe-connections.mdx": {
-    "file": "chunks/fuel-valve-pipe-connections_zZJsFEWV.mjs",
+    "file": "chunks/fuel-valve-pipe-connections_DVJNR8qV.mjs",
     "name": "fuel-valve-pipe-connections",
     "src": "src/content/repair-guides/fuel-valve-pipe-connections.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/repair-guides/fuel-valve-pipe-connections.mdx?astroPropagatedAssets": {
-    "file": "chunks/fuel-valve-pipe-connections_ChJwOy0n.mjs",
+    "file": "chunks/fuel-valve-pipe-connections_IQruRpUj.mjs",
     "name": "fuel-valve-pipe-connections",
     "src": "src/content/repair-guides/fuel-valve-pipe-connections.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -750,19 +752,19 @@
     ]
   },
   "src/content/repair-guides/gy6-4stroke-maintenance-schedule.mdx": {
-    "file": "chunks/gy6-4stroke-maintenance-schedule_DnYWCB3d.mjs",
+    "file": "chunks/gy6-4stroke-maintenance-schedule_BqENt-w9.mjs",
     "name": "gy6-4stroke-maintenance-schedule",
     "src": "src/content/repair-guides/gy6-4stroke-maintenance-schedule.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/repair-guides/gy6-4stroke-maintenance-schedule.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-4stroke-maintenance-schedule_zJe_8R7o.mjs",
+    "file": "chunks/gy6-4stroke-maintenance-schedule_CtX3Kn_l.mjs",
     "name": "gy6-4stroke-maintenance-schedule",
     "src": "src/content/repair-guides/gy6-4stroke-maintenance-schedule.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -771,18 +773,18 @@
     ]
   },
   "src/content/repair-guides/gy6-air-filter-guide.mdx": {
-    "file": "chunks/gy6-air-filter-guide_DoD-x-Y8.mjs",
+    "file": "chunks/gy6-air-filter-guide_BY25t3Qd.mjs",
     "name": "gy6-air-filter-guide",
     "src": "src/content/repair-guides/gy6-air-filter-guide.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/repair-guides/gy6-air-filter-guide.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-air-filter-guide_CibGnqhF.mjs",
+    "file": "chunks/gy6-air-filter-guide_YydNSVGw.mjs",
     "name": "gy6-air-filter-guide",
     "src": "src/content/repair-guides/gy6-air-filter-guide.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -791,19 +793,19 @@
     ]
   },
   "src/content/repair-guides/gy6-big-bore-kit-guide.mdx": {
-    "file": "chunks/gy6-big-bore-kit-guide_CyCEAg80.mjs",
+    "file": "chunks/gy6-big-bore-kit-guide_9xTRJ5tO.mjs",
     "name": "gy6-big-bore-kit-guide",
     "src": "src/content/repair-guides/gy6-big-bore-kit-guide.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/repair-guides/gy6-big-bore-kit-guide.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-big-bore-kit-guide_BCF1ruhd.mjs",
+    "file": "chunks/gy6-big-bore-kit-guide_VAtDYbsV.mjs",
     "name": "gy6-big-bore-kit-guide",
     "src": "src/content/repair-guides/gy6-big-bore-kit-guide.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -812,18 +814,18 @@
     ]
   },
   "src/content/repair-guides/gy6-brake-fluid-guide.mdx": {
-    "file": "chunks/gy6-brake-fluid-guide_IY4W2LX6.mjs",
+    "file": "chunks/gy6-brake-fluid-guide_C_XKkSwz.mjs",
     "name": "gy6-brake-fluid-guide",
     "src": "src/content/repair-guides/gy6-brake-fluid-guide.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/repair-guides/gy6-brake-fluid-guide.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-brake-fluid-guide_QcbMFTzT.mjs",
+    "file": "chunks/gy6-brake-fluid-guide_B1ShkiLl.mjs",
     "name": "gy6-brake-fluid-guide",
     "src": "src/content/repair-guides/gy6-brake-fluid-guide.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -832,18 +834,18 @@
     ]
   },
   "src/content/repair-guides/gy6-brake-pads-guide.mdx": {
-    "file": "chunks/gy6-brake-pads-guide_CXxjZ-yo.mjs",
+    "file": "chunks/gy6-brake-pads-guide_TwCeqj0O.mjs",
     "name": "gy6-brake-pads-guide",
     "src": "src/content/repair-guides/gy6-brake-pads-guide.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/repair-guides/gy6-brake-pads-guide.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-brake-pads-guide_B1HcHqnG.mjs",
+    "file": "chunks/gy6-brake-pads-guide_CV6_wvQ7.mjs",
     "name": "gy6-brake-pads-guide",
     "src": "src/content/repair-guides/gy6-brake-pads-guide.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -852,18 +854,18 @@
     ]
   },
   "src/content/repair-guides/gy6-carburetor-adjustment-guide.mdx": {
-    "file": "chunks/gy6-carburetor-adjustment-guide_BaEg_NDJ.mjs",
+    "file": "chunks/gy6-carburetor-adjustment-guide_DGlYofQw.mjs",
     "name": "gy6-carburetor-adjustment-guide",
     "src": "src/content/repair-guides/gy6-carburetor-adjustment-guide.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/repair-guides/gy6-carburetor-adjustment-guide.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-carburetor-adjustment-guide_BJKuGwyS.mjs",
+    "file": "chunks/gy6-carburetor-adjustment-guide_Bj3i7QPF.mjs",
     "name": "gy6-carburetor-adjustment-guide",
     "src": "src/content/repair-guides/gy6-carburetor-adjustment-guide.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -872,19 +874,19 @@
     ]
   },
   "src/content/repair-guides/gy6-carburetor-cleaning-guide.mdx": {
-    "file": "chunks/gy6-carburetor-cleaning-guide_9rXw-6Xf.mjs",
+    "file": "chunks/gy6-carburetor-cleaning-guide_B8HEt0Wd.mjs",
     "name": "gy6-carburetor-cleaning-guide",
     "src": "src/content/repair-guides/gy6-carburetor-cleaning-guide.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/repair-guides/gy6-carburetor-cleaning-guide.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-carburetor-cleaning-guide_Bo4QtUf_.mjs",
+    "file": "chunks/gy6-carburetor-cleaning-guide_DnEJ69y-.mjs",
     "name": "gy6-carburetor-cleaning-guide",
     "src": "src/content/repair-guides/gy6-carburetor-cleaning-guide.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -893,19 +895,19 @@
     ]
   },
   "src/content/repair-guides/gy6-carburetor-jetting-guide.mdx": {
-    "file": "chunks/gy6-carburetor-jetting-guide_DV2sT6bs.mjs",
+    "file": "chunks/gy6-carburetor-jetting-guide_Bvju7GOS.mjs",
     "name": "gy6-carburetor-jetting-guide",
     "src": "src/content/repair-guides/gy6-carburetor-jetting-guide.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/repair-guides/gy6-carburetor-jetting-guide.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-carburetor-jetting-guide_ih4LR1MV.mjs",
+    "file": "chunks/gy6-carburetor-jetting-guide_DNZW_5fB.mjs",
     "name": "gy6-carburetor-jetting-guide",
     "src": "src/content/repair-guides/gy6-carburetor-jetting-guide.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -914,19 +916,19 @@
     ]
   },
   "src/content/repair-guides/gy6-cdi-no-spark-diagnosis.mdx": {
-    "file": "chunks/gy6-cdi-no-spark-diagnosis_oLT-0pPb.mjs",
+    "file": "chunks/gy6-cdi-no-spark-diagnosis_uEF0RVRH.mjs",
     "name": "gy6-cdi-no-spark-diagnosis",
     "src": "src/content/repair-guides/gy6-cdi-no-spark-diagnosis.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/repair-guides/gy6-cdi-no-spark-diagnosis.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-cdi-no-spark-diagnosis_arFYZREV.mjs",
+    "file": "chunks/gy6-cdi-no-spark-diagnosis_CzxbXxoI.mjs",
     "name": "gy6-cdi-no-spark-diagnosis",
     "src": "src/content/repair-guides/gy6-cdi-no-spark-diagnosis.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -935,18 +937,18 @@
     ]
   },
   "src/content/repair-guides/gy6-cvt-variator-belt-replacement.mdx": {
-    "file": "chunks/gy6-cvt-variator-belt-replacement_Dazxp2OW.mjs",
+    "file": "chunks/gy6-cvt-variator-belt-replacement_BXT1jNHX.mjs",
     "name": "gy6-cvt-variator-belt-replacement",
     "src": "src/content/repair-guides/gy6-cvt-variator-belt-replacement.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/repair-guides/gy6-cvt-variator-belt-replacement.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-cvt-variator-belt-replacement_DLB980ze.mjs",
+    "file": "chunks/gy6-cvt-variator-belt-replacement_CBbV83qu.mjs",
     "name": "gy6-cvt-variator-belt-replacement",
     "src": "src/content/repair-guides/gy6-cvt-variator-belt-replacement.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -955,19 +957,19 @@
     ]
   },
   "src/content/repair-guides/gy6-drive-belt-inspection-replacement.mdx": {
-    "file": "chunks/gy6-drive-belt-inspection-replacement_DlycKb4l.mjs",
+    "file": "chunks/gy6-drive-belt-inspection-replacement_Cd_NDePd.mjs",
     "name": "gy6-drive-belt-inspection-replacement",
     "src": "src/content/repair-guides/gy6-drive-belt-inspection-replacement.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/repair-guides/gy6-drive-belt-inspection-replacement.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-drive-belt-inspection-replacement_C6IWUhto.mjs",
+    "file": "chunks/gy6-drive-belt-inspection-replacement_BnD2I9lE.mjs",
     "name": "gy6-drive-belt-inspection-replacement",
     "src": "src/content/repair-guides/gy6-drive-belt-inspection-replacement.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -976,18 +978,18 @@
     ]
   },
   "src/content/repair-guides/gy6-efi-hard-start-intake-flooding.mdx": {
-    "file": "chunks/gy6-efi-hard-start-intake-flooding_7VLXPpob.mjs",
+    "file": "chunks/gy6-efi-hard-start-intake-flooding_CgbDRIfv.mjs",
     "name": "gy6-efi-hard-start-intake-flooding",
     "src": "src/content/repair-guides/gy6-efi-hard-start-intake-flooding.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/repair-guides/gy6-efi-hard-start-intake-flooding.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-efi-hard-start-intake-flooding_D8MRmuoF.mjs",
+    "file": "chunks/gy6-efi-hard-start-intake-flooding_BMD5TB16.mjs",
     "name": "gy6-efi-hard-start-intake-flooding",
     "src": "src/content/repair-guides/gy6-efi-hard-start-intake-flooding.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -996,19 +998,19 @@
     ]
   },
   "src/content/repair-guides/gy6-electrical-wiring-troubleshooting.mdx": {
-    "file": "chunks/gy6-electrical-wiring-troubleshooting_BLKJf2K_.mjs",
+    "file": "chunks/gy6-electrical-wiring-troubleshooting_CwLkhDXM.mjs",
     "name": "gy6-electrical-wiring-troubleshooting",
     "src": "src/content/repair-guides/gy6-electrical-wiring-troubleshooting.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/repair-guides/gy6-electrical-wiring-troubleshooting.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-electrical-wiring-troubleshooting_rHuYL6oC.mjs",
+    "file": "chunks/gy6-electrical-wiring-troubleshooting_LRHvTDW_.mjs",
     "name": "gy6-electrical-wiring-troubleshooting",
     "src": "src/content/repair-guides/gy6-electrical-wiring-troubleshooting.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1017,19 +1019,19 @@
     ]
   },
   "src/content/repair-guides/gy6-fuel-pump-maintenance.mdx": {
-    "file": "chunks/gy6-fuel-pump-maintenance_DSQC7Hkt.mjs",
+    "file": "chunks/gy6-fuel-pump-maintenance_CTHqkblQ.mjs",
     "name": "gy6-fuel-pump-maintenance",
     "src": "src/content/repair-guides/gy6-fuel-pump-maintenance.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/repair-guides/gy6-fuel-pump-maintenance.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-fuel-pump-maintenance_B-dI81te.mjs",
+    "file": "chunks/gy6-fuel-pump-maintenance_CUepQgnJ.mjs",
     "name": "gy6-fuel-pump-maintenance",
     "src": "src/content/repair-guides/gy6-fuel-pump-maintenance.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1038,18 +1040,18 @@
     ]
   },
   "src/content/repair-guides/gy6-hard-start-intake-flooding.mdx": {
-    "file": "chunks/gy6-hard-start-intake-flooding_D7u3XW5f.mjs",
+    "file": "chunks/gy6-hard-start-intake-flooding_B7quThbr.mjs",
     "name": "gy6-hard-start-intake-flooding",
     "src": "src/content/repair-guides/gy6-hard-start-intake-flooding.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/repair-guides/gy6-hard-start-intake-flooding.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-hard-start-intake-flooding_DsW6Ztdi.mjs",
+    "file": "chunks/gy6-hard-start-intake-flooding_BUjpAwOp.mjs",
     "name": "gy6-hard-start-intake-flooding",
     "src": "src/content/repair-guides/gy6-hard-start-intake-flooding.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1058,18 +1060,18 @@
     ]
   },
   "src/content/repair-guides/gy6-ignition-coil-guide.mdx": {
-    "file": "chunks/gy6-ignition-coil-guide_D8yANvGc.mjs",
+    "file": "chunks/gy6-ignition-coil-guide_B3Ebpwke.mjs",
     "name": "gy6-ignition-coil-guide",
     "src": "src/content/repair-guides/gy6-ignition-coil-guide.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/repair-guides/gy6-ignition-coil-guide.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-ignition-coil-guide_BnPb-nDP.mjs",
+    "file": "chunks/gy6-ignition-coil-guide_DbnjILUU.mjs",
     "name": "gy6-ignition-coil-guide",
     "src": "src/content/repair-guides/gy6-ignition-coil-guide.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1078,19 +1080,19 @@
     ]
   },
   "src/content/repair-guides/gy6-ignition-timing-adjustment-guide.mdx": {
-    "file": "chunks/gy6-ignition-timing-adjustment-guide_Bp6ypeIm.mjs",
+    "file": "chunks/gy6-ignition-timing-adjustment-guide_Bu6UIAQK.mjs",
     "name": "gy6-ignition-timing-adjustment-guide",
     "src": "src/content/repair-guides/gy6-ignition-timing-adjustment-guide.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/repair-guides/gy6-ignition-timing-adjustment-guide.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-ignition-timing-adjustment-guide_9MFYUJH2.mjs",
+    "file": "chunks/gy6-ignition-timing-adjustment-guide_BbHwf9WT.mjs",
     "name": "gy6-ignition-timing-adjustment-guide",
     "src": "src/content/repair-guides/gy6-ignition-timing-adjustment-guide.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1099,18 +1101,18 @@
     ]
   },
   "src/content/repair-guides/gy6-oil-change-guide.mdx": {
-    "file": "chunks/gy6-oil-change-guide_DVlfwLbF.mjs",
+    "file": "chunks/gy6-oil-change-guide_CmtWGZzB.mjs",
     "name": "gy6-oil-change-guide",
     "src": "src/content/repair-guides/gy6-oil-change-guide.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/repair-guides/gy6-oil-change-guide.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-oil-change-guide_BWRIyKJZ.mjs",
+    "file": "chunks/gy6-oil-change-guide_5TKQt6l6.mjs",
     "name": "gy6-oil-change-guide",
     "src": "src/content/repair-guides/gy6-oil-change-guide.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1119,19 +1121,19 @@
     ]
   },
   "src/content/repair-guides/gy6-performance-upgrades-guide.mdx": {
-    "file": "chunks/gy6-performance-upgrades-guide_o1Z5Neo5.mjs",
+    "file": "chunks/gy6-performance-upgrades-guide_BDNEx9no.mjs",
     "name": "gy6-performance-upgrades-guide",
     "src": "src/content/repair-guides/gy6-performance-upgrades-guide.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/repair-guides/gy6-performance-upgrades-guide.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-performance-upgrades-guide_CX95_Y_x.mjs",
+    "file": "chunks/gy6-performance-upgrades-guide_H5El3JXi.mjs",
     "name": "gy6-performance-upgrades-guide",
     "src": "src/content/repair-guides/gy6-performance-upgrades-guide.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1140,19 +1142,19 @@
     ]
   },
   "src/content/repair-guides/gy6-rear-wheel-removal-tire-change.mdx": {
-    "file": "chunks/gy6-rear-wheel-removal-tire-change_D0Jnz5_z.mjs",
+    "file": "chunks/gy6-rear-wheel-removal-tire-change_BaksNhEY.mjs",
     "name": "gy6-rear-wheel-removal-tire-change",
     "src": "src/content/repair-guides/gy6-rear-wheel-removal-tire-change.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/repair-guides/gy6-rear-wheel-removal-tire-change.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-rear-wheel-removal-tire-change_DGaLQuMw.mjs",
+    "file": "chunks/gy6-rear-wheel-removal-tire-change_Clp-29qC.mjs",
     "name": "gy6-rear-wheel-removal-tire-change",
     "src": "src/content/repair-guides/gy6-rear-wheel-removal-tire-change.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1161,19 +1163,19 @@
     ]
   },
   "src/content/repair-guides/gy6-scooter-storage-revival-guide.mdx": {
-    "file": "chunks/gy6-scooter-storage-revival-guide_DhkKXRFQ.mjs",
+    "file": "chunks/gy6-scooter-storage-revival-guide_CijO3Slh.mjs",
     "name": "gy6-scooter-storage-revival-guide",
     "src": "src/content/repair-guides/gy6-scooter-storage-revival-guide.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/repair-guides/gy6-scooter-storage-revival-guide.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-scooter-storage-revival-guide_CK5AqUZ8.mjs",
+    "file": "chunks/gy6-scooter-storage-revival-guide_CAljJ9oB.mjs",
     "name": "gy6-scooter-storage-revival-guide",
     "src": "src/content/repair-guides/gy6-scooter-storage-revival-guide.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1182,18 +1184,18 @@
     ]
   },
   "src/content/repair-guides/gy6-spark-plug-guide.mdx": {
-    "file": "chunks/gy6-spark-plug-guide_CLF_I-kt.mjs",
+    "file": "chunks/gy6-spark-plug-guide_fTGwTXnL.mjs",
     "name": "gy6-spark-plug-guide",
     "src": "src/content/repair-guides/gy6-spark-plug-guide.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/repair-guides/gy6-spark-plug-guide.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-spark-plug-guide_CoKKqf7U.mjs",
+    "file": "chunks/gy6-spark-plug-guide_dZkLZ2DM.mjs",
     "name": "gy6-spark-plug-guide",
     "src": "src/content/repair-guides/gy6-spark-plug-guide.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1202,18 +1204,18 @@
     ]
   },
   "src/content/repair-guides/gy6-speedometer-cable-replacement.mdx": {
-    "file": "chunks/gy6-speedometer-cable-replacement_BGXMvT4P.mjs",
+    "file": "chunks/gy6-speedometer-cable-replacement_Ccjpqxta.mjs",
     "name": "gy6-speedometer-cable-replacement",
     "src": "src/content/repair-guides/gy6-speedometer-cable-replacement.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/repair-guides/gy6-speedometer-cable-replacement.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-speedometer-cable-replacement_BzhcoXu3.mjs",
+    "file": "chunks/gy6-speedometer-cable-replacement_BUvbcRkl.mjs",
     "name": "gy6-speedometer-cable-replacement",
     "src": "src/content/repair-guides/gy6-speedometer-cable-replacement.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1221,20 +1223,41 @@
       "src/content/repair-guides/gy6-speedometer-cable-replacement.mdx"
     ]
   },
+  "src/content/repair-guides/gy6-starter-motor-replacement.mdx": {
+    "file": "chunks/gy6-starter-motor-replacement_EHkniQdS.mjs",
+    "name": "gy6-starter-motor-replacement",
+    "src": "src/content/repair-guides/gy6-starter-motor-replacement.mdx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_prerender_DxUxf521.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
+    ]
+  },
+  "src/content/repair-guides/gy6-starter-motor-replacement.mdx?astroPropagatedAssets": {
+    "file": "chunks/gy6-starter-motor-replacement_BNhBgEIJ.mjs",
+    "name": "gy6-starter-motor-replacement",
+    "src": "src/content/repair-guides/gy6-starter-motor-replacement.mdx?astroPropagatedAssets",
+    "isDynamicEntry": true,
+    "dynamicImports": [
+      "src/content/repair-guides/gy6-starter-motor-replacement.mdx"
+    ]
+  },
   "src/content/repair-guides/gy6-stator-replacement-guide.mdx": {
-    "file": "chunks/gy6-stator-replacement-guide_CADwhpTz.mjs",
+    "file": "chunks/gy6-stator-replacement-guide_DRfdY_Ww.mjs",
     "name": "gy6-stator-replacement-guide",
     "src": "src/content/repair-guides/gy6-stator-replacement-guide.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/repair-guides/gy6-stator-replacement-guide.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-stator-replacement-guide_CpjZQrO6.mjs",
+    "file": "chunks/gy6-stator-replacement-guide_Dfnq0Hlo.mjs",
     "name": "gy6-stator-replacement-guide",
     "src": "src/content/repair-guides/gy6-stator-replacement-guide.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1243,19 +1266,19 @@
     ]
   },
   "src/content/repair-guides/gy6-timing-chain-tensioner-guide.mdx": {
-    "file": "chunks/gy6-timing-chain-tensioner-guide_HQZwkm-5.mjs",
+    "file": "chunks/gy6-timing-chain-tensioner-guide_D32yPjBd.mjs",
     "name": "gy6-timing-chain-tensioner-guide",
     "src": "src/content/repair-guides/gy6-timing-chain-tensioner-guide.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/repair-guides/gy6-timing-chain-tensioner-guide.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-timing-chain-tensioner-guide_iQPh2xpu.mjs",
+    "file": "chunks/gy6-timing-chain-tensioner-guide__Y_peIHk.mjs",
     "name": "gy6-timing-chain-tensioner-guide",
     "src": "src/content/repair-guides/gy6-timing-chain-tensioner-guide.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1264,19 +1287,19 @@
     ]
   },
   "src/content/repair-guides/gy6-top-end-rebuild-piston-rings.mdx": {
-    "file": "chunks/gy6-top-end-rebuild-piston-rings_CjCj2Ogc.mjs",
+    "file": "chunks/gy6-top-end-rebuild-piston-rings_DAxKKZSA.mjs",
     "name": "gy6-top-end-rebuild-piston-rings",
     "src": "src/content/repair-guides/gy6-top-end-rebuild-piston-rings.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/repair-guides/gy6-top-end-rebuild-piston-rings.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-top-end-rebuild-piston-rings_BoIZXC88.mjs",
+    "file": "chunks/gy6-top-end-rebuild-piston-rings_2v6ZUTvZ.mjs",
     "name": "gy6-top-end-rebuild-piston-rings",
     "src": "src/content/repair-guides/gy6-top-end-rebuild-piston-rings.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1285,18 +1308,18 @@
     ]
   },
   "src/content/repair-guides/gy6-valve-adjustment-guide.mdx": {
-    "file": "chunks/gy6-valve-adjustment-guide_DvoC1nWl.mjs",
+    "file": "chunks/gy6-valve-adjustment-guide_DexqQwxG.mjs",
     "name": "gy6-valve-adjustment-guide",
     "src": "src/content/repair-guides/gy6-valve-adjustment-guide.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/repair-guides/gy6-valve-adjustment-guide.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-valve-adjustment-guide_D3gKn_Hc.mjs",
+    "file": "chunks/gy6-valve-adjustment-guide_Cy0fvoJ6.mjs",
     "name": "gy6-valve-adjustment-guide",
     "src": "src/content/repair-guides/gy6-valve-adjustment-guide.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1305,18 +1328,18 @@
     ]
   },
   "src/content/repair-guides/scooter-cvt-clutch-variator-guide.mdx": {
-    "file": "chunks/scooter-cvt-clutch-variator-guide_ovBUKAPZ.mjs",
+    "file": "chunks/scooter-cvt-clutch-variator-guide_Dg6nP84i.mjs",
     "name": "scooter-cvt-clutch-variator-guide",
     "src": "src/content/repair-guides/scooter-cvt-clutch-variator-guide.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/repair-guides/scooter-cvt-clutch-variator-guide.mdx?astroPropagatedAssets": {
-    "file": "chunks/scooter-cvt-clutch-variator-guide_DIa-MTc5.mjs",
+    "file": "chunks/scooter-cvt-clutch-variator-guide_BSyo_qW3.mjs",
     "name": "scooter-cvt-clutch-variator-guide",
     "src": "src/content/repair-guides/scooter-cvt-clutch-variator-guide.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1325,19 +1348,19 @@
     ]
   },
   "src/content/repair-guides/vespa-diy-maintenance-tips.mdx": {
-    "file": "chunks/vespa-diy-maintenance-tips_C80u6xza.mjs",
+    "file": "chunks/vespa-diy-maintenance-tips_C87plOis.mjs",
     "name": "vespa-diy-maintenance-tips",
     "src": "src/content/repair-guides/vespa-diy-maintenance-tips.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/repair-guides/vespa-diy-maintenance-tips.mdx?astroPropagatedAssets": {
-    "file": "chunks/vespa-diy-maintenance-tips_LkkJSz2D.mjs",
+    "file": "chunks/vespa-diy-maintenance-tips_D-fh4s-F.mjs",
     "name": "vespa-diy-maintenance-tips",
     "src": "src/content/repair-guides/vespa-diy-maintenance-tips.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1346,19 +1369,19 @@
     ]
   },
   "src/content/repair-guides/vespa-piaggio-coolant-system-maintenance.mdx": {
-    "file": "chunks/vespa-piaggio-coolant-system-maintenance_BeOxaUjQ.mjs",
+    "file": "chunks/vespa-piaggio-coolant-system-maintenance_0BD8ofX3.mjs",
     "name": "vespa-piaggio-coolant-system-maintenance",
     "src": "src/content/repair-guides/vespa-piaggio-coolant-system-maintenance.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/repair-guides/vespa-piaggio-coolant-system-maintenance.mdx?astroPropagatedAssets": {
-    "file": "chunks/vespa-piaggio-coolant-system-maintenance_BtP9TQth.mjs",
+    "file": "chunks/vespa-piaggio-coolant-system-maintenance_DA8GjfXJ.mjs",
     "name": "vespa-piaggio-coolant-system-maintenance",
     "src": "src/content/repair-guides/vespa-piaggio-coolant-system-maintenance.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1367,19 +1390,19 @@
     ]
   },
   "src/content/repair-guides/vespa-primavera-dent-bodywork-repair.mdx": {
-    "file": "chunks/vespa-primavera-dent-bodywork-repair_CXA88m0l.mjs",
+    "file": "chunks/vespa-primavera-dent-bodywork-repair_D5E35MWW.mjs",
     "name": "vespa-primavera-dent-bodywork-repair",
     "src": "src/content/repair-guides/vespa-primavera-dent-bodywork-repair.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/repair-guides/vespa-primavera-dent-bodywork-repair.mdx?astroPropagatedAssets": {
-    "file": "chunks/vespa-primavera-dent-bodywork-repair_QjOiW6dD.mjs",
+    "file": "chunks/vespa-primavera-dent-bodywork-repair_BJ_oNv91.mjs",
     "name": "vespa-primavera-dent-bodywork-repair",
     "src": "src/content/repair-guides/vespa-primavera-dent-bodywork-repair.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1388,19 +1411,19 @@
     ]
   },
   "src/content/repair-guides/vespa-primavera-sprint-battery-replacement.mdx": {
-    "file": "chunks/vespa-primavera-sprint-battery-replacement_EMLYAC4i.mjs",
+    "file": "chunks/vespa-primavera-sprint-battery-replacement_MPD-WN4m.mjs",
     "name": "vespa-primavera-sprint-battery-replacement",
     "src": "src/content/repair-guides/vespa-primavera-sprint-battery-replacement.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/repair-guides/vespa-primavera-sprint-battery-replacement.mdx?astroPropagatedAssets": {
-    "file": "chunks/vespa-primavera-sprint-battery-replacement_qPRKJWfT.mjs",
+    "file": "chunks/vespa-primavera-sprint-battery-replacement_CyzANbun.mjs",
     "name": "vespa-primavera-sprint-battery-replacement",
     "src": "src/content/repair-guides/vespa-primavera-sprint-battery-replacement.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1409,19 +1432,19 @@
     ]
   },
   "src/content/repair-guides/vespa-primavera-sprint-brake-pad-replacement.mdx": {
-    "file": "chunks/vespa-primavera-sprint-brake-pad-replacement_DkI8asoA.mjs",
+    "file": "chunks/vespa-primavera-sprint-brake-pad-replacement_CHfXYAZV.mjs",
     "name": "vespa-primavera-sprint-brake-pad-replacement",
     "src": "src/content/repair-guides/vespa-primavera-sprint-brake-pad-replacement.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/repair-guides/vespa-primavera-sprint-brake-pad-replacement.mdx?astroPropagatedAssets": {
-    "file": "chunks/vespa-primavera-sprint-brake-pad-replacement_CncUhApT.mjs",
+    "file": "chunks/vespa-primavera-sprint-brake-pad-replacement_DHlz6dnj.mjs",
     "name": "vespa-primavera-sprint-brake-pad-replacement",
     "src": "src/content/repair-guides/vespa-primavera-sprint-brake-pad-replacement.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1430,19 +1453,19 @@
     ]
   },
   "src/content/repair-guides/vespa-primavera-sprint-oil-change.mdx": {
-    "file": "chunks/vespa-primavera-sprint-oil-change_CRXt-txf.mjs",
+    "file": "chunks/vespa-primavera-sprint-oil-change_mgE6ByWk.mjs",
     "name": "vespa-primavera-sprint-oil-change",
     "src": "src/content/repair-guides/vespa-primavera-sprint-oil-change.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/repair-guides/vespa-primavera-sprint-oil-change.mdx?astroPropagatedAssets": {
-    "file": "chunks/vespa-primavera-sprint-oil-change_CKG9ejnu.mjs",
+    "file": "chunks/vespa-primavera-sprint-oil-change_D2vRkgq_.mjs",
     "name": "vespa-primavera-sprint-oil-change",
     "src": "src/content/repair-guides/vespa-primavera-sprint-oil-change.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1450,20 +1473,41 @@
       "src/content/repair-guides/vespa-primavera-sprint-oil-change.mdx"
     ]
   },
+  "src/content/repair-guides/vespa-primavera-sprint-spark-plug-guide.mdx": {
+    "file": "chunks/vespa-primavera-sprint-spark-plug-guide_XNVIPC5f.mjs",
+    "name": "vespa-primavera-sprint-spark-plug-guide",
+    "src": "src/content/repair-guides/vespa-primavera-sprint-spark-plug-guide.mdx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_prerender_DxUxf521.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
+    ]
+  },
+  "src/content/repair-guides/vespa-primavera-sprint-spark-plug-guide.mdx?astroPropagatedAssets": {
+    "file": "chunks/vespa-primavera-sprint-spark-plug-guide_kL7Co50T.mjs",
+    "name": "vespa-primavera-sprint-spark-plug-guide",
+    "src": "src/content/repair-guides/vespa-primavera-sprint-spark-plug-guide.mdx?astroPropagatedAssets",
+    "isDynamicEntry": true,
+    "dynamicImports": [
+      "src/content/repair-guides/vespa-primavera-sprint-spark-plug-guide.mdx"
+    ]
+  },
   "src/content/repair-guides/vespa-scooter-routine-service-checklist.mdx": {
-    "file": "chunks/vespa-scooter-routine-service-checklist_Cp-BDLeO.mjs",
+    "file": "chunks/vespa-scooter-routine-service-checklist_CnW3oSHO.mjs",
     "name": "vespa-scooter-routine-service-checklist",
     "src": "src/content/repair-guides/vespa-scooter-routine-service-checklist.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/repair-guides/vespa-scooter-routine-service-checklist.mdx?astroPropagatedAssets": {
-    "file": "chunks/vespa-scooter-routine-service-checklist_DE9J5fhg.mjs",
+    "file": "chunks/vespa-scooter-routine-service-checklist_bit5QN8J.mjs",
     "name": "vespa-scooter-routine-service-checklist",
     "src": "src/content/repair-guides/vespa-scooter-routine-service-checklist.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1472,18 +1516,18 @@
     ]
   },
   "src/content/videos/gy6-carburetor-intake-change-tutorial.mdx": {
-    "file": "chunks/gy6-carburetor-intake-change-tutorial_Dg1O0BHr.mjs",
+    "file": "chunks/gy6-carburetor-intake-change-tutorial_4j00H5rY.mjs",
     "name": "gy6-carburetor-intake-change-tutorial",
     "src": "src/content/videos/gy6-carburetor-intake-change-tutorial.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/videos/gy6-carburetor-intake-change-tutorial.mdx?astroPropagatedAssets": {
-    "file": "chunks/gy6-carburetor-intake-change-tutorial_CCs9J0Uj.mjs",
+    "file": "chunks/gy6-carburetor-intake-change-tutorial_D1oOYtbi.mjs",
     "name": "gy6-carburetor-intake-change-tutorial",
     "src": "src/content/videos/gy6-carburetor-intake-change-tutorial.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1492,19 +1536,19 @@
     ]
   },
   "src/content/videos/scooter-cvt-transmission-full-service.mdx": {
-    "file": "chunks/scooter-cvt-transmission-full-service_BYCI1gyA.mjs",
+    "file": "chunks/scooter-cvt-transmission-full-service_C9wI-f0S.mjs",
     "name": "scooter-cvt-transmission-full-service",
     "src": "src/content/videos/scooter-cvt-transmission-full-service.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/videos/scooter-cvt-transmission-full-service.mdx?astroPropagatedAssets": {
-    "file": "chunks/scooter-cvt-transmission-full-service_B8-m9zO8.mjs",
+    "file": "chunks/scooter-cvt-transmission-full-service_DjhJgnDF.mjs",
     "name": "scooter-cvt-transmission-full-service",
     "src": "src/content/videos/scooter-cvt-transmission-full-service.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1513,19 +1557,19 @@
     ]
   },
   "src/content/videos/vespa-carb-idle-adjustment-video.mdx": {
-    "file": "chunks/vespa-carb-idle-adjustment-video_CSxmvdqG.mjs",
+    "file": "chunks/vespa-carb-idle-adjustment-video_B7SnASKX.mjs",
     "name": "vespa-carb-idle-adjustment-video",
     "src": "src/content/videos/vespa-carb-idle-adjustment-video.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/videos/vespa-carb-idle-adjustment-video.mdx?astroPropagatedAssets": {
-    "file": "chunks/vespa-carb-idle-adjustment-video_DfeTYyoS.mjs",
+    "file": "chunks/vespa-carb-idle-adjustment-video_Bl-V6lVf.mjs",
     "name": "vespa-carb-idle-adjustment-video",
     "src": "src/content/videos/vespa-carb-idle-adjustment-video.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1534,19 +1578,19 @@
     ]
   },
   "src/content/videos/vespa-piaggio-advanced-clutch-repair-video.mdx": {
-    "file": "chunks/vespa-piaggio-advanced-clutch-repair-video_BkBtzoZ3.mjs",
+    "file": "chunks/vespa-piaggio-advanced-clutch-repair-video_CfvUcgfb.mjs",
     "name": "vespa-piaggio-advanced-clutch-repair-video",
     "src": "src/content/videos/vespa-piaggio-advanced-clutch-repair-video.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/videos/vespa-piaggio-advanced-clutch-repair-video.mdx?astroPropagatedAssets": {
-    "file": "chunks/vespa-piaggio-advanced-clutch-repair-video_DtG_7S71.mjs",
+    "file": "chunks/vespa-piaggio-advanced-clutch-repair-video_DRGdPv37.mjs",
     "name": "vespa-piaggio-advanced-clutch-repair-video",
     "src": "src/content/videos/vespa-piaggio-advanced-clutch-repair-video.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1555,19 +1599,19 @@
     ]
   },
   "src/content/videos/vespa-primavera-belt-transmission-video.mdx": {
-    "file": "chunks/vespa-primavera-belt-transmission-video_c5hA4OkL.mjs",
+    "file": "chunks/vespa-primavera-belt-transmission-video_DZ0ESgdi.mjs",
     "name": "vespa-primavera-belt-transmission-video",
     "src": "src/content/videos/vespa-primavera-belt-transmission-video.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs",
-      "_SourceBox_BRfTi5yL.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs",
+      "_SourceBox_CzqaLc6A.mjs"
     ]
   },
   "src/content/videos/vespa-primavera-belt-transmission-video.mdx?astroPropagatedAssets": {
-    "file": "chunks/vespa-primavera-belt-transmission-video_DTOJFng8.mjs",
+    "file": "chunks/vespa-primavera-belt-transmission-video_BW20VpPD.mjs",
     "name": "vespa-primavera-belt-transmission-video",
     "src": "src/content/videos/vespa-primavera-belt-transmission-video.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1576,18 +1620,18 @@
     ]
   },
   "src/content/videos/vespa-primavera-oil-change-video.mdx": {
-    "file": "chunks/vespa-primavera-oil-change-video_BYeybbtB.mjs",
+    "file": "chunks/vespa-primavera-oil-change-video_DJF10vUi.mjs",
     "name": "vespa-primavera-oil-change-video",
     "src": "src/content/videos/vespa-primavera-oil-change-video.mdx",
     "isDynamicEntry": true,
     "imports": [
-      "_prerender_Csyy2u02.mjs",
-      "_VideoEmbed_BrrohuIG.mjs",
-      "_Callout_xSNqD3f4.mjs"
+      "_prerender_DxUxf521.mjs",
+      "_VideoEmbed_U3NluMvj.mjs",
+      "_Callout_B8cmn1zd.mjs"
     ]
   },
   "src/content/videos/vespa-primavera-oil-change-video.mdx?astroPropagatedAssets": {
-    "file": "chunks/vespa-primavera-oil-change-video_BvwoNv6v.mjs",
+    "file": "chunks/vespa-primavera-oil-change-video_D8Qv5_W3.mjs",
     "name": "vespa-primavera-oil-change-video",
     "src": "src/content/videos/vespa-primavera-oil-change-video.mdx?astroPropagatedAssets",
     "isDynamicEntry": true,
@@ -1602,158 +1646,158 @@
     "isDynamicEntry": true
   },
   "virtual:astro:page:src/pages/diagnostics/[...slug]@_@astro": {
-    "file": "chunks/_.._Cdxqd15z.mjs",
+    "file": "chunks/_.._B2so3V_Z.mjs",
     "name": "_..",
     "src": "virtual:astro:page:src/pages/diagnostics/[...slug]@_@astro",
     "isDynamicEntry": true,
     "imports": [
-      "_Navbar_DblAD1G-.mjs",
-      "_prerender_Csyy2u02.mjs",
-      "__astro_content_BtWaKtl8.mjs",
-      "_Footer_CL1le4sY.mjs"
+      "_Navbar_Dxk6_s8X.mjs",
+      "_prerender_DxUxf521.mjs",
+      "__astro_content_BTFJLL1Z.mjs",
+      "_Footer_BqKx14Cl.mjs"
     ]
   },
   "virtual:astro:page:src/pages/diagnostics/index@_@astro": {
-    "file": "chunks/index_DVu5Y1ux.mjs",
+    "file": "chunks/index_B7dzNNgB.mjs",
     "name": "index@_@astro",
     "src": "virtual:astro:page:src/pages/diagnostics/index@_@astro",
     "isDynamicEntry": true,
     "imports": [
-      "_Navbar_DblAD1G-.mjs",
-      "_prerender_Csyy2u02.mjs",
-      "__astro_content_BtWaKtl8.mjs"
+      "_Navbar_Dxk6_s8X.mjs",
+      "_prerender_DxUxf521.mjs",
+      "__astro_content_BTFJLL1Z.mjs"
     ]
   },
   "virtual:astro:page:src/pages/index@_@astro": {
-    "file": "chunks/index_VtDZV7r2.mjs",
+    "file": "chunks/index_DdF4Qq4X.mjs",
     "name": "index@_@astro",
     "src": "virtual:astro:page:src/pages/index@_@astro",
     "isDynamicEntry": true,
     "imports": [
-      "_Navbar_DblAD1G-.mjs",
-      "_prerender_Csyy2u02.mjs"
+      "_Navbar_Dxk6_s8X.mjs",
+      "_prerender_DxUxf521.mjs"
     ]
   },
   "virtual:astro:page:src/pages/legal/privacy@_@astro": {
-    "file": "chunks/privacy_BlM-si3p.mjs",
+    "file": "chunks/privacy_k5AK2HcC.mjs",
     "name": "privacy@_@astro",
     "src": "virtual:astro:page:src/pages/legal/privacy@_@astro",
     "isDynamicEntry": true,
     "imports": [
-      "_Navbar_DblAD1G-.mjs",
-      "_prerender_Csyy2u02.mjs"
+      "_Navbar_Dxk6_s8X.mjs",
+      "_prerender_DxUxf521.mjs"
     ]
   },
   "virtual:astro:page:src/pages/legal/terms@_@astro": {
-    "file": "chunks/terms_CJea-fYB.mjs",
+    "file": "chunks/terms_CKZ0YoFo.mjs",
     "name": "terms@_@astro",
     "src": "virtual:astro:page:src/pages/legal/terms@_@astro",
     "isDynamicEntry": true,
     "imports": [
-      "_Navbar_DblAD1G-.mjs",
-      "_prerender_Csyy2u02.mjs"
+      "_Navbar_Dxk6_s8X.mjs",
+      "_prerender_DxUxf521.mjs"
     ]
   },
   "virtual:astro:page:src/pages/models/[...slug]@_@astro": {
-    "file": "chunks/_.._Bhh_XREn.mjs",
+    "file": "chunks/_.._DTa4z5cZ.mjs",
     "name": "_..",
     "src": "virtual:astro:page:src/pages/models/[...slug]@_@astro",
     "isDynamicEntry": true,
     "imports": [
-      "_Navbar_DblAD1G-.mjs",
-      "_prerender_Csyy2u02.mjs",
-      "__astro_content_BtWaKtl8.mjs",
-      "_Footer_CL1le4sY.mjs"
+      "_Navbar_Dxk6_s8X.mjs",
+      "_prerender_DxUxf521.mjs",
+      "__astro_content_BTFJLL1Z.mjs",
+      "_Footer_BqKx14Cl.mjs"
     ]
   },
   "virtual:astro:page:src/pages/models/index@_@astro": {
-    "file": "chunks/index_B5jPq8JP.mjs",
+    "file": "chunks/index_BjnEDBnl.mjs",
     "name": "index@_@astro",
     "src": "virtual:astro:page:src/pages/models/index@_@astro",
     "isDynamicEntry": true,
     "imports": [
-      "_Navbar_DblAD1G-.mjs",
-      "_prerender_Csyy2u02.mjs"
+      "_Navbar_Dxk6_s8X.mjs",
+      "_prerender_DxUxf521.mjs"
     ]
   },
   "virtual:astro:page:src/pages/news/index@_@astro": {
-    "file": "chunks/index_dtYfbrcR.mjs",
+    "file": "chunks/index_aS3mE-n9.mjs",
     "name": "index@_@astro",
     "src": "virtual:astro:page:src/pages/news/index@_@astro",
     "isDynamicEntry": true,
     "imports": [
-      "_Navbar_DblAD1G-.mjs",
-      "_prerender_Csyy2u02.mjs"
+      "_Navbar_Dxk6_s8X.mjs",
+      "_prerender_DxUxf521.mjs"
     ]
   },
   "virtual:astro:page:src/pages/parts/[...slug]@_@astro": {
-    "file": "chunks/_.._BKI2mI9S.mjs",
+    "file": "chunks/_.._8RJjhhp3.mjs",
     "name": "_..",
     "src": "virtual:astro:page:src/pages/parts/[...slug]@_@astro",
     "isDynamicEntry": true,
     "imports": [
-      "_Navbar_DblAD1G-.mjs",
-      "_prerender_Csyy2u02.mjs",
-      "__astro_content_BtWaKtl8.mjs",
-      "_Page_CTZlKI5a.mjs"
+      "_Navbar_Dxk6_s8X.mjs",
+      "_prerender_DxUxf521.mjs",
+      "__astro_content_BTFJLL1Z.mjs",
+      "_Page_AVL0W6HH.mjs"
     ]
   },
   "virtual:astro:page:src/pages/parts/index@_@astro": {
-    "file": "chunks/index_CNKv8udP.mjs",
+    "file": "chunks/index_CLu4-1jr.mjs",
     "name": "index@_@astro",
     "src": "virtual:astro:page:src/pages/parts/index@_@astro",
     "isDynamicEntry": true,
     "imports": [
-      "_Navbar_DblAD1G-.mjs",
-      "_prerender_Csyy2u02.mjs"
+      "_Navbar_Dxk6_s8X.mjs",
+      "_prerender_DxUxf521.mjs"
     ],
     "css": [
       "_astro/index.miy688Bo.css"
     ]
   },
   "virtual:astro:page:src/pages/repair-guides/[...slug]@_@astro": {
-    "file": "chunks/_.._BSJpgdkk.mjs",
+    "file": "chunks/_.._BdyeTcQb.mjs",
     "name": "_..",
     "src": "virtual:astro:page:src/pages/repair-guides/[...slug]@_@astro",
     "isDynamicEntry": true,
     "imports": [
-      "_Navbar_DblAD1G-.mjs",
-      "_prerender_Csyy2u02.mjs",
-      "__astro_content_BtWaKtl8.mjs",
-      "_Footer_CL1le4sY.mjs"
+      "_Navbar_Dxk6_s8X.mjs",
+      "_prerender_DxUxf521.mjs",
+      "__astro_content_BTFJLL1Z.mjs",
+      "_Footer_BqKx14Cl.mjs"
     ]
   },
   "virtual:astro:page:src/pages/repair-guides/index@_@astro": {
-    "file": "chunks/index_CKCpLp0w.mjs",
+    "file": "chunks/index_YopvqG4S.mjs",
     "name": "index@_@astro",
     "src": "virtual:astro:page:src/pages/repair-guides/index@_@astro",
     "isDynamicEntry": true,
     "imports": [
-      "_Navbar_DblAD1G-.mjs",
-      "_prerender_Csyy2u02.mjs",
-      "__astro_content_BtWaKtl8.mjs"
+      "_Navbar_Dxk6_s8X.mjs",
+      "_prerender_DxUxf521.mjs",
+      "__astro_content_BTFJLL1Z.mjs"
     ]
   },
   "virtual:astro:page:src/pages/videos/[...slug]@_@astro": {
-    "file": "chunks/_.._B8daaOeN.mjs",
+    "file": "chunks/_.._BbQC_vg2.mjs",
     "name": "_..",
     "src": "virtual:astro:page:src/pages/videos/[...slug]@_@astro",
     "isDynamicEntry": true,
     "imports": [
-      "_Navbar_DblAD1G-.mjs",
-      "_prerender_Csyy2u02.mjs",
-      "__astro_content_BtWaKtl8.mjs",
-      "_Page_CTZlKI5a.mjs"
+      "_Navbar_Dxk6_s8X.mjs",
+      "_prerender_DxUxf521.mjs",
+      "__astro_content_BTFJLL1Z.mjs",
+      "_Page_AVL0W6HH.mjs"
     ]
   },
   "virtual:astro:page:src/pages/videos/index@_@astro": {
-    "file": "chunks/index_xqdH0omV.mjs",
+    "file": "chunks/index_CnAO0Rpu.mjs",
     "name": "index@_@astro",
     "src": "virtual:astro:page:src/pages/videos/index@_@astro",
     "isDynamicEntry": true,
     "imports": [
-      "_Navbar_DblAD1G-.mjs",
-      "_prerender_Csyy2u02.mjs"
+      "_Navbar_Dxk6_s8X.mjs",
+      "_prerender_DxUxf521.mjs"
     ]
   },
   "virtual:astro:server-island-manifest": {

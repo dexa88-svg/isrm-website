@@ -13,7 +13,7 @@ export default defineConfig({
     format: 'preserve',
   },
   vite: {
-    cacheDir: '/tmp/vite-isrm-cache-2',    // Note: /tmp/vite-isrm-cache (old path) had a stale locked deps dir — keep using -2
+    cacheDir: '/tmp/vite-isrm-cache-6',    // Note: -2/-3/-4/-5 became stale/locked (owned by nobody); using -6
     resolve: {
       alias: {
         '@components': path.resolve(__dirname, 'src/components'),

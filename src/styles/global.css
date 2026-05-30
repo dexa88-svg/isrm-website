@@ -489,7 +489,8 @@ a { text-decoration: none; color: inherit; }
   border-color: var(--primary);
 }
 
-.card-tag {
+.card-tag,
+.card-guide-tag {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -1172,7 +1173,8 @@ a { text-decoration: none; color: inherit; }
 .guide-meta a:hover { color: var(--primary); }
 .guide-meta-sep { opacity: 0.4; }
 .guide-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
-.guide-tag {
+.guide-tag,
+.guide-guide-tag {
   background: rgba(0, 168, 204, 0.1);
   color: var(--accent);
   border: 1px solid rgba(0, 168, 204, 0.3);

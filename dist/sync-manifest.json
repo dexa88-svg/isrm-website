@@ -806,5 +806,30 @@
     "summary": "Step-by-step front disc brake pad replacement for Vespa Primavera and Sprint 50/125/150 (2013–present). Covers pad thickness inspection, caliper removal, piston retraction, OEM part number, torque specs (25–28 Nm), bedding-in procedure, and squeal elimination.",
     "addedAt": "2026-05-29T06:38:00Z",
     "lastChecked": "2026-05-29T06:38:00Z"
+  },
+  {
+    "url": "/repair-guides/gy6-starter-motor-replacement.html",
+    "title": "GY6 Starter Motor Diagnosis & Replacement",
+    "category": "repair-guides",
+    "file": "src/content/repair-guides/gy6-starter-motor-replacement.mdx",
+    "sources": [
+      "q9powersportsusa.com/blogs/technical-support-q9-powersports-usa/replace-starter-gas-powered-motor"
+    ],
+    "summary": "Diagnose and replace the electric starter motor on GY6 50cc–150cc scooters. Covers symptom checklist, bench test, step-by-step swap with torque specs, and wiring reconnection.",
+    "addedAt": "2026-05-30T00:00:00Z",
+    "lastChecked": "2026-05-30T00:00:00Z"
+  },
+  {
+    "url": "/repair-guides/vespa-primavera-sprint-spark-plug-guide.html",
+    "title": "Vespa Primavera & Sprint Spark Plug Guide",
+    "category": "repair-guides",
+    "file": "src/content/repair-guides/vespa-primavera-sprint-spark-plug-guide.mdx",
+    "sources": [
+      "scooterwest.com/modern-vespa/maintenance-tune-up/spark-plugs.html",
+      "vcoachicago.com/scooter-spark-plug-reference/"
+    ],
+    "summary": "NGK plug selection guide and step-by-step replacement for Vespa Primavera and Sprint 50/125/150cc. Covers ER9EH (50cc 4V) and CR8EB/CR8EIB (125–150cc 3V) with gap specs, torque (12 Nm), and plug-reading guide.",
+    "addedAt": "2026-05-30T00:00:00Z",
+    "lastChecked": "2026-05-30T00:00:00Z"
   }
 ]
