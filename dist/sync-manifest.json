@@ -1,5 +1,14 @@
 [
   {
+    "url": "/diagnostics/piaggio-zip-4t-oil-level-rising.html",
+    "title": "Piaggio Zip 4T — Rising Oil Level",
+    "category": "diagnostics",
+    "file": "src/content/diagnostics/piaggio-zip-4t-oil-level-rising.mdx",
+    "sources": ["Piaggio Service Manual", "RepairHow", "CarsolutionPro"],
+    "addedAt": "2026-05-31T00:00:00Z",
+    "lastChecked": "2026-05-31T00:00:00Z"
+  },
+  {
     "url": "/legal/privacy.html",
     "title": "Privacy Policy",
     "category": "legal",
