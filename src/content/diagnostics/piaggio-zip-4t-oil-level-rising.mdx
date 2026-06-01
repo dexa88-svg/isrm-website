@@ -2,7 +2,7 @@
 title: "Rising Oil Level"
 description: "Diagnose and fix rising oil level on Piaggio Zip 4T. Covers fuel contamination via float valve, blocked crankcase breather, worn rings, and overfill."
 publishDate: "2026-05-31"
-updatedDate: "2026-05-31"
+updatedDate: "2026-06-01"
 difficulty: "Intermediate"
 timeEstimate: "1–3 hours"
 tags: ["piaggio", "zip", "4t", "oil", "crankcase", "carburetor", "float valve", "diagnostics"]
@@ -11,6 +11,7 @@ appliesTo:
   - "Piaggio Zip 100 4T"
   - "Piaggio Typhoon 50 4T"
   - "Piaggio Fly 50 4T"
+  - "GY6 50cc / 125cc (BTC Riva, La Souris Sourini/City, Santini Capri)"
 videos:
   - id: "yZ9Z60EhheE"
     title: "Engine Oil Level Checking (Scooter)"
@@ -19,6 +20,18 @@ videos:
   - id: "LkHg82d469E"
     title: "How to Fix a Leaking Carburetor (Float Needle Valve)"
     creator: "Eliminator Performance"
+    position: "inline"
+  - id: "nAe_5YwWoV0"
+    title: "How to Test the Float Needle and Seat for Good Seal"
+    creator: "YouTube"
+    position: "inline"
+  - id: "wxPrBO9qRVg"
+    title: "How to Test a GY6 150cc Fuel Petcock Valve"
+    creator: "YouTube"
+    position: "inline"
+  - id: "2dcoMXIhIP8"
+    title: "GY6 Scooter - Petcock Leaks - Replace With New One"
+    creator: "YouTube"
     position: "inline"
   - id: "oLQciEkzB4E"
     title: "GY6 Motor Oil Backflow, Ventilation Hose Unrestricted"
@@ -65,7 +78,7 @@ sources:
     url: "https://carsolutionpro.com/oil-coming-out-of-crankcase-breather/"
 canonical: "https://ismr.online/diagnostics/piaggio-zip-4t-oil-level-rising.html"
 category: "fuel"
-engine: "piaggio"
+engine: "both"
 fuel: "carb"
 section: "Lubrication & Oil System"
 cardTag: "Oil / Fuel"
@@ -83,6 +96,7 @@ Rising oil level on its own is a symptom that cannot be ignored. On the Piaggio 
 - Piaggio Zip 50 4T (2005–2016, carburettor — Dellorto PHVA 12 / 17.5)
 - Piaggio Zip 100 4T
 - Piaggio Typhoon 50 4T / Fly 50 4T (same engine family — Hi-PER4 / Leader 4T)
+- GY6 50–125cc (BTC Riva, La Souris Sourini/City, Santini Capri, and similar Chinese-market scooters — CVK-style carburettor, vacuum petcock on right side of tank)
 
 <SourceBox sources={frontmatter.sources} />
 
@@ -116,7 +130,7 @@ Before diving into repairs, confirm the oil level really is rising — and rule 
 
 ## Root Cause Identification
 
-There are four causes, ordered from most to least common on the Zip 4T. Identify yours before touching anything.
+There are five causes, ordered from most to least common on the Zip 4T. Identify yours before touching anything.
 
 ### Cause 1 — Fuel contamination via stuck float needle valve *(most common)*
 
@@ -147,7 +161,19 @@ Heavily worn rings allow much more blow-by into the crankcase than the breather 
 - Poor compression (do a compression test — Zip 50 4T should show 8–10 bar cold)
 - Breather hose clear but still building excess pressure
 
-### Cause 4 — Overfilling
+### Cause 4 — Leaking vacuum petcock (fuel tap) diaphragm *(common on older / high-mileage scooters)*
+
+The Piaggio Zip 4T uses a vacuum-operated petcock located on the **lower right side of the fuel tank**. It contains a rubber diaphragm that only allows fuel to flow when intake vacuum is present — i.e. when the engine is running. If the diaphragm cracks or hardens with age, fuel flows continuously regardless of whether the engine is on or off, exactly as if the tap were set to PRI (prime) permanently.
+
+The carburettor float valve is not at fault here — it simply cannot cope with a constant unrestricted fuel supply while the scooter sits overnight. Fuel overflows the float bowl, enters the intake tract, and seeps past the intake valve into the crankcase.
+
+**How to identify:**
+- Oil smells of petrol and level rises while parked (same as Cause 1)
+- Carburettor float valve inspects as good / not worn
+- Disconnect the fuel line from the carb inlet with the engine off — fuel drips or flows freely despite no vacuum present
+- Alternatively: disconnect the vacuum hose from the petcock nipple — fuel flow should stop. If it continues, the diaphragm is failed.
+
+### Cause 5 — Overfilling *(simplest)*
 
 The simplest cause. Oil was added when the engine was hot (oil expands ~3–5% when warm), or the dipstick was misread (threaded in vs. rested).
 
@@ -221,6 +247,13 @@ The simplest cause. Oil was added when the engine was hot (oil expands ~3–5% w
   videoId="LkHg82d469E"
   title="How to Fix a Leaking Carburetor (Float Needle Valve)"
   creator="Eliminator Performance"
+  position="inline"
+/>
+
+<VideoEmbed
+  videoId="nAe_5YwWoV0"
+  title="How to Test the Float Needle and Seat for Good Seal"
+  creator="YouTube"
   position="inline"
 />
 
@@ -301,6 +334,47 @@ This is beyond the scope of this guide — refer to the [Piaggio Zip 50 4T Servi
 
 ---
 
+## Fix E — Vacuum Petcock Diaphragm (Cause 4)
+
+The vacuum petcock is on the **lower right side of the fuel tank**. Before starting, turn the fuel tap to OFF if it has a manual position, or clamp the fuel line to stop flow.
+
+### Step 1 — Test the petcock
+
+1. With the engine cold and off, disconnect the vacuum hose from the petcock's vacuum nipple.
+2. Disconnect the fuel outlet hose and hold it over a container.
+3. Without vacuum applied, there should be **zero fuel flow**. Any drip = failed diaphragm.
+4. Reconnect the vacuum hose and briefly apply suction with your mouth — fuel should now flow freely. If it doesn't, the diaphragm may be stuck closed (different problem, causes fuel starvation).
+
+### Step 2 — Replace the diaphragm
+
+1. Unscrew the petcock from the tank (usually 2–3 screws on the diaphragm cover, or a single hex bolt on the body).
+2. Remove the cover. Inside you will find a thin rubber disc (the diaphragm) and a small spring. Inspect for cracks, pinholes, or hardening — hold it up to the light.
+3. Replace with a new diaphragm kit (universal ~8 mm vacuum petcock kits fit most Piaggio/GY6 taps — confirm the disc diameter matches). Cost: €3–8.
+4. Reassemble, reconnect fuel and vacuum lines.
+5. Test again as in Step 1 before starting the engine.
+
+<Callout type="tip">
+  💡 **Alternative:** If a replacement diaphragm is not available immediately, convert the petcock to a manual tap (ON/OFF/RES without vacuum) — this is a common permanent fix on GY6-based scooters. Remember to turn it OFF every time you park.
+</Callout>
+
+<VideoEmbed
+  videoId="wxPrBO9qRVg"
+  title="How to Test a GY6 150cc Fuel Petcock Valve"
+  creator="YouTube"
+  position="inline"
+/>
+
+<VideoEmbed
+  videoId="2dcoMXIhIP8"
+  title="GY6 Scooter - Petcock Leaks - Replace With New One"
+  creator="YouTube"
+  position="inline"
+/>
+
+After confirming the petcock is fixed, drain and replace the contaminated oil (see Fix D below).
+
+---
+
 ## Fix D — Drain and Replace Contaminated Oil
 
 Regardless of which cause applies, if fuel has contaminated the oil, drain and replace it before running the engine again.
@@ -330,7 +404,8 @@ Regardless of which cause applies, if fuel has contaminated the oil, drain and r
 
 | Symptom | Most Likely Cause | Action |
 |---------|------------------|--------|
-| Oil smells of petrol, level rises when parked | Float needle valve leaking (Cause 1) | Fix A |
+| Oil smells of petrol, level rises when parked — float valve inspects OK | Leaking petcock diaphragm (Cause 4) | Fix E |
+| Oil smells of petrol, level rises when parked — petcock tests OK | Float needle valve leaking (Cause 1) | Fix A |
 | Oil level rises slowly after riding, no petrol smell | Blocked crankcase breather (Cause 2) | Fix B |
 | Blue smoke + rising oil + breather clear | Worn piston rings (Cause 3) | Fix C or workshop |
 | Level slightly above MAX, no smell, no smoke | Overfill (Cause 4) | Drain to MAX mark |
