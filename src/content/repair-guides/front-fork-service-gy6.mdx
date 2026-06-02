@@ -1,0 +1,461 @@
+---
+title: "Front Fork Service"
+description: "How to drain, flush, and refill front fork oil and replace leaking fork seals on GY6-based scooters including BTC Riva, La Souris Sourini, and Santini Capri."
+publishDate: "2026-06-02"
+updatedDate: "2026-06-02"
+difficulty: "Intermediate"
+timeEstimate: "~2 hours"
+tags: ["gy6", "suspension", "fork", "fork-oil", "fork-seal", "front-suspension"]
+appliesTo:
+  - "GY6 50cc (139QMB)"
+  - "GY6 125cc (152QMI)"
+  - "GY6 150cc (157QMJ)"
+  - "BTC Riva"
+  - "La Souris Sourini"
+  - "La Souris City"
+  - "Santini Capri"
+videos:
+  - id: "tfJGkIjz2XU"
+    title: "Scooter Front Shock Fork Oil | Oil Seal Replacement | DIY"
+    creator: "ODRA TV"
+    position: "hero"
+  - id: "4Xo-E4vvgI8"
+    title: "How to Service GY6 150cc Scooter Forks"
+    creator: "GY6 Mechanic"
+    position: "related"
+tools:
+  - "3/8\" socket driver or large hex key (for fork caps)"
+  - "10 mm socket and ratchet"
+  - "12 mm socket and ratchet"
+  - "Flat-head screwdriver"
+  - "Oil drain pan"
+  - "Seal driver or suitable pipe (≈ 32 mm OD) for pressing new seals"
+  - "Fork seal pick or thin plastic film strip (for debris cleaning)"
+  - "Measuring cup or syringe (50 ml increments)"
+  - "Zip ties or wire (for hanging forks to drain)"
+  - "Clean rags and plastic bags"
+sources:
+  - name: "49ccScoot.com Forum — Fork Oil Change, Stiffening Forks, Seal Replacement"
+    url: "https://49ccscoot.proboards.com/thread/9323/fork-change-stiffening-forks-replacement"
+  - name: "GY6 Front Fork Parts — GoKartsUSA"
+    url: "https://gokartsusa.com/parts-for-chinese-dirtbike-atv-gy6-scooter-4190.aspx"
+  - name: "Bennetts — How to Replace Fork Seals, Oil and Bushes"
+    url: "https://www.bennetts.co.uk/bikesocial/news-and-views/advice/bike-maintenance/replace-fork-seals-oil-bushes-diy-motorcycle-maintenance"
+  - name: "RevZilla — This Tip Could Save You a Fork Seal Replacement Job"
+    url: "https://www.revzilla.com/common-tread/this-tip-could-save-you-a-fork-seal-replacement-job"
+canonical: "https://ismr.online/repair-guides/front-fork-service-gy6.html"
+draft: false
+---
+
+import Callout from '../../components/Callout.astro';
+import VideoEmbed from '../../components/VideoEmbed.astro';
+import SourceBox from '../../components/SourceBox.astro';
+
+<VideoEmbed id="tfJGkIjz2XU" title="Scooter Front Shock Fork Oil | Oil Seal Replacement | DIY" />
+
+GY6-based scooters (BTC Riva, La Souris Sourini/City, Santini Capri, and countless other 50–150 cc clones) use a simple **conventional telescopic front fork** with a 30 mm inner tube diameter. These forks are fully serviceable at home with basic tools.
+
+The two most common symptoms that bring you here are soft, diving suspension and oil weeping down the fork leg — both have the same root cause: degraded fork oil and/or a worn oil seal.
+
+This guide covers three escalating levels of service:
+
+1. **Oil change only** — forks stay on the scooter, oil drained and refilled through the fork cap.
+2. **Oil change + debris clean** — forks removed, seal lip cleaned with a pick or film strip.
+3. **Full seal replacement** — forks fully disassembled, old seals driven out and new ones pressed in.
+
+Start with level 1. If oil continues leaking after a fresh fill, move to level 2. If the seal is visibly torn or deformed, go straight to level 3.
+
+---
+
+## Is your seal leaking? Diagnosis first
+
+Before touching a wrench, confirm where the oil is actually coming from.
+
+<figure style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1rem;margin:1.5rem 0;">
+<svg viewBox="0 0 520 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:520px;display:block;margin:0 auto;" aria-label="GY6 fork leg cross-section showing key leak zones">
+  
+  <rect x="180" y="160" width="60" height="120" rx="4" fill="#1a2332" stroke="#2a3548" stroke-width="2"/>
+  
+  <rect x="196" y="40" width="28" height="140" rx="3" fill="#242f3e" stroke="#a0a0a0" stroke-width="1.5"/>
+  
+  <rect x="197" y="40" width="4" height="140" rx="2" fill="#c8c8c8" opacity="0.25"/>
+
+  
+  <rect x="178" y="155" width="64" height="14" rx="3" fill="#004e89" stroke="#00a8cc" stroke-width="1.5"/>
+  <text x="260" y="165" font-size="11" fill="#00a8cc" font-family="sans-serif">← dust wiper</text>
+
+  
+  <rect x="178" y="175" width="64" height="12" rx="2" fill="#2a3548" stroke="#ff6b35" stroke-width="1.5"/>
+  <text x="260" y="184" font-size="11" fill="#ff6b35" font-family="sans-serif">← oil seal ⚠ leak zone 1</text>
+
+  
+  <rect x="178" y="191" width="64" height="5" rx="1" fill="#a0a0a0" stroke="#2a3548" stroke-width="1"/>
+  <text x="260" y="197" font-size="10" fill="#a0a0a0" font-family="sans-serif">← circlip</text>
+
+  
+  <rect x="197" y="205" width="28" height="60" fill="#00a8cc" opacity="0.15"/>
+  <text x="211" y="242" font-size="9" fill="#00a8cc" text-anchor="middle" font-family="sans-serif">oil</text>
+
+  
+  <rect x="190" y="28" width="40" height="16" rx="4" fill="#2a3548" stroke="#f5a623" stroke-width="1.5"/>
+  <text x="246" y="39" font-size="11" fill="#f5a623" font-family="sans-serif">← fork cap ⚠ leak zone 2</text>
+
+  
+  <rect x="175" y="272" width="70" height="12" rx="3" fill="#1a2332" stroke="#2a3548" stroke-width="1.5"/>
+  <text x="211" y="281" font-size="9" fill="#a0a0a0" text-anchor="middle" font-family="sans-serif">axle clamp / bottom bolt</text>
+
+  
+  <path d="M178 188 Q170 210 172 230" stroke="#ff6b35" stroke-width="1.5" fill="none" stroke-dasharray="3,3"/>
+  <ellipse cx="172" cy="233" rx="3" ry="5" fill="#ff6b35" opacity="0.7"/>
+
+  
+  <line x1="196" y1="70" x2="155" y2="55" stroke="#a0a0a0" stroke-width="1"/>
+  <text x="90" y="54" font-size="10" fill="#a0a0a0" font-family="sans-serif">inner tube</text>
+  
+  <line x1="180" y1="220" x2="155" y2="230" stroke="#a0a0a0" stroke-width="1"/>
+  <text x="80" y="233" font-size="10" fill="#a0a0a0" font-family="sans-serif">outer tube</text>
+
+  <text x="260" y="16" font-size="12" fill="#f5f5f5" font-family="sans-serif" font-weight="bold">Fork leg — leak zones</text>
+</svg>
+<figcaption style="font-size:0.8rem;color:var(--text-secondary);margin-top:0.5rem;">Two places oil can escape: the oil seal (most common) and the fork cap O-ring (easy fix).</figcaption>
+</figure>
+
+**Where is the oil?**
+
+- **Oil film on the inner tube, running down the outer tube** → oil seal is leaking. This is the most common failure. Proceed to Level 2 or Level 3 depending on severity.
+- **Oil pooling around the fork cap** → the cap O-ring has failed or the cap is loose. Tighten the cap first. If it still seeps, replace the cap O-ring (cheap, fits a 2–3 mm cross-section O-ring).
+- **Oil from the very bottom of the outer tube** → the damper rod bottom bolt is loose or its sealing washer is gone. Tighten or replace the washer.
+- **Fork feels soft but no visible leak** → oil level is simply low (common on older bikes) or oil is degraded and no longer damping. Level 1 oil change is enough.
+
+**How bad is the seal leak?**
+
+| Symptom | Action |
+|---|---|
+| Light weep — occasional oil mist, no visible drip | Try Level 2 debris clean first |
+| Steady drip or film covering the outer tube | Replace the seal (Level 3) |
+| Oil on the brake disc or tyre | **Stop riding immediately** — brake contamination is dangerous |
+
+<Callout type="danger">
+Fork oil on the brake disc reduces stopping power drastically. If you see oil reaching the front wheel, do not ride the scooter until the fork is repaired and the disc cleaned with brake cleaner.
+</Callout>
+
+---
+
+## Parts and fluids
+
+| Item | Specification | Notes |
+|---|---|---|
+| Fork oil | **10W** (ISO Grade 10) | ATF Dexron-III is an acceptable substitute — it has anti-foam and seal-conditioner additives and was the original spec on many older designs |
+| Oil quantity | **~80–110 ml per leg** | Fill to the level of the dust wiper with the fork fully collapsed; check and top up after pumping |
+| Fork oil seal | **30 × 42 × 10.5 mm** | Common size for GY6 sport-style forks; verify against the old seal before ordering |
+| Dust wiper | Sold with the seal kit | Replace whenever the seal comes off |
+
+<Callout type="tip">
+If you cannot find the exact seal size, measure the inner tube with a calliper — it will be very close to 30 mm. Match the outer diameter and height against the old seal before ordering.
+</Callout>
+
+---
+
+## Safety
+
+<Callout type="warn">
+Support the scooter securely on a centre stand or paddock stand before lifting the front wheel. The scooter will be unstable with the front wheel removed. Never work under an unsupported scooter.
+</Callout>
+
+<Callout type="danger">
+Fork oil is slippery and mildly toxic. Wear nitrile gloves. Dispose of old fork oil at a recycling point — do not pour it down a drain.
+</Callout>
+
+---
+
+## Level 1 — Oil drain and refill (forks on scooter)
+
+This method works when the seals are not leaking and you simply want to refresh degraded oil. It drains roughly 70–80 % of the old oil; a full flush requires fork removal.
+
+**Step 1 — Secure the scooter and lift the front wheel.**
+Put the scooter on its centre stand. Place a block under the frame to keep the front wheel off the ground and the fork fully extended.
+
+**Step 2 — Remove the fork caps.**
+
+<figure style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1rem;margin:1.5rem 0;">
+<svg viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:480px;display:block;margin:0 auto;" aria-label="Fork cap location on triple clamp">
+  
+  <rect x="60" y="30" width="360" height="14" rx="7" fill="#242f3e" stroke="#2a3548" stroke-width="1.5"/>
+  
+  <rect x="190" y="44" width="100" height="22" rx="4" fill="#1a2332" stroke="#2a3548" stroke-width="2"/>
+  
+  <circle cx="215" cy="44" r="12" fill="#2a3548" stroke="#f5a623" stroke-width="2"/>
+  <text x="215" y="48" font-size="9" fill="#f5a623" text-anchor="middle" font-family="sans-serif" font-weight="bold">CAP</text>
+  
+  <circle cx="265" cy="44" r="12" fill="#2a3548" stroke="#f5a623" stroke-width="2"/>
+  <text x="265" y="48" font-size="9" fill="#f5a623" text-anchor="middle" font-family="sans-serif" font-weight="bold">CAP</text>
+  
+  <rect x="207" y="56" width="16" height="120" rx="3" fill="#242f3e" stroke="#a0a0a0" stroke-width="1.5"/>
+  
+  <rect x="257" y="56" width="16" height="120" rx="3" fill="#242f3e" stroke="#a0a0a0" stroke-width="1.5"/>
+  
+  <rect x="190" y="110" width="100" height="18" rx="4" fill="#1a2332" stroke="#2a3548" stroke-width="2"/>
+  
+  <circle cx="200" cy="119" r="5" fill="#2a3548" stroke="#00a8cc" stroke-width="1.5"/>
+  
+  <circle cx="280" cy="119" r="5" fill="#2a3548" stroke="#00a8cc" stroke-width="1.5"/>
+
+  
+  <line x1="215" y1="32" x2="215" y2="14" stroke="#f5a623" stroke-width="1.5"/>
+  <text x="215" y="10" font-size="10" fill="#f5a623" text-anchor="middle" font-family="sans-serif">fork caps — undo first</text>
+
+  <line x1="290" y1="119" x2="350" y2="119" stroke="#00a8cc" stroke-width="1.5"/>
+  <text x="355" y="123" font-size="10" fill="#00a8cc" font-family="sans-serif">pinch bolts</text>
+  <text x="355" y="136" font-size="10" fill="#00a8cc" font-family="sans-serif">(loosen to slide fork out)</text>
+
+  
+  <rect x="55" y="150" width="60" height="20" rx="3" fill="#2a3548" stroke="#f5a623" stroke-width="1"/>
+  <text x="85" y="163" font-size="9" fill="#f5a623" text-anchor="middle" font-family="sans-serif">3/8" drive</text>
+  <line x1="85" y1="150" x2="215" y2="56" stroke="#f5a623" stroke-width="1" stroke-dasharray="4,3"/>
+</svg>
+<figcaption style="font-size:0.8rem;color:var(--text-secondary);margin-top:0.5rem;">Fork caps sit at the very top of each fork leg. A 3/8" square drive or large hex key fits the recess. Loosen pinch bolts only if removing the fork legs entirely.</figcaption>
+</figure>
+
+The caps sit at the top of each fork leg, above the triple clamp. A 3/8" square drive socket or large hex key fits the recess. Turn anti-clockwise to remove. The spring inside will push back — keep light pressure on the cap as the last threads disengage. Set caps and O-rings aside on a clean rag.
+
+**Step 3 — Remove the springs.**
+Pull the spring straight up out of each leg. The **tighter-wound end goes in first** (faces down) on reassembly — note which end is which. Bag each spring to keep it clean.
+
+**Step 4 — Drain the oil.**
+Place your drain pan under the fork. Compress and extend each fork leg by hand 15–20 times to pump out as much oil as possible. Let them drain for 5–10 minutes; prop at an angle or hang with wire to get more out.
+
+**Step 5 — Flush (optional, recommended if oil is dark or has particles).**
+Pour ~80 ml of fresh fork oil into one leg. Cap loosely and pump 20–30 times. Drain into the pan. Repeat for the second leg using the drained oil from the first. Flush again if the oil still pours out dark.
+
+**Step 6 — Refill.**
+
+<figure style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1rem;margin:1.5rem 0;">
+<svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:400px;display:block;margin:0 auto;" aria-label="Fork oil fill level diagram">
+  
+  <rect x="140" y="40" width="80" height="160" rx="6" fill="#1a2332" stroke="#2a3548" stroke-width="2"/>
+  
+  <rect x="160" y="10" width="40" height="130" rx="3" fill="#242f3e" stroke="#a0a0a0" stroke-width="1.5"/>
+  
+  <rect x="141" y="118" width="78" height="81" rx="0" fill="#00a8cc" opacity="0.18"/>
+  
+  <line x1="141" y1="118" x2="219" y2="118" stroke="#00a8cc" stroke-width="2"/>
+  
+  <rect x="138" y="107" width="84" height="13" rx="3" fill="#004e89" stroke="#00a8cc" stroke-width="1.5"/>
+  <text x="180" y="117" font-size="9" fill="#f5f5f5" text-anchor="middle" font-family="sans-serif">dust wiper</text>
+  
+  <line x1="230" y1="118" x2="270" y2="100" stroke="#00a8cc" stroke-width="1.5"/>
+  <text x="275" y="98" font-size="11" fill="#00a8cc" font-family="sans-serif">fill to here</text>
+  <text x="275" y="111" font-size="10" fill="#a0a0a0" font-family="sans-serif">(fork collapsed)</text>
+  
+  <text x="180" y="158" font-size="10" fill="#00a8cc" text-anchor="middle" font-family="sans-serif">~80–110 ml</text>
+  <text x="180" y="171" font-size="9" fill="#a0a0a0" text-anchor="middle" font-family="sans-serif">per leg</text>
+  
+  <rect x="156" y="2" width="48" height="12" rx="3" fill="#2a3548" stroke="#f5a623" stroke-width="1.5"/>
+  <text x="180" y="11" font-size="8" fill="#f5a623" text-anchor="middle" font-family="sans-serif">cap removed</text>
+  
+  <rect x="48" y="80" width="12" height="50" rx="3" fill="#2a3548" stroke="#a0a0a0" stroke-width="1"/>
+  <rect x="44" y="78" width="20" height="6" rx="2" fill="#a0a0a0"/>
+  <line x1="54" y1="130" x2="54" y2="145" stroke="#a0a0a0" stroke-width="2"/>
+  <line x1="54" y1="145" x2="140" y2="118" stroke="#a0a0a0" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="30" y="160" font-size="9" fill="#a0a0a0" font-family="sans-serif">syringe</text>
+  <text x="30" y="171" font-size="9" fill="#a0a0a0" font-family="sans-serif">or slow pour</text>
+</svg>
+<figcaption style="font-size:0.8rem;color:var(--text-secondary);margin-top:0.5rem;">Hold the fork fully collapsed. Fill to the bottom edge of the dust wiper. A syringe gives better control than pouring directly from a bottle.</figcaption>
+</figure>
+
+Hold the fork fully **collapsed** (compressed). Pour oil slowly, pausing to let it settle. Fill to the bottom edge of the dust wiper — roughly 80–100 ml per leg. Pump the fork by hand 10 times to purge air bubbles, then top up to the dust-wiper line again. Repeat until the level stabilises.
+
+**Step 7 — Reinstall springs and caps.**
+Drop the spring in, tighter-wound end down. Place the O-ring on the cap, then thread the cap in by hand. To avoid cross-threading: hold the cap in place with the socket driver, rotate the fork itself in the loosening direction until you feel the threads click into engagement, then tighten normally. Torque to approximately 20–25 N·m.
+
+**Step 8 — Test.**
+Remove the front-wheel support and pump the suspension by sitting on the scooter. Check both legs for weeping at the dust seal. If oil appears after a short test ride, proceed to Level 2 or Level 3.
+
+---
+
+## Level 2 — Fork removal and seal debris clean
+
+If there is a minor weep but the seal is not visibly torn, debris trapped between the seal lip and inner tube is the likely cause. Removing it often stops the leak without a full seal replacement.
+
+**Step 1 — Remove the front wheel.**
+Undo the brake caliper bolts (2 × 10 mm). Hang the caliper with a zip tie — never by the brake hose. Disconnect the speedometer cable. Remove the axle nut and pull the axle. The wheel drops free.
+
+**Step 2 — Remove front body panels.**
+Two pieces of body plastic typically cover the top of the fork tree. Remove them to access the fork-clamp pinch bolts.
+
+**Step 3 — Slide out the fork legs.**
+Loosen the pinch bolts on both the upper and lower triple clamps. Pull each fork leg downward while rotating gently if it sticks. Lean them vertically or hang them to drain.
+
+**Step 4 — Clean the seal lip.**
+
+<figure style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1rem;margin:1.5rem 0;">
+<svg viewBox="0 0 460 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:460px;display:block;margin:0 auto;" aria-label="Seal debris cleaning technique">
+  
+  
+  <rect x="130" y="20" width="18" height="140" rx="0" fill="#1a2332" stroke="#2a3548" stroke-width="2"/>
+  
+  <rect x="232" y="20" width="18" height="140" rx="0" fill="#1a2332" stroke="#2a3548" stroke-width="2"/>
+  
+  <rect x="168" y="10" width="44" height="160" rx="2" fill="#242f3e" stroke="#a0a0a0" stroke-width="1.5"/>
+  
+  <rect x="169" y="10" width="5" height="160" fill="#c8c8c8" opacity="0.2"/>
+  
+  <rect x="129" y="55" width="122" height="14" rx="3" fill="#004e89" stroke="#00a8cc" stroke-width="1.5"/>
+  <text x="190" y="65" font-size="9" fill="#f5f5f5" text-anchor="middle" font-family="sans-serif">dust wiper (pop up with thumb)</text>
+  
+  <rect x="129" y="73" width="122" height="12" rx="2" fill="#2a3548" stroke="#ff6b35" stroke-width="1.5"/>
+  <text x="190" y="82" font-size="9" fill="#ff6b35" text-anchor="middle" font-family="sans-serif">oil seal lip</text>
+  
+  <rect x="167" y="62" width="3" height="24" rx="1" fill="#f5a623" opacity="0.9"/>
+  <text x="130" y="100" font-size="9" fill="#f5a623" font-family="sans-serif">film strip</text>
+  <line x1="158" y1="98" x2="168" y2="78" stroke="#f5a623" stroke-width="1"/>
+  
+  <path d="M168 90 Q190 110 212 90" stroke="#00a8cc" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <text x="175" y="118" font-size="9" fill="#00a8cc" font-family="sans-serif">rotate around tube</text>
+  
+  <circle cx="171" cy="76" r="2" fill="#a0a0a0" opacity="0.7"/>
+  <circle cx="175" cy="80" r="1.5" fill="#a0a0a0" opacity="0.7"/>
+  <circle cx="208" cy="77" r="2" fill="#a0a0a0" opacity="0.7"/>
+  <defs>
+    <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#00a8cc"/>
+    </marker>
+  </defs>
+  <text x="320" y="40" font-size="11" fill="#f5f5f5" font-family="sans-serif" font-weight="bold">Debris clean</text>
+  <text x="320" y="58" font-size="10" fill="#a0a0a0" font-family="sans-serif">1. Pop dust wiper up</text>
+  <text x="320" y="75" font-size="10" fill="#a0a0a0" font-family="sans-serif">2. Slide film between</text>
+  <text x="320" y="88" font-size="10" fill="#a0a0a0" font-family="sans-serif">   seal lip {"&"} tube</text>
+  <text x="320" y="105" font-size="10" fill="#a0a0a0" font-family="sans-serif">3. Rotate full circle</text>
+  <text x="320" y="122" font-size="10" fill="#a0a0a0" font-family="sans-serif">4. Remove film {"&"} pump</text>
+</svg>
+<figcaption style="font-size:0.8rem;color:var(--text-secondary);margin-top:0.5rem;">A thin strip of plastic (cut from a freezer bag or old 35 mm film) slid around the seal lip dislodges grit without damaging the seal.</figcaption>
+</figure>
+
+Fold a thin strip of plastic (35 mm film or a strip cut from a freezer bag) into a U shape. Pop the dust wiper upward with your thumb to expose the seal lip. Slide the plastic strip between the seal lip and the inner tube and rotate it around the full circumference. This dislodges compacted dirt that holds the lip open. Remove the strip.
+
+**Step 5 — Pump and inspect.**
+Work the fork by hand 10 times to flush loosened debris out with residual oil. If the lip looked intact and clean, proceed to a Level 1 oil change, reinstall, and road test. If the lip is cracked, hardened, or visibly torn, continue to Level 3.
+
+**Step 6 — Reinstall fork legs.**
+Slide each leg up through the triple clamps, aligning the top of the inner tube flush with or slightly above the upper clamp (match the original position). Tighten pinch bolts to approximately 15–20 N·m — upper clamp first, then lower. Reinstall body panels, wheel, axle, speedometer cable, and caliper. Check brake operation before riding.
+
+---
+
+## Level 3 — Full disassembly and seal replacement
+
+<Callout type="warn">
+Work on one fork at a time — leave the other assembled as a reference. Take photos before disassembly.
+</Callout>
+
+**Step 1 — Remove and drain the fork** as in Level 2. Remove the spring and cap. Drain all oil.
+
+**Step 2 — Remove the damper rod bolt.**
+At the very bottom of the outer tube there is a single Allen bolt (usually 6 mm or 8 mm) securing the damper rod. Insert a long flat-head screwdriver from the top to hold the damper rod stationary while you undo this bottom bolt. Some designs omit this bolt — if there is none, skip this step.
+
+**Step 3 — Separate the inner and outer tubes.**
+
+<figure style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1rem;margin:1.5rem 0;">
+<svg viewBox="0 0 460 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:460px;display:block;margin:0 auto;" aria-label="Fork internal components in disassembly order">
+  
+  
+  <text x="30" y="16" font-size="10" fill="#a0a0a0" font-family="sans-serif">disassembly order (top of inner tube → bottom)</text>
+
+  
+  <rect x="20" y="30" width="50" height="18" rx="4" fill="#004e89" stroke="#00a8cc" stroke-width="1.5"/>
+  <text x="45" y="42" font-size="8" fill="#f5f5f5" text-anchor="middle" font-family="sans-serif">1 dust</text>
+  <text x="45" y="52" font-size="8" fill="#f5f5f5" text-anchor="middle" font-family="sans-serif">wiper</text>
+  
+  <rect x="85" y="34" width="40" height="10" rx="2" fill="#a0a0a0" stroke="#2a3548" stroke-width="1"/>
+  <text x="105" y="55" font-size="8" fill="#a0a0a0" text-anchor="middle" font-family="sans-serif">2 circlip</text>
+  
+  <rect x="140" y="28" width="55" height="22" rx="4" fill="#2a3548" stroke="#ff6b35" stroke-width="2"/>
+  <text x="167" y="40" font-size="8" fill="#ff6b35" text-anchor="middle" font-family="sans-serif">3 oil seal</text>
+  <text x="167" y="50" font-size="7" fill="#a0a0a0" text-anchor="middle" font-family="sans-serif">30×42×10.5</text>
+  
+  <ellipse cx="225" cy="39" rx="16" ry="7" fill="#2a3548" stroke="#a0a0a0" stroke-width="1.5"/>
+  <ellipse cx="225" cy="39" rx="6" ry="3" fill="#1a2332"/>
+  <text x="225" y="58" font-size="8" fill="#a0a0a0" text-anchor="middle" font-family="sans-serif">4 washer</text>
+  
+  <rect x="255" y="28" width="45" height="22" rx="3" fill="#242f3e" stroke="#a0a0a0" stroke-width="1.5"/>
+  <text x="277" y="40" font-size="8" fill="#a0a0a0" text-anchor="middle" font-family="sans-serif">5 guide</text>
+  <text x="277" y="50" font-size="8" fill="#a0a0a0" text-anchor="middle" font-family="sans-serif">bushing</text>
+  
+  <rect x="315" y="28" width="45" height="22" rx="3" fill="#242f3e" stroke="#a0a0a0" stroke-width="1.5"/>
+  <text x="337" y="40" font-size="8" fill="#a0a0a0" text-anchor="middle" font-family="sans-serif">6 slide</text>
+  <text x="337" y="50" font-size="8" fill="#a0a0a0" text-anchor="middle" font-family="sans-serif">bushing</text>
+  
+  <path d="M375 30 Q380 25 385 30 Q390 35 395 30 Q400 25 405 30 Q410 35 415 30" stroke="#a0a0a0" stroke-width="2" fill="none"/>
+  <text x="395" y="55" font-size="8" fill="#a0a0a0" text-anchor="middle" font-family="sans-serif">7 spring</text>
+
+  
+  <text x="74" y="42" font-size="12" fill="#2a3548" font-family="sans-serif">→</text>
+  <text x="128" y="42" font-size="12" fill="#2a3548" font-family="sans-serif">→</text>
+  <text x="202" y="42" font-size="12" fill="#2a3548" font-family="sans-serif">→</text>
+  <text x="244" y="42" font-size="12" fill="#2a3548" font-family="sans-serif">→</text>
+  <text x="304" y="42" font-size="12" fill="#2a3548" font-family="sans-serif">→</text>
+  <text x="362" y="42" font-size="12" fill="#2a3548" font-family="sans-serif">→</text>
+
+  
+  <rect x="100" y="90" width="260" height="30" rx="4" fill="#242f3e" stroke="#a0a0a0" stroke-width="1.5"/>
+  <text x="230" y="109" font-size="10" fill="#a0a0a0" text-anchor="middle" font-family="sans-serif">inner tube — components slide off top</text>
+
+  
+  <rect x="100" y="140" width="260" height="55" rx="6" fill="#1a2332" stroke="#ff6b35" stroke-width="1.5"/>
+  <text x="230" y="158" font-size="10" fill="#ff6b35" text-anchor="middle" font-family="sans-serif" font-weight="bold">⚠ New seal orientation</text>
+  <text x="230" y="173" font-size="10" fill="#a0a0a0" text-anchor="middle" font-family="sans-serif">Seal lip faces DOWN (toward the oil).</text>
+  <text x="230" y="186" font-size="10" fill="#a0a0a0" text-anchor="middle" font-family="sans-serif">The small coil spring inside the seal faces down.</text>
+</svg>
+<figcaption style="font-size:0.8rem;color:var(--text-secondary);margin-top:0.5rem;">Keep components in order on a clean rag. The oil seal installs lip-down — the small internal spring must face toward the oil, not toward the cap.</figcaption>
+</figure>
+
+With the bottom bolt removed (or if there is none), hold the outer tube and pull the inner tube sharply upward in a slide-hammer motion. Several firm pulls will disengage the bushings. Keep your face clear — components can spring free.
+
+**Step 4 — Remove the old seal.**
+Once the tubes are separated, the dust wiper, circlip, oil seal, washer, guide bushing, and slide bushing slide off the top of the inner tube. Keep them in sequence on a clean rag.
+
+**Step 5 — Inspect the inner tube.**
+Check the chrome surface for scoring, pitting, or rust. Light oxidation can be polished with 1500-grit wet-and-dry paper. Deep scoring means the tube must be replaced — any new seal will leak on a damaged tube.
+
+**Step 6 — Install new seals.**
+Slide the slide bushing and guide bushing onto the inner tube. Place the new oil seal on top, **lip side down** (the internal spring faces down toward the oil). Use a seal driver — a short section of pipe with a 32–35 mm OD — to press the seal squarely into the outer tube mouth until it clicks into the groove. Install the circlip to lock it. Press the dust wiper on top.
+
+**Step 7 — Reassemble the fork.**
+Slide the inner tube back into the outer tube. Reinstall the damper rod bolt from the bottom and torque to approximately 10–15 N·m. Reinstall the spring (tighter coils down) and fill with fork oil per the Level 1 instructions.
+
+**Step 8 — Reinstall, test, and verify.**
+As per Level 2 Step 6. Road test over uneven ground. Inspect the seal area after 10 minutes of riding.
+
+---
+
+## Stiffening the forks (optional)
+
+GY6 forks are designed for light riders and are often too soft for heavier loads. Adding a preload spacer is cheap and reversible.
+
+Cut a section of 15 mm (½") CPVC or PVC pipe to the desired length — start with 15–20 mm. Place a flat washer (25 mm OD) at each end of the spacer to prevent the spring coils from cutting into the plastic. Drop the spacer into the fork on top of the spring before installing the cap.
+
+<Callout type="tip">
+A 20 mm spacer adds noticeable firmness without significantly reducing travel. Increase in small increments — over-springing makes the ride harsh and reduces front-wheel grip.
+</Callout>
+
+---
+
+## Torque reference
+
+| Fastener | Torque |
+|---|---|
+| Fork cap | 20–25 N·m |
+| Upper triple clamp pinch bolt | 15–20 N·m |
+| Lower triple clamp pinch bolt | 15–20 N·m |
+| Damper rod bottom bolt | 10–15 N·m |
+| Front axle nut | 40–50 N·m |
+| Brake caliper bolts | 25–30 N·m |
+
+<Callout type="warn">
+These torque values are typical for GY6-platform scooters. Cross-reference against your model's service manual if available — fastener sizes and materials vary between manufacturers.
+</Callout>
+
+---
+
+<VideoEmbed id="4Xo-E4vvgI8" title="How to Service GY6 150cc Scooter Forks" position="related" />
+
+<SourceBox sources={frontmatter.sources} />
