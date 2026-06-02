@@ -2,7 +2,7 @@
 title: "GY6 Scooter Won't Start — Troubleshooting Checklist"
 description: "Interactive no-start diagnostic tool for GY6 scooters. Step-by-step fault-finding for spark, fuel, compression, and electrical issues on 50/125/150cc engines."
 publishDate: "2026-05-07"
-updatedDate: "2026-05-07"
+updatedDate: "2026-06-02"
 difficulty: "Beginner"
 timeEstimate: "~30 min"
 tags: ["gy6", "diagnostics", "no-start", "troubleshooting"]
@@ -24,7 +24,7 @@ A GY6 engine requires three things to start: **spark**, **fuel**, and **compress
 
 ## Quick Symptom Guide (Start Here)
 
-<table><tbody><tr><th>Symptom</th><th>Most Likely Cause</th><th>Jump to Section</th></tr><tr><td>Engine cranks but won't fire</td><td>No spark, no fuel, or low compression</td><td>Sections 1, 2, 3</td></tr><tr><td>Engine won't even crank (starter spins but engine doesn't)</td><td>Low battery, faulty starter relay, or compression release stuck open</td><td>Section 4</td></tr><tr><td>Fires briefly then dies</td><td>Fuel starvation (blocked jet or closed petcock)</td><td>Section 2</td></tr><tr><td>Starts with choke but dies without it</td><td>Pilot jet blocked, mixture too lean</td><td>Section 2B</td></tr><tr><td>Starts cold but not hot (or hot but not cold)</td><td>Auto-choke malfunction</td><td>Section 2C</td></tr><tr><td>Kick-start works but electric starter doesn't</td><td>Battery, starter motor, or relay fault</td><td>Section 4</td></tr></tbody></table>
+<table><tbody><tr><th>Symptom</th><th>Most Likely Cause</th><th>Jump to Section</th></tr><tr><td>Engine cranks but won't fire</td><td>No spark, no fuel, or low compression</td><td>Sections 1, 2, 3</td></tr><tr><td>Starter clicks or nothing happens, engine doesn't turn</td><td>Dead battery, blown fuse, or faulty relay</td><td>Section 4A, 4B</td></tr><tr><td>Starter spins freely with whirring noise, engine doesn't turn</td><td>Starter clutch (one-way bearing) worn or failed</td><td>Section 4C</td></tr><tr><td>Fires briefly then dies</td><td>Fuel starvation (blocked jet or closed petcock)</td><td>Section 2</td></tr><tr><td>Starts with choke but dies without it</td><td>Pilot jet blocked, mixture too lean</td><td>Section 2B</td></tr><tr><td>Starts cold but not hot (or hot but not cold)</td><td>Auto-choke malfunction</td><td>Section 2C</td></tr><tr><td>Kick-start works but electric starter doesn't</td><td>Battery, starter motor, or relay fault</td><td>Section 4</td></tr></tbody></table>
 
 ## Section 1 — Spark
 
@@ -109,6 +109,28 @@ Low compression causes: worn or stuck piston rings, burned valves, blown head ga
 1.  When pressing the electric starter, you should hear a click from the starter relay (located near the battery). No click = relay or wiring fault.
 2.  Bypass test: use a jumper wire directly between the starter motor terminal and the battery positive. If the engine cranks, the starter relay or its wiring is faulty.
 3.  The relay can be tested with a multimeter or simply replaced — they cost very little and are standard across all GY6 scooters.
+
+### 4C — Starter Spins Without Cranking (Starter Clutch / One-Way Bearing)
+
+**Symptom:** Starter motor spins at full speed with a free, high-pitched whirring sound — but the engine doesn't turn over at all. This is distinct from a slow or weak crank (Section 4A) or a single click with silence (Section 4B).
+
+**What's happening:** The GY6 uses a **starter clutch** (one-way bearing) mounted on the back of the flywheel, inside the left engine cover. It transfers torque from the starter motor to the crankshaft in one direction and freewheels in the other. When the rollers or sprag inside wear out, it slips — the starter spins freely at full speed but cannot turn the engine.
+
+**Diagnosis:**
+
+1.  **Rule out battery voltage first.** A weak battery can spin the starter but without enough torque to engage. Confirm voltage is ≥ 12.4 V (ideally 12.6 V). Charge fully and retest before pulling the engine cover.
+2.  **Listen to the noise.** Free high-speed whirring = clutch slipping. Intermittent catching or grinding = worn teeth on the starter clutch gear or the flywheel ring gear.
+3.  **Pattern clue:** Fails when cold or after sitting for weeks, sometimes catches when warm = early-stage roller wear. Fails consistently = clutch fully gone.
+4.  **Confirm with cover off:**
+    - Remove the left engine cover (3–4 bolts).
+    - The starter clutch is the round assembly on the back of the flywheel.
+    - By hand: hold the starter drive gear and rotate the flywheel. It should lock in one direction and freewheel in the other. If it spins freely both ways, the one-way bearing has failed.
+
+**Fix:** Replace the starter clutch assembly. It is a widely available GY6 part (€10–€25). You will likely need a **flywheel puller** to gain proper access — do not attempt to remove the flywheel without one or you risk damaging the taper.
+
+<Callout type="warn">
+  Do not keep cranking once you suspect a slipping starter clutch. Repeated engagement on a failing clutch accelerates wear on the flywheel ring gear — a significantly more expensive repair.
+</Callout>
 
 ## Checklist Summary
 
