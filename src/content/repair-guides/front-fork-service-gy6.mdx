@@ -15,13 +15,17 @@ appliesTo:
   - "La Souris City"
   - "Santini Capri"
 videos:
-  - id: "tfJGkIjz2XU"
-    title: "Scooter Front Shock Fork Oil | Oil Seal Replacement | DIY"
-    creator: "ODRA TV"
+  - id: "yWrSLBBWEjw"
+    title: "Scooter Front Fork Service: Fork Oil Change, Seal Replacement & Checks"
+    creator: "49ccScoot"
     position: "hero"
   - id: "4Xo-E4vvgI8"
     title: "How to Service GY6 150cc Scooter Forks"
-    creator: "GY6 Mechanic"
+    creator: "Rc Chaz"
+    position: "related"
+  - id: "teGbAy0Uf5I"
+    title: "How to Replace Motorcycle Fork Seals and Oil"
+    creator: "Ichiban Moto"
     position: "related"
 tools:
   - "3/8\" socket driver or large hex key (for fork caps)"
@@ -47,11 +51,11 @@ canonical: "https://ismr.online/repair-guides/front-fork-service-gy6.html"
 draft: false
 ---
 
-import Callout from '../../components/Callout.astro';
-import VideoEmbed from '../../components/VideoEmbed.astro';
-import SourceBox from '../../components/SourceBox.astro';
+import Callout from '@components/Callout.astro';
+import VideoEmbed from '@components/VideoEmbed.astro';
+import SourceBox from '@components/SourceBox.astro';
 
-<VideoEmbed id="tfJGkIjz2XU" title="Scooter Front Shock Fork Oil | Oil Seal Replacement | DIY" />
+<VideoEmbed videoId="yWrSLBBWEjw" title="Scooter Front Fork Service: Fork Oil Change, Seal Replacement & Checks" creator="49ccScoot" />
 
 GY6-based scooters (BTC Riva, La Souris Sourini/City, Santini Capri, and countless other 50–150 cc clones) use a simple **conventional telescopic front fork** with a 30 mm inner tube diameter. These forks are fully serviceable at home with basic tools.
 
@@ -456,6 +460,13 @@ These torque values are typical for GY6-platform scooters. Cross-reference again
 
 ---
 
-<VideoEmbed id="4Xo-E4vvgI8" title="How to Service GY6 150cc Scooter Forks" position="related" />
+<VideoEmbed videoId="4Xo-E4vvgI8" title="How to Service GY6 150cc Scooter Forks" creator="Rc Chaz" />
 
-<SourceBox sources={frontmatter.sources} />
+<VideoEmbed videoId="teGbAy0Uf5I" title="How to Replace Motorcycle Fork Seals and Oil" creator="Ichiban Moto" />
+
+<SourceBox sources={[
+  { name: "49ccScoot.com — Fork Oil Change, Stiffening Forks, Seal Replacement", url: "https://49ccscoot.proboards.com/thread/9323/fork-change-stiffening-forks-replacement" },
+  { name: "GoKartsUSA — GY6 Front Fork Oil Seal", url: "https://gokartsusa.com/parts-for-chinese-dirtbike-atv-gy6-scooter-4190.aspx" },
+  { name: "Bennetts — How to Replace Fork Seals, Oil and Bushes", url: "https://www.bennetts.co.uk/bikesocial/news-and-views/advice/bike-maintenance/replace-fork-seals-oil-bushes-diy-motorcycle-maintenance" },
+  { name: "RevZilla — This Tip Could Save You a Fork Seal Replacement Job", url: "https://www.revzilla.com/common-tread/this-tip-could-save-you-a-fork-seal-replacement-job" },
+]} />

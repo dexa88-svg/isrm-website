@@ -1,10 +1,14 @@
 [
   {
     "url": "/diagnostics/piaggio-zip-4t-oil-level-rising.html",
-    "title": "Piaggio Zip 4T — Rising Oil Level",
+    "title": "Piaggio Zip 4T \u2014 Rising Oil Level",
     "category": "diagnostics",
     "file": "src/content/diagnostics/piaggio-zip-4t-oil-level-rising.mdx",
-    "sources": ["Piaggio Service Manual", "RepairHow", "CarsolutionPro"],
+    "sources": [
+      "Piaggio Service Manual",
+      "RepairHow",
+      "CarsolutionPro"
+    ],
     "addedAt": "2026-05-31T00:00:00Z",
     "lastChecked": "2026-05-31T00:00:00Z"
   },
@@ -798,7 +802,7 @@
     "sources": [
       "rollingwrenchdenver.com/blogs/news/i-am-having-trouble-with-my-gy6-efi-system"
     ],
-    "summary": "12-step diagnostic checklist for GY6 EFI faults covering grounding (< 0.2 Ω), fuel pressure (42 PSI target), air leak detection with carb cleaner, TPS reset procedure, woodruff key inspection, idle air/fuel screw adjustment, and fuel pump regulator check.",
+    "summary": "12-step diagnostic checklist for GY6 EFI faults covering grounding (< 0.2 \u03a9), fuel pressure (42 PSI target), air leak detection with carb cleaner, TPS reset procedure, woodruff key inspection, idle air/fuel screw adjustment, and fuel pump regulator check.",
     "addedAt": "2026-05-29T06:38:00Z",
     "lastChecked": "2026-05-29T06:38:00Z"
   },
@@ -812,7 +816,7 @@
       "youtube.com/watch?v=GEYb1If12-I",
       "scooterwest.com/modern-vespa/maintenance-tune-up/brakes.html"
     ],
-    "summary": "Step-by-step front disc brake pad replacement for Vespa Primavera and Sprint 50/125/150 (2013–present). Covers pad thickness inspection, caliper removal, piston retraction, OEM part number, torque specs (25–28 Nm), bedding-in procedure, and squeal elimination.",
+    "summary": "Step-by-step front disc brake pad replacement for Vespa Primavera and Sprint 50/125/150 (2013\u2013present). Covers pad thickness inspection, caliper removal, piston retraction, OEM part number, torque specs (25\u201328 Nm), bedding-in procedure, and squeal elimination.",
     "addedAt": "2026-05-29T06:38:00Z",
     "lastChecked": "2026-05-29T06:38:00Z"
   },
@@ -824,7 +828,7 @@
     "sources": [
       "q9powersportsusa.com/blogs/technical-support-q9-powersports-usa/replace-starter-gas-powered-motor"
     ],
-    "summary": "Diagnose and replace the electric starter motor on GY6 50cc–150cc scooters. Covers symptom checklist, bench test, step-by-step swap with torque specs, and wiring reconnection.",
+    "summary": "Diagnose and replace the electric starter motor on GY6 50cc\u2013150cc scooters. Covers symptom checklist, bench test, step-by-step swap with torque specs, and wiring reconnection.",
     "addedAt": "2026-05-30T00:00:00Z",
     "lastChecked": "2026-05-30T00:00:00Z"
   },
@@ -837,8 +841,22 @@
       "scooterwest.com/modern-vespa/maintenance-tune-up/spark-plugs.html",
       "vcoachicago.com/scooter-spark-plug-reference/"
     ],
-    "summary": "NGK plug selection guide and step-by-step replacement for Vespa Primavera and Sprint 50/125/150cc. Covers ER9EH (50cc 4V) and CR8EB/CR8EIB (125–150cc 3V) with gap specs, torque (12 Nm), and plug-reading guide.",
+    "summary": "NGK plug selection guide and step-by-step replacement for Vespa Primavera and Sprint 50/125/150cc. Covers ER9EH (50cc 4V) and CR8EB/CR8EIB (125\u2013150cc 3V) with gap specs, torque (12 Nm), and plug-reading guide.",
     "addedAt": "2026-05-30T00:00:00Z",
     "lastChecked": "2026-05-30T00:00:00Z"
+  },
+  {
+    "url": "/repair-guides/front-fork-service-gy6.html",
+    "title": "Front Fork Service",
+    "category": "repair-guides",
+    "file": "src/content/repair-guides/front-fork-service-gy6.mdx",
+    "sources": [
+      "49ccScoot.com Forum",
+      "GoKartsUSA",
+      "Bennetts BikeSocial",
+      "RevZilla"
+    ],
+    "addedAt": "2026-06-02T00:00:00Z",
+    "lastChecked": "2026-06-02T00:00:00Z"
   }
 ]
