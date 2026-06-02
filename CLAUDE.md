@@ -5,7 +5,7 @@ This file provides guidance when working with code in this repository.
 ---
 
 **Project:** ISMR — Interactive Scooter Manuals for Repair  
-**Owner:** Den (Dzianis) — dexa88@gmail.com | **Domain:** ismr.online  
+**Owner:** Den (Dzianis) | **Domain:** ismr.online  
 **Phase:** 2 active — Astro + MDX, content collections live, deploy pipeline active, GA4 live, Pagefind search integrated
 
 ---

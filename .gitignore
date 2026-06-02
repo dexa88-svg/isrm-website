@@ -2,6 +2,12 @@ node_modules/
 coverage/
 npm-debug.log*
 .DS_Store
+**/.DS_Store
+.fuse_hidden*
+**/.fuse_hidden*
+.build-tmp/
+.astro.old/
+dist/
 public/pagefind/
 
 # Personal reference photos for the 3D exploded views project — not for publication.
