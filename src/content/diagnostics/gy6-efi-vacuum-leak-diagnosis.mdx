@@ -1,0 +1,142 @@
+---
+title: "GY6 EFI Vacuum Leak Diagnosis"
+description: "Locate vacuum leaks on a GY6 EFI scooter using the carb cleaner spray method. Explains why leaks are more damaging on EFI than carb engines and where to check."
+publishDate: "2026-06-06"
+updatedDate: "2026-06-06"
+difficulty: "Beginner"
+timeEstimate: "~15 min"
+category: "fuel"
+engine: "gy6"
+fuel: "efi"
+section: "EFI Fuel System"
+cardTag: "Vacuum Leak"
+tags: ["gy6", "efi", "vacuum-leak", "intake-manifold", "diagnostics", "rongmao", "euro4", "stalling"]
+appliesTo:
+  - "GY6 139QMB Euro 4/5 EFI (50cc)"
+  - "GY6 157QMJ EFI (150cc)"
+  - "BTC Riva EFI"
+  - "La Souris Sourini / City EFI"
+  - "Santini Capri EFI"
+  - "AGM VX50 EFI"
+videos:
+  - id: "p03jgftJ5TU"
+    title: "GY6 EFI Vacuum Leak Detection — Carb Cleaner Method"
+    creator: "ISRM"
+    position: "hero"
+tools:
+  - "Carburettor cleaner spray (200 ml aerosol)"
+  - "Safety glasses"
+sources:
+  - name: "Motorroller.de — Euro 4 Throttle Body Boot Cracking"
+    url: "https://motorroller.de"
+  - name: "49ccScoot Forum — GY6 EFI Vacuum Leak Symptoms"
+    url: "https://49ccscoot.proboards.com"
+canonical: "https://ismr.online/diagnostics/gy6-efi-vacuum-leak-diagnosis.html"
+draft: false
+---
+
+import VideoEmbed from '@components/VideoEmbed.astro';
+import Callout from '@components/Callout.astro';
+import SourceBox from '@components/SourceBox.astro';
+
+On a carburettor engine, a vacuum leak leans the idle mixture and causes rough running — annoying, but the engine can often compensate partially. On a GY6 EFI engine with the Rongmao MT5 ECU, the same leak is far more disruptive: the MAP sensor measures manifold pressure to calculate air mass, and any unmetered air entering the intake downstream of the MAP sensor completely invalidates that calculation. The ECU maintains its fuelling based on false data, resulting in a mixture that is critically lean at idle — causing stalling, hunting RPM, or a complete inability to hold idle. This guide shows you how to locate vacuum leaks in 15 minutes using a can of carb cleaner.
+
+## Applies To
+
+GY6 139QMB (50cc) and 157QMJ (150cc) with Rongmao MT5 ECU (Euro 4/5 EFI), including the BTC Riva EFI, La Souris Sourini/City EFI, Santini Capri EFI, and AGM VX50 EFI. For carburettor GY6 models, see the [GY6 Air Leak Diagnosis guide](/diagnostics/gy6-air-leak-diagnosis.html) — the spray test method is the same but the check locations and symptom interpretation differ.
+
+<SourceBox sources={frontmatter.sources} />
+
+---
+
+<Callout type="danger">
+  ⚠️ **Carburettor cleaner is highly flammable.** Work outdoors or in a very well-ventilated space. Keep the spray away from the exhaust manifold and any hot surfaces. Use only brief 0.5-second bursts. Have a small fire extinguisher within reach. Wear safety glasses — the spray can rebound from surfaces.
+</Callout>
+
+## Video Guide
+
+<VideoEmbed
+  videoId="p03jgftJ5TU"
+  title="GY6 EFI Vacuum Leak Detection — Carb Cleaner Method"
+  creator="ISRM"
+/>
+
+---
+
+## Background: How the Spray Test Works
+
+Carburettor cleaner (also sold as throttle body cleaner) is a highly flammable solvent. When sprayed near a vacuum leak on a running engine, it is drawn into the intake through the leak point. The engine momentarily burns this extra fuel, and the idle RPM rises — even by just 50–100 RPM — at the location of the leak. This RPM spike tells you exactly where the leak is.
+
+**Why not use propane or other gases?** Carb cleaner is ideal because it evaporates quickly, leaves no residue, and the RPM response is brief and localised. Propane has the same effect but is harder to control and the source tube cannot be positioned as precisely.
+
+---
+
+## Where to Check on GY6 EFI
+
+Check these locations in order of most-to-least likely failure:
+
+1. **Throttle body rubber boot** — the most common leak point. Cracks at the jubilee clip grooves, especially on Euro 4 models with 2+ years of service.
+2. **Throttle body boot → manifold joint** — the manifold-side joint may leak even if the boot itself is intact.
+3. **Intake manifold → cylinder head gasket** — a paper gasket that can blow or compress unevenly.
+4. **MAP sensor port** — the vacuum port that connects the MAP sensor to the manifold. If the hose is loose or cracked, this is a direct unmetered air path.
+5. **Idle air control (IAC) valve port** — the IAC is connected via a small hose or cast port; check for cracking.
+6. **Any vacuum-tapped ports** — some GY6 EFI models have a small tap for the fuel pressure regulator return or brake servo.
+
+---
+
+## Diagnostic Steps
+
+### Step 1 — Prepare
+
+1. Start the engine and let it warm for at least 5 minutes.
+2. Put on safety glasses.
+3. Hold the carb cleaner can upright, nozzle aimed.
+
+### Step 2 — Spray each suspect location
+
+Work through the locations listed above, one at a time:
+
+1. Direct a **0.5-second burst** of carb cleaner at the joint/location.
+2. Wait 3–4 seconds and watch/listen for an RPM change.
+3. If the idle rises (even briefly), the leak is at that location. **Stop spraying there** — you have your answer.
+4. If no response, move to the next location.
+
+<Callout type="tip">
+  💡 **Tip:** If the engine is so rough it's hard to hear idle changes, have a helper watch the rev counter on a phone-based tachometer while you spray.
+</Callout>
+
+### Step 3 — Interpret results
+
+| Result | Interpretation |
+|--------|----------------|
+| RPM rises at throttle body boot | Boot is cracked — replace it. See [Intake Manifold Boot Replacement](/repair-guides/gy6-efi-intake-manifold-boot-replacement.html) |
+| RPM rises at manifold-to-head joint | Head gasket or manifold gasket leaking — check torque, replace gasket |
+| RPM rises at MAP sensor hose | MAP hose loose or cracked — push hose fully home or replace |
+| RPM rises at IAC port | IAC hose loose — reseat hose, check IAC valve |
+| No RPM rise anywhere | No vacuum leak on the intake — investigate other causes (TPS, fuel pump, valve clearances) |
+
+<Callout type="warn">
+  ⚠️ **If the engine is misfiring severely**, it may stall when carb cleaner is drawn in (extra fuel into a misfiring cylinder). This is not dangerous but makes the test less reliable — fix the misfire cause first if possible, then re-test.
+</Callout>
+
+---
+
+## Frequently Asked Questions
+
+**Q: Can I use WD-40 or brake cleaner instead of carb cleaner?**  
+A: Brake cleaner is non-flammable (the modern chlorinated type) and won't burn — the test won't work. WD-40 is flammable and will give a response but it leaves a residue and is harder to control. Use dedicated carb/throttle body cleaner.
+
+**Q: The idle is so bad I can't hold the engine running. How do I do the test?**  
+A: With the engine off, inspect the boot and all hose joints visually and by hand — squeeze the boot and feel for cracks, check that all hose clamps are snug. A crack in the boot is often visible as a white stress line in the rubber.
+
+**Q: I found a leak — can I seal it temporarily with RTV silicone?**  
+A: RTV is a temporary patch only. It will hold for days to weeks but eventually breaks down under heat and fuel vapour. Replace the boot or gasket properly.
+
+---
+
+## Related Guides
+
+- [GY6 EFI Intake Manifold Boot Replacement](/repair-guides/gy6-efi-intake-manifold-boot-replacement.html)
+- [GY6 EFI Throttle Body Idle Screw Adjustment](/repair-guides/gy6-efi-throttle-body-idle-screw-adjustment.html)
+- [GY6 EFI Fuel Pump Pressure Test](/diagnostics/gy6-efi-fuel-pump-pressure-test.html)
+- [GY6 EFI Stalls at Idle — TPS & IAC Fix](/diagnostics/gy6-efi-stalling-at-idle-tps-iac.html)

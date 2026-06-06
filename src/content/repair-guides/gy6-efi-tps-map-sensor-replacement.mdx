@@ -1,0 +1,205 @@
+---
+title: "GY6 EFI TPS/MAP Sensor Replacement"
+description: "Remove and replace the combined TPS/MAP sensor on a GY6 EFI scooter (Rongmao MT5). Covers sensor location, connector pin-out, removal, and setting idle voltage after fitting."
+publishDate: "2026-06-06"
+updatedDate: "2026-06-06"
+difficulty: "Intermediate"
+timeEstimate: "~30 min"
+tags: ["gy6", "efi", "tps", "map-sensor", "throttle-position-sensor", "rongmao", "euro4", "euro5", "stalling", "repair"]
+appliesTo:
+  - "GY6 139QMB Euro 4/5 EFI (50cc)"
+  - "GY6 157QMJ EFI (150cc)"
+  - "BTC Riva EFI"
+  - "La Souris Sourini / City EFI"
+  - "Santini Capri EFI"
+  - "AGM VX50 EFI"
+videos:
+  - id: "LMtHxWypWkY"
+    title: "GY6 EFI TPS/MAP Sensor Removal and Replacement"
+    creator: "ISRM"
+    position: "hero"
+tools:
+  - "Phillips screwdriver (PH2)"
+  - "Flat-head screwdriver (small, 3 mm)"
+  - "Multimeter (DC Volts)"
+  - "5 V reference source (from sensor supply wire) for idle voltage setting"
+sources:
+  - name: "49ccScoot Forum — GY6 TPS and Oxygen Sensor"
+    url: "https://49ccscoot.proboards.com/thread/29582/gy6-tps-oxygen-sensor"
+  - name: "ScootDawg Forum — EFI Idle and TPS Issues"
+    url: "https://scootdawg.proboards.com/thread/51358/throttle-position-sensor"
+  - name: "Motorroller.de — Euro 4 EFI TPS Fault"
+    url: "https://motorroller.de"
+canonical: "https://ismr.online/repair-guides/gy6-efi-tps-map-sensor-replacement.html"
+draft: false
+---
+
+import VideoEmbed from '@components/VideoEmbed.astro';
+import Callout from '@components/Callout.astro';
+import SourceBox from '@components/SourceBox.astro';
+
+The combined TPS (Throttle Position Sensor) and MAP (Manifold Absolute Pressure) sensor is the most frequently replaced sensor on GY6 EFI scooters, and the most-discussed failure point in Euro 4/5 forums. The TPS is a potentiometer that wears fastest at the low end of its travel — exactly the idle position — producing erratic or out-of-range voltage signals that cause the ECU to cut fuel, misfire, or enter limp-home mode. This guide covers disassembly, replacement, and the critical step of setting the correct idle output voltage on the new sensor.
+
+## Applies To
+
+GY6 139QMB (50cc) and 157QMJ (150cc) with Rongmao MT5 ECU (Euro 4/5 EFI), including the BTC Riva EFI, La Souris Sourini/City EFI, Santini Capri EFI, and AGM VX50 EFI.
+
+<SourceBox sources={frontmatter.sources} />
+
+---
+
+<Callout type="warn">
+  ⚠️ **Confirm with diagnosis first.** TPS faults cause a range of symptoms including stalling, poor throttle response, and fault codes. Before replacing, verify the TPS is faulty using the [GY6 EFI TPS Sensor Diagnosis guide](/diagnostics/gy6-efi-tps-sensor-diagnosis.html). A worn TPS reads outside 0.63–0.73 V at closed throttle, or produces erratic voltage on a multimeter sweep.
+</Callout>
+
+## Video Guide
+
+<VideoEmbed
+  videoId="LMtHxWypWkY"
+  title="GY6 EFI TPS/MAP Sensor Removal and Replacement"
+  creator="ISRM"
+/>
+
+---
+
+## Tools Required
+
+- **Phillips screwdriver (PH2)** — body panels and throttle body bracket
+- **Small flat-head screwdriver** — sensor retaining screws (M4 cross-head or flat)
+- **Multimeter** — essential for setting idle voltage on the new sensor
+
+## Parts & Materials
+
+| Part | Spec / Note | Approx. Cost |
+|------|-------------|--------------|
+| Combined TPS/MAP sensor | Rongmao MT5 compatible, 3-pin or 4-pin (check your model) | €15–35 |
+| Sensor O-ring (if separate) | 12–14 mm, nitrile | €1–2 |
+
+<Callout type="tip">
+  💡 **Tip:** When ordering, photograph your existing sensor and connector. The Rongmao system uses either a 3-pin combined TPS/MAP or separate sensors depending on the year and model. Order the exact matching part.
+</Callout>
+
+---
+
+## Background: What the TPS/MAP Sensor Does
+
+The TPS sends a voltage signal to the ECU that corresponds to throttle angle — 0.63–0.73 V at closed throttle (idle), rising to approximately 4.5 V at full open. The ECU uses this to determine fuelling mode: idle, part-throttle, or wide-open. At closed throttle, if the voltage is outside the expected idle window, the ECU cannot correctly identify the idle state and may cut fuel — causing a stall.
+
+The MAP sensor measures intake manifold vacuum and works in conjunction with the TPS to calculate the engine's air-mass intake. On the combined unit, both sensors share a housing mounted to the throttle body.
+
+---
+
+## Step-by-Step Instructions
+
+### Step 1 — Prepare and access the throttle body
+
+1. Park on centre stand, engine off, fully cooled.
+2. Disconnect the **battery negative (–) terminal**.
+3. Remove body panels as needed to access the throttle body — on most GY6 EFI scooters, the throttle body is visible once the under-seat storage or floorboard trim is removed (3–5 Phillips screws).
+
+### Step 2 — Locate and photograph the sensor
+
+The TPS/MAP sensor is bolted to the side of the throttle body — a roughly rectangular or oval plastic unit, usually on the right side of the throttle body when viewed from behind.
+
+1. Before removing anything, take a clear photograph of:
+   - The sensor position and orientation
+   - The connector and its routing
+   - Any wiring clips holding the harness
+
+This is your reference for reassembly.
+
+### Step 3 — Disconnect the wiring connector
+
+1. Press the connector locking tab (small plastic tab on the side or top of the connector).
+2. Pull the connector straight out — do not twist or lever it.
+3. Inspect the connector pins: green corrosion or bent pins can cause the same symptoms as a failed sensor. Clean with electrical contact cleaner if corrosion is present.
+
+### Step 4 — Remove the sensor
+
+The sensor is typically retained by 2 small screws (M4, Phillips or flat-head) threaded into the throttle body body.
+
+1. Undo both screws fully and set aside — they are small and easy to lose.
+2. Gently twist and pull the sensor away from the throttle body. There may be a small O-ring or gasket between sensor and throttle body — remove it and discard (fit new one if supplied with replacement).
+3. Inspect the throttle body bore where the sensor mounts for any debris or damage.
+
+<Callout type="warn">
+  ⚠️ Do not force the sensor — if it doesn't pull free easily, check for a hidden third screw or a clip. Forcing it can crack the throttle body.
+</Callout>
+
+### Step 5 — Fit the new sensor (loose — do not tighten yet)
+
+1. Fit the new O-ring or gasket to the sensor face.
+2. Locate the sensor onto the throttle body shaft and bore — the sensor has a D-shaped hole that engages with the throttle shaft flat; it should drop into position without force.
+3. Insert the retaining screws finger-tight only. **Do not tighten yet** — the sensor position must be adjusted before locking down.
+
+### Step 6 — Set idle voltage (critical step)
+
+This is the most important step. The TPS output at closed throttle target depends on your ECU:
+
+- **Rongmao MT5** (most Euro 4/5 GY6 50cc): **0.63–0.73 V** at closed throttle
+- **Delphi MT05**: **0.50–0.55 V** at closed throttle
+
+Check the ECU label under the seat panel to confirm which system your scooter has. The procedure is the same regardless of target voltage.
+
+1. Reconnect the battery negative terminal.
+2. Reconnect the TPS/MAP connector.
+3. Turn ignition to **ON** (do not start the engine).
+4. Set your multimeter to **DC Volts, 2 V range**.
+5. Identify the TPS signal wire at the connector (refer to your model's wiring diagram; typically the middle pin of a 3-pin connector — the outer two are 5 V supply and ground).
+6. Back-probe the signal wire with your multimeter (a thin wire or pin pushed alongside the connector pin without disconnecting it).
+7. Read the voltage with the throttle fully **closed** (at rest).
+
+**Adjust the sensor position:**
+
+- If the reading is **above 0.73 V** — rotate the sensor body slightly anti-clockwise (as viewed from the front) to lower the output.
+- If the reading is **below 0.63 V** — rotate the sensor body slightly clockwise.
+- Work in tiny increments (1–2 mm of rotation makes a significant voltage difference).
+
+8. Once the reading is within **0.63–0.73 V**, check that opening the throttle smoothly raises the voltage with no flat spots or drops. The voltage should sweep cleanly from ~0.68 V (closed) to ~4.4 V (full open).
+9. Tighten the retaining screws firmly but not over-torqued — 1.5–2 N·m.
+10. Recheck voltage after tightening — tightening can shift the sensor slightly.
+
+<Callout type="tip">
+  💡 **Tip:** The target is the centre of the range: **0.68 V** is ideal. A value right at the boundary (0.63 V or 0.73 V) may drift out of spec as the sensor warms.
+</Callout>
+
+### Step 7 — Test and reassemble
+
+1. Start the engine and allow it to warm fully.
+2. Confirm idle is stable at 1,400–1,600 RPM.
+3. Blip the throttle several times — the RPM should return cleanly to idle without stalling.
+4. Refit all body panels in reverse order.
+5. Reconnect the battery negative.
+
+---
+
+## Troubleshooting
+
+| Problem | Likely Cause | Solution |
+|---------|--------------|----------|
+| Voltage won't reach 0.63–0.73 V anywhere in sensor rotation | Replacement sensor is wrong part or faulty | Verify part number; test on bench with 5 V supply |
+| Engine stalls on deceleration despite correct idle voltage | Voltage drops below 0.5 V during throttle close — flat spot | Sweep throttle slowly and watch for voltage dip; replace again if fault repeats |
+| Check engine light remains after replacement | ECU fault code stored — not auto-cleared on all models | Disconnect battery for 5 minutes to clear stored codes |
+| New sensor physically doesn't fit | Wrong connector or shaft bore | Check shaft diameter (usually 5 mm) and connector pin count against the original |
+
+---
+
+## Frequently Asked Questions
+
+**Q: Can I clean the old TPS instead of replacing it?**  
+A: The TPS wiper track wears physically — cleaning the contacts may temporarily improve the signal but the underlying wear remains. On a sensor that reads erratically, replacement is the only reliable fix.
+
+**Q: The replacement came without an O-ring — is that okay?**  
+A: It depends on the model. Some sensors seal against the throttle body with an O-ring, others with a flat gasket, others with no seal (the bore is not vacuum-referenced at that point). Reuse the old O-ring if it is in good condition.
+
+**Q: Does the ECU need reprogramming after a TPS replacement?**  
+A: No. Setting the physical idle voltage as described above is sufficient. The Rongmao MT5 ECU uses the voltage directly — there is no TPS "learn procedure" required.
+
+---
+
+## Related Guides
+
+- [GY6 EFI TPS Sensor Diagnosis](/diagnostics/gy6-efi-tps-sensor-diagnosis.html)
+- [GY6 EFI Stalls at Idle — TPS & IAC Fix](/diagnostics/gy6-efi-stalling-at-idle-tps-iac.html)
+- [Throttle Body Idle Screw Adjustment (GY6 EFI)](/repair-guides/gy6-efi-throttle-body-idle-screw-adjustment.html)
+- [GY6 EFI Vacuum Leak Diagnosis](/diagnostics/gy6-efi-vacuum-leak-diagnosis.html)

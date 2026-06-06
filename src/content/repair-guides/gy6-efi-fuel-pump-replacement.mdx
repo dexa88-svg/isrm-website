@@ -1,0 +1,226 @@
+---
+title: "GY6 EFI Fuel Pump Replacement"
+description: "Replace the electric high-pressure fuel pump on a GY6 EFI scooter (Rongmao MT5 / Euro 4/5). Covers pump location, wiring, removal, and fitting the correct EFI-specific part."
+publishDate: "2026-06-06"
+updatedDate: "2026-06-06"
+difficulty: "Intermediate"
+timeEstimate: "~45 min"
+tags: ["gy6", "efi", "fuel-pump", "fuel-injection", "rongmao", "euro4", "euro5", "stalling", "repair"]
+appliesTo:
+  - "GY6 139QMB Euro 4/5 EFI (50cc)"
+  - "GY6 157QMJ EFI (150cc)"
+  - "BTC Riva EFI"
+  - "La Souris Sourini / City EFI"
+  - "Santini Capri EFI"
+  - "AGM VX50 EFI"
+videos:
+  - id: "jkvsPaLdHwE"
+    title: "GY6 EFI Fuel Pump Replacement Walkthrough"
+    creator: "ISRM"
+    position: "hero"
+tools:
+  - "Phillips screwdriver (PH2)"
+  - "Flat-head screwdriver"
+  - "Multimeter (12 V DC range)"
+  - "Hose clamp pliers or flat-head for jubilee clips"
+  - "Small container / rags (catch residual fuel)"
+  - "Zip ties (for re-securing fuel line)"
+sources:
+  - name: "49ccScoot Forum — GY6 EFI Fuel Pump Diagnosis"
+    url: "https://49ccscoot.proboards.com"
+  - name: "Motorroller.de — Euro 4 EFI Stalling at Stop"
+    url: "https://motorroller.de"
+  - name: "ScootDawg Forum — Rongmao MT5 EFI Issues"
+    url: "https://scootdawg.proboards.com"
+canonical: "https://ismr.online/repair-guides/gy6-efi-fuel-pump-replacement.html"
+draft: false
+---
+
+import VideoEmbed from '@components/VideoEmbed.astro';
+import Callout from '@components/Callout.astro';
+import SourceBox from '@components/SourceBox.astro';
+
+The electric high-pressure fuel pump is the single most common cause of a GY6 EFI scooter stalling at stops. Unlike a carburettor engine's gravity or vacuum-fed fuel supply, the Rongmao MT5 EFI system relies entirely on a small in-line pump to maintain rail pressure at the injector. When the pump weakens, rail pressure drops — most noticeably at idle, where fuel demand is lowest but the margin for error is smallest. The engine runs acceptably at speed but dies the moment you stop. This guide covers how to remove the failing pump and fit the correct EFI-specific replacement.
+
+## Applies To
+
+GY6 139QMB (50cc) and 157QMJ (150cc) engines fitted with the Rongmao MT5 ECU, including the BTC Riva EFI, La Souris Sourini/City EFI, Santini Capri EFI, and AGM VX50 EFI. Euro 4 and Euro 5 variants.
+
+<SourceBox sources={frontmatter.sources} />
+
+---
+
+<Callout type="danger">
+  ⚠️ **Fire hazard — work in a ventilated area away from any ignition source.** Fuel vapour is heavier than air and accumulates at floor level. Do not smoke. Disconnect the battery negative terminal before touching any fuel-system wiring.
+</Callout>
+
+<Callout type="warn">
+  ⚠️ **EFI pump ≠ carb vacuum pump.** The GY6 EFI high-pressure pump (typically 2.5–3.5 bar output) is a completely different part from the vacuum-operated carburettor fuel pump. Fitting a carb pump will result in insufficient fuel pressure and immediate stalling. Always order a part specified for your Euro 4/5 EFI system.
+</Callout>
+
+## Video Guide
+
+<VideoEmbed
+  videoId="jkvsPaLdHwE"
+  title="GY6 EFI Fuel Pump Replacement Walkthrough"
+  creator="ISRM"
+/>
+
+---
+
+## Tools Required
+
+- **Phillips screwdriver (PH2)** — body panel screws and pump bracket
+- **Flat-head screwdriver** — jubilee clip loosening
+- **Multimeter** — verify 12 V supply at pump connector before condemning the pump
+- **Hose clamp pliers** — spring-type clamps if fitted
+- **Rags / small tray** — catch fuel when disconnecting the line
+- **Zip ties** — re-secure fuel line routing after installation
+
+## Parts & Materials
+
+| Part | Spec / Note | Approx. Cost |
+|------|-------------|--------------|
+| GY6 EFI high-pressure fuel pump | Rongmao MT5 compatible, ~2.5–3.5 bar | €15–30 |
+| Fuel line (if cracked) | 5 mm ID petrol-resistant rubber | €2–5/m |
+| Jubilee clips (x2) | 10–16 mm range | €1 |
+
+---
+
+## Background: How the EFI Fuel Pump Works
+
+The Rongmao MT5 system uses a small electric pump, usually mounted in-line between the fuel tank and the throttle body injector. When you turn the key to ON, the ECU energises the pump for approximately two seconds to prime the rail — you should hear a faint hum or whine from under the seat. During running, the pump maintains continuous pressure so the injector can fire precisely metered fuel pulses.
+
+As the pump brushes wear or the inlet screen clogs with tank sediment, output pressure drops. At idle the engine needs only small fuel pulses; even a modest pressure drop means the injector cannot open reliably. At higher RPM the engine draws more fuel and the pump — though weakening — can still keep up for short bursts, which is why the fault only shows at a standstill.
+
+**Confirming the pump before replacing it:** turn key to ON and listen for the 2-second prime hum. Silence or a very faint sound is the tell. See the [EFI Fuel Pump Pressure Test diagnostic guide](/diagnostics/gy6-efi-fuel-pump-pressure-test.html) for a full voltage and pressure check before purchasing a replacement.
+
+---
+
+## Step-by-Step Instructions
+
+### Step 1 — Prepare the scooter
+
+1. Park on the centre stand on a flat, well-ventilated surface.
+2. Allow the engine to cool completely if it has been running — at least 15 minutes.
+3. Turn the fuel tap (if fitted) to OFF.
+4. Disconnect the **battery negative (–) terminal** and tuck the cable away so it cannot make accidental contact.
+
+<Callout type="tip">
+  💡 **Tip:** Take a photo of the fuel line routing before removing anything. On some models the line passes through a guide clip or close to the exhaust — getting the routing wrong on reassembly is a common mistake.
+</Callout>
+
+### Step 2 — Remove body panels to access the pump
+
+The pump location varies slightly by model, but on most GY6 EFI scooters it is mounted under the seat, either in the under-seat storage area or just below/behind it along the frame rail.
+
+1. Remove the seat (usually 1–2 bolts or a latch).
+2. Remove any under-seat plastic panels obscuring the pump — typically 3–5 Phillips screws.
+3. Locate the in-line pump: a cylindrical unit roughly 60–80 mm long, connected to two sections of fuel hose and a 2-pin wiring connector.
+
+<Callout type="tip">
+  💡 **Tip:** On the BTC Riva and La Souris Sourini, the pump is often cable-tied to the frame rail on the left side under the floorboard. On the Santini Capri it may be tucked behind the airbox.
+</Callout>
+
+### Step 3 — Disconnect the wiring
+
+1. Locate the 2-pin pump connector (usually red/black wires).
+2. Press the locking tab and pull the connector apart — do not pull on the wires themselves.
+3. Note which wire is positive (red = +12 V supply from ECU relay) for reassembly reference.
+
+### Step 4 — Disconnect the fuel lines
+
+<Callout type="warn">
+  ⚠️ Have a rag ready. Even with the fuel tap off, residual fuel in the line will spill when disconnected.
+</Callout>
+
+1. Loosen the jubilee clip on the **inlet** side of the pump (tank side) using a flat-head screwdriver — turn anti-clockwise.
+2. Twist and pull the fuel hose off the pump inlet stub. Catch any drips.
+3. Repeat for the **outlet** side (throttle body side).
+4. If the hose is stuck, work it gently with a flat-head — never cut it unless it is being replaced.
+
+### Step 5 — Remove the pump
+
+1. If the pump is held in a rubber mount or bracket, slide it out — usually no fasteners needed.
+2. If cable-tied to the frame, cut the zip tie(s).
+3. Bring the old pump out and set aside.
+
+### Step 6 — Inspect the fuel lines and screen
+
+Before fitting the new pump, check the following:
+
+1. **Fuel hoses** — squeeze and flex them. Any cracking, hardness, or fuel-soaked swelling means replacement is needed. A cracked hose causes the same low-pressure symptom as a weak pump.
+2. **Tank inlet screen** — if accessible, check the small mesh filter at the tank outlet for sediment. Flush with clean petrol if clogged.
+3. **Line routing** — confirm the line does not pass within 30 mm of the exhaust downpipe. Proximity to heat can cause vapour lock (see [Fuel Line Re-routing Guide](/repair-guides/gy6-efi-fuel-line-vapor-lock-fix.html)).
+
+<Callout type="tip">
+  💡 **Tip:** This is also a good opportunity to check the fuel filter if your model has a separate in-line unit. Replace it if it hasn't been done in the last 5,000 km or 2 years.
+</Callout>
+
+### Step 7 — Fit the new pump
+
+<Callout type="danger">
+  ⚠️ **Observe pump flow direction.** The pump has an inlet and an outlet — the casing is marked with an arrow or "IN / OUT" text. Fitting it backwards will not damage the pump immediately, but the engine will not receive fuel.
+</Callout>
+
+1. Identify the **inlet** (arrow pointing into pump, tank side) and **outlet** (arrow pointing out, throttle body side).
+2. Slide the fuel hoses onto the correct stubs — inlet to tank side, outlet to throttle body side.
+3. Position jubilee clips over the hose ends and tighten firmly — the clip should sit 5–8 mm from the end of the stub.
+4. Mount the pump in the rubber bracket or secure with new zip ties to the frame rail, ensuring it cannot vibrate against anything metal.
+
+### Step 8 — Reconnect the wiring
+
+1. Reconnect the 2-pin connector — it should click positively.
+2. Confirm polarity: red (+) to the ECU relay supply wire.
+
+### Step 9 — Prime and test
+
+1. Reconnect the battery negative terminal.
+2. Turn the key to **ON** (do not crank yet).
+3. Listen for the pump prime — a clear 2-second hum. This confirms the pump is energised and pressurising the rail.
+4. Wait 5 seconds, then crank the engine.
+5. It may take 2–3 cranking attempts to fully prime on first start after a fuel-system job — this is normal.
+6. Let the engine warm up at idle for 2–3 minutes and confirm it holds a stable idle without stalling.
+
+<Callout type="tip">
+  💡 **Tip:** If the engine cranks but won't fire, repeat the key-ON → listen → crank cycle twice more. If it still won't fire, check for fuel smell at the injector — no smell means either the pump wiring is reversed or the outlet line is connected incorrectly.
+</Callout>
+
+### Step 10 — Refit body panels
+
+1. Refit all plastic panels in reverse order of removal.
+2. Refit the seat.
+3. Confirm the fuel line is not kinked or pinched by any panel.
+
+---
+
+## Troubleshooting
+
+| Problem | Likely Cause | Solution |
+|---------|--------------|----------|
+| No pump prime hum on key-ON | No 12 V to pump — wiring or ECU relay | Check voltage at pump connector with multimeter; test ECU fuel pump relay |
+| Engine fires but stalls after a few seconds | Air in rail not purged, or inlet line connected to outlet | Repeat key-ON prime 3× before cranking; verify hose direction |
+| Fuel leak at hose connection | Jubilee clip not tight enough, or hose not fully seated | Re-seat hose, retighten clip |
+| Same stalling symptom after pump replacement | Different root cause (TPS, idle screw, vacuum leak) | See [EFI Stalling at Stop Diagnostics](/diagnostics/gy6-efi-fuel-pump-pressure-test.html) |
+
+---
+
+## Frequently Asked Questions
+
+**Q: Can I use a universal 12 V inline fuel pump?**  
+A: Only if it outputs 2.5–3.5 bar (36–51 psi) at the correct flow rate for your injector. Many cheap universal pumps are designed for carb-replacement use and output far too little pressure. Match the spec on the original pump label or source a Rongmao-compatible EFI part.
+
+**Q: How long should the new pump last?**  
+A: On a typical GY6 EFI scooter used for urban commuting, an OEM-quality pump should last 15,000–25,000 km. Cheap replacements may fail in under 5,000 km. Keep the fuel tank at least 1/4 full — running near-empty causes the pump to draw in air and overheat.
+
+**Q: My scooter has no fuel tap — how do I stop fuel flowing when I disconnect the line?**  
+A: Pinch the inlet hose closed with a pair of locking pliers wrapped in a cloth, or use a dedicated fuel line clamp. Work quickly and have rags ready.
+
+---
+
+## Related Guides
+
+- [EFI Fuel Pump Pressure Test (Diagnostic)](/diagnostics/gy6-efi-fuel-pump-pressure-test.html)
+- [GY6 EFI Stalls at Idle — TPS & IAC Fix](/diagnostics/gy6-efi-stalling-at-idle-tps-iac.html)
+- [GY6 EFI Fuel Line Re-routing / Vapor Lock Fix](/repair-guides/gy6-efi-fuel-line-vapor-lock-fix.html)
+- [Throttle Body Idle Screw Adjustment (GY6 EFI)](/repair-guides/gy6-efi-throttle-body-idle-screw-adjustment.html)

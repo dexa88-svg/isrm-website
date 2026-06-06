@@ -1,0 +1,160 @@
+---
+title: "GY6 EFI Spark Plug Replacement"
+description: "Replace the spark plug on a GY6 EFI scooter. Explains why plugs foul faster on short urban trips with EFI, correct heat range, gap spec, and reading the old plug."
+publishDate: "2026-06-06"
+updatedDate: "2026-06-06"
+difficulty: "Beginner"
+timeEstimate: "~15 min"
+tags: ["gy6", "efi", "spark-plug", "ignition", "euro4", "stalling", "maintenance", "repair"]
+appliesTo:
+  - "GY6 139QMB Euro 4/5 EFI (50cc)"
+  - "GY6 139QMB carb (50cc)"
+  - "GY6 152QMI (125cc)"
+  - "GY6 157QMJ (150cc)"
+  - "BTC Riva EFI"
+  - "La Souris Sourini / City EFI"
+  - "Santini Capri EFI"
+videos:
+  - id: "oHWW1GAanqo"
+    title: "GY6 EFI Spark Plug Replacement and Reading"
+    creator: "ISRM"
+    position: "hero"
+tools:
+  - "16 mm or 18 mm spark plug socket (check your engine)"
+  - "Ratchet handle"
+  - "Feeler gauge or plug gap tool (0.6–0.7 mm)"
+  - "Torque wrench (optional, 12–15 N·m)"
+sources:
+  - name: "NGK Spark Plug Application Guide"
+    url: "https://www.ngk.com"
+  - name: "49ccScoot Forum — GY6 EFI Spark Plug Fouling"
+    url: "https://49ccscoot.proboards.com"
+  - name: "GY6 139QMB Service Manual"
+    url: "https://ismr.online"
+canonical: "https://ismr.online/repair-guides/gy6-efi-spark-plug-replacement.html"
+draft: false
+---
+
+import VideoEmbed from '@components/VideoEmbed.astro';
+import Callout from '@components/Callout.astro';
+import SourceBox from '@components/SourceBox.astro';
+
+A worn or fouled spark plug is a secondary but real cause of GY6 EFI stalling at idle. EFI manages fuel delivery precisely — if the spark cannot reliably ignite the mixture, the ECU cannot compensate. On scooters used for short urban trips, the engine rarely reaches the temperature needed for the plug to self-clean, and carbon deposits accumulate faster than expected. This is a quick, cheap fix that should be done every 3,000–5,000 km regardless of symptoms.
+
+## Applies To
+
+GY6 139QMB (50cc and up) in both EFI and carburettor form. The spark plug replacement procedure is the same; the EFI-specific context for fouling is noted below.
+
+<SourceBox sources={frontmatter.sources} />
+
+---
+
+## Video Guide
+
+<VideoEmbed
+  videoId="oHWW1GAanqo"
+  title="GY6 EFI Spark Plug Replacement and Reading"
+  creator="ISRM"
+/>
+
+---
+
+## Tools Required
+
+- **Spark plug socket** — most GY6 139QMB engines use an **18 mm** hex plug. Some variants use 16 mm. Check before buying a socket.
+- **Feeler gauge** — to set the electrode gap to 0.6–0.7 mm
+- **Torque wrench** — optional but recommended at 12–15 N·m
+
+## Parts & Materials
+
+| Part | Spec | Approx. Cost |
+|------|------|--------------|
+| Spark plug | **NGK C7HSA** (standard) or **C6HSA** (colder running, hotter climate/high throttle) | €3–6 |
+| Anti-seize compound | Optional — small amount on plug threads | €3 |
+
+<Callout type="tip">
+  💡 **Tip:** The C7HSA is correct for most GY6 50cc applications. If you ride mostly at low speeds in warm weather and find carbon fouling recurring quickly, try the C6HSA (one heat range hotter — burns off deposits better at low RPM). Do not go colder (C8HSA) on a 50cc urban scooter — you will foul it faster.
+</Callout>
+
+---
+
+## Why EFI Plugs Can Foul Faster
+
+On a carburettor engine, a rich idle causes plug fouling but the symptom is also rough running — so it is often noticed and investigated. On an EFI engine with a TPS or IAC problem causing a slightly rich idle, the engine may run smoothly enough at speed that the fault is not obvious — but the plug accumulates carbon steadily. By the time stalling at stops appears, the plug may already be significantly fouled.
+
+Additionally, GY6 EFI scooters on short urban trips (under 5 km) rarely get the engine fully up to operating temperature, and the plug never reaches the 450°C threshold needed to burn off light deposits.
+
+---
+
+## Step-by-Step Instructions
+
+### Step 1 — Cold engine only
+
+Allow the engine to cool completely — at least 30 minutes. A hot plug can seize in the head or break when torqued if re-installed while the aluminium head is expanded.
+
+### Step 2 — Access the spark plug
+
+This guide focuses on the EFI-specific context — why plugs foul faster on EFI engines running short trips, how to read the plug for EFI fault indicators, and the correct heat range choice. The physical removal and torquing steps are the same as on carburettor models; see the [GY6 Spark Plug Guide](/repair-guides/gy6-spark-plug-guide.html) for a fully illustrated mechanical walkthrough.
+
+The plug is in the cylinder head, accessible from the right side of the engine. On most GY6 scooters a small plastic cover or the body panel hides it.
+
+1. Remove the spark plug cap by pulling it straight off the plug (do not pull the HT lead).
+2. Insert the 18 mm spark plug socket and loosen anti-clockwise.
+3. Remove the plug by hand once loose.
+
+### Step 3 — Read the old plug
+
+Before discarding, examine the electrode end:
+
+| Plug appearance | Interpretation |
+|-----------------|----------------|
+| Light tan/grey, minimal deposit | Correct — plug life ended by normal wear |
+| Black, sooty carbon | Rich mixture — check TPS, idle screw, O2 sensor |
+| Black, oily deposit | Oil fouling — check valve seals or piston rings |
+| White/very light grey | Lean mixture or overheating — check for vacuum leak |
+| Eroded electrode (rounded, wide gap) | Wear — normal end of life |
+| Cracked insulator | Overheating, detonation, or wrong heat range |
+
+<Callout type="tip">
+  💡 **Tip:** Photograph the old plug before discarding it — useful information if the fault returns.
+</Callout>
+
+### Step 4 — Check the gap on the new plug
+
+New plugs are pre-gapped but verify before fitting:
+
+1. Use a feeler gauge or gap tool — target **0.6–0.7 mm** for GY6 139QMB.
+2. If the gap needs adjusting, carefully bend the ground electrode (the curved outer electrode) only — never bend the centre electrode.
+
+### Step 5 — Install the new plug
+
+1. Thread the new plug in by hand to avoid cross-threading. Turn clockwise until hand-tight.
+2. Torque to **12–15 N·m** with a torque wrench (or approximately 1/2 to 3/4 turn past hand-tight for a new plug into an aluminium head — no more).
+3. Push the spark plug cap firmly back onto the plug until it clicks or seats firmly.
+
+<Callout type="warn">
+  ⚠️ Over-tightening a spark plug in an aluminium cylinder head will strip the threads. 12–15 N·m is firm but not aggressive — if you don't have a torque wrench, use a short ratchet with hand force only (no extension bar).
+</Callout>
+
+### Step 6 — Test
+
+Start the engine and confirm stable idle. If the old plug was badly fouled and causing the stalling, it should resolve immediately.
+
+---
+
+## Troubleshooting
+
+| Problem | Likely Cause | Solution |
+|---------|--------------|----------|
+| New plug fouls again within 500 km | Rich running condition — ECU/TPS/O2 issue | See [TPS Diagnosis](/diagnostics/gy6-efi-tps-sensor-diagnosis.html) and [O2 Sensor Replacement](/repair-guides/gy6-efi-o2-lambda-sensor-replacement.html) |
+| Plug threads feel wrong when installing | Cross-threading — stop immediately | Back out, realign, try again hand-tight |
+| Stalling continues with new plug | Plug was not primary cause | Work through [Fuel Pump Pressure Test](/diagnostics/gy6-efi-fuel-pump-pressure-test.html) |
+
+---
+
+## Related Guides
+
+- [GY6 EFI O2/Lambda Sensor Replacement](/repair-guides/gy6-efi-o2-lambda-sensor-replacement.html)
+- [GY6 EFI Throttle Body Idle Screw Adjustment](/repair-guides/gy6-efi-throttle-body-idle-screw-adjustment.html)
+- [GY6 4-Stroke Maintenance Schedule](/repair-guides/gy6-4stroke-maintenance-schedule.html)
+- [GY6 Ignition Coil Guide](/repair-guides/gy6-ignition-coil-guide.html)

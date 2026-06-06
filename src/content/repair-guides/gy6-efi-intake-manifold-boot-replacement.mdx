@@ -1,0 +1,163 @@
+---
+title: "GY6 EFI Intake Manifold Boot Replacement"
+description: "Replace the rubber throttle body intake boot on a GY6 EFI scooter. A cracked boot causes vacuum leaks that confuse the MAP sensor and cause stalling — especially at idle."
+publishDate: "2026-06-06"
+updatedDate: "2026-06-06"
+difficulty: "Beginner"
+timeEstimate: "~30 min"
+tags: ["gy6", "efi", "intake-manifold", "vacuum-leak", "throttle-body-boot", "rongmao", "euro4", "stalling", "repair"]
+appliesTo:
+  - "GY6 139QMB Euro 4/5 EFI (50cc)"
+  - "GY6 157QMJ EFI (150cc)"
+  - "BTC Riva EFI"
+  - "La Souris Sourini / City EFI"
+  - "Santini Capri EFI"
+  - "AGM VX50 EFI"
+videos:
+  - id: "p03jgftJ5TU"
+    title: "GY6 EFI Intake Manifold Boot Removal and Replacement"
+    creator: "ISRM"
+    position: "hero"
+tools:
+  - "Flat-head screwdriver"
+  - "Hose clamp pliers (optional)"
+  - "Carburettor cleaner spray (for pre-repair vacuum leak check)"
+sources:
+  - name: "Motorroller.de — Euro 4 Throttle Body Boot Cracking"
+    url: "https://motorroller.de"
+  - name: "49ccScoot Forum — GY6 EFI Vacuum Leak Symptoms"
+    url: "https://49ccscoot.proboards.com"
+  - name: "ScootDawg Forum — EFI Manifold Leak Forum Thread"
+    url: "https://scootdawg.proboards.com"
+canonical: "https://ismr.online/repair-guides/gy6-efi-intake-manifold-boot-replacement.html"
+draft: false
+---
+
+import VideoEmbed from '@components/VideoEmbed.astro';
+import Callout from '@components/Callout.astro';
+import SourceBox from '@components/SourceBox.astro';
+
+On a GY6 EFI engine, a vacuum leak in the intake is significantly more disruptive than on a carburettor engine. The Rongmao MT5 ECU calculates fuelling based on the MAP (Manifold Absolute Pressure) sensor readings — any unmetered air entering downstream of the MAP sensor gives the ECU completely wrong data. The result is a mixture that is far too lean at idle, causing erratic RPM, rough running, and stalling at stops. The rubber boot connecting the throttle body to the intake manifold is confirmed as a common cracking point on Euro 4 GY6 EFI systems, especially after 2–3 years of heat cycling and ozone exposure. This guide covers confirming the leak and replacing the boot.
+
+## Applies To
+
+GY6 139QMB (50cc) and 157QMJ (150cc) with Rongmao MT5 ECU (Euro 4/5 EFI), including the BTC Riva EFI, La Souris Sourini/City EFI, Santini Capri EFI, and AGM VX50 EFI.
+
+<SourceBox sources={frontmatter.sources} />
+
+---
+
+<Callout type="danger">
+  ⚠️ **Carburettor cleaner is highly flammable.** The vacuum leak confirmation step involves spraying carb cleaner near a running engine. Keep away from exhaust components and any spark sources. Have a fire extinguisher accessible. Only use very small quantities.
+</Callout>
+
+## Video Guide
+
+<VideoEmbed
+  videoId="p03jgftJ5TU"
+  title="GY6 EFI Intake Manifold Boot Removal and Replacement"
+  creator="ISRM"
+/>
+
+---
+
+## Tools Required
+
+- **Flat-head screwdriver** — jubilee clip loosening
+- **Hose clamp pliers** — if spring clamps are fitted
+- **Carb cleaner spray** — for vacuum leak confirmation before removing the boot
+
+## Parts & Materials
+
+| Part | Spec / Note | Approx. Cost |
+|------|-------------|--------------|
+| Throttle body intake boot | GY6 EFI Rongmao throttle body specific — check inner diameter (usually 24–26 mm) | €5–15 |
+| Jubilee clips (x2) | 20–30 mm range | €1 |
+
+---
+
+## Background: Why the Boot Cracks
+
+The intake boot is a short section of moulded rubber that seals the connection between the rigid throttle body and the rigid intake manifold. It flexes to absorb small engine movements. Over time, heat from the engine (the boot is mounted close to the cylinder head), ozone from the atmosphere, and fuel vapour cause the rubber to harden and crack — particularly around the jubilee clip grooves where the rubber is under tension. Euro 4 GY6 EFI scooters with 3+ years of service are prime candidates.
+
+A crack as small as 1 mm is enough to cause a significant vacuum leak at idle (when manifold vacuum is highest). At speed, manifold pressure rises and the leak effect is reduced — which is why the symptom is so specific to idle and stop conditions.
+
+---
+
+## Step-by-Step Instructions
+
+### Step 1 — Confirm the vacuum leak (with engine running)
+
+Before replacing the boot, confirm it is the source of the leak. This step takes 2 minutes and saves you fitting a new boot unnecessarily.
+
+1. Start the engine and let it idle (it may idle roughly or intermittently — that is expected).
+2. With the engine running, take the carb cleaner spray can and spray a **very brief, 0.5-second burst** along the joint between the throttle body boot and the throttle body flange, then the joint between the boot and the intake manifold.
+3. If the idle RPM **rises momentarily** after spraying — even just 50–100 RPM — that joint has a leak. The cleaner is being drawn in and briefly richening the mixture.
+4. Also spray along the length of the boot itself.
+
+<Callout type="warn">
+  ⚠️ Use only a brief burst of spray — a large quantity near a hot engine is a fire risk. Keep the spray away from the exhaust manifold.
+</Callout>
+
+**Result:** if RPM rises at the boot, proceed. If no response anywhere on the intake, the boot is not the primary leak source — check the TPS/MAP port, any vacuum taps, and the intake manifold-to-head gasket.
+
+### Step 2 — Stop engine and prepare
+
+1. Switch the engine off.
+2. Allow to cool for 10 minutes — the intake area gets hot.
+3. Disconnect the **battery negative (–) terminal**.
+4. Remove any body panels needed to access the throttle body and intake boot (model-dependent — usually 3–5 screws).
+
+### Step 3 — Remove the throttle body
+
+On most GY6 EFI scooters, the throttle body is easier to access the boot by removing it from its bracket first.
+
+1. Disconnect the throttle cable from the throttle body — loosen the adjuster lock nut and slide the cable end free from the pulley.
+2. Disconnect the TPS/MAP connector, the IAC (idle air control) connector if fitted, and the fuel injector connector.
+3. Loosen the jubilee clip at the **throttle body → boot** joint (the air-filter side of the boot).
+4. Unscrew the throttle body bracket bolts (usually 2 × M6 Phillips) and move the throttle body aside — the fuel line will still be attached, so do not pull hard. Support it or rest it on a rag.
+
+<Callout type="tip">
+  💡 **Tip:** Photograph the throttle cable routing and the connector layout before disconnecting — these are easy to mix up on reassembly.
+</Callout>
+
+### Step 4 — Remove the old boot
+
+1. Loosen the jubilee clip at the **manifold → boot** joint (the cylinder head side).
+2. Twist and pull the boot free from the intake manifold stub.
+3. Inspect the manifold stub and throttle body outlet for cracks, chips, or damaged threads — replace if found.
+
+### Step 5 — Fit the new boot
+
+1. Slide the new boot onto the intake manifold stub first — push it fully home until the clip groove aligns with the stub.
+2. Position a jubilee clip over the boot at this joint and tighten firmly (3–4 N·m — firm, but rubber collapses if over-tightened).
+3. Re-position the throttle body and slide the boot over its outlet stub.
+4. Position the second jubilee clip and tighten.
+5. Confirm both ends are fully seated — the boot should not be able to rotate or pull free by hand.
+
+### Step 6 — Reassemble and verify
+
+1. Refit the throttle body bracket bolts and torque to approximately 8–10 N·m.
+2. Reconnect the throttle cable, TPS/MAP connector, IAC connector, and injector connector.
+3. Reconnect the battery negative terminal.
+4. Start the engine — idle should be noticeably smoother than before.
+5. Repeat the carb cleaner spray test from Step 1 to confirm the leak is sealed (no RPM change on spraying = leak resolved).
+
+---
+
+## Troubleshooting
+
+| Problem | Likely Cause | Solution |
+|---------|--------------|----------|
+| Idle still rough after boot replacement | Additional vacuum leak elsewhere — manifold gasket, idle air ports | Check manifold-to-head gasket; spray test all vacuum ports |
+| Boot won't seat on throttle body outlet | Wrong size boot ordered | Measure throttle body outlet OD and match to boot ID |
+| RPM spikes at new boot during spray test | Boot jubilee clip not tight, or boot end not fully seated | Re-seat and retighten both clips |
+
+---
+
+## Related Guides
+
+- [GY6 EFI Vacuum Leak Diagnosis](/diagnostics/gy6-efi-vacuum-leak-diagnosis.html)
+- [GY6 EFI Throttle Body Idle Screw Adjustment](/repair-guides/gy6-efi-throttle-body-idle-screw-adjustment.html)
+- [GY6 EFI TPS/MAP Sensor Replacement](/repair-guides/gy6-efi-tps-map-sensor-replacement.html)
+- [GY6 EFI Fuel Pump Pressure Test](/diagnostics/gy6-efi-fuel-pump-pressure-test.html)

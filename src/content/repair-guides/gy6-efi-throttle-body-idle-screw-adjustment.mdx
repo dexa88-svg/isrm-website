@@ -1,0 +1,166 @@
+---
+title: "GY6 EFI Throttle Body Idle Screw Adjustment"
+description: "Adjust the air/fuel idle screw and idle speed on a GY6 EFI scooter throttle body (Rongmao MT5). The mandatory first step when an EFI scooter stalls at stops."
+publishDate: "2026-06-06"
+updatedDate: "2026-06-06"
+difficulty: "Beginner"
+timeEstimate: "~20 min"
+tags: ["gy6", "efi", "throttle-body", "idle", "idle-screw", "rongmao", "euro4", "euro5", "stalling", "adjustment"]
+appliesTo:
+  - "GY6 139QMB Euro 4/5 EFI (50cc)"
+  - "GY6 157QMJ EFI (150cc)"
+  - "BTC Riva EFI"
+  - "La Souris Sourini / City EFI"
+  - "Santini Capri EFI"
+  - "AGM VX50 EFI"
+videos:
+  - id: "68GocLQdeNs"
+    title: "GY6 EFI Throttle Body Idle Screw Adjustment"
+    creator: "ISRM"
+    position: "hero"
+tools:
+  - "Small flat-head screwdriver (3–4 mm blade)"
+  - "Tachometer / rev counter (smartphone RPM app works)"
+sources:
+  - name: "49ccScoot Forum — GY6 EFI Idle and Air/Fuel Screw"
+    url: "https://49ccscoot.proboards.com"
+  - name: "Rongmao MT5 ECU Technical Documentation"
+    url: "https://motorroller.de"
+  - name: "ScootDawg Forum — GY6 EFI Idle Adjustment"
+    url: "https://scootdawg.proboards.com"
+canonical: "https://ismr.online/repair-guides/gy6-efi-throttle-body-idle-screw-adjustment.html"
+draft: false
+---
+
+import VideoEmbed from '@components/VideoEmbed.astro';
+import Callout from '@components/Callout.astro';
+import SourceBox from '@components/SourceBox.astro';
+
+One of the most overlooked facts about GY6 EFI systems is that the idle region — below approximately 2,800 RPM — is **not** fully managed by the ECU. The Rongmao MT5 operates in open-loop at idle, which means the air/fuel ratio at a standstill must be manually set using the finger-adjustable screw on the throttle body. If this screw is off-spec (common from factory, or disturbed by a previous owner), the engine will run fine at speed but stall every time you stop. This is the mandatory first adjustment step on any GY6 EFI scooter that stalls at stops.
+
+## Applies To
+
+GY6 139QMB (50cc) and 157QMJ (150cc) with Rongmao MT5 ECU (Euro 4/5 EFI), including the BTC Riva EFI, La Souris Sourini/City EFI, Santini Capri EFI, and AGM VX50 EFI.
+
+<SourceBox sources={frontmatter.sources} />
+
+---
+
+<Callout type="warn">
+  ⚠️ **Perform this adjustment with a fully warm engine.** Cold idle is managed differently by the ECU. Adjusting the idle screw cold will give an incorrect result — the scooter must be ridden for at least 5 minutes before setting the idle.
+</Callout>
+
+## Video Guide
+
+<VideoEmbed
+  videoId="68GocLQdeNs"
+  title="GY6 EFI Throttle Body Idle Screw Adjustment"
+  creator="ISRM"
+/>
+
+---
+
+## Tools Required
+
+- **Small flat-head screwdriver (3–4 mm blade)** — for the air/fuel mixture screw (some models have a knurled finger-adjustable knob requiring no tools)
+- **Tachometer** — a smartphone RPM app using the microphone works well enough for this job; a handheld optical tach is more accurate
+
+## Background: EFI Idle Is Not Fully Automatic
+
+Many owners assume that because the scooter has fuel injection, the idle is entirely automatic — it is not. The Rongmao MT5 ECU controls fuel delivery in closed-loop (using the O2 sensor) only above approximately 2,800 RPM. Below that threshold — the idle zone — the ECU uses a fixed, pre-mapped fuel value. The air side of the equation at idle is controlled by a physical screw in the throttle body bore.
+
+There are two adjustments on the Rongmao throttle body:
+
+1. **Idle speed screw (throttle stop screw)** — sets how far the throttle butterfly stays open at rest. This sets the base RPM.
+2. **Air/fuel mixture screw (pilot screw)** — controls how much air bleeds into the idle circuit. Turning it **in (clockwise)** richens the idle mixture; turning it **out (anti-clockwise)** leans it.
+
+The correct procedure is to set the idle speed first, then find the mixture screw position that gives the highest stable RPM (the "lean best idle" method), then reduce idle speed to the correct value.
+
+---
+
+## Step-by-Step Instructions
+
+### Step 1 — Warm the engine fully
+
+1. Start the scooter and ride or let it idle for at least **5 minutes** until the engine has reached normal operating temperature.
+2. Place the scooter on its centre stand on level ground.
+3. Leave the engine running at idle.
+
+### Step 2 — Locate the idle adjusters on the throttle body
+
+The Rongmao throttle body has two adjustment points, typically accessible from the right or top side:
+
+- **Throttle stop screw:** a screw with a spring, turning it clockwise raises idle RPM.
+- **Air/fuel mixture screw:** a smaller screw, sometimes covered with a tamper-evident plug (prise the plug out with a small screwdriver to access it). On some models, this is replaced with a knurled finger knob for tool-free adjustment.
+
+<Callout type="tip">
+  💡 **Tip:** If the mixture screw is hidden under a pressed-in plastic plug (Euro 5 anti-tamper requirement), carefully lever the plug out with a small flat-head. It will not be reusable but this is a one-time operation.
+</Callout>
+
+### Step 3 — Set a baseline idle speed
+
+1. Using the **throttle stop screw**, turn clockwise (in small 1/8-turn increments) until the engine idles at **1,600–1,800 RPM** — this gives you a stable working point.
+2. If the engine won't idle at all without holding the throttle, set the stop screw higher — around 2,000 RPM — as a temporary working baseline.
+
+### Step 4 — Find the highest-stable-idle mixture position
+
+This is the core of the idle adjustment.
+
+1. With the engine idling, slowly turn the **air/fuel mixture screw** outward (anti-clockwise), 1/4 turn at a time. Pause 5 seconds after each turn and listen to the idle.
+2. As you turn out, the idle RPM will rise — the mixture is moving toward the correct zone.
+3. Continue turning out until the idle RPM **peaks** (highest point) and then starts to fall or become rough.
+4. Turn back in (clockwise) by **1/4 turn** from the peak. This is your optimal idle mixture setting.
+
+<Callout type="tip">
+  💡 **Tip:** Typical final position is **1.5 to 2.5 turns out** from lightly seated. If you end up more than 3.5 turns out and still can't find a peak, there may be a vacuum leak or the pilot circuit is blocked. If you can't find a peak before 1 turn out, the mixture screw seat or O-ring may be damaged.
+</Callout>
+
+<Callout type="warn">
+  ⚠️ Never force the mixture screw tight against its seat — the taper is delicate and will be damaged. Turn it in only until you feel light resistance, then back out to your count.
+</Callout>
+
+### Step 5 — Set final idle speed
+
+1. With the mixture screw now at the optimal position, the idle RPM will be higher than target.
+2. Turn the **throttle stop screw** anti-clockwise (out) in 1/4-turn increments to reduce idle speed.
+3. Target: **1,400–1,600 RPM** (warm idle). Check your model's service manual for the exact spec — most GY6 50cc EFI models specify 1,500 ± 100 RPM.
+4. Blip the throttle and let it return to idle — confirm the RPM settles cleanly without hanging or dropping below idle.
+
+### Step 6 — Test for stalling at stop
+
+1. Rev the engine to 4,000–5,000 RPM, then release the throttle abruptly — simulating arriving at a red light.
+2. The idle should return quickly to the set point (1,400–1,600 RPM) without dropping below and stalling.
+3. Repeat 3–4 times. If the engine stalls during this test, the idle speed may need to be raised slightly (another 100 RPM) or the mixture is still not optimal.
+
+---
+
+## Troubleshooting
+
+| Problem | Likely Cause | Solution |
+|---------|--------------|----------|
+| Can't find a peak in mixture — idle rough throughout | Vacuum leak, or blocked pilot circuit in throttle body | Check for air leaks; clean throttle body pilot bore |
+| Engine stalls on deceleration even after adjustment | TPS voltage at idle out of spec | See [GY6 EFI Stalls at Idle — TPS & IAC Fix](/diagnostics/gy6-efi-stalling-at-idle-tps-iac.html) |
+| Idle hangs high and won't come down | Throttle cable too tight, or IAC fault | Check throttle cable free-play (2–3 mm at lever); check IAC valve |
+| Mixture screw falls out | O-ring missing or worn | Replace the O-ring on the mixture screw |
+
+---
+
+## Frequently Asked Questions
+
+**Q: Do I need to reset the ECU after adjusting the idle?**  
+A: No. The idle mixture screw and throttle stop screw are mechanical — the ECU adapts to the new idle point automatically within a few minutes of warm running.
+
+**Q: My scooter has no mixture screw, just a plug — is this normal?**  
+A: Yes, Euro 5 regulations require a tamper-evident plug over the mixture screw at the factory. You can remove the plug to access the screw for maintenance without any legal issue in most markets. Keep a record of your final setting (turns out from seat) for future reference.
+
+**Q: How often should I re-adjust the idle?**  
+A: The idle screw rarely needs re-adjustment once set correctly. If it starts drifting, check the O-ring on the screw — a worn O-ring lets the screw vibrate loose.
+
+---
+
+## Related Guides
+
+- [GY6 EFI Stalls at Idle — TPS & IAC Fix](/diagnostics/gy6-efi-stalling-at-idle-tps-iac.html)
+- [GY6 EFI TPS Sensor Replacement](/repair-guides/gy6-efi-tps-map-sensor-replacement.html)
+- [GY6 EFI Vacuum Leak Diagnosis](/diagnostics/gy6-efi-vacuum-leak-diagnosis.html)
+- [GY6 EFI Fuel Pump Pressure Test](/diagnostics/gy6-efi-fuel-pump-pressure-test.html)

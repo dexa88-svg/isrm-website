@@ -2,7 +2,7 @@
 title: "GY6 EFI TPS Sensor Diagnosis & Replacement"
 description: "Diagnose and replace the Throttle Position Sensor (TPS) on GY6 EFI scooters — Euro 4/5 Delphi and Motion ECU. Includes fault codes P0121/P0122, voltage tests."
 publishDate: "2026-05-21"
-updatedDate: "2026-05-21"
+updatedDate: "2026-06-06"
 difficulty: "Intermediate"
 timeEstimate: "~45 min"
 tags: ["gy6", "efi", "tps", "throttle", "fuel-injection", "euro4", "diagnostics"]
@@ -117,20 +117,15 @@ If the voltage is stuck at 0 V or 5 V regardless of throttle position, check the
 
 ## Step 4 — Replacing the TPS
 
-On most GY6 EFI throttle bodies, the TPS is a bolt-on sensor on the throttle body:
+Once the tests above confirm the TPS is faulty, see the dedicated **[GY6 EFI TPS/MAP Sensor Replacement repair guide](/repair-guides/gy6-efi-tps-map-sensor-replacement.html)** for the full disassembly, idle voltage setting, and reassembly procedure. That guide covers the Rongmao MT5 combined TPS/MAP unit specifically, including the critical idle voltage target of 0.63–0.73 V.
 
-1. Unplug the 3-wire TPS connector.
-2. Remove the 2 Phillips screws securing the TPS to the throttle body.
-3. Slide the old TPS off the throttle shaft.
-4. Fit the new TPS — align the slot on the sensor's drive with the throttle shaft flat.
-5. Reinstall and tighten the screws finger-tight. **Do not fully tighten yet** — the TPS may need adjustment.
+Quick-reference summary (see the repair guide for full detail):
 
-**TPS Adjustment (Closed Throttle Voltage):**
-
-1. With the ignition ON, measure the TPS signal voltage with the throttle fully closed.
-2. Rotate the TPS body slightly while watching the voltage until it reads **0.50–0.55 V** (fully closed position per Delphi MT05 spec).
-3. Once set, tighten the mounting screws firmly.
-4. Recheck: open the throttle to WOT and confirm voltage reaches approximately 4.5 V, then returns to 0.5 V when released.
+1. Unplug the TPS connector. Remove the 2 Phillips screws securing the TPS to the throttle body.
+2. Slide the old sensor off the throttle shaft.
+3. Fit the new sensor, leaving screws finger-tight.
+4. With ignition ON, back-probe the signal wire and rotate the sensor body until the closed-throttle voltage reads **0.63–0.73 V** (Rongmao MT5) or **0.50–0.55 V** (Delphi MT05 — check your ECU label).
+5. Tighten the screws and recheck voltage — tightening can shift the reading slightly.
 
 <Callout type="tip">
 **Clear fault codes after replacement.** If you have an OBD2 KKL cable and HUD ECU Hacker, clear any stored P0121–P0123 codes after fitting the new sensor. Without a scanner, disconnect the battery for 5 minutes to reset the ECU — the CEL will extinguish if the fault is resolved.

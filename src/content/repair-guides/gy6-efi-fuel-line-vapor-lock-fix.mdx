@@ -1,0 +1,185 @@
+---
+title: "GY6 EFI Fuel Line Re-routing & Vapor Lock Fix"
+description: "Fix vapor lock on a GY6 EFI scooter by re-routing the fuel line away from heat sources. Covers identifying heat-proximity routing, adding insulation, and correct line path."
+publishDate: "2026-06-06"
+updatedDate: "2026-06-06"
+difficulty: "Beginner"
+timeEstimate: "~30 min"
+tags: ["gy6", "efi", "vapor-lock", "fuel-line", "fuel-system", "heat", "stalling", "repair", "euro4"]
+appliesTo:
+  - "GY6 139QMB Euro 4/5 EFI (50cc)"
+  - "GY6 157QMJ EFI (150cc)"
+  - "BTC Riva EFI"
+  - "La Souris Sourini / City EFI"
+  - "Santini Capri EFI"
+  - "AGM VX50 EFI"
+videos:
+  - id: "UBpcoOO4Bsw"
+    title: "GY6 EFI Fuel Line Re-routing and Vapor Lock Fix"
+    creator: "ISRM"
+    position: "hero"
+tools:
+  - "Phillips screwdriver"
+  - "Flat-head screwdriver"
+  - "Zip ties"
+  - "Scissors or side-cutters (for insulation sleeve)"
+sources:
+  - name: "49ccScoot Forum — EFI Vapor Lock Hot Weather"
+    url: "https://49ccscoot.proboards.com"
+  - name: "Motorroller.de — GY6 EFI Fuel Line Heat Issues"
+    url: "https://motorroller.de"
+canonical: "https://ismr.online/repair-guides/gy6-efi-fuel-line-vapor-lock-fix.html"
+draft: false
+---
+
+import VideoEmbed from '@components/VideoEmbed.astro';
+import Callout from '@components/Callout.astro';
+import SourceBox from '@components/SourceBox.astro';
+
+Vapor lock occurs when fuel in the line from the tank to the injector is heated to the point where it vaporises before reaching the pump or injector. While the electric high-pressure pump on GY6 EFI systems eliminates the vacuum-driven fuel starvation of carburettor engines, it cannot pump vapour efficiently — a vapour pocket in the line briefly cuts fuel delivery, most noticeably at idle where the margin is smallest. Vapor lock is a rare cause of EFI stalling, appearing mainly in warm climates and after long rides. It is rarely the first diagnosis, but worth investigating after fuel pump and sensor checks have passed. The fix is straightforward: re-route the fuel line away from heat sources and add insulation where re-routing is not fully possible.
+
+## Applies To
+
+GY6 139QMB (50cc) and 157QMJ (150cc) with Rongmao MT5 ECU (Euro 4/5 EFI). More likely on scooters manufactured before 2022 where fuel line routing was less controlled.
+
+<SourceBox sources={frontmatter.sources} />
+
+---
+
+<Callout type="danger">
+  ⚠️ **Fuel line work — fire hazard.** Work in a ventilated area away from ignition sources. Turn the fuel tap to OFF if fitted. Disconnect the battery negative terminal before starting work. Have rags ready to catch fuel spills.
+</Callout>
+
+## Video Guide
+
+<VideoEmbed
+  videoId="UBpcoOO4Bsw"
+  title="GY6 EFI Fuel Line Re-routing and Vapor Lock Fix"
+  creator="ISRM"
+/>
+
+---
+
+## Tools Required
+
+- **Phillips screwdriver** — body panel access
+- **Zip ties** — re-securing the fuel line in the new route
+- **Scissors** — cutting thermal insulation sleeve to length
+
+## Parts & Materials
+
+| Part | Spec / Note | Approx. Cost |
+|------|-------------|--------------|
+| Thermal insulation sleeve | Fibre-glass or silicone wrap, 6–8 mm ID, rated to 200°C+ | €5–10/m |
+| Fuel line (if replacing) | 5 mm ID petrol-resistant rubber or PTFE-lined | €3–5/m |
+| Zip ties | Standard nylon, UV-resistant | €2 |
+
+---
+
+## Background: How Vapor Lock Occurs on EFI
+
+On a carburettor GY6, the vacuum-operated fuel pump is usually mounted at the engine and draws fuel from the tank — the line runs mostly downhill and away from heat. On GY6 EFI layouts, the electric pump is sometimes mounted mid-frame with the fuel line running parallel to the exhaust downpipe or within 20–30 mm of the cylinder barrel. In warm weather and after extended riding, the section of rubber fuel hose near these heat sources can reach 60–70°C — close to the boiling point of petrol blends under low pressure conditions. A bubble forms, the pump momentarily draws vapour instead of liquid, and fuel delivery drops. This causes a brief stall or stumble at idle.
+
+**Characteristic symptom pattern:**
+- Only occurs after 15–30+ minutes of riding (engine fully heat-soaked)
+- Worse in summer or on slow stop-start urban riding (less air cooling of exhaust)
+- Engine may restart immediately (bubble passes) or need 10+ minutes to cool
+- Does not occur on cold morning starts
+
+---
+
+## Step-by-Step Instructions
+
+### Step 1 — Identify the fuel line routing
+
+1. Remove body panels to expose the fuel line from tank to throttle body (fuel pump is in-line on this route).
+2. Trace the entire fuel line with your hand — note every point where the line passes within **50 mm of the exhaust pipe, cylinder barrel, or any other metal surface that gets hot during riding**.
+3. Mark problem areas with a cable tie loosely looped around the line (not tight — just a marker).
+
+<Callout type="tip">
+  💡 **Tip:** The highest-risk zone is where the fuel line passes the cylinder head or exhaust manifold join. On the BTC Riva and Sourini, the line often runs along the left frame rail, which can get warm from radiated exhaust heat.
+</Callout>
+
+### Step 2 — Plan the new route
+
+Look for an alternative path for the fuel line that:
+
+- Keeps the line at least **50 mm from any exhaust component** (100 mm preferred)
+- Keeps the line at least **30 mm from the cylinder barrel**
+- Does not cause the line to kink or rub on frame edges
+- Does not significantly shorten the line (enough slack for engine movement)
+
+Common re-routing options on GY6 scooters:
+- Move the line to the opposite side of the frame from the exhaust
+- Route over the airbox rather than under it
+- Drop the line lower along the frame rail before bringing it up to the throttle body
+
+### Step 3 — Re-route the fuel line
+
+<Callout type="warn">
+  ⚠️ Turn the fuel tap to OFF before disconnecting any fuel hose. Have rags ready — residual fuel will spill when the line is freed.
+</Callout>
+
+1. Cut the existing zip ties holding the fuel line in place.
+2. Carefully reposition the fuel line along the new route without disconnecting the ends (unless the line must be re-cut to fit a different length path).
+3. Check that the line is not kinked at any bend — if a kink is unavoidable, a short length of fuel-rated metal tube bent to the correct angle can be used as a former inside the hose, or replace that section with pre-bent fuel line.
+
+### Step 4 — Add thermal insulation (where full re-routing is not possible)
+
+If a section of fuel line must pass close to a heat source due to space constraints:
+
+1. Cut a length of thermal insulation sleeve (fibre-glass or silicone-coated) to cover the at-risk section plus 50 mm overlap on each end.
+2. Slide the sleeve over the fuel line — do this before connecting one end of the hose if the hose ends won't fit through the sleeve.
+3. Secure the sleeve ends with a small zip tie or wrap of high-temperature tape.
+
+<Callout type="tip">
+  💡 **Tip:** Aluminium heat wrap tape (available cheaply from automotive suppliers) can also be used to wrap the fuel line in tight spaces. Apply it shiny-side outward to reflect radiated heat.
+</Callout>
+
+### Step 5 — Secure the new routing
+
+1. Use zip ties to secure the re-routed fuel line at intervals of no more than 150 mm.
+2. Ensure the line is not under tension or able to contact moving parts (CVT belt area, throttle cable run).
+3. Check that the line has enough slack to absorb the small amount of engine movement during running — pull the engine gently and confirm the line does not go taut.
+
+### Step 6 — Check the fuel pump position
+
+While the fuel line is visible, check the pump mounting:
+
+1. Is the pump mounted within 30 mm of the exhaust or cylinder? If so, consider re-positioning the pump bracket to a cooler location.
+2. The pump motor itself generates heat — ensure there is airflow around it, not encased against a panel.
+
+### Step 7 — Test under real conditions
+
+1. Refit all body panels.
+2. Take the scooter for a longer ride (20–30 minutes in warm weather) to replicate the original conditions.
+3. Confirm no stalling at stops during or after the ride.
+
+---
+
+## Troubleshooting
+
+| Problem | Likely Cause | Solution |
+|---------|--------------|----------|
+| Stalling continues after re-routing | Vapor lock was not the primary cause — or the pump itself is weakening under heat | Check [Fuel Pump Pressure Test](/diagnostics/gy6-efi-fuel-pump-pressure-test.html) under hot conditions |
+| Fuel line kinks in new route | Insufficient bend radius for rubber hose | Use a larger radius bend, or use braided/PTFE hose with a tighter minimum bend radius |
+| Insulation sleeve melts or chars | Sleeve not rated for the temperature at that location | Use a higher-temperature rating sleeve; add an air gap between line and heat source |
+
+---
+
+## Frequently Asked Questions
+
+**Q: Can I use any rubber hose to replace the fuel line?**  
+A: No. The hose must be rated for petrol (fuel-resistant) and ideally for the higher pressures of an EFI system (up to 3.5 bar). Standard rubber hose (e.g., vacuum hose or coolant hose) will swell, perish, or collapse under fuel pressure. Use automotive fuel hose rated for EFI use, or PTFE-lined braided hose.
+
+**Q: How do I know if the problem is vapor lock and not a failing fuel pump?**  
+A: The key distinction is temperature dependency. Vapor lock only appears after extended hot running and recovers within minutes of cooling. A failing pump fails progressively — it may start occurring earlier in a ride and not fully recover with cooling. If the [Fuel Pump Pressure Test](/diagnostics/gy6-efi-fuel-pump-pressure-test.html) passes cold but fails after a hot ride, the pump is failing thermally, not vapor locking.
+
+---
+
+## Related Guides
+
+- [GY6 EFI Fuel Pump Replacement](/repair-guides/gy6-efi-fuel-pump-replacement.html)
+- [GY6 EFI Fuel Pump Pressure Test](/diagnostics/gy6-efi-fuel-pump-pressure-test.html)
+- [GY6 EFI Ignition Coil Thermal Failure](/repair-guides/gy6-efi-ignition-coil-thermal-failure.html)
+- [GY6 EFI Throttle Body Idle Screw Adjustment](/repair-guides/gy6-efi-throttle-body-idle-screw-adjustment.html)

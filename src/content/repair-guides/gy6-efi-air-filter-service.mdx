@@ -1,0 +1,157 @@
+---
+title: "GY6 EFI Air Filter Service"
+description: "Clean or replace the air filter on a GY6 EFI scooter. On EFI engines, a blocked filter confuses the MAP sensor and causes stalling — learn why and how to fix it."
+publishDate: "2026-06-06"
+updatedDate: "2026-06-06"
+difficulty: "Beginner"
+timeEstimate: "~20 min"
+tags: ["gy6", "efi", "air-filter", "map-sensor", "airbox", "euro4", "maintenance", "stalling"]
+appliesTo:
+  - "GY6 139QMB Euro 4/5 EFI (50cc)"
+  - "GY6 139QMB carb (50cc)"
+  - "GY6 152QMI (125cc)"
+  - "GY6 157QMJ (150cc)"
+  - "BTC Riva EFI"
+  - "La Souris Sourini / City EFI"
+  - "Santini Capri EFI"
+videos:
+  - id: "dklHU1KW2bQ"
+    title: "GY6 EFI Air Filter Removal, Cleaning and Replacement"
+    creator: "ISRM"
+    position: "hero"
+tools:
+  - "Phillips screwdriver (PH2)"
+  - "Flat-head screwdriver"
+  - "Compressed air or bulb blower (for foam cleaning)"
+  - "Foam filter oil (if re-oiling a reusable element)"
+sources:
+  - name: "GY6 139QMB Service Manual"
+    url: "https://ismr.online"
+  - name: "49ccScoot Forum — GY6 EFI Air Filter and MAP Sensor"
+    url: "https://49ccscoot.proboards.com"
+canonical: "https://ismr.online/repair-guides/gy6-efi-air-filter-service.html"
+draft: false
+---
+
+import VideoEmbed from '@components/VideoEmbed.astro';
+import Callout from '@components/Callout.astro';
+import SourceBox from '@components/SourceBox.astro';
+
+On a carburettor engine, a blocked air filter makes the engine run rich and sluggish — the symptoms are obvious. On a GY6 EFI engine, the effect is more subtle and more damaging at idle: the MAP (Manifold Absolute Pressure) sensor reads unexpectedly low intake pressure caused by the restricted airflow, and the ECU interprets this as higher load than actually exists. The result is over-fuelling at idle, which can wet-foul the spark plug and cause stalling at stops. Additionally, the small GY6 airbox is particularly prone to oil mist contamination from the crankcase breather, which saturates the foam element. Air filter service is due every 3,000 km — more often in dusty conditions.
+
+## Applies To
+
+GY6 139QMB (50cc) and larger GY6 variants in both EFI and carburettor form. This guide focuses on the EFI-specific MAP sensor interaction and the Euro 4 crankcase breather oil contamination issue. For the general filter cleaning procedure applicable to all GY6 engines, see the [GY6 Air Filter Clean or Replace Guide](/repair-guides/gy6-air-filter-guide.html).
+
+<SourceBox sources={frontmatter.sources} />
+
+---
+
+## Video Guide
+
+<VideoEmbed
+  videoId="dklHU1KW2bQ"
+  title="GY6 EFI Air Filter Removal, Cleaning and Replacement"
+  creator="ISRM"
+/>
+
+---
+
+## Tools Required
+
+- **Phillips screwdriver** — airbox screws
+- **Compressed air or bulb blower** — for blowing out loose dust from a foam element
+- **Foam filter oil** — if the element is the oiled type (apply sparingly after cleaning)
+
+## Parts & Materials
+
+| Part | Spec / Note | Approx. Cost |
+|------|-------------|--------------|
+| GY6 air filter element | Model-specific foam or paper element — check dimensions | €5–12 |
+| Foam filter oil | Apply to reusable foam elements after cleaning | €5 |
+
+---
+
+## Background: The MAP Sensor and Air Filter
+
+The Rongmao MT5 ECU uses the MAP sensor to measure manifold vacuum as a proxy for engine load. At idle, manifold vacuum is high (around 70–80 kPa below atmospheric). If the air filter is severely blocked, the airbox pressure drops further than normal, increasing the effective vacuum seen by the MAP sensor. The ECU interprets this extra vacuum as a lighter load and adjusts fuelling accordingly — but the relationship breaks down at idle where the engine's tolerance for over-fuelling is lowest.
+
+Additionally, GY6 engines route crankcase breather gases back into the airbox (Euro 4 emissions requirement). Oil mist in these gases coats the filter element with a fine oily film that catches dust rapidly. An oil-saturated filter restricts airflow more than a dusty filter and is harder to clean effectively.
+
+---
+
+## Step-by-Step Instructions
+
+### Step 1 — Locate and access the airbox
+
+The airbox on GY6 scooters is usually a plastic box located above or beside the engine, connected to the throttle body by a short intake duct.
+
+1. Remove the relevant body panel(s) — typically 3–5 Phillips screws.
+2. Locate the airbox: a rectangular or oval plastic housing with an intake snorkel and a connection to the throttle body.
+
+### Step 2 — Open the airbox
+
+1. Undo the airbox cover screws or clips (usually 2–4 Phillips screws on the side or back).
+2. Lift or swing the cover open.
+3. Remove the filter element — it will either lift straight out or unclip from a central post.
+
+### Step 3 — Inspect the element
+
+Examine the element under good light:
+
+| Appearance | Action |
+|------------|--------|
+| Light grey dust coating, element intact | Clean with compressed air — re-use |
+| Dark grey/black, heavily soiled | Replace — cleaning will not restore adequate airflow |
+| Oil-saturated (shiny, wet, smells of engine oil) | Clean with degreaser + water, dry, re-oil with filter oil — or replace if foam is deteriorated |
+| Torn, deformed, or pieces missing | Replace immediately — debris can enter the engine |
+
+### Step 4 — Clean or replace
+
+**If cleaning a foam element:**
+
+1. Tap the element gently against your hand to dislodge loose dust.
+2. Blow compressed air through the element from the clean side outward (engine side → atmosphere side) — this pushes contaminants out the way they came in.
+3. If oil-contaminated: soak in warm soapy water, squeeze gently, rinse until water runs clear, and allow to dry **completely** before re-fitting (at least 2 hours, or overnight).
+4. Once dry, apply a **very light coat** of foam filter oil (or 10W-40 engine oil in a pinch). Spread evenly and squeeze out excess — the element should be lightly damp, not dripping.
+
+**If fitting a new element:** fit dry if it is a paper element, or lightly oil if it is a foam element.
+
+<Callout type="warn">
+  ⚠️ **Never run the engine without an air filter, even briefly.** Unfiltered air will pull abrasive particles directly into the cylinder, causing accelerated wear.
+</Callout>
+
+### Step 5 — Check the crankcase breather hose
+
+Before closing the airbox, check the crankcase breather hose — the hose that enters the airbox from below or the side. This is the source of oil mist contamination.
+
+1. Disconnect the breather hose from the airbox inlet.
+2. Check inside the hose and airbox inlet for excessive oil pooling — a small amount of oil mist residue is normal; visible oil pooling is excessive.
+3. If there is significant oil pooling in the airbox, investigate oil consumption — excessive crankcase pressure (worn rings or overfilled oil) causes heavy oil misting.
+4. Wipe out any oil from inside the airbox before closing.
+
+### Step 6 — Reassemble and test
+
+1. Fit the element back into the airbox.
+2. Close the airbox cover and secure all screws/clips.
+3. Ensure the intake duct between airbox and throttle body is fully seated.
+4. Start the engine and confirm idle is stable.
+
+---
+
+## Troubleshooting
+
+| Problem | Likely Cause | Solution |
+|---------|--------------|----------|
+| Element wet with oil immediately after fitting | Crankcase pressure too high (overfilled oil or worn rings) | Check oil level; check for blow-by |
+| Stalling continues after filter service | Filter was not primary cause | Work through [Fuel Pump Pressure Test](/diagnostics/gy6-efi-fuel-pump-pressure-test.html) |
+| Intake duct won't seal to throttle body | Duct cracked or deformed | Replace duct — a poor seal here is a vacuum leak |
+
+---
+
+## Related Guides
+
+- [GY6 EFI Vacuum Leak Diagnosis](/diagnostics/gy6-efi-vacuum-leak-diagnosis.html)
+- [GY6 EFI Spark Plug Replacement](/repair-guides/gy6-efi-spark-plug-replacement.html)
+- [GY6 4-Stroke Maintenance Schedule](/repair-guides/gy6-4stroke-maintenance-schedule.html)
+- [GY6 EFI Throttle Body Idle Screw Adjustment](/repair-guides/gy6-efi-throttle-body-idle-screw-adjustment.html)

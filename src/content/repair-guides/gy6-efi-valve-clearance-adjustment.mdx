@@ -1,0 +1,220 @@
+---
+title: "GY6 EFI Valve Clearance Check & Adjustment"
+description: "Check and adjust valve clearances on a GY6 139QMB EFI engine. Tight valves are a common but overlooked cause of idle stalling — especially on heat-soaked engines."
+publishDate: "2026-06-06"
+updatedDate: "2026-06-06"
+difficulty: "Intermediate"
+timeEstimate: "~1 hour"
+tags: ["gy6", "efi", "valve-clearance", "valve-adjustment", "139qmb", "engine", "stalling", "maintenance"]
+appliesTo:
+  - "GY6 139QMB Euro 4/5 EFI (50cc)"
+  - "GY6 139QMB carb (50cc)"
+  - "GY6 152QMI (125cc)"
+  - "GY6 157QMJ (150cc)"
+  - "BTC Riva EFI"
+  - "La Souris Sourini / City EFI"
+  - "Santini Capri EFI"
+videos:
+  - id: "6Pg4_p0hZnY"
+    title: "GY6 Valve Clearance Check and Adjustment"
+    creator: "ISRM"
+    position: "hero"
+tools:
+  - "Feeler gauge set (metric)"
+  - "Phillips screwdriver (PH2)"
+  - "13 mm socket or spanner (flywheel bolt)"
+  - "8 mm and 10 mm spanners (valve adjuster lock nut)"
+  - "Flat-head screwdriver (adjuster screw)"
+  - "Torque wrench (for cam cover bolts)"
+  - "Clean rags"
+  - "Engine oil (top-up if needed)"
+sources:
+  - name: "GY6 139QMB Service Manual"
+    url: "https://ismr.online"
+  - name: "Motorroller.de — GY6 Valve Clearance Euro 4"
+    url: "https://motorroller.de"
+  - name: "49ccScoot Forum — GY6 Valve Clearance Guide"
+    url: "https://49ccscoot.proboards.com"
+canonical: "https://ismr.online/repair-guides/gy6-efi-valve-clearance-adjustment.html"
+draft: false
+---
+
+import VideoEmbed from '@components/VideoEmbed.astro';
+import Callout from '@components/Callout.astro';
+import SourceBox from '@components/SourceBox.astro';
+
+EFI does not change the mechanical reality of valve train wear. On a GY6 139QMB engine, intake and exhaust valves tighten progressively with use — closing the clearance between the rocker arm and valve stem. Tight valves cause the valves to stay open fractionally longer than designed, reducing compression and combustion efficiency. At cruising speed the engine compensates through better cylinder filling, but at idle — where combustion must sustain the engine on its own — the loss of compression causes stalling, especially when the engine is heat-soaked. Euro 4/5 GY6 EFI owners often skip valve checks because "it's fuel injected, it's low maintenance." Valve clearances need checking every 1,000 km regardless.
+
+## Applies To
+
+GY6 139QMB (50cc) in both EFI and carburettor form, and larger GY6 variants (152QMI 125cc, 157QMJ 150cc). This procedure is the same regardless of fuel delivery method.
+
+<SourceBox sources={frontmatter.sources} />
+
+---
+
+<Callout type="danger">
+  ⚠️ **Cold engine only.** Valve clearances must be measured and set with the engine completely cold — at ambient temperature after sitting overnight. A hot engine gives false readings due to metal expansion.
+</Callout>
+
+<Callout type="warn">
+  ⚠️ **Oil spill hazard.** The cam cover holds engine oil. Have rags ready and a small tray under the engine when removing the cover.
+</Callout>
+
+## Video Guide
+
+<VideoEmbed
+  videoId="6Pg4_p0hZnY"
+  title="GY6 Valve Clearance Check and Adjustment"
+  creator="ISRM"
+/>
+
+---
+
+## Tools Required
+
+- **Feeler gauge set** — metric, you need 0.08 mm and 0.10 mm gauges at minimum
+- **13 mm socket** — to rotate the flywheel via the centre bolt (some prefer using the kickstarter)
+- **8 mm open-ended spanner** — lock nut on valve adjuster
+- **Flat-head screwdriver** — valve adjuster screw
+- **Torque wrench** — cam cover bolts (6 N·m)
+
+## Parts & Materials
+
+| Part | Spec / Note | Approx. Cost |
+|------|-------------|--------------|
+| Cam cover gasket | GY6 139QMB specific paper gasket | €2–5 |
+| Engine oil | 10W-40 4T (top up if disturbed) | — |
+
+---
+
+## Background: Valve Clearance Specs for GY6 139QMB
+
+| Valve | Cold clearance |
+|-------|---------------|
+| Inlet (IN) | **0.08 mm** |
+| Exhaust (EX) | **0.10 mm** |
+
+<Callout type="warn">
+  ⚠️ **Spec discrepancy across manuals.** Some generic GY6 service manuals (including the widely-circulated Tank/TaoTao manual) specify 0.05 mm for both valves. The 0.08/0.10 mm figures above come from Rongmao/Euro4-era documentation and are more conservative — they reduce the risk of tight valves as the engine wears. If your model's original service manual specifies 0.05 mm, that is also acceptable; the engine is tolerant of either setting. Do not set clearances tighter than 0.05 mm on either valve. The general [GY6 Valve Clearance Adjustment Guide](/repair-guides/gy6-valve-adjustment-guide.html) covers the 0.05 mm procedure if you prefer that source.
+</Callout>
+
+---
+
+## Step-by-Step Instructions
+
+### Step 1 — Ensure the engine is cold
+
+The engine must be at ambient temperature. If you have ridden recently, wait at least 3 hours. Overnight cold is ideal.
+
+### Step 2 — Access the cam cover
+
+The cam cover (valve cover) is on top of the cylinder head — a small aluminium or magnesium alloy cover, typically held by 4 bolts.
+
+1. Remove body panels as needed to access the cylinder head from above (model-specific — usually 4–6 screws for the rear body section).
+2. Clean the top of the cam cover with a rag before opening — any dirt falling into the valve train will cause accelerated wear.
+3. Undo the 4 cam cover bolts (typically M6, 10 N·m max — they are short and in soft metal; do not over-torque). Set the bolts aside.
+4. Lift the cam cover straight up. If it sticks, tap gently with a rubber mallet — do not prise with a screwdriver against the gasket face.
+5. Remove the old gasket and discard — always fit a new gasket on reassembly.
+
+### Step 3 — Find Top Dead Centre (TDC) compression stroke
+
+Valve clearances must be measured when both valves for the cylinder are fully closed — this occurs at TDC (Top Dead Centre) on the compression stroke.
+
+1. Remove the **inspection cap** on the left side of the engine case (small round rubber cap or bolt) — this exposes the timing marks on the flywheel.
+2. Also remove the **spark plug** — this makes it easier to feel and hear compression.
+3. Slowly rotate the engine **anti-clockwise** (when viewed from the right side / flywheel side) using the kickstart lever or the 13 mm flywheel bolt.
+4. Watch the valves through the open cam cover. You will see the inlet valve open (going down) and close, then the exhaust valve open and close.
+5. After both valves have closed, continue rotating slowly until the timing mark on the flywheel aligns with the **"T" mark** on the engine case inspection window. This is TDC.
+6. Confirm you are on compression (not exhaust) stroke: at TDC compression, both rocker arms should have free movement (you can wiggle them slightly). If one rocker is firm/pushed down, you are on the wrong TDC — rotate one full turn and check again.
+
+<Callout type="tip">
+  💡 **Tip:** With the spark plug removed, put your thumb over the plug hole while rotating. You will feel compression building on the compression stroke — TDC compression is reached just after this pressure peaks.
+</Callout>
+
+### Step 4 — Measure valve clearances
+
+1. Select the **0.08 mm feeler gauge** for the inlet valve.
+2. Slide the feeler gauge between the rocker arm and the valve stem tip (the gap between rocker pad and valve end).
+3. The gauge should slide in with **light resistance** — you should feel it dragging but be able to move it without forcing.
+
+**Interpret the result:**
+
+| Feeler gauge behaviour | Clearance status |
+|------------------------|-----------------|
+| Slides in freely with no resistance | Too large — valve clearance is excessive |
+| Light drag, can be withdrawn with a steady pull | Correct clearance |
+| Cannot be inserted at all | Too small — valve is tight and needs adjustment |
+
+4. Repeat with the **0.10 mm gauge** for the exhaust valve (the valve closer to the exhaust port — usually the upper valve on GY6).
+
+<Callout type="tip">
+  💡 **Tip:** Also try the next gauge size up (e.g., 0.10 mm on the inlet). If it passes freely, the clearance is too large. If only 0.08 mm fits with proper drag, clearance is correct.
+</Callout>
+
+### Step 5 — Adjust clearances (if needed)
+
+Each valve has a **lock nut** (8 mm) and an **adjuster screw** (flat-head) on the rocker arm.
+
+1. Hold the feeler gauge at the correct size in the valve gap.
+2. Loosen the lock nut (anti-clockwise) while holding the adjuster screw stationary.
+3. Turn the adjuster screw clockwise (in) to decrease the clearance, anti-clockwise (out) to increase it — small adjustments only.
+4. The feeler gauge should now drag with the correct resistance.
+5. Hold the adjuster screw still and tighten the lock nut. **Re-check the clearance** — tightening the lock nut can rotate the adjuster screw slightly, changing the clearance. Adjust again if needed.
+6. Repeat until the feeler gauge gives the correct resistance with the lock nut tight.
+
+<Callout type="warn">
+  ⚠️ Re-check after tightening the lock nut every time. It is very common for the adjustment to shift when the lock nut is tightened.
+</Callout>
+
+### Step 6 — Refit the cam cover
+
+1. Clean the cam cover mating face and the cylinder head face with a rag.
+2. Fit the **new cam cover gasket** — do not use RTV sealant (the paper gasket compresses correctly on its own).
+3. Lower the cam cover into position and thread the 4 bolts finger-tight.
+4. Tighten the bolts evenly in a cross pattern to **6 N·m** (roughly "firm with fingers + 1/4 turn with a short spanner"). Over-tightening on a GY6 cam cover will strip threads or crack the cover.
+5. Refit the spark plug to 12–15 N·m.
+6. Refit the timing inspection cap.
+
+### Step 7 — Start and verify
+
+1. Refit body panels.
+2. Start the engine cold and let it warm fully.
+3. Confirm idle is now stable and the engine does not stall when returning to idle from a blip.
+
+<Callout type="tip">
+  💡 **Tip:** After the first heat cycle, re-check cam cover bolt tightness — the gasket compresses and bolts can loosen slightly.
+</Callout>
+
+---
+
+## Troubleshooting
+
+| Problem | Likely Cause | Solution |
+|---------|--------------|----------|
+| Oil leak from cam cover after reassembly | Gasket not seated, or bolts not evenly torqued | Re-open, re-seat gasket, re-torque evenly |
+| Ticking noise after adjustment | Clearance too large | Re-adjust — valve clearance should eliminate ticking, not introduce it |
+| Stalling continues despite correct clearances | Different root cause | Check [Fuel Pump Pressure Test](/diagnostics/gy6-efi-fuel-pump-pressure-test.html) and [TPS Diagnosis](/diagnostics/gy6-efi-tps-sensor-diagnosis.html) |
+| Cannot rotate engine smoothly — feels stiff | Kickstart engaging partially, or 13 mm socket slipping | Use the dedicated flywheel rotation method for your model |
+
+---
+
+## Frequently Asked Questions
+
+**Q: How often should I check valve clearances on a GY6 EFI?**  
+A: Every **1,000 km** or at each service interval. GY6 engines are known for valves tightening faster than many other small engines — particularly the exhaust valve on 50cc units run at high throttle for urban commuting.
+
+**Q: Can tight valves damage the engine if left unchecked?**  
+A: Yes. A valve that is tight enough to never fully close will eventually burn — the valve head overheats because it cannot transfer heat to the seat when it is seated. A burnt valve requires a head rebuild or replacement.
+
+**Q: My clearances are too large — do I need shims?**  
+A: The GY6 139QMB uses adjuster screws, not shims. Excessive clearance is adjusted by turning the screw. Shims are used in overhead cam (OHC) engines like the Piaggio 4T — not on the pushrod-style GY6.
+
+---
+
+## Related Guides
+
+- [GY6 4-Stroke Maintenance Schedule](/repair-guides/gy6-4stroke-maintenance-schedule.html)
+- [GY6 EFI Fuel Pump Pressure Test](/diagnostics/gy6-efi-fuel-pump-pressure-test.html)
+- [GY6 EFI Throttle Body Idle Screw Adjustment](/repair-guides/gy6-efi-throttle-body-idle-screw-adjustment.html)
+- [GY6 EFI TPS Sensor Diagnosis](/diagnostics/gy6-efi-tps-sensor-diagnosis.html)

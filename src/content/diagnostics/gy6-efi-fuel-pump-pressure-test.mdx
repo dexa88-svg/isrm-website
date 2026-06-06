@@ -1,0 +1,160 @@
+---
+title: "GY6 EFI Fuel Pump — Pressure & Voltage Test"
+description: "Diagnose a failing EFI fuel pump on a GY6 scooter. Covers the key-ON prime check, 12 V voltage test, and rail pressure confirmation before replacing the pump."
+publishDate: "2026-06-06"
+updatedDate: "2026-06-06"
+difficulty: "Beginner"
+timeEstimate: "~15 min"
+category: "fuel"
+engine: "gy6"
+fuel: "efi"
+section: "EFI Fuel System"
+cardTag: "EFI Fuel Pump"
+tags: ["gy6", "efi", "fuel-pump", "fuel-injection", "rongmao", "euro4", "euro5", "stalling", "diagnostics", "pressure-test"]
+appliesTo:
+  - "GY6 139QMB Euro 4/5 EFI (50cc)"
+  - "GY6 157QMJ EFI (150cc)"
+  - "BTC Riva EFI"
+  - "La Souris Sourini / City EFI"
+  - "Santini Capri EFI"
+  - "AGM VX50 EFI"
+videos:
+  - id: "alvQQbfVKt0"
+    title: "GY6 EFI Fuel Pump Diagnosis — Prime Sound, Voltage & Pressure"
+    creator: "ISRM"
+    position: "hero"
+tools:
+  - "Multimeter (12 V DC range)"
+  - "Fuel pressure gauge (optional — Schrader-style, 0–7 bar range)"
+sources:
+  - name: "49ccScoot Forum — GY6 EFI Fuel Pump Diagnosis"
+    url: "https://49ccscoot.proboards.com"
+  - name: "Rongmao MT5 ECU Technical Documentation"
+    url: "https://motorroller.de"
+  - name: "ScootDawg Forum — Rongmao MT5 EFI Issues"
+    url: "https://scootdawg.proboards.com"
+canonical: "https://ismr.online/diagnostics/gy6-efi-fuel-pump-pressure-test.html"
+draft: false
+---
+
+import VideoEmbed from '@components/VideoEmbed.astro';
+import Callout from '@components/Callout.astro';
+import SourceBox from '@components/SourceBox.astro';
+
+A weak or failing electric fuel pump is the most frequently reported cause of a GY6 EFI scooter stalling at stops — affecting an estimated 60–70% of cases. Because the pump provides only a momentary prime before cranking, and then runs continuously during operation, a partially worn pump often still starts the engine and runs acceptably at speed. The fault only becomes obvious at idle, where pressure margins are tightest. This three-step diagnostic confirms whether the pump is the culprit before you spend money on other parts.
+
+## Applies To
+
+GY6 139QMB (50cc) and 157QMJ (150cc) with Rongmao MT5 ECU (Euro 4/5 EFI), including the BTC Riva EFI, La Souris Sourini/City EFI, Santini Capri EFI, and AGM VX50 EFI.
+
+<SourceBox sources={frontmatter.sources} />
+
+---
+
+<Callout type="danger">
+  ⚠️ **No flames or sparks near the fuel system.** Even with the engine off, fuel vapour accumulates in enclosed spaces. Work outdoors or in a well-ventilated area.
+</Callout>
+
+## Video Guide
+
+<VideoEmbed
+  videoId="alvQQbfVKt0"
+  title="GY6 EFI Fuel Pump Diagnosis — Prime Sound, Voltage & Pressure"
+  creator="ISRM"
+/>
+
+---
+
+## Background: How the Pump Should Behave
+
+The Rongmao MT5 ECU energises the fuel pump relay for approximately **2 seconds** every time the ignition is switched to ON, before the engine is cranked. This primes the injector rail to operating pressure. You should hear a faint but distinct hum or whine from under the seat. Once the engine is running, the pump runs continuously.
+
+A healthy pump at rest draws around **0.5–1 A** at 12 V. A worn pump may draw more (high resistance in brushes), draw less (open circuit), or produce a laboured, intermittent hum rather than a clean whine.
+
+---
+
+## Diagnostic Steps
+
+### Step 1 — The Prime Sound Test (30 seconds, no tools)
+
+This is your fastest initial check.
+
+1. Make sure the ignition is OFF and has been off for at least 30 seconds.
+2. Turn the key to **ON** (do not crank).
+3. Listen immediately for a sound from under the seat lasting about 2 seconds — a faint electric whine or hum.
+
+**Results:**
+
+| What you hear | Interpretation |
+|---------------|----------------|
+| Clear 2-second hum | Pump is energised — proceed to Step 2 |
+| Silence | No power to pump, or pump is seized — check wiring first (Step 2) |
+| Very faint / laboured hum | Pump is weakening — confirm with Step 2 and Step 3 |
+| Continuous hum (never stops) | ECU relay stuck closed — check relay |
+
+<Callout type="tip">
+  💡 **Tip:** Cup your hand around the area under the seat/floorboard to block ambient noise. On busy streets, the prime hum can be hard to hear otherwise.
+</Callout>
+
+### Step 2 — Voltage Test at the Pump Connector (multimeter required)
+
+1. Locate the fuel pump — usually mounted under the seat or along the left frame rail. It is an in-line cylindrical unit with a 2-pin wiring connector and two fuel hoses.
+2. Disconnect the 2-pin connector from the pump.
+3. Set your multimeter to **DC Volts, 20 V range**.
+4. Turn the ignition to ON.
+5. Within the first 3 seconds (during the prime window), probe the connector: **red probe to the positive wire, black probe to negative/ground**.
+
+**Results:**
+
+| Reading | Interpretation |
+|---------|----------------|
+| 11.5–13.5 V | Good supply — pump is receiving power. If pump is not humming, the pump itself has failed. Replace the pump. |
+| 0 V | No supply. Check the ECU fuel pump relay and the 10 A fuel pump fuse. |
+| Below 10 V | Low voltage — check battery state of charge and main ground connection. |
+
+<Callout type="warn">
+  ⚠️ The prime window is only ~2 seconds. If you miss it, turn ignition OFF for 30 seconds and repeat. Do not crank the engine between tests, as that will extend the pump run time and make the reading less meaningful.
+</Callout>
+
+### Step 3 — Fuel Pressure Check (optional but definitive)
+
+A pump that hums and receives voltage can still produce insufficient pressure. This step is only needed if Steps 1 and 2 pass but you still have stalling symptoms.
+
+<Callout type="warn">
+  ⚠️ The GY6 EFI system runs at around **2.5–3.5 bar (36–51 psi)**. This is much higher than a carburettor system. Use a gauge rated for at least 7 bar.
+</Callout>
+
+1. Purchase or borrow a fuel pressure gauge with a Schrader-style fitting compatible with your injector rail test port (if fitted), or use a T-piece in-line adapter in the fuel hose.
+2. Connect the gauge to the outlet side of the pump (or the rail test port).
+3. Turn ignition to ON and read the static prime pressure.
+4. Start the engine and let it idle — read running pressure.
+
+**Acceptable values (Rongmao MT5 GY6 EFI):**
+
+| Condition | Expected pressure |
+|-----------|-------------------|
+| Static prime (key ON, engine off) | 2.5–3.5 bar |
+| Idle (engine running) | 2.0–3.0 bar |
+| Pressure drop after key OFF | Should hold > 1.5 bar for 60 seconds |
+
+A pump that cannot maintain pressure — especially one that holds fine at speed but drops at idle — is failing and should be replaced.
+
+---
+
+## Conclusion
+
+| Test result | Next step |
+|-------------|-----------|
+| No prime hum + 0 V at connector | Check relay, fuse, and wiring — not a pump issue |
+| Hum present + correct voltage + good pressure | Pump is fine — investigate TPS, idle screw, vacuum leak |
+| Hum present + correct voltage + low pressure | Pump is worn — replace the pump |
+| No hum + correct voltage at connector | Pump motor failed internally — replace the pump |
+
+---
+
+## Related Guides
+
+- [GY6 EFI Fuel Pump Replacement](/repair-guides/gy6-efi-fuel-pump-replacement.html)
+- [GY6 EFI Throttle Body Idle Screw Adjustment](/repair-guides/gy6-efi-throttle-body-idle-screw-adjustment.html)
+- [GY6 EFI Stalls at Idle — TPS & IAC Fix](/diagnostics/gy6-efi-stalling-at-idle-tps-iac.html)
+- [GY6 EFI Vacuum Leak Diagnosis](/diagnostics/gy6-efi-vacuum-leak-diagnosis.html)

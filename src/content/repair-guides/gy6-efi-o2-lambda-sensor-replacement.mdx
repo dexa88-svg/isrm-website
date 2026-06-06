@@ -1,0 +1,165 @@
+---
+title: "GY6 EFI O2/Lambda Sensor Replacement"
+description: "Remove and replace the narrowband oxygen sensor on a GY6 EFI scooter (Rongmao MT5). Covers voltage testing to confirm failure and correct fitting of the replacement."
+publishDate: "2026-06-06"
+updatedDate: "2026-06-06"
+difficulty: "Intermediate"
+timeEstimate: "~30 min"
+tags: ["gy6", "efi", "o2-sensor", "lambda-sensor", "oxygen-sensor", "rongmao", "euro4", "stalling", "repair"]
+appliesTo:
+  - "GY6 139QMB Euro 4/5 EFI (50cc)"
+  - "GY6 157QMJ EFI (150cc)"
+  - "BTC Riva EFI"
+  - "La Souris Sourini / City EFI"
+  - "Santini Capri EFI"
+  - "AGM VX50 EFI"
+videos:
+  - id: "1CKdiB_tzjA"
+    title: "GY6 EFI O2 Lambda Sensor Test and Replacement"
+    creator: "ISRM"
+    position: "hero"
+tools:
+  - "22 mm O2 sensor socket (slotted for the wire)"
+  - "Ratchet and extension"
+  - "Multimeter (DC Volts, mV range)"
+  - "Anti-seize compound (copper-based)"
+sources:
+  - name: "49ccScoot Forum — GY6 TPS and Oxygen Sensor"
+    url: "https://49ccscoot.proboards.com/thread/29582/gy6-tps-oxygen-sensor"
+  - name: "Motorroller.de — Euro 4 EFI O2 Sensor Issues"
+    url: "https://motorroller.de"
+canonical: "https://ismr.online/repair-guides/gy6-efi-o2-lambda-sensor-replacement.html"
+draft: false
+---
+
+import VideoEmbed from '@components/VideoEmbed.astro';
+import Callout from '@components/Callout.astro';
+import SourceBox from '@components/SourceBox.astro';
+
+The Rongmao MT5 EFI system uses a narrowband oxygen (lambda) sensor in the exhaust to monitor combustion and trim the fuel mixture in closed-loop mode above approximately 2,800 RPM. A dead or sluggish O2 sensor locks the ECU into a fixed, open-loop fuel map — which may be slightly rich or slightly lean depending on where the sensor output sticks. While stalling at stops as the sole symptom is less typical than rough running across the rev range, a failed O2 sensor is a confirmed weak point on cheap GY6 EFI builds. This guide covers testing the sensor first and replacing it if confirmed faulty.
+
+## Applies To
+
+GY6 139QMB (50cc) and 157QMJ (150cc) with Rongmao MT5 ECU (Euro 4/5 EFI). Only EFI models have an O2 sensor — carburettor GY6 engines do not.
+
+<SourceBox sources={frontmatter.sources} />
+
+---
+
+<Callout type="danger">
+  ⚠️ **Hot exhaust hazard.** The O2 sensor is threaded into the exhaust pipe. Allow the exhaust to cool for at least 30 minutes before working near it. Even "not running" exhaust stays hot enough to cause serious burns for longer than expected.
+</Callout>
+
+## Video Guide
+
+<VideoEmbed
+  videoId="1CKdiB_tzjA"
+  title="GY6 EFI O2 Lambda Sensor Test and Replacement"
+  creator="ISRM"
+/>
+
+---
+
+## Tools Required
+
+- **22 mm O2 sensor socket** — the slotted type that accommodates the sensor wire while on the ratchet (a standard 22 mm socket will not fit over the wire)
+- **Multimeter** — to confirm failure before replacing
+- **Anti-seize compound** — essential when fitting a new sensor into an exhaust thread
+
+## Parts & Materials
+
+| Part | Spec / Note | Approx. Cost |
+|------|-------------|--------------|
+| Narrowband O2 sensor | Universal narrowband or Rongmao-specific; check connector type (1-wire or 4-wire) | €15–35 |
+| Anti-seize compound | Copper-based, high-temperature rated | €5 |
+
+---
+
+## Confirm the Fault First
+
+Do not replace the O2 sensor without testing it. The sensor is not the most common cause of EFI stalling, and replacement without confirmation wastes money.
+
+### Test: O2 Sensor Voltage Check
+
+1. Warm the engine fully (at least 5 minutes of riding or idling).
+2. Locate the O2 sensor connector — the sensor is in the exhaust pipe downstream of the cylinder head, with a wire running up to a connector near the ECU.
+3. Set multimeter to **DC mV** or **DC Volts 2 V range**.
+4. Back-probe the **signal wire** at the connector (the sensor's output — not the heater supply). On a 1-wire sensor, this is the only wire. On a 4-wire heated sensor, refer to the connector pin-out for your model (typically white = heater supply, black = heater ground, grey = signal, black = signal ground).
+5. At warm idle, the voltage should **oscillate** between approximately **0.1 V and 0.9 V** (100–900 mV), cycling several times per minute as the ECU adjusts mixture.
+
+| Voltage behaviour | Interpretation |
+|-------------------|----------------|
+| Oscillating 0.1–0.9 V regularly | Sensor is working correctly |
+| Stuck at ~0.1–0.2 V (lean signal) | Sensor failed lean — replace |
+| Stuck at ~0.7–0.9 V (rich signal) | Sensor failed rich — replace |
+| No voltage output (0 V) | Open circuit — replace |
+| Oscillates very slowly (> 30 sec per cycle) | Sensor is lazy/slow — replace if symptoms match |
+
+---
+
+## Step-by-Step Instructions
+
+### Step 1 — Allow exhaust to cool
+
+Engine off, exhaust system cold — minimum 30 minutes after last running.
+
+### Step 2 — Disconnect the O2 sensor connector
+
+1. Trace the sensor wire from the exhaust pipe to its connector in the engine bay or frame area.
+2. Press the connector locking tab and pull apart.
+3. Tuck the wiring harness aside to give access to the sensor.
+
+### Step 3 — Remove the old sensor
+
+1. Fit the slotted 22 mm O2 sensor socket over the sensor, threading the wire through the slot.
+2. Turn **anti-clockwise** to loosen. O2 sensors in exhaust pipes often corrode in place — apply firm, steady force. Do not jerk.
+3. If the sensor is seized: apply penetrating oil around the thread and wait 15 minutes, then try again. Applying heat to the exhaust pipe around the sensor boss (with a heat gun or gas torch — exercise caution near fuel lines) can help free a seized sensor, but this should be a last resort.
+4. Once loose, unscrew by hand and remove.
+
+<Callout type="warn">
+  ⚠️ If the sensor thread is damaged or the boss in the exhaust pipe is stripped, the pipe will need to be repaired or replaced. Do not continue without a good thread.
+</Callout>
+
+### Step 4 — Inspect the old sensor
+
+Examine the sensor tip:
+
+| Appearance | Interpretation |
+|------------|----------------|
+| Light grey or tan, minimal deposit | Normal wear |
+| Black soot | Rich running — check TPS, idle screw |
+| White chalky deposit | Coolant contamination (rare on air-cooled GY6) |
+| Oily deposit | Oil fouling from engine — check rings/valve seals |
+
+### Step 5 — Fit the new sensor
+
+1. Apply a **thin, even coat of anti-seize compound** to the sensor threads — but not on the first 1–2 thread turns closest to the sensing tip (anti-seize there can contaminate the sensor element).
+2. Thread the new sensor in by hand — ensure it starts straight and threads smoothly.
+3. Torque to **40–45 N·m**. O2 sensors need to be fairly tight to seal against exhaust pressure and to make good thermal contact.
+
+### Step 6 — Reconnect and clear codes
+
+1. Route the sensor wire clear of the exhaust pipe (at least 30 mm clearance).
+2. Reconnect the sensor connector.
+3. If your ECU stores fault codes (check via [GY6 EFI OBD2 DTC Fault Codes guide](/diagnostics/gy6-efi-obd2-dtc-fault-codes.html)): disconnect the battery for 5 minutes to clear stored codes, then reconnect.
+4. Start the engine, let it warm, and confirm stable idle. The ECU will re-enter closed-loop operation within 1–2 minutes of warm idle.
+
+---
+
+## Troubleshooting
+
+| Problem | Likely Cause | Solution |
+|---------|--------------|----------|
+| Sensor won't unscrew — seized | Corrosion on exhaust threads | Penetrating oil + 15 min wait; last resort — heat |
+| New sensor doesn't fit connector | Wrong sensor type ordered | Verify 1-wire vs 4-wire and connector gender for your model |
+| Check engine light returns after replacement | Different fault code | Read fault codes before clearing |
+| Stalling unchanged | O2 sensor was not the cause | Check [Fuel Pump Pressure Test](/diagnostics/gy6-efi-fuel-pump-pressure-test.html) and [TPS Diagnosis](/diagnostics/gy6-efi-tps-sensor-diagnosis.html) |
+
+---
+
+## Related Guides
+
+- [GY6 EFI OBD2 / DTC Fault Codes](/diagnostics/gy6-efi-obd2-dtc-fault-codes.html)
+- [GY6 EFI TPS/MAP Sensor Replacement](/repair-guides/gy6-efi-tps-map-sensor-replacement.html)
+- [GY6 EFI Spark Plug Replacement](/repair-guides/gy6-efi-spark-plug-replacement.html)
+- [GY6 EFI Fuel Pump Pressure Test](/diagnostics/gy6-efi-fuel-pump-pressure-test.html)

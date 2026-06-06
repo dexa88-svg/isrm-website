@@ -1,0 +1,196 @@
+---
+title: "GY6 EFI Ignition Coil Thermal Failure"
+description: "Diagnose and replace an ignition coil that fails when hot on a GY6 EFI scooter. Covers the hot vs cold resistance test and coil removal and replacement."
+publishDate: "2026-06-06"
+updatedDate: "2026-06-06"
+difficulty: "Intermediate"
+timeEstimate: "~45 min"
+tags: ["gy6", "efi", "ignition-coil", "thermal-failure", "ignition", "stalling", "misfire", "repair"]
+appliesTo:
+  - "GY6 139QMB Euro 4/5 EFI (50cc)"
+  - "GY6 139QMB carb (50cc)"
+  - "GY6 152QMI (125cc)"
+  - "GY6 157QMJ (150cc)"
+  - "BTC Riva EFI"
+  - "La Souris Sourini / City EFI"
+  - "Santini Capri EFI"
+videos:
+  - id: "kZY1XVcIzhA"
+    title: "GY6 Ignition Coil Thermal Failure — Hot Test and Replacement"
+    creator: "ISRM"
+    position: "hero"
+tools:
+  - "Multimeter (resistance / Ohms)"
+  - "Phillips screwdriver"
+  - "Coil primary and secondary resistance test leads"
+sources:
+  - name: "GY6 139QMB Service Manual"
+    url: "https://ismr.online"
+  - name: "Motorroller.de — GY6 Ignition Coil Thermal Failure Euro 4"
+    url: "https://motorroller.de"
+  - name: "49ccScoot Forum — GY6 Ignition Coil Heat Soak"
+    url: "https://49ccscoot.proboards.com"
+canonical: "https://ismr.online/repair-guides/gy6-efi-ignition-coil-thermal-failure.html"
+draft: false
+---
+
+import VideoEmbed from '@components/VideoEmbed.astro';
+import Callout from '@components/Callout.astro';
+import SourceBox from '@components/SourceBox.astro';
+
+Ignition coil thermal failure is an uncommon but confirmed cause of GY6 EFI stalling — specifically the intermittent type that appears only after the engine has fully heat-soaked. The coil works fine when cold, starts misfiring as it heats up, and tests fine again after cooling down. This characteristic makes it one of the most frustrating faults to catch: the engine fails when hot, recovers when you pull over and wait, and the coil resistance reads within spec on a cold bench test. On cheap GY6 EFI builds (such as Rongmao-equipped scooters), the coil is often mounted close to the engine with minimal heat shielding. This guide shows how to test the coil correctly — hot and cold — and how to replace it.
+
+## Applies To
+
+GY6 139QMB and larger GY6 variants in both EFI and carburettor form. The test procedure and coil replacement method are the same regardless of fuel delivery.
+
+<SourceBox sources={frontmatter.sources} />
+
+---
+
+<Callout type="danger">
+  ⚠️ **High voltage hazard.** The ignition coil secondary circuit produces 10,000–15,000 V. Never touch the HT lead or spark plug cap while the engine is running or being cranked.
+</Callout>
+
+<Callout type="danger">
+  ⚠️ **Hot coil hazard.** The coil is mounted near the engine and gets very hot. Testing "hot resistance" requires working on a recently stopped engine — wear heat-resistant gloves and do not touch adjacent engine parts.
+</Callout>
+
+## Video Guide
+
+<VideoEmbed
+  videoId="kZY1XVcIzhA"
+  title="GY6 Ignition Coil Thermal Failure — Hot Test and Replacement"
+  creator="ISRM"
+/>
+
+---
+
+## Tools Required
+
+- **Multimeter with resistance (Ohms) function** — essential for both cold and hot tests
+- **Phillips screwdriver** — coil mounting bolts
+- **Heat-resistant gloves** — for the hot test
+
+## Parts & Materials
+
+| Part | Spec / Note | Approx. Cost |
+|------|-------------|--------------|
+| GY6 ignition coil | Universal GY6 type — verify primary resistance spec matches | €10–25 |
+| Spark plug cap | Replace if cap resistance is high (spec: ~5 kΩ) | €3–8 |
+
+---
+
+## Background: Why Coils Fail Hot
+
+Ignition coil windings are fine copper wire wrapped in thousands of turns, insulated with epoxy or varnish. When the coil heats up, the insulation expands and the winding tension changes. On a coil where the insulation is starting to degrade (age, heat fatigue, or manufacturing defect), the winding resistance rises enough when hot to reduce secondary voltage output below the level needed to jump the spark plug gap reliably. The coil works fine cold because the insulation is contracted and gaps between failing windings are closed.
+
+**The tell-tale symptom pattern:**
+- Engine starts fine cold and runs well for the first 5–15 minutes
+- Begins misfiring and loses idle stability as it heat-soaks
+- Stalls; refuses to restart or restarts poorly while hot
+- After 15–30 minutes of cooling, starts and runs again normally
+
+If your stalling follows this exact warm-up → fail → cool → recover pattern, the coil is the primary suspect.
+
+---
+
+## Diagnostic: Hot vs Cold Resistance Test
+
+### Step 1 — Cold resistance test
+
+With the engine **stone cold** (overnight cold is ideal):
+
+1. Remove the spark plug cap from the plug.
+2. Disconnect the primary winding connector from the coil (usually a 2-pin connector with the trigger signal from the ECU or CDI).
+3. Set multimeter to **Resistance (Ω)**.
+4. **Primary winding:** probe between the two primary terminals on the coil. Typical GY6 coil spec: **0.2–0.6 Ω**.
+5. **Secondary winding:** probe between the HT (spark plug cap) terminal and one primary terminal. Typical spec: **3,000–6,000 Ω (3–6 kΩ)**.
+
+Note your readings.
+
+### Step 2 — Hot resistance test (the critical test)
+
+1. Reconnect everything and ride the scooter until the symptom appears — misfiring or stalling under heat soak.
+2. Stop the engine immediately when symptoms appear.
+3. **Working quickly and carefully** (the coil will be hot), disconnect the primary connector and remove the spark plug cap.
+4. Re-test primary and secondary resistance **within 30 seconds** while the coil is still hot.
+
+| Test result | Interpretation |
+|-------------|----------------|
+| Resistance unchanged (same as cold) | Coil is not the cause — investigate other heat-related faults |
+| Primary resistance significantly higher when hot (> 1 Ω) | Coil primary failing — replace coil |
+| Secondary resistance significantly higher when hot (> 10 kΩ) | Coil secondary failing — replace coil |
+| Open circuit (OL / infinite) when hot | Coil winding has broken under heat — replace coil |
+
+<Callout type="tip">
+  💡 **Tip:** A rise of 30–50% in winding resistance from cold to hot is considered significant. Small increases (10–15%) are normal for copper wire warming — you are looking for a large step change.
+</Callout>
+
+---
+
+## Replacement: Step-by-Step
+
+### Step 1 — Prepare (cold engine)
+
+1. Engine off, fully cooled.
+2. Disconnect battery negative terminal.
+
+### Step 2 — Disconnect the old coil
+
+1. Pull the **spark plug cap** off the spark plug.
+2. Disconnect the **primary winding connector** (2-pin ECU/CDI connection).
+3. If there is a separate ground wire, note its routing.
+
+### Step 3 — Remove the coil
+
+1. Undo the coil mounting bolts (usually 2 × M6 Phillips).
+2. Remove the coil from its bracket.
+3. Note the coil position and orientation for the new coil.
+
+### Step 4 — Check the mounting location
+
+This is also an opportunity to improve the coil's thermal environment:
+
+1. Check if the coil bracket positions the coil within 50 mm of the exhaust or cylinder barrel — if so, consider adding a heat shield (a folded aluminium sheet between coil and heat source, available cheaply).
+2. Ensure there is airflow around the coil position — coils buried in enclosed spaces overheat faster.
+
+### Step 5 — Fit the new coil
+
+1. Mount the new coil in the same position and orientation.
+2. Reconnect the primary connector and ground wire.
+3. Refit the spark plug cap onto the spark plug firmly.
+4. Reconnect the battery negative.
+
+### Step 6 — Test under real conditions
+
+Start the engine and ride until it reaches normal operating temperature. Confirm no misfiring or stalling as heat soak develops. If the fault recurs, perform the hot resistance test again on the new coil — occasionally replacement coils are faulty.
+
+---
+
+## Troubleshooting
+
+| Problem | Likely Cause | Solution |
+|---------|--------------|----------|
+| Fault still present with new coil | Different cause — coil was not the problem | Re-examine symptom pattern; check spark plug cap resistance (should be ~5 kΩ) |
+| New coil fails quickly | Excessive heat at mounting location | Add heat shielding; re-route coil position if possible |
+| No spark even when cold | Coil or CDI/ECU fault | Check primary voltage supply from CDI/ECU trigger; see [GY6 CDI No-Spark Diagnosis](/diagnostics/gy6-cdi-no-spark-diagnosis.html) |
+
+---
+
+## Frequently Asked Questions
+
+**Q: My coil tests fine cold — can I still replace it on suspicion?**  
+A: Yes, if the symptom pattern (works cold, fails hot, recovers when cold) strongly matches. A coil is relatively cheap and the hot test can be difficult to perform safely. If everything else checks out and the pattern is textbook, replacing the coil is a reasonable diagnostic step.
+
+**Q: Should I replace the spark plug cap at the same time?**  
+A: Recommended. The cap contains a suppression resistor (~5 kΩ) that can also increase resistance when hot. If the coil tests fine but symptoms match thermal failure, test the cap resistance hot and cold as well.
+
+---
+
+## Related Guides
+
+- [GY6 Ignition Coil Guide](/repair-guides/gy6-ignition-coil-guide.html)
+- [GY6 CDI No-Spark Diagnosis](/diagnostics/gy6-cdi-no-spark-diagnosis.html)
+- [GY6 EFI Spark Plug Replacement](/repair-guides/gy6-efi-spark-plug-replacement.html)
+- [GY6 EFI Fuel Pump Pressure Test](/diagnostics/gy6-efi-fuel-pump-pressure-test.html)
