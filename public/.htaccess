@@ -13,6 +13,10 @@ RewriteRule ^ https://ismr.online%{REQUEST_URI} [L,R=301]
 RewriteRule ^legal/privacy/?$ /legal/privacy.html [L,R=301]
 RewriteRule ^legal/terms/?$ /legal/terms.html [L,R=301]
 
+# 301 redirect: root index.html → / (canonical homepage URL)
+# Prevents Google from seeing /index.html as a separate crawlable/indexable URL
+RewriteRule ^index\.html$ / [L,R=301]
+
 # Security headers — improves Microsoft SmartScreen / SafeLinks reputation
 <IfModule mod_headers.c>
     # Prevent clickjacking
