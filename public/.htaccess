@@ -1,8 +1,16 @@
 RewriteEngine On
 
-# Redirect HTTP to HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# NOTE: We do NOT force-redirect HTTP -> HTTPS here on the origin.
+# Cloudflare sits in front in "Flexible" SSL mode (this Hetzner webhosting
+# plan cannot install its own certificate), which means Cloudflare always
+# connects to this origin over plain HTTP even when the visitor used HTTPS.
+# A RewriteCond %{HTTPS} off check here is therefore ALWAYS true from the
+# origin's point of view, so a redirect rule here creates a redirect loop
+# (origin -> https://... -> Cloudflare -> http to origin -> repeat).
+# HTTPS for visitors is enforced at the Cloudflare edge instead
+# (SSL/TLS -> Edge Certificates -> "Always Use HTTPS"). Do not re-add an
+# HTTPS redirect here unless the origin gets its own valid certificate and
+# Cloudflare is switched to Full/Full (strict).
 
 # Redirect www to non-www (canonical domain)
 RewriteCond %{HTTP_HOST} ^www\.ismr\.online [NC]
