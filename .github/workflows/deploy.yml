@@ -88,6 +88,45 @@ jobs:
               -T "$file" "sftp://$FTP_SERVER:22/$file"
           done
 
+      - name: Smoke test live site
+        run: |
+          # Catches the class of outage from 2026-05/06: origin misconfig or a
+          # Cloudflare/origin SSL mismatch that serves an error page or empty
+          # response on some paths while others (e.g. a cached homepage) still
+          # look fine. Fails the deploy loudly instead of it going unnoticed
+          # for weeks (which is what happened before Google indexing collapsed).
+          set -e
+          BUST="smoketest=${{ github.run_id }}"
+          URLS=(
+            "https://ismr.online/?$BUST"
+            "https://www.ismr.online/?$BUST"
+            "https://ismr.online/repair-guides/?$BUST"
+            "https://ismr.online/diagnostics/?$BUST"
+            "https://ismr.online/sitemap.xml?$BUST"
+          )
+          FAILED=0
+          for url in "${URLS[@]}"; do
+            echo "Checking $url"
+            HTTP_CODE=$(curl -s -L --max-redirs 5 -o /tmp/smoke_body.html -w "%{http_code}" "$url")
+            BODY=$(cat /tmp/smoke_body.html)
+            if [ "$HTTP_CODE" -ge 400 ] || [ -z "$BODY" ]; then
+              echo "::error::$url returned HTTP $HTTP_CODE with $(echo -n "$BODY" | wc -c) bytes body"
+              FAILED=1
+              continue
+            fi
+            if echo "$BODY" | grep -qi "does not yet support HTTPS\|HTTPS Not Available"; then
+              echo "::error::$url served Hetzner's no-SSL-certificate error page — origin/Cloudflare SSL mode issue"
+              FAILED=1
+              continue
+            fi
+            echo "OK ($HTTP_CODE, $(echo -n "$BODY" | wc -c) bytes)"
+          done
+          if [ "$FAILED" -ne 0 ]; then
+            echo "::error::Smoke test failed — see above. Site may be broken for real visitors right now."
+            exit 1
+          fi
+          echo "Smoke test passed — site is serving real content on all checked paths."
+
       - name: Ping IndexNow (changed pages only)
         run: |
           # Build list of URLs for HTML/MDX files changed in this push

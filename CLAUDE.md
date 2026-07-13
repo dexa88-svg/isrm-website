@@ -94,7 +94,17 @@ To add a new guide:
 
 ### Deploy pipeline
 
-Push to `main` → GitHub Actions runs `npm test` → runs `npm run build` (which includes `generate-stats` + Pagefind index) → uploads `dist/` to Hetzner via SFTP. Live within ~60s.
+Push to `main` → GitHub Actions runs `npm test` → runs `npm run build` (which includes `generate-stats` + Pagefind index) → uploads `dist/` to Hetzner via SFTP → a smoke test hits the live site on a few key paths and fails the job if any of them come back broken. Live within ~60s.
+
+### Hosting/SSL topology — read before touching `.htaccess` or Cloudflare SSL settings
+
+DNS and CDN are on **Cloudflare** (nameservers `todd`/`magdalena.ns.cloudflare.com`), origin server is **Hetzner konsoleH webhosting** (`azkh.your-vhost.de`, plan "Webhosting S"). This plan **cannot install an SSL certificate** (no SSL account support, "New Certificate" only offers paid options) — this is a known, accepted limitation, not a bug to keep re-investigating.
+
+Because of that, Cloudflare SSL/TLS mode is **Flexible**: Cloudflare terminates HTTPS for visitors with its own edge certificate, then talks to the Hetzner origin over plain HTTP. This is intentional and correct for this setup — do not switch it to Full/Full (strict) unless the origin gets a real certificate (it currently cannot).
+
+**The gotcha (caused a ~2 month outage, May–July 2026):** `public/.htaccess` must never contain an origin-side `RewriteCond %{HTTPS} off` → redirect-to-https rule. Under Flexible mode, Cloudflare *always* connects to the origin over HTTP, so that condition is always true from the origin's point of view — the origin redirects to `https://...`, which comes back through Cloudflare, which downgrades to HTTP again, forever. The result: most pages serve empty/broken responses while a stale cached page (e.g. the homepage) can look fine for weeks, silently collapsing Google indexing. HTTPS enforcement for visitors belongs at the Cloudflare edge (SSL/TLS → Edge Certificates → "Always Use HTTPS"), never in this file. The www→non-www redirect in `.htaccess` is fine to keep since it doesn't depend on `%{HTTPS}`.
+
+If the Hetzner plan is ever upgraded to support SSL, or the site moves to Cloudflare Pages (see Open Decisions below), this constraint goes away and Full (strict) + an origin-side HTTPS redirect become safe again.
 
 ### Stats & search
 
