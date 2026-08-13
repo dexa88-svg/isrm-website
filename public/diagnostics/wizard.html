@@ -1630,6 +1630,10 @@
     currentId = nextId;
     render('fwd');
     if (window.gtag) gtag('event', 'wizard_step', { node: nextId, answer: answerLabel });
+    const node = TREE[nextId];
+    if (node && node.type === 'diagnosis' && window.gtag) {
+      gtag('event', 'wizard_complete', { node: nextId, diagnosis: node.title });
+    }
   }
 
   function goBack() {
