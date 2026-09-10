@@ -32,8 +32,8 @@
     ]
   },
   "dependencies": {
-    "@astrojs/mdx": "^5.0.6",
-    "astro": "^6.4.8",
+    "@astrojs/mdx": "^8.0.1",
+    "astro": "^7.3.2",
     "node-html-parser": "^7.1.0",
     "turndown": "^7.2.4"
   }
