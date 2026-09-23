@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" aria-labelledby="t d">
+<title id="t">Piaggio Zip 4T exhaust assembly, exploded view</title>
+<desc id="d">Cylinder head exhaust port, new flange gasket, exhaust header held by two nuts, muffler, and two mounting screws to the engine housing.</desc>
+<rect width="800" height="360" fill="#0f1419"/>
+<g font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#f5f5f5">
+<rect x="30" y="90" width="120" height="150" rx="8" fill="#242f3e" stroke="#00a8cc" stroke-width="2"/>
+<text x="90" y="170" text-anchor="middle">Cylinder</text><text x="90" y="190" text-anchor="middle">head</text>
+<rect x="150" y="150" width="16" height="30" fill="#242f3e" stroke="#a0a0a0"/>
+<line x1="150" y1="135" x2="240" y2="135" stroke="#a0a0a0" stroke-width="4"/><line x1="150" y1="195" x2="240" y2="195" stroke="#a0a0a0" stroke-width="4"/>
+<text x="190" y="120" text-anchor="middle" fill="#a0a0a0">2 studs</text>
+<ellipse cx="205" cy="165" rx="9" ry="34" fill="#f5a623" stroke="#0f1419"/>
+<text x="205" y="228" text-anchor="middle" fill="#f5a623">1 NEW gasket</text>
+<rect x="250" y="120" width="26" height="90" rx="4" fill="#ff6b35"/>
+<path d="M276 165 C340 165 350 250 420 250 L560 250" fill="none" stroke="#ff6b35" stroke-width="24" stroke-linecap="round"/>
+<text x="330" y="118" fill="#ff6b35">Header (manifold)</text>
+<circle cx="300" cy="135" r="11" fill="#00a8cc"/><circle cx="300" cy="195" r="11" fill="#00a8cc"/>
+<text x="330" y="146" fill="#00a8cc">2 flange nuts</text>
+<rect x="470" y="222" width="270" height="56" rx="28" fill="#004e89" stroke="#00a8cc" stroke-width="2"/>
+<text x="605" y="256" text-anchor="middle">Muffler</text>
+<rect x="470" y="130" width="270" height="50" rx="8" fill="#242f3e" stroke="#2a3548"/>
+<text x="605" y="160" text-anchor="middle" fill="#a0a0a0">Engine housing</text>
+<circle cx="520" cy="200" r="9" fill="#00a8cc"/><circle cx="690" cy="200" r="9" fill="#00a8cc"/>
+<line x1="520" y1="180" x2="520" y2="222" stroke="#00a8cc" stroke-dasharray="4"/><line x1="690" y1="180" x2="690" y2="222" stroke="#00a8cc" stroke-dasharray="4"/>
+<text x="605" y="300" text-anchor="middle" fill="#00a8cc">2 mounting screws</text>
+<text x="30" y="335" fill="#a0a0a0">Tighten order: flange nuts alternately, then mounting screws last.</text>
+</g></svg>

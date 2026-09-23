@@ -1,0 +1,220 @@
+---
+title: "Piaggio Zip 4T Head & Cylinder Swap Guide"
+description: "Replace the head, cylinder and piston on a Piaggio Zip 4T: tools, gasket thicknesses, torque sequence, timing, realistic time and common mistakes."
+publishDate: "2026-09-23"
+updatedDate: "2026-09-23"
+difficulty: "Advanced"
+timeEstimate: "~4–6 hours (first time)"
+tags:
+  - "Piaggio"
+  - "Zip"
+  - "cylinder head"
+  - "cylinder"
+  - "gasket"
+  - "engine"
+appliesTo: ["Piaggio Zip 50 4T", "Piaggio Zip 100 4T", "Vespa Zip 4T (carburettor)"]
+videos:
+  - id: "kCRRSgtUDy0"
+    title: "Piston replacement Zip 4T — full walkthrough"
+    creator: "BOUUYAAA MoToR"
+    position: "hero"
+  - id: "JTZT0I-bX84"
+    title: "Piaggio Zip — Engine Rebuild"
+    creator: "Break A Leg Tuning"
+    position: "inline"
+  - id: "3bEYGmBZUDA"
+    title: "Piaggio Zip 2000 4T repair (Dutch)"
+    creator: "Tweewielersnoord"
+    position: "related"
+tools:
+  - "Socket set (8, 10, 12, 13 mm) and extension"
+  - "Torque wrench, 3–30 Nm range (with angle gauge or protractor for the 90° turns)"
+  - "Circlip (snap-ring) pliers or a small hook"
+  - "Feeler gauges"
+  - "Dial gauge on a stand (for gasket-thickness measurement)"
+  - "Piston ring compressor or a small hose clamp"
+  - "Valve spring compressor (if the head is being serviced)"
+  - "Camshaft/bearing tools (Piaggio 020450Y and bearing extractor, or a workshop equivalent)"
+  - "Piston support block or clean rag to seal the crankcase"
+  - "Thread-locker, clean engine oil for assembly, plastic scraper, lint-free rags"
+sources:
+  - name: "Piaggio MSS Zip 100 4T Service Manual (ManualsLib)"
+    url: "https://www.manualslib.com/manual/1583036/Piaggio-Zip-50-4t.html"
+  - name: "Haynes Manual — Piaggio Zip 4T 50 (2001–2008)"
+    url: "https://haynes.com/en-gb/piaggio/zip-4t-50/2001-2008"
+canonical: "https://ismr.online/repair-guides/piaggio-zip-4t-top-end-swap-head-cylinder-gaskets.html"
+draft: false
+---
+
+import VideoEmbed from '@components/VideoEmbed.astro';
+import Callout from '@components/Callout.astro';
+import SourceBox from '@components/SourceBox.astro';
+
+A "top-end swap" means replacing the cylinder head, cylinder and usually the piston and rings as a set, without splitting the crankcase. It is the standard fix for a worn bore, low compression, oil burning, or a damaged head. On the Piaggio Zip 4T (air-cooled, single cylinder, SOHC with a timing chain) it is a serious but very doable job for someone with basic engine experience. The figures below come from the Piaggio MSS Zip 100 4T service manual; the 50 cc version shares the same layout.
+
+## Applies To
+
+Piaggio / Vespa **Zip 50 4T** and **Zip 100 4T**, carburettor. The engine can stay in the frame for the head and cylinder work — the service manual only requires removing it for crankcase repairs.
+
+<SourceBox sources={frontmatter.sources} />
+
+<Callout type="danger">
+  **Safety:** Work on a cold engine, disconnect the battery, and turn the fuel cock off. Petrol vapour and hot parts are the two real dangers here. Collect the used oil and dispose of it properly.
+</Callout>
+
+## Video Guide
+
+<VideoEmbed videoId="kCRRSgtUDy0" title="Piston replacement Zip 4T — full walkthrough" creator="BOUUYAAA MoToR" />
+
+Watch this first to see the whole job. The engine-rebuild video below shows a fuller teardown and reassembly:
+
+<VideoEmbed videoId="JTZT0I-bX84" title="Piaggio Zip — Engine Rebuild" creator="Break A Leg Tuning" />
+
+<Callout type="tip">
+  The videos are community footage of Zip 4T engines. Where they differ from the torque and gasket figures on this page, follow the figures from the Piaggio service manual.
+</Callout>
+
+More: <VideoEmbed videoId="3bEYGmBZUDA" title="Piaggio Zip 2000 4T repair (Dutch)" creator="Tweewielersnoord" />
+
+## Is a top-end swap the right fix?
+
+Do it if a compression test is low and stays low after adding a spoonful of oil, or if the bore shows scoring, or the head is cracked, warped or has a burnt valve seat. If the engine merely smokes a little, check the valve clearance, the oil-level-rising fault and the crankcase breather first — see the [Zip 4T oil level rising diagnostic](/diagnostics/piaggio-zip-4t-oil-level-rising.html).
+
+## Time and Effort
+
+| Phase | Realistic time |
+|-------|----------------|
+| Strip: bodywork, exhaust, carb, cooling covers, head, cylinder | 1.5–2 h |
+| Clean, inspect, measure (bore, piston, gasket thickness) | 1 h |
+| Assemble: piston, cylinder, head, timing | 1.5–2 h |
+| Valves, refit ancillaries, oil, first start | 1 h |
+| **Total (first time)** | **4–6 h** (experienced: 2.5–3 h) |
+
+## Parts & Gaskets
+
+| Part | Notes |
+|------|-------|
+| Cylinder + piston + rings + pin (assembled kit) | The service manual says spare-part cylinder kits are **57.15 mm high** |
+| Head gasket | Two designs: **steel, 0.3 ± 0.05 mm** or **fibre, 0.95 ± 0.06 mm**. They match cylinders of different heights — see below |
+| Base (cylinder) gasket | **0.4 mm or 0.5 mm** — chosen by measurement |
+| Head cover gasket / seal | New |
+| Cooling-cover gaskets | Replace if damaged |
+| Centring dowels | 2 for the head, 2 for the cylinder — reuse |
+| Piston pin circlips | New every time |
+| Valve stem seals | Replace when the head is off |
+| Intake manifold O-ring, exhaust flange gasket | New |
+| Spark plug, engine oil | Fresh |
+
+![Diagram showing the order of parts from crankcase upward: base gasket, cylinder with piston, steel head gasket, cylinder head; and the cross-pattern tightening order for the four head nuts](/repair-guides/images/zip-4t-head-gasket-stack.svg)
+
+### Which head gasket, which base gasket?
+
+Piaggio controls compression ratio with gasket thickness. The manual describes two systems:
+
+| Cylinder height | Head gasket | Compression ratio |
+|-----------------|-------------|-------------------|
+| 56.45 mm (older) | Fibre, 0.95 mm | 11.5–12 : 1 |
+| 57.15 mm (current spare part) | Steel, 0.3 mm | 10.5–11.5 : 1 |
+
+Since all replacement pin/piston/cylinder units are 57.15 mm high, a modern replacement kit is used with the **steel 0.3 mm head gasket**. Do not mix a fibre gasket with a 57.15 mm cylinder.
+
+Then pick the base gasket by measuring how far the piston sits below the cylinder top at TDC with **no base gasket** fitted. For the 57.15 mm cylinder with steel head gasket, the manual's table pairs a measured value of about 0.20 mm with a 0.4 mm base gasket and about 0.30 mm with a 0.5 mm gasket. Buy both thicknesses in the gasket set, measure, and fit the correct one.
+
+## Step-by-Step Instructions
+
+### Step 1 — Prepare
+
+1. Disconnect the battery, close the fuel cock, drain the engine oil.
+2. Remove bodywork as needed (seat, side panels, rear cowl) for access.
+3. Remove the exhaust (2 nuts at the head, 2 screws at the housing) — see the [exhaust replacement guide](/repair-guides/piaggio-zip-4t-exhaust-replacement.html).
+4. Remove the carburettor and intake manifold (2 screws on the head). Disconnect the secondary-air pipe if fitted.
+5. Take photos of every connector and hose before you disconnect them.
+
+### Step 2 — Remove cooling covers and timing parts
+
+1. Remove the cooling covers: the 4 front coupling screws (one is a knob), the side screw at the crankcase base, and the 4 side screws. Lift out the 3 covers and the cover seals.
+2. Remove the spark plug and the head cover.
+3. Set the engine to **TDC on the compression stroke** using the flywheel and crankcase marks.
+4. Remove the camshaft pulley screw. **Mark the chain** so it stays in the same direction, and secure it with a piece of wire so it cannot drop into the crankcase.
+5. Remove the camshaft bearing clamping screw, then pull the camshaft with its bearing. Pull the rocker-arm pin through the flywheel-side hole, and **mark the intake and exhaust rocker arms** so they go back on the right sides.
+
+### Step 3 — Remove the head and cylinder
+
+1. Remove the 2 side screws holding head and cylinder to the crankcase.
+2. Loosen the **4 head nuts** in two or three stages in a cross pattern.
+3. Lift the head straight up. Remove the 2 centring dowels and the head gasket.
+4. Lift the cylinder off while holding the piston steady so it does not bang the studs. Remove the 2 cylinder dowels and the base gasket.
+5. **Stuff a clean rag** into the crankcase mouth so nothing falls in.
+6. Remove the circlips, push out the piston pin and take off the piston. Keep the old rings out of the new set.
+
+### Step 4 — Clean and inspect
+
+1. Scrape old gasket material off every mating face with a plastic scraper — no metal on aluminium.
+2. Check the head face for flatness with a straightedge and feeler gauge, and check the valve seats and camshaft bearing surfaces.
+3. Check piston-ring side clearance if you are reusing the piston: top ring limit 0.080 mm, second ring 0.070 mm, oil ring 0.20 mm (manual limits). Over those limits, replace the piston and rings.
+4. Check the bearing and rocker arms for scoring. If the camshaft bearing separates from the camshaft, replace the bearing.
+
+### Step 5 — Fit the new piston and choose the gaskets
+
+1. Fit the new piston on the connecting rod with a **new circlip** on each side. Make sure the piston arrow or mark faces the exhaust side as per the kit instructions.
+2. Fit the rings in the order and orientation given with the kit; stagger the gaps.
+3. Lightly fit the cylinder over the piston **without a base gasket** and measure piston protrusion/re-entry at TDC with a dial gauge (see the table above). Choose the base gasket thickness, then remove the cylinder.
+
+### Step 6 — Refit cylinder and head
+
+1. Fit the correct **base gasket** and the 2 cylinder dowels.
+2. Blow out the lubrication passage in the cylinder, oil the bore, and fit the cylinder using a ring compressor or by carefully feeding the rings in by hand.
+3. Fit the head dowels and the **head gasket** (steel side up/marks as per the gasket). With the head on a bench, refit the camshaft with the bearing using the fitting tool, then place the head onto the studs.
+4. Tighten the **4 head nuts** using the manual's method: an initial 6–7 Nm in two crossed passes, then **two 90° turns**, each done in two crossed passes. First assembly, or if the studs or crankcase have been replaced, the manual asks for extra angle (initial + 135° + 90°, or three 90° passes). The manual's wording differs between sections — for a normal refit stick to 6–7 Nm + 90° + 90°.
+5. Tighten the 2 side screws to the crankcase: 8–10 Nm.
+
+### Step 7 — Timing and valves
+
+1. Confirm the piston is at TDC (flywheel marks aligned).
+2. Refit the timing chain pads (screw 5–7 Nm), the timing pinion (chamfer toward the bearing), and place the chain over the camshaft pulley so the reference notch lines up with the mark on the head. Fit the belleville washer with the outer rim touching the pulley; camshaft pulley screw **12–14 Nm**.
+3. Fit the chain tensioner: tensioner screws 8–10 Nm, central screw 5–6 Nm. Rocker-arm axle and camshaft bearing screw 3–4 Nm.
+4. Rotate the engine by hand two full turns and recheck the timing marks.
+5. Adjust the valves cold: **intake 0.10 mm**, exhaust 0.10 mm (Zip 50 owner's manual) or **0.15 mm** (Zip 100 service manual). Lock nuts 7–9 Nm. Recheck after tightening.
+
+### Step 8 — Reassemble and first start
+
+1. Refit head cover (screws 8–10 Nm) with a new gasket, cooling covers, spark plug (10–15 Nm), intake manifold (7–9 Nm), carburettor (clamp screw 1.2–1.5 Nm), the exhaust with a **new flange gasket**, and bodywork.
+2. Refill engine oil to the correct level.
+3. Prime the oil system by cranking briefly with the plug out before starting, and check compression.
+4. Start and idle for a few minutes. Check for oil leaks, exhaust leaks and unusual noise.
+5. Ride the first 500–1,000 km with varying (not full) throttle, then change the oil and re-check valve clearance.
+
+## Torque Summary
+
+| Fastener | Torque |
+|----------|--------|
+| Head-cylinder nuts | 6–7 Nm + 90° + 90° (see step 6 for special cases) |
+| Head/cylinder to crankcase side screws | 8–10 Nm |
+| Head cover screws | 8–10 Nm |
+| Spark plug | 10–15 Nm |
+| Camshaft pulley screw | 12–14 Nm |
+| Chain tensioner pad screw | 5–7 Nm |
+| Chain tensioner screws / central screw | 8–10 Nm / 5–6 Nm |
+| Rocker axle and cam bearing screw | 3–4 Nm |
+| Valve adjuster lock nuts | 7–9 Nm |
+| Intake manifold screws | 7–9 Nm |
+| Carburettor clamp screw | 1.2–1.5 Nm |
+
+## Common Mistakes
+
+- **Reusing the head gasket or circlips.** Both are single-use.
+- **Wrong gasket thickness** — compression too high (pinging) or too low (weak).
+- **Timing one tooth off.** Recheck marks after two crank turns.
+- **Chain falling into the crankcase.** Always wire it up.
+- **Tightening the head nuts in one go.** Do the crossed passes and angle turns.
+- **Missing dowels or blocked oil passage** in the cylinder.
+
+<Callout type="tip">
+  Photograph and label everything as it comes off — especially the intake/exhaust rocker arms, the chain direction and the secondary-air hoses.
+</Callout>
+
+## Related Guides
+
+- [Piaggio Zip 4T Exhaust Replacement & Gasket](/repair-guides/piaggio-zip-4t-exhaust-replacement.html)
+- [Piaggio ZIP 50 4T — Technical Overview](/models/vespa-zip-50-4t-technical-overview.html)
+- [GY6 Top End Rebuild & Piston Ring Replacement](/repair-guides/gy6-top-end-rebuild-piston-rings.html) (similar procedure for GY6 engines)
