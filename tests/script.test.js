@@ -33,9 +33,25 @@ function buildDOM() {
   `;
 }
 
+// jsdom >= 21 (Jest 30) makes window.location non-configurable, so tests can no
+// longer `delete window.location`. Instead the script under test is evaluated
+// with a `window` wrapper whose `location` is a plain mock object; everything
+// else is forwarded to the real jsdom window. Production code is untouched.
+const fs = require('fs');
+const path = require('path');
+const SCRIPT_SRC = fs.readFileSync(path.join(__dirname, '../public/script.js'), 'utf8');
+const mockLocation = { href: '' };
+
 function loadScript() {
-  jest.resetModules();
-  require('../public/script.js');
+  mockLocation.href = '';
+  const fakeWindow = new Proxy(window, {
+    get(target, prop) {
+      if (prop === 'location') return mockLocation;
+      const value = Reflect.get(target, prop, target);
+      return typeof value === 'function' ? value.bind(target) : value;
+    },
+  });
+  new Function('window', SCRIPT_SRC)(fakeWindow);
 }
 
 // ── Setup ─────────────────────────────────────────────────────────────────────
@@ -124,45 +140,42 @@ describe('Keyboard Navigation', () => {
 // ── Search Functionality ──────────────────────────────────────────────────────
 
 describe('Search Functionality', () => {
-  beforeEach(() => {
-    // Replace window.location so we can assert href assignments
-    delete window.location;
-    window.location = { href: '' };
-  });
+  // window.location is mocked inside loadScript() (see helper above), so href
+  // assignments made by the script can be asserted via mockLocation.
 
   it('redirects to repair-guides on search button click', () => {
     document.getElementById('searchInput').value = 'carburetor';
     document.querySelector('.search-btn').click();
 
-    expect(window.location.href).toBe('repair-guides/index.html?search=carburetor');
+    expect(mockLocation.href).toBe('repair-guides/index.html?search=carburetor');
   });
 
   it('URL-encodes spaces in the search query', () => {
     document.getElementById('searchInput').value = 'oil change';
     document.querySelector('.search-btn').click();
 
-    expect(window.location.href).toBe('repair-guides/index.html?search=oil%20change');
+    expect(mockLocation.href).toBe('repair-guides/index.html?search=oil%20change');
   });
 
   it('URL-encodes special characters in the search query', () => {
     document.getElementById('searchInput').value = 'GY6 & valve';
     document.querySelector('.search-btn').click();
 
-    expect(window.location.href).toBe('repair-guides/index.html?search=GY6%20%26%20valve');
+    expect(mockLocation.href).toBe('repair-guides/index.html?search=GY6%20%26%20valve');
   });
 
   it('does not redirect when search input is empty', () => {
     document.getElementById('searchInput').value = '';
     document.querySelector('.search-btn').click();
 
-    expect(window.location.href).toBe('');
+    expect(mockLocation.href).toBe('');
   });
 
   it('does not redirect when search input contains only whitespace', () => {
     document.getElementById('searchInput').value = '   ';
     document.querySelector('.search-btn').click();
 
-    expect(window.location.href).toBe('');
+    expect(mockLocation.href).toBe('');
   });
 
   it('redirects when Enter key is pressed in the search input', () => {
@@ -171,7 +184,7 @@ describe('Search Functionality', () => {
       new KeyboardEvent('keypress', { key: 'Enter', bubbles: true })
     );
 
-    expect(window.location.href).toBe('repair-guides/index.html?search=spark%20plug');
+    expect(mockLocation.href).toBe('repair-guides/index.html?search=spark%20plug');
   });
 
   it('does not redirect when a key other than Enter is pressed in the search input', () => {
@@ -180,7 +193,7 @@ describe('Search Functionality', () => {
       new KeyboardEvent('keypress', { key: 'a', bubbles: true })
     );
 
-    expect(window.location.href).toBe('');
+    expect(mockLocation.href).toBe('');
   });
 });
 
