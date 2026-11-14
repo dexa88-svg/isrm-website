@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^8.1.0",
-    "astro": "^7.4.0",
+    "astro": "^7.4.12",
     "node-html-parser": "^7.1.0",
     "turndown": "^7.2.4"
   },
